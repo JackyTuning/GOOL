@@ -27,6 +27,7 @@ import gool.ast.core.ArrayNew;
 import gool.ast.core.Assign;
 import gool.ast.core.BinaryOperation;
 import gool.ast.core.Block;
+import gool.ast.core.Break;
 import gool.ast.core.Case;
 import gool.ast.core.CastExpression;
 import gool.ast.core.Catch;
@@ -798,7 +799,11 @@ public class JavaRecognizer extends TreePathScanner<Object, Context> {
 
 	@Override
 	public Object visitBreak(BreakTree n, Context context) {
-		return new ExpressionUnknown(goolType(n, context), n.toString());
+		String label = null;
+		if(n.getLabel() != null) {
+			label = n.getLabel().toString();
+		}
+		return new Break(label);
 	}
 
 	@Override

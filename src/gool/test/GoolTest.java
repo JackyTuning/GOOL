@@ -539,10 +539,9 @@ public class GoolTest {
 	public void simpleCase() throws Exception {
 		String input = TestHelper
 				.surroundWithClassMain(
-						"int x = 10; int res = 0; switch (x) { case 1: res += 1; res += 2; case 10 : res += 10; default : res += 100; } System.out.println(res);",
+						"int x = 10; int res = 0; switch (x) { case 1: res += 1; res += 2; case 10 : res += 10; default : res += 100; break; } System.out.println(res);",
 						MAIN_CLASS_NAME);
 		String expected = "110";
-		excludePlatformForThisTest((Platform) CSharpPlatform.getInstance());
 		excludePlatformForThisTest((Platform) CppPlatform.getInstance());
 		excludePlatformForThisTest((Platform) PythonPlatform.getInstance());
 		excludePlatformForThisTest((Platform) AndroidPlatform.getInstance());
@@ -550,6 +549,16 @@ public class GoolTest {
 		compareResultsDifferentPlatforms(input, expected);
 	}
 
+	@Test
+	public void simpleBreak() throws Exception {
+		String input = TestHelper
+				.surroundWithClassMain(
+						"int total = 0; for(int i = 0; i < 4; i++){ total ++; if(total == 2) { break; }} System.out.println(total);",
+						MAIN_CLASS_NAME);
+		String expected = "2";
+		compareResultsDifferentPlatforms(input, expected);
+	}
+	
 	private void compareResultsDifferentPlatforms(String input, String expected)
 			throws Exception {
 		compareResultsDifferentPlatforms(new GoolTestExecutor(input, expected,

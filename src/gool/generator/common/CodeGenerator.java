@@ -22,6 +22,7 @@ import gool.ast.core.ArrayNew;
 import gool.ast.core.Assign;
 import gool.ast.core.BinaryOperation;
 import gool.ast.core.Block;
+import gool.ast.core.Break;
 import gool.ast.core.Case;
 import gool.ast.core.Switch;
 import gool.ast.core.CastExpression;
@@ -447,5 +448,7 @@ public interface CodeGenerator {
 	String getCode(Switch switchStatement);
 
 	String getCode(Case caseStatement);
+
+	String getCode(Break breakStatement);
 
 }

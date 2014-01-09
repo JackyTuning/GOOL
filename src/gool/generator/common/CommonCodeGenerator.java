@@ -22,6 +22,7 @@ import gool.ast.core.ArrayNew;
 import gool.ast.core.Assign;
 import gool.ast.core.BinaryOperation;
 import gool.ast.core.Block;
+import gool.ast.core.Break;
 import gool.ast.core.Case;
 import gool.ast.core.CastExpression;
 import gool.ast.core.ClassDef;
@@ -677,4 +678,11 @@ public abstract class CommonCodeGenerator implements CodeGenerator {
 		return out;
 	}
 	
+	public String getCode(Break breakStatement) {
+		String out = "break";
+		if(breakStatement.getLabel() != null) {
+			out += " " + breakStatement.getLabel();
+		}
+		return out;
+	}
 }
