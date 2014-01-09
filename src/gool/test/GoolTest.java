@@ -539,10 +539,14 @@ public class GoolTest {
 	public void simpleCase() throws Exception {
 		String input = TestHelper
 				.surroundWithClassMain(
-						"int x = 10; int res; switch (x) { case 1: res = 1; break; case 10 : res = 10; break; default : res = 20; } System.out.println(res);",
+						"int x = 10; int res = 0; switch (x) { case 1: res += 1; res += 2; case 10 : res += 10; default : res += 100; } System.out.println(res);",
 						MAIN_CLASS_NAME);
-		String expected = "10";
-	
+		String expected = "110";
+		excludePlatformForThisTest((Platform) CSharpPlatform.getInstance());
+		excludePlatformForThisTest((Platform) CppPlatform.getInstance());
+		excludePlatformForThisTest((Platform) PythonPlatform.getInstance());
+		excludePlatformForThisTest((Platform) AndroidPlatform.getInstance());
+		excludePlatformForThisTest((Platform) ObjcPlatform.getInstance());
 		compareResultsDifferentPlatforms(input, expected);
 	}
 

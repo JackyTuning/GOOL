@@ -27,6 +27,7 @@ import gool.ast.core.ArrayNew;
 import gool.ast.core.Assign;
 import gool.ast.core.BinaryOperation;
 import gool.ast.core.Block;
+import gool.ast.core.Case;
 import gool.ast.core.CastExpression;
 import gool.ast.core.Catch;
 import gool.ast.core.ClassDef;
@@ -60,6 +61,7 @@ import gool.ast.core.ParentCall;
 import gool.ast.core.RecognizedDependency;
 import gool.ast.core.Return;
 import gool.ast.core.Statement;
+import gool.ast.core.Switch;
 import gool.ast.core.ThisCall;
 import gool.ast.core.Throw;
 import gool.ast.core.ToStringCall;
@@ -801,7 +803,21 @@ public class JavaRecognizer extends TreePathScanner<Object, Context> {
 
 	@Override
 	public Object visitCase(CaseTree n, Context context) {
-		return new ExpressionUnknown(goolType(n, context), n.toString());
+		Expression expression = null;
+		if (n.getExpression() != null) {
+			expression = (Expression) n.getExpression().accept(this,
+					context);					
+		}
+		
+		List<Statement> statements = new ArrayList<Statement>();
+
+		for (StatementTree stmt : n.getStatements()) {
+			Statement statement = (Statement) stmt.accept(this, context);
+			if (statement != null) {
+				statements.add(statement);
+			}
+		}		
+		return new Case(expression, statements);
 	}
 
 	@Override
@@ -866,7 +882,14 @@ public class JavaRecognizer extends TreePathScanner<Object, Context> {
 
 	@Override
 	public Object visitSwitch(SwitchTree node, Context p) {
-		return new ExpressionUnknown(goolType(node, p), node.toString());
+		List<? extends CaseTree> javaCases = node.getCases();
+		List<Case> cases = new ArrayList<Case>();
+		for (CaseTree javaCase : javaCases) {
+			Case casestatelent = (Case) (javaCase.accept(this, p));
+			cases.add(casestatelent);
+		}
+		Expression expression = (Expression) node.getExpression().accept(this,p);
+		return new Switch(expression, cases);
 	}
 
 	@Override

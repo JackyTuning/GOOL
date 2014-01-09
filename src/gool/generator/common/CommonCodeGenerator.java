@@ -22,6 +22,7 @@ import gool.ast.core.ArrayNew;
 import gool.ast.core.Assign;
 import gool.ast.core.BinaryOperation;
 import gool.ast.core.Block;
+import gool.ast.core.Case;
 import gool.ast.core.CastExpression;
 import gool.ast.core.ClassDef;
 import gool.ast.core.ClassFree;
@@ -49,6 +50,7 @@ import gool.ast.core.Package;
 import gool.ast.core.RecognizedDependency;
 import gool.ast.core.Return;
 import gool.ast.core.Statement;
+import gool.ast.core.Switch;
 import gool.ast.core.This;
 import gool.ast.core.ThisCall;
 import gool.ast.core.TypeDependency;
@@ -651,4 +653,28 @@ public abstract class CommonCodeGenerator implements CodeGenerator {
 				+ " unrecognized by GOOL, passed on. */";
 	}
 
+	@Override
+	public String getCode(Switch switchStatement) {
+		String out = formatIndented("switch (%s) {\n", switchStatement.getExpression());
+		for (Case c : switchStatement.getCases()) {
+			out += " " + c;
+		}		
+		out += "} \n";
+		return out;
+	}
+
+	@Override
+	public String getCode(Case caseStatement) {
+		String out;
+		if (caseStatement.getCondition() == null) {
+			out = formatIndented("default :", caseStatement.getCondition());
+		} else {			
+			out = formatIndented("case %s :", caseStatement.getCondition());
+		}
+		for (Statement statement : caseStatement.getStatements()) {
+			out += " " + statement + " ; ";
+		}
+		return out;
+	}
+	
 }

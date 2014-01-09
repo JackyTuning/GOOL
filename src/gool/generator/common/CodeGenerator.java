@@ -22,6 +22,8 @@ import gool.ast.core.ArrayNew;
 import gool.ast.core.Assign;
 import gool.ast.core.BinaryOperation;
 import gool.ast.core.Block;
+import gool.ast.core.Case;
+import gool.ast.core.Switch;
 import gool.ast.core.CastExpression;
 import gool.ast.core.Catch;
 import gool.ast.core.ClassDef;
@@ -441,5 +443,9 @@ public interface CodeGenerator {
 	String getCode(RecognizedDependency recognizedDependency);
 
 	String getCode(UnrecognizedDependency unrecognizedDependency);
+	
+	String getCode(Switch switchStatement);
+
+	String getCode(Case caseStatement);
 
 }
