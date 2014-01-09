@@ -132,6 +132,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.lang.Math;
 
 import javax.lang.model.type.ArrayType;
 import javax.lang.model.type.ExecutableType;

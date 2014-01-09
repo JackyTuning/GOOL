@@ -1,0 +1,4 @@
+	[method] exp (TypeDecimal) : TypeDecimal
+	[method] log (TypeDecimal) : TypeDecimal
+	[method] pow (TypeDecimal,TypeDecimal) : TypeDecimal
+

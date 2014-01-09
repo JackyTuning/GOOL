@@ -260,6 +260,70 @@ public class GoolTest {
 
 		compareResultsDifferentPlatforms(input, expected);
 	}
+	
+	@Test
+	public void simpleExp() throws Exception {
+		String input = "import java.lang.Math;"+
+				TestHelper.surroundWithClassMain(
+				"double y = Math.exp(0);"+
+				"System.out.println(y);", MAIN_CLASS_NAME);
+		String expected = "1.0";
+		compareResultsDifferentPlatforms(input, expected);
+
+		// Matching of the io GOOL library with classes and methods
+		// of the output language work only for the Java target at the moment,
+		// so we exclude the other platforms for this test.
+		excludePlatformForThisTest((Platform) CSharpPlatform.getInstance());
+		excludePlatformForThisTest((Platform) CppPlatform.getInstance());
+		excludePlatformForThisTest((Platform) PythonPlatform.getInstance());
+		excludePlatformForThisTest((Platform) AndroidPlatform.getInstance());
+		excludePlatformForThisTest((Platform) ObjcPlatform.getInstance());
+
+		compareResultsDifferentPlatforms(input, expected);
+	}
+	
+	@Test
+	public void simpleLog() throws Exception {
+		String input = "import java.lang.Math;"+
+				TestHelper.surroundWithClassMain(
+				"double y = Math.log(1);"+
+				"System.out.println(y);", MAIN_CLASS_NAME);
+		String expected = "0.0";
+		compareResultsDifferentPlatforms(input, expected);
+
+		// Matching of the io GOOL library with classes and methods
+		// of the output language work only for the Java target at the moment,
+		// so we exclude the other platforms for this test.
+		excludePlatformForThisTest((Platform) CSharpPlatform.getInstance());
+		excludePlatformForThisTest((Platform) CppPlatform.getInstance());
+		excludePlatformForThisTest((Platform) PythonPlatform.getInstance());
+		excludePlatformForThisTest((Platform) AndroidPlatform.getInstance());
+		excludePlatformForThisTest((Platform) ObjcPlatform.getInstance());
+
+		compareResultsDifferentPlatforms(input, expected);
+	}
+	
+	@Test
+	public void simplePow() throws Exception {
+		String input = "import java.lang.Math;"+
+				TestHelper.surroundWithClassMain(
+				"double y = Math.pow(2,3);"+
+				"System.out.println(y);", MAIN_CLASS_NAME);
+		String expected = "8.0";
+		compareResultsDifferentPlatforms(input, expected);
+
+		// Matching of the io GOOL library with classes and methods
+		// of the output language work only for the Java target at the moment,
+		// so we exclude the other platforms for this test.
+		excludePlatformForThisTest((Platform) CSharpPlatform.getInstance());
+		excludePlatformForThisTest((Platform) CppPlatform.getInstance());
+		excludePlatformForThisTest((Platform) PythonPlatform.getInstance());
+		excludePlatformForThisTest((Platform) AndroidPlatform.getInstance());
+		excludePlatformForThisTest((Platform) ObjcPlatform.getInstance());
+
+		compareResultsDifferentPlatforms(input, expected);
+	}
+	
 
 	@Test
 	public void simpleTryCatch() throws Exception {
