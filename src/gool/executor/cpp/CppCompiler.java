@@ -99,7 +99,15 @@ public class CppCompiler extends SpecificCompiler {
 
 		Map<String, String> env = new HashMap<String, String>();
 
-		params.addAll(Arrays.asList("./" + file.getName()));
+		
+		if(IS_WINDOWS)
+		{
+			params.addAll(Arrays.asList("../GOOLOUTPUTCPP/" + file.getName()));
+		}
+		else
+		{
+			params.addAll(Arrays.asList("./" + file.getName()));
+		}
 		return Command.exec(getOutputDir(), params, env);
 	}
 
