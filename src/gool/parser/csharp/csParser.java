@@ -18810,6 +18810,14 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		attributes_return attributes575;
+		get_accessor_declaration_return get_accessor_declaration576;
+		attributes_return attributes577;
+		set_accessor_declaration_return set_accessor_declaration578;
+		set_accessor_declaration_return set_accessor_declaration579;
+		attributes_return attributes580;
+		get_accessor_declaration_return get_accessor_declaration581;
 	};
 
 
@@ -18822,13 +18830,13 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope attributes575 =null;
-		ParserRuleReturnScope get_accessor_declaration576 =null;
-		ParserRuleReturnScope attributes577 =null;
-		ParserRuleReturnScope set_accessor_declaration578 =null;
-		ParserRuleReturnScope set_accessor_declaration579 =null;
-		ParserRuleReturnScope attributes580 =null;
-		ParserRuleReturnScope get_accessor_declaration581 =null;
+		attributes_return attributes575 =null;
+		get_accessor_declaration_return get_accessor_declaration576 =null;
+		attributes_return attributes577 =null;
+		set_accessor_declaration_return set_accessor_declaration578 =null;
+		set_accessor_declaration_return set_accessor_declaration579 =null;
+		attributes_return attributes580 =null;
+		get_accessor_declaration_return get_accessor_declaration581 =null;
 
 
 		try {
@@ -18852,6 +18860,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_attributes_in_accessor_declarations8082);
 					attributes575=attributes();
+					retval.attributes575 = attributes575;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes575.getTree());
@@ -18914,6 +18923,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_get_accessor_declaration_in_accessor_declarations8102);
 					get_accessor_declaration576=get_accessor_declaration();
+					retval.get_accessor_declaration576=get_accessor_declaration576;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, get_accessor_declaration576.getTree());
@@ -18930,6 +18940,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_attributes_in_accessor_declarations8106);
 							attributes577=attributes();
+							retval.attributes577=attributes577;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes577.getTree());
@@ -18951,6 +18962,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_set_accessor_declaration_in_accessor_declarations8111);
 							set_accessor_declaration578=set_accessor_declaration();
+							retval.set_accessor_declaration578=set_accessor_declaration578;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, set_accessor_declaration578.getTree());
@@ -18967,6 +18979,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_set_accessor_declaration_in_accessor_declarations8132);
 					set_accessor_declaration579=set_accessor_declaration();
+					retval.set_accessor_declaration579=set_accessor_declaration579;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, set_accessor_declaration579.getTree());
@@ -18983,6 +18996,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_attributes_in_accessor_declarations8136);
 							attributes580=attributes();
+							retval.attributes580=attributes580;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes580.getTree());
@@ -19004,6 +19018,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_get_accessor_declaration_in_accessor_declarations8141);
 							get_accessor_declaration581=get_accessor_declaration();
+							retval.get_accessor_declaration581=get_accessor_declaration581;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, get_accessor_declaration581.getTree());
@@ -19046,6 +19061,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		accessor_modifier_return accessor_modifier582;
+		accessor_body_return accessor_body584;
 	};
 
 
@@ -19059,8 +19077,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal583=null;
-		ParserRuleReturnScope accessor_modifier582 =null;
-		ParserRuleReturnScope accessor_body584 =null;
+		accessor_modifier_return accessor_modifier582 =null;
+		accessor_body_return accessor_body584 =null;
 
 		CommonTree string_literal583_tree=null;
 
@@ -19085,6 +19103,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_accessor_modifier_in_get_accessor_declaration8158);
 					accessor_modifier582=accessor_modifier();
+					retval.accessor_modifier582=accessor_modifier582;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_modifier582.getTree());
@@ -19102,6 +19121,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_accessor_body_in_get_accessor_declaration8167);
 			accessor_body584=accessor_body();
+			retval.accessor_body584=accessor_body584;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_body584.getTree());
@@ -19134,6 +19154,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		accessor_modifier_return accessor_modifier585;
+		accessor_body_return accessor_body587;
 	};
 
 
@@ -19147,8 +19170,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal586=null;
-		ParserRuleReturnScope accessor_modifier585 =null;
-		ParserRuleReturnScope accessor_body587 =null;
+		accessor_modifier_return accessor_modifier585 =null;
+		accessor_body_return accessor_body587 =null;
 
 		CommonTree string_literal586_tree=null;
 
@@ -19173,6 +19196,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_accessor_modifier_in_set_accessor_declaration8182);
 					accessor_modifier585=accessor_modifier();
+					retval.accessor_modifier585=accessor_modifier585;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_modifier585.getTree());
@@ -19190,6 +19214,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_accessor_body_in_set_accessor_declaration8191);
 			accessor_body587=accessor_body();
+			retval.accessor_body587=accessor_body587;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_body587.getTree());
@@ -19222,6 +19247,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		Token set588;
 	};
 
 
@@ -19248,6 +19275,7 @@ public class csParser extends Parser {
 
 
 			set588=input.LT(1);
+			retval.set588=set588;
 			if ( input.LA(1)==140||input.LA(1)==161||(input.LA(1) >= 163 && input.LA(1) <= 164) ) {
 				input.consume();
 				if ( state.backtracking==0 ) adaptor.addChild(root_0, (CommonTree)adaptor.create(set588));
@@ -19287,6 +19315,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		block_return block589;
 	};
 
 
@@ -19299,7 +19329,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope block589 =null;
+		block_return block589 =null;
 
 
 		try {
@@ -19313,6 +19343,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_block_in_accessor_body8233);
 			block589=block();
+			retval.block589=block589;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, block589.getTree());
@@ -19345,6 +19376,11 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		type_return type591;
+		member_name_return member_name592;
+		event_accessor_declarations_return event_accessor_declarations594;
+		variable_declarators_return variable_declarators596;
 	};
 
 
@@ -19361,10 +19397,10 @@ public class csParser extends Parser {
 		Token char_literal593=null;
 		Token char_literal595=null;
 		Token char_literal597=null;
-		ParserRuleReturnScope type591 =null;
-		ParserRuleReturnScope member_name592 =null;
-		ParserRuleReturnScope event_accessor_declarations594 =null;
-		ParserRuleReturnScope variable_declarators596 =null;
+		type_return type591 =null;
+		member_name_return member_name592 =null;
+		event_accessor_declarations_return event_accessor_declarations594 =null;
+		variable_declarators_return variable_declarators596 =null;
 
 		CommonTree string_literal590_tree=null;
 		CommonTree char_literal593_tree=null;
@@ -19418,6 +19454,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_member_name_in_event_declaration8283);
 					member_name592=member_name();
+					retval.member_name592=member_name592;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_name592.getTree());
@@ -19430,6 +19467,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_event_accessor_declarations_in_event_declaration8291);
 					event_accessor_declarations594=event_accessor_declarations();
+					retval.event_accessor_declarations594=event_accessor_declarations594;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, event_accessor_declarations594.getTree());
@@ -19447,6 +19485,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_variable_declarators_in_event_declaration8315);
 					variable_declarators596=variable_declarators();
+					retval.variable_declarators596=variable_declarators596;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_declarators596.getTree());
@@ -19490,6 +19529,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		modifier_return modifier598;
 	};
 
 
@@ -19502,7 +19543,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope modifier598 =null;
+		modifier_return modifier598 =null;
 
 
 		try {
@@ -19530,6 +19571,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_modifier_in_event_modifiers8359);
 					modifier598=modifier();
+					retval.modifier598=modifier598;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier598.getTree());
@@ -19574,6 +19616,14 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		attributes_return attributes599;
+		add_accessor_declaration_return add_accessor_declaration600;
+		attributes_return attributes601;
+		remove_accessor_declaration_return remove_accessor_declaration602;
+		remove_accessor_declaration_return remove_accessor_declaration603;
+		attributes_return attributes604;
+		add_accessor_declaration_return add_accessor_declaration605;
 	};
 
 
@@ -19586,13 +19636,13 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope attributes599 =null;
-		ParserRuleReturnScope add_accessor_declaration600 =null;
-		ParserRuleReturnScope attributes601 =null;
-		ParserRuleReturnScope remove_accessor_declaration602 =null;
-		ParserRuleReturnScope remove_accessor_declaration603 =null;
-		ParserRuleReturnScope attributes604 =null;
-		ParserRuleReturnScope add_accessor_declaration605 =null;
+		attributes_return attributes599 =null;
+		add_accessor_declaration_return add_accessor_declaration600 =null;
+		attributes_return attributes601 =null;
+		remove_accessor_declaration_return remove_accessor_declaration602 =null;
+		remove_accessor_declaration_return remove_accessor_declaration603 =null;
+		attributes_return attributes604 =null;
+		add_accessor_declaration_return add_accessor_declaration605 =null;
 
 
 		try {
@@ -19616,6 +19666,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_attributes_in_event_accessor_declarations8375);
 					attributes599=attributes();
+					retval.attributes599=attributes599;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes599.getTree());
@@ -19651,6 +19702,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_add_accessor_declaration_in_event_accessor_declarations8382);
 					add_accessor_declaration600=add_accessor_declaration();
+					retval.add_accessor_declaration600=add_accessor_declaration600;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, add_accessor_declaration600.getTree());
@@ -19667,6 +19719,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_attributes_in_event_accessor_declarations8386);
 							attributes601=attributes();
+							retval.attributes601=attributes601;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes601.getTree());
@@ -19678,6 +19731,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_remove_accessor_declaration_in_event_accessor_declarations8391);
 					remove_accessor_declaration602=remove_accessor_declaration();
+					retval.remove_accessor_declaration602=remove_accessor_declaration602;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, remove_accessor_declaration602.getTree());
@@ -19694,6 +19748,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_remove_accessor_declaration_in_event_accessor_declarations8419);
 					remove_accessor_declaration603=remove_accessor_declaration();
+					retval.remove_accessor_declaration603=remove_accessor_declaration603;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, remove_accessor_declaration603.getTree());
@@ -19710,6 +19765,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_attributes_in_event_accessor_declarations8423);
 							attributes604=attributes();
+							retval.attributes604=attributes604;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes604.getTree());
@@ -19721,6 +19777,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_add_accessor_declaration_in_event_accessor_declarations8428);
 					add_accessor_declaration605=add_accessor_declaration();
+					retval.add_accessor_declaration605=add_accessor_declaration605;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, add_accessor_declaration605.getTree());
@@ -19760,6 +19817,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		block_return block607;
 	};
 
 
@@ -19773,7 +19832,7 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal606=null;
-		ParserRuleReturnScope block607 =null;
+		block_return block607 =null;
 
 		CommonTree string_literal606_tree=null;
 
@@ -19794,6 +19853,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_block_in_add_accessor_declaration8449);
 			block607=block();
+			retval.block607=block607;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, block607.getTree());
@@ -19826,6 +19886,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		block_return block609;
 	};
 
 
@@ -19839,7 +19901,7 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal608=null;
-		ParserRuleReturnScope block609 =null;
+		block_return block609 =null;
 
 		CommonTree string_literal608_tree=null;
 
@@ -19860,6 +19922,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_block_in_remove_accessor_declaration8468);
 			block609=block();
+			retval.block609=block609;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, block609.getTree());
@@ -19892,6 +19955,10 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		identifier_return identifier611;
+		enum_base_return enum_base612;
+		enum_body_return enum_body613;
 	};
 
 
@@ -19906,9 +19973,9 @@ public class csParser extends Parser {
 
 		Token string_literal610=null;
 		Token char_literal614=null;
-		ParserRuleReturnScope identifier611 =null;
-		ParserRuleReturnScope enum_base612 =null;
-		ParserRuleReturnScope enum_body613 =null;
+		identifier_return identifier611 =null;
+		enum_base_return enum_base612 =null;
+		enum_body_return enum_body613 =null;
 
 		CommonTree string_literal610_tree=null;
 		CommonTree char_literal614_tree=null;
@@ -19930,6 +19997,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_identifier_in_enum_declaration8491);
 			identifier611=identifier();
+			retval.identifier611=identifier611;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier611.getTree());
@@ -19946,6 +20014,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_enum_base_in_enum_declaration8495);
 					enum_base612=enum_base();
+					retval.enum_base612=enum_base612;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_base612.getTree());
@@ -19957,6 +20026,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_enum_body_in_enum_declaration8500);
 			enum_body613=enum_body();
+			retval.enum_body613=enum_body613;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_body613.getTree());
@@ -20010,6 +20080,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		integral_type_return integral_type616;
 	};
 
 
@@ -20023,7 +20095,7 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal615=null;
-		ParserRuleReturnScope integral_type616 =null;
+		integral_type_return integral_type616 =null;
 
 		CommonTree char_literal615_tree=null;
 
@@ -20044,6 +20116,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_integral_type_in_enum_base8524);
 			integral_type616=integral_type();
+			retval.integral_type616=integral_type616;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, integral_type616.getTree());
@@ -20076,6 +20149,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		enum_member_declaration_return enum_member_declarations618;
 	};
 
 
@@ -20091,7 +20166,7 @@ public class csParser extends Parser {
 		Token char_literal617=null;
 		Token char_literal619=null;
 		Token char_literal620=null;
-		ParserRuleReturnScope enum_member_declarations618 =null;
+		enum_member_declaration_return enum_member_declarations618 =null;
 
 		CommonTree char_literal617_tree=null;
 		CommonTree char_literal619_tree=null;
@@ -20124,6 +20199,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_enum_member_declarations_in_enum_body8542);
 					enum_member_declarations618=enum_member_declarations();
+					retval.enum_member_declarations618=enum_member_declarations618;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declarations618.getTree());
@@ -20188,6 +20264,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		enum_member_declaration_return enum_member_declaration621;
+		enum_member_declaration_return enum_member_declaration623;
 	};
 
 
@@ -20201,8 +20280,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal622=null;
-		ParserRuleReturnScope enum_member_declaration621 =null;
-		ParserRuleReturnScope enum_member_declaration623 =null;
+		enum_member_declaration_return enum_member_declaration621 =null;
+		enum_member_declaration_return enum_member_declaration623 =null;
 
 		CommonTree char_literal622_tree=null;
 
@@ -20217,6 +20296,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_enum_member_declaration_in_enum_member_declarations8566);
 			enum_member_declaration621=enum_member_declaration();
+			retval.enum_member_declaration621=enum_member_declaration621;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declaration621.getTree());
@@ -20246,6 +20326,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_enum_member_declaration_in_enum_member_declarations8571);
 					enum_member_declaration623=enum_member_declaration();
+					retval.enum_member_declaration623=enum_member_declaration623;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declaration623.getTree());
@@ -20286,6 +20367,10 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		attributes_return attributes624;
+		identifier_return identifier625;
+		expression_return expression627;
 	};
 
 
@@ -20299,9 +20384,9 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal626=null;
-		ParserRuleReturnScope attributes624 =null;
-		ParserRuleReturnScope identifier625 =null;
-		ParserRuleReturnScope expression627 =null;
+		attributes_return attributes624 =null;
+		identifier_return identifier625 =null;
+		expression_return expression627 =null;
 
 		CommonTree char_literal626_tree=null;
 
@@ -20326,6 +20411,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_attributes_in_enum_member_declaration8588);
 					attributes624=attributes();
+					retval.attributes624=attributes624;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes624.getTree());
@@ -20337,6 +20423,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_identifier_in_enum_member_declaration8593);
 			identifier625=identifier();
+			retval.identifier625=identifier625;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier625.getTree());
@@ -20359,6 +20446,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_expression_in_enum_member_declaration8602);
 					expression627=expression();
+					retval.expression627=expression627;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression627.getTree());
@@ -20396,6 +20484,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		Token set628;
 	};
 
 
@@ -20422,6 +20512,7 @@ public class csParser extends Parser {
 
 
 			set628=input.LT(1);
+			retval.set628=set628;
 			if ( input.LA(1)==106||input.LA(1)==109||input.LA(1)==138||input.LA(1)==146||input.LA(1)==169||input.LA(1)==173||(input.LA(1) >= 185 && input.LA(1) <= 186)||input.LA(1)==189 ) {
 				input.consume();
 				if ( state.backtracking==0 ) adaptor.addChild(root_0, (CommonTree)adaptor.create(set628));
@@ -20461,6 +20552,12 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		return_type_return return_type630;
+		identifier_return identifier631;
+		variant_generic_parameter_list_return variant_generic_parameter_list632;
+		formal_parameter_list_return formal_parameter_list634;
+		type_parameter_constraints_clauses_return type_parameter_constraints_clauses636;
 	};
 
 
@@ -20477,11 +20574,11 @@ public class csParser extends Parser {
 		Token char_literal633=null;
 		Token char_literal635=null;
 		Token char_literal637=null;
-		ParserRuleReturnScope return_type630 =null;
-		ParserRuleReturnScope identifier631 =null;
-		ParserRuleReturnScope variant_generic_parameter_list632 =null;
-		ParserRuleReturnScope formal_parameter_list634 =null;
-		ParserRuleReturnScope type_parameter_constraints_clauses636 =null;
+		return_type_return return_type630 =null;
+		identifier_return identifier631 =null;
+		variant_generic_parameter_list_return variant_generic_parameter_list632 =null;
+		formal_parameter_list_return formal_parameter_list634 =null;
+		type_parameter_constraints_clauses_return type_parameter_constraints_clauses636 =null;
 
 		CommonTree string_literal629_tree=null;
 		CommonTree char_literal633_tree=null;
@@ -20505,12 +20602,14 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_return_type_in_delegate_declaration8677);
 			return_type630=return_type();
+			retval.return_type630=return_type630;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, return_type630.getTree());
 
 			pushFollow(FOLLOW_identifier_in_delegate_declaration8681);
 			identifier631=identifier();
+			retval.identifier631=identifier631;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier631.getTree());
@@ -20527,6 +20626,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_variant_generic_parameter_list_in_delegate_declaration8684);
 					variant_generic_parameter_list632=variant_generic_parameter_list();
+					retval.variant_generic_parameter_list632=variant_generic_parameter_list632;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_generic_parameter_list632.getTree());
@@ -20554,6 +20654,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_formal_parameter_list_in_delegate_declaration8710);
 					formal_parameter_list634=formal_parameter_list();
+					retval.formal_parameter_list634=formal_parameter_list634;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list634.getTree());
@@ -20581,6 +20682,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_delegate_declaration8719);
 					type_parameter_constraints_clauses636=type_parameter_constraints_clauses();
+					retval.type_parameter_constraints_clauses636=type_parameter_constraints_clauses636;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses636.getTree());
@@ -20624,6 +20726,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		modifier_return modifier638;
 	};
 
 
@@ -20636,7 +20740,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope modifier638 =null;
+		modifier_return modifier638 =null;
 
 
 		try {
@@ -20664,6 +20768,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_modifier_in_delegate_modifiers8739);
 					modifier638=modifier();
+					retval.modifier638=modifier638;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier638.getTree());
@@ -20708,6 +20813,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		variant_type_parameters_return variant_type_parameters640;
 	};
 
 
@@ -20722,7 +20829,7 @@ public class csParser extends Parser {
 
 		Token char_literal639=null;
 		Token char_literal641=null;
-		ParserRuleReturnScope variant_type_parameters640 =null;
+		variant_type_parameters_return variant_type_parameters640 =null;
 
 		CommonTree char_literal639_tree=null;
 		CommonTree char_literal641_tree=null;
@@ -20744,6 +20851,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_variant_type_parameters_in_variant_generic_parameter_list8760);
 			variant_type_parameters640=variant_type_parameters();
+			retval.variant_type_parameters640=variant_type_parameters640;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_type_parameters640.getTree());
@@ -20782,6 +20890,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		variant_type_variable_name_return variant_type_variable_name642;
+		variant_type_variable_name_return variant_type_variable_name644;
 	};
 
 
@@ -20795,8 +20906,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal643=null;
-		ParserRuleReturnScope variant_type_variable_name642 =null;
-		ParserRuleReturnScope variant_type_variable_name644 =null;
+		variant_type_variable_name_return variant_type_variable_name642 =null;
+		variant_type_variable_name_return variant_type_variable_name644 =null;
 
 		CommonTree char_literal643_tree=null;
 
@@ -20811,6 +20922,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_variant_type_variable_name_in_variant_type_parameters8779);
 			variant_type_variable_name642=variant_type_variable_name();
+			retval.variant_type_variable_name642=variant_type_variable_name642;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_type_variable_name642.getTree());
@@ -20836,6 +20948,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_variant_type_variable_name_in_variant_type_parameters8784);
 					variant_type_variable_name644=variant_type_variable_name();
+					retval.variant_type_variable_name644=variant_type_variable_name644;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_type_variable_name644.getTree());
@@ -20876,6 +20989,11 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		attributes_return attributes645;
+		variance_annotation_return variance_annotation646;
+		type_variable_name_return type_variable_name647;
+
 	};
 
 
@@ -20888,9 +21006,9 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope attributes645 =null;
-		ParserRuleReturnScope variance_annotation646 =null;
-		ParserRuleReturnScope type_variable_name647 =null;
+		attributes_return attributes645 =null;
+		variance_annotation_return variance_annotation646 =null;
+		type_variable_name_return type_variable_name647 =null;
 
 
 		try {
@@ -20914,6 +21032,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_attributes_in_variant_type_variable_name8801);
 					attributes645=attributes();
+					retval.attributes645=attributes645;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes645.getTree());
@@ -20935,6 +21054,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_variance_annotation_in_variant_type_variable_name8806);
 					variance_annotation646=variance_annotation();
+					retval.variance_annotation646=variance_annotation646;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variance_annotation646.getTree());
@@ -20946,6 +21066,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_variable_name_in_variant_type_variable_name8811);
 			type_variable_name647=type_variable_name();
+			retval.type_variable_name647=type_variable_name647;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_variable_name647.getTree());
@@ -20978,6 +21099,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		Token set648;
 	};
 
 
@@ -21004,6 +21127,7 @@ public class csParser extends Parser {
 
 
 			set648=input.LT(1);
+			retval.set648=set648;
 			if ( input.LA(1)==137||input.LA(1)==155 ) {
 				input.consume();
 				if ( state.backtracking==0 ) adaptor.addChild(root_0, (CommonTree)adaptor.create(set648));
@@ -21043,6 +21167,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		type_parameter_constraints_clause_return type_parameter_constraints_clause649;
+		type_parameter_constraints_clause_return type_parameter_constraints_clause651;
 	};
 
 
@@ -21056,8 +21183,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal650=null;
-		ParserRuleReturnScope type_parameter_constraints_clause649 =null;
-		ParserRuleReturnScope type_parameter_constraints_clause651 =null;
+		type_parameter_constraints_clause_return type_parameter_constraints_clause649 =null;
+		type_parameter_constraints_clause_return type_parameter_constraints_clause651 =null;
 
 		CommonTree char_literal650_tree=null;
 
@@ -21072,6 +21199,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_parameter_constraints_clause_in_type_parameter_constraints_clauses8846);
 			type_parameter_constraints_clause649=type_parameter_constraints_clause();
+			retval.type_parameter_constraints_clause649=type_parameter_constraints_clause649;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clause649.getTree());
@@ -21097,6 +21225,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_type_parameter_constraints_clause_in_type_parameter_constraints_clauses8855);
 					type_parameter_constraints_clause651=type_parameter_constraints_clause();
+					retval.type_parameter_constraints_clause651=type_parameter_constraints_clause651;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clause651.getTree());
@@ -21137,6 +21266,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		type_variable_name_return type_variable_name653;
+		type_parameter_constraint_list_return type_parameter_constraint_list655;
 	};
 
 
@@ -21151,8 +21283,8 @@ public class csParser extends Parser {
 
 		Token string_literal652=null;
 		Token char_literal654=null;
-		ParserRuleReturnScope type_variable_name653 =null;
-		ParserRuleReturnScope type_parameter_constraint_list655 =null;
+		type_variable_name_return type_variable_name653 =null;
+		type_parameter_constraint_list_return type_parameter_constraint_list655 =null;
 
 		CommonTree string_literal652_tree=null;
 		CommonTree char_literal654_tree=null;
@@ -21174,6 +21306,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_variable_name_in_type_parameter_constraints_clause8876);
 			type_variable_name653=type_variable_name();
+			retval.type_variable_name653=type_variable_name653;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_variable_name653.getTree());
@@ -21186,6 +21319,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_parameter_constraint_list_in_type_parameter_constraints_clause8884);
 			type_parameter_constraint_list655=type_parameter_constraint_list();
+			retval.type_parameter_constraint_list655=type_parameter_constraint_list655;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraint_list655.getTree());
@@ -21218,6 +21352,12 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		secondary_constraint_list_return secondary_constraint_list658;
+		constructor_constraint_return constructor_constraint660;
+		secondary_constraint_list_return secondary_constraint_list661;
+		constructor_constraint_return constructor_constraint663;
+		constructor_constraint_return constructor_constraint664;
 	};
 
 
@@ -21234,11 +21374,11 @@ public class csParser extends Parser {
 		Token char_literal657=null;
 		Token char_literal659=null;
 		Token char_literal662=null;
-		ParserRuleReturnScope secondary_constraint_list658 =null;
-		ParserRuleReturnScope constructor_constraint660 =null;
-		ParserRuleReturnScope secondary_constraint_list661 =null;
-		ParserRuleReturnScope constructor_constraint663 =null;
-		ParserRuleReturnScope constructor_constraint664 =null;
+		secondary_constraint_list_return secondary_constraint_list658 =null;
+		constructor_constraint_return constructor_constraint660 =null;
+		secondary_constraint_list_return secondary_constraint_list661 =null;
+		constructor_constraint_return constructor_constraint663 =null;
+		constructor_constraint_return constructor_constraint664 =null;
 
 		CommonTree set656_tree=null;
 		CommonTree char_literal657_tree=null;
@@ -21348,6 +21488,7 @@ public class csParser extends Parser {
 
 							pushFollow(FOLLOW_secondary_constraint_list_in_type_parameter_constraint_list8962);
 							secondary_constraint_list658=secondary_constraint_list();
+							retval.secondary_constraint_list658=secondary_constraint_list658;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint_list658.getTree());
@@ -21378,6 +21519,7 @@ public class csParser extends Parser {
 
 							pushFollow(FOLLOW_constructor_constraint_in_type_parameter_constraint_list8973);
 							constructor_constraint660=constructor_constraint();
+							retval.constructor_constraint660=constructor_constraint660;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_constraint660.getTree());
@@ -21397,6 +21539,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_secondary_constraint_list_in_type_parameter_constraint_list8987);
 					secondary_constraint_list661=secondary_constraint_list();
+					retval.secondary_constraint_list661=secondary_constraint_list661;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint_list661.getTree());
@@ -21422,6 +21565,7 @@ public class csParser extends Parser {
 
 							pushFollow(FOLLOW_constructor_constraint_in_type_parameter_constraint_list8996);
 							constructor_constraint663=constructor_constraint();
+							retval.constructor_constraint663=constructor_constraint663;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_constraint663.getTree());
@@ -21441,6 +21585,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_constructor_constraint_in_type_parameter_constraint_list9010);
 					constructor_constraint664=constructor_constraint();
+					retval.constructor_constraint664=constructor_constraint664;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_constraint664.getTree());
@@ -21475,6 +21620,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		secondary_constraint_return secondary_constraint665;
+		secondary_constraint_return secondary_constraint667;
 	};
 
 
@@ -21488,8 +21636,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal666=null;
-		ParserRuleReturnScope secondary_constraint665 =null;
-		ParserRuleReturnScope secondary_constraint667 =null;
+		secondary_constraint_return secondary_constraint665 =null;
+		secondary_constraint_return secondary_constraint667 =null;
 
 		CommonTree char_literal666_tree=null;
 
@@ -21504,6 +21652,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_secondary_constraint_in_secondary_constraint_list9029);
 			secondary_constraint665=secondary_constraint();
+			retval.secondary_constraint665=secondary_constraint665;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint665.getTree());
@@ -21540,6 +21689,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_secondary_constraint_in_secondary_constraint_list9034);
 					secondary_constraint667=secondary_constraint();
+					retval.secondary_constraint667=secondary_constraint667;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint667.getTree());
@@ -21580,6 +21730,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		type_name_return type_name668;
 	};
 
 
@@ -21592,7 +21744,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope type_name668 =null;
+		type_name_return type_name668 =null;
 
 
 		try {
@@ -21606,6 +21758,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_name_in_secondary_constraint9051);
 			type_name668=type_name();
+			retval.type_name668=type_name668;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name668.getTree());
@@ -21638,6 +21791,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		identifier_return identifier669;
 	};
 
 
@@ -21650,7 +21805,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope identifier669 =null;
+		identifier_return identifier669 =null;
 
 
 		try {
@@ -21664,6 +21819,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_identifier_in_type_variable_name9075);
 			identifier669=identifier();
+			retval.identifier669=identifier669;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier669.getTree());
@@ -21696,6 +21852,10 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		Token string_literal670;
+		Token char_literal671;
+		Token char_literal672;
 	};
 
 
@@ -21724,20 +21884,20 @@ public class csParser extends Parser {
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
-
-			string_literal670=(Token)match(input,150,FOLLOW_150_in_constructor_constraint9090); if (state.failed) return retval;
+			
+			retval.string_literal670 = string_literal670=(Token)match(input,150,FOLLOW_150_in_constructor_constraint9090); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
 			string_literal670_tree = (CommonTree)adaptor.create(string_literal670);
 			adaptor.addChild(root_0, string_literal670_tree);
 			}
 
-			char_literal671=(Token)match(input,68,FOLLOW_68_in_constructor_constraint9094); if (state.failed) return retval;
+			retval.char_literal671 = char_literal671=(Token)match(input,68,FOLLOW_68_in_constructor_constraint9094); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
 			char_literal671_tree = (CommonTree)adaptor.create(char_literal671);
 			adaptor.addChild(root_0, char_literal671_tree);
 			}
 
-			char_literal672=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_constructor_constraint9098); if (state.failed) return retval;
+			retval.char_literal672 = char_literal672=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_constructor_constraint9098); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
 			char_literal672_tree = (CommonTree)adaptor.create(char_literal672);
 			adaptor.addChild(root_0, char_literal672_tree);
@@ -21771,6 +21931,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		type_return type673;
 	};
 
 
@@ -21784,7 +21946,7 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal674=null;
-		ParserRuleReturnScope type673 =null;
+		type_return type673 =null;
 
 		CommonTree string_literal674_tree=null;
 
@@ -21837,6 +21999,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_type_in_return_type9113);
 					type673=type();
+					retval.type673=type673;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type673.getTree());
@@ -21885,6 +22048,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		formal_parameters_return formal_parameter675;
+		formal_parameters_return formal_parameter677;
 	};
 
 
@@ -21898,8 +22064,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal676=null;
-		ParserRuleReturnScope formal_parameter675 =null;
-		ParserRuleReturnScope formal_parameter677 =null;
+		formal_parameters_return formal_parameter675 =null;
+		formal_parameters_return formal_parameter677 =null;
 
 		CommonTree char_literal676_tree=null;
 
@@ -21914,6 +22080,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_formal_parameter_in_formal_parameter_list9140);
 			formal_parameter675=formal_parameter();
+			retval.formal_parameter675=formal_parameter675;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter675.getTree());
@@ -21939,6 +22106,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_formal_parameter_in_formal_parameter_list9145);
 					formal_parameter677=formal_parameter();
+					retval.formal_parameter677=formal_parameter677;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter677.getTree());
@@ -21979,6 +22147,10 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		attributes_return attributes678;
+		fixed_parameter_return fixed_parameter679;
+		parameter_array_return parameter_array680;
 	};
 
 
@@ -21992,9 +22164,9 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal681=null;
-		ParserRuleReturnScope attributes678 =null;
-		ParserRuleReturnScope fixed_parameter679 =null;
-		ParserRuleReturnScope parameter_array680 =null;
+		attributes_return attributes678 =null;
+		fixed_parameter_return fixed_parameter679 =null;
+		parameter_array_return parameter_array680 =null;
 
 		CommonTree string_literal681_tree=null;
 
@@ -22057,6 +22229,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_attributes_in_formal_parameter9162);
 							attributes678=attributes();
+							retval.attributes678=attributes678;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes678.getTree());
@@ -22089,6 +22262,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_fixed_parameter_in_formal_parameter9168);
 							fixed_parameter679=fixed_parameter();
+							retval.fixed_parameter679=fixed_parameter679;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_parameter679.getTree());
@@ -22100,6 +22274,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_parameter_array_in_formal_parameter9172);
 							parameter_array680=parameter_array();
+							retval.parameter_array680=parameter_array680;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, parameter_array680.getTree());
@@ -22153,6 +22328,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		fixed_parameter_return fixed_parameter682;
+		fixed_parameter_return fixed_parameter684;
 	};
 
 
@@ -22166,8 +22344,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal683=null;
-		ParserRuleReturnScope fixed_parameter682 =null;
-		ParserRuleReturnScope fixed_parameter684 =null;
+		fixed_parameter_return fixed_parameter682 =null;
+		fixed_parameter_return fixed_parameter684 =null;
 
 		CommonTree char_literal683_tree=null;
 
@@ -22182,6 +22360,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_fixed_parameter_in_fixed_parameters9208);
 			fixed_parameter682=fixed_parameter();
+			retval.fixed_parameter682=fixed_parameter682;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_parameter682.getTree());
@@ -22207,6 +22386,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_fixed_parameter_in_fixed_parameters9217);
 					fixed_parameter684=fixed_parameter();
+					retval.fixed_parameter684=fixed_parameter684;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_parameter684.getTree());
@@ -22247,6 +22427,11 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		parameter_modifier_return parameter_modifier685;
+		type_return type686;
+		identifier_return identifier687;
+		default_argument_return default_argument688;
 	};
 
 
@@ -22259,10 +22444,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope parameter_modifier685 =null;
-		ParserRuleReturnScope type686 =null;
-		ParserRuleReturnScope identifier687 =null;
-		ParserRuleReturnScope default_argument688 =null;
+		parameter_modifier_return parameter_modifier685 =null;
+		type_return type686 =null;
+		identifier_return identifier687 =null;
+		default_argument_return default_argument688 =null;
 
 
 		try {
@@ -22286,6 +22471,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_parameter_modifier_in_fixed_parameter9235);
 					parameter_modifier685=parameter_modifier();
+					retval.parameter_modifier685=parameter_modifier685;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, parameter_modifier685.getTree());
@@ -22297,12 +22483,14 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_in_fixed_parameter9240);
 			type686=type();
+			retval.type686=type686;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type686.getTree());
 
 			pushFollow(FOLLOW_identifier_in_fixed_parameter9244);
 			identifier687=identifier();
+			retval.identifier687=identifier687;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier687.getTree());
@@ -22319,6 +22507,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_default_argument_in_fixed_parameter9248);
 					default_argument688=default_argument();
+					retval.default_argument688=default_argument688;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, default_argument688.getTree());
@@ -22356,6 +22545,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		expression_return expression690;
 	};
 
 
@@ -22369,7 +22560,7 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal689=null;
-		ParserRuleReturnScope expression690 =null;
+		expression_return expression690 =null;
 
 		CommonTree char_literal689_tree=null;
 
@@ -22390,6 +22581,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_expression_in_default_argument9267);
 			expression690=expression();
+			retval.expression690=expression690;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression690.getTree());
@@ -22422,6 +22614,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		Token set691;
 	};
 
 
@@ -22448,6 +22642,7 @@ public class csParser extends Parser {
 
 
 			set691=input.LT(1);
+			retval.set691=set691;
 			if ( input.LA(1)==155||input.LA(1)==166||input.LA(1)==180 ) {
 				input.consume();
 				if ( state.backtracking==0 ) adaptor.addChild(root_0, (CommonTree)adaptor.create(set691));
@@ -22487,6 +22682,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		type_return type693;
+		identifier_return identifier694;
 	};
 
 
@@ -22500,8 +22698,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal692=null;
-		ParserRuleReturnScope type693 =null;
-		ParserRuleReturnScope identifier694 =null;
+		type_return type693 =null;
+		identifier_return identifier694 =null;
 
 		CommonTree string_literal692_tree=null;
 
@@ -22522,12 +22720,14 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_in_parameter_array9308);
 			type693=type();
+			retval.type693=type693;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type693.getTree());
 
 			pushFollow(FOLLOW_identifier_in_parameter_array9312);
 			identifier694=identifier();
+			retval.identifier694=identifier694;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier694.getTree());
@@ -22560,6 +22760,12 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		identifier_return identifier696;
+		variant_generic_parameter_list_return variant_generic_parameter_list697;
+		interface_base_return interface_base698;
+		type_parameter_constraints_clauses_return type_parameter_constraints_clauses699;
+		interface_body_return interface_body700;
 	};
 
 
@@ -22574,11 +22780,11 @@ public class csParser extends Parser {
 
 		Token string_literal695=null;
 		Token char_literal701=null;
-		ParserRuleReturnScope identifier696 =null;
-		ParserRuleReturnScope variant_generic_parameter_list697 =null;
-		ParserRuleReturnScope interface_base698 =null;
-		ParserRuleReturnScope type_parameter_constraints_clauses699 =null;
-		ParserRuleReturnScope interface_body700 =null;
+		identifier_return identifier696 =null;
+		variant_generic_parameter_list_return variant_generic_parameter_list697 =null;
+		interface_base_return interface_base698 =null;
+		type_parameter_constraints_clauses_return type_parameter_constraints_clauses699 =null;
+		interface_body_return interface_body700 =null;
 
 		CommonTree string_literal695_tree=null;
 		CommonTree char_literal701_tree=null;
@@ -22600,6 +22806,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_identifier_in_interface_declaration9333);
 			identifier696=identifier();
+			retval.identifier696=identifier696;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier696.getTree());
@@ -22616,6 +22823,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_variant_generic_parameter_list_in_interface_declaration9337);
 					variant_generic_parameter_list697=variant_generic_parameter_list();
+					retval.variant_generic_parameter_list697=variant_generic_parameter_list697;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_generic_parameter_list697.getTree());
@@ -22637,6 +22845,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_interface_base_in_interface_declaration9353);
 					interface_base698=interface_base();
+					retval.interface_base698=interface_base698;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_base698.getTree());
@@ -22658,6 +22867,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_interface_declaration9358);
 					type_parameter_constraints_clauses699=type_parameter_constraints_clauses();
+					retval.type_parameter_constraints_clauses699=type_parameter_constraints_clauses699;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses699.getTree());
@@ -22669,6 +22879,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_interface_body_in_interface_declaration9363);
 			interface_body700=interface_body();
+			retval.interface_body700=interface_body700;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_body700.getTree());
@@ -22722,6 +22933,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		modifier_return modifier702;
 	};
 
 
@@ -22734,7 +22947,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope modifier702 =null;
+		modifier_return modifier702 =null;
 
 
 		try {
@@ -22762,6 +22975,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_modifier_in_interface_modifiers9384);
 					modifier702=modifier();
+					retval.modifier702=modifier702;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier702.getTree());
@@ -22806,6 +23020,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		interface_type_list_return interface_type_list704;
 	};
 
 
@@ -22819,7 +23035,7 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token char_literal703=null;
-		ParserRuleReturnScope interface_type_list704 =null;
+		interface_type_list_return interface_type_list704 =null;
 
 		CommonTree char_literal703_tree=null;
 
@@ -22840,6 +23056,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_interface_type_list_in_interface_base9406);
 			interface_type_list704=interface_type_list();
+			retval.interface_type_list704=interface_type_list704;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_type_list704.getTree());
@@ -22872,6 +23089,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		interface_member_declarations_return interface_member_declarations706;
 	};
 
 
@@ -22886,7 +23105,7 @@ public class csParser extends Parser {
 
 		Token char_literal705=null;
 		Token char_literal707=null;
-		ParserRuleReturnScope interface_member_declarations706 =null;
+		interface_member_declarations_return interface_member_declarations706 =null;
 
 		CommonTree char_literal705_tree=null;
 		CommonTree char_literal707_tree=null;
@@ -22918,6 +23137,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_interface_member_declarations_in_interface_body9425);
 					interface_member_declarations706=interface_member_declarations();
+					retval.interface_member_declarations706=interface_member_declarations706;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_member_declarations706.getTree());
@@ -22961,6 +23181,8 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		interface_member_declaration_return interface_member_declaration708;
 	};
 
 
@@ -22973,7 +23195,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope interface_member_declaration708 =null;
+		interface_member_declaration_return interface_member_declaration708 =null;
 
 
 		try {
@@ -23001,6 +23223,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_interface_member_declaration_in_interface_member_declarations9445);
 					interface_member_declaration708=interface_member_declaration();
+					retval.interface_member_declaration708=interface_member_declaration708;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_member_declaration708.getTree());
@@ -23045,6 +23268,15 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		attributes_return attributes709;
+		modifiers_return modifiers710;
+		interface_method_declaration_return interface_method_declaration712;
+		interface_event_declaration_return interface_event_declaration713;
+		type_return type714;
+		interface_method_declaration_return interface_method_declaration715;
+		interface_property_declaration_return interface_property_declaration716;
+		interface_indexer_declaration_return interface_indexer_declaration717;
 	};
 
 
@@ -23058,14 +23290,14 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		Token string_literal711=null;
-		ParserRuleReturnScope attributes709 =null;
-		ParserRuleReturnScope modifiers710 =null;
-		ParserRuleReturnScope interface_method_declaration712 =null;
-		ParserRuleReturnScope interface_event_declaration713 =null;
-		ParserRuleReturnScope type714 =null;
-		ParserRuleReturnScope interface_method_declaration715 =null;
-		ParserRuleReturnScope interface_property_declaration716 =null;
-		ParserRuleReturnScope interface_indexer_declaration717 =null;
+		attributes_return attributes709 =null;
+		modifiers_return modifiers710 =null;
+		interface_method_declaration_return interface_method_declaration712 =null;
+		interface_event_declaration_return interface_event_declaration713 =null;
+		type_return type714 =null;
+		interface_method_declaration_return interface_method_declaration715 =null;
+		interface_property_declaration_return interface_property_declaration716 =null;
+		interface_indexer_declaration_return interface_indexer_declaration717 =null;
 
 		CommonTree string_literal711_tree=null;
 
@@ -23090,6 +23322,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_attributes_in_interface_member_declaration9461);
 					attributes709=attributes();
+					retval.attributes709=attributes709;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes709.getTree());
@@ -23111,6 +23344,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_modifiers_in_interface_member_declaration9467);
 					modifiers710=modifiers();
+					retval.modifiers710=modifiers710;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers710.getTree());
@@ -23220,6 +23454,7 @@ public class csParser extends Parser {
 
 					pushFollow(FOLLOW_interface_method_declaration_in_interface_member_declaration9491);
 					interface_method_declaration712=interface_method_declaration();
+					retval.interface_method_declaration712=interface_method_declaration712;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_method_declaration712.getTree());
@@ -23231,6 +23466,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_interface_event_declaration_in_interface_member_declaration9511);
 					interface_event_declaration713=interface_event_declaration();
+					retval.interface_event_declaration713=interface_event_declaration713;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_event_declaration713.getTree());
@@ -23242,6 +23478,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_type_in_interface_member_declaration9531);
 					type714=type();
+					retval.type714=type714;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type714.getTree());
@@ -23279,6 +23516,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_interface_method_declaration_in_interface_member_declaration9547);
 							interface_method_declaration715=interface_method_declaration();
+							retval.interface_method_declaration715=interface_method_declaration715;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_method_declaration715.getTree());
@@ -23290,6 +23528,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_interface_property_declaration_in_interface_member_declaration9586);
 							interface_property_declaration716=interface_property_declaration();
+							retval.interface_property_declaration716=interface_property_declaration716;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_property_declaration716.getTree());
@@ -23301,6 +23540,7 @@ public class csParser extends Parser {
 							{
 							pushFollow(FOLLOW_interface_indexer_declaration_in_interface_member_declaration9624);
 							interface_indexer_declaration717=interface_indexer_declaration();
+							retval.interface_indexer_declaration717=interface_indexer_declaration717;
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_indexer_declaration717.getTree());
@@ -23338,11 +23578,14 @@ public class csParser extends Parser {
 	}
 	// $ANTLR end "interface_member_declaration"
 
-
+	
 	public static class interface_property_declaration_return extends ParserRuleReturnScope {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		identifier_return identifier718;
+		interface_accessor_declarations_return interface_accessor_declarations720;
 	};
 
 
@@ -23357,8 +23600,8 @@ public class csParser extends Parser {
 
 		Token char_literal719=null;
 		Token char_literal721=null;
-		ParserRuleReturnScope identifier718 =null;
-		ParserRuleReturnScope interface_accessor_declarations720 =null;
+		identifier_return identifier718 =null;
+		interface_accessor_declarations_return interface_accessor_declarations720 =null;
 
 		CommonTree char_literal719_tree=null;
 		CommonTree char_literal721_tree=null;
@@ -23374,6 +23617,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_identifier_in_interface_property_declaration9676);
 			identifier718=identifier();
+			retval.identifier718=identifier718;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier718.getTree());
@@ -23386,6 +23630,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_interface_accessor_declarations_in_interface_property_declaration9684);
 			interface_accessor_declarations720=interface_accessor_declarations();
+			retval.interface_accessor_declarations720=interface_accessor_declarations720;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_accessor_declarations720.getTree());
@@ -23439,10 +23684,10 @@ public class csParser extends Parser {
 		Token char_literal724=null;
 		Token char_literal726=null;
 		Token char_literal728=null;
-		ParserRuleReturnScope identifier722 =null;
-		ParserRuleReturnScope generic_argument_list723 =null;
-		ParserRuleReturnScope formal_parameter_list725 =null;
-		ParserRuleReturnScope type_parameter_constraints_clauses727 =null;
+		identifier_return identifier722 =null;
+		generic_argument_list_return generic_argument_list723 =null;
+		formal_parameter_list_return formal_parameter_list725 =null;
+		type_parameter_constraints_clauses_return type_parameter_constraints_clauses727 =null;
 
 		CommonTree char_literal724_tree=null;
 		CommonTree char_literal726_tree=null;
@@ -23459,6 +23704,7 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_identifier_in_interface_method_declaration9703);
 			identifier722=identifier();
+			retval.identifier722=identifier722;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier722.getTree());
@@ -23475,6 +23721,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_generic_argument_list_in_interface_method_declaration9707);
 					generic_argument_list723=generic_argument_list();
+					retval.generic_argument_list723=generic_argument_list723;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list723.getTree());
@@ -23502,6 +23749,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_formal_parameter_list_in_interface_method_declaration9726);
 					formal_parameter_list725=formal_parameter_list();
+					retval.formal_parameter_list725=formal_parameter_list725;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list725.getTree());
@@ -23529,6 +23777,7 @@ public class csParser extends Parser {
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_interface_method_declaration9735);
 					type_parameter_constraints_clauses727=type_parameter_constraints_clauses();
+					retval.type_parameter_constraints_clauses727=type_parameter_constraints_clauses727;
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses727.getTree());
@@ -23572,6 +23821,9 @@ public class csParser extends Parser {
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
+		
+		type_return type730;
+		identifier_return identifier731;
 	};
 
 
@@ -23586,8 +23838,8 @@ public class csParser extends Parser {
 
 		Token string_literal729=null;
 		Token char_literal732=null;
-		ParserRuleReturnScope type730 =null;
-		ParserRuleReturnScope identifier731 =null;
+		type_return type730 =null;
+		identifier_return identifier731 =null;
 
 		CommonTree string_literal729_tree=null;
 		CommonTree char_literal732_tree=null;
@@ -23609,12 +23861,14 @@ public class csParser extends Parser {
 
 			pushFollow(FOLLOW_type_in_interface_event_declaration9769);
 			type730=type();
+			retval.type730=type730;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type730.getTree());
 
 			pushFollow(FOLLOW_identifier_in_interface_event_declaration9773);
 			identifier731=identifier();
+			retval.identifier731=identifier731;
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier731.getTree());
@@ -23647,7 +23901,6 @@ public class csParser extends Parser {
 		return retval;
 	}
 	// $ANTLR end "interface_event_declaration"
-
 
 	public static class interface_indexer_declaration_return extends ParserRuleReturnScope {
 		CommonTree tree;
