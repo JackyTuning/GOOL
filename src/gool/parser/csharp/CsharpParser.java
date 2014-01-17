@@ -19,7 +19,8 @@ public class CsharpParser  {
     	
     	csParser.compilation_unit_return result = parser.compilation_unit();
         System.out.println("tree="+((Tree)result.tree).toStringTree());
-        
+        System.out.println(result);
+
         
         
         
