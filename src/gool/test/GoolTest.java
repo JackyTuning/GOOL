@@ -437,7 +437,7 @@ public class GoolTest {
 	}
 
 	@Test
-	public void simpleForEach() throws Exception {
+	public void ss() throws Exception {
 		String input = "import java.util.ArrayList;\n"
 				+ TestHelper
 						.surroundWithClassMain(

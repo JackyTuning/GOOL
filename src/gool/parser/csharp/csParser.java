@@ -1,7 +1,6 @@
 // $ANTLR 3.5 /Users/jeremie/ANTLR/cs.g 2014-01-17 17:52:15
 
-  package gool.parser.csharp;
-
+package gool.parser.csharp;
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -276,18 +275,20 @@ public class csParser extends Parser {
 	public TreeAdaptor getTreeAdaptor() {
 		return adaptor;
 	}
-
 	@Override public String[] getTokenNames() { return csParser.tokenNames; }
 	@Override public String getGrammarFileName() { return "/Users/jeremie/ANTLR/cs.g"; }
 
 
-	public static class compilation_unit_return extends ParserRuleReturnScope {
+	public static class compilation_unit_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-namespace_body_return namespace_body1 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitcompilation_unit_return(this);
+}
+public namespace_body_return namespace_body1 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -318,7 +319,7 @@ namespace_body_return namespace_body1 ;
 			namespace_body1=retval.namespace_body1=namespace_body(true);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_body1.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_body1.getTree()));
 
 			}
 
@@ -344,16 +345,19 @@ namespace_body_return namespace_body1 ;
 	// $ANTLR end "compilation_unit"
 
 
-	public static class namespace_declaration_return extends ParserRuleReturnScope {
+	public static class namespace_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-qualified_identifier_return qualified_identifier3 ;
-namespace_block_return namespace_block4 ;
-Token string_literal2 ;
-Token char_literal5 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamespace_declaration_return(this);
+}
+CommonTree string_literal2 ;
+CommonTree char_literal5 ;
+public qualified_identifier_return qualified_identifier3 ;
+public namespace_block_return namespace_block4 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -387,21 +391,21 @@ Token char_literal5 ;
 
 			string_literal2=(Token)match(input,149,FOLLOW_149_in_namespace_declaration98); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal2_tree = (CommonTree)adaptor.create(string_literal2);
-			adaptor.addChild(root_0, string_literal2_tree);
+			retval.string_literal2 = string_literal2_tree=(CommonTree)adaptor.create(string_literal2);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal2_tree));
 			}
 
 			pushFollow(FOLLOW_qualified_identifier_in_namespace_declaration102);
 			qualified_identifier3=retval.qualified_identifier3=qualified_identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, qualified_identifier3.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(qualified_identifier3.getTree()));
 
 			pushFollow(FOLLOW_namespace_block_in_namespace_declaration106);
 			namespace_block4=retval.namespace_block4=namespace_block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_block4.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_block4.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:27:64: ( ';' )?
 			int alt1=2;
@@ -415,8 +419,8 @@ Token char_literal5 ;
 					{
 					char_literal5=(Token)match(input,SEMI,FOLLOW_SEMI_in_namespace_declaration110); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal5_tree = (CommonTree)adaptor.create(char_literal5);
-					adaptor.addChild(root_0, char_literal5_tree);
+					retval.char_literal5 = char_literal5_tree=(CommonTree)adaptor.create(char_literal5);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal5_tree));
 					}
 
 					}
@@ -448,15 +452,18 @@ Token char_literal5 ;
 	// $ANTLR end "namespace_declaration"
 
 
-	public static class namespace_block_return extends ParserRuleReturnScope {
+	public static class namespace_block_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-namespace_body_return namespace_body7 ;
-Token char_literal6 ;
-Token char_literal8 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamespace_block_return(this);
+}
+CommonTree char_literal6 ;
+CommonTree char_literal8 ;
+public namespace_body_return namespace_body7 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -489,20 +496,20 @@ Token char_literal8 ;
 
 			char_literal6=(Token)match(input,197,FOLLOW_197_in_namespace_block126); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal6_tree = (CommonTree)adaptor.create(char_literal6);
-			adaptor.addChild(root_0, char_literal6_tree);
+			retval.char_literal6 = char_literal6_tree=(CommonTree)adaptor.create(char_literal6);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal6_tree));
 			}
 
 			pushFollow(FOLLOW_namespace_body_in_namespace_block130);
 			namespace_body7=retval.namespace_body7=namespace_body(false);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_body7.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_body7.getTree()));
 
 			char_literal8=(Token)match(input,201,FOLLOW_201_in_namespace_block135); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal8_tree = (CommonTree)adaptor.create(char_literal8);
-			adaptor.addChild(root_0, char_literal8_tree);
+			retval.char_literal8 = char_literal8_tree=(CommonTree)adaptor.create(char_literal8);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal8_tree));
 			}
 
 			}
@@ -529,16 +536,19 @@ Token char_literal8 ;
 	// $ANTLR end "namespace_block"
 
 
-	public static class namespace_body_return extends ParserRuleReturnScope {
+	public static class namespace_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-extern_alias_directives_return extern_alias_directives9 ;
-using_directives_return using_directives10 ;
-global_attributes_return global_attributes11 ;
-namespace_member_declarations_return namespace_member_declarations12 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamespace_body_return(this);
+}
+public extern_alias_directives_return extern_alias_directives9 ;
+public using_directives_return using_directives10 ;
+public global_attributes_return global_attributes11 ;
+public namespace_member_declarations_return namespace_member_declarations12 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -585,7 +595,7 @@ namespace_member_declarations_return namespace_member_declarations12 ;
 					extern_alias_directives9=retval.extern_alias_directives9=extern_alias_directives();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, extern_alias_directives9.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(extern_alias_directives9.getTree()));
 
 					}
 					break;
@@ -606,7 +616,7 @@ namespace_member_declarations_return namespace_member_declarations12 ;
 					using_directives10=retval.using_directives10=using_directives();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, using_directives10.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(using_directives10.getTree()));
 
 					}
 					break;
@@ -633,7 +643,7 @@ namespace_member_declarations_return namespace_member_declarations12 ;
 					global_attributes11=retval.global_attributes11=global_attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, global_attributes11.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(global_attributes11.getTree()));
 
 					}
 					break;
@@ -654,7 +664,7 @@ namespace_member_declarations_return namespace_member_declarations12 ;
 					namespace_member_declarations12=retval.namespace_member_declarations12=namespace_member_declarations();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_member_declarations12.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_member_declarations12.getTree()));
 
 					}
 					break;
@@ -685,13 +695,16 @@ namespace_member_declarations_return namespace_member_declarations12 ;
 	// $ANTLR end "namespace_body"
 
 
-	public static class extern_alias_directives_return extends ParserRuleReturnScope {
+	public static class extern_alias_directives_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<extern_alias_directive_return> extern_alias_directive13 = new ArrayList<extern_alias_directive_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitextern_alias_directives_return(this);
+}
+public List<extern_alias_directive_return> extern_alias_directive13 = new ArrayList<extern_alias_directive_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -740,7 +753,7 @@ List<extern_alias_directive_return> extern_alias_directive13 = new ArrayList<ext
 					extern_alias_directive13=extern_alias_directive();retval.extern_alias_directive13.add((extern_alias_directive_return) extern_alias_directive13);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, extern_alias_directive13.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(extern_alias_directive13.getTree()));
 
 					}
 					break;
@@ -778,16 +791,19 @@ List<extern_alias_directive_return> extern_alias_directive13 = new ArrayList<ext
 	// $ANTLR end "extern_alias_directives"
 
 
-	public static class extern_alias_directive_return extends ParserRuleReturnScope {
+	public static class extern_alias_directive_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier16 ;
-Token string_literal14 ;
-Token string_literal15 ;
-Token char_literal17 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitextern_alias_directive_return(this);
+}
+CommonTree string_literal14 ;
+CommonTree string_literal15 ;
+CommonTree char_literal17 ;
+public identifier_return identifier16 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -822,26 +838,26 @@ Token char_literal17 ;
 
 			string_literal14=(Token)match(input,125,FOLLOW_125_in_extern_alias_directive198); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal14_tree = (CommonTree)adaptor.create(string_literal14);
-			adaptor.addChild(root_0, string_literal14_tree);
+			retval.string_literal14 = string_literal14_tree=(CommonTree)adaptor.create(string_literal14);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal14_tree));
 			}
 
 			string_literal15=(Token)match(input,98,FOLLOW_98_in_extern_alias_directive202); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal15_tree = (CommonTree)adaptor.create(string_literal15);
-			adaptor.addChild(root_0, string_literal15_tree);
+			retval.string_literal15 = string_literal15_tree=(CommonTree)adaptor.create(string_literal15);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal15_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_extern_alias_directive206);
 			identifier16=retval.identifier16=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier16.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier16.getTree()));
 
 			char_literal17=(Token)match(input,SEMI,FOLLOW_SEMI_in_extern_alias_directive209); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal17_tree = (CommonTree)adaptor.create(char_literal17);
-			adaptor.addChild(root_0, char_literal17_tree);
+			retval.char_literal17 = char_literal17_tree=(CommonTree)adaptor.create(char_literal17);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal17_tree));
 			}
 
 			}
@@ -868,13 +884,16 @@ Token char_literal17 ;
 	// $ANTLR end "extern_alias_directive"
 
 
-	public static class using_directives_return extends ParserRuleReturnScope {
+	public static class using_directives_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<using_directive_return> using_directive18 = new ArrayList<using_directive_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitusing_directives_return(this);
+}
+public List<using_directive_return> using_directive18 = new ArrayList<using_directive_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -919,7 +938,7 @@ List<using_directive_return> using_directive18 = new ArrayList<using_directive_r
 					using_directive18=using_directive();retval.using_directive18.add((using_directive_return) using_directive18);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, using_directive18.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(using_directive18.getTree()));
 
 					}
 					break;
@@ -957,14 +976,17 @@ List<using_directive_return> using_directive18 = new ArrayList<using_directive_r
 	// $ANTLR end "using_directives"
 
 
-	public static class using_directive_return extends ParserRuleReturnScope {
+	public static class using_directive_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-using_alias_directive_return using_alias_directive19 ;
-using_namespace_directive_return using_namespace_directive20 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitusing_directive_return(this);
+}
+public using_alias_directive_return using_alias_directive19 ;
+public using_namespace_directive_return using_namespace_directive20 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1053,7 +1075,7 @@ using_namespace_directive_return using_namespace_directive20 ;
 					using_alias_directive19=retval.using_alias_directive19=using_alias_directive();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, using_alias_directive19.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(using_alias_directive19.getTree()));
 
 					}
 					break;
@@ -1064,7 +1086,7 @@ using_namespace_directive_return using_namespace_directive20 ;
 					using_namespace_directive20=retval.using_namespace_directive20=using_namespace_directive();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, using_namespace_directive20.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(using_namespace_directive20.getTree()));
 
 					}
 					break;
@@ -1095,17 +1117,20 @@ using_namespace_directive_return using_namespace_directive20 ;
 	// $ANTLR end "using_directive"
 
 
-	public static class using_alias_directive_return extends ParserRuleReturnScope {
+	public static class using_alias_directive_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier22 ;
-namespace_or_type_name_return namespace_or_type_name24 ;
-Token string_literal21 ;
-Token char_literal23 ;
-Token char_literal25 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitusing_alias_directive_return(this);
+}
+CommonTree string_literal21 ;
+CommonTree char_literal23 ;
+CommonTree char_literal25 ;
+public identifier_return identifier22 ;
+public namespace_or_type_name_return namespace_or_type_name24 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1141,32 +1166,32 @@ Token char_literal25 ;
 
 			string_literal21=(Token)match(input,USING,FOLLOW_USING_in_using_alias_directive269); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal21_tree = (CommonTree)adaptor.create(string_literal21);
-			adaptor.addChild(root_0, string_literal21_tree);
+			retval.string_literal21 = string_literal21_tree=(CommonTree)adaptor.create(string_literal21);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal21_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_using_alias_directive280);
 			identifier22=retval.identifier22=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier22.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier22.getTree()));
 
 			char_literal23=(Token)match(input,85,FOLLOW_85_in_using_alias_directive284); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal23_tree = (CommonTree)adaptor.create(char_literal23);
-			adaptor.addChild(root_0, char_literal23_tree);
+			retval.char_literal23 = char_literal23_tree=(CommonTree)adaptor.create(char_literal23);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal23_tree));
 			}
 
 			pushFollow(FOLLOW_namespace_or_type_name_in_using_alias_directive288);
 			namespace_or_type_name24=retval.namespace_or_type_name24=namespace_or_type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_or_type_name24.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_or_type_name24.getTree()));
 
 			char_literal25=(Token)match(input,SEMI,FOLLOW_SEMI_in_using_alias_directive292); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal25_tree = (CommonTree)adaptor.create(char_literal25);
-			adaptor.addChild(root_0, char_literal25_tree);
+			retval.char_literal25 = char_literal25_tree=(CommonTree)adaptor.create(char_literal25);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal25_tree));
 			}
 
 			}
@@ -1193,15 +1218,18 @@ Token char_literal25 ;
 	// $ANTLR end "using_alias_directive"
 
 
-	public static class using_namespace_directive_return extends ParserRuleReturnScope {
+	public static class using_namespace_directive_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-namespace_name_return namespace_name27 ;
-Token string_literal26 ;
-Token char_literal28 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitusing_namespace_directive_return(this);
+}
+CommonTree string_literal26 ;
+CommonTree char_literal28 ;
+public namespace_name_return namespace_name27 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1234,20 +1262,20 @@ Token char_literal28 ;
 
 			string_literal26=(Token)match(input,USING,FOLLOW_USING_in_using_namespace_directive307); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal26_tree = (CommonTree)adaptor.create(string_literal26);
-			adaptor.addChild(root_0, string_literal26_tree);
+			retval.string_literal26 = string_literal26_tree=(CommonTree)adaptor.create(string_literal26);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal26_tree));
 			}
 
 			pushFollow(FOLLOW_namespace_name_in_using_namespace_directive311);
 			namespace_name27=retval.namespace_name27=namespace_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_name27.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_name27.getTree()));
 
 			char_literal28=(Token)match(input,SEMI,FOLLOW_SEMI_in_using_namespace_directive315); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal28_tree = (CommonTree)adaptor.create(char_literal28);
-			adaptor.addChild(root_0, char_literal28_tree);
+			retval.char_literal28 = char_literal28_tree=(CommonTree)adaptor.create(char_literal28);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal28_tree));
 			}
 
 			}
@@ -1274,13 +1302,16 @@ Token char_literal28 ;
 	// $ANTLR end "using_namespace_directive"
 
 
-	public static class namespace_member_declarations_return extends ParserRuleReturnScope {
+	public static class namespace_member_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<namespace_member_declaration_return> namespace_member_declaration29 = new ArrayList<namespace_member_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitnamespace_member_declarations_return(this);
+}
+public List<namespace_member_declaration_return> namespace_member_declaration29 = new ArrayList<namespace_member_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1325,7 +1356,7 @@ List<namespace_member_declaration_return> namespace_member_declaration29 = new A
 					namespace_member_declaration29=namespace_member_declaration();retval.namespace_member_declaration29.add((namespace_member_declaration_return) namespace_member_declaration29);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_member_declaration29.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_member_declaration29.getTree()));
 
 					}
 					break;
@@ -1363,16 +1394,19 @@ List<namespace_member_declaration_return> namespace_member_declaration29 = new A
 	// $ANTLR end "namespace_member_declarations"
 
 
-	public static class namespace_member_declaration_return extends ParserRuleReturnScope {
+	public static class namespace_member_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-namespace_declaration_return namespace_declaration30 ;
-attributes_return attributes31 ;
-modifiers_return modifiers32 ;
-type_declaration_return type_declaration33 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamespace_member_declaration_return(this);
+}
+public namespace_declaration_return namespace_declaration30 ;
+public attributes_return attributes31 ;
+public modifiers_return modifiers32 ;
+public type_declaration_return type_declaration33 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1424,7 +1458,7 @@ type_declaration_return type_declaration33 ;
 					namespace_declaration30=retval.namespace_declaration30=namespace_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_declaration30.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_declaration30.getTree()));
 
 					}
 					break;
@@ -1448,7 +1482,7 @@ type_declaration_return type_declaration33 ;
 							attributes31=retval.attributes31=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes31.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes31.getTree()));
 
 							}
 							break;
@@ -1469,7 +1503,7 @@ type_declaration_return type_declaration33 ;
 							modifiers32=retval.modifiers32=modifiers();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers32.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers32.getTree()));
 
 							}
 							break;
@@ -1480,7 +1514,7 @@ type_declaration_return type_declaration33 ;
 					type_declaration33=retval.type_declaration33=type_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_declaration33.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_declaration33.getTree()));
 
 					}
 					break;
@@ -1508,21 +1542,24 @@ type_declaration_return type_declaration33 ;
 	// $ANTLR end "namespace_member_declaration"
 
 
-	public static class type_declaration_return extends ParserRuleReturnScope {
+	public static class type_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-class_declaration_return class_declaration35 ;
-struct_declaration_return struct_declaration36 ;
-interface_declaration_return interface_declaration37 ;
-class_declaration_return class_declaration38 ;
-struct_declaration_return struct_declaration39 ;
-interface_declaration_return interface_declaration40 ;
-enum_declaration_return enum_declaration41 ;
-delegate_declaration_return delegate_declaration42 ;
-Token string_literal34 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_declaration_return(this);
+}
+CommonTree string_literal34 ;
+public class_declaration_return class_declaration35 ;
+public struct_declaration_return struct_declaration36 ;
+public interface_declaration_return interface_declaration37 ;
+public class_declaration_return class_declaration38 ;
+public struct_declaration_return struct_declaration39 ;
+public interface_declaration_return interface_declaration40 ;
+public enum_declaration_return enum_declaration41 ;
+public delegate_declaration_return delegate_declaration42 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1590,8 +1627,8 @@ Token string_literal34 ;
 
 					string_literal34=(Token)match(input,159,FOLLOW_159_in_type_declaration389); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal34_tree = (CommonTree)adaptor.create(string_literal34);
-					adaptor.addChild(root_0, string_literal34_tree);
+					retval.string_literal34 = string_literal34_tree=(CommonTree)adaptor.create(string_literal34);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal34_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:51:36: ( class_declaration | struct_declaration | interface_declaration )
@@ -1626,7 +1663,7 @@ Token string_literal34 ;
 							class_declaration35=retval.class_declaration35=class_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, class_declaration35.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_declaration35.getTree()));
 
 							}
 							break;
@@ -1637,7 +1674,7 @@ Token string_literal34 ;
 							struct_declaration36=retval.struct_declaration36=struct_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_declaration36.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_declaration36.getTree()));
 
 							}
 							break;
@@ -1648,7 +1685,7 @@ Token string_literal34 ;
 							interface_declaration37=retval.interface_declaration37=interface_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_declaration37.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_declaration37.getTree()));
 
 							}
 							break;
@@ -1667,7 +1704,7 @@ Token string_literal34 ;
 					class_declaration38=retval.class_declaration38=class_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, class_declaration38.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_declaration38.getTree()));
 
 					}
 					break;
@@ -1681,7 +1718,7 @@ Token string_literal34 ;
 					struct_declaration39=retval.struct_declaration39=struct_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_declaration39.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_declaration39.getTree()));
 
 					}
 					break;
@@ -1695,7 +1732,7 @@ Token string_literal34 ;
 					interface_declaration40=retval.interface_declaration40=interface_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_declaration40.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_declaration40.getTree()));
 
 					}
 					break;
@@ -1709,7 +1746,7 @@ Token string_literal34 ;
 					enum_declaration41=retval.enum_declaration41=enum_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_declaration41.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_declaration41.getTree()));
 
 					}
 					break;
@@ -1723,7 +1760,7 @@ Token string_literal34 ;
 					delegate_declaration42=retval.delegate_declaration42=delegate_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, delegate_declaration42.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(delegate_declaration42.getTree()));
 
 					}
 					break;
@@ -1751,15 +1788,18 @@ Token string_literal34 ;
 	// $ANTLR end "type_declaration"
 
 
-	public static class qualified_identifier_return extends ParserRuleReturnScope {
+	public static class qualified_identifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier43 ;
-List<identifier_return> identifier45 = new ArrayList<identifier_return>();
-Token char_literal44 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitqualified_identifier_return(this);
+}
+CommonTree char_literal44 ;
+public identifier_return identifier43 ;
+public List<identifier_return> identifier45 = new ArrayList<identifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1793,7 +1833,7 @@ Token char_literal44 ;
 			identifier43=retval.identifier43=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier43.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier43.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:61:20: ( '.' identifier )*
 			loop15:
@@ -1810,15 +1850,15 @@ Token char_literal44 ;
 					{
 					char_literal44=(Token)match(input,DOT,FOLLOW_DOT_in_qualified_identifier610); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal44_tree = (CommonTree)adaptor.create(char_literal44);
-					adaptor.addChild(root_0, char_literal44_tree);
+					retval.char_literal44 = char_literal44_tree=(CommonTree)adaptor.create(char_literal44);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal44_tree));
 					}
 
 					pushFollow(FOLLOW_identifier_in_qualified_identifier612);
 					identifier45=identifier();retval.identifier45.add((identifier_return) identifier45);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier45.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier45.getTree()));
 
 					}
 					break;
@@ -1852,13 +1892,16 @@ Token char_literal44 ;
 	// $ANTLR end "qualified_identifier"
 
 
-	public static class namespace_name_return extends ParserRuleReturnScope {
+	public static class namespace_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-namespace_or_type_name_return namespace_or_type_name46 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamespace_name_return(this);
+}
+public namespace_or_type_name_return namespace_or_type_name46 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1889,7 +1932,7 @@ namespace_or_type_name_return namespace_or_type_name46 ;
 			namespace_or_type_name46=retval.namespace_or_type_name46=namespace_or_type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_or_type_name46.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_or_type_name46.getTree()));
 
 			}
 
@@ -1915,13 +1958,16 @@ namespace_or_type_name_return namespace_or_type_name46 ;
 	// $ANTLR end "namespace_name"
 
 
-	public static class modifiers_return extends ParserRuleReturnScope {
+	public static class modifiers_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<modifier_return> modifier47 = new ArrayList<modifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitmodifiers_return(this);
+}
+public List<modifier_return> modifier47 = new ArrayList<modifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -1966,7 +2012,7 @@ List<modifier_return> modifier47 = new ArrayList<modifier_return>();
 					modifier47=modifier();retval.modifier47.add((modifier_return) modifier47);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier47.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifier47.getTree()));
 
 					}
 					break;
@@ -2004,13 +2050,16 @@ List<modifier_return> modifier47 = new ArrayList<modifier_return>();
 	// $ANTLR end "modifiers"
 
 
-	public static class modifier_return extends ParserRuleReturnScope {
+	public static class modifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set48 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmodifier_return(this);
+}
+CommonTree set48 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -2074,43 +2123,46 @@ Token set48 ;
 	// $ANTLR end "modifier"
 
 
-	public static class class_member_declaration_return extends ParserRuleReturnScope {
+	public static class class_member_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes49 ;
-modifiers_return modifiers50 ;
-type_return type52 ;
-constant_declarators_return constant_declarators53 ;
-event_declaration_return event_declaration55 ;
-method_declaration_return method_declaration57 ;
-interface_declaration_return interface_declaration58 ;
-class_declaration_return class_declaration59 ;
-struct_declaration_return struct_declaration60 ;
-interface_declaration_return interface_declaration61 ;
-method_declaration_return method_declaration63 ;
-type_return type64 ;
-method_declaration_return method_declaration65 ;
-property_declaration_return property_declaration66 ;
-type_name_return type_name67 ;
-indexer_declaration_return indexer_declaration69 ;
-indexer_declaration_return indexer_declaration70 ;
-field_declaration_return field_declaration71 ;
-operator_declaration_return operator_declaration72 ;
-class_declaration_return class_declaration73 ;
-struct_declaration_return struct_declaration74 ;
-enum_declaration_return enum_declaration75 ;
-delegate_declaration_return delegate_declaration76 ;
-conversion_operator_declaration_return conversion_operator_declaration77 ;
-constructor_declaration_return constructor_declaration78 ;
-destructor_declaration_return destructor_declaration79 ;
-Token string_literal51 ;
-Token char_literal54 ;
-Token string_literal56 ;
-Token string_literal62 ;
-Token char_literal68 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitclass_member_declaration_return(this);
+}
+CommonTree string_literal51 ;
+CommonTree char_literal54 ;
+CommonTree string_literal56 ;
+CommonTree string_literal62 ;
+CommonTree char_literal68 ;
+public attributes_return attributes49 ;
+public modifiers_return modifiers50 ;
+public type_return type52 ;
+public constant_declarators_return constant_declarators53 ;
+public event_declaration_return event_declaration55 ;
+public method_declaration_return method_declaration57 ;
+public interface_declaration_return interface_declaration58 ;
+public class_declaration_return class_declaration59 ;
+public struct_declaration_return struct_declaration60 ;
+public interface_declaration_return interface_declaration61 ;
+public method_declaration_return method_declaration63 ;
+public type_return type64 ;
+public method_declaration_return method_declaration65 ;
+public property_declaration_return property_declaration66 ;
+public type_name_return type_name67 ;
+public indexer_declaration_return indexer_declaration69 ;
+public indexer_declaration_return indexer_declaration70 ;
+public field_declaration_return field_declaration71 ;
+public operator_declaration_return operator_declaration72 ;
+public class_declaration_return class_declaration73 ;
+public struct_declaration_return struct_declaration74 ;
+public enum_declaration_return enum_declaration75 ;
+public delegate_declaration_return delegate_declaration76 ;
+public conversion_operator_declaration_return conversion_operator_declaration77 ;
+public constructor_declaration_return constructor_declaration78 ;
+public destructor_declaration_return destructor_declaration79 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -2186,7 +2238,7 @@ Token char_literal68 ;
 					attributes49=retval.attributes49=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes49.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes49.getTree()));
 
 					}
 					break;
@@ -2207,7 +2259,7 @@ Token char_literal68 ;
 					modifiers50=retval.modifiers50=modifiers();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers50.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers50.getTree()));
 
 					}
 					break;
@@ -2378,26 +2430,26 @@ Token char_literal68 ;
 					{
 					string_literal51=(Token)match(input,112,FOLLOW_112_in_class_member_declaration770); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal51_tree = (CommonTree)adaptor.create(string_literal51);
-					adaptor.addChild(root_0, string_literal51_tree);
+					retval.string_literal51 = string_literal51_tree=(CommonTree)adaptor.create(string_literal51);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal51_tree));
 					}
 
 					pushFollow(FOLLOW_type_in_class_member_declaration774);
 					type52=retval.type52=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type52.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type52.getTree()));
 
 					pushFollow(FOLLOW_constant_declarators_in_class_member_declaration778);
 					constant_declarators53=retval.constant_declarators53=constant_declarators();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declarators53.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_declarators53.getTree()));
 
 					char_literal54=(Token)match(input,SEMI,FOLLOW_SEMI_in_class_member_declaration782); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal54_tree = (CommonTree)adaptor.create(char_literal54);
-					adaptor.addChild(root_0, char_literal54_tree);
+					retval.char_literal54 = char_literal54_tree=(CommonTree)adaptor.create(char_literal54);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal54_tree));
 					}
 
 					}
@@ -2409,7 +2461,7 @@ Token char_literal68 ;
 					event_declaration55=retval.event_declaration55=event_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, event_declaration55.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(event_declaration55.getTree()));
 
 					}
 					break;
@@ -2418,8 +2470,8 @@ Token char_literal68 ;
 					{
 					string_literal56=(Token)match(input,159,FOLLOW_159_in_class_member_declaration822); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal56_tree = (CommonTree)adaptor.create(string_literal56);
-					adaptor.addChild(root_0, string_literal56_tree);
+					retval.string_literal56 = string_literal56_tree=(CommonTree)adaptor.create(string_literal56);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal56_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:76:21: ( method_declaration | interface_declaration | class_declaration | struct_declaration )
@@ -2512,7 +2564,7 @@ Token char_literal68 ;
 							method_declaration57=retval.method_declaration57=method_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration57.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_declaration57.getTree()));
 
 							}
 							break;
@@ -2523,7 +2575,7 @@ Token char_literal68 ;
 							interface_declaration58=retval.interface_declaration58=interface_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_declaration58.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_declaration58.getTree()));
 
 							}
 							break;
@@ -2534,7 +2586,7 @@ Token char_literal68 ;
 							class_declaration59=retval.class_declaration59=class_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, class_declaration59.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_declaration59.getTree()));
 
 							}
 							break;
@@ -2545,7 +2597,7 @@ Token char_literal68 ;
 							struct_declaration60=retval.struct_declaration60=struct_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_declaration60.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_declaration60.getTree()));
 
 							}
 							break;
@@ -2561,7 +2613,7 @@ Token char_literal68 ;
 					interface_declaration61=retval.interface_declaration61=interface_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_declaration61.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_declaration61.getTree()));
 
 					}
 					break;
@@ -2570,15 +2622,15 @@ Token char_literal68 ;
 					{
 					string_literal62=(Token)match(input,192,FOLLOW_192_in_class_member_declaration954); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal62_tree = (CommonTree)adaptor.create(string_literal62);
-					adaptor.addChild(root_0, string_literal62_tree);
+					retval.string_literal62 = string_literal62_tree=(CommonTree)adaptor.create(string_literal62);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal62_tree));
 					}
 
 					pushFollow(FOLLOW_method_declaration_in_class_member_declaration958);
 					method_declaration63=retval.method_declaration63=method_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration63.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_declaration63.getTree()));
 
 					}
 					break;
@@ -2589,7 +2641,7 @@ Token char_literal68 ;
 					type64=retval.type64=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type64.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type64.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:82:16: ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration )
 					int alt20=6;
@@ -2737,7 +2789,7 @@ Token char_literal68 ;
 							method_declaration65=retval.method_declaration65=method_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration65.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_declaration65.getTree()));
 
 							}
 							break;
@@ -2748,7 +2800,7 @@ Token char_literal68 ;
 							property_declaration66=retval.property_declaration66=property_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, property_declaration66.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(property_declaration66.getTree()));
 
 							}
 							break;
@@ -2759,19 +2811,19 @@ Token char_literal68 ;
 							type_name67=retval.type_name67=type_name();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name67.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name67.getTree()));
 
 							char_literal68=(Token)match(input,DOT,FOLLOW_DOT_in_class_member_declaration1056); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal68_tree = (CommonTree)adaptor.create(char_literal68);
-							adaptor.addChild(root_0, char_literal68_tree);
+							retval.char_literal68 = char_literal68_tree=(CommonTree)adaptor.create(char_literal68);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal68_tree));
 							}
 
 							pushFollow(FOLLOW_indexer_declaration_in_class_member_declaration1058);
 							indexer_declaration69=retval.indexer_declaration69=indexer_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, indexer_declaration69.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(indexer_declaration69.getTree()));
 
 							}
 							break;
@@ -2782,7 +2834,7 @@ Token char_literal68 ;
 							indexer_declaration70=retval.indexer_declaration70=indexer_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, indexer_declaration70.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(indexer_declaration70.getTree()));
 
 							}
 							break;
@@ -2793,7 +2845,7 @@ Token char_literal68 ;
 							field_declaration71=retval.field_declaration71=field_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, field_declaration71.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(field_declaration71.getTree()));
 
 							}
 							break;
@@ -2804,7 +2856,7 @@ Token char_literal68 ;
 							operator_declaration72=retval.operator_declaration72=operator_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, operator_declaration72.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(operator_declaration72.getTree()));
 
 							}
 							break;
@@ -2820,7 +2872,7 @@ Token char_literal68 ;
 					class_declaration73=retval.class_declaration73=class_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, class_declaration73.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_declaration73.getTree()));
 
 					}
 					break;
@@ -2831,7 +2883,7 @@ Token char_literal68 ;
 					struct_declaration74=retval.struct_declaration74=struct_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_declaration74.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_declaration74.getTree()));
 
 					}
 					break;
@@ -2842,7 +2894,7 @@ Token char_literal68 ;
 					enum_declaration75=retval.enum_declaration75=enum_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_declaration75.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_declaration75.getTree()));
 
 					}
 					break;
@@ -2853,7 +2905,7 @@ Token char_literal68 ;
 					delegate_declaration76=retval.delegate_declaration76=delegate_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, delegate_declaration76.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(delegate_declaration76.getTree()));
 
 					}
 					break;
@@ -2864,7 +2916,7 @@ Token char_literal68 ;
 					conversion_operator_declaration77=retval.conversion_operator_declaration77=conversion_operator_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, conversion_operator_declaration77.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conversion_operator_declaration77.getTree()));
 
 					}
 					break;
@@ -2875,7 +2927,7 @@ Token char_literal68 ;
 					constructor_declaration78=retval.constructor_declaration78=constructor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_declaration78.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_declaration78.getTree()));
 
 					}
 					break;
@@ -2886,7 +2938,7 @@ Token char_literal68 ;
 					destructor_declaration79=retval.destructor_declaration79=destructor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, destructor_declaration79.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(destructor_declaration79.getTree()));
 
 					}
 					break;
@@ -2917,31 +2969,34 @@ Token char_literal68 ;
 	// $ANTLR end "class_member_declaration"
 
 
-	public static class primary_expression_return extends ParserRuleReturnScope {
+	public static class primary_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-brackets_return brackets81 ;
-List<primary_expression_part_return> primary_expression_part82 = new ArrayList<primary_expression_part_return>();
-List<brackets_return> brackets84 = new ArrayList<brackets_return>();
-List<primary_expression_part_return> primary_expression_part85 = new ArrayList<primary_expression_part_return>();
-List<primary_expression_start_return> primary_expression_start86 = new ArrayList<primary_expression_start_return>();
-List<primary_expression_part_return> primary_expression_part87 = new ArrayList<primary_expression_part_return>();
-List<object_creation_expression_return> object_creation_expression89 = new ArrayList<object_creation_expression_return>();
-List<primary_expression_part_return> primary_expression_part90 = new ArrayList<primary_expression_part_return>();
-List<delegate_creation_expression_return> delegate_creation_expression91 = new ArrayList<delegate_creation_expression_return>();
-List<object_creation_expression_return> object_creation_expression92 = new ArrayList<object_creation_expression_return>();
-List<anonymous_object_creation_expression_return> anonymous_object_creation_expression93 = new ArrayList<anonymous_object_creation_expression_return>();
-List<sizeof_expression_return> sizeof_expression94 = new ArrayList<sizeof_expression_return>();
-List<checked_expression_return> checked_expression95 = new ArrayList<checked_expression_return>();
-List<unchecked_expression_return> unchecked_expression96 = new ArrayList<unchecked_expression_return>();
-List<default_value_expression_return> default_value_expression97 = new ArrayList<default_value_expression_return>();
-List<anonymous_method_expression_return> anonymous_method_expression98 = new ArrayList<anonymous_method_expression_return>();
-Token string_literal80 ;
-Token string_literal83 ;
-Token string_literal88 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitprimary_expression_return(this);
+}
+CommonTree string_literal80 ;
+CommonTree string_literal83 ;
+CommonTree string_literal88 ;
+public brackets_return brackets81 ;
+public List<primary_expression_part_return> primary_expression_part82 = new ArrayList<primary_expression_part_return>();
+public List<brackets_return> brackets84 = new ArrayList<brackets_return>();
+public List<primary_expression_part_return> primary_expression_part85 = new ArrayList<primary_expression_part_return>();
+public List<primary_expression_start_return> primary_expression_start86 = new ArrayList<primary_expression_start_return>();
+public List<primary_expression_part_return> primary_expression_part87 = new ArrayList<primary_expression_part_return>();
+public List<object_creation_expression_return> object_creation_expression89 = new ArrayList<object_creation_expression_return>();
+public List<primary_expression_part_return> primary_expression_part90 = new ArrayList<primary_expression_part_return>();
+public List<delegate_creation_expression_return> delegate_creation_expression91 = new ArrayList<delegate_creation_expression_return>();
+public List<object_creation_expression_return> object_creation_expression92 = new ArrayList<object_creation_expression_return>();
+public List<anonymous_object_creation_expression_return> anonymous_object_creation_expression93 = new ArrayList<anonymous_object_creation_expression_return>();
+public List<sizeof_expression_return> sizeof_expression94 = new ArrayList<sizeof_expression_return>();
+public List<checked_expression_return> checked_expression95 = new ArrayList<checked_expression_return>();
+public List<unchecked_expression_return> unchecked_expression96 = new ArrayList<unchecked_expression_return>();
+public List<default_value_expression_return> default_value_expression97 = new ArrayList<default_value_expression_return>();
+public List<anonymous_method_expression_return> anonymous_method_expression98 = new ArrayList<anonymous_method_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -3107,15 +3162,15 @@ Token string_literal88 ;
 
 					string_literal80=(Token)match(input,180,FOLLOW_180_in_primary_expression1346); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal80_tree = (CommonTree)adaptor.create(string_literal80);
-					adaptor.addChild(root_0, string_literal80_tree);
+					retval.string_literal80 = string_literal80_tree=(CommonTree)adaptor.create(string_literal80);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal80_tree));
 					}
 
 					pushFollow(FOLLOW_brackets_in_primary_expression1350);
 					brackets81=retval.brackets81=brackets();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets81.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(brackets81.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:102:53: ( primary_expression_part )*
 					loop22:
@@ -3134,7 +3189,7 @@ Token string_literal88 ;
 							primary_expression_part82=primary_expression_part();retval.primary_expression_part82.add((primary_expression_part_return) primary_expression_part82);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression_part82.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_expression_part82.getTree()));
 
 							}
 							break;
@@ -3154,15 +3209,15 @@ Token string_literal88 ;
 
 					string_literal83=(Token)match(input,180,FOLLOW_180_in_primary_expression1377); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal83_tree = (CommonTree)adaptor.create(string_literal83);
-					adaptor.addChild(root_0, string_literal83_tree);
+					retval.string_literal83 = string_literal83_tree=(CommonTree)adaptor.create(string_literal83);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal83_tree));
 					}
 
 					pushFollow(FOLLOW_brackets_in_primary_expression1381);
 					brackets84=brackets();retval.brackets84.add((brackets_return) brackets84);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets84.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(brackets84.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:103:54: ( primary_expression_part )*
 					loop23:
@@ -3181,7 +3236,7 @@ Token string_literal88 ;
 							primary_expression_part85=primary_expression_part();retval.primary_expression_part85.add((primary_expression_part_return) primary_expression_part85);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression_part85.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_expression_part85.getTree()));
 
 							}
 							break;
@@ -3203,7 +3258,7 @@ Token string_literal88 ;
 					primary_expression_start86=primary_expression_start();retval.primary_expression_start86.add((primary_expression_start_return) primary_expression_start86);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression_start86.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_expression_start86.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:104:38: ( primary_expression_part )*
 					loop24:
@@ -3222,7 +3277,7 @@ Token string_literal88 ;
 							primary_expression_part87=primary_expression_part();retval.primary_expression_part87.add((primary_expression_part_return) primary_expression_part87);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression_part87.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_expression_part87.getTree()));
 
 							}
 							break;
@@ -3242,8 +3297,8 @@ Token string_literal88 ;
 
 					string_literal88=(Token)match(input,150,FOLLOW_150_in_primary_expression1415); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal88_tree = (CommonTree)adaptor.create(string_literal88);
-					adaptor.addChild(root_0, string_literal88_tree);
+					retval.string_literal88 = string_literal88_tree=(CommonTree)adaptor.create(string_literal88);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal88_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:105:17: ( ( object_creation_expression ( '.' | '->' | '[' ) )=> object_creation_expression ( primary_expression_part )+ | ( delegate_creation_expression )=> delegate_creation_expression | object_creation_expression | anonymous_object_creation_expression )
@@ -3350,7 +3405,7 @@ Token string_literal88 ;
 							object_creation_expression89=object_creation_expression();retval.object_creation_expression89.add((object_creation_expression_return) object_creation_expression89);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, object_creation_expression89.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(object_creation_expression89.getTree()));
 
 							// /Users/jeremie/ANTLR/cs.g:106:70: ( primary_expression_part )+
 							int cnt25=0;
@@ -3370,7 +3425,7 @@ Token string_literal88 ;
 									primary_expression_part90=primary_expression_part();retval.primary_expression_part90.add((primary_expression_part_return) primary_expression_part90);
 									state._fsp--;
 									if (state.failed) return retval;
-									if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression_part90.getTree());
+									if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_expression_part90.getTree()));
 
 									}
 									break;
@@ -3393,7 +3448,7 @@ Token string_literal88 ;
 							delegate_creation_expression91=delegate_creation_expression();retval.delegate_creation_expression91.add((delegate_creation_expression_return) delegate_creation_expression91);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, delegate_creation_expression91.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(delegate_creation_expression91.getTree()));
 
 							}
 							break;
@@ -3404,7 +3459,7 @@ Token string_literal88 ;
 							object_creation_expression92=object_creation_expression();retval.object_creation_expression92.add((object_creation_expression_return) object_creation_expression92);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, object_creation_expression92.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(object_creation_expression92.getTree()));
 
 							}
 							break;
@@ -3415,7 +3470,7 @@ Token string_literal88 ;
 							anonymous_object_creation_expression93=anonymous_object_creation_expression();retval.anonymous_object_creation_expression93.add((anonymous_object_creation_expression_return) anonymous_object_creation_expression93);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_object_creation_expression93.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(anonymous_object_creation_expression93.getTree()));
 
 							}
 							break;
@@ -3434,7 +3489,7 @@ Token string_literal88 ;
 					sizeof_expression94=sizeof_expression();retval.sizeof_expression94.add((sizeof_expression_return) sizeof_expression94);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, sizeof_expression94.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(sizeof_expression94.getTree()));
 
 					}
 					break;
@@ -3448,7 +3503,7 @@ Token string_literal88 ;
 					checked_expression95=checked_expression();retval.checked_expression95.add((checked_expression_return) checked_expression95);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, checked_expression95.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(checked_expression95.getTree()));
 
 					}
 					break;
@@ -3462,7 +3517,7 @@ Token string_literal88 ;
 					unchecked_expression96=unchecked_expression();retval.unchecked_expression96.add((unchecked_expression_return) unchecked_expression96);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unchecked_expression96.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unchecked_expression96.getTree()));
 
 					}
 					break;
@@ -3476,7 +3531,7 @@ Token string_literal88 ;
 					default_value_expression97=default_value_expression();retval.default_value_expression97.add((default_value_expression_return) default_value_expression97);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, default_value_expression97.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(default_value_expression97.getTree()));
 
 					}
 					break;
@@ -3490,7 +3545,7 @@ Token string_literal88 ;
 					anonymous_method_expression98=anonymous_method_expression();retval.anonymous_method_expression98.add((anonymous_method_expression_return) anonymous_method_expression98);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_method_expression98.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(anonymous_method_expression98.getTree()));
 
 					}
 					break;
@@ -3518,23 +3573,26 @@ Token string_literal88 ;
 	// $ANTLR end "primary_expression"
 
 
-	public static class primary_expression_start_return extends ParserRuleReturnScope {
+	public static class primary_expression_start_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-predefined_type_return predefined_type99 ;
-identifier_return identifier100 ;
-generic_argument_list_return generic_argument_list101 ;
-identifier_return identifier102 ;
-identifier_return identifier104 ;
-paren_expression_return paren_expression107 ;
-typeof_expression_return typeof_expression108 ;
-literal_return literal109 ;
-Token string_literal103 ;
-Token string_literal105 ;
-Token string_literal106 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitprimary_expression_start_return(this);
+}
+CommonTree string_literal103 ;
+CommonTree string_literal105 ;
+CommonTree string_literal106 ;
+public predefined_type_return predefined_type99 ;
+public identifier_return identifier100 ;
+public generic_argument_list_return generic_argument_list101 ;
+public identifier_return identifier102 ;
+public identifier_return identifier104 ;
+public paren_expression_return paren_expression107 ;
+public typeof_expression_return typeof_expression108 ;
+public literal_return literal109 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -3681,7 +3739,7 @@ Token string_literal106 ;
 					predefined_type99=retval.predefined_type99=predefined_type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, predefined_type99.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(predefined_type99.getTree()));
 
 					}
 					break;
@@ -3695,13 +3753,13 @@ Token string_literal106 ;
 					identifier100=retval.identifier100=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier100.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier100.getTree()));
 
 					pushFollow(FOLLOW_generic_argument_list_in_primary_expression_start1996);
 					generic_argument_list101=retval.generic_argument_list101=generic_argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list101.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_argument_list101.getTree()));
 
 					}
 					break;
@@ -3715,7 +3773,7 @@ Token string_literal106 ;
 					identifier102=retval.identifier102=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier102.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier102.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:122:22: ( '::' identifier )?
 					int alt28=2;
@@ -3729,15 +3787,15 @@ Token string_literal106 ;
 							{
 							string_literal103=(Token)match(input,80,FOLLOW_80_in_primary_expression_start2011); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal103_tree = (CommonTree)adaptor.create(string_literal103);
-							adaptor.addChild(root_0, string_literal103_tree);
+							retval.string_literal103 = string_literal103_tree=(CommonTree)adaptor.create(string_literal103);
+							adaptor.addChild(root_0, adaptor.dupTree(string_literal103_tree));
 							}
 
 							pushFollow(FOLLOW_identifier_in_primary_expression_start2015);
 							identifier104=retval.identifier104=identifier();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier104.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier104.getTree()));
 
 							}
 							break;
@@ -3754,8 +3812,8 @@ Token string_literal106 ;
 
 					string_literal105=(Token)match(input,180,FOLLOW_180_in_primary_expression_start2029); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal105_tree = (CommonTree)adaptor.create(string_literal105);
-					adaptor.addChild(root_0, string_literal105_tree);
+					retval.string_literal105 = string_literal105_tree=(CommonTree)adaptor.create(string_literal105);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal105_tree));
 					}
 
 					}
@@ -3768,8 +3826,8 @@ Token string_literal106 ;
 
 					string_literal106=(Token)match(input,102,FOLLOW_102_in_primary_expression_start2042); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal106_tree = (CommonTree)adaptor.create(string_literal106);
-					adaptor.addChild(root_0, string_literal106_tree);
+					retval.string_literal106 = string_literal106_tree=(CommonTree)adaptor.create(string_literal106);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal106_tree));
 					}
 
 					}
@@ -3784,7 +3842,7 @@ Token string_literal106 ;
 					paren_expression107=retval.paren_expression107=paren_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, paren_expression107.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(paren_expression107.getTree()));
 
 					}
 					break;
@@ -3798,7 +3856,7 @@ Token string_literal106 ;
 					typeof_expression108=retval.typeof_expression108=typeof_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, typeof_expression108.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(typeof_expression108.getTree()));
 
 					}
 					break;
@@ -3812,7 +3870,7 @@ Token string_literal106 ;
 					literal109=retval.literal109=literal();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, literal109.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(literal109.getTree()));
 
 					}
 					break;
@@ -3840,14 +3898,17 @@ Token string_literal106 ;
 	// $ANTLR end "primary_expression_start"
 
 
-	public static class primary_expression_part_return extends ParserRuleReturnScope {
+	public static class primary_expression_part_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-access_identifier_return access_identifier110 ;
-brackets_or_arguments_return brackets_or_arguments111 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitprimary_expression_part_return(this);
+}
+public access_identifier_return access_identifier110 ;
+public brackets_or_arguments_return brackets_or_arguments111 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -3897,7 +3958,7 @@ brackets_or_arguments_return brackets_or_arguments111 ;
 					access_identifier110=retval.access_identifier110=access_identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, access_identifier110.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(access_identifier110.getTree()));
 
 					}
 					break;
@@ -3911,7 +3972,7 @@ brackets_or_arguments_return brackets_or_arguments111 ;
 					brackets_or_arguments111=retval.brackets_or_arguments111=brackets_or_arguments();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets_or_arguments111.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(brackets_or_arguments111.getTree()));
 
 					}
 					break;
@@ -3939,14 +4000,17 @@ brackets_or_arguments_return brackets_or_arguments111 ;
 	// $ANTLR end "primary_expression_part"
 
 
-	public static class access_identifier_return extends ParserRuleReturnScope {
+	public static class access_identifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-access_operator_return access_operator112 ;
-type_or_generic_return type_or_generic113 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitaccess_identifier_return(this);
+}
+public access_operator_return access_operator112 ;
+public type_or_generic_return type_or_generic113 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -3978,13 +4042,13 @@ type_or_generic_return type_or_generic113 ;
 			access_operator112=retval.access_operator112=access_operator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, access_operator112.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(access_operator112.getTree()));
 
 			pushFollow(FOLLOW_type_or_generic_in_access_identifier2147);
 			type_or_generic113=retval.type_or_generic113=type_or_generic();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic113.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_or_generic113.getTree()));
 
 			}
 
@@ -4010,13 +4074,16 @@ type_or_generic_return type_or_generic113 ;
 	// $ANTLR end "access_identifier"
 
 
-	public static class access_operator_return extends ParserRuleReturnScope {
+	public static class access_operator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set114 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitaccess_operator_return(this);
+}
+CommonTree set114 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4080,14 +4147,17 @@ Token set114 ;
 	// $ANTLR end "access_operator"
 
 
-	public static class brackets_or_arguments_return extends ParserRuleReturnScope {
+	public static class brackets_or_arguments_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-brackets_return brackets115 ;
-arguments_return arguments116 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitbrackets_or_arguments_return(this);
+}
+public brackets_return brackets115 ;
+public arguments_return arguments116 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4137,7 +4207,7 @@ arguments_return arguments116 ;
 					brackets115=retval.brackets115=brackets();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets115.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(brackets115.getTree()));
 
 					}
 					break;
@@ -4151,7 +4221,7 @@ arguments_return arguments116 ;
 					arguments116=retval.arguments116=arguments();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments116.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(arguments116.getTree()));
 
 					}
 					break;
@@ -4179,15 +4249,18 @@ arguments_return arguments116 ;
 	// $ANTLR end "brackets_or_arguments"
 
 
-	public static class brackets_return extends ParserRuleReturnScope {
+	public static class brackets_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_list_return expression_list118 ;
-Token char_literal117 ;
-Token char_literal119 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitbrackets_return(this);
+}
+CommonTree char_literal117 ;
+CommonTree char_literal119 ;
+public expression_list_return expression_list118 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4220,8 +4293,8 @@ Token char_literal119 ;
 
 			char_literal117=(Token)match(input,91,FOLLOW_91_in_brackets2202); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal117_tree = (CommonTree)adaptor.create(char_literal117);
-			adaptor.addChild(root_0, char_literal117_tree);
+			retval.char_literal117 = char_literal117_tree=(CommonTree)adaptor.create(char_literal117);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal117_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:140:15: ( expression_list )?
@@ -4238,7 +4311,7 @@ Token char_literal119 ;
 					expression_list118=retval.expression_list118=expression_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression_list118.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression_list118.getTree()));
 
 					}
 					break;
@@ -4247,8 +4320,8 @@ Token char_literal119 ;
 
 			char_literal119=(Token)match(input,92,FOLLOW_92_in_brackets2211); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal119_tree = (CommonTree)adaptor.create(char_literal119);
-			adaptor.addChild(root_0, char_literal119_tree);
+			retval.char_literal119 = char_literal119_tree=(CommonTree)adaptor.create(char_literal119);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal119_tree));
 			}
 
 			}
@@ -4275,15 +4348,18 @@ Token char_literal119 ;
 	// $ANTLR end "brackets"
 
 
-	public static class paren_expression_return extends ParserRuleReturnScope {
+	public static class paren_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression121 ;
-Token char_literal120 ;
-Token char_literal122 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitparen_expression_return(this);
+}
+CommonTree char_literal120 ;
+CommonTree char_literal122 ;
+public expression_return expression121 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4316,20 +4392,20 @@ Token char_literal122 ;
 
 			char_literal120=(Token)match(input,68,FOLLOW_68_in_paren_expression2242); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal120_tree = (CommonTree)adaptor.create(char_literal120);
-			adaptor.addChild(root_0, char_literal120_tree);
+			retval.char_literal120 = char_literal120_tree=(CommonTree)adaptor.create(char_literal120);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal120_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_paren_expression2246);
 			expression121=retval.expression121=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression121.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression121.getTree()));
 
 			char_literal122=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_paren_expression2250); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal122_tree = (CommonTree)adaptor.create(char_literal122);
-			adaptor.addChild(root_0, char_literal122_tree);
+			retval.char_literal122 = char_literal122_tree=(CommonTree)adaptor.create(char_literal122);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal122_tree));
 			}
 
 			}
@@ -4356,15 +4432,18 @@ Token char_literal122 ;
 	// $ANTLR end "paren_expression"
 
 
-	public static class arguments_return extends ParserRuleReturnScope {
+	public static class arguments_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-argument_list_return argument_list124 ;
-Token char_literal123 ;
-Token char_literal125 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitarguments_return(this);
+}
+CommonTree char_literal123 ;
+CommonTree char_literal125 ;
+public argument_list_return argument_list124 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4397,8 +4476,8 @@ Token char_literal125 ;
 
 			char_literal123=(Token)match(input,68,FOLLOW_68_in_arguments2266); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal123_tree = (CommonTree)adaptor.create(char_literal123);
-			adaptor.addChild(root_0, char_literal123_tree);
+			retval.char_literal123 = char_literal123_tree=(CommonTree)adaptor.create(char_literal123);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal123_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:144:15: ( argument_list )?
@@ -4415,7 +4494,7 @@ Token char_literal125 ;
 					argument_list124=retval.argument_list124=argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_list124.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument_list124.getTree()));
 
 					}
 					break;
@@ -4424,8 +4503,8 @@ Token char_literal125 ;
 
 			char_literal125=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_arguments2275); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal125_tree = (CommonTree)adaptor.create(char_literal125);
-			adaptor.addChild(root_0, char_literal125_tree);
+			retval.char_literal125 = char_literal125_tree=(CommonTree)adaptor.create(char_literal125);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal125_tree));
 			}
 
 			}
@@ -4452,15 +4531,18 @@ Token char_literal125 ;
 	// $ANTLR end "arguments"
 
 
-	public static class argument_list_return extends ParserRuleReturnScope {
+	public static class argument_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-argument_return argument126 ;
-List<argument_return> argument128 = new ArrayList<argument_return>();
-Token char_literal127 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitargument_list_return(this);
+}
+CommonTree char_literal127 ;
+public argument_return argument126 ;
+public List<argument_return> argument128 = new ArrayList<argument_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4494,7 +4576,7 @@ Token char_literal127 ;
 			argument126=retval.argument126=argument();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, argument126.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument126.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:146:18: ( ',' argument )*
 			loop34:
@@ -4511,15 +4593,15 @@ Token char_literal127 ;
 					{
 					char_literal127=(Token)match(input,74,FOLLOW_74_in_argument_list2294); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal127_tree = (CommonTree)adaptor.create(char_literal127);
-					adaptor.addChild(root_0, char_literal127_tree);
+					retval.char_literal127 = char_literal127_tree=(CommonTree)adaptor.create(char_literal127);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal127_tree));
 					}
 
 					pushFollow(FOLLOW_argument_in_argument_list2296);
 					argument128=argument();retval.argument128.add((argument_return) argument128);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument128.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument128.getTree()));
 
 					}
 					break;
@@ -4553,15 +4635,18 @@ Token char_literal127 ;
 	// $ANTLR end "argument_list"
 
 
-	public static class argument_return extends ParserRuleReturnScope {
+	public static class argument_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-argument_name_return argument_name129 ;
-argument_value_return argument_value130 ;
-argument_value_return argument_value131 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitargument_return(this);
+}
+public argument_name_return argument_name129 ;
+public argument_value_return argument_value130 ;
+public argument_value_return argument_value131 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4730,13 +4815,13 @@ argument_value_return argument_value131 ;
 					argument_name129=retval.argument_name129=argument_name();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_name129.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument_name129.getTree()));
 
 					pushFollow(FOLLOW_argument_value_in_argument2317);
 					argument_value130=retval.argument_value130=argument_value();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_value130.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument_value130.getTree()));
 
 					}
 					break;
@@ -4750,7 +4835,7 @@ argument_value_return argument_value131 ;
 					argument_value131=retval.argument_value131=argument_value();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_value131.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument_value131.getTree()));
 
 					}
 					break;
@@ -4778,14 +4863,17 @@ argument_value_return argument_value131 ;
 	// $ANTLR end "argument"
 
 
-	public static class argument_name_return extends ParserRuleReturnScope {
+	public static class argument_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier132 ;
-Token char_literal133 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitargument_name_return(this);
+}
+CommonTree char_literal133 ;
+public identifier_return identifier132 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4818,12 +4906,12 @@ Token char_literal133 ;
 			identifier132=retval.identifier132=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier132.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier132.getTree()));
 
 			char_literal133=(Token)match(input,79,FOLLOW_79_in_argument_name2347); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal133_tree = (CommonTree)adaptor.create(char_literal133);
-			adaptor.addChild(root_0, char_literal133_tree);
+			retval.char_literal133 = char_literal133_tree=(CommonTree)adaptor.create(char_literal133);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal133_tree));
 			}
 
 			}
@@ -4850,16 +4938,19 @@ Token char_literal133 ;
 	// $ANTLR end "argument_name"
 
 
-	public static class argument_value_return extends ParserRuleReturnScope {
+	public static class argument_value_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression134 ;
-ref_variable_reference_return ref_variable_reference135 ;
-variable_reference_return variable_reference137 ;
-Token string_literal136 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitargument_value_return(this);
+}
+CommonTree string_literal136 ;
+public expression_return expression134 ;
+public ref_variable_reference_return ref_variable_reference135 ;
+public variable_reference_return variable_reference137 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -4990,7 +5081,7 @@ Token string_literal136 ;
 					expression134=retval.expression134=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression134.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression134.getTree()));
 
 					}
 					break;
@@ -5004,7 +5095,7 @@ Token string_literal136 ;
 					ref_variable_reference135=retval.ref_variable_reference135=ref_variable_reference();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, ref_variable_reference135.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(ref_variable_reference135.getTree()));
 
 					}
 					break;
@@ -5016,15 +5107,15 @@ Token string_literal136 ;
 
 					string_literal136=(Token)match(input,155,FOLLOW_155_in_argument_value2388); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal136_tree = (CommonTree)adaptor.create(string_literal136);
-					adaptor.addChild(root_0, string_literal136_tree);
+					retval.string_literal136 = string_literal136_tree=(CommonTree)adaptor.create(string_literal136);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal136_tree));
 					}
 
 					pushFollow(FOLLOW_variable_reference_in_argument_value2392);
 					variable_reference137=retval.variable_reference137=variable_reference();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference137.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_reference137.getTree()));
 
 					}
 					break;
@@ -5052,19 +5143,22 @@ Token string_literal136 ;
 	// $ANTLR end "argument_value"
 
 
-	public static class ref_variable_reference_return extends ParserRuleReturnScope {
+	public static class ref_variable_reference_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type140 ;
-ref_variable_reference_return ref_variable_reference142 ;
-variable_reference_return variable_reference143 ;
-variable_reference_return variable_reference144 ;
-Token string_literal138 ;
-Token char_literal139 ;
-Token char_literal141 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitref_variable_reference_return(this);
+}
+CommonTree string_literal138 ;
+CommonTree char_literal139 ;
+CommonTree char_literal141 ;
+public type_return type140 ;
+public ref_variable_reference_return ref_variable_reference142 ;
+public variable_reference_return variable_reference143 ;
+public variable_reference_return variable_reference144 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5102,8 +5196,8 @@ Token char_literal141 ;
 
 			string_literal138=(Token)match(input,166,FOLLOW_166_in_ref_variable_reference2407); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal138_tree = (CommonTree)adaptor.create(string_literal138);
-			adaptor.addChild(root_0, string_literal138_tree);
+			retval.string_literal138 = string_literal138_tree=(CommonTree)adaptor.create(string_literal138);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal138_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:159:17: ( ( '(' type ')' )=> '(' type ')' ( ref_variable_reference | variable_reference ) | variable_reference )
@@ -5136,20 +5230,20 @@ Token char_literal141 ;
 					{
 					char_literal139=(Token)match(input,68,FOLLOW_68_in_ref_variable_reference2443); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal139_tree = (CommonTree)adaptor.create(char_literal139);
-					adaptor.addChild(root_0, char_literal139_tree);
+					retval.char_literal139 = char_literal139_tree=(CommonTree)adaptor.create(char_literal139);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal139_tree));
 					}
 
 					pushFollow(FOLLOW_type_in_ref_variable_reference2447);
 					type140=retval.type140=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type140.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type140.getTree()));
 
 					char_literal141=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_ref_variable_reference2451); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal141_tree = (CommonTree)adaptor.create(char_literal141);
-					adaptor.addChild(root_0, char_literal141_tree);
+					retval.char_literal141 = char_literal141_tree=(CommonTree)adaptor.create(char_literal141);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal141_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:159:61: ( ref_variable_reference | variable_reference )
@@ -5177,7 +5271,7 @@ Token char_literal141 ;
 							ref_variable_reference142=retval.ref_variable_reference142=ref_variable_reference();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, ref_variable_reference142.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(ref_variable_reference142.getTree()));
 
 							}
 							break;
@@ -5188,7 +5282,7 @@ Token char_literal141 ;
 							variable_reference143=retval.variable_reference143=variable_reference();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference143.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_reference143.getTree()));
 
 							}
 							break;
@@ -5204,7 +5298,7 @@ Token char_literal141 ;
 					variable_reference144=retval.variable_reference144=variable_reference();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference144.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_reference144.getTree()));
 
 					}
 					break;
@@ -5235,13 +5329,16 @@ Token char_literal141 ;
 	// $ANTLR end "ref_variable_reference"
 
 
-	public static class variable_reference_return extends ParserRuleReturnScope {
+	public static class variable_reference_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression145 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariable_reference_return(this);
+}
+public expression_return expression145 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5272,7 +5369,7 @@ expression_return expression145 ;
 			expression145=retval.expression145=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression145.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression145.getTree()));
 
 			}
 
@@ -5298,13 +5395,16 @@ expression_return expression145 ;
 	// $ANTLR end "variable_reference"
 
 
-	public static class rank_specifiers_return extends ParserRuleReturnScope {
+	public static class rank_specifiers_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<rank_specifier_return> rank_specifier146 = new ArrayList<rank_specifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitrank_specifiers_return(this);
+}
+public List<rank_specifier_return> rank_specifier146 = new ArrayList<rank_specifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5353,7 +5453,7 @@ List<rank_specifier_return> rank_specifier146 = new ArrayList<rank_specifier_ret
 					rank_specifier146=rank_specifier();retval.rank_specifier146.add((rank_specifier_return) rank_specifier146);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifier146.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(rank_specifier146.getTree()));
 
 					}
 					break;
@@ -5391,15 +5491,18 @@ List<rank_specifier_return> rank_specifier146 = new ArrayList<rank_specifier_ret
 	// $ANTLR end "rank_specifiers"
 
 
-	public static class rank_specifier_return extends ParserRuleReturnScope {
+	public static class rank_specifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-dim_separators_return dim_separators148 ;
-Token char_literal147 ;
-Token char_literal149 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitrank_specifier_return(this);
+}
+CommonTree char_literal147 ;
+CommonTree char_literal149 ;
+public dim_separators_return dim_separators148 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5432,8 +5535,8 @@ Token char_literal149 ;
 
 			char_literal147=(Token)match(input,91,FOLLOW_91_in_rank_specifier2749); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal147_tree = (CommonTree)adaptor.create(char_literal147);
-			adaptor.addChild(root_0, char_literal147_tree);
+			retval.char_literal147 = char_literal147_tree=(CommonTree)adaptor.create(char_literal147);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal147_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:168:15: ( dim_separators )?
@@ -5450,7 +5553,7 @@ Token char_literal149 ;
 					dim_separators148=retval.dim_separators148=dim_separators();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, dim_separators148.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(dim_separators148.getTree()));
 
 					}
 					break;
@@ -5459,8 +5562,8 @@ Token char_literal149 ;
 
 			char_literal149=(Token)match(input,92,FOLLOW_92_in_rank_specifier2758); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal149_tree = (CommonTree)adaptor.create(char_literal149);
-			adaptor.addChild(root_0, char_literal149_tree);
+			retval.char_literal149 = char_literal149_tree=(CommonTree)adaptor.create(char_literal149);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal149_tree));
 			}
 
 			}
@@ -5487,13 +5590,16 @@ Token char_literal149 ;
 	// $ANTLR end "rank_specifier"
 
 
-	public static class dim_separators_return extends ParserRuleReturnScope {
+	public static class dim_separators_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token char_literal150 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdim_separators_return(this);
+}
+CommonTree char_literal150 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5537,8 +5643,8 @@ Token char_literal150 ;
 					{
 					char_literal150=(Token)match(input,74,FOLLOW_74_in_dim_separators2774); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal150_tree = (CommonTree)adaptor.create(char_literal150);
-					adaptor.addChild(root_0, char_literal150_tree);
+					retval.char_literal150 = char_literal150_tree=(CommonTree)adaptor.create(char_literal150);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal150_tree));
 					}
 
 					}
@@ -5577,16 +5683,19 @@ Token char_literal150 ;
 	// $ANTLR end "dim_separators"
 
 
-	public static class delegate_creation_expression_return extends ParserRuleReturnScope {
+	public static class delegate_creation_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_name_return type_name151 ;
-type_name_return type_name153 ;
-Token char_literal152 ;
-Token char_literal154 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdelegate_creation_expression_return(this);
+}
+CommonTree char_literal152 ;
+CommonTree char_literal154 ;
+public type_name_return type_name151 ;
+public type_name_return type_name153 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5622,24 +5731,24 @@ Token char_literal154 ;
 			type_name151=retval.type_name151=type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name151.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name151.getTree()));
 
 			char_literal152=(Token)match(input,68,FOLLOW_68_in_delegate_creation_expression2805); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal152_tree = (CommonTree)adaptor.create(char_literal152);
-			adaptor.addChild(root_0, char_literal152_tree);
+			retval.char_literal152 = char_literal152_tree=(CommonTree)adaptor.create(char_literal152);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal152_tree));
 			}
 
 			pushFollow(FOLLOW_type_name_in_delegate_creation_expression2809);
 			type_name153=retval.type_name153=type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name153.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name153.getTree()));
 
 			char_literal154=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_delegate_creation_expression2813); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal154_tree = (CommonTree)adaptor.create(char_literal154);
-			adaptor.addChild(root_0, char_literal154_tree);
+			retval.char_literal154 = char_literal154_tree=(CommonTree)adaptor.create(char_literal154);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal154_tree));
 			}
 
 			}
@@ -5666,13 +5775,16 @@ Token char_literal154 ;
 	// $ANTLR end "delegate_creation_expression"
 
 
-	public static class anonymous_object_creation_expression_return extends ParserRuleReturnScope {
+	public static class anonymous_object_creation_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-anonymous_object_initializer_return anonymous_object_initializer155 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitanonymous_object_creation_expression_return(this);
+}
+public anonymous_object_initializer_return anonymous_object_initializer155 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5703,7 +5815,7 @@ anonymous_object_initializer_return anonymous_object_initializer155 ;
 			anonymous_object_initializer155=retval.anonymous_object_initializer155=anonymous_object_initializer();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_object_initializer155.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(anonymous_object_initializer155.getTree()));
 
 			}
 
@@ -5729,16 +5841,19 @@ anonymous_object_initializer_return anonymous_object_initializer155 ;
 	// $ANTLR end "anonymous_object_creation_expression"
 
 
-	public static class anonymous_object_initializer_return extends ParserRuleReturnScope {
+	public static class anonymous_object_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-member_declarator_list_return member_declarator_list157 ;
-Token char_literal156 ;
-Token char_literal158 ;
-Token char_literal159 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitanonymous_object_initializer_return(this);
+}
+CommonTree char_literal156 ;
+CommonTree char_literal158 ;
+CommonTree char_literal159 ;
+public member_declarator_list_return member_declarator_list157 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5773,8 +5888,8 @@ Token char_literal159 ;
 
 			char_literal156=(Token)match(input,197,FOLLOW_197_in_anonymous_object_initializer2854); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal156_tree = (CommonTree)adaptor.create(char_literal156);
-			adaptor.addChild(root_0, char_literal156_tree);
+			retval.char_literal156 = char_literal156_tree=(CommonTree)adaptor.create(char_literal156);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal156_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:179:15: ( member_declarator_list )?
@@ -5791,7 +5906,7 @@ Token char_literal159 ;
 					member_declarator_list157=retval.member_declarator_list157=member_declarator_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator_list157.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_declarator_list157.getTree()));
 
 					}
 					break;
@@ -5810,8 +5925,8 @@ Token char_literal159 ;
 					{
 					char_literal158=(Token)match(input,74,FOLLOW_74_in_anonymous_object_initializer2863); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal158_tree = (CommonTree)adaptor.create(char_literal158);
-					adaptor.addChild(root_0, char_literal158_tree);
+					retval.char_literal158 = char_literal158_tree=(CommonTree)adaptor.create(char_literal158);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal158_tree));
 					}
 
 					}
@@ -5821,8 +5936,8 @@ Token char_literal159 ;
 
 			char_literal159=(Token)match(input,201,FOLLOW_201_in_anonymous_object_initializer2868); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal159_tree = (CommonTree)adaptor.create(char_literal159);
-			adaptor.addChild(root_0, char_literal159_tree);
+			retval.char_literal159 = char_literal159_tree=(CommonTree)adaptor.create(char_literal159);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal159_tree));
 			}
 
 			}
@@ -5849,15 +5964,18 @@ Token char_literal159 ;
 	// $ANTLR end "anonymous_object_initializer"
 
 
-	public static class member_declarator_list_return extends ParserRuleReturnScope {
+	public static class member_declarator_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-member_declarator_return member_declarator160 ;
-List<member_declarator_return> member_declarator162 = new ArrayList<member_declarator_return>();
-Token char_literal161 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmember_declarator_list_return(this);
+}
+CommonTree char_literal161 ;
+public member_declarator_return member_declarator160 ;
+public List<member_declarator_return> member_declarator162 = new ArrayList<member_declarator_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -5891,7 +6009,7 @@ Token char_literal161 ;
 			member_declarator160=retval.member_declarator160=member_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator160.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_declarator160.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:181:28: ( ',' member_declarator )*
 			loop44:
@@ -5912,15 +6030,15 @@ Token char_literal161 ;
 					{
 					char_literal161=(Token)match(input,74,FOLLOW_74_in_member_declarator_list2887); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal161_tree = (CommonTree)adaptor.create(char_literal161);
-					adaptor.addChild(root_0, char_literal161_tree);
+					retval.char_literal161 = char_literal161_tree=(CommonTree)adaptor.create(char_literal161);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal161_tree));
 					}
 
 					pushFollow(FOLLOW_member_declarator_in_member_declarator_list2889);
 					member_declarator162=member_declarator();retval.member_declarator162.add((member_declarator_return) member_declarator162);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator162.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_declarator162.getTree()));
 
 					}
 					break;
@@ -5954,18 +6072,21 @@ Token char_literal161 ;
 	// $ANTLR end "member_declarator_list"
 
 
-	public static class member_declarator_return extends ParserRuleReturnScope {
+	public static class member_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier163 ;
-generic_argument_list_return generic_argument_list164 ;
-primary_or_array_creation_expression_return primary_or_array_creation_expression166 ;
-expression_return expression168 ;
-Token char_literal165 ;
-Token char_literal167 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmember_declarator_return(this);
+}
+CommonTree char_literal165 ;
+CommonTree char_literal167 ;
+public identifier_return identifier163 ;
+public generic_argument_list_return generic_argument_list164 ;
+public primary_or_array_creation_expression_return primary_or_array_creation_expression166 ;
+public expression_return expression168 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6003,7 +6124,7 @@ Token char_literal167 ;
 			identifier163=retval.identifier163=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier163.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier163.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:183:22: ( generic_argument_list | ( '.' primary_or_array_creation_expression ) | '=' expression )
 			int alt45=3;
@@ -6037,7 +6158,7 @@ Token char_literal167 ;
 					generic_argument_list164=retval.generic_argument_list164=generic_argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list164.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_argument_list164.getTree()));
 
 					}
 					break;
@@ -6049,15 +6170,15 @@ Token char_literal167 ;
 					{
 					char_literal165=(Token)match(input,DOT,FOLLOW_DOT_in_member_declarator2951); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal165_tree = (CommonTree)adaptor.create(char_literal165);
-					adaptor.addChild(root_0, char_literal165_tree);
+					retval.char_literal165 = char_literal165_tree=(CommonTree)adaptor.create(char_literal165);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal165_tree));
 					}
 
 					pushFollow(FOLLOW_primary_or_array_creation_expression_in_member_declarator2955);
 					primary_or_array_creation_expression166=retval.primary_or_array_creation_expression166=primary_or_array_creation_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_or_array_creation_expression166.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_or_array_creation_expression166.getTree()));
 
 					}
 
@@ -6068,15 +6189,15 @@ Token char_literal167 ;
 					{
 					char_literal167=(Token)match(input,85,FOLLOW_85_in_member_declarator2993); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal167_tree = (CommonTree)adaptor.create(char_literal167);
-					adaptor.addChild(root_0, char_literal167_tree);
+					retval.char_literal167 = char_literal167_tree=(CommonTree)adaptor.create(char_literal167);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal167_tree));
 					}
 
 					pushFollow(FOLLOW_expression_in_member_declarator2997);
 					expression168=retval.expression168=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression168.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression168.getTree()));
 
 					}
 					break;
@@ -6107,14 +6228,17 @@ Token char_literal167 ;
 	// $ANTLR end "member_declarator"
 
 
-	public static class primary_or_array_creation_expression_return extends ParserRuleReturnScope {
+	public static class primary_or_array_creation_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-array_creation_expression_return array_creation_expression169 ;
-primary_expression_return primary_expression170 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitprimary_or_array_creation_expression_return(this);
+}
+public array_creation_expression_return array_creation_expression169 ;
+public primary_expression_return primary_expression170 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6171,7 +6295,7 @@ primary_expression_return primary_expression170 ;
 					array_creation_expression169=retval.array_creation_expression169=array_creation_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, array_creation_expression169.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(array_creation_expression169.getTree()));
 
 					}
 					break;
@@ -6185,7 +6309,7 @@ primary_expression_return primary_expression170 ;
 					primary_expression170=retval.primary_expression170=primary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression170.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_expression170.getTree()));
 
 					}
 					break;
@@ -6213,26 +6337,29 @@ primary_expression_return primary_expression170 ;
 	// $ANTLR end "primary_or_array_creation_expression"
 
 
-	public static class array_creation_expression_return extends ParserRuleReturnScope {
+	public static class array_creation_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type172 ;
-expression_list_return expression_list174 ;
-rank_specifiers_return rank_specifiers176 ;
-array_initializer_return array_initializer177 ;
-List<arguments_return> arguments178 = new ArrayList<arguments_return>();
-List<invocation_part_return> invocation_part179 = new ArrayList<invocation_part_return>();
-List<invocation_part_return> invocation_part180 = new ArrayList<invocation_part_return>();
-List<arguments_return> arguments181 = new ArrayList<arguments_return>();
-List<array_initializer_return> array_initializer182 = new ArrayList<array_initializer_return>();
-List<rank_specifier_return> rank_specifier183 = new ArrayList<rank_specifier_return>();
-List<array_initializer_return> array_initializer184 = new ArrayList<array_initializer_return>();
-Token string_literal171 ;
-Token char_literal173 ;
-Token char_literal175 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitarray_creation_expression_return(this);
+}
+CommonTree string_literal171 ;
+CommonTree char_literal173 ;
+CommonTree char_literal175 ;
+public type_return type172 ;
+public expression_list_return expression_list174 ;
+public rank_specifiers_return rank_specifiers176 ;
+public array_initializer_return array_initializer177 ;
+public List<arguments_return> arguments178 = new ArrayList<arguments_return>();
+public List<invocation_part_return> invocation_part179 = new ArrayList<invocation_part_return>();
+public List<invocation_part_return> invocation_part180 = new ArrayList<invocation_part_return>();
+public List<arguments_return> arguments181 = new ArrayList<arguments_return>();
+public List<array_initializer_return> array_initializer182 = new ArrayList<array_initializer_return>();
+public List<rank_specifier_return> rank_specifier183 = new ArrayList<rank_specifier_return>();
+public List<array_initializer_return> array_initializer184 = new ArrayList<array_initializer_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6277,8 +6404,8 @@ Token char_literal175 ;
 
 			string_literal171=(Token)match(input,150,FOLLOW_150_in_array_creation_expression3056); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal171_tree = (CommonTree)adaptor.create(string_literal171);
-			adaptor.addChild(root_0, string_literal171_tree);
+			retval.string_literal171 = string_literal171_tree=(CommonTree)adaptor.create(string_literal171);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal171_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:193:17: ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) )
@@ -6306,7 +6433,7 @@ Token char_literal175 ;
 					type172=retval.type172=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type172.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type172.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:193:25: ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer )
 					int alt51=2;
@@ -6331,20 +6458,20 @@ Token char_literal175 ;
 							{
 							char_literal173=(Token)match(input,91,FOLLOW_91_in_array_creation_expression3083); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal173_tree = (CommonTree)adaptor.create(char_literal173);
-							adaptor.addChild(root_0, char_literal173_tree);
+							retval.char_literal173 = char_literal173_tree=(CommonTree)adaptor.create(char_literal173);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal173_tree));
 							}
 
 							pushFollow(FOLLOW_expression_list_in_array_creation_expression3087);
 							expression_list174=retval.expression_list174=expression_list();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, expression_list174.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression_list174.getTree()));
 
 							char_literal175=(Token)match(input,92,FOLLOW_92_in_array_creation_expression3091); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal175_tree = (CommonTree)adaptor.create(char_literal175);
-							adaptor.addChild(root_0, char_literal175_tree);
+							retval.char_literal175 = char_literal175_tree=(CommonTree)adaptor.create(char_literal175);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal175_tree));
 							}
 
 							// /Users/jeremie/ANTLR/cs.g:194:41: ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )
@@ -6368,7 +6495,7 @@ Token char_literal175 ;
 											rank_specifiers176=retval.rank_specifiers176=rank_specifiers();
 											state._fsp--;
 											if (state.failed) return retval;
-											if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifiers176.getTree());
+											if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(rank_specifiers176.getTree()));
 
 											}
 											break;
@@ -6389,7 +6516,7 @@ Token char_literal175 ;
 											array_initializer177=retval.array_initializer177=array_initializer();
 											state._fsp--;
 											if (state.failed) return retval;
-											if ( state.backtracking==0 ) adaptor.addChild(root_0, array_initializer177.getTree());
+											if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(array_initializer177.getTree()));
 
 											}
 											break;
@@ -6428,13 +6555,13 @@ Token char_literal175 ;
 											arguments178=arguments();retval.arguments178.add((arguments_return) arguments178);
 											state._fsp--;
 											if (state.failed) return retval;
-											if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments178.getTree());
+											if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(arguments178.getTree()));
 
 											pushFollow(FOLLOW_invocation_part_in_array_creation_expression3260);
 											invocation_part179=invocation_part();retval.invocation_part179.add((invocation_part_return) invocation_part179);
 											state._fsp--;
 											if (state.failed) return retval;
-											if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_part179.getTree());
+											if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(invocation_part179.getTree()));
 
 											}
 
@@ -6447,7 +6574,7 @@ Token char_literal175 ;
 											invocation_part180=invocation_part();retval.invocation_part180.add((invocation_part_return) invocation_part180);
 											state._fsp--;
 											if (state.failed) return retval;
-											if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_part180.getTree());
+											if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(invocation_part180.getTree()));
 
 											}
 											break;
@@ -6461,7 +6588,7 @@ Token char_literal175 ;
 									arguments181=arguments();retval.arguments181.add((arguments_return) arguments181);
 									state._fsp--;
 									if (state.failed) return retval;
-									if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments181.getTree());
+									if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(arguments181.getTree()));
 
 									}
 									break;
@@ -6477,7 +6604,7 @@ Token char_literal175 ;
 							array_initializer182=array_initializer();retval.array_initializer182.add((array_initializer_return) array_initializer182);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, array_initializer182.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(array_initializer182.getTree()));
 
 							}
 							break;
@@ -6493,7 +6620,7 @@ Token char_literal175 ;
 					rank_specifier183=rank_specifier();retval.rank_specifier183.add((rank_specifier_return) rank_specifier183);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifier183.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(rank_specifier183.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:202:25: ( array_initializer )
 					// /Users/jeremie/ANTLR/cs.g:202:26: array_initializer
@@ -6502,7 +6629,7 @@ Token char_literal175 ;
 					array_initializer184=array_initializer();retval.array_initializer184.add((array_initializer_return) array_initializer184);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, array_initializer184.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(array_initializer184.getTree()));
 
 					}
 
@@ -6535,16 +6662,19 @@ Token char_literal175 ;
 	// $ANTLR end "array_creation_expression"
 
 
-	public static class array_initializer_return extends ParserRuleReturnScope {
+	public static class array_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-variable_initializer_list_return variable_initializer_list186 ;
-Token char_literal185 ;
-Token char_literal187 ;
-Token char_literal188 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitarray_initializer_return(this);
+}
+CommonTree char_literal185 ;
+CommonTree char_literal187 ;
+CommonTree char_literal188 ;
+public variable_initializer_list_return variable_initializer_list186 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6579,8 +6709,8 @@ Token char_literal188 ;
 
 			char_literal185=(Token)match(input,197,FOLLOW_197_in_array_initializer3610); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal185_tree = (CommonTree)adaptor.create(char_literal185);
-			adaptor.addChild(root_0, char_literal185_tree);
+			retval.char_literal185 = char_literal185_tree=(CommonTree)adaptor.create(char_literal185);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal185_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:206:15: ( variable_initializer_list )?
@@ -6597,7 +6727,7 @@ Token char_literal188 ;
 					variable_initializer_list186=retval.variable_initializer_list186=variable_initializer_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_initializer_list186.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_initializer_list186.getTree()));
 
 					}
 					break;
@@ -6616,8 +6746,8 @@ Token char_literal188 ;
 					{
 					char_literal187=(Token)match(input,74,FOLLOW_74_in_array_initializer3619); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal187_tree = (CommonTree)adaptor.create(char_literal187);
-					adaptor.addChild(root_0, char_literal187_tree);
+					retval.char_literal187 = char_literal187_tree=(CommonTree)adaptor.create(char_literal187);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal187_tree));
 					}
 
 					}
@@ -6627,8 +6757,8 @@ Token char_literal188 ;
 
 			char_literal188=(Token)match(input,201,FOLLOW_201_in_array_initializer3624); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal188_tree = (CommonTree)adaptor.create(char_literal188);
-			adaptor.addChild(root_0, char_literal188_tree);
+			retval.char_literal188 = char_literal188_tree=(CommonTree)adaptor.create(char_literal188);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal188_tree));
 			}
 
 			}
@@ -6655,15 +6785,18 @@ Token char_literal188 ;
 	// $ANTLR end "array_initializer"
 
 
-	public static class variable_initializer_list_return extends ParserRuleReturnScope {
+	public static class variable_initializer_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-variable_initializer_return variable_initializer189 ;
-List<variable_initializer_return> variable_initializer191 = new ArrayList<variable_initializer_return>();
-Token char_literal190 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariable_initializer_list_return(this);
+}
+CommonTree char_literal190 ;
+public variable_initializer_return variable_initializer189 ;
+public List<variable_initializer_return> variable_initializer191 = new ArrayList<variable_initializer_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6697,7 +6830,7 @@ Token char_literal190 ;
 			variable_initializer189=retval.variable_initializer189=variable_initializer();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_initializer189.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_initializer189.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:208:30: ( ',' variable_initializer )*
 			loop55:
@@ -6718,15 +6851,15 @@ Token char_literal190 ;
 					{
 					char_literal190=(Token)match(input,74,FOLLOW_74_in_variable_initializer_list3642); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal190_tree = (CommonTree)adaptor.create(char_literal190);
-					adaptor.addChild(root_0, char_literal190_tree);
+					retval.char_literal190 = char_literal190_tree=(CommonTree)adaptor.create(char_literal190);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal190_tree));
 					}
 
 					pushFollow(FOLLOW_variable_initializer_in_variable_initializer_list3644);
 					variable_initializer191=variable_initializer();retval.variable_initializer191.add((variable_initializer_return) variable_initializer191);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_initializer191.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_initializer191.getTree()));
 
 					}
 					break;
@@ -6760,14 +6893,17 @@ Token char_literal190 ;
 	// $ANTLR end "variable_initializer_list"
 
 
-	public static class variable_initializer_return extends ParserRuleReturnScope {
+	public static class variable_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression192 ;
-array_initializer_return array_initializer193 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariable_initializer_return(this);
+}
+public expression_return expression192 ;
+public array_initializer_return array_initializer193 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6817,7 +6953,7 @@ array_initializer_return array_initializer193 ;
 					expression192=retval.expression192=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression192.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression192.getTree()));
 
 					}
 					break;
@@ -6831,7 +6967,7 @@ array_initializer_return array_initializer193 ;
 					array_initializer193=retval.array_initializer193=array_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, array_initializer193.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(array_initializer193.getTree()));
 
 					}
 					break;
@@ -6859,16 +6995,19 @@ array_initializer_return array_initializer193 ;
 	// $ANTLR end "variable_initializer"
 
 
-	public static class sizeof_expression_return extends ParserRuleReturnScope {
+	public static class sizeof_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unmanaged_type_return unmanaged_type196 ;
-Token string_literal194 ;
-Token char_literal195 ;
-Token char_literal197 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitsizeof_expression_return(this);
+}
+CommonTree string_literal194 ;
+CommonTree char_literal195 ;
+CommonTree char_literal197 ;
+public unmanaged_type_return unmanaged_type196 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6903,26 +7042,26 @@ Token char_literal197 ;
 
 			string_literal194=(Token)match(input,174,FOLLOW_174_in_sizeof_expression3687); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal194_tree = (CommonTree)adaptor.create(string_literal194);
-			adaptor.addChild(root_0, string_literal194_tree);
+			retval.string_literal194 = string_literal194_tree=(CommonTree)adaptor.create(string_literal194);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal194_tree));
 			}
 
 			char_literal195=(Token)match(input,68,FOLLOW_68_in_sizeof_expression3691); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal195_tree = (CommonTree)adaptor.create(char_literal195);
-			adaptor.addChild(root_0, char_literal195_tree);
+			retval.char_literal195 = char_literal195_tree=(CommonTree)adaptor.create(char_literal195);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal195_tree));
 			}
 
 			pushFollow(FOLLOW_unmanaged_type_in_sizeof_expression3695);
 			unmanaged_type196=retval.unmanaged_type196=unmanaged_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unmanaged_type196.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unmanaged_type196.getTree()));
 
 			char_literal197=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_sizeof_expression3699); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal197_tree = (CommonTree)adaptor.create(char_literal197);
-			adaptor.addChild(root_0, char_literal197_tree);
+			retval.char_literal197 = char_literal197_tree=(CommonTree)adaptor.create(char_literal197);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal197_tree));
 			}
 
 			}
@@ -6949,16 +7088,19 @@ Token char_literal197 ;
 	// $ANTLR end "sizeof_expression"
 
 
-	public static class checked_expression_return extends ParserRuleReturnScope {
+	public static class checked_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression200 ;
-Token string_literal198 ;
-Token char_literal199 ;
-Token char_literal201 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitchecked_expression_return(this);
+}
+CommonTree string_literal198 ;
+CommonTree char_literal199 ;
+CommonTree char_literal201 ;
+public expression_return expression200 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -6993,26 +7135,26 @@ Token char_literal201 ;
 
 			string_literal198=(Token)match(input,110,FOLLOW_110_in_checked_expression3714); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal198_tree = (CommonTree)adaptor.create(string_literal198);
-			adaptor.addChild(root_0, string_literal198_tree);
+			retval.string_literal198 = string_literal198_tree=(CommonTree)adaptor.create(string_literal198);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal198_tree));
 			}
 
 			char_literal199=(Token)match(input,68,FOLLOW_68_in_checked_expression3718); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal199_tree = (CommonTree)adaptor.create(char_literal199);
-			adaptor.addChild(root_0, char_literal199_tree);
+			retval.char_literal199 = char_literal199_tree=(CommonTree)adaptor.create(char_literal199);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal199_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_checked_expression3722);
 			expression200=retval.expression200=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression200.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression200.getTree()));
 
 			char_literal201=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_checked_expression3726); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal201_tree = (CommonTree)adaptor.create(char_literal201);
-			adaptor.addChild(root_0, char_literal201_tree);
+			retval.char_literal201 = char_literal201_tree=(CommonTree)adaptor.create(char_literal201);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal201_tree));
 			}
 
 			}
@@ -7039,16 +7181,19 @@ Token char_literal201 ;
 	// $ANTLR end "checked_expression"
 
 
-	public static class unchecked_expression_return extends ParserRuleReturnScope {
+	public static class unchecked_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression204 ;
-Token string_literal202 ;
-Token char_literal203 ;
-Token char_literal205 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunchecked_expression_return(this);
+}
+CommonTree string_literal202 ;
+CommonTree char_literal203 ;
+CommonTree char_literal205 ;
+public expression_return expression204 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7083,26 +7228,26 @@ Token char_literal205 ;
 
 			string_literal202=(Token)match(input,187,FOLLOW_187_in_unchecked_expression3742); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal202_tree = (CommonTree)adaptor.create(string_literal202);
-			adaptor.addChild(root_0, string_literal202_tree);
+			retval.string_literal202 = string_literal202_tree=(CommonTree)adaptor.create(string_literal202);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal202_tree));
 			}
 
 			char_literal203=(Token)match(input,68,FOLLOW_68_in_unchecked_expression3746); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal203_tree = (CommonTree)adaptor.create(char_literal203);
-			adaptor.addChild(root_0, char_literal203_tree);
+			retval.char_literal203 = char_literal203_tree=(CommonTree)adaptor.create(char_literal203);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal203_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_unchecked_expression3750);
 			expression204=retval.expression204=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression204.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression204.getTree()));
 
 			char_literal205=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_unchecked_expression3754); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal205_tree = (CommonTree)adaptor.create(char_literal205);
-			adaptor.addChild(root_0, char_literal205_tree);
+			retval.char_literal205 = char_literal205_tree=(CommonTree)adaptor.create(char_literal205);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal205_tree));
 			}
 
 			}
@@ -7129,16 +7274,19 @@ Token char_literal205 ;
 	// $ANTLR end "unchecked_expression"
 
 
-	public static class default_value_expression_return extends ParserRuleReturnScope {
+	public static class default_value_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type208 ;
-Token string_literal206 ;
-Token char_literal207 ;
-Token char_literal209 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdefault_value_expression_return(this);
+}
+CommonTree string_literal206 ;
+CommonTree char_literal207 ;
+CommonTree char_literal209 ;
+public type_return type208 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7173,26 +7321,26 @@ Token char_literal209 ;
 
 			string_literal206=(Token)match(input,115,FOLLOW_115_in_default_value_expression3770); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal206_tree = (CommonTree)adaptor.create(string_literal206);
-			adaptor.addChild(root_0, string_literal206_tree);
+			retval.string_literal206 = string_literal206_tree=(CommonTree)adaptor.create(string_literal206);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal206_tree));
 			}
 
 			char_literal207=(Token)match(input,68,FOLLOW_68_in_default_value_expression3774); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal207_tree = (CommonTree)adaptor.create(char_literal207);
-			adaptor.addChild(root_0, char_literal207_tree);
+			retval.char_literal207 = char_literal207_tree=(CommonTree)adaptor.create(char_literal207);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal207_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_default_value_expression3778);
 			type208=retval.type208=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type208.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type208.getTree()));
 
 			char_literal209=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_default_value_expression3782); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal209_tree = (CommonTree)adaptor.create(char_literal209);
-			adaptor.addChild(root_0, char_literal209_tree);
+			retval.char_literal209 = char_literal209_tree=(CommonTree)adaptor.create(char_literal209);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal209_tree));
 			}
 
 			}
@@ -7219,15 +7367,18 @@ Token char_literal209 ;
 	// $ANTLR end "default_value_expression"
 
 
-	public static class anonymous_method_expression_return extends ParserRuleReturnScope {
+	public static class anonymous_method_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-explicit_anonymous_function_signature_return explicit_anonymous_function_signature211 ;
-block_return block212 ;
-Token string_literal210 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitanonymous_method_expression_return(this);
+}
+CommonTree string_literal210 ;
+public explicit_anonymous_function_signature_return explicit_anonymous_function_signature211 ;
+public block_return block212 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7259,8 +7410,8 @@ Token string_literal210 ;
 
 			string_literal210=(Token)match(input,116,FOLLOW_116_in_anonymous_method_expression3797); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal210_tree = (CommonTree)adaptor.create(string_literal210);
-			adaptor.addChild(root_0, string_literal210_tree);
+			retval.string_literal210 = string_literal210_tree=(CommonTree)adaptor.create(string_literal210);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal210_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:220:22: ( explicit_anonymous_function_signature )?
@@ -7277,7 +7428,7 @@ Token string_literal210 ;
 					explicit_anonymous_function_signature211=retval.explicit_anonymous_function_signature211=explicit_anonymous_function_signature();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, explicit_anonymous_function_signature211.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(explicit_anonymous_function_signature211.getTree()));
 
 					}
 					break;
@@ -7288,7 +7439,7 @@ Token string_literal210 ;
 			block212=retval.block212=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block212.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block212.getTree()));
 
 			}
 
@@ -7314,15 +7465,18 @@ Token string_literal210 ;
 	// $ANTLR end "anonymous_method_expression"
 
 
-	public static class explicit_anonymous_function_signature_return extends ParserRuleReturnScope {
+	public static class explicit_anonymous_function_signature_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-explicit_anonymous_function_parameter_list_return explicit_anonymous_function_parameter_list214 ;
-Token char_literal213 ;
-Token char_literal215 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexplicit_anonymous_function_signature_return(this);
+}
+CommonTree char_literal213 ;
+CommonTree char_literal215 ;
+public explicit_anonymous_function_parameter_list_return explicit_anonymous_function_parameter_list214 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7355,8 +7509,8 @@ Token char_literal215 ;
 
 			char_literal213=(Token)match(input,68,FOLLOW_68_in_explicit_anonymous_function_signature3820); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal213_tree = (CommonTree)adaptor.create(char_literal213);
-			adaptor.addChild(root_0, char_literal213_tree);
+			retval.char_literal213 = char_literal213_tree=(CommonTree)adaptor.create(char_literal213);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal213_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:222:15: ( explicit_anonymous_function_parameter_list )?
@@ -7373,7 +7527,7 @@ Token char_literal215 ;
 					explicit_anonymous_function_parameter_list214=retval.explicit_anonymous_function_parameter_list214=explicit_anonymous_function_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, explicit_anonymous_function_parameter_list214.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(explicit_anonymous_function_parameter_list214.getTree()));
 
 					}
 					break;
@@ -7382,8 +7536,8 @@ Token char_literal215 ;
 
 			char_literal215=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_explicit_anonymous_function_signature3829); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal215_tree = (CommonTree)adaptor.create(char_literal215);
-			adaptor.addChild(root_0, char_literal215_tree);
+			retval.char_literal215 = char_literal215_tree=(CommonTree)adaptor.create(char_literal215);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal215_tree));
 			}
 
 			}
@@ -7410,15 +7564,18 @@ Token char_literal215 ;
 	// $ANTLR end "explicit_anonymous_function_signature"
 
 
-	public static class explicit_anonymous_function_parameter_list_return extends ParserRuleReturnScope {
+	public static class explicit_anonymous_function_parameter_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-explicit_anonymous_function_parameter_return explicit_anonymous_function_parameter216 ;
-List<explicit_anonymous_function_parameter_return> explicit_anonymous_function_parameter218 = new ArrayList<explicit_anonymous_function_parameter_return>();
-Token char_literal217 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexplicit_anonymous_function_parameter_list_return(this);
+}
+CommonTree char_literal217 ;
+public explicit_anonymous_function_parameter_return explicit_anonymous_function_parameter216 ;
+public List<explicit_anonymous_function_parameter_return> explicit_anonymous_function_parameter218 = new ArrayList<explicit_anonymous_function_parameter_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7452,7 +7609,7 @@ Token char_literal217 ;
 			explicit_anonymous_function_parameter216=retval.explicit_anonymous_function_parameter216=explicit_anonymous_function_parameter();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, explicit_anonymous_function_parameter216.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(explicit_anonymous_function_parameter216.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:224:49: ( ',' explicit_anonymous_function_parameter )*
 			loop59:
@@ -7469,15 +7626,15 @@ Token char_literal217 ;
 					{
 					char_literal217=(Token)match(input,74,FOLLOW_74_in_explicit_anonymous_function_parameter_list3849); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal217_tree = (CommonTree)adaptor.create(char_literal217);
-					adaptor.addChild(root_0, char_literal217_tree);
+					retval.char_literal217 = char_literal217_tree=(CommonTree)adaptor.create(char_literal217);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal217_tree));
 					}
 
 					pushFollow(FOLLOW_explicit_anonymous_function_parameter_in_explicit_anonymous_function_parameter_list3853);
 					explicit_anonymous_function_parameter218=explicit_anonymous_function_parameter();retval.explicit_anonymous_function_parameter218.add((explicit_anonymous_function_parameter_return) explicit_anonymous_function_parameter218);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, explicit_anonymous_function_parameter218.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(explicit_anonymous_function_parameter218.getTree()));
 
 					}
 					break;
@@ -7511,15 +7668,18 @@ Token char_literal217 ;
 	// $ANTLR end "explicit_anonymous_function_parameter_list"
 
 
-	public static class explicit_anonymous_function_parameter_return extends ParserRuleReturnScope {
+	public static class explicit_anonymous_function_parameter_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-anonymous_function_parameter_modifier_return anonymous_function_parameter_modifier219 ;
-type_return type220 ;
-identifier_return identifier221 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexplicit_anonymous_function_parameter_return(this);
+}
+public anonymous_function_parameter_modifier_return anonymous_function_parameter_modifier219 ;
+public type_return type220 ;
+public identifier_return identifier221 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7562,7 +7722,7 @@ identifier_return identifier221 ;
 					anonymous_function_parameter_modifier219=retval.anonymous_function_parameter_modifier219=anonymous_function_parameter_modifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_function_parameter_modifier219.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(anonymous_function_parameter_modifier219.getTree()));
 
 					}
 					break;
@@ -7573,13 +7733,13 @@ identifier_return identifier221 ;
 			type220=retval.type220=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type220.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type220.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_explicit_anonymous_function_parameter3887);
 			identifier221=retval.identifier221=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier221.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier221.getTree()));
 
 			}
 
@@ -7605,13 +7765,16 @@ identifier_return identifier221 ;
 	// $ANTLR end "explicit_anonymous_function_parameter"
 
 
-	public static class anonymous_function_parameter_modifier_return extends ParserRuleReturnScope {
+	public static class anonymous_function_parameter_modifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set222 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitanonymous_function_parameter_modifier_return(this);
+}
+CommonTree set222 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7675,18 +7838,21 @@ Token set222 ;
 	// $ANTLR end "anonymous_function_parameter_modifier"
 
 
-	public static class object_creation_expression_return extends ParserRuleReturnScope {
+	public static class object_creation_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type223 ;
-argument_list_return argument_list225 ;
-object_or_collection_initializer_return object_or_collection_initializer227 ;
-object_or_collection_initializer_return object_or_collection_initializer228 ;
-Token char_literal224 ;
-Token char_literal226 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitobject_creation_expression_return(this);
+}
+CommonTree char_literal224 ;
+CommonTree char_literal226 ;
+public type_return type223 ;
+public argument_list_return argument_list225 ;
+public object_or_collection_initializer_return object_or_collection_initializer227 ;
+public object_or_collection_initializer_return object_or_collection_initializer228 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7724,7 +7890,7 @@ Token char_literal226 ;
 			type223=retval.type223=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type223.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type223.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:235:17: ( '(' ( argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer )
 			int alt63=2;
@@ -7749,8 +7915,8 @@ Token char_literal226 ;
 					{
 					char_literal224=(Token)match(input,68,FOLLOW_68_in_object_creation_expression3955); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal224_tree = (CommonTree)adaptor.create(char_literal224);
-					adaptor.addChild(root_0, char_literal224_tree);
+					retval.char_literal224 = char_literal224_tree=(CommonTree)adaptor.create(char_literal224);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal224_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:235:25: ( argument_list )?
@@ -7767,7 +7933,7 @@ Token char_literal226 ;
 							argument_list225=retval.argument_list225=argument_list();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_list225.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument_list225.getTree()));
 
 							}
 							break;
@@ -7776,8 +7942,8 @@ Token char_literal226 ;
 
 					char_literal226=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_object_creation_expression3964); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal226_tree = (CommonTree)adaptor.create(char_literal226);
-					adaptor.addChild(root_0, char_literal226_tree);
+					retval.char_literal226 = char_literal226_tree=(CommonTree)adaptor.create(char_literal226);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal226_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:235:48: ( object_or_collection_initializer )?
@@ -7794,7 +7960,7 @@ Token char_literal226 ;
 							object_or_collection_initializer227=retval.object_or_collection_initializer227=object_or_collection_initializer();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, object_or_collection_initializer227.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(object_or_collection_initializer227.getTree()));
 
 							}
 							break;
@@ -7810,7 +7976,7 @@ Token char_literal226 ;
 					object_or_collection_initializer228=retval.object_or_collection_initializer228=object_or_collection_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, object_or_collection_initializer228.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(object_or_collection_initializer228.getTree()));
 
 					}
 					break;
@@ -7841,15 +8007,18 @@ Token char_literal226 ;
 	// $ANTLR end "object_creation_expression"
 
 
-	public static class object_or_collection_initializer_return extends ParserRuleReturnScope {
+	public static class object_or_collection_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-object_initializer_return object_initializer230 ;
-collection_initializer_return collection_initializer231 ;
-Token char_literal229 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitobject_or_collection_initializer_return(this);
+}
+CommonTree char_literal229 ;
+public object_initializer_return object_initializer230 ;
+public collection_initializer_return collection_initializer231 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -7881,8 +8050,8 @@ Token char_literal229 ;
 
 			char_literal229=(Token)match(input,197,FOLLOW_197_in_object_or_collection_initializer4019); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal229_tree = (CommonTree)adaptor.create(char_literal229);
-			adaptor.addChild(root_0, char_literal229_tree);
+			retval.char_literal229 = char_literal229_tree=(CommonTree)adaptor.create(char_literal229);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal229_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:239:14: ( object_initializer | collection_initializer )
@@ -8033,7 +8202,7 @@ Token char_literal229 ;
 					object_initializer230=retval.object_initializer230=object_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, object_initializer230.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(object_initializer230.getTree()));
 
 					}
 					break;
@@ -8044,7 +8213,7 @@ Token char_literal229 ;
 					collection_initializer231=retval.collection_initializer231=collection_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, collection_initializer231.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(collection_initializer231.getTree()));
 
 					}
 					break;
@@ -8075,15 +8244,18 @@ Token char_literal229 ;
 	// $ANTLR end "object_or_collection_initializer"
 
 
-	public static class collection_initializer_return extends ParserRuleReturnScope {
+	public static class collection_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-element_initializer_list_return element_initializer_list232 ;
-Token char_literal233 ;
-Token char_literal234 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitcollection_initializer_return(this);
+}
+CommonTree char_literal233 ;
+CommonTree char_literal234 ;
+public element_initializer_list_return element_initializer_list232 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8118,7 +8290,7 @@ Token char_literal234 ;
 			element_initializer_list232=retval.element_initializer_list232=element_initializer_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, element_initializer_list232.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(element_initializer_list232.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:242:36: ( ',' )?
 			int alt65=2;
@@ -8132,8 +8304,8 @@ Token char_literal234 ;
 					{
 					char_literal233=(Token)match(input,74,FOLLOW_74_in_collection_initializer4065); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal233_tree = (CommonTree)adaptor.create(char_literal233);
-					adaptor.addChild(root_0, char_literal233_tree);
+					retval.char_literal233 = char_literal233_tree=(CommonTree)adaptor.create(char_literal233);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal233_tree));
 					}
 
 					}
@@ -8143,8 +8315,8 @@ Token char_literal234 ;
 
 			char_literal234=(Token)match(input,201,FOLLOW_201_in_collection_initializer4070); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal234_tree = (CommonTree)adaptor.create(char_literal234);
-			adaptor.addChild(root_0, char_literal234_tree);
+			retval.char_literal234 = char_literal234_tree=(CommonTree)adaptor.create(char_literal234);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal234_tree));
 			}
 
 			}
@@ -8171,15 +8343,18 @@ Token char_literal234 ;
 	// $ANTLR end "collection_initializer"
 
 
-	public static class element_initializer_list_return extends ParserRuleReturnScope {
+	public static class element_initializer_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-element_initializer_return element_initializer235 ;
-List<element_initializer_return> element_initializer237 = new ArrayList<element_initializer_return>();
-Token char_literal236 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitelement_initializer_list_return(this);
+}
+CommonTree char_literal236 ;
+public element_initializer_return element_initializer235 ;
+public List<element_initializer_return> element_initializer237 = new ArrayList<element_initializer_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8213,7 +8388,7 @@ Token char_literal236 ;
 			element_initializer235=retval.element_initializer235=element_initializer();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, element_initializer235.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(element_initializer235.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:244:30: ( ',' element_initializer )*
 			loop66:
@@ -8234,15 +8409,15 @@ Token char_literal236 ;
 					{
 					char_literal236=(Token)match(input,74,FOLLOW_74_in_element_initializer_list4090); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal236_tree = (CommonTree)adaptor.create(char_literal236);
-					adaptor.addChild(root_0, char_literal236_tree);
+					retval.char_literal236 = char_literal236_tree=(CommonTree)adaptor.create(char_literal236);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal236_tree));
 					}
 
 					pushFollow(FOLLOW_element_initializer_in_element_initializer_list4092);
 					element_initializer237=element_initializer();retval.element_initializer237.add((element_initializer_return) element_initializer237);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, element_initializer237.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(element_initializer237.getTree()));
 
 					}
 					break;
@@ -8276,16 +8451,19 @@ Token char_literal236 ;
 	// $ANTLR end "element_initializer_list"
 
 
-	public static class element_initializer_return extends ParserRuleReturnScope {
+	public static class element_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-non_assignment_expression_return non_assignment_expression238 ;
-expression_list_return expression_list240 ;
-Token char_literal239 ;
-Token char_literal241 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitelement_initializer_return(this);
+}
+CommonTree char_literal239 ;
+CommonTree char_literal241 ;
+public non_assignment_expression_return non_assignment_expression238 ;
+public expression_list_return expression_list240 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8339,7 +8517,7 @@ Token char_literal241 ;
 					non_assignment_expression238=retval.non_assignment_expression238=non_assignment_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, non_assignment_expression238.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(non_assignment_expression238.getTree()));
 
 					}
 					break;
@@ -8351,20 +8529,20 @@ Token char_literal241 ;
 
 					char_literal239=(Token)match(input,197,FOLLOW_197_in_element_initializer4123); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal239_tree = (CommonTree)adaptor.create(char_literal239);
-					adaptor.addChild(root_0, char_literal239_tree);
+					retval.char_literal239 = char_literal239_tree=(CommonTree)adaptor.create(char_literal239);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal239_tree));
 					}
 
 					pushFollow(FOLLOW_expression_list_in_element_initializer4127);
 					expression_list240=retval.expression_list240=expression_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression_list240.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression_list240.getTree()));
 
 					char_literal241=(Token)match(input,201,FOLLOW_201_in_element_initializer4131); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal241_tree = (CommonTree)adaptor.create(char_literal241);
-					adaptor.addChild(root_0, char_literal241_tree);
+					retval.char_literal241 = char_literal241_tree=(CommonTree)adaptor.create(char_literal241);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal241_tree));
 					}
 
 					}
@@ -8393,15 +8571,18 @@ Token char_literal241 ;
 	// $ANTLR end "element_initializer"
 
 
-	public static class object_initializer_return extends ParserRuleReturnScope {
+	public static class object_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-member_initializer_list_return member_initializer_list242 ;
-Token char_literal243 ;
-Token char_literal244 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitobject_initializer_return(this);
+}
+CommonTree char_literal243 ;
+CommonTree char_literal244 ;
+public member_initializer_list_return member_initializer_list242 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8446,7 +8627,7 @@ Token char_literal244 ;
 					member_initializer_list242=retval.member_initializer_list242=member_initializer_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_initializer_list242.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_initializer_list242.getTree()));
 
 					}
 					break;
@@ -8465,8 +8646,8 @@ Token char_literal244 ;
 					{
 					char_literal243=(Token)match(input,74,FOLLOW_74_in_object_initializer4158); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal243_tree = (CommonTree)adaptor.create(char_literal243);
-					adaptor.addChild(root_0, char_literal243_tree);
+					retval.char_literal243 = char_literal243_tree=(CommonTree)adaptor.create(char_literal243);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal243_tree));
 					}
 
 					}
@@ -8476,8 +8657,8 @@ Token char_literal244 ;
 
 			char_literal244=(Token)match(input,201,FOLLOW_201_in_object_initializer4163); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal244_tree = (CommonTree)adaptor.create(char_literal244);
-			adaptor.addChild(root_0, char_literal244_tree);
+			retval.char_literal244 = char_literal244_tree=(CommonTree)adaptor.create(char_literal244);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal244_tree));
 			}
 
 			}
@@ -8504,15 +8685,18 @@ Token char_literal244 ;
 	// $ANTLR end "object_initializer"
 
 
-	public static class member_initializer_list_return extends ParserRuleReturnScope {
+	public static class member_initializer_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-member_initializer_return member_initializer245 ;
-member_initializer_return member_initializer247 ;
-Token char_literal246 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmember_initializer_list_return(this);
+}
+CommonTree char_literal246 ;
+public member_initializer_return member_initializer245 ;
+public member_initializer_return member_initializer247 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8546,22 +8730,22 @@ Token char_literal246 ;
 			member_initializer245=retval.member_initializer245=member_initializer();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_initializer245.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_initializer245.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:257:29: ( ',' member_initializer )
 			// /Users/jeremie/ANTLR/cs.g:257:30: ',' member_initializer
 			{
 			char_literal246=(Token)match(input,74,FOLLOW_74_in_member_initializer_list4183); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal246_tree = (CommonTree)adaptor.create(char_literal246);
-			adaptor.addChild(root_0, char_literal246_tree);
+			retval.char_literal246 = char_literal246_tree=(CommonTree)adaptor.create(char_literal246);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal246_tree));
 			}
 
 			pushFollow(FOLLOW_member_initializer_in_member_initializer_list4185);
 			member_initializer247=retval.member_initializer247=member_initializer();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_initializer247.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_initializer247.getTree()));
 
 			}
 
@@ -8589,15 +8773,18 @@ Token char_literal246 ;
 	// $ANTLR end "member_initializer_list"
 
 
-	public static class member_initializer_return extends ParserRuleReturnScope {
+	public static class member_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier248 ;
-initializer_value_return initializer_value250 ;
-Token char_literal249 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmember_initializer_return(this);
+}
+CommonTree char_literal249 ;
+public identifier_return identifier248 ;
+public initializer_value_return initializer_value250 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8631,19 +8818,19 @@ Token char_literal249 ;
 			identifier248=retval.identifier248=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier248.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier248.getTree()));
 
 			char_literal249=(Token)match(input,85,FOLLOW_85_in_member_initializer4206); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal249_tree = (CommonTree)adaptor.create(char_literal249);
-			adaptor.addChild(root_0, char_literal249_tree);
+			retval.char_literal249 = char_literal249_tree=(CommonTree)adaptor.create(char_literal249);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal249_tree));
 			}
 
 			pushFollow(FOLLOW_initializer_value_in_member_initializer4210);
 			initializer_value250=retval.initializer_value250=initializer_value();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, initializer_value250.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(initializer_value250.getTree()));
 
 			}
 
@@ -8669,14 +8856,17 @@ Token char_literal249 ;
 	// $ANTLR end "member_initializer"
 
 
-	public static class initializer_value_return extends ParserRuleReturnScope {
+	public static class initializer_value_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression251 ;
-object_or_collection_initializer_return object_or_collection_initializer252 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinitializer_value_return(this);
+}
+public expression_return expression251 ;
+public object_or_collection_initializer_return object_or_collection_initializer252 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8726,7 +8916,7 @@ object_or_collection_initializer_return object_or_collection_initializer252 ;
 					expression251=retval.expression251=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression251.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression251.getTree()));
 
 					}
 					break;
@@ -8740,7 +8930,7 @@ object_or_collection_initializer_return object_or_collection_initializer252 ;
 					object_or_collection_initializer252=retval.object_or_collection_initializer252=object_or_collection_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, object_or_collection_initializer252.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(object_or_collection_initializer252.getTree()));
 
 					}
 					break;
@@ -8768,18 +8958,21 @@ object_or_collection_initializer_return object_or_collection_initializer252 ;
 	// $ANTLR end "initializer_value"
 
 
-	public static class typeof_expression_return extends ParserRuleReturnScope {
+	public static class typeof_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unbound_type_name_return unbound_type_name255 ;
-type_return type256 ;
-Token string_literal253 ;
-Token char_literal254 ;
-Token string_literal257 ;
-Token char_literal258 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittypeof_expression_return(this);
+}
+CommonTree string_literal253 ;
+CommonTree char_literal254 ;
+CommonTree string_literal257 ;
+CommonTree char_literal258 ;
+public unbound_type_name_return unbound_type_name255 ;
+public type_return type256 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8817,14 +9010,14 @@ Token char_literal258 ;
 
 			string_literal253=(Token)match(input,184,FOLLOW_184_in_typeof_expression4258); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal253_tree = (CommonTree)adaptor.create(string_literal253);
-			adaptor.addChild(root_0, string_literal253_tree);
+			retval.string_literal253 = string_literal253_tree=(CommonTree)adaptor.create(string_literal253);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal253_tree));
 			}
 
 			char_literal254=(Token)match(input,68,FOLLOW_68_in_typeof_expression4262); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal254_tree = (CommonTree)adaptor.create(char_literal254);
-			adaptor.addChild(root_0, char_literal254_tree);
+			retval.char_literal254 = char_literal254_tree=(CommonTree)adaptor.create(char_literal254);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal254_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:267:26: ( ( unbound_type_name )=> unbound_type_name | type | 'void' )
@@ -8838,7 +9031,7 @@ Token char_literal258 ;
 					unbound_type_name255=retval.unbound_type_name255=unbound_type_name();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unbound_type_name255.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unbound_type_name255.getTree()));
 
 					}
 					break;
@@ -8849,7 +9042,7 @@ Token char_literal258 ;
 					type256=retval.type256=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type256.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type256.getTree()));
 
 					}
 					break;
@@ -8858,8 +9051,8 @@ Token char_literal258 ;
 					{
 					string_literal257=(Token)match(input,192,FOLLOW_192_in_typeof_expression4366); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal257_tree = (CommonTree)adaptor.create(string_literal257);
-					adaptor.addChild(root_0, string_literal257_tree);
+					retval.string_literal257 = string_literal257_tree=(CommonTree)adaptor.create(string_literal257);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal257_tree));
 					}
 
 					}
@@ -8869,8 +9062,8 @@ Token char_literal258 ;
 
 			char_literal258=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_typeof_expression4371); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal258_tree = (CommonTree)adaptor.create(char_literal258);
-			adaptor.addChild(root_0, char_literal258_tree);
+			retval.char_literal258 = char_literal258_tree=(CommonTree)adaptor.create(char_literal258);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal258_tree));
 			}
 
 			}
@@ -8897,17 +9090,20 @@ Token char_literal258 ;
 	// $ANTLR end "typeof_expression"
 
 
-	public static class unbound_type_name_return extends ParserRuleReturnScope {
+	public static class unbound_type_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unbound_type_name_start_return unbound_type_name_start259 ;
-List<generic_dimension_specifier_return> generic_dimension_specifier260 = new ArrayList<generic_dimension_specifier_return>();
-List<unbound_type_name_part_return> unbound_type_name_part261 = new ArrayList<unbound_type_name_part_return>();
-List<unbound_type_name_part_return> unbound_type_name_part262 = new ArrayList<unbound_type_name_part_return>();
-List<generic_dimension_specifier_return> generic_dimension_specifier263 = new ArrayList<generic_dimension_specifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitunbound_type_name_return(this);
+}
+public unbound_type_name_start_return unbound_type_name_start259 ;
+public List<generic_dimension_specifier_return> generic_dimension_specifier260 = new ArrayList<generic_dimension_specifier_return>();
+public List<unbound_type_name_part_return> unbound_type_name_part261 = new ArrayList<unbound_type_name_part_return>();
+public List<unbound_type_name_part_return> unbound_type_name_part262 = new ArrayList<unbound_type_name_part_return>();
+public List<generic_dimension_specifier_return> generic_dimension_specifier263 = new ArrayList<generic_dimension_specifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -8942,7 +9138,7 @@ List<generic_dimension_specifier_return> generic_dimension_specifier263 = new Ar
 			unbound_type_name_start259=retval.unbound_type_name_start259=unbound_type_name_start();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unbound_type_name_start259.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unbound_type_name_start259.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:277:17: ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )*
 			loop72:
@@ -8960,13 +9156,13 @@ List<generic_dimension_specifier_return> generic_dimension_specifier263 = new Ar
 					generic_dimension_specifier260=generic_dimension_specifier();retval.generic_dimension_specifier260.add((generic_dimension_specifier_return) generic_dimension_specifier260);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_dimension_specifier260.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_dimension_specifier260.getTree()));
 
 					pushFollow(FOLLOW_unbound_type_name_part_in_unbound_type_name4444);
 					unbound_type_name_part261=unbound_type_name_part();retval.unbound_type_name_part261.add((unbound_type_name_part_return) unbound_type_name_part261);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unbound_type_name_part261.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unbound_type_name_part261.getTree()));
 
 					}
 
@@ -8979,7 +9175,7 @@ List<generic_dimension_specifier_return> generic_dimension_specifier263 = new Ar
 					unbound_type_name_part262=unbound_type_name_part();retval.unbound_type_name_part262.add((unbound_type_name_part_return) unbound_type_name_part262);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unbound_type_name_part262.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unbound_type_name_part262.getTree()));
 
 					}
 					break;
@@ -8993,7 +9189,7 @@ List<generic_dimension_specifier_return> generic_dimension_specifier263 = new Ar
 			generic_dimension_specifier263=generic_dimension_specifier();retval.generic_dimension_specifier263.add((generic_dimension_specifier_return) generic_dimension_specifier263);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_dimension_specifier263.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_dimension_specifier263.getTree()));
 
 			}
 
@@ -9019,15 +9215,18 @@ List<generic_dimension_specifier_return> generic_dimension_specifier263 = new Ar
 	// $ANTLR end "unbound_type_name"
 
 
-	public static class unbound_type_name_start_return extends ParserRuleReturnScope {
+	public static class unbound_type_name_start_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier264 ;
-identifier_return identifier266 ;
-Token string_literal265 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunbound_type_name_start_return(this);
+}
+CommonTree string_literal265 ;
+public identifier_return identifier264 ;
+public identifier_return identifier266 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9061,7 +9260,7 @@ Token string_literal265 ;
 			identifier264=retval.identifier264=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier264.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier264.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:283:20: ( '::' identifier )?
 			int alt73=2;
@@ -9075,15 +9274,15 @@ Token string_literal265 ;
 					{
 					string_literal265=(Token)match(input,80,FOLLOW_80_in_unbound_type_name_start4523); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal265_tree = (CommonTree)adaptor.create(string_literal265);
-					adaptor.addChild(root_0, string_literal265_tree);
+					retval.string_literal265 = string_literal265_tree=(CommonTree)adaptor.create(string_literal265);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal265_tree));
 					}
 
 					pushFollow(FOLLOW_identifier_in_unbound_type_name_start4525);
 					identifier266=retval.identifier266=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier266.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier266.getTree()));
 
 					}
 					break;
@@ -9114,14 +9313,17 @@ Token string_literal265 ;
 	// $ANTLR end "unbound_type_name_start"
 
 
-	public static class unbound_type_name_part_return extends ParserRuleReturnScope {
+	public static class unbound_type_name_part_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier268 ;
-Token char_literal267 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunbound_type_name_part_return(this);
+}
+CommonTree char_literal267 ;
+public identifier_return identifier268 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9152,15 +9354,15 @@ Token char_literal267 ;
 
 			char_literal267=(Token)match(input,DOT,FOLLOW_DOT_in_unbound_type_name_part4541); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal267_tree = (CommonTree)adaptor.create(char_literal267);
-			adaptor.addChild(root_0, char_literal267_tree);
+			retval.char_literal267 = char_literal267_tree=(CommonTree)adaptor.create(char_literal267);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal267_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_unbound_type_name_part4545);
 			identifier268=retval.identifier268=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier268.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier268.getTree()));
 
 			}
 
@@ -9186,15 +9388,18 @@ Token char_literal267 ;
 	// $ANTLR end "unbound_type_name_part"
 
 
-	public static class generic_dimension_specifier_return extends ParserRuleReturnScope {
+	public static class generic_dimension_specifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-commas_return commas270 ;
-Token char_literal269 ;
-Token char_literal271 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitgeneric_dimension_specifier_return(this);
+}
+CommonTree char_literal269 ;
+CommonTree char_literal271 ;
+public commas_return commas270 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9227,8 +9432,8 @@ Token char_literal271 ;
 
 			char_literal269=(Token)match(input,81,FOLLOW_81_in_generic_dimension_specifier4560); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal269_tree = (CommonTree)adaptor.create(char_literal269);
-			adaptor.addChild(root_0, char_literal269_tree);
+			retval.char_literal269 = char_literal269_tree=(CommonTree)adaptor.create(char_literal269);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal269_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:287:15: ( commas )?
@@ -9245,7 +9450,7 @@ Token char_literal271 ;
 					commas270=retval.commas270=commas();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, commas270.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(commas270.getTree()));
 
 					}
 					break;
@@ -9254,8 +9459,8 @@ Token char_literal271 ;
 
 			char_literal271=(Token)match(input,GT,FOLLOW_GT_in_generic_dimension_specifier4569); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal271_tree = (CommonTree)adaptor.create(char_literal271);
-			adaptor.addChild(root_0, char_literal271_tree);
+			retval.char_literal271 = char_literal271_tree=(CommonTree)adaptor.create(char_literal271);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal271_tree));
 			}
 
 			}
@@ -9282,13 +9487,16 @@ Token char_literal271 ;
 	// $ANTLR end "generic_dimension_specifier"
 
 
-	public static class commas_return extends ParserRuleReturnScope {
+	public static class commas_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token char_literal272 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitcommas_return(this);
+}
+CommonTree char_literal272 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9332,8 +9540,8 @@ Token char_literal272 ;
 					{
 					char_literal272=(Token)match(input,74,FOLLOW_74_in_commas4585); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal272_tree = (CommonTree)adaptor.create(char_literal272);
-					adaptor.addChild(root_0, char_literal272_tree);
+					retval.char_literal272 = char_literal272_tree=(CommonTree)adaptor.create(char_literal272);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal272_tree));
 					}
 
 					}
@@ -9372,13 +9580,16 @@ Token char_literal272 ;
 	// $ANTLR end "commas"
 
 
-	public static class type_name_return extends ParserRuleReturnScope {
+	public static class type_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-namespace_or_type_name_return namespace_or_type_name273 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_name_return(this);
+}
+public namespace_or_type_name_return namespace_or_type_name273 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9409,7 +9620,7 @@ namespace_or_type_name_return namespace_or_type_name273 ;
 			namespace_or_type_name273=retval.namespace_or_type_name273=namespace_or_type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, namespace_or_type_name273.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(namespace_or_type_name273.getTree()));
 
 			}
 
@@ -9435,17 +9646,20 @@ namespace_or_type_name_return namespace_or_type_name273 ;
 	// $ANTLR end "type_name"
 
 
-	public static class namespace_or_type_name_return extends ParserRuleReturnScope {
+	public static class namespace_or_type_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_or_generic_return type_or_generic274 ;
-type_or_generic_return type_or_generic276 ;
-List<type_or_generic_return> type_or_generic278 = new ArrayList<type_or_generic_return>();
-Token string_literal275 ;
-Token char_literal277 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamespace_or_type_name_return(this);
+}
+CommonTree string_literal275 ;
+CommonTree char_literal277 ;
+public type_or_generic_return type_or_generic274 ;
+public type_or_generic_return type_or_generic276 ;
+public List<type_or_generic_return> type_or_generic278 = new ArrayList<type_or_generic_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9482,7 +9696,7 @@ Token char_literal277 ;
 			type_or_generic274=retval.type_or_generic274=type_or_generic();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic274.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_or_generic274.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:298:28: ( '::' type_or_generic )?
 			int alt76=2;
@@ -9496,15 +9710,15 @@ Token char_literal277 ;
 					{
 					string_literal275=(Token)match(input,80,FOLLOW_80_in_namespace_or_type_name4629); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal275_tree = (CommonTree)adaptor.create(string_literal275);
-					adaptor.addChild(root_0, string_literal275_tree);
+					retval.string_literal275 = string_literal275_tree=(CommonTree)adaptor.create(string_literal275);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal275_tree));
 					}
 
 					pushFollow(FOLLOW_type_or_generic_in_namespace_or_type_name4631);
 					type_or_generic276=retval.type_or_generic276=type_or_generic();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic276.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_or_generic276.getTree()));
 
 					}
 					break;
@@ -9530,15 +9744,15 @@ Token char_literal277 ;
 					{
 					char_literal277=(Token)match(input,DOT,FOLLOW_DOT_in_namespace_or_type_name4636); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal277_tree = (CommonTree)adaptor.create(char_literal277);
-					adaptor.addChild(root_0, char_literal277_tree);
+					retval.char_literal277 = char_literal277_tree=(CommonTree)adaptor.create(char_literal277);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal277_tree));
 					}
 
 					pushFollow(FOLLOW_type_or_generic_in_namespace_or_type_name4640);
 					type_or_generic278=type_or_generic();retval.type_or_generic278.add((type_or_generic_return) type_or_generic278);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic278.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_or_generic278.getTree()));
 
 					}
 					break;
@@ -9572,15 +9786,18 @@ Token char_literal277 ;
 	// $ANTLR end "namespace_or_type_name"
 
 
-	public static class type_or_generic_return extends ParserRuleReturnScope {
+	public static class type_or_generic_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier279 ;
-generic_argument_list_return generic_argument_list280 ;
-identifier_return identifier281 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_or_generic_return(this);
+}
+public identifier_return identifier279 ;
+public generic_argument_list_return generic_argument_list280 ;
+public identifier_return identifier281 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9635,13 +9852,13 @@ identifier_return identifier281 ;
 					identifier279=retval.identifier279=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier279.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier279.getTree()));
 
 					pushFollow(FOLLOW_generic_argument_list_in_type_or_generic4671);
 					generic_argument_list280=retval.generic_argument_list280=generic_argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list280.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_argument_list280.getTree()));
 
 					}
 					break;
@@ -9655,7 +9872,7 @@ identifier_return identifier281 ;
 					identifier281=retval.identifier281=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier281.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier281.getTree()));
 
 					}
 					break;
@@ -9683,14 +9900,17 @@ identifier_return identifier281 ;
 	// $ANTLR end "type_or_generic"
 
 
-	public static class qid_return extends ParserRuleReturnScope {
+	public static class qid_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-qid_start_return qid_start282 ;
-List<qid_part_return> qid_part283 = new ArrayList<qid_part_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitqid_return(this);
+}
+public qid_start_return qid_start282 ;
+public List<qid_part_return> qid_part283 = new ArrayList<qid_part_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9722,7 +9942,7 @@ List<qid_part_return> qid_part283 = new ArrayList<qid_part_return>();
 			qid_start282=retval.qid_start282=qid_start();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, qid_start282.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(qid_start282.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:304:21: ( qid_part )*
 			loop79:
@@ -9748,7 +9968,7 @@ List<qid_part_return> qid_part283 = new ArrayList<qid_part_return>();
 					qid_part283=qid_part();retval.qid_part283.add((qid_part_return) qid_part283);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, qid_part283.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(qid_part283.getTree()));
 
 					}
 					break;
@@ -9782,19 +10002,22 @@ List<qid_part_return> qid_part283 = new ArrayList<qid_part_return>();
 	// $ANTLR end "qid"
 
 
-	public static class qid_start_return extends ParserRuleReturnScope {
+	public static class qid_start_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-predefined_type_return predefined_type284 ;
-identifier_return identifier285 ;
-generic_argument_list_return generic_argument_list286 ;
-identifier_return identifier287 ;
-identifier_return identifier289 ;
-literal_return literal290 ;
-Token string_literal288 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitqid_start_return(this);
+}
+CommonTree string_literal288 ;
+public predefined_type_return predefined_type284 ;
+public identifier_return identifier285 ;
+public generic_argument_list_return generic_argument_list286 ;
+public identifier_return identifier287 ;
+public identifier_return identifier289 ;
+public literal_return literal290 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -9928,7 +10151,7 @@ Token string_literal288 ;
 					predefined_type284=retval.predefined_type284=predefined_type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, predefined_type284.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(predefined_type284.getTree()));
 
 					}
 					break;
@@ -9942,13 +10165,13 @@ Token string_literal288 ;
 					identifier285=retval.identifier285=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier285.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier285.getTree()));
 
 					pushFollow(FOLLOW_generic_argument_list_in_qid_start4777);
 					generic_argument_list286=retval.generic_argument_list286=generic_argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list286.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_argument_list286.getTree()));
 
 					}
 					break;
@@ -9962,7 +10185,7 @@ Token string_literal288 ;
 					identifier287=retval.identifier287=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier287.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier287.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:311:24: ( '::' identifier )?
 					int alt80=2;
@@ -9976,15 +10199,15 @@ Token string_literal288 ;
 							{
 							string_literal288=(Token)match(input,80,FOLLOW_80_in_qid_start4796); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal288_tree = (CommonTree)adaptor.create(string_literal288);
-							adaptor.addChild(root_0, string_literal288_tree);
+							retval.string_literal288 = string_literal288_tree=(CommonTree)adaptor.create(string_literal288);
+							adaptor.addChild(root_0, adaptor.dupTree(string_literal288_tree));
 							}
 
 							pushFollow(FOLLOW_identifier_in_qid_start4800);
 							identifier289=retval.identifier289=identifier();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier289.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier289.getTree()));
 
 							}
 							break;
@@ -10003,7 +10226,7 @@ Token string_literal288 ;
 					literal290=retval.literal290=literal();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, literal290.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(literal290.getTree()));
 
 					}
 					break;
@@ -10031,13 +10254,16 @@ Token string_literal288 ;
 	// $ANTLR end "qid_start"
 
 
-	public static class qid_part_return extends ParserRuleReturnScope {
+	public static class qid_part_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-access_identifier_return access_identifier291 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitqid_part_return(this);
+}
+public access_identifier_return access_identifier291 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -10068,7 +10294,7 @@ access_identifier_return access_identifier291 ;
 			access_identifier291=retval.access_identifier291=access_identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, access_identifier291.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(access_identifier291.getTree()));
 
 			}
 
@@ -10094,15 +10320,18 @@ access_identifier_return access_identifier291 ;
 	// $ANTLR end "qid_part"
 
 
-	public static class generic_argument_list_return extends ParserRuleReturnScope {
+	public static class generic_argument_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_arguments_return type_arguments293 ;
-Token char_literal292 ;
-Token char_literal294 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitgeneric_argument_list_return(this);
+}
+CommonTree char_literal292 ;
+CommonTree char_literal294 ;
+public type_arguments_return type_arguments293 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -10135,20 +10364,20 @@ Token char_literal294 ;
 
 			char_literal292=(Token)match(input,81,FOLLOW_81_in_generic_argument_list4873); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal292_tree = (CommonTree)adaptor.create(char_literal292);
-			adaptor.addChild(root_0, char_literal292_tree);
+			retval.char_literal292 = char_literal292_tree=(CommonTree)adaptor.create(char_literal292);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal292_tree));
 			}
 
 			pushFollow(FOLLOW_type_arguments_in_generic_argument_list4877);
 			type_arguments293=retval.type_arguments293=type_arguments();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_arguments293.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_arguments293.getTree()));
 
 			char_literal294=(Token)match(input,GT,FOLLOW_GT_in_generic_argument_list4881); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal294_tree = (CommonTree)adaptor.create(char_literal294);
-			adaptor.addChild(root_0, char_literal294_tree);
+			retval.char_literal294 = char_literal294_tree=(CommonTree)adaptor.create(char_literal294);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal294_tree));
 			}
 
 			}
@@ -10175,15 +10404,18 @@ Token char_literal294 ;
 	// $ANTLR end "generic_argument_list"
 
 
-	public static class type_arguments_return extends ParserRuleReturnScope {
+	public static class type_arguments_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type295 ;
-List<type_return> type297 = new ArrayList<type_return>();
-Token char_literal296 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_arguments_return(this);
+}
+CommonTree char_literal296 ;
+public type_return type295 ;
+public List<type_return> type297 = new ArrayList<type_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -10217,7 +10449,7 @@ Token char_literal296 ;
 			type295=retval.type295=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type295.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type295.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:322:14: ( ',' type )*
 			loop82:
@@ -10234,15 +10466,15 @@ Token char_literal296 ;
 					{
 					char_literal296=(Token)match(input,74,FOLLOW_74_in_type_arguments4900); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal296_tree = (CommonTree)adaptor.create(char_literal296);
-					adaptor.addChild(root_0, char_literal296_tree);
+					retval.char_literal296 = char_literal296_tree=(CommonTree)adaptor.create(char_literal296);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal296_tree));
 					}
 
 					pushFollow(FOLLOW_type_in_type_arguments4902);
 					type297=type();retval.type297.add((type_return) type297);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type297.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type297.getTree()));
 
 					}
 					break;
@@ -10276,24 +10508,27 @@ Token char_literal296 ;
 	// $ANTLR end "type_arguments"
 
 
-	public static class type_return extends ParserRuleReturnScope {
+	public static class type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-predefined_type_return predefined_type298 ;
-type_name_return type_name299 ;
-rank_specifiers_return rank_specifiers300 ;
-List<predefined_type_return> predefined_type302 = new ArrayList<predefined_type_return>();
-List<type_name_return> type_name303 = new ArrayList<type_name_return>();
-List<predefined_type_return> predefined_type306 = new ArrayList<predefined_type_return>();
-List<type_name_return> type_name307 = new ArrayList<type_name_return>();
-Token char_literal301 ;
-Token char_literal304 ;
-Token char_literal305 ;
-Token string_literal308 ;
-Token char_literal309 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_return(this);
+}
+CommonTree char_literal301 ;
+CommonTree char_literal304 ;
+CommonTree char_literal305 ;
+CommonTree string_literal308 ;
+CommonTree char_literal309 ;
+public predefined_type_return predefined_type298 ;
+public type_name_return type_name299 ;
+public rank_specifiers_return rank_specifiers300 ;
+public List<predefined_type_return> predefined_type302 = new ArrayList<predefined_type_return>();
+public List<type_name_return> type_name303 = new ArrayList<type_name_return>();
+public List<predefined_type_return> predefined_type306 = new ArrayList<predefined_type_return>();
+public List<type_name_return> type_name307 = new ArrayList<type_name_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -10449,7 +10684,7 @@ Token char_literal309 ;
 							predefined_type298=retval.predefined_type298=predefined_type();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, predefined_type298.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(predefined_type298.getTree()));
 
 							}
 							break;
@@ -10460,7 +10695,7 @@ Token char_literal309 ;
 							type_name299=retval.type_name299=type_name();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name299.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name299.getTree()));
 
 							}
 							break;
@@ -10471,7 +10706,7 @@ Token char_literal309 ;
 					rank_specifiers300=retval.rank_specifiers300=rank_specifiers();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifiers300.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(rank_specifiers300.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:325:113: ( '*' )*
 					loop84:
@@ -10488,8 +10723,8 @@ Token char_literal309 ;
 							{
 							char_literal301=(Token)match(input,69,FOLLOW_69_in_type4951); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal301_tree = (CommonTree)adaptor.create(char_literal301);
-							adaptor.addChild(root_0, char_literal301_tree);
+							retval.char_literal301 = char_literal301_tree=(CommonTree)adaptor.create(char_literal301);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal301_tree));
 							}
 
 							}
@@ -10533,7 +10768,7 @@ Token char_literal309 ;
 							predefined_type302=predefined_type();retval.predefined_type302.add((predefined_type_return) predefined_type302);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, predefined_type302.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(predefined_type302.getTree()));
 
 							}
 							break;
@@ -10544,7 +10779,7 @@ Token char_literal309 ;
 							type_name303=type_name();retval.type_name303.add((type_name_return) type_name303);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name303.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name303.getTree()));
 
 							}
 							break;
@@ -10588,8 +10823,8 @@ Token char_literal309 ;
 									{
 									char_literal304=(Token)match(input,69,FOLLOW_69_in_type4997); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
-									char_literal304_tree = (CommonTree)adaptor.create(char_literal304);
-									adaptor.addChild(root_0, char_literal304_tree);
+									retval.char_literal304 = char_literal304_tree=(CommonTree)adaptor.create(char_literal304);
+									adaptor.addChild(root_0, adaptor.dupTree(char_literal304_tree));
 									}
 
 									}
@@ -10611,8 +10846,8 @@ Token char_literal309 ;
 							{
 							char_literal305=(Token)match(input,89,FOLLOW_89_in_type5002); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal305_tree = (CommonTree)adaptor.create(char_literal305);
-							adaptor.addChild(root_0, char_literal305_tree);
+							retval.char_literal305 = char_literal305_tree=(CommonTree)adaptor.create(char_literal305);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal305_tree));
 							}
 
 							}
@@ -10653,7 +10888,7 @@ Token char_literal309 ;
 							predefined_type306=predefined_type();retval.predefined_type306.add((predefined_type_return) predefined_type306);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, predefined_type306.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(predefined_type306.getTree()));
 
 							}
 							break;
@@ -10664,7 +10899,7 @@ Token char_literal309 ;
 							type_name307=type_name();retval.type_name307.add((type_name_return) type_name307);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name307.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name307.getTree()));
 
 							}
 							break;
@@ -10681,8 +10916,8 @@ Token char_literal309 ;
 
 					string_literal308=(Token)match(input,192,FOLLOW_192_in_type5033); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal308_tree = (CommonTree)adaptor.create(string_literal308);
-					adaptor.addChild(root_0, string_literal308_tree);
+					retval.string_literal308 = string_literal308_tree=(CommonTree)adaptor.create(string_literal308);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal308_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:328:18: ( '*' )+
@@ -10701,8 +10936,8 @@ Token char_literal309 ;
 							{
 							char_literal309=(Token)match(input,69,FOLLOW_69_in_type5035); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal309_tree = (CommonTree)adaptor.create(char_literal309);
-							adaptor.addChild(root_0, char_literal309_tree);
+							retval.char_literal309 = char_literal309_tree=(CommonTree)adaptor.create(char_literal309);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal309_tree));
 							}
 
 							}
@@ -10743,19 +10978,22 @@ Token char_literal309 ;
 	// $ANTLR end "type"
 
 
-	public static class non_nullable_type_return extends ParserRuleReturnScope {
+	public static class non_nullable_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-predefined_type_return predefined_type310 ;
-type_name_return type_name311 ;
-rank_specifiers_return rank_specifiers312 ;
-Token char_literal313 ;
-Token char_literal314 ;
-Token string_literal315 ;
-Token char_literal316 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnon_nullable_type_return(this);
+}
+CommonTree char_literal313 ;
+CommonTree char_literal314 ;
+CommonTree string_literal315 ;
+CommonTree char_literal316 ;
+public predefined_type_return predefined_type310 ;
+public type_name_return type_name311 ;
+public rank_specifiers_return rank_specifiers312 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -10835,7 +11073,7 @@ Token char_literal316 ;
 							predefined_type310=retval.predefined_type310=predefined_type();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, predefined_type310.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(predefined_type310.getTree()));
 
 							}
 							break;
@@ -10846,7 +11084,7 @@ Token char_literal316 ;
 							type_name311=retval.type_name311=type_name();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name311.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name311.getTree()));
 
 							}
 							break;
@@ -10878,7 +11116,7 @@ Token char_literal316 ;
 							rank_specifiers312=retval.rank_specifiers312=rank_specifiers();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifiers312.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(rank_specifiers312.getTree()));
 
 							// /Users/jeremie/ANTLR/cs.g:332:39: ( '*' )*
 							loop92:
@@ -10895,8 +11133,8 @@ Token char_literal316 ;
 									{
 									char_literal313=(Token)match(input,69,FOLLOW_69_in_non_nullable_type5091); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
-									char_literal313_tree = (CommonTree)adaptor.create(char_literal313);
-									adaptor.addChild(root_0, char_literal313_tree);
+									retval.char_literal313 = char_literal313_tree=(CommonTree)adaptor.create(char_literal313);
+									adaptor.addChild(root_0, adaptor.dupTree(char_literal313_tree));
 									}
 
 									}
@@ -10938,8 +11176,8 @@ Token char_literal316 ;
 											{
 											char_literal314=(Token)match(input,69,FOLLOW_69_in_non_nullable_type5121); if (state.failed) return retval;
 											if ( state.backtracking==0 ) {
-											char_literal314_tree = (CommonTree)adaptor.create(char_literal314);
-											adaptor.addChild(root_0, char_literal314_tree);
+											retval.char_literal314 = char_literal314_tree=(CommonTree)adaptor.create(char_literal314);
+											adaptor.addChild(root_0, adaptor.dupTree(char_literal314_tree));
 											}
 
 											}
@@ -10974,8 +11212,8 @@ Token char_literal316 ;
 
 					string_literal315=(Token)match(input,192,FOLLOW_192_in_non_nullable_type5154); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal315_tree = (CommonTree)adaptor.create(string_literal315);
-					adaptor.addChild(root_0, string_literal315_tree);
+					retval.string_literal315 = string_literal315_tree=(CommonTree)adaptor.create(string_literal315);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal315_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:335:20: ( '*' )+
@@ -10994,8 +11232,8 @@ Token char_literal316 ;
 							{
 							char_literal316=(Token)match(input,69,FOLLOW_69_in_non_nullable_type5158); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal316_tree = (CommonTree)adaptor.create(char_literal316);
-							adaptor.addChild(root_0, char_literal316_tree);
+							retval.char_literal316 = char_literal316_tree=(CommonTree)adaptor.create(char_literal316);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal316_tree));
 							}
 
 							}
@@ -11036,13 +11274,16 @@ Token char_literal316 ;
 	// $ANTLR end "non_nullable_type"
 
 
-	public static class non_array_type_return extends ParserRuleReturnScope {
+	public static class non_array_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type317 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnon_array_type_return(this);
+}
+public type_return type317 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11073,7 +11314,7 @@ type_return type317 ;
 			type317=retval.type317=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type317.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type317.getTree()));
 
 			}
 
@@ -11099,13 +11340,16 @@ type_return type317 ;
 	// $ANTLR end "non_array_type"
 
 
-	public static class array_type_return extends ParserRuleReturnScope {
+	public static class array_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type318 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitarray_type_return(this);
+}
+public type_return type318 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11136,7 +11380,7 @@ type_return type318 ;
 			type318=retval.type318=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type318.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type318.getTree()));
 
 			}
 
@@ -11162,13 +11406,16 @@ type_return type318 ;
 	// $ANTLR end "array_type"
 
 
-	public static class unmanaged_type_return extends ParserRuleReturnScope {
+	public static class unmanaged_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type319 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunmanaged_type_return(this);
+}
+public type_return type319 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11199,7 +11446,7 @@ type_return type319 ;
 			type319=retval.type319=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type319.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type319.getTree()));
 
 			}
 
@@ -11225,13 +11472,16 @@ type_return type319 ;
 	// $ANTLR end "unmanaged_type"
 
 
-	public static class class_type_return extends ParserRuleReturnScope {
+	public static class class_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type320 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitclass_type_return(this);
+}
+public type_return type320 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11262,7 +11512,7 @@ type_return type320 ;
 			type320=retval.type320=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type320.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type320.getTree()));
 
 			}
 
@@ -11288,13 +11538,16 @@ type_return type320 ;
 	// $ANTLR end "class_type"
 
 
-	public static class pointer_type_return extends ParserRuleReturnScope {
+	public static class pointer_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type321 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitpointer_type_return(this);
+}
+public type_return type321 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11325,7 +11578,7 @@ type_return type321 ;
 			type321=retval.type321=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type321.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type321.getTree()));
 
 			}
 
@@ -11351,16 +11604,19 @@ type_return type321 ;
 	// $ANTLR end "pointer_type"
 
 
-	public static class block_return extends ParserRuleReturnScope {
+	public static class block_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-statement_list_return statement_list324 ;
-Token char_literal322 ;
-Token char_literal323 ;
-Token char_literal325 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitblock_return(this);
+}
+CommonTree char_literal322 ;
+CommonTree char_literal323 ;
+CommonTree char_literal325 ;
+public statement_list_return statement_list324 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11413,8 +11669,8 @@ Token char_literal325 ;
 
 					char_literal322=(Token)match(input,SEMI,FOLLOW_SEMI_in_block5258); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal322_tree = (CommonTree)adaptor.create(char_literal322);
-					adaptor.addChild(root_0, char_literal322_tree);
+					retval.char_literal322 = char_literal322_tree=(CommonTree)adaptor.create(char_literal322);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal322_tree));
 					}
 
 					}
@@ -11427,8 +11683,8 @@ Token char_literal325 ;
 
 					char_literal323=(Token)match(input,197,FOLLOW_197_in_block5270); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal323_tree = (CommonTree)adaptor.create(char_literal323);
-					adaptor.addChild(root_0, char_literal323_tree);
+					retval.char_literal323 = char_literal323_tree=(CommonTree)adaptor.create(char_literal323);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal323_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:354:17: ( statement_list )?
@@ -11445,7 +11701,7 @@ Token char_literal325 ;
 							statement_list324=retval.statement_list324=statement_list();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, statement_list324.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement_list324.getTree()));
 
 							}
 							break;
@@ -11454,8 +11710,8 @@ Token char_literal325 ;
 
 					char_literal325=(Token)match(input,201,FOLLOW_201_in_block5279); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal325_tree = (CommonTree)adaptor.create(char_literal325);
-					adaptor.addChild(root_0, char_literal325_tree);
+					retval.char_literal325 = char_literal325_tree=(CommonTree)adaptor.create(char_literal325);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal325_tree));
 					}
 
 					}
@@ -11484,13 +11740,16 @@ Token char_literal325 ;
 	// $ANTLR end "block"
 
 
-	public static class statement_list_return extends ParserRuleReturnScope {
+	public static class statement_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<statement_return> statement326 = new ArrayList<statement_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitstatement_list_return(this);
+}
+public List<statement_return> statement326 = new ArrayList<statement_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11542,7 +11801,7 @@ List<statement_return> statement326 = new ArrayList<statement_return>();
 					statement326=statement();retval.statement326.add((statement_return) statement326);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, statement326.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement326.getTree()));
 
 					}
 					break;
@@ -11580,14 +11839,17 @@ List<statement_return> statement326 = new ArrayList<statement_return>();
 	// $ANTLR end "statement_list"
 
 
-	public static class expression_return extends ParserRuleReturnScope {
+	public static class expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-assignment_return assignment327 ;
-non_assignment_expression_return non_assignment_expression328 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexpression_return(this);
+}
+public assignment_return assignment327 ;
+public non_assignment_expression_return non_assignment_expression328 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -11943,7 +12205,7 @@ non_assignment_expression_return non_assignment_expression328 ;
 					assignment327=retval.assignment327=assignment();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, assignment327.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(assignment327.getTree()));
 
 					}
 					break;
@@ -11957,7 +12219,7 @@ non_assignment_expression_return non_assignment_expression328 ;
 					non_assignment_expression328=retval.non_assignment_expression328=non_assignment_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, non_assignment_expression328.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(non_assignment_expression328.getTree()));
 
 					}
 					break;
@@ -11985,15 +12247,18 @@ non_assignment_expression_return non_assignment_expression328 ;
 	// $ANTLR end "expression"
 
 
-	public static class expression_list_return extends ParserRuleReturnScope {
+	public static class expression_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression329 ;
-List<expression_return> expression331 = new ArrayList<expression_return>();
-Token char_literal330 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexpression_list_return(this);
+}
+CommonTree char_literal330 ;
+public expression_return expression329 ;
+public List<expression_return> expression331 = new ArrayList<expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -12027,7 +12292,7 @@ Token char_literal330 ;
 			expression329=retval.expression329=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression329.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression329.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:366:21: ( ',' expression )*
 			loop102:
@@ -12044,15 +12309,15 @@ Token char_literal330 ;
 					{
 					char_literal330=(Token)match(input,74,FOLLOW_74_in_expression_list5379); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal330_tree = (CommonTree)adaptor.create(char_literal330);
-					adaptor.addChild(root_0, char_literal330_tree);
+					retval.char_literal330 = char_literal330_tree=(CommonTree)adaptor.create(char_literal330);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal330_tree));
 					}
 
 					pushFollow(FOLLOW_expression_in_expression_list5383);
 					expression331=expression();retval.expression331.add((expression_return) expression331);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression331.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression331.getTree()));
 
 					}
 					break;
@@ -12086,15 +12351,18 @@ Token char_literal330 ;
 	// $ANTLR end "expression_list"
 
 
-	public static class assignment_return extends ParserRuleReturnScope {
+	public static class assignment_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unary_expression_return unary_expression332 ;
-assignment_operator_return assignment_operator333 ;
-expression_return expression334 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitassignment_return(this);
+}
+public unary_expression_return unary_expression332 ;
+public assignment_operator_return assignment_operator333 ;
+public expression_return expression334 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -12127,19 +12395,19 @@ expression_return expression334 ;
 			unary_expression332=retval.unary_expression332=unary_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression332.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression332.getTree()));
 
 			pushFollow(FOLLOW_assignment_operator_in_assignment5404);
 			assignment_operator333=retval.assignment_operator333=assignment_operator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, assignment_operator333.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(assignment_operator333.getTree()));
 
 			pushFollow(FOLLOW_expression_in_assignment5408);
 			expression334=retval.expression334=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression334.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression334.getTree()));
 
 			}
 
@@ -12165,28 +12433,31 @@ expression_return expression334 ;
 	// $ANTLR end "assignment"
 
 
-	public static class unary_expression_return extends ParserRuleReturnScope {
+	public static class unary_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-cast_expression_return cast_expression335 ;
-primary_or_array_creation_expression_return primary_or_array_creation_expression336 ;
-unary_expression_return unary_expression340 ;
-unary_expression_return unary_expression342 ;
-unary_expression_return unary_expression344 ;
-unary_expression_return unary_expression346 ;
-pre_increment_expression_return pre_increment_expression347 ;
-pre_decrement_expression_return pre_decrement_expression348 ;
-pointer_indirection_expression_return pointer_indirection_expression349 ;
-addressof_expression_return addressof_expression350 ;
-Token string_literal337 ;
-Token string_literal338 ;
-Token char_literal339 ;
-Token char_literal341 ;
-Token char_literal343 ;
-Token char_literal345 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunary_expression_return(this);
+}
+CommonTree string_literal337 ;
+CommonTree string_literal338 ;
+CommonTree char_literal339 ;
+CommonTree char_literal341 ;
+CommonTree char_literal343 ;
+CommonTree char_literal345 ;
+public cast_expression_return cast_expression335 ;
+public primary_or_array_creation_expression_return primary_or_array_creation_expression336 ;
+public unary_expression_return unary_expression340 ;
+public unary_expression_return unary_expression342 ;
+public unary_expression_return unary_expression344 ;
+public unary_expression_return unary_expression346 ;
+public pre_increment_expression_return pre_increment_expression347 ;
+public pre_decrement_expression_return pre_decrement_expression348 ;
+public pointer_indirection_expression_return pointer_indirection_expression349 ;
+public addressof_expression_return addressof_expression350 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -12367,7 +12638,7 @@ Token char_literal345 ;
 					cast_expression335=retval.cast_expression335=cast_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, cast_expression335.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(cast_expression335.getTree()));
 
 					}
 					break;
@@ -12381,7 +12652,7 @@ Token char_literal345 ;
 					primary_or_array_creation_expression336=retval.primary_or_array_creation_expression336=primary_or_array_creation_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_or_array_creation_expression336.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_or_array_creation_expression336.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:372:50: ( '++' )?
 					int alt103=2;
@@ -12395,8 +12666,8 @@ Token char_literal345 ;
 							{
 							string_literal337=(Token)match(input,72,FOLLOW_72_in_unary_expression5455); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal337_tree = (CommonTree)adaptor.create(string_literal337);
-							adaptor.addChild(root_0, string_literal337_tree);
+							retval.string_literal337 = string_literal337_tree=(CommonTree)adaptor.create(string_literal337);
+							adaptor.addChild(root_0, adaptor.dupTree(string_literal337_tree));
 							}
 
 							}
@@ -12416,8 +12687,8 @@ Token char_literal345 ;
 							{
 							string_literal338=(Token)match(input,75,FOLLOW_75_in_unary_expression5460); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal338_tree = (CommonTree)adaptor.create(string_literal338);
-							adaptor.addChild(root_0, string_literal338_tree);
+							retval.string_literal338 = string_literal338_tree=(CommonTree)adaptor.create(string_literal338);
+							adaptor.addChild(root_0, adaptor.dupTree(string_literal338_tree));
 							}
 
 							}
@@ -12435,15 +12706,15 @@ Token char_literal345 ;
 
 					char_literal339=(Token)match(input,71,FOLLOW_71_in_unary_expression5473); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal339_tree = (CommonTree)adaptor.create(char_literal339);
-					adaptor.addChild(root_0, char_literal339_tree);
+					retval.char_literal339 = char_literal339_tree=(CommonTree)adaptor.create(char_literal339);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal339_tree));
 					}
 
 					pushFollow(FOLLOW_unary_expression_in_unary_expression5477);
 					unary_expression340=retval.unary_expression340=unary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression340.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression340.getTree()));
 
 					}
 					break;
@@ -12455,15 +12726,15 @@ Token char_literal345 ;
 
 					char_literal341=(Token)match(input,MINUS,FOLLOW_MINUS_in_unary_expression5490); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal341_tree = (CommonTree)adaptor.create(char_literal341);
-					adaptor.addChild(root_0, char_literal341_tree);
+					retval.char_literal341 = char_literal341_tree=(CommonTree)adaptor.create(char_literal341);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal341_tree));
 					}
 
 					pushFollow(FOLLOW_unary_expression_in_unary_expression5494);
 					unary_expression342=retval.unary_expression342=unary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression342.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression342.getTree()));
 
 					}
 					break;
@@ -12475,15 +12746,15 @@ Token char_literal345 ;
 
 					char_literal343=(Token)match(input,61,FOLLOW_61_in_unary_expression5507); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal343_tree = (CommonTree)adaptor.create(char_literal343);
-					adaptor.addChild(root_0, char_literal343_tree);
+					retval.char_literal343 = char_literal343_tree=(CommonTree)adaptor.create(char_literal343);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal343_tree));
 					}
 
 					pushFollow(FOLLOW_unary_expression_in_unary_expression5511);
 					unary_expression344=retval.unary_expression344=unary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression344.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression344.getTree()));
 
 					}
 					break;
@@ -12495,15 +12766,15 @@ Token char_literal345 ;
 
 					char_literal345=(Token)match(input,202,FOLLOW_202_in_unary_expression5524); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal345_tree = (CommonTree)adaptor.create(char_literal345);
-					adaptor.addChild(root_0, char_literal345_tree);
+					retval.char_literal345 = char_literal345_tree=(CommonTree)adaptor.create(char_literal345);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal345_tree));
 					}
 
 					pushFollow(FOLLOW_unary_expression_in_unary_expression5528);
 					unary_expression346=retval.unary_expression346=unary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression346.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression346.getTree()));
 
 					}
 					break;
@@ -12517,7 +12788,7 @@ Token char_literal345 ;
 					pre_increment_expression347=retval.pre_increment_expression347=pre_increment_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, pre_increment_expression347.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(pre_increment_expression347.getTree()));
 
 					}
 					break;
@@ -12531,7 +12802,7 @@ Token char_literal345 ;
 					pre_decrement_expression348=retval.pre_decrement_expression348=pre_decrement_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, pre_decrement_expression348.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(pre_decrement_expression348.getTree()));
 
 					}
 					break;
@@ -12545,7 +12816,7 @@ Token char_literal345 ;
 					pointer_indirection_expression349=retval.pointer_indirection_expression349=pointer_indirection_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, pointer_indirection_expression349.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(pointer_indirection_expression349.getTree()));
 
 					}
 					break;
@@ -12559,7 +12830,7 @@ Token char_literal345 ;
 					addressof_expression350=retval.addressof_expression350=addressof_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, addressof_expression350.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(addressof_expression350.getTree()));
 
 					}
 					break;
@@ -12587,16 +12858,19 @@ Token char_literal345 ;
 	// $ANTLR end "unary_expression"
 
 
-	public static class cast_expression_return extends ParserRuleReturnScope {
+	public static class cast_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type352 ;
-unary_expression_return unary_expression354 ;
-Token char_literal351 ;
-Token char_literal353 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitcast_expression_return(this);
+}
+CommonTree char_literal351 ;
+CommonTree char_literal353 ;
+public type_return type352 ;
+public unary_expression_return unary_expression354 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -12630,27 +12904,27 @@ Token char_literal353 ;
 
 			char_literal351=(Token)match(input,68,FOLLOW_68_in_cast_expression5603); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal351_tree = (CommonTree)adaptor.create(char_literal351);
-			adaptor.addChild(root_0, char_literal351_tree);
+			retval.char_literal351 = char_literal351_tree=(CommonTree)adaptor.create(char_literal351);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal351_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_cast_expression5607);
 			type352=retval.type352=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type352.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type352.getTree()));
 
 			char_literal353=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_cast_expression5611); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal353_tree = (CommonTree)adaptor.create(char_literal353);
-			adaptor.addChild(root_0, char_literal353_tree);
+			retval.char_literal353 = char_literal353_tree=(CommonTree)adaptor.create(char_literal353);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal353_tree));
 			}
 
 			pushFollow(FOLLOW_unary_expression_in_cast_expression5615);
 			unary_expression354=retval.unary_expression354=unary_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression354.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression354.getTree()));
 
 			}
 
@@ -12676,24 +12950,27 @@ Token char_literal353 ;
 	// $ANTLR end "cast_expression"
 
 
-	public static class assignment_operator_return extends ParserRuleReturnScope {
+	public static class assignment_operator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token char_literal355 ;
-Token string_literal356 ;
-Token string_literal357 ;
-Token string_literal358 ;
-Token string_literal359 ;
-Token string_literal360 ;
-Token string_literal361 ;
-Token string_literal362 ;
-Token string_literal363 ;
-Token string_literal364 ;
-Token char_literal365 ;
-Token string_literal366 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitassignment_operator_return(this);
+}
+CommonTree char_literal355 ;
+CommonTree string_literal356 ;
+CommonTree string_literal357 ;
+CommonTree string_literal358 ;
+CommonTree string_literal359 ;
+CommonTree string_literal360 ;
+CommonTree string_literal361 ;
+CommonTree string_literal362 ;
+CommonTree string_literal363 ;
+CommonTree string_literal364 ;
+CommonTree char_literal365 ;
+CommonTree string_literal366 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -12810,8 +13087,8 @@ Token string_literal366 ;
 
 					char_literal355=(Token)match(input,85,FOLLOW_85_in_assignment_operator5630); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal355_tree = (CommonTree)adaptor.create(char_literal355);
-					adaptor.addChild(root_0, char_literal355_tree);
+					retval.char_literal355 = char_literal355_tree=(CommonTree)adaptor.create(char_literal355);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal355_tree));
 					}
 
 					}
@@ -12824,8 +13101,8 @@ Token string_literal366 ;
 
 					string_literal356=(Token)match(input,73,FOLLOW_73_in_assignment_operator5634); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal356_tree = (CommonTree)adaptor.create(string_literal356);
-					adaptor.addChild(root_0, string_literal356_tree);
+					retval.string_literal356 = string_literal356_tree=(CommonTree)adaptor.create(string_literal356);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal356_tree));
 					}
 
 					}
@@ -12838,8 +13115,8 @@ Token string_literal366 ;
 
 					string_literal357=(Token)match(input,76,FOLLOW_76_in_assignment_operator5638); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal357_tree = (CommonTree)adaptor.create(string_literal357);
-					adaptor.addChild(root_0, string_literal357_tree);
+					retval.string_literal357 = string_literal357_tree=(CommonTree)adaptor.create(string_literal357);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal357_tree));
 					}
 
 					}
@@ -12852,8 +13129,8 @@ Token string_literal366 ;
 
 					string_literal358=(Token)match(input,70,FOLLOW_70_in_assignment_operator5642); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal358_tree = (CommonTree)adaptor.create(string_literal358);
-					adaptor.addChild(root_0, string_literal358_tree);
+					retval.string_literal358 = string_literal358_tree=(CommonTree)adaptor.create(string_literal358);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal358_tree));
 					}
 
 					}
@@ -12866,8 +13143,8 @@ Token string_literal366 ;
 
 					string_literal359=(Token)match(input,78,FOLLOW_78_in_assignment_operator5646); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal359_tree = (CommonTree)adaptor.create(string_literal359);
-					adaptor.addChild(root_0, string_literal359_tree);
+					retval.string_literal359 = string_literal359_tree=(CommonTree)adaptor.create(string_literal359);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal359_tree));
 					}
 
 					}
@@ -12880,8 +13157,8 @@ Token string_literal366 ;
 
 					string_literal360=(Token)match(input,64,FOLLOW_64_in_assignment_operator5650); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal360_tree = (CommonTree)adaptor.create(string_literal360);
-					adaptor.addChild(root_0, string_literal360_tree);
+					retval.string_literal360 = string_literal360_tree=(CommonTree)adaptor.create(string_literal360);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal360_tree));
 					}
 
 					}
@@ -12894,8 +13171,8 @@ Token string_literal366 ;
 
 					string_literal361=(Token)match(input,67,FOLLOW_67_in_assignment_operator5654); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal361_tree = (CommonTree)adaptor.create(string_literal361);
-					adaptor.addChild(root_0, string_literal361_tree);
+					retval.string_literal361 = string_literal361_tree=(CommonTree)adaptor.create(string_literal361);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal361_tree));
 					}
 
 					}
@@ -12908,8 +13185,8 @@ Token string_literal366 ;
 
 					string_literal362=(Token)match(input,199,FOLLOW_199_in_assignment_operator5658); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal362_tree = (CommonTree)adaptor.create(string_literal362);
-					adaptor.addChild(root_0, string_literal362_tree);
+					retval.string_literal362 = string_literal362_tree=(CommonTree)adaptor.create(string_literal362);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal362_tree));
 					}
 
 					}
@@ -12922,8 +13199,8 @@ Token string_literal366 ;
 
 					string_literal363=(Token)match(input,94,FOLLOW_94_in_assignment_operator5662); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal363_tree = (CommonTree)adaptor.create(string_literal363);
-					adaptor.addChild(root_0, string_literal363_tree);
+					retval.string_literal363 = string_literal363_tree=(CommonTree)adaptor.create(string_literal363);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal363_tree));
 					}
 
 					}
@@ -12936,8 +13213,8 @@ Token string_literal366 ;
 
 					string_literal364=(Token)match(input,83,FOLLOW_83_in_assignment_operator5666); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal364_tree = (CommonTree)adaptor.create(string_literal364);
-					adaptor.addChild(root_0, string_literal364_tree);
+					retval.string_literal364 = string_literal364_tree=(CommonTree)adaptor.create(string_literal364);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal364_tree));
 					}
 
 					}
@@ -12950,14 +13227,14 @@ Token string_literal366 ;
 
 					char_literal365=(Token)match(input,GT,FOLLOW_GT_in_assignment_operator5670); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal365_tree = (CommonTree)adaptor.create(char_literal365);
-					adaptor.addChild(root_0, char_literal365_tree);
+					retval.char_literal365 = char_literal365_tree=(CommonTree)adaptor.create(char_literal365);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal365_tree));
 					}
 
 					string_literal366=(Token)match(input,88,FOLLOW_88_in_assignment_operator5672); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal366_tree = (CommonTree)adaptor.create(string_literal366);
-					adaptor.addChild(root_0, string_literal366_tree);
+					retval.string_literal366 = string_literal366_tree=(CommonTree)adaptor.create(string_literal366);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal366_tree));
 					}
 
 					}
@@ -12986,14 +13263,17 @@ Token string_literal366 ;
 	// $ANTLR end "assignment_operator"
 
 
-	public static class pre_increment_expression_return extends ParserRuleReturnScope {
+	public static class pre_increment_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unary_expression_return unary_expression368 ;
-Token string_literal367 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitpre_increment_expression_return(this);
+}
+CommonTree string_literal367 ;
+public unary_expression_return unary_expression368 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13024,15 +13304,15 @@ Token string_literal367 ;
 
 			string_literal367=(Token)match(input,72,FOLLOW_72_in_pre_increment_expression5688); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal367_tree = (CommonTree)adaptor.create(string_literal367);
-			adaptor.addChild(root_0, string_literal367_tree);
+			retval.string_literal367 = string_literal367_tree=(CommonTree)adaptor.create(string_literal367);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal367_tree));
 			}
 
 			pushFollow(FOLLOW_unary_expression_in_pre_increment_expression5692);
 			unary_expression368=retval.unary_expression368=unary_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression368.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression368.getTree()));
 
 			}
 
@@ -13058,14 +13338,17 @@ Token string_literal367 ;
 	// $ANTLR end "pre_increment_expression"
 
 
-	public static class pre_decrement_expression_return extends ParserRuleReturnScope {
+	public static class pre_decrement_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unary_expression_return unary_expression370 ;
-Token string_literal369 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitpre_decrement_expression_return(this);
+}
+CommonTree string_literal369 ;
+public unary_expression_return unary_expression370 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13096,15 +13379,15 @@ Token string_literal369 ;
 
 			string_literal369=(Token)match(input,75,FOLLOW_75_in_pre_decrement_expression5708); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal369_tree = (CommonTree)adaptor.create(string_literal369);
-			adaptor.addChild(root_0, string_literal369_tree);
+			retval.string_literal369 = string_literal369_tree=(CommonTree)adaptor.create(string_literal369);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal369_tree));
 			}
 
 			pushFollow(FOLLOW_unary_expression_in_pre_decrement_expression5712);
 			unary_expression370=retval.unary_expression370=unary_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression370.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression370.getTree()));
 
 			}
 
@@ -13130,14 +13413,17 @@ Token string_literal369 ;
 	// $ANTLR end "pre_decrement_expression"
 
 
-	public static class pointer_indirection_expression_return extends ParserRuleReturnScope {
+	public static class pointer_indirection_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unary_expression_return unary_expression372 ;
-Token char_literal371 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitpointer_indirection_expression_return(this);
+}
+CommonTree char_literal371 ;
+public unary_expression_return unary_expression372 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13168,15 +13454,15 @@ Token char_literal371 ;
 
 			char_literal371=(Token)match(input,69,FOLLOW_69_in_pointer_indirection_expression5727); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal371_tree = (CommonTree)adaptor.create(char_literal371);
-			adaptor.addChild(root_0, char_literal371_tree);
+			retval.char_literal371 = char_literal371_tree=(CommonTree)adaptor.create(char_literal371);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal371_tree));
 			}
 
 			pushFollow(FOLLOW_unary_expression_in_pointer_indirection_expression5731);
 			unary_expression372=retval.unary_expression372=unary_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression372.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression372.getTree()));
 
 			}
 
@@ -13202,14 +13488,17 @@ Token char_literal371 ;
 	// $ANTLR end "pointer_indirection_expression"
 
 
-	public static class addressof_expression_return extends ParserRuleReturnScope {
+	public static class addressof_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unary_expression_return unary_expression374 ;
-Token char_literal373 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitaddressof_expression_return(this);
+}
+CommonTree char_literal373 ;
+public unary_expression_return unary_expression374 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13240,15 +13529,15 @@ Token char_literal373 ;
 
 			char_literal373=(Token)match(input,66,FOLLOW_66_in_addressof_expression5746); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal373_tree = (CommonTree)adaptor.create(char_literal373);
-			adaptor.addChild(root_0, char_literal373_tree);
+			retval.char_literal373 = char_literal373_tree=(CommonTree)adaptor.create(char_literal373);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal373_tree));
 			}
 
 			pushFollow(FOLLOW_unary_expression_in_addressof_expression5750);
 			unary_expression374=retval.unary_expression374=unary_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression374.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression374.getTree()));
 
 			}
 
@@ -13274,15 +13563,18 @@ Token char_literal373 ;
 	// $ANTLR end "addressof_expression"
 
 
-	public static class non_assignment_expression_return extends ParserRuleReturnScope {
+	public static class non_assignment_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-lambda_expression_return lambda_expression375 ;
-query_expression_return query_expression376 ;
-conditional_expression_return conditional_expression377 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnon_assignment_expression_return(this);
+}
+public lambda_expression_return lambda_expression375 ;
+public query_expression_return query_expression376 ;
+public conditional_expression_return conditional_expression377 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13437,7 +13729,7 @@ conditional_expression_return conditional_expression377 ;
 					lambda_expression375=retval.lambda_expression375=lambda_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, lambda_expression375.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(lambda_expression375.getTree()));
 
 					}
 					break;
@@ -13451,7 +13743,7 @@ conditional_expression_return conditional_expression377 ;
 					query_expression376=retval.query_expression376=query_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, query_expression376.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(query_expression376.getTree()));
 
 					}
 					break;
@@ -13465,7 +13757,7 @@ conditional_expression_return conditional_expression377 ;
 					conditional_expression377=retval.conditional_expression377=conditional_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, conditional_expression377.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conditional_expression377.getTree()));
 
 					}
 					break;
@@ -13493,15 +13785,18 @@ conditional_expression_return conditional_expression377 ;
 	// $ANTLR end "non_assignment_expression"
 
 
-	public static class multiplicative_expression_return extends ParserRuleReturnScope {
+	public static class multiplicative_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unary_expression_return unary_expression378 ;
-List<unary_expression_return> unary_expression380 = new ArrayList<unary_expression_return>();
-Token set379 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmultiplicative_expression_return(this);
+}
+CommonTree set379 ;
+public unary_expression_return unary_expression378 ;
+public List<unary_expression_return> unary_expression380 = new ArrayList<unary_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13535,7 +13830,7 @@ Token set379 ;
 			unary_expression378=retval.unary_expression378=unary_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression378.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression378.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:407:26: ( ( '*' | '/' | '%' ) unary_expression )*
 			loop108:
@@ -13566,7 +13861,7 @@ Token set379 ;
 					unary_expression380=unary_expression();retval.unary_expression380.add((unary_expression_return) unary_expression380);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression380.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression380.getTree()));
 
 					}
 					break;
@@ -13600,15 +13895,18 @@ Token set379 ;
 	// $ANTLR end "multiplicative_expression"
 
 
-	public static class additive_expression_return extends ParserRuleReturnScope {
+	public static class additive_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-multiplicative_expression_return multiplicative_expression381 ;
-List<multiplicative_expression_return> multiplicative_expression383 = new ArrayList<multiplicative_expression_return>();
-Token set382 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitadditive_expression_return(this);
+}
+CommonTree set382 ;
+public multiplicative_expression_return multiplicative_expression381 ;
+public List<multiplicative_expression_return> multiplicative_expression383 = new ArrayList<multiplicative_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13642,7 +13940,7 @@ Token set382 ;
 			multiplicative_expression381=retval.multiplicative_expression381=multiplicative_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicative_expression381.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(multiplicative_expression381.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:409:35: ( ( '+' | '-' ) multiplicative_expression )*
 			loop109:
@@ -13673,7 +13971,7 @@ Token set382 ;
 					multiplicative_expression383=multiplicative_expression();retval.multiplicative_expression383.add((multiplicative_expression_return) multiplicative_expression383);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicative_expression383.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(multiplicative_expression383.getTree()));
 
 					}
 					break;
@@ -13707,17 +14005,20 @@ Token set382 ;
 	// $ANTLR end "additive_expression"
 
 
-	public static class shift_expression_return extends ParserRuleReturnScope {
+	public static class shift_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-additive_expression_return additive_expression384 ;
-List<additive_expression_return> additive_expression388 = new ArrayList<additive_expression_return>();
-Token string_literal385 ;
-Token char_literal386 ;
-Token char_literal387 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitshift_expression_return(this);
+}
+CommonTree string_literal385 ;
+CommonTree char_literal386 ;
+CommonTree char_literal387 ;
+public additive_expression_return additive_expression384 ;
+public List<additive_expression_return> additive_expression388 = new ArrayList<additive_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13755,7 +14056,7 @@ Token char_literal387 ;
 			additive_expression384=retval.additive_expression384=additive_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, additive_expression384.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(additive_expression384.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:412:29: ( ( '<<' | '>' '>' ) additive_expression )*
 			loop111:
@@ -13800,8 +14101,8 @@ Token char_literal387 ;
 							{
 							string_literal385=(Token)match(input,82,FOLLOW_82_in_shift_expression5923); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal385_tree = (CommonTree)adaptor.create(string_literal385);
-							adaptor.addChild(root_0, string_literal385_tree);
+							retval.string_literal385 = string_literal385_tree=(CommonTree)adaptor.create(string_literal385);
+							adaptor.addChild(root_0, adaptor.dupTree(string_literal385_tree));
 							}
 
 							}
@@ -13811,14 +14112,14 @@ Token char_literal387 ;
 							{
 							char_literal386=(Token)match(input,GT,FOLLOW_GT_in_shift_expression5925); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal386_tree = (CommonTree)adaptor.create(char_literal386);
-							adaptor.addChild(root_0, char_literal386_tree);
+							retval.char_literal386 = char_literal386_tree=(CommonTree)adaptor.create(char_literal386);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal386_tree));
 							}
 
 							char_literal387=(Token)match(input,GT,FOLLOW_GT_in_shift_expression5927); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal387_tree = (CommonTree)adaptor.create(char_literal387);
-							adaptor.addChild(root_0, char_literal387_tree);
+							retval.char_literal387 = char_literal387_tree=(CommonTree)adaptor.create(char_literal387);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal387_tree));
 							}
 
 							}
@@ -13830,7 +14131,7 @@ Token char_literal387 ;
 					additive_expression388=additive_expression();retval.additive_expression388.add((additive_expression_return) additive_expression388);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, additive_expression388.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(additive_expression388.getTree()));
 
 					}
 					break;
@@ -13864,17 +14165,20 @@ Token char_literal387 ;
 	// $ANTLR end "shift_expression"
 
 
-	public static class relational_expression_return extends ParserRuleReturnScope {
+	public static class relational_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-shift_expression_return shift_expression389 ;
-List<shift_expression_return> shift_expression391 = new ArrayList<shift_expression_return>();
-List<non_nullable_type_return> non_nullable_type393 = new ArrayList<non_nullable_type_return>();
-Token set390 ;
-Token set392 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitrelational_expression_return(this);
+}
+CommonTree set390 ;
+CommonTree set392 ;
+public shift_expression_return shift_expression389 ;
+public List<shift_expression_return> shift_expression391 = new ArrayList<shift_expression_return>();
+public List<non_nullable_type_return> non_nullable_type393 = new ArrayList<non_nullable_type_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -13911,7 +14215,7 @@ Token set392 ;
 			shift_expression389=retval.shift_expression389=shift_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, shift_expression389.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(shift_expression389.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:415:17: ( ( ( '<' | '>' | '>=' | '<=' ) shift_expression ) | ( ( 'is' | 'as' ) non_nullable_type ) )*
 			loop112:
@@ -13948,7 +14252,7 @@ Token set392 ;
 					shift_expression391=shift_expression();retval.shift_expression391.add((shift_expression_return) shift_expression391);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, shift_expression391.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(shift_expression391.getTree()));
 
 					}
 
@@ -13976,7 +14280,7 @@ Token set392 ;
 					non_nullable_type393=non_nullable_type();retval.non_nullable_type393.add((non_nullable_type_return) non_nullable_type393);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, non_nullable_type393.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(non_nullable_type393.getTree()));
 
 					}
 
@@ -14012,15 +14316,18 @@ Token set392 ;
 	// $ANTLR end "relational_expression"
 
 
-	public static class equality_expression_return extends ParserRuleReturnScope {
+	public static class equality_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-relational_expression_return relational_expression394 ;
-List<relational_expression_return> relational_expression396 = new ArrayList<relational_expression_return>();
-Token set395 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitequality_expression_return(this);
+}
+CommonTree set395 ;
+public relational_expression_return relational_expression394 ;
+public List<relational_expression_return> relational_expression396 = new ArrayList<relational_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14054,7 +14361,7 @@ Token set395 ;
 			relational_expression394=retval.relational_expression394=relational_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, relational_expression394.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(relational_expression394.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:420:12: ( ( '==' | '!=' ) relational_expression )*
 			loop113:
@@ -14085,7 +14392,7 @@ Token set395 ;
 					relational_expression396=relational_expression();retval.relational_expression396.add((relational_expression_return) relational_expression396);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, relational_expression396.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(relational_expression396.getTree()));
 
 					}
 					break;
@@ -14119,15 +14426,18 @@ Token set395 ;
 	// $ANTLR end "equality_expression"
 
 
-	public static class and_expression_return extends ParserRuleReturnScope {
+	public static class and_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-equality_expression_return equality_expression397 ;
-List<equality_expression_return> equality_expression399 = new ArrayList<equality_expression_return>();
-Token char_literal398 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitand_expression_return(this);
+}
+CommonTree char_literal398 ;
+public equality_expression_return equality_expression397 ;
+public List<equality_expression_return> equality_expression399 = new ArrayList<equality_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14161,7 +14471,7 @@ Token char_literal398 ;
 			equality_expression397=retval.equality_expression397=equality_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, equality_expression397.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(equality_expression397.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:422:29: ( '&' equality_expression )*
 			loop114:
@@ -14178,15 +14488,15 @@ Token char_literal398 ;
 					{
 					char_literal398=(Token)match(input,66,FOLLOW_66_in_and_expression6107); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal398_tree = (CommonTree)adaptor.create(char_literal398);
-					adaptor.addChild(root_0, char_literal398_tree);
+					retval.char_literal398 = char_literal398_tree=(CommonTree)adaptor.create(char_literal398);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal398_tree));
 					}
 
 					pushFollow(FOLLOW_equality_expression_in_and_expression6111);
 					equality_expression399=equality_expression();retval.equality_expression399.add((equality_expression_return) equality_expression399);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, equality_expression399.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(equality_expression399.getTree()));
 
 					}
 					break;
@@ -14220,15 +14530,18 @@ Token char_literal398 ;
 	// $ANTLR end "and_expression"
 
 
-	public static class exclusive_or_expression_return extends ParserRuleReturnScope {
+	public static class exclusive_or_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-and_expression_return and_expression400 ;
-List<and_expression_return> and_expression402 = new ArrayList<and_expression_return>();
-Token char_literal401 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexclusive_or_expression_return(this);
+}
+CommonTree char_literal401 ;
+public and_expression_return and_expression400 ;
+public List<and_expression_return> and_expression402 = new ArrayList<and_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14262,7 +14575,7 @@ Token char_literal401 ;
 			and_expression400=retval.and_expression400=and_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, and_expression400.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(and_expression400.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:424:24: ( '^' and_expression )*
 			loop115:
@@ -14279,15 +14592,15 @@ Token char_literal401 ;
 					{
 					char_literal401=(Token)match(input,93,FOLLOW_93_in_exclusive_or_expression6131); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal401_tree = (CommonTree)adaptor.create(char_literal401);
-					adaptor.addChild(root_0, char_literal401_tree);
+					retval.char_literal401 = char_literal401_tree=(CommonTree)adaptor.create(char_literal401);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal401_tree));
 					}
 
 					pushFollow(FOLLOW_and_expression_in_exclusive_or_expression6135);
 					and_expression402=and_expression();retval.and_expression402.add((and_expression_return) and_expression402);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, and_expression402.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(and_expression402.getTree()));
 
 					}
 					break;
@@ -14321,15 +14634,18 @@ Token char_literal401 ;
 	// $ANTLR end "exclusive_or_expression"
 
 
-	public static class inclusive_or_expression_return extends ParserRuleReturnScope {
+	public static class inclusive_or_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-exclusive_or_expression_return exclusive_or_expression403 ;
-List<exclusive_or_expression_return> exclusive_or_expression405 = new ArrayList<exclusive_or_expression_return>();
-Token char_literal404 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinclusive_or_expression_return(this);
+}
+CommonTree char_literal404 ;
+public exclusive_or_expression_return exclusive_or_expression403 ;
+public List<exclusive_or_expression_return> exclusive_or_expression405 = new ArrayList<exclusive_or_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14363,7 +14679,7 @@ Token char_literal404 ;
 			exclusive_or_expression403=retval.exclusive_or_expression403=exclusive_or_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, exclusive_or_expression403.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(exclusive_or_expression403.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:426:35: ( '|' exclusive_or_expression )*
 			loop116:
@@ -14380,15 +14696,15 @@ Token char_literal404 ;
 					{
 					char_literal404=(Token)match(input,198,FOLLOW_198_in_inclusive_or_expression6157); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal404_tree = (CommonTree)adaptor.create(char_literal404);
-					adaptor.addChild(root_0, char_literal404_tree);
+					retval.char_literal404 = char_literal404_tree=(CommonTree)adaptor.create(char_literal404);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal404_tree));
 					}
 
 					pushFollow(FOLLOW_exclusive_or_expression_in_inclusive_or_expression6161);
 					exclusive_or_expression405=exclusive_or_expression();retval.exclusive_or_expression405.add((exclusive_or_expression_return) exclusive_or_expression405);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, exclusive_or_expression405.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(exclusive_or_expression405.getTree()));
 
 					}
 					break;
@@ -14422,15 +14738,18 @@ Token char_literal404 ;
 	// $ANTLR end "inclusive_or_expression"
 
 
-	public static class conditional_and_expression_return extends ParserRuleReturnScope {
+	public static class conditional_and_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-inclusive_or_expression_return inclusive_or_expression406 ;
-List<inclusive_or_expression_return> inclusive_or_expression408 = new ArrayList<inclusive_or_expression_return>();
-Token string_literal407 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconditional_and_expression_return(this);
+}
+CommonTree string_literal407 ;
+public inclusive_or_expression_return inclusive_or_expression406 ;
+public List<inclusive_or_expression_return> inclusive_or_expression408 = new ArrayList<inclusive_or_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14464,7 +14783,7 @@ Token string_literal407 ;
 			inclusive_or_expression406=retval.inclusive_or_expression406=inclusive_or_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, inclusive_or_expression406.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(inclusive_or_expression406.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:428:35: ( '&&' inclusive_or_expression )*
 			loop117:
@@ -14481,15 +14800,15 @@ Token string_literal407 ;
 					{
 					string_literal407=(Token)match(input,65,FOLLOW_65_in_conditional_and_expression6183); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal407_tree = (CommonTree)adaptor.create(string_literal407);
-					adaptor.addChild(root_0, string_literal407_tree);
+					retval.string_literal407 = string_literal407_tree=(CommonTree)adaptor.create(string_literal407);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal407_tree));
 					}
 
 					pushFollow(FOLLOW_inclusive_or_expression_in_conditional_and_expression6187);
 					inclusive_or_expression408=inclusive_or_expression();retval.inclusive_or_expression408.add((inclusive_or_expression_return) inclusive_or_expression408);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, inclusive_or_expression408.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(inclusive_or_expression408.getTree()));
 
 					}
 					break;
@@ -14523,15 +14842,18 @@ Token string_literal407 ;
 	// $ANTLR end "conditional_and_expression"
 
 
-	public static class conditional_or_expression_return extends ParserRuleReturnScope {
+	public static class conditional_or_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-conditional_and_expression_return conditional_and_expression409 ;
-List<conditional_and_expression_return> conditional_and_expression411 = new ArrayList<conditional_and_expression_return>();
-Token string_literal410 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconditional_or_expression_return(this);
+}
+CommonTree string_literal410 ;
+public conditional_and_expression_return conditional_and_expression409 ;
+public List<conditional_and_expression_return> conditional_and_expression411 = new ArrayList<conditional_and_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14565,7 +14887,7 @@ Token string_literal410 ;
 			conditional_and_expression409=retval.conditional_and_expression409=conditional_and_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditional_and_expression409.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conditional_and_expression409.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:430:37: ( '||' conditional_and_expression )*
 			loop118:
@@ -14582,15 +14904,15 @@ Token string_literal410 ;
 					{
 					string_literal410=(Token)match(input,200,FOLLOW_200_in_conditional_or_expression6208); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal410_tree = (CommonTree)adaptor.create(string_literal410);
-					adaptor.addChild(root_0, string_literal410_tree);
+					retval.string_literal410 = string_literal410_tree=(CommonTree)adaptor.create(string_literal410);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal410_tree));
 					}
 
 					pushFollow(FOLLOW_conditional_and_expression_in_conditional_or_expression6212);
 					conditional_and_expression411=conditional_and_expression();retval.conditional_and_expression411.add((conditional_and_expression_return) conditional_and_expression411);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, conditional_and_expression411.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conditional_and_expression411.getTree()));
 
 					}
 					break;
@@ -14624,15 +14946,18 @@ Token string_literal410 ;
 	// $ANTLR end "conditional_or_expression"
 
 
-	public static class null_coalescing_expression_return extends ParserRuleReturnScope {
+	public static class null_coalescing_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-conditional_or_expression_return conditional_or_expression412 ;
-List<conditional_or_expression_return> conditional_or_expression414 = new ArrayList<conditional_or_expression_return>();
-Token string_literal413 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnull_coalescing_expression_return(this);
+}
+CommonTree string_literal413 ;
+public conditional_or_expression_return conditional_or_expression412 ;
+public List<conditional_or_expression_return> conditional_or_expression414 = new ArrayList<conditional_or_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14666,7 +14991,7 @@ Token string_literal413 ;
 			conditional_or_expression412=retval.conditional_or_expression412=conditional_or_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditional_or_expression412.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conditional_or_expression412.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:433:37: ( '??' conditional_or_expression )*
 			loop119:
@@ -14683,15 +15008,15 @@ Token string_literal413 ;
 					{
 					string_literal413=(Token)match(input,90,FOLLOW_90_in_null_coalescing_expression6235); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal413_tree = (CommonTree)adaptor.create(string_literal413);
-					adaptor.addChild(root_0, string_literal413_tree);
+					retval.string_literal413 = string_literal413_tree=(CommonTree)adaptor.create(string_literal413);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal413_tree));
 					}
 
 					pushFollow(FOLLOW_conditional_or_expression_in_null_coalescing_expression6239);
 					conditional_or_expression414=conditional_or_expression();retval.conditional_or_expression414.add((conditional_or_expression_return) conditional_or_expression414);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, conditional_or_expression414.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conditional_or_expression414.getTree()));
 
 					}
 					break;
@@ -14725,17 +15050,20 @@ Token string_literal413 ;
 	// $ANTLR end "null_coalescing_expression"
 
 
-	public static class conditional_expression_return extends ParserRuleReturnScope {
+	public static class conditional_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-null_coalescing_expression_return null_coalescing_expression415 ;
-expression_return expression417 ;
-expression_return expression419 ;
-Token char_literal416 ;
-Token char_literal418 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconditional_expression_return(this);
+}
+CommonTree char_literal416 ;
+CommonTree char_literal418 ;
+public null_coalescing_expression_return null_coalescing_expression415 ;
+public expression_return expression417 ;
+public expression_return expression419 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14772,7 +15100,7 @@ Token char_literal418 ;
 			null_coalescing_expression415=retval.null_coalescing_expression415=null_coalescing_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, null_coalescing_expression415.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(null_coalescing_expression415.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:435:38: ( '?' expression ':' expression )?
 			int alt120=2;
@@ -14786,27 +15114,27 @@ Token char_literal418 ;
 					{
 					char_literal416=(Token)match(input,89,FOLLOW_89_in_conditional_expression6261); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal416_tree = (CommonTree)adaptor.create(char_literal416);
-					adaptor.addChild(root_0, char_literal416_tree);
+					retval.char_literal416 = char_literal416_tree=(CommonTree)adaptor.create(char_literal416);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal416_tree));
 					}
 
 					pushFollow(FOLLOW_expression_in_conditional_expression6265);
 					expression417=retval.expression417=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression417.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression417.getTree()));
 
 					char_literal418=(Token)match(input,79,FOLLOW_79_in_conditional_expression6269); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal418_tree = (CommonTree)adaptor.create(char_literal418);
-					adaptor.addChild(root_0, char_literal418_tree);
+					retval.char_literal418 = char_literal418_tree=(CommonTree)adaptor.create(char_literal418);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal418_tree));
 					}
 
 					pushFollow(FOLLOW_expression_in_conditional_expression6273);
 					expression419=retval.expression419=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression419.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression419.getTree()));
 
 					}
 					break;
@@ -14837,15 +15165,18 @@ Token char_literal418 ;
 	// $ANTLR end "conditional_expression"
 
 
-	public static class lambda_expression_return extends ParserRuleReturnScope {
+	public static class lambda_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-anonymous_function_signature_return anonymous_function_signature420 ;
-anonymous_function_body_return anonymous_function_body422 ;
-Token string_literal421 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlambda_expression_return(this);
+}
+CommonTree string_literal421 ;
+public anonymous_function_signature_return anonymous_function_signature420 ;
+public anonymous_function_body_return anonymous_function_body422 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14879,19 +15210,19 @@ Token string_literal421 ;
 			anonymous_function_signature420=retval.anonymous_function_signature420=anonymous_function_signature();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_function_signature420.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(anonymous_function_signature420.getTree()));
 
 			string_literal421=(Token)match(input,87,FOLLOW_87_in_lambda_expression6304); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal421_tree = (CommonTree)adaptor.create(string_literal421);
-			adaptor.addChild(root_0, string_literal421_tree);
+			retval.string_literal421 = string_literal421_tree=(CommonTree)adaptor.create(string_literal421);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal421_tree));
 			}
 
 			pushFollow(FOLLOW_anonymous_function_body_in_lambda_expression6308);
 			anonymous_function_body422=retval.anonymous_function_body422=anonymous_function_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_function_body422.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(anonymous_function_body422.getTree()));
 
 			}
 
@@ -14917,17 +15248,20 @@ Token string_literal421 ;
 	// $ANTLR end "lambda_expression"
 
 
-	public static class anonymous_function_signature_return extends ParserRuleReturnScope {
+	public static class anonymous_function_signature_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-explicit_anonymous_function_parameter_list_return explicit_anonymous_function_parameter_list424 ;
-implicit_anonymous_function_parameter_list_return implicit_anonymous_function_parameter_list425 ;
-implicit_anonymous_function_parameter_list_return implicit_anonymous_function_parameter_list427 ;
-Token char_literal423 ;
-Token char_literal426 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitanonymous_function_signature_return(this);
+}
+CommonTree char_literal423 ;
+CommonTree char_literal426 ;
+public explicit_anonymous_function_parameter_list_return explicit_anonymous_function_parameter_list424 ;
+public implicit_anonymous_function_parameter_list_return implicit_anonymous_function_parameter_list425 ;
+public implicit_anonymous_function_parameter_list_return implicit_anonymous_function_parameter_list427 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -14980,8 +15314,8 @@ Token char_literal426 ;
 
 					char_literal423=(Token)match(input,68,FOLLOW_68_in_anonymous_function_signature6322); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal423_tree = (CommonTree)adaptor.create(char_literal423);
-					adaptor.addChild(root_0, char_literal423_tree);
+					retval.char_literal423 = char_literal423_tree=(CommonTree)adaptor.create(char_literal423);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal423_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:443:20: ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )?
@@ -15007,7 +15341,7 @@ Token char_literal426 ;
 							explicit_anonymous_function_parameter_list424=retval.explicit_anonymous_function_parameter_list424=explicit_anonymous_function_parameter_list();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, explicit_anonymous_function_parameter_list424.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(explicit_anonymous_function_parameter_list424.getTree()));
 
 							}
 							break;
@@ -15018,7 +15352,7 @@ Token char_literal426 ;
 							implicit_anonymous_function_parameter_list425=retval.implicit_anonymous_function_parameter_list425=implicit_anonymous_function_parameter_list();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, implicit_anonymous_function_parameter_list425.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(implicit_anonymous_function_parameter_list425.getTree()));
 
 							}
 							break;
@@ -15027,8 +15361,8 @@ Token char_literal426 ;
 
 					char_literal426=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_anonymous_function_signature6363); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal426_tree = (CommonTree)adaptor.create(char_literal426);
-					adaptor.addChild(root_0, char_literal426_tree);
+					retval.char_literal426 = char_literal426_tree=(CommonTree)adaptor.create(char_literal426);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal426_tree));
 					}
 
 					}
@@ -15043,7 +15377,7 @@ Token char_literal426 ;
 					implicit_anonymous_function_parameter_list427=retval.implicit_anonymous_function_parameter_list427=implicit_anonymous_function_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, implicit_anonymous_function_parameter_list427.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(implicit_anonymous_function_parameter_list427.getTree()));
 
 					}
 					break;
@@ -15071,15 +15405,18 @@ Token char_literal426 ;
 	// $ANTLR end "anonymous_function_signature"
 
 
-	public static class implicit_anonymous_function_parameter_list_return extends ParserRuleReturnScope {
+	public static class implicit_anonymous_function_parameter_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-implicit_anonymous_function_parameter_return implicit_anonymous_function_parameter428 ;
-List<implicit_anonymous_function_parameter_return> implicit_anonymous_function_parameter430 = new ArrayList<implicit_anonymous_function_parameter_return>();
-Token char_literal429 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitimplicit_anonymous_function_parameter_list_return(this);
+}
+CommonTree char_literal429 ;
+public implicit_anonymous_function_parameter_return implicit_anonymous_function_parameter428 ;
+public List<implicit_anonymous_function_parameter_return> implicit_anonymous_function_parameter430 = new ArrayList<implicit_anonymous_function_parameter_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15113,7 +15450,7 @@ Token char_literal429 ;
 			implicit_anonymous_function_parameter428=retval.implicit_anonymous_function_parameter428=implicit_anonymous_function_parameter();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, implicit_anonymous_function_parameter428.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(implicit_anonymous_function_parameter428.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:448:49: ( ',' implicit_anonymous_function_parameter )*
 			loop123:
@@ -15130,15 +15467,15 @@ Token char_literal429 ;
 					{
 					char_literal429=(Token)match(input,74,FOLLOW_74_in_implicit_anonymous_function_parameter_list6403); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal429_tree = (CommonTree)adaptor.create(char_literal429);
-					adaptor.addChild(root_0, char_literal429_tree);
+					retval.char_literal429 = char_literal429_tree=(CommonTree)adaptor.create(char_literal429);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal429_tree));
 					}
 
 					pushFollow(FOLLOW_implicit_anonymous_function_parameter_in_implicit_anonymous_function_parameter_list6407);
 					implicit_anonymous_function_parameter430=implicit_anonymous_function_parameter();retval.implicit_anonymous_function_parameter430.add((implicit_anonymous_function_parameter_return) implicit_anonymous_function_parameter430);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, implicit_anonymous_function_parameter430.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(implicit_anonymous_function_parameter430.getTree()));
 
 					}
 					break;
@@ -15172,13 +15509,16 @@ Token char_literal429 ;
 	// $ANTLR end "implicit_anonymous_function_parameter_list"
 
 
-	public static class implicit_anonymous_function_parameter_return extends ParserRuleReturnScope {
+	public static class implicit_anonymous_function_parameter_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier431 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitimplicit_anonymous_function_parameter_return(this);
+}
+public identifier_return identifier431 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15209,7 +15549,7 @@ identifier_return identifier431 ;
 			identifier431=retval.identifier431=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier431.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier431.getTree()));
 
 			}
 
@@ -15235,14 +15575,17 @@ identifier_return identifier431 ;
 	// $ANTLR end "implicit_anonymous_function_parameter"
 
 
-	public static class anonymous_function_body_return extends ParserRuleReturnScope {
+	public static class anonymous_function_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression432 ;
-block_return block433 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitanonymous_function_body_return(this);
+}
+public expression_return expression432 ;
+public block_return block433 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15292,7 +15635,7 @@ block_return block433 ;
 					expression432=retval.expression432=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression432.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression432.getTree()));
 
 					}
 					break;
@@ -15306,7 +15649,7 @@ block_return block433 ;
 					block433=retval.block433=block();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, block433.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block433.getTree()));
 
 					}
 					break;
@@ -15334,14 +15677,17 @@ block_return block433 ;
 	// $ANTLR end "anonymous_function_body"
 
 
-	public static class query_expression_return extends ParserRuleReturnScope {
+	public static class query_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-from_clause_return from_clause434 ;
-query_body_return query_body435 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitquery_expression_return(this);
+}
+public from_clause_return from_clause434 ;
+public query_body_return query_body435 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15373,13 +15719,13 @@ query_body_return query_body435 ;
 			from_clause434=retval.from_clause434=from_clause();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, from_clause434.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(from_clause434.getTree()));
 
 			pushFollow(FOLLOW_query_body_in_query_expression6473);
 			query_body435=retval.query_body435=query_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, query_body435.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(query_body435.getTree()));
 
 			}
 
@@ -15405,15 +15751,18 @@ query_body_return query_body435 ;
 	// $ANTLR end "query_expression"
 
 
-	public static class query_body_return extends ParserRuleReturnScope {
+	public static class query_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-query_body_clauses_return query_body_clauses436 ;
-select_or_group_clause_return select_or_group_clause437 ;
-query_continuation_return query_continuation438 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitquery_body_return(this);
+}
+public query_body_clauses_return query_body_clauses436 ;
+public select_or_group_clause_return select_or_group_clause437 ;
+public query_continuation_return query_continuation438 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15456,7 +15805,7 @@ query_continuation_return query_continuation438 ;
 					query_body_clauses436=retval.query_body_clauses436=query_body_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, query_body_clauses436.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(query_body_clauses436.getTree()));
 
 					}
 					break;
@@ -15467,7 +15816,7 @@ query_continuation_return query_continuation438 ;
 			select_or_group_clause437=retval.select_or_group_clause437=select_or_group_clause();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, select_or_group_clause437.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(select_or_group_clause437.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:462:56: ( ( 'into' )=> query_continuation )?
 			int alt126=2;
@@ -15486,7 +15835,7 @@ query_continuation_return query_continuation438 ;
 					query_continuation438=retval.query_continuation438=query_continuation();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, query_continuation438.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(query_continuation438.getTree()));
 
 					}
 					break;
@@ -15517,15 +15866,18 @@ query_continuation_return query_continuation438 ;
 	// $ANTLR end "query_body"
 
 
-	public static class query_continuation_return extends ParserRuleReturnScope {
+	public static class query_continuation_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier440 ;
-query_body_return query_body441 ;
-Token string_literal439 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitquery_continuation_return(this);
+}
+CommonTree string_literal439 ;
+public identifier_return identifier440 ;
+public query_body_return query_body441 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15557,21 +15909,21 @@ Token string_literal439 ;
 
 			string_literal439=(Token)match(input,141,FOLLOW_141_in_query_continuation6530); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal439_tree = (CommonTree)adaptor.create(string_literal439);
-			adaptor.addChild(root_0, string_literal439_tree);
+			retval.string_literal439 = string_literal439_tree=(CommonTree)adaptor.create(string_literal439);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal439_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_query_continuation6534);
 			identifier440=retval.identifier440=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier440.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier440.getTree()));
 
 			pushFollow(FOLLOW_query_body_in_query_continuation6538);
 			query_body441=retval.query_body441=query_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, query_body441.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(query_body441.getTree()));
 
 			}
 
@@ -15597,13 +15949,16 @@ Token string_literal439 ;
 	// $ANTLR end "query_continuation"
 
 
-	public static class query_body_clauses_return extends ParserRuleReturnScope {
+	public static class query_body_clauses_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<query_body_clause_return> query_body_clause442 = new ArrayList<query_body_clause_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitquery_body_clauses_return(this);
+}
+public List<query_body_clause_return> query_body_clause442 = new ArrayList<query_body_clause_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15648,7 +16003,7 @@ List<query_body_clause_return> query_body_clause442 = new ArrayList<query_body_c
 					query_body_clause442=query_body_clause();retval.query_body_clause442.add((query_body_clause_return) query_body_clause442);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, query_body_clause442.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(query_body_clause442.getTree()));
 
 					}
 					break;
@@ -15686,17 +16041,20 @@ List<query_body_clause_return> query_body_clause442 = new ArrayList<query_body_c
 	// $ANTLR end "query_body_clauses"
 
 
-	public static class query_body_clause_return extends ParserRuleReturnScope {
+	public static class query_body_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-from_clause_return from_clause443 ;
-let_clause_return let_clause444 ;
-where_clause_return where_clause445 ;
-join_clause_return join_clause446 ;
-orderby_clause_return orderby_clause447 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitquery_body_clause_return(this);
+}
+public from_clause_return from_clause443 ;
+public let_clause_return let_clause444 ;
+public where_clause_return where_clause445 ;
+public join_clause_return join_clause446 ;
+public orderby_clause_return orderby_clause447 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15766,7 +16124,7 @@ orderby_clause_return orderby_clause447 ;
 					from_clause443=retval.from_clause443=from_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, from_clause443.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(from_clause443.getTree()));
 
 					}
 					break;
@@ -15780,7 +16138,7 @@ orderby_clause_return orderby_clause447 ;
 					let_clause444=retval.let_clause444=let_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, let_clause444.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(let_clause444.getTree()));
 
 					}
 					break;
@@ -15794,7 +16152,7 @@ orderby_clause_return orderby_clause447 ;
 					where_clause445=retval.where_clause445=where_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, where_clause445.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(where_clause445.getTree()));
 
 					}
 					break;
@@ -15808,7 +16166,7 @@ orderby_clause_return orderby_clause447 ;
 					join_clause446=retval.join_clause446=join_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, join_clause446.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(join_clause446.getTree()));
 
 					}
 					break;
@@ -15822,7 +16180,7 @@ orderby_clause_return orderby_clause447 ;
 					orderby_clause447=retval.orderby_clause447=orderby_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, orderby_clause447.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(orderby_clause447.getTree()));
 
 					}
 					break;
@@ -15850,17 +16208,20 @@ orderby_clause_return orderby_clause447 ;
 	// $ANTLR end "query_body_clause"
 
 
-	public static class from_clause_return extends ParserRuleReturnScope {
+	public static class from_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type449 ;
-identifier_return identifier450 ;
-expression_return expression452 ;
-Token string_literal448 ;
-Token string_literal451 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfrom_clause_return(this);
+}
+CommonTree string_literal448 ;
+CommonTree string_literal451 ;
+public type_return type449 ;
+public identifier_return identifier450 ;
+public expression_return expression452 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -15895,8 +16256,8 @@ Token string_literal451 ;
 
 			string_literal448=(Token)match(input,132,FOLLOW_132_in_from_clause6630); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal448_tree = (CommonTree)adaptor.create(string_literal448);
-			adaptor.addChild(root_0, string_literal448_tree);
+			retval.string_literal448 = string_literal448_tree=(CommonTree)adaptor.create(string_literal448);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal448_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:474:18: ( type )?
@@ -15919,7 +16280,7 @@ Token string_literal451 ;
 					type449=retval.type449=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type449.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type449.getTree()));
 
 					}
 					break;
@@ -15930,19 +16291,19 @@ Token string_literal451 ;
 			identifier450=retval.identifier450=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier450.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier450.getTree()));
 
 			string_literal451=(Token)match(input,137,FOLLOW_137_in_from_clause6643); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal451_tree = (CommonTree)adaptor.create(string_literal451);
-			adaptor.addChild(root_0, string_literal451_tree);
+			retval.string_literal451 = string_literal451_tree=(CommonTree)adaptor.create(string_literal451);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal451_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_from_clause6647);
 			expression452=retval.expression452=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression452.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression452.getTree()));
 
 			}
 
@@ -15968,23 +16329,26 @@ Token string_literal451 ;
 	// $ANTLR end "from_clause"
 
 
-	public static class join_clause_return extends ParserRuleReturnScope {
+	public static class join_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type454 ;
-identifier_return identifier455 ;
-expression_return expression457 ;
-expression_return expression459 ;
-expression_return expression461 ;
-identifier_return identifier463 ;
-Token string_literal453 ;
-Token string_literal456 ;
-Token string_literal458 ;
-Token string_literal460 ;
-Token string_literal462 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitjoin_clause_return(this);
+}
+CommonTree string_literal453 ;
+CommonTree string_literal456 ;
+CommonTree string_literal458 ;
+CommonTree string_literal460 ;
+CommonTree string_literal462 ;
+public type_return type454 ;
+public identifier_return identifier455 ;
+public expression_return expression457 ;
+public expression_return expression459 ;
+public expression_return expression461 ;
+public identifier_return identifier463 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16028,8 +16392,8 @@ Token string_literal462 ;
 
 			string_literal453=(Token)match(input,143,FOLLOW_143_in_join_clause6662); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal453_tree = (CommonTree)adaptor.create(string_literal453);
-			adaptor.addChild(root_0, string_literal453_tree);
+			retval.string_literal453 = string_literal453_tree=(CommonTree)adaptor.create(string_literal453);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal453_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:476:18: ( type )?
@@ -16052,7 +16416,7 @@ Token string_literal462 ;
 					type454=retval.type454=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type454.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type454.getTree()));
 
 					}
 					break;
@@ -16063,43 +16427,43 @@ Token string_literal462 ;
 			identifier455=retval.identifier455=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier455.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier455.getTree()));
 
 			string_literal456=(Token)match(input,137,FOLLOW_137_in_join_clause6675); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal456_tree = (CommonTree)adaptor.create(string_literal456);
-			adaptor.addChild(root_0, string_literal456_tree);
+			retval.string_literal456 = string_literal456_tree=(CommonTree)adaptor.create(string_literal456);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal456_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_join_clause6679);
 			expression457=retval.expression457=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression457.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression457.getTree()));
 
 			string_literal458=(Token)match(input,152,FOLLOW_152_in_join_clause6683); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal458_tree = (CommonTree)adaptor.create(string_literal458);
-			adaptor.addChild(root_0, string_literal458_tree);
+			retval.string_literal458 = string_literal458_tree=(CommonTree)adaptor.create(string_literal458);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal458_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_join_clause6687);
 			expression459=retval.expression459=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression459.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression459.getTree()));
 
 			string_literal460=(Token)match(input,122,FOLLOW_122_in_join_clause6691); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal460_tree = (CommonTree)adaptor.create(string_literal460);
-			adaptor.addChild(root_0, string_literal460_tree);
+			retval.string_literal460 = string_literal460_tree=(CommonTree)adaptor.create(string_literal460);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal460_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_join_clause6695);
 			expression461=retval.expression461=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression461.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression461.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:476:101: ( 'into' identifier )?
 			int alt131=2;
@@ -16113,15 +16477,15 @@ Token string_literal462 ;
 					{
 					string_literal462=(Token)match(input,141,FOLLOW_141_in_join_clause6698); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal462_tree = (CommonTree)adaptor.create(string_literal462);
-					adaptor.addChild(root_0, string_literal462_tree);
+					retval.string_literal462 = string_literal462_tree=(CommonTree)adaptor.create(string_literal462);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal462_tree));
 					}
 
 					pushFollow(FOLLOW_identifier_in_join_clause6700);
 					identifier463=retval.identifier463=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier463.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier463.getTree()));
 
 					}
 					break;
@@ -16152,16 +16516,19 @@ Token string_literal462 ;
 	// $ANTLR end "join_clause"
 
 
-	public static class let_clause_return extends ParserRuleReturnScope {
+	public static class let_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier465 ;
-expression_return expression467 ;
-Token string_literal464 ;
-Token char_literal466 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlet_clause_return(this);
+}
+CommonTree string_literal464 ;
+CommonTree char_literal466 ;
+public identifier_return identifier465 ;
+public expression_return expression467 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16195,27 +16562,27 @@ Token char_literal466 ;
 
 			string_literal464=(Token)match(input,144,FOLLOW_144_in_let_clause6717); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal464_tree = (CommonTree)adaptor.create(string_literal464);
-			adaptor.addChild(root_0, string_literal464_tree);
+			retval.string_literal464 = string_literal464_tree=(CommonTree)adaptor.create(string_literal464);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal464_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_let_clause6721);
 			identifier465=retval.identifier465=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier465.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier465.getTree()));
 
 			char_literal466=(Token)match(input,85,FOLLOW_85_in_let_clause6725); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal466_tree = (CommonTree)adaptor.create(char_literal466);
-			adaptor.addChild(root_0, char_literal466_tree);
+			retval.char_literal466 = char_literal466_tree=(CommonTree)adaptor.create(char_literal466);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal466_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_let_clause6729);
 			expression467=retval.expression467=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression467.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression467.getTree()));
 
 			}
 
@@ -16241,14 +16608,17 @@ Token char_literal466 ;
 	// $ANTLR end "let_clause"
 
 
-	public static class orderby_clause_return extends ParserRuleReturnScope {
+	public static class orderby_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-ordering_list_return ordering_list469 ;
-Token string_literal468 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitorderby_clause_return(this);
+}
+CommonTree string_literal468 ;
+public ordering_list_return ordering_list469 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16279,15 +16649,15 @@ Token string_literal468 ;
 
 			string_literal468=(Token)match(input,154,FOLLOW_154_in_orderby_clause6743); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal468_tree = (CommonTree)adaptor.create(string_literal468);
-			adaptor.addChild(root_0, string_literal468_tree);
+			retval.string_literal468 = string_literal468_tree=(CommonTree)adaptor.create(string_literal468);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal468_tree));
 			}
 
 			pushFollow(FOLLOW_ordering_list_in_orderby_clause6747);
 			ordering_list469=retval.ordering_list469=ordering_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, ordering_list469.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(ordering_list469.getTree()));
 
 			}
 
@@ -16313,15 +16683,18 @@ Token string_literal468 ;
 	// $ANTLR end "orderby_clause"
 
 
-	public static class ordering_list_return extends ParserRuleReturnScope {
+	public static class ordering_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-ordering_return ordering470 ;
-List<ordering_return> ordering472 = new ArrayList<ordering_return>();
-Token char_literal471 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitordering_list_return(this);
+}
+CommonTree char_literal471 ;
+public ordering_return ordering470 ;
+public List<ordering_return> ordering472 = new ArrayList<ordering_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16355,7 +16728,7 @@ Token char_literal471 ;
 			ordering470=retval.ordering470=ordering();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, ordering470.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(ordering470.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:482:20: ( ',' ordering )*
 			loop132:
@@ -16372,15 +16745,15 @@ Token char_literal471 ;
 					{
 					char_literal471=(Token)match(input,74,FOLLOW_74_in_ordering_list6767); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal471_tree = (CommonTree)adaptor.create(char_literal471);
-					adaptor.addChild(root_0, char_literal471_tree);
+					retval.char_literal471 = char_literal471_tree=(CommonTree)adaptor.create(char_literal471);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal471_tree));
 					}
 
 					pushFollow(FOLLOW_ordering_in_ordering_list6771);
 					ordering472=ordering();retval.ordering472.add((ordering_return) ordering472);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, ordering472.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(ordering472.getTree()));
 
 					}
 					break;
@@ -16414,14 +16787,17 @@ Token char_literal471 ;
 	// $ANTLR end "ordering_list"
 
 
-	public static class ordering_return extends ParserRuleReturnScope {
+	public static class ordering_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression473 ;
-ordering_direction_return ordering_direction474 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitordering_return(this);
+}
+public expression_return expression473 ;
+public ordering_direction_return ordering_direction474 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16453,13 +16829,13 @@ ordering_direction_return ordering_direction474 ;
 			expression473=retval.expression473=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression473.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression473.getTree()));
 
 			pushFollow(FOLLOW_ordering_direction_in_ordering6793);
 			ordering_direction474=retval.ordering_direction474=ordering_direction();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, ordering_direction474.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(ordering_direction474.getTree()));
 
 			}
 
@@ -16485,13 +16861,16 @@ ordering_direction_return ordering_direction474 ;
 	// $ANTLR end "ordering"
 
 
-	public static class ordering_direction_return extends ParserRuleReturnScope {
+	public static class ordering_direction_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set475 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitordering_direction_return(this);
+}
+CommonTree set475 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16555,14 +16934,17 @@ Token set475 ;
 	// $ANTLR end "ordering_direction"
 
 
-	public static class select_or_group_clause_return extends ParserRuleReturnScope {
+	public static class select_or_group_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-select_clause_return select_clause476 ;
-group_clause_return group_clause477 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitselect_or_group_clause_return(this);
+}
+public select_clause_return select_clause476 ;
+public group_clause_return group_clause477 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16612,7 +16994,7 @@ group_clause_return group_clause477 ;
 					select_clause476=retval.select_clause476=select_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, select_clause476.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(select_clause476.getTree()));
 
 					}
 					break;
@@ -16626,7 +17008,7 @@ group_clause_return group_clause477 ;
 					group_clause477=retval.group_clause477=group_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, group_clause477.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(group_clause477.getTree()));
 
 					}
 					break;
@@ -16654,14 +17036,17 @@ group_clause_return group_clause477 ;
 	// $ANTLR end "select_or_group_clause"
 
 
-	public static class select_clause_return extends ParserRuleReturnScope {
+	public static class select_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression479 ;
-Token string_literal478 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitselect_clause_return(this);
+}
+CommonTree string_literal478 ;
+public expression_return expression479 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16692,15 +17077,15 @@ Token string_literal478 ;
 
 			string_literal478=(Token)match(input,171,FOLLOW_171_in_select_clause6870); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal478_tree = (CommonTree)adaptor.create(string_literal478);
-			adaptor.addChild(root_0, string_literal478_tree);
+			retval.string_literal478 = string_literal478_tree=(CommonTree)adaptor.create(string_literal478);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal478_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_select_clause6874);
 			expression479=retval.expression479=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression479.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression479.getTree()));
 
 			}
 
@@ -16726,16 +17111,19 @@ Token string_literal478 ;
 	// $ANTLR end "select_clause"
 
 
-	public static class group_clause_return extends ParserRuleReturnScope {
+	public static class group_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression481 ;
-expression_return expression483 ;
-Token string_literal480 ;
-Token string_literal482 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitgroup_clause_return(this);
+}
+CommonTree string_literal480 ;
+CommonTree string_literal482 ;
+public expression_return expression481 ;
+public expression_return expression483 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16769,27 +17157,27 @@ Token string_literal482 ;
 
 			string_literal480=(Token)match(input,135,FOLLOW_135_in_group_clause6889); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal480_tree = (CommonTree)adaptor.create(string_literal480);
-			adaptor.addChild(root_0, string_literal480_tree);
+			retval.string_literal480 = string_literal480_tree=(CommonTree)adaptor.create(string_literal480);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal480_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_group_clause6893);
 			expression481=retval.expression481=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression481.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression481.getTree()));
 
 			string_literal482=(Token)match(input,105,FOLLOW_105_in_group_clause6897); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal482_tree = (CommonTree)adaptor.create(string_literal482);
-			adaptor.addChild(root_0, string_literal482_tree);
+			retval.string_literal482 = string_literal482_tree=(CommonTree)adaptor.create(string_literal482);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal482_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_group_clause6901);
 			expression483=retval.expression483=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression483.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression483.getTree()));
 
 			}
 
@@ -16815,14 +17203,17 @@ Token string_literal482 ;
 	// $ANTLR end "group_clause"
 
 
-	public static class where_clause_return extends ParserRuleReturnScope {
+	public static class where_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-boolean_expression_return boolean_expression485 ;
-Token string_literal484 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitwhere_clause_return(this);
+}
+CommonTree string_literal484 ;
+public boolean_expression_return boolean_expression485 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16853,15 +17244,15 @@ Token string_literal484 ;
 
 			string_literal484=(Token)match(input,194,FOLLOW_194_in_where_clause6916); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal484_tree = (CommonTree)adaptor.create(string_literal484);
-			adaptor.addChild(root_0, string_literal484_tree);
+			retval.string_literal484 = string_literal484_tree=(CommonTree)adaptor.create(string_literal484);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal484_tree));
 			}
 
 			pushFollow(FOLLOW_boolean_expression_in_where_clause6920);
 			boolean_expression485=retval.boolean_expression485=boolean_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, boolean_expression485.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(boolean_expression485.getTree()));
 
 			}
 
@@ -16887,13 +17278,16 @@ Token string_literal484 ;
 	// $ANTLR end "where_clause"
 
 
-	public static class boolean_expression_return extends ParserRuleReturnScope {
+	public static class boolean_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression486 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitboolean_expression_return(this);
+}
+public expression_return expression486 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -16924,7 +17318,7 @@ expression_return expression486 ;
 			expression486=retval.expression486=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression486.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression486.getTree()));
 
 			}
 
@@ -16950,13 +17344,16 @@ expression_return expression486 ;
 	// $ANTLR end "boolean_expression"
 
 
-	public static class global_attributes_return extends ParserRuleReturnScope {
+	public static class global_attributes_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<global_attribute_return> global_attribute487 = new ArrayList<global_attribute_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitglobal_attributes_return(this);
+}
+public List<global_attribute_return> global_attribute487 = new ArrayList<global_attribute_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17009,7 +17406,7 @@ List<global_attribute_return> global_attribute487 = new ArrayList<global_attribu
 					global_attribute487=global_attribute();retval.global_attribute487.add((global_attribute_return) global_attribute487);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, global_attribute487.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(global_attribute487.getTree()));
 
 					}
 					break;
@@ -17047,17 +17444,20 @@ List<global_attribute_return> global_attribute487 = new ArrayList<global_attribu
 	// $ANTLR end "global_attributes"
 
 
-	public static class global_attribute_return extends ParserRuleReturnScope {
+	public static class global_attribute_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-global_attribute_target_specifier_return global_attribute_target_specifier489 ;
-attribute_list_return attribute_list490 ;
-Token char_literal488 ;
-Token char_literal491 ;
-Token char_literal492 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitglobal_attribute_return(this);
+}
+CommonTree char_literal488 ;
+CommonTree char_literal491 ;
+CommonTree char_literal492 ;
+public global_attribute_target_specifier_return global_attribute_target_specifier489 ;
+public attribute_list_return attribute_list490 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17093,21 +17493,21 @@ Token char_literal492 ;
 
 			char_literal488=(Token)match(input,91,FOLLOW_91_in_global_attribute6971); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal488_tree = (CommonTree)adaptor.create(char_literal488);
-			adaptor.addChild(root_0, char_literal488_tree);
+			retval.char_literal488 = char_literal488_tree=(CommonTree)adaptor.create(char_literal488);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal488_tree));
 			}
 
 			pushFollow(FOLLOW_global_attribute_target_specifier_in_global_attribute6975);
 			global_attribute_target_specifier489=retval.global_attribute_target_specifier489=global_attribute_target_specifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, global_attribute_target_specifier489.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(global_attribute_target_specifier489.getTree()));
 
 			pushFollow(FOLLOW_attribute_list_in_global_attribute6979);
 			attribute_list490=retval.attribute_list490=attribute_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_list490.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_list490.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:507:68: ( ',' )?
 			int alt135=2;
@@ -17121,8 +17521,8 @@ Token char_literal492 ;
 					{
 					char_literal491=(Token)match(input,74,FOLLOW_74_in_global_attribute6983); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal491_tree = (CommonTree)adaptor.create(char_literal491);
-					adaptor.addChild(root_0, char_literal491_tree);
+					retval.char_literal491 = char_literal491_tree=(CommonTree)adaptor.create(char_literal491);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal491_tree));
 					}
 
 					}
@@ -17132,8 +17532,8 @@ Token char_literal492 ;
 
 			char_literal492=(Token)match(input,92,FOLLOW_92_in_global_attribute6988); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal492_tree = (CommonTree)adaptor.create(char_literal492);
-			adaptor.addChild(root_0, char_literal492_tree);
+			retval.char_literal492 = char_literal492_tree=(CommonTree)adaptor.create(char_literal492);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal492_tree));
 			}
 
 			}
@@ -17160,14 +17560,17 @@ Token char_literal492 ;
 	// $ANTLR end "global_attribute"
 
 
-	public static class global_attribute_target_specifier_return extends ParserRuleReturnScope {
+	public static class global_attribute_target_specifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-global_attribute_target_return global_attribute_target493 ;
-Token char_literal494 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitglobal_attribute_target_specifier_return(this);
+}
+CommonTree char_literal494 ;
+public global_attribute_target_return global_attribute_target493 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17200,12 +17603,12 @@ Token char_literal494 ;
 			global_attribute_target493=retval.global_attribute_target493=global_attribute_target();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, global_attribute_target493.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(global_attribute_target493.getTree()));
 
 			char_literal494=(Token)match(input,79,FOLLOW_79_in_global_attribute_target_specifier7008); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal494_tree = (CommonTree)adaptor.create(char_literal494);
-			adaptor.addChild(root_0, char_literal494_tree);
+			retval.char_literal494 = char_literal494_tree=(CommonTree)adaptor.create(char_literal494);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal494_tree));
 			}
 
 			}
@@ -17232,13 +17635,16 @@ Token char_literal494 ;
 	// $ANTLR end "global_attribute_target_specifier"
 
 
-	public static class global_attribute_target_return extends ParserRuleReturnScope {
+	public static class global_attribute_target_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set495 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitglobal_attribute_target_return(this);
+}
+CommonTree set495 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17302,13 +17708,16 @@ Token set495 ;
 	// $ANTLR end "global_attribute_target"
 
 
-	public static class attributes_return extends ParserRuleReturnScope {
+	public static class attributes_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attribute_sections_return attribute_sections496 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattributes_return(this);
+}
+public attribute_sections_return attribute_sections496 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17339,7 +17748,7 @@ attribute_sections_return attribute_sections496 ;
 			attribute_sections496=retval.attribute_sections496=attribute_sections();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_sections496.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_sections496.getTree()));
 
 			}
 
@@ -17365,13 +17774,16 @@ attribute_sections_return attribute_sections496 ;
 	// $ANTLR end "attributes"
 
 
-	public static class attribute_sections_return extends ParserRuleReturnScope {
+	public static class attribute_sections_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<attribute_section_return> attribute_section497 = new ArrayList<attribute_section_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_sections_return(this);
+}
+public List<attribute_section_return> attribute_section497 = new ArrayList<attribute_section_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17416,7 +17828,7 @@ List<attribute_section_return> attribute_section497 = new ArrayList<attribute_se
 					attribute_section497=attribute_section();retval.attribute_section497.add((attribute_section_return) attribute_section497);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_section497.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_section497.getTree()));
 
 					}
 					break;
@@ -17454,17 +17866,20 @@ List<attribute_section_return> attribute_section497 = new ArrayList<attribute_se
 	// $ANTLR end "attribute_sections"
 
 
-	public static class attribute_section_return extends ParserRuleReturnScope {
+	public static class attribute_section_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attribute_target_specifier_return attribute_target_specifier499 ;
-attribute_list_return attribute_list500 ;
-Token char_literal498 ;
-Token char_literal501 ;
-Token char_literal502 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_section_return(this);
+}
+CommonTree char_literal498 ;
+CommonTree char_literal501 ;
+CommonTree char_literal502 ;
+public attribute_target_specifier_return attribute_target_specifier499 ;
+public attribute_list_return attribute_list500 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17500,8 +17915,8 @@ Token char_literal502 ;
 
 			char_literal498=(Token)match(input,91,FOLLOW_91_in_attribute_section7077); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal498_tree = (CommonTree)adaptor.create(char_literal498);
-			adaptor.addChild(root_0, char_literal498_tree);
+			retval.char_literal498 = char_literal498_tree=(CommonTree)adaptor.create(char_literal498);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal498_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:517:15: ( attribute_target_specifier )?
@@ -17524,7 +17939,7 @@ Token char_literal502 ;
 					attribute_target_specifier499=retval.attribute_target_specifier499=attribute_target_specifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_target_specifier499.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_target_specifier499.getTree()));
 
 					}
 					break;
@@ -17535,7 +17950,7 @@ Token char_literal502 ;
 			attribute_list500=retval.attribute_list500=attribute_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_list500.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_list500.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:517:62: ( ',' )?
 			int alt138=2;
@@ -17549,8 +17964,8 @@ Token char_literal502 ;
 					{
 					char_literal501=(Token)match(input,74,FOLLOW_74_in_attribute_section7090); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal501_tree = (CommonTree)adaptor.create(char_literal501);
-					adaptor.addChild(root_0, char_literal501_tree);
+					retval.char_literal501 = char_literal501_tree=(CommonTree)adaptor.create(char_literal501);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal501_tree));
 					}
 
 					}
@@ -17560,8 +17975,8 @@ Token char_literal502 ;
 
 			char_literal502=(Token)match(input,92,FOLLOW_92_in_attribute_section7095); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal502_tree = (CommonTree)adaptor.create(char_literal502);
-			adaptor.addChild(root_0, char_literal502_tree);
+			retval.char_literal502 = char_literal502_tree=(CommonTree)adaptor.create(char_literal502);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal502_tree));
 			}
 
 			}
@@ -17588,14 +18003,17 @@ Token char_literal502 ;
 	// $ANTLR end "attribute_section"
 
 
-	public static class attribute_target_specifier_return extends ParserRuleReturnScope {
+	public static class attribute_target_specifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attribute_target_return attribute_target503 ;
-Token char_literal504 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_target_specifier_return(this);
+}
+CommonTree char_literal504 ;
+public attribute_target_return attribute_target503 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17628,12 +18046,12 @@ Token char_literal504 ;
 			attribute_target503=retval.attribute_target503=attribute_target();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_target503.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_target503.getTree()));
 
 			char_literal504=(Token)match(input,79,FOLLOW_79_in_attribute_target_specifier7115); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal504_tree = (CommonTree)adaptor.create(char_literal504);
-			adaptor.addChild(root_0, char_literal504_tree);
+			retval.char_literal504 = char_literal504_tree=(CommonTree)adaptor.create(char_literal504);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal504_tree));
 			}
 
 			}
@@ -17660,13 +18078,16 @@ Token char_literal504 ;
 	// $ANTLR end "attribute_target_specifier"
 
 
-	public static class attribute_target_return extends ParserRuleReturnScope {
+	public static class attribute_target_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set505 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_target_return(this);
+}
+CommonTree set505 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17730,15 +18151,18 @@ Token set505 ;
 	// $ANTLR end "attribute_target"
 
 
-	public static class attribute_list_return extends ParserRuleReturnScope {
+	public static class attribute_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attribute_return attribute506 ;
-List<attribute_return> attribute508 = new ArrayList<attribute_return>();
-Token char_literal507 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_list_return(this);
+}
+CommonTree char_literal507 ;
+public attribute_return attribute506 ;
+public List<attribute_return> attribute508 = new ArrayList<attribute_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17772,7 +18196,7 @@ Token char_literal507 ;
 			attribute506=retval.attribute506=attribute();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute506.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute506.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:523:19: ( ',' attribute )*
 			loop139:
@@ -17793,15 +18217,15 @@ Token char_literal507 ;
 					{
 					char_literal507=(Token)match(input,74,FOLLOW_74_in_attribute_list7174); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal507_tree = (CommonTree)adaptor.create(char_literal507);
-					adaptor.addChild(root_0, char_literal507_tree);
+					retval.char_literal507 = char_literal507_tree=(CommonTree)adaptor.create(char_literal507);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal507_tree));
 					}
 
 					pushFollow(FOLLOW_attribute_in_attribute_list7176);
 					attribute508=attribute();retval.attribute508.add((attribute_return) attribute508);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute508.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute508.getTree()));
 
 					}
 					break;
@@ -17835,14 +18259,17 @@ Token char_literal507 ;
 	// $ANTLR end "attribute_list"
 
 
-	public static class attribute_return extends ParserRuleReturnScope {
+	public static class attribute_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_name_return type_name509 ;
-attribute_arguments_return attribute_arguments510 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_return(this);
+}
+public type_name_return type_name509 ;
+public attribute_arguments_return attribute_arguments510 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17874,7 +18301,7 @@ attribute_arguments_return attribute_arguments510 ;
 			type_name509=retval.type_name509=type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name509.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name509.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:525:21: ( attribute_arguments )?
 			int alt140=2;
@@ -17890,7 +18317,7 @@ attribute_arguments_return attribute_arguments510 ;
 					attribute_arguments510=retval.attribute_arguments510=attribute_arguments();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_arguments510.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_arguments510.getTree()));
 
 					}
 					break;
@@ -17921,19 +18348,22 @@ attribute_arguments_return attribute_arguments510 ;
 	// $ANTLR end "attribute"
 
 
-	public static class attribute_arguments_return extends ParserRuleReturnScope {
+	public static class attribute_arguments_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-positional_argument_return positional_argument513 ;
-List<named_argument_return> named_argument514 = new ArrayList<named_argument_return>();
-List<positional_argument_return> positional_argument516 = new ArrayList<positional_argument_return>();
-Token char_literal511 ;
-Token char_literal512 ;
-Token char_literal515 ;
-Token char_literal517 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_arguments_return(this);
+}
+CommonTree char_literal511 ;
+CommonTree char_literal512 ;
+CommonTree char_literal515 ;
+CommonTree char_literal517 ;
+public positional_argument_return positional_argument513 ;
+public List<named_argument_return> named_argument514 = new ArrayList<named_argument_return>();
+public List<positional_argument_return> positional_argument516 = new ArrayList<positional_argument_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -17972,8 +18402,8 @@ Token char_literal517 ;
 
 			char_literal511=(Token)match(input,68,FOLLOW_68_in_attribute_arguments7217); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal511_tree = (CommonTree)adaptor.create(char_literal511);
-			adaptor.addChild(root_0, char_literal511_tree);
+			retval.char_literal511 = char_literal511_tree=(CommonTree)adaptor.create(char_literal511);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal511_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:528:15: ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' )
@@ -17999,8 +18429,8 @@ Token char_literal517 ;
 					{
 					char_literal512=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_attribute_arguments7222); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal512_tree = (CommonTree)adaptor.create(char_literal512);
-					adaptor.addChild(root_0, char_literal512_tree);
+					retval.char_literal512 = char_literal512_tree=(CommonTree)adaptor.create(char_literal512);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal512_tree));
 					}
 
 					}
@@ -18015,7 +18445,7 @@ Token char_literal517 ;
 					positional_argument513=retval.positional_argument513=positional_argument();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, positional_argument513.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(positional_argument513.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:529:45: ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )*
 					loop141:
@@ -18037,7 +18467,7 @@ Token char_literal517 ;
 							named_argument514=named_argument();retval.named_argument514.add((named_argument_return) named_argument514);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, named_argument514.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(named_argument514.getTree()));
 
 							}
 							break;
@@ -18046,15 +18476,15 @@ Token char_literal517 ;
 							{
 							char_literal515=(Token)match(input,74,FOLLOW_74_in_attribute_arguments7424); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal515_tree = (CommonTree)adaptor.create(char_literal515);
-							adaptor.addChild(root_0, char_literal515_tree);
+							retval.char_literal515 = char_literal515_tree=(CommonTree)adaptor.create(char_literal515);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal515_tree));
 							}
 
 							pushFollow(FOLLOW_positional_argument_in_attribute_arguments7433);
 							positional_argument516=positional_argument();retval.positional_argument516.add((positional_argument_return) positional_argument516);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, positional_argument516.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(positional_argument516.getTree()));
 
 							}
 							break;
@@ -18068,8 +18498,8 @@ Token char_literal517 ;
 
 					char_literal517=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_attribute_arguments7472); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal517_tree = (CommonTree)adaptor.create(char_literal517);
-					adaptor.addChild(root_0, char_literal517_tree);
+					retval.char_literal517 = char_literal517_tree=(CommonTree)adaptor.create(char_literal517);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal517_tree));
 					}
 
 					}
@@ -18101,15 +18531,18 @@ Token char_literal517 ;
 	// $ANTLR end "attribute_arguments"
 
 
-	public static class positional_argument_list_return extends ParserRuleReturnScope {
+	public static class positional_argument_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-positional_argument_return positional_argument518 ;
-List<positional_argument_return> positional_argument520 = new ArrayList<positional_argument_return>();
-Token char_literal519 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitpositional_argument_list_return(this);
+}
+CommonTree char_literal519 ;
+public positional_argument_return positional_argument518 ;
+public List<positional_argument_return> positional_argument520 = new ArrayList<positional_argument_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18143,7 +18576,7 @@ Token char_literal519 ;
 			positional_argument518=retval.positional_argument518=positional_argument();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, positional_argument518.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(positional_argument518.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:534:29: ( ',' positional_argument )*
 			loop143:
@@ -18160,15 +18593,15 @@ Token char_literal519 ;
 					{
 					char_literal519=(Token)match(input,74,FOLLOW_74_in_positional_argument_list7517); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal519_tree = (CommonTree)adaptor.create(char_literal519);
-					adaptor.addChild(root_0, char_literal519_tree);
+					retval.char_literal519 = char_literal519_tree=(CommonTree)adaptor.create(char_literal519);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal519_tree));
 					}
 
 					pushFollow(FOLLOW_positional_argument_in_positional_argument_list7519);
 					positional_argument520=positional_argument();retval.positional_argument520.add((positional_argument_return) positional_argument520);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, positional_argument520.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(positional_argument520.getTree()));
 
 					}
 					break;
@@ -18202,13 +18635,16 @@ Token char_literal519 ;
 	// $ANTLR end "positional_argument_list"
 
 
-	public static class positional_argument_return extends ParserRuleReturnScope {
+	public static class positional_argument_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attribute_argument_expression_return attribute_argument_expression521 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitpositional_argument_return(this);
+}
+public attribute_argument_expression_return attribute_argument_expression521 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18239,7 +18675,7 @@ attribute_argument_expression_return attribute_argument_expression521 ;
 			attribute_argument_expression521=retval.attribute_argument_expression521=attribute_argument_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_argument_expression521.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_argument_expression521.getTree()));
 
 			}
 
@@ -18265,15 +18701,18 @@ attribute_argument_expression_return attribute_argument_expression521 ;
 	// $ANTLR end "positional_argument"
 
 
-	public static class named_argument_list_return extends ParserRuleReturnScope {
+	public static class named_argument_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-named_argument_return named_argument522 ;
-List<named_argument_return> named_argument524 = new ArrayList<named_argument_return>();
-Token char_literal523 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamed_argument_list_return(this);
+}
+CommonTree char_literal523 ;
+public named_argument_return named_argument522 ;
+public List<named_argument_return> named_argument524 = new ArrayList<named_argument_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18307,7 +18746,7 @@ Token char_literal523 ;
 			named_argument522=retval.named_argument522=named_argument();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, named_argument522.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(named_argument522.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:538:24: ( ',' named_argument )*
 			loop144:
@@ -18324,15 +18763,15 @@ Token char_literal523 ;
 					{
 					char_literal523=(Token)match(input,74,FOLLOW_74_in_named_argument_list7556); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal523_tree = (CommonTree)adaptor.create(char_literal523);
-					adaptor.addChild(root_0, char_literal523_tree);
+					retval.char_literal523 = char_literal523_tree=(CommonTree)adaptor.create(char_literal523);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal523_tree));
 					}
 
 					pushFollow(FOLLOW_named_argument_in_named_argument_list7558);
 					named_argument524=named_argument();retval.named_argument524.add((named_argument_return) named_argument524);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, named_argument524.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(named_argument524.getTree()));
 
 					}
 					break;
@@ -18366,15 +18805,18 @@ Token char_literal523 ;
 	// $ANTLR end "named_argument_list"
 
 
-	public static class named_argument_return extends ParserRuleReturnScope {
+	public static class named_argument_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier525 ;
-attribute_argument_expression_return attribute_argument_expression527 ;
-Token char_literal526 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnamed_argument_return(this);
+}
+CommonTree char_literal526 ;
+public identifier_return identifier525 ;
+public attribute_argument_expression_return attribute_argument_expression527 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18408,19 +18850,19 @@ Token char_literal526 ;
 			identifier525=retval.identifier525=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier525.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier525.getTree()));
 
 			char_literal526=(Token)match(input,85,FOLLOW_85_in_named_argument7580); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal526_tree = (CommonTree)adaptor.create(char_literal526);
-			adaptor.addChild(root_0, char_literal526_tree);
+			retval.char_literal526 = char_literal526_tree=(CommonTree)adaptor.create(char_literal526);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal526_tree));
 			}
 
 			pushFollow(FOLLOW_attribute_argument_expression_in_named_argument7584);
 			attribute_argument_expression527=retval.attribute_argument_expression527=attribute_argument_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_argument_expression527.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attribute_argument_expression527.getTree()));
 
 			}
 
@@ -18446,13 +18888,16 @@ Token char_literal526 ;
 	// $ANTLR end "named_argument"
 
 
-	public static class attribute_argument_expression_return extends ParserRuleReturnScope {
+	public static class attribute_argument_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression528 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitattribute_argument_expression_return(this);
+}
+public expression_return expression528 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18483,7 +18928,7 @@ expression_return expression528 ;
 			expression528=retval.expression528=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression528.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression528.getTree()));
 
 			}
 
@@ -18509,18 +18954,21 @@ expression_return expression528 ;
 	// $ANTLR end "attribute_argument_expression"
 
 
-	public static class class_declaration_return extends ParserRuleReturnScope {
+	public static class class_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_or_generic_return type_or_generic530 ;
-class_base_return class_base531 ;
-type_parameter_constraints_clauses_return type_parameter_constraints_clauses532 ;
-class_body_return class_body533 ;
-Token string_literal529 ;
-Token char_literal534 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitclass_declaration_return(this);
+}
+CommonTree string_literal529 ;
+CommonTree char_literal534 ;
+public type_or_generic_return type_or_generic530 ;
+public class_base_return class_base531 ;
+public type_parameter_constraints_clauses_return type_parameter_constraints_clauses532 ;
+public class_body_return class_body533 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18556,15 +19004,15 @@ Token char_literal534 ;
 
 			string_literal529=(Token)match(input,111,FOLLOW_111_in_class_declaration7620); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal529_tree = (CommonTree)adaptor.create(string_literal529);
-			adaptor.addChild(root_0, string_literal529_tree);
+			retval.string_literal529 = string_literal529_tree=(CommonTree)adaptor.create(string_literal529);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal529_tree));
 			}
 
 			pushFollow(FOLLOW_type_or_generic_in_class_declaration7623);
 			type_or_generic530=retval.type_or_generic530=type_or_generic();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic530.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_or_generic530.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:549:36: ( class_base )?
 			int alt145=2;
@@ -18580,7 +19028,7 @@ Token char_literal534 ;
 					class_base531=retval.class_base531=class_base();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, class_base531.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_base531.getTree()));
 
 					}
 					break;
@@ -18601,7 +19049,7 @@ Token char_literal534 ;
 					type_parameter_constraints_clauses532=retval.type_parameter_constraints_clauses532=type_parameter_constraints_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses532.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clauses532.getTree()));
 
 					}
 					break;
@@ -18612,7 +19060,7 @@ Token char_literal534 ;
 			class_body533=retval.class_body533=class_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, class_body533.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_body533.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:549:101: ( ';' )?
 			int alt147=2;
@@ -18626,8 +19074,8 @@ Token char_literal534 ;
 					{
 					char_literal534=(Token)match(input,SEMI,FOLLOW_SEMI_in_class_declaration7641); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal534_tree = (CommonTree)adaptor.create(char_literal534);
-					adaptor.addChild(root_0, char_literal534_tree);
+					retval.char_literal534 = char_literal534_tree=(CommonTree)adaptor.create(char_literal534);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal534_tree));
 					}
 
 					}
@@ -18659,14 +19107,17 @@ Token char_literal534 ;
 	// $ANTLR end "class_declaration"
 
 
-	public static class class_base_return extends ParserRuleReturnScope {
+	public static class class_base_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-interface_type_list_return interface_type_list536 ;
-Token char_literal535 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitclass_base_return(this);
+}
+CommonTree char_literal535 ;
+public interface_type_list_return interface_type_list536 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18697,15 +19148,15 @@ Token char_literal535 ;
 
 			char_literal535=(Token)match(input,79,FOLLOW_79_in_class_base7675); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal535_tree = (CommonTree)adaptor.create(char_literal535);
-			adaptor.addChild(root_0, char_literal535_tree);
+			retval.char_literal535 = char_literal535_tree=(CommonTree)adaptor.create(char_literal535);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal535_tree));
 			}
 
 			pushFollow(FOLLOW_interface_type_list_in_class_base7679);
 			interface_type_list536=retval.interface_type_list536=interface_type_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_type_list536.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_type_list536.getTree()));
 
 			}
 
@@ -18731,15 +19182,18 @@ Token char_literal535 ;
 	// $ANTLR end "class_base"
 
 
-	public static class interface_type_list_return extends ParserRuleReturnScope {
+	public static class interface_type_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type537 ;
-List<type_return> type539 = new ArrayList<type_return>();
-Token char_literal538 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_type_list_return(this);
+}
+CommonTree char_literal538 ;
+public type_return type537 ;
+public List<type_return> type539 = new ArrayList<type_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18773,7 +19227,7 @@ Token char_literal538 ;
 			type537=retval.type537=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type537.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type537.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:556:14: ( ',' type )*
 			loop148:
@@ -18790,15 +19244,15 @@ Token char_literal538 ;
 					{
 					char_literal538=(Token)match(input,74,FOLLOW_74_in_interface_type_list7706); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal538_tree = (CommonTree)adaptor.create(char_literal538);
-					adaptor.addChild(root_0, char_literal538_tree);
+					retval.char_literal538 = char_literal538_tree=(CommonTree)adaptor.create(char_literal538);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal538_tree));
 					}
 
 					pushFollow(FOLLOW_type_in_interface_type_list7710);
 					type539=type();retval.type539.add((type_return) type539);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type539.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type539.getTree()));
 
 					}
 					break;
@@ -18832,15 +19286,18 @@ Token char_literal538 ;
 	// $ANTLR end "interface_type_list"
 
 
-	public static class class_body_return extends ParserRuleReturnScope {
+	public static class class_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-class_member_declarations_return class_member_declarations541 ;
-Token char_literal540 ;
-Token char_literal542 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitclass_body_return(this);
+}
+CommonTree char_literal540 ;
+CommonTree char_literal542 ;
+public class_member_declarations_return class_member_declarations541 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18873,8 +19330,8 @@ Token char_literal542 ;
 
 			char_literal540=(Token)match(input,197,FOLLOW_197_in_class_body7728); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal540_tree = (CommonTree)adaptor.create(char_literal540);
-			adaptor.addChild(root_0, char_literal540_tree);
+			retval.char_literal540 = char_literal540_tree=(CommonTree)adaptor.create(char_literal540);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal540_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:559:15: ( class_member_declarations )?
@@ -18891,7 +19348,7 @@ Token char_literal542 ;
 					class_member_declarations541=retval.class_member_declarations541=class_member_declarations();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, class_member_declarations541.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_member_declarations541.getTree()));
 
 					}
 					break;
@@ -18900,8 +19357,8 @@ Token char_literal542 ;
 
 			char_literal542=(Token)match(input,201,FOLLOW_201_in_class_body7737); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal542_tree = (CommonTree)adaptor.create(char_literal542);
-			adaptor.addChild(root_0, char_literal542_tree);
+			retval.char_literal542 = char_literal542_tree=(CommonTree)adaptor.create(char_literal542);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal542_tree));
 			}
 
 			}
@@ -18928,13 +19385,16 @@ Token char_literal542 ;
 	// $ANTLR end "class_body"
 
 
-	public static class class_member_declarations_return extends ParserRuleReturnScope {
+	public static class class_member_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<class_member_declaration_return> class_member_declaration543 = new ArrayList<class_member_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitclass_member_declarations_return(this);
+}
+public List<class_member_declaration_return> class_member_declaration543 = new ArrayList<class_member_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -18979,7 +19439,7 @@ List<class_member_declaration_return> class_member_declaration543 = new ArrayLis
 					class_member_declaration543=class_member_declaration();retval.class_member_declaration543.add((class_member_declaration_return) class_member_declaration543);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, class_member_declaration543.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_member_declaration543.getTree()));
 
 					}
 					break;
@@ -19017,16 +19477,19 @@ List<class_member_declaration_return> class_member_declaration543 = new ArrayLis
 	// $ANTLR end "class_member_declarations"
 
 
-	public static class constant_declaration_return extends ParserRuleReturnScope {
+	public static class constant_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type545 ;
-constant_declarators_return constant_declarators546 ;
-Token string_literal544 ;
-Token char_literal547 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstant_declaration_return(this);
+}
+CommonTree string_literal544 ;
+CommonTree char_literal547 ;
+public type_return type545 ;
+public constant_declarators_return constant_declarators546 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19060,26 +19523,26 @@ Token char_literal547 ;
 
 			string_literal544=(Token)match(input,112,FOLLOW_112_in_constant_declaration7770); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal544_tree = (CommonTree)adaptor.create(string_literal544);
-			adaptor.addChild(root_0, string_literal544_tree);
+			retval.string_literal544 = string_literal544_tree=(CommonTree)adaptor.create(string_literal544);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal544_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_constant_declaration7774);
 			type545=retval.type545=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type545.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type545.getTree()));
 
 			pushFollow(FOLLOW_constant_declarators_in_constant_declaration7778);
 			constant_declarators546=retval.constant_declarators546=constant_declarators();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declarators546.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_declarators546.getTree()));
 
 			char_literal547=(Token)match(input,SEMI,FOLLOW_SEMI_in_constant_declaration7782); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal547_tree = (CommonTree)adaptor.create(char_literal547);
-			adaptor.addChild(root_0, char_literal547_tree);
+			retval.char_literal547 = char_literal547_tree=(CommonTree)adaptor.create(char_literal547);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal547_tree));
 			}
 
 			}
@@ -19106,15 +19569,18 @@ Token char_literal547 ;
 	// $ANTLR end "constant_declaration"
 
 
-	public static class constant_declarators_return extends ParserRuleReturnScope {
+	public static class constant_declarators_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-constant_declarator_return constant_declarator548 ;
-List<constant_declarator_return> constant_declarator550 = new ArrayList<constant_declarator_return>();
-Token char_literal549 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstant_declarators_return(this);
+}
+CommonTree char_literal549 ;
+public constant_declarator_return constant_declarator548 ;
+public List<constant_declarator_return> constant_declarator550 = new ArrayList<constant_declarator_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19148,7 +19614,7 @@ Token char_literal549 ;
 			constant_declarator548=retval.constant_declarator548=constant_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declarator548.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_declarator548.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:567:29: ( ',' constant_declarator )*
 			loop151:
@@ -19165,15 +19631,15 @@ Token char_literal549 ;
 					{
 					char_literal549=(Token)match(input,74,FOLLOW_74_in_constant_declarators7800); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal549_tree = (CommonTree)adaptor.create(char_literal549);
-					adaptor.addChild(root_0, char_literal549_tree);
+					retval.char_literal549 = char_literal549_tree=(CommonTree)adaptor.create(char_literal549);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal549_tree));
 					}
 
 					pushFollow(FOLLOW_constant_declarator_in_constant_declarators7802);
 					constant_declarator550=constant_declarator();retval.constant_declarator550.add((constant_declarator_return) constant_declarator550);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declarator550.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_declarator550.getTree()));
 
 					}
 					break;
@@ -19207,15 +19673,18 @@ Token char_literal549 ;
 	// $ANTLR end "constant_declarators"
 
 
-	public static class constant_declarator_return extends ParserRuleReturnScope {
+	public static class constant_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier551 ;
-constant_expression_return constant_expression553 ;
-Token char_literal552 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstant_declarator_return(this);
+}
+CommonTree char_literal552 ;
+public identifier_return identifier551 ;
+public constant_expression_return constant_expression553 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19249,7 +19718,7 @@ Token char_literal552 ;
 			identifier551=retval.identifier551=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier551.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier551.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:569:22: ( '=' constant_expression )?
 			int alt152=2;
@@ -19263,15 +19732,15 @@ Token char_literal552 ;
 					{
 					char_literal552=(Token)match(input,85,FOLLOW_85_in_constant_declarator7824); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal552_tree = (CommonTree)adaptor.create(char_literal552);
-					adaptor.addChild(root_0, char_literal552_tree);
+					retval.char_literal552 = char_literal552_tree=(CommonTree)adaptor.create(char_literal552);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal552_tree));
 					}
 
 					pushFollow(FOLLOW_constant_expression_in_constant_declarator7828);
 					constant_expression553=retval.constant_expression553=constant_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_expression553.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_expression553.getTree()));
 
 					}
 					break;
@@ -19302,13 +19771,16 @@ Token char_literal552 ;
 	// $ANTLR end "constant_declarator"
 
 
-	public static class constant_expression_return extends ParserRuleReturnScope {
+	public static class constant_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression554 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstant_expression_return(this);
+}
+public expression_return expression554 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19339,7 +19811,7 @@ expression_return expression554 ;
 			expression554=retval.expression554=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression554.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression554.getTree()));
 
 			}
 
@@ -19365,14 +19837,17 @@ expression_return expression554 ;
 	// $ANTLR end "constant_expression"
 
 
-	public static class field_declaration_return extends ParserRuleReturnScope {
+	public static class field_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-variable_declarators_return variable_declarators555 ;
-Token char_literal556 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfield_declaration_return(this);
+}
+CommonTree char_literal556 ;
+public variable_declarators_return variable_declarators555 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19405,12 +19880,12 @@ Token char_literal556 ;
 			variable_declarators555=retval.variable_declarators555=variable_declarators();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_declarators555.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_declarators555.getTree()));
 
 			char_literal556=(Token)match(input,SEMI,FOLLOW_SEMI_in_field_declaration7865); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal556_tree = (CommonTree)adaptor.create(char_literal556);
-			adaptor.addChild(root_0, char_literal556_tree);
+			retval.char_literal556 = char_literal556_tree=(CommonTree)adaptor.create(char_literal556);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal556_tree));
 			}
 
 			}
@@ -19437,15 +19912,18 @@ Token char_literal556 ;
 	// $ANTLR end "field_declaration"
 
 
-	public static class variable_declarators_return extends ParserRuleReturnScope {
+	public static class variable_declarators_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-variable_declarator_return variable_declarator557 ;
-List<variable_declarator_return> variable_declarator559 = new ArrayList<variable_declarator_return>();
-Token char_literal558 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariable_declarators_return(this);
+}
+CommonTree char_literal558 ;
+public variable_declarator_return variable_declarator557 ;
+public List<variable_declarator_return> variable_declarator559 = new ArrayList<variable_declarator_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19479,7 +19957,7 @@ Token char_literal558 ;
 			variable_declarator557=retval.variable_declarator557=variable_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_declarator557.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_declarator557.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:577:29: ( ',' variable_declarator )*
 			loop153:
@@ -19496,15 +19974,15 @@ Token char_literal558 ;
 					{
 					char_literal558=(Token)match(input,74,FOLLOW_74_in_variable_declarators7890); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal558_tree = (CommonTree)adaptor.create(char_literal558);
-					adaptor.addChild(root_0, char_literal558_tree);
+					retval.char_literal558 = char_literal558_tree=(CommonTree)adaptor.create(char_literal558);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal558_tree));
 					}
 
 					pushFollow(FOLLOW_variable_declarator_in_variable_declarators7894);
 					variable_declarator559=variable_declarator();retval.variable_declarator559.add((variable_declarator_return) variable_declarator559);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_declarator559.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_declarator559.getTree()));
 
 					}
 					break;
@@ -19538,15 +20016,18 @@ Token char_literal558 ;
 	// $ANTLR end "variable_declarators"
 
 
-	public static class variable_declarator_return extends ParserRuleReturnScope {
+	public static class variable_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_name_return type_name560 ;
-variable_initializer_return variable_initializer562 ;
-Token char_literal561 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariable_declarator_return(this);
+}
+CommonTree char_literal561 ;
+public type_name_return type_name560 ;
+public variable_initializer_return variable_initializer562 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19580,7 +20061,7 @@ Token char_literal561 ;
 			type_name560=retval.type_name560=type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name560.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name560.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:579:19: ( '=' variable_initializer )?
 			int alt154=2;
@@ -19594,15 +20075,15 @@ Token char_literal561 ;
 					{
 					char_literal561=(Token)match(input,85,FOLLOW_85_in_variable_declarator7914); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal561_tree = (CommonTree)adaptor.create(char_literal561);
-					adaptor.addChild(root_0, char_literal561_tree);
+					retval.char_literal561 = char_literal561_tree=(CommonTree)adaptor.create(char_literal561);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal561_tree));
 					}
 
 					pushFollow(FOLLOW_variable_initializer_in_variable_declarator7918);
 					variable_initializer562=retval.variable_initializer562=variable_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_initializer562.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_initializer562.getTree()));
 
 					}
 					break;
@@ -19633,14 +20114,17 @@ Token char_literal561 ;
 	// $ANTLR end "variable_declarator"
 
 
-	public static class method_declaration_return extends ParserRuleReturnScope {
+	public static class method_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-method_header_return method_header563 ;
-method_body_return method_body564 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmethod_declaration_return(this);
+}
+public method_header_return method_header563 ;
+public method_body_return method_body564 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19672,13 +20156,13 @@ method_body_return method_body564 ;
 			method_header563=retval.method_header563=method_header();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, method_header563.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_header563.getTree()));
 
 			pushFollow(FOLLOW_method_body_in_method_declaration7957);
 			method_body564=retval.method_body564=method_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, method_body564.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_body564.getTree()));
 
 			}
 
@@ -19704,17 +20188,20 @@ method_body_return method_body564 ;
 	// $ANTLR end "method_declaration"
 
 
-	public static class method_header_return extends ParserRuleReturnScope {
+	public static class method_header_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-member_name_return member_name565 ;
-formal_parameter_list_return formal_parameter_list567 ;
-type_parameter_constraints_clauses_return type_parameter_constraints_clauses569 ;
-Token char_literal566 ;
-Token char_literal568 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmethod_header_return(this);
+}
+CommonTree char_literal566 ;
+CommonTree char_literal568 ;
+public member_name_return member_name565 ;
+public formal_parameter_list_return formal_parameter_list567 ;
+public type_parameter_constraints_clauses_return type_parameter_constraints_clauses569 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19751,12 +20238,12 @@ Token char_literal568 ;
 			member_name565=retval.member_name565=member_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_name565.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_name565.getTree()));
 
 			char_literal566=(Token)match(input,68,FOLLOW_68_in_method_header7975); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal566_tree = (CommonTree)adaptor.create(char_literal566);
-			adaptor.addChild(root_0, char_literal566_tree);
+			retval.char_literal566 = char_literal566_tree=(CommonTree)adaptor.create(char_literal566);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal566_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:585:28: ( formal_parameter_list )?
@@ -19773,7 +20260,7 @@ Token char_literal568 ;
 					formal_parameter_list567=retval.formal_parameter_list567=formal_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list567.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter_list567.getTree()));
 
 					}
 					break;
@@ -19782,8 +20269,8 @@ Token char_literal568 ;
 
 			char_literal568=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_method_header7984); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal568_tree = (CommonTree)adaptor.create(char_literal568);
-			adaptor.addChild(root_0, char_literal568_tree);
+			retval.char_literal568 = char_literal568_tree=(CommonTree)adaptor.create(char_literal568);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal568_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:585:59: ( type_parameter_constraints_clauses )?
@@ -19800,7 +20287,7 @@ Token char_literal568 ;
 					type_parameter_constraints_clauses569=retval.type_parameter_constraints_clauses569=type_parameter_constraints_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses569.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clauses569.getTree()));
 
 					}
 					break;
@@ -19831,13 +20318,16 @@ Token char_literal568 ;
 	// $ANTLR end "method_header"
 
 
-	public static class method_body_return extends ParserRuleReturnScope {
+	public static class method_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block570 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmethod_body_return(this);
+}
+public block_return block570 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19868,7 +20358,7 @@ block_return block570 ;
 			block570=retval.block570=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block570.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block570.getTree()));
 
 			}
 
@@ -19894,13 +20384,16 @@ block_return block570 ;
 	// $ANTLR end "method_body"
 
 
-	public static class member_name_return extends ParserRuleReturnScope {
+	public static class member_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-qid_return qid571 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmember_name_return(this);
+}
+public qid_return qid571 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -19931,7 +20424,7 @@ qid_return qid571 ;
 			qid571=retval.qid571=qid();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, qid571.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(qid571.getTree()));
 
 			}
 
@@ -19957,16 +20450,19 @@ qid_return qid571 ;
 	// $ANTLR end "member_name"
 
 
-	public static class property_declaration_return extends ParserRuleReturnScope {
+	public static class property_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-member_name_return member_name572 ;
-accessor_declarations_return accessor_declarations574 ;
-Token char_literal573 ;
-Token char_literal575 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitproperty_declaration_return(this);
+}
+CommonTree char_literal573 ;
+CommonTree char_literal575 ;
+public member_name_return member_name572 ;
+public accessor_declarations_return accessor_declarations574 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20002,24 +20498,24 @@ Token char_literal575 ;
 			member_name572=retval.member_name572=member_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_name572.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_name572.getTree()));
 
 			char_literal573=(Token)match(input,197,FOLLOW_197_in_property_declaration8056); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal573_tree = (CommonTree)adaptor.create(char_literal573);
-			adaptor.addChild(root_0, char_literal573_tree);
+			retval.char_literal573 = char_literal573_tree=(CommonTree)adaptor.create(char_literal573);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal573_tree));
 			}
 
 			pushFollow(FOLLOW_accessor_declarations_in_property_declaration8060);
 			accessor_declarations574=retval.accessor_declarations574=accessor_declarations();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_declarations574.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(accessor_declarations574.getTree()));
 
 			char_literal575=(Token)match(input,201,FOLLOW_201_in_property_declaration8064); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal575_tree = (CommonTree)adaptor.create(char_literal575);
-			adaptor.addChild(root_0, char_literal575_tree);
+			retval.char_literal575 = char_literal575_tree=(CommonTree)adaptor.create(char_literal575);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal575_tree));
 			}
 
 			}
@@ -20046,19 +20542,22 @@ Token char_literal575 ;
 	// $ANTLR end "property_declaration"
 
 
-	public static class accessor_declarations_return extends ParserRuleReturnScope {
+	public static class accessor_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes576 ;
-get_accessor_declaration_return get_accessor_declaration577 ;
-attributes_return attributes578 ;
-set_accessor_declaration_return set_accessor_declaration579 ;
-set_accessor_declaration_return set_accessor_declaration580 ;
-attributes_return attributes581 ;
-get_accessor_declaration_return get_accessor_declaration582 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitaccessor_declarations_return(this);
+}
+public attributes_return attributes576 ;
+public get_accessor_declaration_return get_accessor_declaration577 ;
+public attributes_return attributes578 ;
+public set_accessor_declaration_return set_accessor_declaration579 ;
+public set_accessor_declaration_return set_accessor_declaration580 ;
+public attributes_return attributes581 ;
+public get_accessor_declaration_return get_accessor_declaration582 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20105,7 +20604,7 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 					attributes576=retval.attributes576=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes576.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes576.getTree()));
 
 					}
 					break;
@@ -20167,7 +20666,7 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 					get_accessor_declaration577=retval.get_accessor_declaration577=get_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, get_accessor_declaration577.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(get_accessor_declaration577.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:596:45: ( attributes )?
 					int alt158=2;
@@ -20183,7 +20682,7 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 							attributes578=retval.attributes578=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes578.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes578.getTree()));
 
 							}
 							break;
@@ -20204,7 +20703,7 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 							set_accessor_declaration579=retval.set_accessor_declaration579=set_accessor_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, set_accessor_declaration579.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(set_accessor_declaration579.getTree()));
 
 							}
 							break;
@@ -20220,7 +20719,7 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 					set_accessor_declaration580=retval.set_accessor_declaration580=set_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, set_accessor_declaration580.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(set_accessor_declaration580.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:597:46: ( attributes )?
 					int alt160=2;
@@ -20236,7 +20735,7 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 							attributes581=retval.attributes581=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes581.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes581.getTree()));
 
 							}
 							break;
@@ -20257,7 +20756,7 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 							get_accessor_declaration582=retval.get_accessor_declaration582=get_accessor_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, get_accessor_declaration582.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(get_accessor_declaration582.getTree()));
 
 							}
 							break;
@@ -20293,15 +20792,18 @@ get_accessor_declaration_return get_accessor_declaration582 ;
 	// $ANTLR end "accessor_declarations"
 
 
-	public static class get_accessor_declaration_return extends ParserRuleReturnScope {
+	public static class get_accessor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-accessor_modifier_return accessor_modifier583 ;
-accessor_body_return accessor_body585 ;
-Token string_literal584 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitget_accessor_declaration_return(this);
+}
+CommonTree string_literal584 ;
+public accessor_modifier_return accessor_modifier583 ;
+public accessor_body_return accessor_body585 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20345,7 +20847,7 @@ Token string_literal584 ;
 					accessor_modifier583=retval.accessor_modifier583=accessor_modifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_modifier583.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(accessor_modifier583.getTree()));
 
 					}
 					break;
@@ -20354,15 +20856,15 @@ Token string_literal584 ;
 
 			string_literal584=(Token)match(input,133,FOLLOW_133_in_get_accessor_declaration8160); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal584_tree = (CommonTree)adaptor.create(string_literal584);
-			adaptor.addChild(root_0, string_literal584_tree);
+			retval.string_literal584 = string_literal584_tree=(CommonTree)adaptor.create(string_literal584);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal584_tree));
 			}
 
 			pushFollow(FOLLOW_accessor_body_in_get_accessor_declaration8164);
 			accessor_body585=retval.accessor_body585=accessor_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_body585.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(accessor_body585.getTree()));
 
 			}
 
@@ -20388,15 +20890,18 @@ Token string_literal584 ;
 	// $ANTLR end "get_accessor_declaration"
 
 
-	public static class set_accessor_declaration_return extends ParserRuleReturnScope {
+	public static class set_accessor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-accessor_modifier_return accessor_modifier586 ;
-accessor_body_return accessor_body588 ;
-Token string_literal587 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitset_accessor_declaration_return(this);
+}
+CommonTree string_literal587 ;
+public accessor_modifier_return accessor_modifier586 ;
+public accessor_body_return accessor_body588 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20440,7 +20945,7 @@ Token string_literal587 ;
 					accessor_modifier586=retval.accessor_modifier586=accessor_modifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_modifier586.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(accessor_modifier586.getTree()));
 
 					}
 					break;
@@ -20449,15 +20954,15 @@ Token string_literal587 ;
 
 			string_literal587=(Token)match(input,172,FOLLOW_172_in_set_accessor_declaration8184); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal587_tree = (CommonTree)adaptor.create(string_literal587);
-			adaptor.addChild(root_0, string_literal587_tree);
+			retval.string_literal587 = string_literal587_tree=(CommonTree)adaptor.create(string_literal587);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal587_tree));
 			}
 
 			pushFollow(FOLLOW_accessor_body_in_set_accessor_declaration8188);
 			accessor_body588=retval.accessor_body588=accessor_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_body588.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(accessor_body588.getTree()));
 
 			}
 
@@ -20483,13 +20988,16 @@ Token string_literal587 ;
 	// $ANTLR end "set_accessor_declaration"
 
 
-	public static class accessor_modifier_return extends ParserRuleReturnScope {
+	public static class accessor_modifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set589 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitaccessor_modifier_return(this);
+}
+CommonTree set589 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20553,13 +21061,16 @@ Token set589 ;
 	// $ANTLR end "accessor_modifier"
 
 
-	public static class accessor_body_return extends ParserRuleReturnScope {
+	public static class accessor_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block590 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitaccessor_body_return(this);
+}
+public block_return block590 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20590,7 +21101,7 @@ block_return block590 ;
 			block590=retval.block590=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block590.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block590.getTree()));
 
 			}
 
@@ -20616,20 +21127,23 @@ block_return block590 ;
 	// $ANTLR end "accessor_body"
 
 
-	public static class event_declaration_return extends ParserRuleReturnScope {
+	public static class event_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type592 ;
-member_name_return member_name593 ;
-event_accessor_declarations_return event_accessor_declarations595 ;
-variable_declarators_return variable_declarators597 ;
-Token string_literal591 ;
-Token char_literal594 ;
-Token char_literal596 ;
-Token char_literal598 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitevent_declaration_return(this);
+}
+CommonTree string_literal591 ;
+CommonTree char_literal594 ;
+CommonTree char_literal596 ;
+CommonTree char_literal598 ;
+public type_return type592 ;
+public member_name_return member_name593 ;
+public event_accessor_declarations_return event_accessor_declarations595 ;
+public variable_declarators_return variable_declarators597 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20669,15 +21183,15 @@ Token char_literal598 ;
 
 			string_literal591=(Token)match(input,123,FOLLOW_123_in_event_declaration8247); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal591_tree = (CommonTree)adaptor.create(string_literal591);
-			adaptor.addChild(root_0, string_literal591_tree);
+			retval.string_literal591 = string_literal591_tree=(CommonTree)adaptor.create(string_literal591);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal591_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_event_declaration8251);
 			type592=retval.type592=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type592.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type592.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:610:17: ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' )
 			int alt165=2;
@@ -20707,24 +21221,24 @@ Token char_literal598 ;
 					member_name593=retval.member_name593=member_name();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_name593.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(member_name593.getTree()));
 
 					char_literal594=(Token)match(input,197,FOLLOW_197_in_event_declaration8284); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal594_tree = (CommonTree)adaptor.create(char_literal594);
-					adaptor.addChild(root_0, char_literal594_tree);
+					retval.char_literal594 = char_literal594_tree=(CommonTree)adaptor.create(char_literal594);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal594_tree));
 					}
 
 					pushFollow(FOLLOW_event_accessor_declarations_in_event_declaration8288);
 					event_accessor_declarations595=retval.event_accessor_declarations595=event_accessor_declarations();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, event_accessor_declarations595.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(event_accessor_declarations595.getTree()));
 
 					char_literal596=(Token)match(input,201,FOLLOW_201_in_event_declaration8292); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal596_tree = (CommonTree)adaptor.create(char_literal596);
-					adaptor.addChild(root_0, char_literal596_tree);
+					retval.char_literal596 = char_literal596_tree=(CommonTree)adaptor.create(char_literal596);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal596_tree));
 					}
 
 					}
@@ -20736,12 +21250,12 @@ Token char_literal598 ;
 					variable_declarators597=retval.variable_declarators597=variable_declarators();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_declarators597.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variable_declarators597.getTree()));
 
 					char_literal598=(Token)match(input,SEMI,FOLLOW_SEMI_in_event_declaration8316); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal598_tree = (CommonTree)adaptor.create(char_literal598);
-					adaptor.addChild(root_0, char_literal598_tree);
+					retval.char_literal598 = char_literal598_tree=(CommonTree)adaptor.create(char_literal598);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal598_tree));
 					}
 
 					}
@@ -20773,13 +21287,16 @@ Token char_literal598 ;
 	// $ANTLR end "event_declaration"
 
 
-	public static class event_modifiers_return extends ParserRuleReturnScope {
+	public static class event_modifiers_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<modifier_return> modifier599 = new ArrayList<modifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitevent_modifiers_return(this);
+}
+public List<modifier_return> modifier599 = new ArrayList<modifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20824,7 +21341,7 @@ List<modifier_return> modifier599 = new ArrayList<modifier_return>();
 					modifier599=modifier();retval.modifier599.add((modifier_return) modifier599);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier599.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifier599.getTree()));
 
 					}
 					break;
@@ -20862,19 +21379,22 @@ List<modifier_return> modifier599 = new ArrayList<modifier_return>();
 	// $ANTLR end "event_modifiers"
 
 
-	public static class event_accessor_declarations_return extends ParserRuleReturnScope {
+	public static class event_accessor_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes600 ;
-add_accessor_declaration_return add_accessor_declaration601 ;
-attributes_return attributes602 ;
-remove_accessor_declaration_return remove_accessor_declaration603 ;
-remove_accessor_declaration_return remove_accessor_declaration604 ;
-attributes_return attributes605 ;
-add_accessor_declaration_return add_accessor_declaration606 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitevent_accessor_declarations_return(this);
+}
+public attributes_return attributes600 ;
+public add_accessor_declaration_return add_accessor_declaration601 ;
+public attributes_return attributes602 ;
+public remove_accessor_declaration_return remove_accessor_declaration603 ;
+public remove_accessor_declaration_return remove_accessor_declaration604 ;
+public attributes_return attributes605 ;
+public add_accessor_declaration_return add_accessor_declaration606 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -20921,7 +21441,7 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 					attributes600=retval.attributes600=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes600.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes600.getTree()));
 
 					}
 					break;
@@ -20956,7 +21476,7 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 					add_accessor_declaration601=retval.add_accessor_declaration601=add_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, add_accessor_declaration601.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(add_accessor_declaration601.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:616:52: ( attributes )?
 					int alt168=2;
@@ -20972,7 +21492,7 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 							attributes602=retval.attributes602=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes602.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes602.getTree()));
 
 							}
 							break;
@@ -20983,7 +21503,7 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 					remove_accessor_declaration603=retval.remove_accessor_declaration603=remove_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, remove_accessor_declaration603.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(remove_accessor_declaration603.getTree()));
 
 					}
 
@@ -20999,7 +21519,7 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 					remove_accessor_declaration604=retval.remove_accessor_declaration604=remove_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, remove_accessor_declaration604.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(remove_accessor_declaration604.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:617:56: ( attributes )?
 					int alt169=2;
@@ -21015,7 +21535,7 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 							attributes605=retval.attributes605=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes605.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes605.getTree()));
 
 							}
 							break;
@@ -21026,7 +21546,7 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 					add_accessor_declaration606=retval.add_accessor_declaration606=add_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, add_accessor_declaration606.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(add_accessor_declaration606.getTree()));
 
 					}
 
@@ -21059,14 +21579,17 @@ add_accessor_declaration_return add_accessor_declaration606 ;
 	// $ANTLR end "event_accessor_declarations"
 
 
-	public static class add_accessor_declaration_return extends ParserRuleReturnScope {
+	public static class add_accessor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block608 ;
-Token string_literal607 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitadd_accessor_declaration_return(this);
+}
+CommonTree string_literal607 ;
+public block_return block608 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21097,15 +21620,15 @@ Token string_literal607 ;
 
 			string_literal607=(Token)match(input,97,FOLLOW_97_in_add_accessor_declaration8442); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal607_tree = (CommonTree)adaptor.create(string_literal607);
-			adaptor.addChild(root_0, string_literal607_tree);
+			retval.string_literal607 = string_literal607_tree=(CommonTree)adaptor.create(string_literal607);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal607_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_add_accessor_declaration8446);
 			block608=retval.block608=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block608.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block608.getTree()));
 
 			}
 
@@ -21131,14 +21654,17 @@ Token string_literal607 ;
 	// $ANTLR end "add_accessor_declaration"
 
 
-	public static class remove_accessor_declaration_return extends ParserRuleReturnScope {
+	public static class remove_accessor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block610 ;
-Token string_literal609 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitremove_accessor_declaration_return(this);
+}
+CommonTree string_literal609 ;
+public block_return block610 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21169,15 +21695,15 @@ Token string_literal609 ;
 
 			string_literal609=(Token)match(input,167,FOLLOW_167_in_remove_accessor_declaration8461); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal609_tree = (CommonTree)adaptor.create(string_literal609);
-			adaptor.addChild(root_0, string_literal609_tree);
+			retval.string_literal609 = string_literal609_tree=(CommonTree)adaptor.create(string_literal609);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal609_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_remove_accessor_declaration8465);
 			block610=retval.block610=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block610.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block610.getTree()));
 
 			}
 
@@ -21203,17 +21729,20 @@ Token string_literal609 ;
 	// $ANTLR end "remove_accessor_declaration"
 
 
-	public static class enum_declaration_return extends ParserRuleReturnScope {
+	public static class enum_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier612 ;
-enum_base_return enum_base613 ;
-enum_body_return enum_body614 ;
-Token string_literal611 ;
-Token char_literal615 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitenum_declaration_return(this);
+}
+CommonTree string_literal611 ;
+CommonTree char_literal615 ;
+public identifier_return identifier612 ;
+public enum_base_return enum_base613 ;
+public enum_body_return enum_body614 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21248,15 +21777,15 @@ Token char_literal615 ;
 
 			string_literal611=(Token)match(input,ENUM,FOLLOW_ENUM_in_enum_declaration8484); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal611_tree = (CommonTree)adaptor.create(string_literal611);
-			adaptor.addChild(root_0, string_literal611_tree);
+			retval.string_literal611 = string_literal611_tree=(CommonTree)adaptor.create(string_literal611);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal611_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_enum_declaration8488);
 			identifier612=retval.identifier612=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier612.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier612.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:627:31: ( enum_base )?
 			int alt171=2;
@@ -21272,7 +21801,7 @@ Token char_literal615 ;
 					enum_base613=retval.enum_base613=enum_base();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_base613.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_base613.getTree()));
 
 					}
 					break;
@@ -21283,7 +21812,7 @@ Token char_literal615 ;
 			enum_body614=retval.enum_body614=enum_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_body614.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_body614.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:627:56: ( ';' )?
 			int alt172=2;
@@ -21297,8 +21826,8 @@ Token char_literal615 ;
 					{
 					char_literal615=(Token)match(input,SEMI,FOLLOW_SEMI_in_enum_declaration8501); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal615_tree = (CommonTree)adaptor.create(char_literal615);
-					adaptor.addChild(root_0, char_literal615_tree);
+					retval.char_literal615 = char_literal615_tree=(CommonTree)adaptor.create(char_literal615);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal615_tree));
 					}
 
 					}
@@ -21330,14 +21859,17 @@ Token char_literal615 ;
 	// $ANTLR end "enum_declaration"
 
 
-	public static class enum_base_return extends ParserRuleReturnScope {
+	public static class enum_base_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-integral_type_return integral_type617 ;
-Token char_literal616 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitenum_base_return(this);
+}
+CommonTree char_literal616 ;
+public integral_type_return integral_type617 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21368,15 +21900,15 @@ Token char_literal616 ;
 
 			char_literal616=(Token)match(input,79,FOLLOW_79_in_enum_base8517); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal616_tree = (CommonTree)adaptor.create(char_literal616);
-			adaptor.addChild(root_0, char_literal616_tree);
+			retval.char_literal616 = char_literal616_tree=(CommonTree)adaptor.create(char_literal616);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal616_tree));
 			}
 
 			pushFollow(FOLLOW_integral_type_in_enum_base8521);
 			integral_type617=retval.integral_type617=integral_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, integral_type617.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(integral_type617.getTree()));
 
 			}
 
@@ -21402,16 +21934,19 @@ Token char_literal616 ;
 	// $ANTLR end "enum_base"
 
 
-	public static class enum_body_return extends ParserRuleReturnScope {
+	public static class enum_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-enum_member_declarations_return enum_member_declarations619 ;
-Token char_literal618 ;
-Token char_literal620 ;
-Token char_literal621 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitenum_body_return(this);
+}
+CommonTree char_literal618 ;
+CommonTree char_literal620 ;
+CommonTree char_literal621 ;
+public enum_member_declarations_return enum_member_declarations619 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21446,8 +21981,8 @@ Token char_literal621 ;
 
 			char_literal618=(Token)match(input,197,FOLLOW_197_in_enum_body8536); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal618_tree = (CommonTree)adaptor.create(char_literal618);
-			adaptor.addChild(root_0, char_literal618_tree);
+			retval.char_literal618 = char_literal618_tree=(CommonTree)adaptor.create(char_literal618);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal618_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:631:13: ( enum_member_declarations ( ',' )? )?
@@ -21464,7 +21999,7 @@ Token char_literal621 ;
 					enum_member_declarations619=retval.enum_member_declarations619=enum_member_declarations();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declarations619.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_member_declarations619.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:631:39: ( ',' )?
 					int alt173=2;
@@ -21478,8 +22013,8 @@ Token char_literal621 ;
 							{
 							char_literal620=(Token)match(input,74,FOLLOW_74_in_enum_body8541); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal620_tree = (CommonTree)adaptor.create(char_literal620);
-							adaptor.addChild(root_0, char_literal620_tree);
+							retval.char_literal620 = char_literal620_tree=(CommonTree)adaptor.create(char_literal620);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal620_tree));
 							}
 
 							}
@@ -21494,8 +22029,8 @@ Token char_literal621 ;
 
 			char_literal621=(Token)match(input,201,FOLLOW_201_in_enum_body8548); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal621_tree = (CommonTree)adaptor.create(char_literal621);
-			adaptor.addChild(root_0, char_literal621_tree);
+			retval.char_literal621 = char_literal621_tree=(CommonTree)adaptor.create(char_literal621);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal621_tree));
 			}
 
 			}
@@ -21522,15 +22057,18 @@ Token char_literal621 ;
 	// $ANTLR end "enum_body"
 
 
-	public static class enum_member_declarations_return extends ParserRuleReturnScope {
+	public static class enum_member_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-enum_member_declaration_return enum_member_declaration622 ;
-List<enum_member_declaration_return> enum_member_declaration624 = new ArrayList<enum_member_declaration_return>();
-Token char_literal623 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitenum_member_declarations_return(this);
+}
+CommonTree char_literal623 ;
+public enum_member_declaration_return enum_member_declaration622 ;
+public List<enum_member_declaration_return> enum_member_declaration624 = new ArrayList<enum_member_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21564,7 +22102,7 @@ Token char_literal623 ;
 			enum_member_declaration622=retval.enum_member_declaration622=enum_member_declaration();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declaration622.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_member_declaration622.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:633:33: ( ',' enum_member_declaration )*
 			loop175:
@@ -21585,15 +22123,15 @@ Token char_literal623 ;
 					{
 					char_literal623=(Token)match(input,74,FOLLOW_74_in_enum_member_declarations8566); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal623_tree = (CommonTree)adaptor.create(char_literal623);
-					adaptor.addChild(root_0, char_literal623_tree);
+					retval.char_literal623 = char_literal623_tree=(CommonTree)adaptor.create(char_literal623);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal623_tree));
 					}
 
 					pushFollow(FOLLOW_enum_member_declaration_in_enum_member_declarations8568);
 					enum_member_declaration624=enum_member_declaration();retval.enum_member_declaration624.add((enum_member_declaration_return) enum_member_declaration624);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declaration624.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_member_declaration624.getTree()));
 
 					}
 					break;
@@ -21627,16 +22165,19 @@ Token char_literal623 ;
 	// $ANTLR end "enum_member_declarations"
 
 
-	public static class enum_member_declaration_return extends ParserRuleReturnScope {
+	public static class enum_member_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes625 ;
-identifier_return identifier626 ;
-expression_return expression628 ;
-Token char_literal627 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitenum_member_declaration_return(this);
+}
+CommonTree char_literal627 ;
+public attributes_return attributes625 ;
+public identifier_return identifier626 ;
+public expression_return expression628 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21681,7 +22222,7 @@ Token char_literal627 ;
 					attributes625=retval.attributes625=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes625.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes625.getTree()));
 
 					}
 					break;
@@ -21692,7 +22233,7 @@ Token char_literal627 ;
 			identifier626=retval.identifier626=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier626.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier626.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:635:36: ( '=' expression )?
 			int alt177=2;
@@ -21706,15 +22247,15 @@ Token char_literal627 ;
 					{
 					char_literal627=(Token)match(input,85,FOLLOW_85_in_enum_member_declaration8595); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal627_tree = (CommonTree)adaptor.create(char_literal627);
-					adaptor.addChild(root_0, char_literal627_tree);
+					retval.char_literal627 = char_literal627_tree=(CommonTree)adaptor.create(char_literal627);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal627_tree));
 					}
 
 					pushFollow(FOLLOW_expression_in_enum_member_declaration8599);
 					expression628=retval.expression628=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression628.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression628.getTree()));
 
 					}
 					break;
@@ -21745,13 +22286,16 @@ Token char_literal627 ;
 	// $ANTLR end "enum_member_declaration"
 
 
-	public static class integral_type_return extends ParserRuleReturnScope {
+	public static class integral_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set629 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitintegral_type_return(this);
+}
+CommonTree set629 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21815,21 +22359,24 @@ Token set629 ;
 	// $ANTLR end "integral_type"
 
 
-	public static class delegate_declaration_return extends ParserRuleReturnScope {
+	public static class delegate_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-return_type_return return_type631 ;
-identifier_return identifier632 ;
-variant_generic_parameter_list_return variant_generic_parameter_list633 ;
-formal_parameter_list_return formal_parameter_list635 ;
-type_parameter_constraints_clauses_return type_parameter_constraints_clauses637 ;
-Token string_literal630 ;
-Token char_literal634 ;
-Token char_literal636 ;
-Token char_literal638 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdelegate_declaration_return(this);
+}
+CommonTree string_literal630 ;
+CommonTree char_literal634 ;
+CommonTree char_literal636 ;
+CommonTree char_literal638 ;
+public return_type_return return_type631 ;
+public identifier_return identifier632 ;
+public variant_generic_parameter_list_return variant_generic_parameter_list633 ;
+public formal_parameter_list_return formal_parameter_list635 ;
+public type_parameter_constraints_clauses_return type_parameter_constraints_clauses637 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -21870,21 +22417,21 @@ Token char_literal638 ;
 
 			string_literal630=(Token)match(input,116,FOLLOW_116_in_delegate_declaration8670); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal630_tree = (CommonTree)adaptor.create(string_literal630);
-			adaptor.addChild(root_0, string_literal630_tree);
+			retval.string_literal630 = string_literal630_tree=(CommonTree)adaptor.create(string_literal630);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal630_tree));
 			}
 
 			pushFollow(FOLLOW_return_type_in_delegate_declaration8674);
 			return_type631=retval.return_type631=return_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, return_type631.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(return_type631.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_delegate_declaration8678);
 			identifier632=retval.identifier632=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier632.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier632.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:645:48: ( variant_generic_parameter_list )?
 			int alt178=2;
@@ -21900,7 +22447,7 @@ Token char_literal638 ;
 					variant_generic_parameter_list633=retval.variant_generic_parameter_list633=variant_generic_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_generic_parameter_list633.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variant_generic_parameter_list633.getTree()));
 
 					}
 					break;
@@ -21909,8 +22456,8 @@ Token char_literal638 ;
 
 			char_literal634=(Token)match(input,68,FOLLOW_68_in_delegate_declaration8703); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal634_tree = (CommonTree)adaptor.create(char_literal634);
-			adaptor.addChild(root_0, char_literal634_tree);
+			retval.char_literal634 = char_literal634_tree=(CommonTree)adaptor.create(char_literal634);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal634_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:646:23: ( formal_parameter_list )?
@@ -21927,7 +22474,7 @@ Token char_literal638 ;
 					formal_parameter_list635=retval.formal_parameter_list635=formal_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list635.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter_list635.getTree()));
 
 					}
 					break;
@@ -21936,8 +22483,8 @@ Token char_literal638 ;
 
 			char_literal636=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_delegate_declaration8712); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal636_tree = (CommonTree)adaptor.create(char_literal636);
-			adaptor.addChild(root_0, char_literal636_tree);
+			retval.char_literal636 = char_literal636_tree=(CommonTree)adaptor.create(char_literal636);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal636_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:646:54: ( type_parameter_constraints_clauses )?
@@ -21954,7 +22501,7 @@ Token char_literal638 ;
 					type_parameter_constraints_clauses637=retval.type_parameter_constraints_clauses637=type_parameter_constraints_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses637.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clauses637.getTree()));
 
 					}
 					break;
@@ -21963,8 +22510,8 @@ Token char_literal638 ;
 
 			char_literal638=(Token)match(input,SEMI,FOLLOW_SEMI_in_delegate_declaration8721); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal638_tree = (CommonTree)adaptor.create(char_literal638);
-			adaptor.addChild(root_0, char_literal638_tree);
+			retval.char_literal638 = char_literal638_tree=(CommonTree)adaptor.create(char_literal638);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal638_tree));
 			}
 
 			}
@@ -21991,13 +22538,16 @@ Token char_literal638 ;
 	// $ANTLR end "delegate_declaration"
 
 
-	public static class delegate_modifiers_return extends ParserRuleReturnScope {
+	public static class delegate_modifiers_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<modifier_return> modifier639 = new ArrayList<modifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitdelegate_modifiers_return(this);
+}
+public List<modifier_return> modifier639 = new ArrayList<modifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22042,7 +22592,7 @@ List<modifier_return> modifier639 = new ArrayList<modifier_return>();
 					modifier639=modifier();retval.modifier639.add((modifier_return) modifier639);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier639.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifier639.getTree()));
 
 					}
 					break;
@@ -22080,15 +22630,18 @@ List<modifier_return> modifier639 = new ArrayList<modifier_return>();
 	// $ANTLR end "delegate_modifiers"
 
 
-	public static class variant_generic_parameter_list_return extends ParserRuleReturnScope {
+	public static class variant_generic_parameter_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-variant_type_parameters_return variant_type_parameters641 ;
-Token char_literal640 ;
-Token char_literal642 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariant_generic_parameter_list_return(this);
+}
+CommonTree char_literal640 ;
+CommonTree char_literal642 ;
+public variant_type_parameters_return variant_type_parameters641 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22121,20 +22674,20 @@ Token char_literal642 ;
 
 			char_literal640=(Token)match(input,81,FOLLOW_81_in_variant_generic_parameter_list8753); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal640_tree = (CommonTree)adaptor.create(char_literal640);
-			adaptor.addChild(root_0, char_literal640_tree);
+			retval.char_literal640 = char_literal640_tree=(CommonTree)adaptor.create(char_literal640);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal640_tree));
 			}
 
 			pushFollow(FOLLOW_variant_type_parameters_in_variant_generic_parameter_list8757);
 			variant_type_parameters641=retval.variant_type_parameters641=variant_type_parameters();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_type_parameters641.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variant_type_parameters641.getTree()));
 
 			char_literal642=(Token)match(input,GT,FOLLOW_GT_in_variant_generic_parameter_list8761); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal642_tree = (CommonTree)adaptor.create(char_literal642);
-			adaptor.addChild(root_0, char_literal642_tree);
+			retval.char_literal642 = char_literal642_tree=(CommonTree)adaptor.create(char_literal642);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal642_tree));
 			}
 
 			}
@@ -22161,15 +22714,18 @@ Token char_literal642 ;
 	// $ANTLR end "variant_generic_parameter_list"
 
 
-	public static class variant_type_parameters_return extends ParserRuleReturnScope {
+	public static class variant_type_parameters_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-variant_type_variable_name_return variant_type_variable_name643 ;
-List<variant_type_variable_name_return> variant_type_variable_name645 = new ArrayList<variant_type_variable_name_return>();
-Token char_literal644 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariant_type_parameters_return(this);
+}
+CommonTree char_literal644 ;
+public variant_type_variable_name_return variant_type_variable_name643 ;
+public List<variant_type_variable_name_return> variant_type_variable_name645 = new ArrayList<variant_type_variable_name_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22203,7 +22759,7 @@ Token char_literal644 ;
 			variant_type_variable_name643=retval.variant_type_variable_name643=variant_type_variable_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_type_variable_name643.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variant_type_variable_name643.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:653:36: ( ',' variant_type_variable_name )*
 			loop182:
@@ -22220,15 +22776,15 @@ Token char_literal644 ;
 					{
 					char_literal644=(Token)match(input,74,FOLLOW_74_in_variant_type_parameters8779); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal644_tree = (CommonTree)adaptor.create(char_literal644);
-					adaptor.addChild(root_0, char_literal644_tree);
+					retval.char_literal644 = char_literal644_tree=(CommonTree)adaptor.create(char_literal644);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal644_tree));
 					}
 
 					pushFollow(FOLLOW_variant_type_variable_name_in_variant_type_parameters8781);
 					variant_type_variable_name645=variant_type_variable_name();retval.variant_type_variable_name645.add((variant_type_variable_name_return) variant_type_variable_name645);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_type_variable_name645.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variant_type_variable_name645.getTree()));
 
 					}
 					break;
@@ -22262,15 +22818,18 @@ Token char_literal644 ;
 	// $ANTLR end "variant_type_parameters"
 
 
-	public static class variant_type_variable_name_return extends ParserRuleReturnScope {
+	public static class variant_type_variable_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes646 ;
-variance_annotation_return variance_annotation647 ;
-type_variable_name_return type_variable_name648 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariant_type_variable_name_return(this);
+}
+public attributes_return attributes646 ;
+public variance_annotation_return variance_annotation647 ;
+public type_variable_name_return type_variable_name648 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22313,7 +22872,7 @@ type_variable_name_return type_variable_name648 ;
 					attributes646=retval.attributes646=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes646.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes646.getTree()));
 
 					}
 					break;
@@ -22334,7 +22893,7 @@ type_variable_name_return type_variable_name648 ;
 					variance_annotation647=retval.variance_annotation647=variance_annotation();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variance_annotation647.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variance_annotation647.getTree()));
 
 					}
 					break;
@@ -22345,7 +22904,7 @@ type_variable_name_return type_variable_name648 ;
 			type_variable_name648=retval.type_variable_name648=type_variable_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_variable_name648.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_variable_name648.getTree()));
 
 			}
 
@@ -22371,13 +22930,16 @@ type_variable_name_return type_variable_name648 ;
 	// $ANTLR end "variant_type_variable_name"
 
 
-	public static class variance_annotation_return extends ParserRuleReturnScope {
+	public static class variance_annotation_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set649 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitvariance_annotation_return(this);
+}
+CommonTree set649 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22441,15 +23003,18 @@ Token set649 ;
 	// $ANTLR end "variance_annotation"
 
 
-	public static class type_parameter_constraints_clauses_return extends ParserRuleReturnScope {
+	public static class type_parameter_constraints_clauses_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_parameter_constraints_clause_return type_parameter_constraints_clause650 ;
-List<type_parameter_constraints_clause_return> type_parameter_constraints_clause652 = new ArrayList<type_parameter_constraints_clause_return>();
-Token char_literal651 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_parameter_constraints_clauses_return(this);
+}
+CommonTree char_literal651 ;
+public type_parameter_constraints_clause_return type_parameter_constraints_clause650 ;
+public List<type_parameter_constraints_clause_return> type_parameter_constraints_clause652 = new ArrayList<type_parameter_constraints_clause_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22483,7 +23048,7 @@ Token char_literal651 ;
 			type_parameter_constraints_clause650=retval.type_parameter_constraints_clause650=type_parameter_constraints_clause();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clause650.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clause650.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:660:45: ( ',' type_parameter_constraints_clause )*
 			loop185:
@@ -22500,15 +23065,15 @@ Token char_literal651 ;
 					{
 					char_literal651=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraints_clauses8848); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal651_tree = (CommonTree)adaptor.create(char_literal651);
-					adaptor.addChild(root_0, char_literal651_tree);
+					retval.char_literal651 = char_literal651_tree=(CommonTree)adaptor.create(char_literal651);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal651_tree));
 					}
 
 					pushFollow(FOLLOW_type_parameter_constraints_clause_in_type_parameter_constraints_clauses8852);
 					type_parameter_constraints_clause652=type_parameter_constraints_clause();retval.type_parameter_constraints_clause652.add((type_parameter_constraints_clause_return) type_parameter_constraints_clause652);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clause652.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clause652.getTree()));
 
 					}
 					break;
@@ -22542,16 +23107,19 @@ Token char_literal651 ;
 	// $ANTLR end "type_parameter_constraints_clauses"
 
 
-	public static class type_parameter_constraints_clause_return extends ParserRuleReturnScope {
+	public static class type_parameter_constraints_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_variable_name_return type_variable_name654 ;
-type_parameter_constraint_list_return type_parameter_constraint_list656 ;
-Token string_literal653 ;
-Token char_literal655 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_parameter_constraints_clause_return(this);
+}
+CommonTree string_literal653 ;
+CommonTree char_literal655 ;
+public type_variable_name_return type_variable_name654 ;
+public type_parameter_constraint_list_return type_parameter_constraint_list656 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22585,27 +23153,27 @@ Token char_literal655 ;
 
 			string_literal653=(Token)match(input,194,FOLLOW_194_in_type_parameter_constraints_clause8869); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal653_tree = (CommonTree)adaptor.create(string_literal653);
-			adaptor.addChild(root_0, string_literal653_tree);
+			retval.string_literal653 = string_literal653_tree=(CommonTree)adaptor.create(string_literal653);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal653_tree));
 			}
 
 			pushFollow(FOLLOW_type_variable_name_in_type_parameter_constraints_clause8873);
 			type_variable_name654=retval.type_variable_name654=type_variable_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_variable_name654.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_variable_name654.getTree()));
 
 			char_literal655=(Token)match(input,79,FOLLOW_79_in_type_parameter_constraints_clause8877); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal655_tree = (CommonTree)adaptor.create(char_literal655);
-			adaptor.addChild(root_0, char_literal655_tree);
+			retval.char_literal655 = char_literal655_tree=(CommonTree)adaptor.create(char_literal655);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal655_tree));
 			}
 
 			pushFollow(FOLLOW_type_parameter_constraint_list_in_type_parameter_constraints_clause8881);
 			type_parameter_constraint_list656=retval.type_parameter_constraint_list656=type_parameter_constraint_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraint_list656.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraint_list656.getTree()));
 
 			}
 
@@ -22631,21 +23199,24 @@ Token char_literal655 ;
 	// $ANTLR end "type_parameter_constraints_clause"
 
 
-	public static class type_parameter_constraint_list_return extends ParserRuleReturnScope {
+	public static class type_parameter_constraint_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-secondary_constraint_list_return secondary_constraint_list659 ;
-constructor_constraint_return constructor_constraint661 ;
-secondary_constraint_list_return secondary_constraint_list662 ;
-constructor_constraint_return constructor_constraint664 ;
-constructor_constraint_return constructor_constraint665 ;
-Token set657 ;
-Token char_literal658 ;
-Token char_literal660 ;
-Token char_literal663 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_parameter_constraint_list_return(this);
+}
+CommonTree set657 ;
+CommonTree char_literal658 ;
+CommonTree char_literal660 ;
+CommonTree char_literal663 ;
+public secondary_constraint_list_return secondary_constraint_list659 ;
+public constructor_constraint_return constructor_constraint661 ;
+public secondary_constraint_list_return secondary_constraint_list662 ;
+public constructor_constraint_return constructor_constraint664 ;
+public constructor_constraint_return constructor_constraint665 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22772,15 +23343,15 @@ Token char_literal663 ;
 							{
 							char_literal658=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraint_list8955); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal658_tree = (CommonTree)adaptor.create(char_literal658);
-							adaptor.addChild(root_0, char_literal658_tree);
+							retval.char_literal658 = char_literal658_tree=(CommonTree)adaptor.create(char_literal658);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal658_tree));
 							}
 
 							pushFollow(FOLLOW_secondary_constraint_list_in_type_parameter_constraint_list8959);
 							secondary_constraint_list659=retval.secondary_constraint_list659=secondary_constraint_list();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint_list659.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(secondary_constraint_list659.getTree()));
 
 							}
 							break;
@@ -22802,15 +23373,15 @@ Token char_literal663 ;
 							{
 							char_literal660=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraint_list8966); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal660_tree = (CommonTree)adaptor.create(char_literal660);
-							adaptor.addChild(root_0, char_literal660_tree);
+							retval.char_literal660 = char_literal660_tree=(CommonTree)adaptor.create(char_literal660);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal660_tree));
 							}
 
 							pushFollow(FOLLOW_constructor_constraint_in_type_parameter_constraint_list8970);
 							constructor_constraint661=retval.constructor_constraint661=constructor_constraint();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_constraint661.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_constraint661.getTree()));
 
 							}
 							break;
@@ -22829,7 +23400,7 @@ Token char_literal663 ;
 					secondary_constraint_list662=retval.secondary_constraint_list662=secondary_constraint_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint_list662.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(secondary_constraint_list662.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:666:39: ( ',' constructor_constraint )?
 					int alt188=2;
@@ -22846,15 +23417,15 @@ Token char_literal663 ;
 							{
 							char_literal663=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraint_list8989); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal663_tree = (CommonTree)adaptor.create(char_literal663);
-							adaptor.addChild(root_0, char_literal663_tree);
+							retval.char_literal663 = char_literal663_tree=(CommonTree)adaptor.create(char_literal663);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal663_tree));
 							}
 
 							pushFollow(FOLLOW_constructor_constraint_in_type_parameter_constraint_list8993);
 							constructor_constraint664=retval.constructor_constraint664=constructor_constraint();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_constraint664.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_constraint664.getTree()));
 
 							}
 							break;
@@ -22873,7 +23444,7 @@ Token char_literal663 ;
 					constructor_constraint665=retval.constructor_constraint665=constructor_constraint();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_constraint665.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_constraint665.getTree()));
 
 					}
 					break;
@@ -22901,15 +23472,18 @@ Token char_literal663 ;
 	// $ANTLR end "type_parameter_constraint_list"
 
 
-	public static class secondary_constraint_list_return extends ParserRuleReturnScope {
+	public static class secondary_constraint_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-secondary_constraint_return secondary_constraint666 ;
-List<secondary_constraint_return> secondary_constraint668 = new ArrayList<secondary_constraint_return>();
-Token char_literal667 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitsecondary_constraint_list_return(this);
+}
+CommonTree char_literal667 ;
+public secondary_constraint_return secondary_constraint666 ;
+public List<secondary_constraint_return> secondary_constraint668 = new ArrayList<secondary_constraint_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -22943,7 +23517,7 @@ Token char_literal667 ;
 			secondary_constraint666=retval.secondary_constraint666=secondary_constraint();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint666.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(secondary_constraint666.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:673:30: ( ',' secondary_constraint )*
 			loop190:
@@ -22971,15 +23545,15 @@ Token char_literal667 ;
 					{
 					char_literal667=(Token)match(input,74,FOLLOW_74_in_secondary_constraint_list9029); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal667_tree = (CommonTree)adaptor.create(char_literal667);
-					adaptor.addChild(root_0, char_literal667_tree);
+					retval.char_literal667 = char_literal667_tree=(CommonTree)adaptor.create(char_literal667);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal667_tree));
 					}
 
 					pushFollow(FOLLOW_secondary_constraint_in_secondary_constraint_list9031);
 					secondary_constraint668=secondary_constraint();retval.secondary_constraint668.add((secondary_constraint_return) secondary_constraint668);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint668.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(secondary_constraint668.getTree()));
 
 					}
 					break;
@@ -23013,13 +23587,16 @@ Token char_literal667 ;
 	// $ANTLR end "secondary_constraint_list"
 
 
-	public static class secondary_constraint_return extends ParserRuleReturnScope {
+	public static class secondary_constraint_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_name_return type_name669 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitsecondary_constraint_return(this);
+}
+public type_name_return type_name669 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23050,7 +23627,7 @@ type_name_return type_name669 ;
 			type_name669=retval.type_name669=type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name669.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name669.getTree()));
 
 			}
 
@@ -23076,13 +23653,16 @@ type_name_return type_name669 ;
 	// $ANTLR end "secondary_constraint"
 
 
-	public static class type_variable_name_return extends ParserRuleReturnScope {
+	public static class type_variable_name_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier670 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittype_variable_name_return(this);
+}
+public identifier_return identifier670 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23113,7 +23693,7 @@ identifier_return identifier670 ;
 			identifier670=retval.identifier670=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier670.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier670.getTree()));
 
 			}
 
@@ -23139,15 +23719,18 @@ identifier_return identifier670 ;
 	// $ANTLR end "type_variable_name"
 
 
-	public static class constructor_constraint_return extends ParserRuleReturnScope {
+	public static class constructor_constraint_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token string_literal671 ;
-Token char_literal672 ;
-Token char_literal673 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstructor_constraint_return(this);
+}
+CommonTree string_literal671 ;
+CommonTree char_literal672 ;
+CommonTree char_literal673 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23181,20 +23764,20 @@ Token char_literal673 ;
 
 			string_literal671=(Token)match(input,150,FOLLOW_150_in_constructor_constraint9087); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal671_tree = (CommonTree)adaptor.create(string_literal671);
-			adaptor.addChild(root_0, string_literal671_tree);
+			retval.string_literal671 = string_literal671_tree=(CommonTree)adaptor.create(string_literal671);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal671_tree));
 			}
 
 			char_literal672=(Token)match(input,68,FOLLOW_68_in_constructor_constraint9091); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal672_tree = (CommonTree)adaptor.create(char_literal672);
-			adaptor.addChild(root_0, char_literal672_tree);
+			retval.char_literal672 = char_literal672_tree=(CommonTree)adaptor.create(char_literal672);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal672_tree));
 			}
 
 			char_literal673=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_constructor_constraint9095); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal673_tree = (CommonTree)adaptor.create(char_literal673);
-			adaptor.addChild(root_0, char_literal673_tree);
+			retval.char_literal673 = char_literal673_tree=(CommonTree)adaptor.create(char_literal673);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal673_tree));
 			}
 
 			}
@@ -23221,14 +23804,17 @@ Token char_literal673 ;
 	// $ANTLR end "constructor_constraint"
 
 
-	public static class return_type_return extends ParserRuleReturnScope {
+	public static class return_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type674 ;
-Token string_literal675 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitreturn_type_return(this);
+}
+CommonTree string_literal675 ;
+public type_return type674 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23299,7 +23885,7 @@ Token string_literal675 ;
 					type674=retval.type674=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type674.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type674.getTree()));
 
 					}
 					break;
@@ -23311,8 +23897,8 @@ Token string_literal675 ;
 
 					string_literal675=(Token)match(input,192,FOLLOW_192_in_return_type9123); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal675_tree = (CommonTree)adaptor.create(string_literal675);
-					adaptor.addChild(root_0, string_literal675_tree);
+					retval.string_literal675 = string_literal675_tree=(CommonTree)adaptor.create(string_literal675);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal675_tree));
 					}
 
 					}
@@ -23341,15 +23927,18 @@ Token string_literal675 ;
 	// $ANTLR end "return_type"
 
 
-	public static class formal_parameter_list_return extends ParserRuleReturnScope {
+	public static class formal_parameter_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-formal_parameter_return formal_parameter676 ;
-List<formal_parameter_return> formal_parameter678 = new ArrayList<formal_parameter_return>();
-Token char_literal677 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitformal_parameter_list_return(this);
+}
+CommonTree char_literal677 ;
+public formal_parameter_return formal_parameter676 ;
+public List<formal_parameter_return> formal_parameter678 = new ArrayList<formal_parameter_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23383,7 +23972,7 @@ Token char_literal677 ;
 			formal_parameter676=retval.formal_parameter676=formal_parameter();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter676.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter676.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:684:26: ( ',' formal_parameter )*
 			loop192:
@@ -23400,15 +23989,15 @@ Token char_literal677 ;
 					{
 					char_literal677=(Token)match(input,74,FOLLOW_74_in_formal_parameter_list9140); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal677_tree = (CommonTree)adaptor.create(char_literal677);
-					adaptor.addChild(root_0, char_literal677_tree);
+					retval.char_literal677 = char_literal677_tree=(CommonTree)adaptor.create(char_literal677);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal677_tree));
 					}
 
 					pushFollow(FOLLOW_formal_parameter_in_formal_parameter_list9142);
 					formal_parameter678=formal_parameter();retval.formal_parameter678.add((formal_parameter_return) formal_parameter678);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter678.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter678.getTree()));
 
 					}
 					break;
@@ -23442,16 +24031,19 @@ Token char_literal677 ;
 	// $ANTLR end "formal_parameter_list"
 
 
-	public static class formal_parameter_return extends ParserRuleReturnScope {
+	public static class formal_parameter_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes679 ;
-fixed_parameter_return fixed_parameter680 ;
-parameter_array_return parameter_array681 ;
-Token string_literal682 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitformal_parameter_return(this);
+}
+CommonTree string_literal682 ;
+public attributes_return attributes679 ;
+public fixed_parameter_return fixed_parameter680 ;
+public parameter_array_return parameter_array681 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23534,7 +24126,7 @@ Token string_literal682 ;
 							attributes679=retval.attributes679=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes679.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes679.getTree()));
 
 							}
 							break;
@@ -23566,7 +24158,7 @@ Token string_literal682 ;
 							fixed_parameter680=retval.fixed_parameter680=fixed_parameter();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_parameter680.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_parameter680.getTree()));
 
 							}
 							break;
@@ -23577,7 +24169,7 @@ Token string_literal682 ;
 							parameter_array681=retval.parameter_array681=parameter_array();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, parameter_array681.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(parameter_array681.getTree()));
 
 							}
 							break;
@@ -23594,8 +24186,8 @@ Token string_literal682 ;
 
 					string_literal682=(Token)match(input,95,FOLLOW_95_in_formal_parameter9183); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal682_tree = (CommonTree)adaptor.create(string_literal682);
-					adaptor.addChild(root_0, string_literal682_tree);
+					retval.string_literal682 = string_literal682_tree=(CommonTree)adaptor.create(string_literal682);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal682_tree));
 					}
 
 					}
@@ -23624,15 +24216,18 @@ Token string_literal682 ;
 	// $ANTLR end "formal_parameter"
 
 
-	public static class fixed_parameters_return extends ParserRuleReturnScope {
+	public static class fixed_parameters_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-fixed_parameter_return fixed_parameter683 ;
-List<fixed_parameter_return> fixed_parameter685 = new ArrayList<fixed_parameter_return>();
-Token char_literal684 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfixed_parameters_return(this);
+}
+CommonTree char_literal684 ;
+public fixed_parameter_return fixed_parameter683 ;
+public List<fixed_parameter_return> fixed_parameter685 = new ArrayList<fixed_parameter_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23666,7 +24261,7 @@ Token char_literal684 ;
 			fixed_parameter683=retval.fixed_parameter683=fixed_parameter();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_parameter683.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_parameter683.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:689:27: ( ',' fixed_parameter )*
 			loop196:
@@ -23683,15 +24278,15 @@ Token char_literal684 ;
 					{
 					char_literal684=(Token)match(input,74,FOLLOW_74_in_fixed_parameters9210); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal684_tree = (CommonTree)adaptor.create(char_literal684);
-					adaptor.addChild(root_0, char_literal684_tree);
+					retval.char_literal684 = char_literal684_tree=(CommonTree)adaptor.create(char_literal684);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal684_tree));
 					}
 
 					pushFollow(FOLLOW_fixed_parameter_in_fixed_parameters9214);
 					fixed_parameter685=fixed_parameter();retval.fixed_parameter685.add((fixed_parameter_return) fixed_parameter685);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_parameter685.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_parameter685.getTree()));
 
 					}
 					break;
@@ -23725,16 +24320,19 @@ Token char_literal684 ;
 	// $ANTLR end "fixed_parameters"
 
 
-	public static class fixed_parameter_return extends ParserRuleReturnScope {
+	public static class fixed_parameter_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-parameter_modifier_return parameter_modifier686 ;
-type_return type687 ;
-identifier_return identifier688 ;
-default_argument_return default_argument689 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfixed_parameter_return(this);
+}
+public parameter_modifier_return parameter_modifier686 ;
+public type_return type687 ;
+public identifier_return identifier688 ;
+public default_argument_return default_argument689 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23778,7 +24376,7 @@ default_argument_return default_argument689 ;
 					parameter_modifier686=retval.parameter_modifier686=parameter_modifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, parameter_modifier686.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(parameter_modifier686.getTree()));
 
 					}
 					break;
@@ -23789,13 +24387,13 @@ default_argument_return default_argument689 ;
 			type687=retval.type687=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type687.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type687.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_fixed_parameter9241);
 			identifier688=retval.identifier688=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier688.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier688.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:692:51: ( default_argument )?
 			int alt198=2;
@@ -23811,7 +24409,7 @@ default_argument_return default_argument689 ;
 					default_argument689=retval.default_argument689=default_argument();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, default_argument689.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(default_argument689.getTree()));
 
 					}
 					break;
@@ -23842,14 +24440,17 @@ default_argument_return default_argument689 ;
 	// $ANTLR end "fixed_parameter"
 
 
-	public static class default_argument_return extends ParserRuleReturnScope {
+	public static class default_argument_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression691 ;
-Token char_literal690 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdefault_argument_return(this);
+}
+CommonTree char_literal690 ;
+public expression_return expression691 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23880,15 +24481,15 @@ Token char_literal690 ;
 
 			char_literal690=(Token)match(input,85,FOLLOW_85_in_default_argument9262); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal690_tree = (CommonTree)adaptor.create(char_literal690);
-			adaptor.addChild(root_0, char_literal690_tree);
+			retval.char_literal690 = char_literal690_tree=(CommonTree)adaptor.create(char_literal690);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal690_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_default_argument9264);
 			expression691=retval.expression691=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression691.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression691.getTree()));
 
 			}
 
@@ -23914,13 +24515,16 @@ Token char_literal690 ;
 	// $ANTLR end "default_argument"
 
 
-	public static class parameter_modifier_return extends ParserRuleReturnScope {
+	public static class parameter_modifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set692 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitparameter_modifier_return(this);
+}
+CommonTree set692 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -23984,15 +24588,18 @@ Token set692 ;
 	// $ANTLR end "parameter_modifier"
 
 
-	public static class parameter_array_return extends ParserRuleReturnScope {
+	public static class parameter_array_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type694 ;
-identifier_return identifier695 ;
-Token string_literal693 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitparameter_array_return(this);
+}
+CommonTree string_literal693 ;
+public type_return type694 ;
+public identifier_return identifier695 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24024,21 +24631,21 @@ Token string_literal693 ;
 
 			string_literal693=(Token)match(input,158,FOLLOW_158_in_parameter_array9301); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal693_tree = (CommonTree)adaptor.create(string_literal693);
-			adaptor.addChild(root_0, string_literal693_tree);
+			retval.string_literal693 = string_literal693_tree=(CommonTree)adaptor.create(string_literal693);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal693_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_parameter_array9305);
 			type694=retval.type694=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type694.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type694.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_parameter_array9309);
 			identifier695=retval.identifier695=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier695.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier695.getTree()));
 
 			}
 
@@ -24064,19 +24671,22 @@ Token string_literal693 ;
 	// $ANTLR end "parameter_array"
 
 
-	public static class interface_declaration_return extends ParserRuleReturnScope {
+	public static class interface_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier697 ;
-variant_generic_parameter_list_return variant_generic_parameter_list698 ;
-interface_base_return interface_base699 ;
-type_parameter_constraints_clauses_return type_parameter_constraints_clauses700 ;
-interface_body_return interface_body701 ;
-Token string_literal696 ;
-Token char_literal702 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_declaration_return(this);
+}
+CommonTree string_literal696 ;
+CommonTree char_literal702 ;
+public identifier_return identifier697 ;
+public variant_generic_parameter_list_return variant_generic_parameter_list698 ;
+public interface_base_return interface_base699 ;
+public type_parameter_constraints_clauses_return type_parameter_constraints_clauses700 ;
+public interface_body_return interface_body701 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24113,15 +24723,15 @@ Token char_literal702 ;
 
 			string_literal696=(Token)match(input,139,FOLLOW_139_in_interface_declaration9326); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal696_tree = (CommonTree)adaptor.create(string_literal696);
-			adaptor.addChild(root_0, string_literal696_tree);
+			retval.string_literal696 = string_literal696_tree=(CommonTree)adaptor.create(string_literal696);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal696_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_interface_declaration9330);
 			identifier697=retval.identifier697=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier697.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier697.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:703:36: ( variant_generic_parameter_list )?
 			int alt199=2;
@@ -24137,7 +24747,7 @@ Token char_literal702 ;
 					variant_generic_parameter_list698=retval.variant_generic_parameter_list698=variant_generic_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_generic_parameter_list698.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(variant_generic_parameter_list698.getTree()));
 
 					}
 					break;
@@ -24158,7 +24768,7 @@ Token char_literal702 ;
 					interface_base699=retval.interface_base699=interface_base();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_base699.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_base699.getTree()));
 
 					}
 					break;
@@ -24179,7 +24789,7 @@ Token char_literal702 ;
 					type_parameter_constraints_clauses700=retval.type_parameter_constraints_clauses700=type_parameter_constraints_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses700.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clauses700.getTree()));
 
 					}
 					break;
@@ -24190,7 +24800,7 @@ Token char_literal702 ;
 			interface_body701=retval.interface_body701=interface_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_body701.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_body701.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:704:86: ( ';' )?
 			int alt202=2;
@@ -24204,8 +24814,8 @@ Token char_literal702 ;
 					{
 					char_literal702=(Token)match(input,SEMI,FOLLOW_SEMI_in_interface_declaration9364); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal702_tree = (CommonTree)adaptor.create(char_literal702);
-					adaptor.addChild(root_0, char_literal702_tree);
+					retval.char_literal702 = char_literal702_tree=(CommonTree)adaptor.create(char_literal702);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal702_tree));
 					}
 
 					}
@@ -24237,13 +24847,16 @@ Token char_literal702 ;
 	// $ANTLR end "interface_declaration"
 
 
-	public static class interface_modifiers_return extends ParserRuleReturnScope {
+	public static class interface_modifiers_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<modifier_return> modifier703 = new ArrayList<modifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_modifiers_return(this);
+}
+public List<modifier_return> modifier703 = new ArrayList<modifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24288,7 +24901,7 @@ List<modifier_return> modifier703 = new ArrayList<modifier_return>();
 					modifier703=modifier();retval.modifier703.add((modifier_return) modifier703);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier703.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifier703.getTree()));
 
 					}
 					break;
@@ -24326,14 +24939,17 @@ List<modifier_return> modifier703 = new ArrayList<modifier_return>();
 	// $ANTLR end "interface_modifiers"
 
 
-	public static class interface_base_return extends ParserRuleReturnScope {
+	public static class interface_base_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-interface_type_list_return interface_type_list705 ;
-Token char_literal704 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_base_return(this);
+}
+CommonTree char_literal704 ;
+public interface_type_list_return interface_type_list705 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24364,15 +24980,15 @@ Token char_literal704 ;
 
 			char_literal704=(Token)match(input,79,FOLLOW_79_in_interface_base9401); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal704_tree = (CommonTree)adaptor.create(char_literal704);
-			adaptor.addChild(root_0, char_literal704_tree);
+			retval.char_literal704 = char_literal704_tree=(CommonTree)adaptor.create(char_literal704);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal704_tree));
 			}
 
 			pushFollow(FOLLOW_interface_type_list_in_interface_base9403);
 			interface_type_list705=retval.interface_type_list705=interface_type_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_type_list705.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_type_list705.getTree()));
 
 			}
 
@@ -24398,15 +25014,18 @@ Token char_literal704 ;
 	// $ANTLR end "interface_base"
 
 
-	public static class interface_body_return extends ParserRuleReturnScope {
+	public static class interface_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-interface_member_declarations_return interface_member_declarations707 ;
-Token char_literal706 ;
-Token char_literal708 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_body_return(this);
+}
+CommonTree char_literal706 ;
+CommonTree char_literal708 ;
+public interface_member_declarations_return interface_member_declarations707 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24439,8 +25058,8 @@ Token char_literal708 ;
 
 			char_literal706=(Token)match(input,197,FOLLOW_197_in_interface_body9418); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal706_tree = (CommonTree)adaptor.create(char_literal706);
-			adaptor.addChild(root_0, char_literal706_tree);
+			retval.char_literal706 = char_literal706_tree=(CommonTree)adaptor.create(char_literal706);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal706_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:710:15: ( interface_member_declarations )?
@@ -24457,7 +25076,7 @@ Token char_literal708 ;
 					interface_member_declarations707=retval.interface_member_declarations707=interface_member_declarations();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_member_declarations707.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_member_declarations707.getTree()));
 
 					}
 					break;
@@ -24466,8 +25085,8 @@ Token char_literal708 ;
 
 			char_literal708=(Token)match(input,201,FOLLOW_201_in_interface_body9427); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal708_tree = (CommonTree)adaptor.create(char_literal708);
-			adaptor.addChild(root_0, char_literal708_tree);
+			retval.char_literal708 = char_literal708_tree=(CommonTree)adaptor.create(char_literal708);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal708_tree));
 			}
 
 			}
@@ -24494,13 +25113,16 @@ Token char_literal708 ;
 	// $ANTLR end "interface_body"
 
 
-	public static class interface_member_declarations_return extends ParserRuleReturnScope {
+	public static class interface_member_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<interface_member_declaration_return> interface_member_declaration709 = new ArrayList<interface_member_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_member_declarations_return(this);
+}
+public List<interface_member_declaration_return> interface_member_declaration709 = new ArrayList<interface_member_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24545,7 +25167,7 @@ List<interface_member_declaration_return> interface_member_declaration709 = new 
 					interface_member_declaration709=interface_member_declaration();retval.interface_member_declaration709.add((interface_member_declaration_return) interface_member_declaration709);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_member_declaration709.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_member_declaration709.getTree()));
 
 					}
 					break;
@@ -24583,21 +25205,24 @@ List<interface_member_declaration_return> interface_member_declaration709 = new 
 	// $ANTLR end "interface_member_declarations"
 
 
-	public static class interface_member_declaration_return extends ParserRuleReturnScope {
+	public static class interface_member_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes710 ;
-modifiers_return modifiers711 ;
-interface_method_declaration_return interface_method_declaration713 ;
-interface_event_declaration_return interface_event_declaration714 ;
-type_return type715 ;
-interface_method_declaration_return interface_method_declaration716 ;
-interface_property_declaration_return interface_property_declaration717 ;
-interface_indexer_declaration_return interface_indexer_declaration718 ;
-Token string_literal712 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_member_declaration_return(this);
+}
+CommonTree string_literal712 ;
+public attributes_return attributes710 ;
+public modifiers_return modifiers711 ;
+public interface_method_declaration_return interface_method_declaration713 ;
+public interface_event_declaration_return interface_event_declaration714 ;
+public type_return type715 ;
+public interface_method_declaration_return interface_method_declaration716 ;
+public interface_property_declaration_return interface_property_declaration717 ;
+public interface_indexer_declaration_return interface_indexer_declaration718 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24647,7 +25272,7 @@ Token string_literal712 ;
 					attributes710=retval.attributes710=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes710.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes710.getTree()));
 
 					}
 					break;
@@ -24668,7 +25293,7 @@ Token string_literal712 ;
 					modifiers711=retval.modifiers711=modifiers();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers711.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers711.getTree()));
 
 					}
 					break;
@@ -24769,15 +25394,15 @@ Token string_literal712 ;
 					{
 					string_literal712=(Token)match(input,192,FOLLOW_192_in_interface_member_declaration9484); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal712_tree = (CommonTree)adaptor.create(string_literal712);
-					adaptor.addChild(root_0, string_literal712_tree);
+					retval.string_literal712 = string_literal712_tree=(CommonTree)adaptor.create(string_literal712);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal712_tree));
 					}
 
 					pushFollow(FOLLOW_interface_method_declaration_in_interface_member_declaration9488);
 					interface_method_declaration713=retval.interface_method_declaration713=interface_method_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_method_declaration713.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_method_declaration713.getTree()));
 
 					}
 					break;
@@ -24788,7 +25413,7 @@ Token string_literal712 ;
 					interface_event_declaration714=retval.interface_event_declaration714=interface_event_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_event_declaration714.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_event_declaration714.getTree()));
 
 					}
 					break;
@@ -24799,7 +25424,7 @@ Token string_literal712 ;
 					type715=retval.type715=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type715.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type715.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:717:26: ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration )
 					int alt208=3;
@@ -24836,7 +25461,7 @@ Token string_literal712 ;
 							interface_method_declaration716=retval.interface_method_declaration716=interface_method_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_method_declaration716.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_method_declaration716.getTree()));
 
 							}
 							break;
@@ -24847,7 +25472,7 @@ Token string_literal712 ;
 							interface_property_declaration717=retval.interface_property_declaration717=interface_property_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_property_declaration717.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_property_declaration717.getTree()));
 
 							}
 							break;
@@ -24858,7 +25483,7 @@ Token string_literal712 ;
 							interface_indexer_declaration718=retval.interface_indexer_declaration718=interface_indexer_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_indexer_declaration718.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_indexer_declaration718.getTree()));
 
 							}
 							break;
@@ -24894,16 +25519,19 @@ Token string_literal712 ;
 	// $ANTLR end "interface_member_declaration"
 
 
-	public static class interface_property_declaration_return extends ParserRuleReturnScope {
+	public static class interface_property_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier719 ;
-interface_accessor_declarations_return interface_accessor_declarations721 ;
-Token char_literal720 ;
-Token char_literal722 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_property_declaration_return(this);
+}
+CommonTree char_literal720 ;
+CommonTree char_literal722 ;
+public identifier_return identifier719 ;
+public interface_accessor_declarations_return interface_accessor_declarations721 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -24939,24 +25567,24 @@ Token char_literal722 ;
 			identifier719=retval.identifier719=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier719.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier719.getTree()));
 
 			char_literal720=(Token)match(input,197,FOLLOW_197_in_interface_property_declaration9677); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal720_tree = (CommonTree)adaptor.create(char_literal720);
-			adaptor.addChild(root_0, char_literal720_tree);
+			retval.char_literal720 = char_literal720_tree=(CommonTree)adaptor.create(char_literal720);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal720_tree));
 			}
 
 			pushFollow(FOLLOW_interface_accessor_declarations_in_interface_property_declaration9681);
 			interface_accessor_declarations721=retval.interface_accessor_declarations721=interface_accessor_declarations();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_accessor_declarations721.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_accessor_declarations721.getTree()));
 
 			char_literal722=(Token)match(input,201,FOLLOW_201_in_interface_property_declaration9685); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal722_tree = (CommonTree)adaptor.create(char_literal722);
-			adaptor.addChild(root_0, char_literal722_tree);
+			retval.char_literal722 = char_literal722_tree=(CommonTree)adaptor.create(char_literal722);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal722_tree));
 			}
 
 			}
@@ -24983,19 +25611,22 @@ Token char_literal722 ;
 	// $ANTLR end "interface_property_declaration"
 
 
-	public static class interface_method_declaration_return extends ParserRuleReturnScope {
+	public static class interface_method_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier723 ;
-generic_argument_list_return generic_argument_list724 ;
-formal_parameter_list_return formal_parameter_list726 ;
-type_parameter_constraints_clauses_return type_parameter_constraints_clauses728 ;
-Token char_literal725 ;
-Token char_literal727 ;
-Token char_literal729 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_method_declaration_return(this);
+}
+CommonTree char_literal725 ;
+CommonTree char_literal727 ;
+CommonTree char_literal729 ;
+public identifier_return identifier723 ;
+public generic_argument_list_return generic_argument_list724 ;
+public formal_parameter_list_return formal_parameter_list726 ;
+public type_parameter_constraints_clauses_return type_parameter_constraints_clauses728 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25035,7 +25666,7 @@ Token char_literal729 ;
 			identifier723=retval.identifier723=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier723.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier723.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:725:22: ( generic_argument_list )?
 			int alt210=2;
@@ -25051,7 +25682,7 @@ Token char_literal729 ;
 					generic_argument_list724=retval.generic_argument_list724=generic_argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list724.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_argument_list724.getTree()));
 
 					}
 					break;
@@ -25060,8 +25691,8 @@ Token char_literal729 ;
 
 			char_literal725=(Token)match(input,68,FOLLOW_68_in_interface_method_declaration9719); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal725_tree = (CommonTree)adaptor.create(char_literal725);
-			adaptor.addChild(root_0, char_literal725_tree);
+			retval.char_literal725 = char_literal725_tree=(CommonTree)adaptor.create(char_literal725);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal725_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:726:19: ( formal_parameter_list )?
@@ -25078,7 +25709,7 @@ Token char_literal729 ;
 					formal_parameter_list726=retval.formal_parameter_list726=formal_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list726.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter_list726.getTree()));
 
 					}
 					break;
@@ -25087,8 +25718,8 @@ Token char_literal729 ;
 
 			char_literal727=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_interface_method_declaration9728); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal727_tree = (CommonTree)adaptor.create(char_literal727);
-			adaptor.addChild(root_0, char_literal727_tree);
+			retval.char_literal727 = char_literal727_tree=(CommonTree)adaptor.create(char_literal727);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal727_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:726:50: ( type_parameter_constraints_clauses )?
@@ -25105,7 +25736,7 @@ Token char_literal729 ;
 					type_parameter_constraints_clauses728=retval.type_parameter_constraints_clauses728=type_parameter_constraints_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses728.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clauses728.getTree()));
 
 					}
 					break;
@@ -25114,8 +25745,8 @@ Token char_literal729 ;
 
 			char_literal729=(Token)match(input,SEMI,FOLLOW_SEMI_in_interface_method_declaration9737); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal729_tree = (CommonTree)adaptor.create(char_literal729);
-			adaptor.addChild(root_0, char_literal729_tree);
+			retval.char_literal729 = char_literal729_tree=(CommonTree)adaptor.create(char_literal729);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal729_tree));
 			}
 
 			}
@@ -25142,16 +25773,19 @@ Token char_literal729 ;
 	// $ANTLR end "interface_method_declaration"
 
 
-	public static class interface_event_declaration_return extends ParserRuleReturnScope {
+	public static class interface_event_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type731 ;
-identifier_return identifier732 ;
-Token string_literal730 ;
-Token char_literal733 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_event_declaration_return(this);
+}
+CommonTree string_literal730 ;
+CommonTree char_literal733 ;
+public type_return type731 ;
+public identifier_return identifier732 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25185,26 +25819,26 @@ Token char_literal733 ;
 
 			string_literal730=(Token)match(input,123,FOLLOW_123_in_interface_event_declaration9762); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal730_tree = (CommonTree)adaptor.create(string_literal730);
-			adaptor.addChild(root_0, string_literal730_tree);
+			retval.string_literal730 = string_literal730_tree=(CommonTree)adaptor.create(string_literal730);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal730_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_interface_event_declaration9766);
 			type731=retval.type731=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type731.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type731.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_interface_event_declaration9770);
 			identifier732=retval.identifier732=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier732.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier732.getTree()));
 
 			char_literal733=(Token)match(input,SEMI,FOLLOW_SEMI_in_interface_event_declaration9774); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal733_tree = (CommonTree)adaptor.create(char_literal733);
-			adaptor.addChild(root_0, char_literal733_tree);
+			retval.char_literal733 = char_literal733_tree=(CommonTree)adaptor.create(char_literal733);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal733_tree));
 			}
 
 			}
@@ -25231,19 +25865,22 @@ Token char_literal733 ;
 	// $ANTLR end "interface_event_declaration"
 
 
-	public static class interface_indexer_declaration_return extends ParserRuleReturnScope {
+	public static class interface_indexer_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-formal_parameter_list_return formal_parameter_list736 ;
-interface_accessor_declarations_return interface_accessor_declarations739 ;
-Token string_literal734 ;
-Token char_literal735 ;
-Token char_literal737 ;
-Token char_literal738 ;
-Token char_literal740 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_indexer_declaration_return(this);
+}
+CommonTree string_literal734 ;
+CommonTree char_literal735 ;
+CommonTree char_literal737 ;
+CommonTree char_literal738 ;
+CommonTree char_literal740 ;
+public formal_parameter_list_return formal_parameter_list736 ;
+public interface_accessor_declarations_return interface_accessor_declarations739 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25283,44 +25920,44 @@ Token char_literal740 ;
 
 			string_literal734=(Token)match(input,180,FOLLOW_180_in_interface_indexer_declaration9800); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal734_tree = (CommonTree)adaptor.create(string_literal734);
-			adaptor.addChild(root_0, string_literal734_tree);
+			retval.string_literal734 = string_literal734_tree=(CommonTree)adaptor.create(string_literal734);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal734_tree));
 			}
 
 			char_literal735=(Token)match(input,91,FOLLOW_91_in_interface_indexer_declaration9804); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal735_tree = (CommonTree)adaptor.create(char_literal735);
-			adaptor.addChild(root_0, char_literal735_tree);
+			retval.char_literal735 = char_literal735_tree=(CommonTree)adaptor.create(char_literal735);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal735_tree));
 			}
 
 			pushFollow(FOLLOW_formal_parameter_list_in_interface_indexer_declaration9808);
 			formal_parameter_list736=retval.formal_parameter_list736=formal_parameter_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list736.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter_list736.getTree()));
 
 			char_literal737=(Token)match(input,92,FOLLOW_92_in_interface_indexer_declaration9812); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal737_tree = (CommonTree)adaptor.create(char_literal737);
-			adaptor.addChild(root_0, char_literal737_tree);
+			retval.char_literal737 = char_literal737_tree=(CommonTree)adaptor.create(char_literal737);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal737_tree));
 			}
 
 			char_literal738=(Token)match(input,197,FOLLOW_197_in_interface_indexer_declaration9816); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal738_tree = (CommonTree)adaptor.create(char_literal738);
-			adaptor.addChild(root_0, char_literal738_tree);
+			retval.char_literal738 = char_literal738_tree=(CommonTree)adaptor.create(char_literal738);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal738_tree));
 			}
 
 			pushFollow(FOLLOW_interface_accessor_declarations_in_interface_indexer_declaration9820);
 			interface_accessor_declarations739=retval.interface_accessor_declarations739=interface_accessor_declarations();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_accessor_declarations739.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_accessor_declarations739.getTree()));
 
 			char_literal740=(Token)match(input,201,FOLLOW_201_in_interface_indexer_declaration9824); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal740_tree = (CommonTree)adaptor.create(char_literal740);
-			adaptor.addChild(root_0, char_literal740_tree);
+			retval.char_literal740 = char_literal740_tree=(CommonTree)adaptor.create(char_literal740);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal740_tree));
 			}
 
 			}
@@ -25347,19 +25984,22 @@ Token char_literal740 ;
 	// $ANTLR end "interface_indexer_declaration"
 
 
-	public static class interface_accessor_declarations_return extends ParserRuleReturnScope {
+	public static class interface_accessor_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes741 ;
-interface_get_accessor_declaration_return interface_get_accessor_declaration742 ;
-attributes_return attributes743 ;
-interface_set_accessor_declaration_return interface_set_accessor_declaration744 ;
-interface_set_accessor_declaration_return interface_set_accessor_declaration745 ;
-attributes_return attributes746 ;
-interface_get_accessor_declaration_return interface_get_accessor_declaration747 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_accessor_declarations_return(this);
+}
+public attributes_return attributes741 ;
+public interface_get_accessor_declaration_return interface_get_accessor_declaration742 ;
+public attributes_return attributes743 ;
+public interface_set_accessor_declaration_return interface_set_accessor_declaration744 ;
+public interface_set_accessor_declaration_return interface_set_accessor_declaration745 ;
+public attributes_return attributes746 ;
+public interface_get_accessor_declaration_return interface_get_accessor_declaration747 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25406,7 +26046,7 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 					attributes741=retval.attributes741=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes741.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes741.getTree()));
 
 					}
 					break;
@@ -25438,7 +26078,7 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 					interface_get_accessor_declaration742=retval.interface_get_accessor_declaration742=interface_get_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_get_accessor_declaration742.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_get_accessor_declaration742.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:735:55: ( attributes )?
 					int alt214=2;
@@ -25454,7 +26094,7 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 							attributes743=retval.attributes743=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes743.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes743.getTree()));
 
 							}
 							break;
@@ -25475,7 +26115,7 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 							interface_set_accessor_declaration744=retval.interface_set_accessor_declaration744=interface_set_accessor_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_set_accessor_declaration744.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_set_accessor_declaration744.getTree()));
 
 							}
 							break;
@@ -25491,7 +26131,7 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 					interface_set_accessor_declaration745=retval.interface_set_accessor_declaration745=interface_set_accessor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_set_accessor_declaration745.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_set_accessor_declaration745.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:736:56: ( attributes )?
 					int alt216=2;
@@ -25507,7 +26147,7 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 							attributes746=retval.attributes746=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes746.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes746.getTree()));
 
 							}
 							break;
@@ -25528,7 +26168,7 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 							interface_get_accessor_declaration747=retval.interface_get_accessor_declaration747=interface_get_accessor_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_get_accessor_declaration747.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_get_accessor_declaration747.getTree()));
 
 							}
 							break;
@@ -25564,14 +26204,17 @@ interface_get_accessor_declaration_return interface_get_accessor_declaration747 
 	// $ANTLR end "interface_accessor_declarations"
 
 
-	public static class interface_get_accessor_declaration_return extends ParserRuleReturnScope {
+	public static class interface_get_accessor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token string_literal748 ;
-Token char_literal749 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_get_accessor_declaration_return(this);
+}
+CommonTree string_literal748 ;
+CommonTree char_literal749 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25603,14 +26246,14 @@ Token char_literal749 ;
 
 			string_literal748=(Token)match(input,133,FOLLOW_133_in_interface_get_accessor_declaration9918); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal748_tree = (CommonTree)adaptor.create(string_literal748);
-			adaptor.addChild(root_0, string_literal748_tree);
+			retval.string_literal748 = string_literal748_tree=(CommonTree)adaptor.create(string_literal748);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal748_tree));
 			}
 
 			char_literal749=(Token)match(input,SEMI,FOLLOW_SEMI_in_interface_get_accessor_declaration9922); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal749_tree = (CommonTree)adaptor.create(char_literal749);
-			adaptor.addChild(root_0, char_literal749_tree);
+			retval.char_literal749 = char_literal749_tree=(CommonTree)adaptor.create(char_literal749);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal749_tree));
 			}
 
 			}
@@ -25637,14 +26280,17 @@ Token char_literal749 ;
 	// $ANTLR end "interface_get_accessor_declaration"
 
 
-	public static class interface_set_accessor_declaration_return extends ParserRuleReturnScope {
+	public static class interface_set_accessor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token string_literal750 ;
-Token char_literal751 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinterface_set_accessor_declaration_return(this);
+}
+CommonTree string_literal750 ;
+CommonTree char_literal751 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25676,14 +26322,14 @@ Token char_literal751 ;
 
 			string_literal750=(Token)match(input,172,FOLLOW_172_in_interface_set_accessor_declaration9953); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal750_tree = (CommonTree)adaptor.create(string_literal750);
-			adaptor.addChild(root_0, string_literal750_tree);
+			retval.string_literal750 = string_literal750_tree=(CommonTree)adaptor.create(string_literal750);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal750_tree));
 			}
 
 			char_literal751=(Token)match(input,SEMI,FOLLOW_SEMI_in_interface_set_accessor_declaration9957); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal751_tree = (CommonTree)adaptor.create(char_literal751);
-			adaptor.addChild(root_0, char_literal751_tree);
+			retval.char_literal751 = char_literal751_tree=(CommonTree)adaptor.create(char_literal751);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal751_tree));
 			}
 
 			}
@@ -25710,13 +26356,16 @@ Token char_literal751 ;
 	// $ANTLR end "interface_set_accessor_declaration"
 
 
-	public static class method_modifiers_return extends ParserRuleReturnScope {
+	public static class method_modifiers_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<modifier_return> modifier752 = new ArrayList<modifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitmethod_modifiers_return(this);
+}
+public List<modifier_return> modifier752 = new ArrayList<modifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25761,7 +26410,7 @@ List<modifier_return> modifier752 = new ArrayList<modifier_return>();
 					modifier752=modifier();retval.modifier752.add((modifier_return) modifier752);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifier752.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifier752.getTree()));
 
 					}
 					break;
@@ -25799,18 +26448,21 @@ List<modifier_return> modifier752 = new ArrayList<modifier_return>();
 	// $ANTLR end "method_modifiers"
 
 
-	public static class struct_declaration_return extends ParserRuleReturnScope {
+	public static class struct_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_or_generic_return type_or_generic754 ;
-struct_interfaces_return struct_interfaces755 ;
-type_parameter_constraints_clauses_return type_parameter_constraints_clauses756 ;
-struct_body_return struct_body757 ;
-Token string_literal753 ;
-Token char_literal758 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstruct_declaration_return(this);
+}
+CommonTree string_literal753 ;
+CommonTree char_literal758 ;
+public type_or_generic_return type_or_generic754 ;
+public struct_interfaces_return struct_interfaces755 ;
+public type_parameter_constraints_clauses_return type_parameter_constraints_clauses756 ;
+public struct_body_return struct_body757 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -25846,15 +26498,15 @@ Token char_literal758 ;
 
 			string_literal753=(Token)match(input,178,FOLLOW_178_in_struct_declaration10014); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal753_tree = (CommonTree)adaptor.create(string_literal753);
-			adaptor.addChild(root_0, string_literal753_tree);
+			retval.string_literal753 = string_literal753_tree=(CommonTree)adaptor.create(string_literal753);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal753_tree));
 			}
 
 			pushFollow(FOLLOW_type_or_generic_in_struct_declaration10018);
 			type_or_generic754=retval.type_or_generic754=type_or_generic();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic754.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_or_generic754.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:746:38: ( struct_interfaces )?
 			int alt220=2;
@@ -25870,7 +26522,7 @@ Token char_literal758 ;
 					struct_interfaces755=retval.struct_interfaces755=struct_interfaces();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_interfaces755.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_interfaces755.getTree()));
 
 					}
 					break;
@@ -25891,7 +26543,7 @@ Token char_literal758 ;
 					type_parameter_constraints_clauses756=retval.type_parameter_constraints_clauses756=type_parameter_constraints_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clauses756.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_parameter_constraints_clauses756.getTree()));
 
 					}
 					break;
@@ -25902,7 +26554,7 @@ Token char_literal758 ;
 			struct_body757=retval.struct_body757=struct_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_body757.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_body757.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:746:111: ( ';' )?
 			int alt222=2;
@@ -25916,8 +26568,8 @@ Token char_literal758 ;
 					{
 					char_literal758=(Token)match(input,SEMI,FOLLOW_SEMI_in_struct_declaration10036); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal758_tree = (CommonTree)adaptor.create(char_literal758);
-					adaptor.addChild(root_0, char_literal758_tree);
+					retval.char_literal758 = char_literal758_tree=(CommonTree)adaptor.create(char_literal758);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal758_tree));
 					}
 
 					}
@@ -25949,13 +26601,16 @@ Token char_literal758 ;
 	// $ANTLR end "struct_declaration"
 
 
-	public static class struct_modifiers_return extends ParserRuleReturnScope {
+	public static class struct_modifiers_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<struct_modifier_return> struct_modifier759 = new ArrayList<struct_modifier_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitstruct_modifiers_return(this);
+}
+public List<struct_modifier_return> struct_modifier759 = new ArrayList<struct_modifier_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -26000,7 +26655,7 @@ List<struct_modifier_return> struct_modifier759 = new ArrayList<struct_modifier_
 					struct_modifier759=struct_modifier();retval.struct_modifier759.add((struct_modifier_return) struct_modifier759);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_modifier759.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_modifier759.getTree()));
 
 					}
 					break;
@@ -26038,13 +26693,16 @@ List<struct_modifier_return> struct_modifier759 = new ArrayList<struct_modifier_
 	// $ANTLR end "struct_modifiers"
 
 
-	public static class struct_modifier_return extends ParserRuleReturnScope {
+	public static class struct_modifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set760 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstruct_modifier_return(this);
+}
+CommonTree set760 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -26108,14 +26766,17 @@ Token set760 ;
 	// $ANTLR end "struct_modifier"
 
 
-	public static class struct_interfaces_return extends ParserRuleReturnScope {
+	public static class struct_interfaces_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-interface_type_list_return interface_type_list762 ;
-Token char_literal761 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstruct_interfaces_return(this);
+}
+CommonTree char_literal761 ;
+public interface_type_list_return interface_type_list762 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -26146,15 +26807,15 @@ Token char_literal761 ;
 
 			char_literal761=(Token)match(input,79,FOLLOW_79_in_struct_interfaces10103); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal761_tree = (CommonTree)adaptor.create(char_literal761);
-			adaptor.addChild(root_0, char_literal761_tree);
+			retval.char_literal761 = char_literal761_tree=(CommonTree)adaptor.create(char_literal761);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal761_tree));
 			}
 
 			pushFollow(FOLLOW_interface_type_list_in_struct_interfaces10107);
 			interface_type_list762=retval.interface_type_list762=interface_type_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_type_list762.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_type_list762.getTree()));
 
 			}
 
@@ -26180,15 +26841,18 @@ Token char_literal761 ;
 	// $ANTLR end "struct_interfaces"
 
 
-	public static class struct_body_return extends ParserRuleReturnScope {
+	public static class struct_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-struct_member_declarations_return struct_member_declarations764 ;
-Token char_literal763 ;
-Token char_literal765 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstruct_body_return(this);
+}
+CommonTree char_literal763 ;
+CommonTree char_literal765 ;
+public struct_member_declarations_return struct_member_declarations764 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -26221,8 +26885,8 @@ Token char_literal765 ;
 
 			char_literal763=(Token)match(input,197,FOLLOW_197_in_struct_body10121); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal763_tree = (CommonTree)adaptor.create(char_literal763);
-			adaptor.addChild(root_0, char_literal763_tree);
+			retval.char_literal763 = char_literal763_tree=(CommonTree)adaptor.create(char_literal763);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal763_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:754:15: ( struct_member_declarations )?
@@ -26239,7 +26903,7 @@ Token char_literal765 ;
 					struct_member_declarations764=retval.struct_member_declarations764=struct_member_declarations();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_member_declarations764.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_member_declarations764.getTree()));
 
 					}
 					break;
@@ -26248,8 +26912,8 @@ Token char_literal765 ;
 
 			char_literal765=(Token)match(input,201,FOLLOW_201_in_struct_body10130); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal765_tree = (CommonTree)adaptor.create(char_literal765);
-			adaptor.addChild(root_0, char_literal765_tree);
+			retval.char_literal765 = char_literal765_tree=(CommonTree)adaptor.create(char_literal765);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal765_tree));
 			}
 
 			}
@@ -26276,13 +26940,16 @@ Token char_literal765 ;
 	// $ANTLR end "struct_body"
 
 
-	public static class struct_member_declarations_return extends ParserRuleReturnScope {
+	public static class struct_member_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<struct_member_declaration_return> struct_member_declaration766 = new ArrayList<struct_member_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitstruct_member_declarations_return(this);
+}
+public List<struct_member_declaration_return> struct_member_declaration766 = new ArrayList<struct_member_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -26327,7 +26994,7 @@ List<struct_member_declaration_return> struct_member_declaration766 = new ArrayL
 					struct_member_declaration766=struct_member_declaration();retval.struct_member_declaration766.add((struct_member_declaration_return) struct_member_declaration766);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_member_declaration766.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_member_declaration766.getTree()));
 
 					}
 					break;
@@ -26365,42 +27032,45 @@ List<struct_member_declaration_return> struct_member_declaration766 = new ArrayL
 	// $ANTLR end "struct_member_declarations"
 
 
-	public static class struct_member_declaration_return extends ParserRuleReturnScope {
+	public static class struct_member_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-attributes_return attributes767 ;
-modifiers_return modifiers768 ;
-type_return type770 ;
-constant_declarators_return constant_declarators771 ;
-event_declaration_return event_declaration773 ;
-method_declaration_return method_declaration775 ;
-interface_declaration_return interface_declaration776 ;
-class_declaration_return class_declaration777 ;
-struct_declaration_return struct_declaration778 ;
-interface_declaration_return interface_declaration779 ;
-class_declaration_return class_declaration780 ;
-method_declaration_return method_declaration782 ;
-type_return type783 ;
-method_declaration_return method_declaration784 ;
-property_declaration_return property_declaration785 ;
-type_name_return type_name786 ;
-indexer_declaration_return indexer_declaration788 ;
-indexer_declaration_return indexer_declaration789 ;
-field_declaration_return field_declaration790 ;
-operator_declaration_return operator_declaration791 ;
-struct_declaration_return struct_declaration792 ;
-enum_declaration_return enum_declaration793 ;
-delegate_declaration_return delegate_declaration794 ;
-conversion_operator_declaration_return conversion_operator_declaration795 ;
-constructor_declaration_return constructor_declaration796 ;
-Token string_literal769 ;
-Token char_literal772 ;
-Token string_literal774 ;
-Token string_literal781 ;
-Token char_literal787 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstruct_member_declaration_return(this);
+}
+CommonTree string_literal769 ;
+CommonTree char_literal772 ;
+CommonTree string_literal774 ;
+CommonTree string_literal781 ;
+CommonTree char_literal787 ;
+public attributes_return attributes767 ;
+public modifiers_return modifiers768 ;
+public type_return type770 ;
+public constant_declarators_return constant_declarators771 ;
+public event_declaration_return event_declaration773 ;
+public method_declaration_return method_declaration775 ;
+public interface_declaration_return interface_declaration776 ;
+public class_declaration_return class_declaration777 ;
+public struct_declaration_return struct_declaration778 ;
+public interface_declaration_return interface_declaration779 ;
+public class_declaration_return class_declaration780 ;
+public method_declaration_return method_declaration782 ;
+public type_return type783 ;
+public method_declaration_return method_declaration784 ;
+public property_declaration_return property_declaration785 ;
+public type_name_return type_name786 ;
+public indexer_declaration_return indexer_declaration788 ;
+public indexer_declaration_return indexer_declaration789 ;
+public field_declaration_return field_declaration790 ;
+public operator_declaration_return operator_declaration791 ;
+public struct_declaration_return struct_declaration792 ;
+public enum_declaration_return enum_declaration793 ;
+public delegate_declaration_return delegate_declaration794 ;
+public conversion_operator_declaration_return conversion_operator_declaration795 ;
+public constructor_declaration_return constructor_declaration796 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -26475,7 +27145,7 @@ Token char_literal787 ;
 					attributes767=retval.attributes767=attributes();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes767.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes767.getTree()));
 
 					}
 					break;
@@ -26496,7 +27166,7 @@ Token char_literal787 ;
 					modifiers768=retval.modifiers768=modifiers();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers768.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers768.getTree()));
 
 					}
 					break;
@@ -26662,26 +27332,26 @@ Token char_literal787 ;
 					{
 					string_literal769=(Token)match(input,112,FOLLOW_112_in_struct_member_declaration10178); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal769_tree = (CommonTree)adaptor.create(string_literal769);
-					adaptor.addChild(root_0, string_literal769_tree);
+					retval.string_literal769 = string_literal769_tree=(CommonTree)adaptor.create(string_literal769);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal769_tree));
 					}
 
 					pushFollow(FOLLOW_type_in_struct_member_declaration10182);
 					type770=retval.type770=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type770.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type770.getTree()));
 
 					pushFollow(FOLLOW_constant_declarators_in_struct_member_declaration10186);
 					constant_declarators771=retval.constant_declarators771=constant_declarators();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declarators771.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_declarators771.getTree()));
 
 					char_literal772=(Token)match(input,SEMI,FOLLOW_SEMI_in_struct_member_declaration10190); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal772_tree = (CommonTree)adaptor.create(char_literal772);
-					adaptor.addChild(root_0, char_literal772_tree);
+					retval.char_literal772 = char_literal772_tree=(CommonTree)adaptor.create(char_literal772);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal772_tree));
 					}
 
 					}
@@ -26693,7 +27363,7 @@ Token char_literal787 ;
 					event_declaration773=retval.event_declaration773=event_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, event_declaration773.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(event_declaration773.getTree()));
 
 					}
 					break;
@@ -26702,8 +27372,8 @@ Token char_literal787 ;
 					{
 					string_literal774=(Token)match(input,159,FOLLOW_159_in_struct_member_declaration10230); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal774_tree = (CommonTree)adaptor.create(string_literal774);
-					adaptor.addChild(root_0, string_literal774_tree);
+					retval.string_literal774 = string_literal774_tree=(CommonTree)adaptor.create(string_literal774);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal774_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:761:21: ( method_declaration | interface_declaration | class_declaration | struct_declaration )
@@ -26796,7 +27466,7 @@ Token char_literal787 ;
 							method_declaration775=retval.method_declaration775=method_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration775.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_declaration775.getTree()));
 
 							}
 							break;
@@ -26807,7 +27477,7 @@ Token char_literal787 ;
 							interface_declaration776=retval.interface_declaration776=interface_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_declaration776.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_declaration776.getTree()));
 
 							}
 							break;
@@ -26818,7 +27488,7 @@ Token char_literal787 ;
 							class_declaration777=retval.class_declaration777=class_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, class_declaration777.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_declaration777.getTree()));
 
 							}
 							break;
@@ -26829,7 +27499,7 @@ Token char_literal787 ;
 							struct_declaration778=retval.struct_declaration778=struct_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_declaration778.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_declaration778.getTree()));
 
 							}
 							break;
@@ -26845,7 +27515,7 @@ Token char_literal787 ;
 					interface_declaration779=retval.interface_declaration779=interface_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_declaration779.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(interface_declaration779.getTree()));
 
 					}
 					break;
@@ -26856,7 +27526,7 @@ Token char_literal787 ;
 					class_declaration780=retval.class_declaration780=class_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, class_declaration780.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_declaration780.getTree()));
 
 					}
 					break;
@@ -26865,15 +27535,15 @@ Token char_literal787 ;
 					{
 					string_literal781=(Token)match(input,192,FOLLOW_192_in_struct_member_declaration10391); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal781_tree = (CommonTree)adaptor.create(string_literal781);
-					adaptor.addChild(root_0, string_literal781_tree);
+					retval.string_literal781 = string_literal781_tree=(CommonTree)adaptor.create(string_literal781);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal781_tree));
 					}
 
 					pushFollow(FOLLOW_method_declaration_in_struct_member_declaration10395);
 					method_declaration782=retval.method_declaration782=method_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration782.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_declaration782.getTree()));
 
 					}
 					break;
@@ -26884,7 +27554,7 @@ Token char_literal787 ;
 					type783=retval.type783=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type783.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type783.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:769:16: ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration )
 					int alt229=6;
@@ -27032,7 +27702,7 @@ Token char_literal787 ;
 							method_declaration784=retval.method_declaration784=method_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration784.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_declaration784.getTree()));
 
 							}
 							break;
@@ -27043,7 +27713,7 @@ Token char_literal787 ;
 							property_declaration785=retval.property_declaration785=property_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, property_declaration785.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(property_declaration785.getTree()));
 
 							}
 							break;
@@ -27054,19 +27724,19 @@ Token char_literal787 ;
 							type_name786=retval.type_name786=type_name();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name786.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type_name786.getTree()));
 
 							char_literal787=(Token)match(input,DOT,FOLLOW_DOT_in_struct_member_declaration10493); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							char_literal787_tree = (CommonTree)adaptor.create(char_literal787);
-							adaptor.addChild(root_0, char_literal787_tree);
+							retval.char_literal787 = char_literal787_tree=(CommonTree)adaptor.create(char_literal787);
+							adaptor.addChild(root_0, adaptor.dupTree(char_literal787_tree));
 							}
 
 							pushFollow(FOLLOW_indexer_declaration_in_struct_member_declaration10495);
 							indexer_declaration788=retval.indexer_declaration788=indexer_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, indexer_declaration788.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(indexer_declaration788.getTree()));
 
 							}
 							break;
@@ -27077,7 +27747,7 @@ Token char_literal787 ;
 							indexer_declaration789=retval.indexer_declaration789=indexer_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, indexer_declaration789.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(indexer_declaration789.getTree()));
 
 							}
 							break;
@@ -27088,7 +27758,7 @@ Token char_literal787 ;
 							field_declaration790=retval.field_declaration790=field_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, field_declaration790.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(field_declaration790.getTree()));
 
 							}
 							break;
@@ -27099,7 +27769,7 @@ Token char_literal787 ;
 							operator_declaration791=retval.operator_declaration791=operator_declaration();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, operator_declaration791.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(operator_declaration791.getTree()));
 
 							}
 							break;
@@ -27115,7 +27785,7 @@ Token char_literal787 ;
 					struct_declaration792=retval.struct_declaration792=struct_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_declaration792.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(struct_declaration792.getTree()));
 
 					}
 					break;
@@ -27126,7 +27796,7 @@ Token char_literal787 ;
 					enum_declaration793=retval.enum_declaration793=enum_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_declaration793.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(enum_declaration793.getTree()));
 
 					}
 					break;
@@ -27137,7 +27807,7 @@ Token char_literal787 ;
 					delegate_declaration794=retval.delegate_declaration794=delegate_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, delegate_declaration794.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(delegate_declaration794.getTree()));
 
 					}
 					break;
@@ -27148,7 +27818,7 @@ Token char_literal787 ;
 					conversion_operator_declaration795=retval.conversion_operator_declaration795=conversion_operator_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, conversion_operator_declaration795.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conversion_operator_declaration795.getTree()));
 
 					}
 					break;
@@ -27159,7 +27829,7 @@ Token char_literal787 ;
 					constructor_declaration796=retval.constructor_declaration796=constructor_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_declaration796.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_declaration796.getTree()));
 
 					}
 					break;
@@ -27190,16 +27860,19 @@ Token char_literal787 ;
 	// $ANTLR end "struct_member_declaration"
 
 
-	public static class indexer_declaration_return extends ParserRuleReturnScope {
+	public static class indexer_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-indexer_declarator_return indexer_declarator797 ;
-accessor_declarations_return accessor_declarations799 ;
-Token char_literal798 ;
-Token char_literal800 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitindexer_declaration_return(this);
+}
+CommonTree char_literal798 ;
+CommonTree char_literal800 ;
+public indexer_declarator_return indexer_declarator797 ;
+public accessor_declarations_return accessor_declarations799 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -27235,24 +27908,24 @@ Token char_literal800 ;
 			indexer_declarator797=retval.indexer_declarator797=indexer_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, indexer_declarator797.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(indexer_declarator797.getTree()));
 
 			char_literal798=(Token)match(input,197,FOLLOW_197_in_indexer_declaration10738); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal798_tree = (CommonTree)adaptor.create(char_literal798);
-			adaptor.addChild(root_0, char_literal798_tree);
+			retval.char_literal798 = char_literal798_tree=(CommonTree)adaptor.create(char_literal798);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal798_tree));
 			}
 
 			pushFollow(FOLLOW_accessor_declarations_in_indexer_declaration10742);
 			accessor_declarations799=retval.accessor_declarations799=accessor_declarations();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, accessor_declarations799.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(accessor_declarations799.getTree()));
 
 			char_literal800=(Token)match(input,201,FOLLOW_201_in_indexer_declaration10746); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal800_tree = (CommonTree)adaptor.create(char_literal800);
-			adaptor.addChild(root_0, char_literal800_tree);
+			retval.char_literal800 = char_literal800_tree=(CommonTree)adaptor.create(char_literal800);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal800_tree));
 			}
 
 			}
@@ -27279,16 +27952,19 @@ Token char_literal800 ;
 	// $ANTLR end "indexer_declaration"
 
 
-	public static class indexer_declarator_return extends ParserRuleReturnScope {
+	public static class indexer_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-formal_parameter_list_return formal_parameter_list803 ;
-Token string_literal801 ;
-Token char_literal802 ;
-Token char_literal804 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitindexer_declarator_return(this);
+}
+CommonTree string_literal801 ;
+CommonTree char_literal802 ;
+CommonTree char_literal804 ;
+public formal_parameter_list_return formal_parameter_list803 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -27323,26 +27999,26 @@ Token char_literal804 ;
 
 			string_literal801=(Token)match(input,180,FOLLOW_180_in_indexer_declarator10770); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal801_tree = (CommonTree)adaptor.create(string_literal801);
-			adaptor.addChild(root_0, string_literal801_tree);
+			retval.string_literal801 = string_literal801_tree=(CommonTree)adaptor.create(string_literal801);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal801_tree));
 			}
 
 			char_literal802=(Token)match(input,91,FOLLOW_91_in_indexer_declarator10774); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal802_tree = (CommonTree)adaptor.create(char_literal802);
-			adaptor.addChild(root_0, char_literal802_tree);
+			retval.char_literal802 = char_literal802_tree=(CommonTree)adaptor.create(char_literal802);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal802_tree));
 			}
 
 			pushFollow(FOLLOW_formal_parameter_list_in_indexer_declarator10778);
 			formal_parameter_list803=retval.formal_parameter_list803=formal_parameter_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list803.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter_list803.getTree()));
 
 			char_literal804=(Token)match(input,92,FOLLOW_92_in_indexer_declarator10782); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal804_tree = (CommonTree)adaptor.create(char_literal804);
-			adaptor.addChild(root_0, char_literal804_tree);
+			retval.char_literal804 = char_literal804_tree=(CommonTree)adaptor.create(char_literal804);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal804_tree));
 			}
 
 			}
@@ -27369,14 +28045,17 @@ Token char_literal804 ;
 	// $ANTLR end "indexer_declarator"
 
 
-	public static class operator_declaration_return extends ParserRuleReturnScope {
+	public static class operator_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-operator_declarator_return operator_declarator805 ;
-operator_body_return operator_body806 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitoperator_declaration_return(this);
+}
+public operator_declarator_return operator_declarator805 ;
+public operator_body_return operator_body806 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -27408,13 +28087,13 @@ operator_body_return operator_body806 ;
 			operator_declarator805=retval.operator_declarator805=operator_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, operator_declarator805.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(operator_declarator805.getTree()));
 
 			pushFollow(FOLLOW_operator_body_in_operator_declaration10811);
 			operator_body806=retval.operator_body806=operator_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, operator_body806.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(operator_body806.getTree()));
 
 			}
 
@@ -27440,23 +28119,26 @@ operator_body_return operator_body806 ;
 	// $ANTLR end "operator_declaration"
 
 
-	public static class operator_declarator_return extends ParserRuleReturnScope {
+	public static class operator_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type810 ;
-identifier_return identifier811 ;
-binary_operator_declarator_return binary_operator_declarator812 ;
-unary_operator_declarator_return unary_operator_declarator813 ;
-overloadable_unary_operator_return overloadable_unary_operator814 ;
-unary_operator_declarator_return unary_operator_declarator815 ;
-overloadable_binary_operator_return overloadable_binary_operator816 ;
-binary_operator_declarator_return binary_operator_declarator817 ;
-Token string_literal807 ;
-Token set808 ;
-Token char_literal809 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitoperator_declarator_return(this);
+}
+CommonTree string_literal807 ;
+CommonTree set808 ;
+CommonTree char_literal809 ;
+public type_return type810 ;
+public identifier_return identifier811 ;
+public binary_operator_declarator_return binary_operator_declarator812 ;
+public unary_operator_declarator_return unary_operator_declarator813 ;
+public overloadable_unary_operator_return overloadable_unary_operator814 ;
+public unary_operator_declarator_return unary_operator_declarator815 ;
+public overloadable_binary_operator_return overloadable_binary_operator816 ;
+public binary_operator_declarator_return binary_operator_declarator817 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -27498,8 +28180,8 @@ Token char_literal809 ;
 
 			string_literal807=(Token)match(input,153,FOLLOW_153_in_operator_declarator10826); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal807_tree = (CommonTree)adaptor.create(string_literal807);
-			adaptor.addChild(root_0, string_literal807_tree);
+			retval.string_literal807 = string_literal807_tree=(CommonTree)adaptor.create(string_literal807);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal807_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:799:17: ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator )
@@ -27562,21 +28244,21 @@ Token char_literal809 ;
 					}
 					char_literal809=(Token)match(input,68,FOLLOW_68_in_operator_declarator10858); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal809_tree = (CommonTree)adaptor.create(char_literal809);
-					adaptor.addChild(root_0, char_literal809_tree);
+					retval.char_literal809 = char_literal809_tree=(CommonTree)adaptor.create(char_literal809);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal809_tree));
 					}
 
 					pushFollow(FOLLOW_type_in_operator_declarator10862);
 					type810=retval.type810=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type810.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type810.getTree()));
 
 					pushFollow(FOLLOW_identifier_in_operator_declarator10866);
 					identifier811=retval.identifier811=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier811.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier811.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:799:56: ( binary_operator_declarator | unary_operator_declarator )
 					int alt231=2;
@@ -27603,7 +28285,7 @@ Token char_literal809 ;
 							binary_operator_declarator812=retval.binary_operator_declarator812=binary_operator_declarator();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, binary_operator_declarator812.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(binary_operator_declarator812.getTree()));
 
 							}
 							break;
@@ -27614,7 +28296,7 @@ Token char_literal809 ;
 							unary_operator_declarator813=retval.unary_operator_declarator813=unary_operator_declarator();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_operator_declarator813.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_operator_declarator813.getTree()));
 
 							}
 							break;
@@ -27630,13 +28312,13 @@ Token char_literal809 ;
 					overloadable_unary_operator814=retval.overloadable_unary_operator814=overloadable_unary_operator();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, overloadable_unary_operator814.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(overloadable_unary_operator814.getTree()));
 
 					pushFollow(FOLLOW_unary_operator_declarator_in_operator_declarator10898);
 					unary_operator_declarator815=retval.unary_operator_declarator815=unary_operator_declarator();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_operator_declarator815.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_operator_declarator815.getTree()));
 
 					}
 					break;
@@ -27647,13 +28329,13 @@ Token char_literal809 ;
 					overloadable_binary_operator816=retval.overloadable_binary_operator816=overloadable_binary_operator();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, overloadable_binary_operator816.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(overloadable_binary_operator816.getTree()));
 
 					pushFollow(FOLLOW_binary_operator_declarator_in_operator_declarator10922);
 					binary_operator_declarator817=retval.binary_operator_declarator817=binary_operator_declarator();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, binary_operator_declarator817.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(binary_operator_declarator817.getTree()));
 
 					}
 					break;
@@ -27684,13 +28366,16 @@ Token char_literal809 ;
 	// $ANTLR end "operator_declarator"
 
 
-	public static class unary_operator_declarator_return extends ParserRuleReturnScope {
+	public static class unary_operator_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token char_literal818 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunary_operator_declarator_return(this);
+}
+CommonTree char_literal818 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -27720,8 +28405,8 @@ Token char_literal818 ;
 
 			char_literal818=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_unary_operator_declarator10941); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal818_tree = (CommonTree)adaptor.create(char_literal818);
-			adaptor.addChild(root_0, char_literal818_tree);
+			retval.char_literal818 = char_literal818_tree=(CommonTree)adaptor.create(char_literal818);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal818_tree));
 			}
 
 			}
@@ -27748,13 +28433,16 @@ Token char_literal818 ;
 	// $ANTLR end "unary_operator_declarator"
 
 
-	public static class overloadable_unary_operator_return extends ParserRuleReturnScope {
+	public static class overloadable_unary_operator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set819 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitoverloadable_unary_operator_return(this);
+}
+CommonTree set819 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -27818,16 +28506,19 @@ Token set819 ;
 	// $ANTLR end "overloadable_unary_operator"
 
 
-	public static class binary_operator_declarator_return extends ParserRuleReturnScope {
+	public static class binary_operator_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type821 ;
-identifier_return identifier822 ;
-Token char_literal820 ;
-Token char_literal823 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitbinary_operator_declarator_return(this);
+}
+CommonTree char_literal820 ;
+CommonTree char_literal823 ;
+public type_return type821 ;
+public identifier_return identifier822 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -27861,26 +28552,26 @@ Token char_literal823 ;
 
 			char_literal820=(Token)match(input,74,FOLLOW_74_in_binary_operator_declarator10998); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal820_tree = (CommonTree)adaptor.create(char_literal820);
-			adaptor.addChild(root_0, char_literal820_tree);
+			retval.char_literal820 = char_literal820_tree=(CommonTree)adaptor.create(char_literal820);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal820_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_binary_operator_declarator11002);
 			type821=retval.type821=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type821.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type821.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_binary_operator_declarator11006);
 			identifier822=retval.identifier822=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier822.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier822.getTree()));
 
 			char_literal823=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_binary_operator_declarator11010); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal823_tree = (CommonTree)adaptor.create(char_literal823);
-			adaptor.addChild(root_0, char_literal823_tree);
+			retval.char_literal823 = char_literal823_tree=(CommonTree)adaptor.create(char_literal823);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal823_tree));
 			}
 
 			}
@@ -27907,27 +28598,30 @@ Token char_literal823 ;
 	// $ANTLR end "binary_operator_declarator"
 
 
-	public static class overloadable_binary_operator_return extends ParserRuleReturnScope {
+	public static class overloadable_binary_operator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token char_literal824 ;
-Token char_literal825 ;
-Token char_literal826 ;
-Token char_literal827 ;
-Token char_literal828 ;
-Token char_literal829 ;
-Token string_literal830 ;
-Token char_literal831 ;
-Token char_literal832 ;
-Token string_literal833 ;
-Token string_literal834 ;
-Token char_literal835 ;
-Token char_literal836 ;
-Token string_literal837 ;
-Token string_literal838 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitoverloadable_binary_operator_return(this);
+}
+CommonTree char_literal824 ;
+CommonTree char_literal825 ;
+CommonTree char_literal826 ;
+CommonTree char_literal827 ;
+CommonTree char_literal828 ;
+CommonTree char_literal829 ;
+CommonTree string_literal830 ;
+CommonTree char_literal831 ;
+CommonTree char_literal832 ;
+CommonTree string_literal833 ;
+CommonTree string_literal834 ;
+CommonTree char_literal835 ;
+CommonTree char_literal836 ;
+CommonTree string_literal837 ;
+CommonTree string_literal838 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28080,8 +28774,8 @@ Token string_literal838 ;
 
 					char_literal824=(Token)match(input,69,FOLLOW_69_in_overloadable_binary_operator11028); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal824_tree = (CommonTree)adaptor.create(char_literal824);
-					adaptor.addChild(root_0, char_literal824_tree);
+					retval.char_literal824 = char_literal824_tree=(CommonTree)adaptor.create(char_literal824);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal824_tree));
 					}
 
 					}
@@ -28094,8 +28788,8 @@ Token string_literal838 ;
 
 					char_literal825=(Token)match(input,77,FOLLOW_77_in_overloadable_binary_operator11032); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal825_tree = (CommonTree)adaptor.create(char_literal825);
-					adaptor.addChild(root_0, char_literal825_tree);
+					retval.char_literal825 = char_literal825_tree=(CommonTree)adaptor.create(char_literal825);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal825_tree));
 					}
 
 					}
@@ -28108,8 +28802,8 @@ Token string_literal838 ;
 
 					char_literal826=(Token)match(input,63,FOLLOW_63_in_overloadable_binary_operator11036); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal826_tree = (CommonTree)adaptor.create(char_literal826);
-					adaptor.addChild(root_0, char_literal826_tree);
+					retval.char_literal826 = char_literal826_tree=(CommonTree)adaptor.create(char_literal826);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal826_tree));
 					}
 
 					}
@@ -28122,8 +28816,8 @@ Token string_literal838 ;
 
 					char_literal827=(Token)match(input,66,FOLLOW_66_in_overloadable_binary_operator11040); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal827_tree = (CommonTree)adaptor.create(char_literal827);
-					adaptor.addChild(root_0, char_literal827_tree);
+					retval.char_literal827 = char_literal827_tree=(CommonTree)adaptor.create(char_literal827);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal827_tree));
 					}
 
 					}
@@ -28136,8 +28830,8 @@ Token string_literal838 ;
 
 					char_literal828=(Token)match(input,198,FOLLOW_198_in_overloadable_binary_operator11044); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal828_tree = (CommonTree)adaptor.create(char_literal828);
-					adaptor.addChild(root_0, char_literal828_tree);
+					retval.char_literal828 = char_literal828_tree=(CommonTree)adaptor.create(char_literal828);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal828_tree));
 					}
 
 					}
@@ -28150,8 +28844,8 @@ Token string_literal838 ;
 
 					char_literal829=(Token)match(input,93,FOLLOW_93_in_overloadable_binary_operator11048); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal829_tree = (CommonTree)adaptor.create(char_literal829);
-					adaptor.addChild(root_0, char_literal829_tree);
+					retval.char_literal829 = char_literal829_tree=(CommonTree)adaptor.create(char_literal829);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal829_tree));
 					}
 
 					}
@@ -28164,8 +28858,8 @@ Token string_literal838 ;
 
 					string_literal830=(Token)match(input,82,FOLLOW_82_in_overloadable_binary_operator11052); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal830_tree = (CommonTree)adaptor.create(string_literal830);
-					adaptor.addChild(root_0, string_literal830_tree);
+					retval.string_literal830 = string_literal830_tree=(CommonTree)adaptor.create(string_literal830);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal830_tree));
 					}
 
 					}
@@ -28178,14 +28872,14 @@ Token string_literal838 ;
 
 					char_literal831=(Token)match(input,GT,FOLLOW_GT_in_overloadable_binary_operator11056); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal831_tree = (CommonTree)adaptor.create(char_literal831);
-					adaptor.addChild(root_0, char_literal831_tree);
+					retval.char_literal831 = char_literal831_tree=(CommonTree)adaptor.create(char_literal831);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal831_tree));
 					}
 
 					char_literal832=(Token)match(input,GT,FOLLOW_GT_in_overloadable_binary_operator11058); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal832_tree = (CommonTree)adaptor.create(char_literal832);
-					adaptor.addChild(root_0, char_literal832_tree);
+					retval.char_literal832 = char_literal832_tree=(CommonTree)adaptor.create(char_literal832);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal832_tree));
 					}
 
 					}
@@ -28198,8 +28892,8 @@ Token string_literal838 ;
 
 					string_literal833=(Token)match(input,86,FOLLOW_86_in_overloadable_binary_operator11062); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal833_tree = (CommonTree)adaptor.create(string_literal833);
-					adaptor.addChild(root_0, string_literal833_tree);
+					retval.string_literal833 = string_literal833_tree=(CommonTree)adaptor.create(string_literal833);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal833_tree));
 					}
 
 					}
@@ -28212,8 +28906,8 @@ Token string_literal838 ;
 
 					string_literal834=(Token)match(input,62,FOLLOW_62_in_overloadable_binary_operator11066); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal834_tree = (CommonTree)adaptor.create(string_literal834);
-					adaptor.addChild(root_0, string_literal834_tree);
+					retval.string_literal834 = string_literal834_tree=(CommonTree)adaptor.create(string_literal834);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal834_tree));
 					}
 
 					}
@@ -28226,8 +28920,8 @@ Token string_literal838 ;
 
 					char_literal835=(Token)match(input,GT,FOLLOW_GT_in_overloadable_binary_operator11070); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal835_tree = (CommonTree)adaptor.create(char_literal835);
-					adaptor.addChild(root_0, char_literal835_tree);
+					retval.char_literal835 = char_literal835_tree=(CommonTree)adaptor.create(char_literal835);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal835_tree));
 					}
 
 					}
@@ -28240,8 +28934,8 @@ Token string_literal838 ;
 
 					char_literal836=(Token)match(input,81,FOLLOW_81_in_overloadable_binary_operator11074); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal836_tree = (CommonTree)adaptor.create(char_literal836);
-					adaptor.addChild(root_0, char_literal836_tree);
+					retval.char_literal836 = char_literal836_tree=(CommonTree)adaptor.create(char_literal836);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal836_tree));
 					}
 
 					}
@@ -28254,8 +28948,8 @@ Token string_literal838 ;
 
 					string_literal837=(Token)match(input,88,FOLLOW_88_in_overloadable_binary_operator11078); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal837_tree = (CommonTree)adaptor.create(string_literal837);
-					adaptor.addChild(root_0, string_literal837_tree);
+					retval.string_literal837 = string_literal837_tree=(CommonTree)adaptor.create(string_literal837);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal837_tree));
 					}
 
 					}
@@ -28268,8 +28962,8 @@ Token string_literal838 ;
 
 					string_literal838=(Token)match(input,84,FOLLOW_84_in_overloadable_binary_operator11082); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal838_tree = (CommonTree)adaptor.create(string_literal838);
-					adaptor.addChild(root_0, string_literal838_tree);
+					retval.string_literal838 = string_literal838_tree=(CommonTree)adaptor.create(string_literal838);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal838_tree));
 					}
 
 					}
@@ -28298,14 +28992,17 @@ Token string_literal838 ;
 	// $ANTLR end "overloadable_binary_operator"
 
 
-	public static class conversion_operator_declaration_return extends ParserRuleReturnScope {
+	public static class conversion_operator_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-conversion_operator_declarator_return conversion_operator_declarator839 ;
-operator_body_return operator_body840 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconversion_operator_declaration_return(this);
+}
+public conversion_operator_declarator_return conversion_operator_declarator839 ;
+public operator_body_return operator_body840 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28337,13 +29034,13 @@ operator_body_return operator_body840 ;
 			conversion_operator_declarator839=retval.conversion_operator_declarator839=conversion_operator_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, conversion_operator_declarator839.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(conversion_operator_declarator839.getTree()));
 
 			pushFollow(FOLLOW_operator_body_in_conversion_operator_declaration11103);
 			operator_body840=retval.operator_body840=operator_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, operator_body840.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(operator_body840.getTree()));
 
 			}
 
@@ -28369,19 +29066,22 @@ operator_body_return operator_body840 ;
 	// $ANTLR end "conversion_operator_declaration"
 
 
-	public static class conversion_operator_declarator_return extends ParserRuleReturnScope {
+	public static class conversion_operator_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type843 ;
-type_return type845 ;
-identifier_return identifier846 ;
-Token set841 ;
-Token string_literal842 ;
-Token char_literal844 ;
-Token char_literal847 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconversion_operator_declarator_return(this);
+}
+CommonTree set841 ;
+CommonTree string_literal842 ;
+CommonTree char_literal844 ;
+CommonTree char_literal847 ;
+public type_return type843 ;
+public type_return type845 ;
+public identifier_return identifier846 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28432,38 +29132,38 @@ Token char_literal847 ;
 			}
 			string_literal842=(Token)match(input,153,FOLLOW_153_in_conversion_operator_declarator11127); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal842_tree = (CommonTree)adaptor.create(string_literal842);
-			adaptor.addChild(root_0, string_literal842_tree);
+			retval.string_literal842 = string_literal842_tree=(CommonTree)adaptor.create(string_literal842);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal842_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_conversion_operator_declarator11131);
 			type843=retval.type843=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type843.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type843.getTree()));
 
 			char_literal844=(Token)match(input,68,FOLLOW_68_in_conversion_operator_declarator11135); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal844_tree = (CommonTree)adaptor.create(char_literal844);
-			adaptor.addChild(root_0, char_literal844_tree);
+			retval.char_literal844 = char_literal844_tree=(CommonTree)adaptor.create(char_literal844);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal844_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_conversion_operator_declarator11139);
 			type845=retval.type845=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type845.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type845.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_conversion_operator_declarator11143);
 			identifier846=retval.identifier846=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier846.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier846.getTree()));
 
 			char_literal847=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_conversion_operator_declarator11147); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal847_tree = (CommonTree)adaptor.create(char_literal847);
-			adaptor.addChild(root_0, char_literal847_tree);
+			retval.char_literal847 = char_literal847_tree=(CommonTree)adaptor.create(char_literal847);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal847_tree));
 			}
 
 			}
@@ -28490,13 +29190,16 @@ Token char_literal847 ;
 	// $ANTLR end "conversion_operator_declarator"
 
 
-	public static class operator_body_return extends ParserRuleReturnScope {
+	public static class operator_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block848 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitoperator_body_return(this);
+}
+public block_return block848 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28527,7 +29230,7 @@ block_return block848 ;
 			block848=retval.block848=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block848.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block848.getTree()));
 
 			}
 
@@ -28553,14 +29256,17 @@ block_return block848 ;
 	// $ANTLR end "operator_body"
 
 
-	public static class constructor_declaration_return extends ParserRuleReturnScope {
+	public static class constructor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-constructor_declarator_return constructor_declarator849 ;
-constructor_body_return constructor_body850 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstructor_declaration_return(this);
+}
+public constructor_declarator_return constructor_declarator849 ;
+public constructor_body_return constructor_body850 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28592,13 +29298,13 @@ constructor_body_return constructor_body850 ;
 			constructor_declarator849=retval.constructor_declarator849=constructor_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_declarator849.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_declarator849.getTree()));
 
 			pushFollow(FOLLOW_constructor_body_in_constructor_declaration11183);
 			constructor_body850=retval.constructor_body850=constructor_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_body850.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_body850.getTree()));
 
 			}
 
@@ -28624,17 +29330,20 @@ constructor_body_return constructor_body850 ;
 	// $ANTLR end "constructor_declaration"
 
 
-	public static class constructor_declarator_return extends ParserRuleReturnScope {
+	public static class constructor_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier851 ;
-formal_parameter_list_return formal_parameter_list853 ;
-constructor_initializer_return constructor_initializer855 ;
-Token char_literal852 ;
-Token char_literal854 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstructor_declarator_return(this);
+}
+CommonTree char_literal852 ;
+CommonTree char_literal854 ;
+public identifier_return identifier851 ;
+public formal_parameter_list_return formal_parameter_list853 ;
+public constructor_initializer_return constructor_initializer855 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28671,12 +29380,12 @@ Token char_literal854 ;
 			identifier851=retval.identifier851=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier851.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier851.getTree()));
 
 			char_literal852=(Token)match(input,68,FOLLOW_68_in_constructor_declarator11202); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal852_tree = (CommonTree)adaptor.create(char_literal852);
-			adaptor.addChild(root_0, char_literal852_tree);
+			retval.char_literal852 = char_literal852_tree=(CommonTree)adaptor.create(char_literal852);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal852_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:823:28: ( formal_parameter_list )?
@@ -28693,7 +29402,7 @@ Token char_literal854 ;
 					formal_parameter_list853=retval.formal_parameter_list853=formal_parameter_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_parameter_list853.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(formal_parameter_list853.getTree()));
 
 					}
 					break;
@@ -28702,8 +29411,8 @@ Token char_literal854 ;
 
 			char_literal854=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_constructor_declarator11211); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal854_tree = (CommonTree)adaptor.create(char_literal854);
-			adaptor.addChild(root_0, char_literal854_tree);
+			retval.char_literal854 = char_literal854_tree=(CommonTree)adaptor.create(char_literal854);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal854_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:823:59: ( constructor_initializer )?
@@ -28720,7 +29429,7 @@ Token char_literal854 ;
 					constructor_initializer855=retval.constructor_initializer855=constructor_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constructor_initializer855.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constructor_initializer855.getTree()));
 
 					}
 					break;
@@ -28751,17 +29460,20 @@ Token char_literal854 ;
 	// $ANTLR end "constructor_declarator"
 
 
-	public static class constructor_initializer_return extends ParserRuleReturnScope {
+	public static class constructor_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-argument_list_return argument_list859 ;
-Token char_literal856 ;
-Token set857 ;
-Token char_literal858 ;
-Token char_literal860 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstructor_initializer_return(this);
+}
+CommonTree char_literal856 ;
+CommonTree set857 ;
+CommonTree char_literal858 ;
+CommonTree char_literal860 ;
+public argument_list_return argument_list859 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28798,8 +29510,8 @@ Token char_literal860 ;
 
 			char_literal856=(Token)match(input,79,FOLLOW_79_in_constructor_initializer11231); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal856_tree = (CommonTree)adaptor.create(char_literal856);
-			adaptor.addChild(root_0, char_literal856_tree);
+			retval.char_literal856 = char_literal856_tree=(CommonTree)adaptor.create(char_literal856);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal856_tree));
 			}
 
 			set857=input.LT(1);
@@ -28816,8 +29528,8 @@ Token char_literal860 ;
 			}
 			char_literal858=(Token)match(input,68,FOLLOW_68_in_constructor_initializer11245); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal858_tree = (CommonTree)adaptor.create(char_literal858);
-			adaptor.addChild(root_0, char_literal858_tree);
+			retval.char_literal858 = char_literal858_tree=(CommonTree)adaptor.create(char_literal858);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal858_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:825:41: ( argument_list )?
@@ -28834,7 +29546,7 @@ Token char_literal860 ;
 					argument_list859=retval.argument_list859=argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_list859.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(argument_list859.getTree()));
 
 					}
 					break;
@@ -28843,8 +29555,8 @@ Token char_literal860 ;
 
 			char_literal860=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_constructor_initializer11254); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal860_tree = (CommonTree)adaptor.create(char_literal860);
-			adaptor.addChild(root_0, char_literal860_tree);
+			retval.char_literal860 = char_literal860_tree=(CommonTree)adaptor.create(char_literal860);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal860_tree));
 			}
 
 			}
@@ -28871,13 +29583,16 @@ Token char_literal860 ;
 	// $ANTLR end "constructor_initializer"
 
 
-	public static class constructor_body_return extends ParserRuleReturnScope {
+	public static class constructor_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block861 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitconstructor_body_return(this);
+}
+public block_return block861 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28908,7 +29623,7 @@ block_return block861 ;
 			block861=retval.block861=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block861.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block861.getTree()));
 
 			}
 
@@ -28934,17 +29649,20 @@ block_return block861 ;
 	// $ANTLR end "constructor_body"
 
 
-	public static class destructor_declaration_return extends ParserRuleReturnScope {
+	public static class destructor_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier863 ;
-destructor_body_return destructor_body866 ;
-Token char_literal862 ;
-Token char_literal864 ;
-Token char_literal865 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdestructor_declaration_return(this);
+}
+CommonTree char_literal862 ;
+CommonTree char_literal864 ;
+CommonTree char_literal865 ;
+public identifier_return identifier863 ;
+public destructor_body_return destructor_body866 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -28980,33 +29698,33 @@ Token char_literal865 ;
 
 			char_literal862=(Token)match(input,202,FOLLOW_202_in_destructor_declaration11292); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal862_tree = (CommonTree)adaptor.create(char_literal862);
-			adaptor.addChild(root_0, char_literal862_tree);
+			retval.char_literal862 = char_literal862_tree=(CommonTree)adaptor.create(char_literal862);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal862_tree));
 			}
 
 			pushFollow(FOLLOW_identifier_in_destructor_declaration11295);
 			identifier863=retval.identifier863=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier863.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier863.getTree()));
 
 			char_literal864=(Token)match(input,68,FOLLOW_68_in_destructor_declaration11299); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal864_tree = (CommonTree)adaptor.create(char_literal864);
-			adaptor.addChild(root_0, char_literal864_tree);
+			retval.char_literal864 = char_literal864_tree=(CommonTree)adaptor.create(char_literal864);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal864_tree));
 			}
 
 			char_literal865=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_destructor_declaration11303); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal865_tree = (CommonTree)adaptor.create(char_literal865);
-			adaptor.addChild(root_0, char_literal865_tree);
+			retval.char_literal865 = char_literal865_tree=(CommonTree)adaptor.create(char_literal865);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal865_tree));
 			}
 
 			pushFollow(FOLLOW_destructor_body_in_destructor_declaration11308);
 			destructor_body866=retval.destructor_body866=destructor_body();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, destructor_body866.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(destructor_body866.getTree()));
 
 			}
 
@@ -29032,13 +29750,16 @@ Token char_literal865 ;
 	// $ANTLR end "destructor_declaration"
 
 
-	public static class destructor_body_return extends ParserRuleReturnScope {
+	public static class destructor_body_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block867 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdestructor_body_return(this);
+}
+public block_return block867 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -29069,7 +29790,7 @@ block_return block867 ;
 			block867=retval.block867=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block867.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block867.getTree()));
 
 			}
 
@@ -29095,17 +29816,20 @@ block_return block867 ;
 	// $ANTLR end "destructor_body"
 
 
-	public static class invocation_expression_return extends ParserRuleReturnScope {
+	public static class invocation_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-invocation_start_return invocation_start868 ;
-List<arguments_return> arguments869 = new ArrayList<arguments_return>();
-List<invocation_part_return> invocation_part870 = new ArrayList<invocation_part_return>();
-List<invocation_part_return> invocation_part871 = new ArrayList<invocation_part_return>();
-List<arguments_return> arguments872 = new ArrayList<arguments_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitinvocation_expression_return(this);
+}
+public invocation_start_return invocation_start868 ;
+public List<arguments_return> arguments869 = new ArrayList<arguments_return>();
+public List<invocation_part_return> invocation_part870 = new ArrayList<invocation_part_return>();
+public List<invocation_part_return> invocation_part871 = new ArrayList<invocation_part_return>();
+public List<arguments_return> arguments872 = new ArrayList<arguments_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -29140,7 +29864,7 @@ List<arguments_return> arguments872 = new ArrayList<arguments_return>();
 			invocation_start868=retval.invocation_start868=invocation_start();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_start868.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(invocation_start868.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:843:28: ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )*
 			loop237:
@@ -29169,13 +29893,13 @@ List<arguments_return> arguments872 = new ArrayList<arguments_return>();
 					arguments869=arguments();retval.arguments869.add((arguments_return) arguments869);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments869.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(arguments869.getTree()));
 
 					pushFollow(FOLLOW_invocation_part_in_invocation_expression11366);
 					invocation_part870=invocation_part();retval.invocation_part870.add((invocation_part_return) invocation_part870);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_part870.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(invocation_part870.getTree()));
 
 					}
 
@@ -29188,7 +29912,7 @@ List<arguments_return> arguments872 = new ArrayList<arguments_return>();
 					invocation_part871=invocation_part();retval.invocation_part871.add((invocation_part_return) invocation_part871);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_part871.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(invocation_part871.getTree()));
 
 					}
 					break;
@@ -29202,7 +29926,7 @@ List<arguments_return> arguments872 = new ArrayList<arguments_return>();
 			arguments872=arguments();retval.arguments872.add((arguments_return) arguments872);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments872.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(arguments872.getTree()));
 
 			}
 
@@ -29228,21 +29952,24 @@ List<arguments_return> arguments872 = new ArrayList<arguments_return>();
 	// $ANTLR end "invocation_expression"
 
 
-	public static class invocation_start_return extends ParserRuleReturnScope {
+	public static class invocation_start_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-predefined_type_return predefined_type873 ;
-identifier_return identifier874 ;
-generic_argument_list_return generic_argument_list875 ;
-identifier_return identifier878 ;
-identifier_return identifier880 ;
-typeof_expression_return typeof_expression881 ;
-Token string_literal876 ;
-Token string_literal877 ;
-Token string_literal879 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinvocation_start_return(this);
+}
+CommonTree string_literal876 ;
+CommonTree string_literal877 ;
+CommonTree string_literal879 ;
+public predefined_type_return predefined_type873 ;
+public identifier_return identifier874 ;
+public generic_argument_list_return generic_argument_list875 ;
+public identifier_return identifier878 ;
+public identifier_return identifier880 ;
+public typeof_expression_return typeof_expression881 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -29382,7 +30109,7 @@ Token string_literal879 ;
 					predefined_type873=retval.predefined_type873=predefined_type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, predefined_type873.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(predefined_type873.getTree()));
 
 					}
 					break;
@@ -29396,13 +30123,13 @@ Token string_literal879 ;
 					identifier874=retval.identifier874=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier874.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier874.getTree()));
 
 					pushFollow(FOLLOW_generic_argument_list_in_invocation_start11475);
 					generic_argument_list875=retval.generic_argument_list875=generic_argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list875.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(generic_argument_list875.getTree()));
 
 					}
 					break;
@@ -29414,8 +30141,8 @@ Token string_literal879 ;
 
 					string_literal876=(Token)match(input,180,FOLLOW_180_in_invocation_start11487); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal876_tree = (CommonTree)adaptor.create(string_literal876);
-					adaptor.addChild(root_0, string_literal876_tree);
+					retval.string_literal876 = string_literal876_tree=(CommonTree)adaptor.create(string_literal876);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal876_tree));
 					}
 
 					}
@@ -29428,8 +30155,8 @@ Token string_literal879 ;
 
 					string_literal877=(Token)match(input,102,FOLLOW_102_in_invocation_start11500); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal877_tree = (CommonTree)adaptor.create(string_literal877);
-					adaptor.addChild(root_0, string_literal877_tree);
+					retval.string_literal877 = string_literal877_tree=(CommonTree)adaptor.create(string_literal877);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal877_tree));
 					}
 
 					}
@@ -29444,7 +30171,7 @@ Token string_literal879 ;
 					identifier878=retval.identifier878=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier878.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier878.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:850:24: ( '::' identifier )?
 					int alt238=2;
@@ -29458,15 +30185,15 @@ Token string_literal879 ;
 							{
 							string_literal879=(Token)match(input,80,FOLLOW_80_in_invocation_start11517); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal879_tree = (CommonTree)adaptor.create(string_literal879);
-							adaptor.addChild(root_0, string_literal879_tree);
+							retval.string_literal879 = string_literal879_tree=(CommonTree)adaptor.create(string_literal879);
+							adaptor.addChild(root_0, adaptor.dupTree(string_literal879_tree));
 							}
 
 							pushFollow(FOLLOW_identifier_in_invocation_start11521);
 							identifier880=retval.identifier880=identifier();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier880.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier880.getTree()));
 
 							}
 							break;
@@ -29485,7 +30212,7 @@ Token string_literal879 ;
 					typeof_expression881=retval.typeof_expression881=typeof_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, typeof_expression881.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(typeof_expression881.getTree()));
 
 					}
 					break;
@@ -29513,14 +30240,17 @@ Token string_literal879 ;
 	// $ANTLR end "invocation_start"
 
 
-	public static class invocation_part_return extends ParserRuleReturnScope {
+	public static class invocation_part_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-access_identifier_return access_identifier882 ;
-brackets_return brackets883 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinvocation_part_return(this);
+}
+public access_identifier_return access_identifier882 ;
+public brackets_return brackets883 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -29570,7 +30300,7 @@ brackets_return brackets883 ;
 					access_identifier882=retval.access_identifier882=access_identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, access_identifier882.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(access_identifier882.getTree()));
 
 					}
 					break;
@@ -29584,7 +30314,7 @@ brackets_return brackets883 ;
 					brackets883=retval.brackets883=brackets();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets883.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(brackets883.getTree()));
 
 					}
 					break;
@@ -29612,15 +30342,18 @@ brackets_return brackets883 ;
 	// $ANTLR end "invocation_part"
 
 
-	public static class statement_return extends ParserRuleReturnScope {
+	public static class statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-declaration_statement_return declaration_statement884 ;
-labeled_statement_return labeled_statement885 ;
-embedded_statement_return embedded_statement886 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstatement_return(this);
+}
+public declaration_statement_return declaration_statement884 ;
+public labeled_statement_return labeled_statement885 ;
+public embedded_statement_return embedded_statement886 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -29749,7 +30482,7 @@ embedded_statement_return embedded_statement886 ;
 					declaration_statement884=retval.declaration_statement884=declaration_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, declaration_statement884.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(declaration_statement884.getTree()));
 
 					}
 					break;
@@ -29763,7 +30496,7 @@ embedded_statement_return embedded_statement886 ;
 					labeled_statement885=retval.labeled_statement885=labeled_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, labeled_statement885.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(labeled_statement885.getTree()));
 
 					}
 					break;
@@ -29777,7 +30510,7 @@ embedded_statement_return embedded_statement886 ;
 					embedded_statement886=retval.embedded_statement886=embedded_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement886.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement886.getTree()));
 
 					}
 					break;
@@ -29805,25 +30538,28 @@ embedded_statement_return embedded_statement886 ;
 	// $ANTLR end "statement"
 
 
-	public static class embedded_statement_return extends ParserRuleReturnScope {
+	public static class embedded_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block887 ;
-selection_statement_return selection_statement888 ;
-iteration_statement_return iteration_statement889 ;
-jump_statement_return jump_statement890 ;
-try_statement_return try_statement891 ;
-checked_statement_return checked_statement892 ;
-unchecked_statement_return unchecked_statement893 ;
-lock_statement_return lock_statement894 ;
-using_statement_return using_statement895 ;
-yield_statement_return yield_statement896 ;
-unsafe_statement_return unsafe_statement897 ;
-fixed_statement_return fixed_statement898 ;
-expression_statement_return expression_statement899 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitembedded_statement_return(this);
+}
+public block_return block887 ;
+public selection_statement_return selection_statement888 ;
+public iteration_statement_return iteration_statement889 ;
+public jump_statement_return jump_statement890 ;
+public try_statement_return try_statement891 ;
+public checked_statement_return checked_statement892 ;
+public unchecked_statement_return unchecked_statement893 ;
+public lock_statement_return lock_statement894 ;
+public using_statement_return using_statement895 ;
+public yield_statement_return yield_statement896 ;
+public unsafe_statement_return unsafe_statement897 ;
+public fixed_statement_return fixed_statement898 ;
+public expression_statement_return expression_statement899 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30078,7 +30814,7 @@ expression_statement_return expression_statement899 ;
 					block887=retval.block887=block();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, block887.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block887.getTree()));
 
 					}
 					break;
@@ -30092,7 +30828,7 @@ expression_statement_return expression_statement899 ;
 					selection_statement888=retval.selection_statement888=selection_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, selection_statement888.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(selection_statement888.getTree()));
 
 					}
 					break;
@@ -30106,7 +30842,7 @@ expression_statement_return expression_statement899 ;
 					iteration_statement889=retval.iteration_statement889=iteration_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, iteration_statement889.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(iteration_statement889.getTree()));
 
 					}
 					break;
@@ -30120,7 +30856,7 @@ expression_statement_return expression_statement899 ;
 					jump_statement890=retval.jump_statement890=jump_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, jump_statement890.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(jump_statement890.getTree()));
 
 					}
 					break;
@@ -30134,7 +30870,7 @@ expression_statement_return expression_statement899 ;
 					try_statement891=retval.try_statement891=try_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, try_statement891.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(try_statement891.getTree()));
 
 					}
 					break;
@@ -30148,7 +30884,7 @@ expression_statement_return expression_statement899 ;
 					checked_statement892=retval.checked_statement892=checked_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, checked_statement892.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(checked_statement892.getTree()));
 
 					}
 					break;
@@ -30162,7 +30898,7 @@ expression_statement_return expression_statement899 ;
 					unchecked_statement893=retval.unchecked_statement893=unchecked_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unchecked_statement893.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unchecked_statement893.getTree()));
 
 					}
 					break;
@@ -30176,7 +30912,7 @@ expression_statement_return expression_statement899 ;
 					lock_statement894=retval.lock_statement894=lock_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, lock_statement894.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(lock_statement894.getTree()));
 
 					}
 					break;
@@ -30190,7 +30926,7 @@ expression_statement_return expression_statement899 ;
 					using_statement895=retval.using_statement895=using_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, using_statement895.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(using_statement895.getTree()));
 
 					}
 					break;
@@ -30204,7 +30940,7 @@ expression_statement_return expression_statement899 ;
 					yield_statement896=retval.yield_statement896=yield_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, yield_statement896.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(yield_statement896.getTree()));
 
 					}
 					break;
@@ -30218,7 +30954,7 @@ expression_statement_return expression_statement899 ;
 					unsafe_statement897=retval.unsafe_statement897=unsafe_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unsafe_statement897.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unsafe_statement897.getTree()));
 
 					}
 					break;
@@ -30232,7 +30968,7 @@ expression_statement_return expression_statement899 ;
 					fixed_statement898=retval.fixed_statement898=fixed_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_statement898.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_statement898.getTree()));
 
 					}
 					break;
@@ -30246,7 +30982,7 @@ expression_statement_return expression_statement899 ;
 					expression_statement899=retval.expression_statement899=expression_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression_statement899.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression_statement899.getTree()));
 
 					}
 					break;
@@ -30274,18 +31010,21 @@ expression_statement_return expression_statement899 ;
 	// $ANTLR end "embedded_statement"
 
 
-	public static class fixed_statement_return extends ParserRuleReturnScope {
+	public static class fixed_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-pointer_type_return pointer_type902 ;
-fixed_pointer_declarators_return fixed_pointer_declarators903 ;
-embedded_statement_return embedded_statement905 ;
-Token string_literal900 ;
-Token char_literal901 ;
-Token char_literal904 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfixed_statement_return(this);
+}
+CommonTree string_literal900 ;
+CommonTree char_literal901 ;
+CommonTree char_literal904 ;
+public pointer_type_return pointer_type902 ;
+public fixed_pointer_declarators_return fixed_pointer_declarators903 ;
+public embedded_statement_return embedded_statement905 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30322,39 +31061,39 @@ Token char_literal904 ;
 
 			string_literal900=(Token)match(input,128,FOLLOW_128_in_fixed_statement11875); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal900_tree = (CommonTree)adaptor.create(string_literal900);
-			adaptor.addChild(root_0, string_literal900_tree);
+			retval.string_literal900 = string_literal900_tree=(CommonTree)adaptor.create(string_literal900);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal900_tree));
 			}
 
 			char_literal901=(Token)match(input,68,FOLLOW_68_in_fixed_statement11879); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal901_tree = (CommonTree)adaptor.create(char_literal901);
-			adaptor.addChild(root_0, char_literal901_tree);
+			retval.char_literal901 = char_literal901_tree=(CommonTree)adaptor.create(char_literal901);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal901_tree));
 			}
 
 			pushFollow(FOLLOW_pointer_type_in_fixed_statement11883);
 			pointer_type902=retval.pointer_type902=pointer_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, pointer_type902.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(pointer_type902.getTree()));
 
 			pushFollow(FOLLOW_fixed_pointer_declarators_in_fixed_statement11885);
 			fixed_pointer_declarators903=retval.fixed_pointer_declarators903=fixed_pointer_declarators();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_pointer_declarators903.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_pointer_declarators903.getTree()));
 
 			char_literal904=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_fixed_statement11889); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal904_tree = (CommonTree)adaptor.create(char_literal904);
-			adaptor.addChild(root_0, char_literal904_tree);
+			retval.char_literal904 = char_literal904_tree=(CommonTree)adaptor.create(char_literal904);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal904_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_fixed_statement11893);
 			embedded_statement905=retval.embedded_statement905=embedded_statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement905.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement905.getTree()));
 
 			}
 
@@ -30380,15 +31119,18 @@ Token char_literal904 ;
 	// $ANTLR end "fixed_statement"
 
 
-	public static class fixed_pointer_declarators_return extends ParserRuleReturnScope {
+	public static class fixed_pointer_declarators_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-fixed_pointer_declarator_return fixed_pointer_declarator906 ;
-List<fixed_pointer_declarator_return> fixed_pointer_declarator908 = new ArrayList<fixed_pointer_declarator_return>();
-Token char_literal907 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfixed_pointer_declarators_return(this);
+}
+CommonTree char_literal907 ;
+public fixed_pointer_declarator_return fixed_pointer_declarator906 ;
+public List<fixed_pointer_declarator_return> fixed_pointer_declarator908 = new ArrayList<fixed_pointer_declarator_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30422,7 +31164,7 @@ Token char_literal907 ;
 			fixed_pointer_declarator906=retval.fixed_pointer_declarator906=fixed_pointer_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_pointer_declarator906.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_pointer_declarator906.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:882:36: ( ',' fixed_pointer_declarator )*
 			loop243:
@@ -30439,15 +31181,15 @@ Token char_literal907 ;
 					{
 					char_literal907=(Token)match(input,74,FOLLOW_74_in_fixed_pointer_declarators11913); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal907_tree = (CommonTree)adaptor.create(char_literal907);
-					adaptor.addChild(root_0, char_literal907_tree);
+					retval.char_literal907 = char_literal907_tree=(CommonTree)adaptor.create(char_literal907);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal907_tree));
 					}
 
 					pushFollow(FOLLOW_fixed_pointer_declarator_in_fixed_pointer_declarators11917);
 					fixed_pointer_declarator908=fixed_pointer_declarator();retval.fixed_pointer_declarator908.add((fixed_pointer_declarator_return) fixed_pointer_declarator908);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_pointer_declarator908.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_pointer_declarator908.getTree()));
 
 					}
 					break;
@@ -30481,15 +31223,18 @@ Token char_literal907 ;
 	// $ANTLR end "fixed_pointer_declarators"
 
 
-	public static class fixed_pointer_declarator_return extends ParserRuleReturnScope {
+	public static class fixed_pointer_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier909 ;
-fixed_pointer_initializer_return fixed_pointer_initializer911 ;
-Token char_literal910 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfixed_pointer_declarator_return(this);
+}
+CommonTree char_literal910 ;
+public identifier_return identifier909 ;
+public fixed_pointer_initializer_return fixed_pointer_initializer911 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30523,19 +31268,19 @@ Token char_literal910 ;
 			identifier909=retval.identifier909=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier909.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier909.getTree()));
 
 			char_literal910=(Token)match(input,85,FOLLOW_85_in_fixed_pointer_declarator11938); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal910_tree = (CommonTree)adaptor.create(char_literal910);
-			adaptor.addChild(root_0, char_literal910_tree);
+			retval.char_literal910 = char_literal910_tree=(CommonTree)adaptor.create(char_literal910);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal910_tree));
 			}
 
 			pushFollow(FOLLOW_fixed_pointer_initializer_in_fixed_pointer_declarator11942);
 			fixed_pointer_initializer911=retval.fixed_pointer_initializer911=fixed_pointer_initializer();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_pointer_initializer911.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(fixed_pointer_initializer911.getTree()));
 
 			}
 
@@ -30561,13 +31306,16 @@ Token char_literal910 ;
 	// $ANTLR end "fixed_pointer_declarator"
 
 
-	public static class fixed_pointer_initializer_return extends ParserRuleReturnScope {
+	public static class fixed_pointer_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression912 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfixed_pointer_initializer_return(this);
+}
+public expression_return expression912 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30598,7 +31346,7 @@ expression_return expression912 ;
 			expression912=retval.expression912=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression912.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression912.getTree()));
 
 			}
 
@@ -30624,14 +31372,17 @@ expression_return expression912 ;
 	// $ANTLR end "fixed_pointer_initializer"
 
 
-	public static class unsafe_statement_return extends ParserRuleReturnScope {
+	public static class unsafe_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block914 ;
-Token string_literal913 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunsafe_statement_return(this);
+}
+CommonTree string_literal913 ;
+public block_return block914 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30662,15 +31413,15 @@ Token string_literal913 ;
 
 			string_literal913=(Token)match(input,188,FOLLOW_188_in_unsafe_statement11980); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal913_tree = (CommonTree)adaptor.create(string_literal913);
-			adaptor.addChild(root_0, string_literal913_tree);
+			retval.string_literal913 = string_literal913_tree=(CommonTree)adaptor.create(string_literal913);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal913_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_unsafe_statement11984);
 			block914=retval.block914=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block914.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block914.getTree()));
 
 			}
 
@@ -30696,15 +31447,18 @@ Token string_literal913 ;
 	// $ANTLR end "unsafe_statement"
 
 
-	public static class labeled_statement_return extends ParserRuleReturnScope {
+	public static class labeled_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier915 ;
-statement_return statement917 ;
-Token char_literal916 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlabeled_statement_return(this);
+}
+CommonTree char_literal916 ;
+public identifier_return identifier915 ;
+public statement_return statement917 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30738,19 +31492,19 @@ Token char_literal916 ;
 			identifier915=retval.identifier915=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier915.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier915.getTree()));
 
 			char_literal916=(Token)match(input,79,FOLLOW_79_in_labeled_statement12002); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal916_tree = (CommonTree)adaptor.create(char_literal916);
-			adaptor.addChild(root_0, char_literal916_tree);
+			retval.char_literal916 = char_literal916_tree=(CommonTree)adaptor.create(char_literal916);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal916_tree));
 			}
 
 			pushFollow(FOLLOW_statement_in_labeled_statement12006);
 			statement917=retval.statement917=statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, statement917.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement917.getTree()));
 
 			}
 
@@ -30776,15 +31530,18 @@ Token char_literal916 ;
 	// $ANTLR end "labeled_statement"
 
 
-	public static class declaration_statement_return extends ParserRuleReturnScope {
+	public static class declaration_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-local_variable_declaration_return local_variable_declaration918 ;
-local_constant_declaration_return local_constant_declaration919 ;
-Token char_literal920 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdeclaration_statement_return(this);
+}
+CommonTree char_literal920 ;
+public local_variable_declaration_return local_variable_declaration918 ;
+public local_constant_declaration_return local_constant_declaration919 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30839,7 +31596,7 @@ Token char_literal920 ;
 					local_variable_declaration918=retval.local_variable_declaration918=local_variable_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declaration918.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_declaration918.getTree()));
 
 					}
 					break;
@@ -30850,7 +31607,7 @@ Token char_literal920 ;
 					local_constant_declaration919=retval.local_constant_declaration919=local_constant_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_constant_declaration919.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_constant_declaration919.getTree()));
 
 					}
 					break;
@@ -30859,8 +31616,8 @@ Token char_literal920 ;
 
 			char_literal920=(Token)match(input,SEMI,FOLLOW_SEMI_in_declaration_statement12038); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal920_tree = (CommonTree)adaptor.create(char_literal920);
-			adaptor.addChild(root_0, char_literal920_tree);
+			retval.char_literal920 = char_literal920_tree=(CommonTree)adaptor.create(char_literal920);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal920_tree));
 			}
 
 			}
@@ -30887,14 +31644,17 @@ Token char_literal920 ;
 	// $ANTLR end "declaration_statement"
 
 
-	public static class local_variable_declaration_return extends ParserRuleReturnScope {
+	public static class local_variable_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-local_variable_type_return local_variable_type921 ;
-local_variable_declarators_return local_variable_declarators922 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_variable_declaration_return(this);
+}
+public local_variable_type_return local_variable_type921 ;
+public local_variable_declarators_return local_variable_declarators922 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -30926,13 +31686,13 @@ local_variable_declarators_return local_variable_declarators922 ;
 			local_variable_type921=retval.local_variable_type921=local_variable_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_type921.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_type921.getTree()));
 
 			pushFollow(FOLLOW_local_variable_declarators_in_local_variable_declaration12057);
 			local_variable_declarators922=retval.local_variable_declarators922=local_variable_declarators();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declarators922.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_declarators922.getTree()));
 
 			}
 
@@ -30958,15 +31718,18 @@ local_variable_declarators_return local_variable_declarators922 ;
 	// $ANTLR end "local_variable_declaration"
 
 
-	public static class local_variable_type_return extends ParserRuleReturnScope {
+	public static class local_variable_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type925 ;
-Token string_literal923 ;
-Token string_literal924 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_variable_type_return(this);
+}
+CommonTree string_literal923 ;
+CommonTree string_literal924 ;
+public type_return type925 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31081,8 +31844,8 @@ Token string_literal924 ;
 
 					string_literal923=(Token)match(input,190,FOLLOW_190_in_local_variable_type12078); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal923_tree = (CommonTree)adaptor.create(string_literal923);
-					adaptor.addChild(root_0, string_literal923_tree);
+					retval.string_literal923 = string_literal923_tree=(CommonTree)adaptor.create(string_literal923);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal923_tree));
 					}
 
 					}
@@ -31095,8 +31858,8 @@ Token string_literal924 ;
 
 					string_literal924=(Token)match(input,120,FOLLOW_120_in_local_variable_type12096); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal924_tree = (CommonTree)adaptor.create(string_literal924);
-					adaptor.addChild(root_0, string_literal924_tree);
+					retval.string_literal924 = string_literal924_tree=(CommonTree)adaptor.create(string_literal924);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal924_tree));
 					}
 
 					}
@@ -31111,7 +31874,7 @@ Token string_literal924 ;
 					type925=retval.type925=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type925.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type925.getTree()));
 
 					}
 					break;
@@ -31139,15 +31902,18 @@ Token string_literal924 ;
 	// $ANTLR end "local_variable_type"
 
 
-	public static class local_variable_declarators_return extends ParserRuleReturnScope {
+	public static class local_variable_declarators_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-local_variable_declarator_return local_variable_declarator926 ;
-List<local_variable_declarator_return> local_variable_declarator928 = new ArrayList<local_variable_declarator_return>();
-Token char_literal927 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_variable_declarators_return(this);
+}
+CommonTree char_literal927 ;
+public local_variable_declarator_return local_variable_declarator926 ;
+public List<local_variable_declarator_return> local_variable_declarator928 = new ArrayList<local_variable_declarator_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31181,7 +31947,7 @@ Token char_literal927 ;
 			local_variable_declarator926=retval.local_variable_declarator926=local_variable_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declarator926.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_declarator926.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:902:35: ( ',' local_variable_declarator )*
 			loop246:
@@ -31198,15 +31964,15 @@ Token char_literal927 ;
 					{
 					char_literal927=(Token)match(input,74,FOLLOW_74_in_local_variable_declarators12126); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal927_tree = (CommonTree)adaptor.create(char_literal927);
-					adaptor.addChild(root_0, char_literal927_tree);
+					retval.char_literal927 = char_literal927_tree=(CommonTree)adaptor.create(char_literal927);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal927_tree));
 					}
 
 					pushFollow(FOLLOW_local_variable_declarator_in_local_variable_declarators12128);
 					local_variable_declarator928=local_variable_declarator();retval.local_variable_declarator928.add((local_variable_declarator_return) local_variable_declarator928);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declarator928.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_declarator928.getTree()));
 
 					}
 					break;
@@ -31240,15 +32006,18 @@ Token char_literal927 ;
 	// $ANTLR end "local_variable_declarators"
 
 
-	public static class local_variable_declarator_return extends ParserRuleReturnScope {
+	public static class local_variable_declarator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier929 ;
-local_variable_initializer_return local_variable_initializer931 ;
-Token char_literal930 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_variable_declarator_return(this);
+}
+CommonTree char_literal930 ;
+public identifier_return identifier929 ;
+public local_variable_initializer_return local_variable_initializer931 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31282,7 +32051,7 @@ Token char_literal930 ;
 			identifier929=retval.identifier929=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier929.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier929.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:904:20: ( '=' local_variable_initializer )?
 			int alt247=2;
@@ -31296,15 +32065,15 @@ Token char_literal930 ;
 					{
 					char_literal930=(Token)match(input,85,FOLLOW_85_in_local_variable_declarator12148); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal930_tree = (CommonTree)adaptor.create(char_literal930);
-					adaptor.addChild(root_0, char_literal930_tree);
+					retval.char_literal930 = char_literal930_tree=(CommonTree)adaptor.create(char_literal930);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal930_tree));
 					}
 
 					pushFollow(FOLLOW_local_variable_initializer_in_local_variable_declarator12152);
 					local_variable_initializer931=retval.local_variable_initializer931=local_variable_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_initializer931.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_initializer931.getTree()));
 
 					}
 					break;
@@ -31335,15 +32104,18 @@ Token char_literal930 ;
 	// $ANTLR end "local_variable_declarator"
 
 
-	public static class local_variable_initializer_return extends ParserRuleReturnScope {
+	public static class local_variable_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression932 ;
-array_initializer_return array_initializer933 ;
-stackalloc_initializer_return stackalloc_initializer934 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_variable_initializer_return(this);
+}
+public expression_return expression932 ;
+public array_initializer_return array_initializer933 ;
+public stackalloc_initializer_return stackalloc_initializer934 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31472,7 +32244,7 @@ stackalloc_initializer_return stackalloc_initializer934 ;
 					expression932=retval.expression932=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression932.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression932.getTree()));
 
 					}
 					break;
@@ -31486,7 +32258,7 @@ stackalloc_initializer_return stackalloc_initializer934 ;
 					array_initializer933=retval.array_initializer933=array_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, array_initializer933.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(array_initializer933.getTree()));
 
 					}
 					break;
@@ -31500,7 +32272,7 @@ stackalloc_initializer_return stackalloc_initializer934 ;
 					stackalloc_initializer934=retval.stackalloc_initializer934=stackalloc_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, stackalloc_initializer934.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(stackalloc_initializer934.getTree()));
 
 					}
 					break;
@@ -31528,17 +32300,20 @@ stackalloc_initializer_return stackalloc_initializer934 ;
 	// $ANTLR end "local_variable_initializer"
 
 
-	public static class stackalloc_initializer_return extends ParserRuleReturnScope {
+	public static class stackalloc_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-unmanaged_type_return unmanaged_type936 ;
-expression_return expression938 ;
-Token string_literal935 ;
-Token char_literal937 ;
-Token char_literal939 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstackalloc_initializer_return(this);
+}
+CommonTree string_literal935 ;
+CommonTree char_literal937 ;
+CommonTree char_literal939 ;
+public unmanaged_type_return unmanaged_type936 ;
+public expression_return expression938 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31574,32 +32349,32 @@ Token char_literal939 ;
 
 			string_literal935=(Token)match(input,175,FOLLOW_175_in_stackalloc_initializer12209); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal935_tree = (CommonTree)adaptor.create(string_literal935);
-			adaptor.addChild(root_0, string_literal935_tree);
+			retval.string_literal935 = string_literal935_tree=(CommonTree)adaptor.create(string_literal935);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal935_tree));
 			}
 
 			pushFollow(FOLLOW_unmanaged_type_in_stackalloc_initializer12213);
 			unmanaged_type936=retval.unmanaged_type936=unmanaged_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, unmanaged_type936.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unmanaged_type936.getTree()));
 
 			char_literal937=(Token)match(input,91,FOLLOW_91_in_stackalloc_initializer12217); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal937_tree = (CommonTree)adaptor.create(char_literal937);
-			adaptor.addChild(root_0, char_literal937_tree);
+			retval.char_literal937 = char_literal937_tree=(CommonTree)adaptor.create(char_literal937);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal937_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_stackalloc_initializer12221);
 			expression938=retval.expression938=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression938.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression938.getTree()));
 
 			char_literal939=(Token)match(input,92,FOLLOW_92_in_stackalloc_initializer12225); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal939_tree = (CommonTree)adaptor.create(char_literal939);
-			adaptor.addChild(root_0, char_literal939_tree);
+			retval.char_literal939 = char_literal939_tree=(CommonTree)adaptor.create(char_literal939);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal939_tree));
 			}
 
 			}
@@ -31626,15 +32401,18 @@ Token char_literal939 ;
 	// $ANTLR end "stackalloc_initializer"
 
 
-	public static class local_constant_declaration_return extends ParserRuleReturnScope {
+	public static class local_constant_declaration_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-type_return type941 ;
-constant_declarators_return constant_declarators942 ;
-Token string_literal940 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_constant_declaration_return(this);
+}
+CommonTree string_literal940 ;
+public type_return type941 ;
+public constant_declarators_return constant_declarators942 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31666,21 +32444,21 @@ Token string_literal940 ;
 
 			string_literal940=(Token)match(input,112,FOLLOW_112_in_local_constant_declaration12240); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal940_tree = (CommonTree)adaptor.create(string_literal940);
-			adaptor.addChild(root_0, string_literal940_tree);
+			retval.string_literal940 = string_literal940_tree=(CommonTree)adaptor.create(string_literal940);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal940_tree));
 			}
 
 			pushFollow(FOLLOW_type_in_local_constant_declaration12244);
 			type941=retval.type941=type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type941.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type941.getTree()));
 
 			pushFollow(FOLLOW_constant_declarators_in_local_constant_declaration12248);
 			constant_declarators942=retval.constant_declarators942=constant_declarators();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declarators942.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_declarators942.getTree()));
 
 			}
 
@@ -31706,14 +32484,17 @@ Token string_literal940 ;
 	// $ANTLR end "local_constant_declaration"
 
 
-	public static class expression_statement_return extends ParserRuleReturnScope {
+	public static class expression_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression943 ;
-Token char_literal944 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexpression_statement_return(this);
+}
+CommonTree char_literal944 ;
+public expression_return expression943 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31746,12 +32527,12 @@ Token char_literal944 ;
 			expression943=retval.expression943=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression943.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression943.getTree()));
 
 			char_literal944=(Token)match(input,SEMI,FOLLOW_SEMI_in_expression_statement12267); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal944_tree = (CommonTree)adaptor.create(char_literal944);
-			adaptor.addChild(root_0, char_literal944_tree);
+			retval.char_literal944 = char_literal944_tree=(CommonTree)adaptor.create(char_literal944);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal944_tree));
 			}
 
 			}
@@ -31778,13 +32559,16 @@ Token char_literal944 ;
 	// $ANTLR end "expression_statement"
 
 
-	public static class statement_expression_return extends ParserRuleReturnScope {
+	public static class statement_expression_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression945 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstatement_expression_return(this);
+}
+public expression_return expression945 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31815,7 +32599,7 @@ expression_return expression945 ;
 			expression945=retval.expression945=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression945.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression945.getTree()));
 
 			}
 
@@ -31841,14 +32625,17 @@ expression_return expression945 ;
 	// $ANTLR end "statement_expression"
 
 
-	public static class selection_statement_return extends ParserRuleReturnScope {
+	public static class selection_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-if_statement_return if_statement946 ;
-switch_statement_return switch_statement947 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitselection_statement_return(this);
+}
+public if_statement_return if_statement946 ;
+public switch_statement_return switch_statement947 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31898,7 +32685,7 @@ switch_statement_return switch_statement947 ;
 					if_statement946=retval.if_statement946=if_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, if_statement946.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(if_statement946.getTree()));
 
 					}
 					break;
@@ -31912,7 +32699,7 @@ switch_statement_return switch_statement947 ;
 					switch_statement947=retval.switch_statement947=switch_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, switch_statement947.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(switch_statement947.getTree()));
 
 					}
 					break;
@@ -31940,18 +32727,21 @@ switch_statement_return switch_statement947 ;
 	// $ANTLR end "selection_statement"
 
 
-	public static class if_statement_return extends ParserRuleReturnScope {
+	public static class if_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-boolean_expression_return boolean_expression950 ;
-embedded_statement_return embedded_statement952 ;
-else_statement_return else_statement953 ;
-Token string_literal948 ;
-Token char_literal949 ;
-Token char_literal951 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitif_statement_return(this);
+}
+CommonTree string_literal948 ;
+CommonTree char_literal949 ;
+CommonTree char_literal951 ;
+public boolean_expression_return boolean_expression950 ;
+public embedded_statement_return embedded_statement952 ;
+public else_statement_return else_statement953 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -31988,33 +32778,33 @@ Token char_literal951 ;
 
 			string_literal948=(Token)match(input,IF,FOLLOW_IF_in_if_statement12343); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal948_tree = (CommonTree)adaptor.create(string_literal948);
-			adaptor.addChild(root_0, string_literal948_tree);
+			retval.string_literal948 = string_literal948_tree=(CommonTree)adaptor.create(string_literal948);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal948_tree));
 			}
 
 			char_literal949=(Token)match(input,68,FOLLOW_68_in_if_statement12347); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal949_tree = (CommonTree)adaptor.create(char_literal949);
-			adaptor.addChild(root_0, char_literal949_tree);
+			retval.char_literal949 = char_literal949_tree=(CommonTree)adaptor.create(char_literal949);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal949_tree));
 			}
 
 			pushFollow(FOLLOW_boolean_expression_in_if_statement12351);
 			boolean_expression950=retval.boolean_expression950=boolean_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, boolean_expression950.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(boolean_expression950.getTree()));
 
 			char_literal951=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_if_statement12355); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal951_tree = (CommonTree)adaptor.create(char_literal951);
-			adaptor.addChild(root_0, char_literal951_tree);
+			retval.char_literal951 = char_literal951_tree=(CommonTree)adaptor.create(char_literal951);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal951_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_if_statement12359);
 			embedded_statement952=retval.embedded_statement952=embedded_statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement952.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement952.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:925:68: ( ( 'else' )=> else_statement )?
 			int alt250=2;
@@ -32033,7 +32823,7 @@ Token char_literal951 ;
 					else_statement953=retval.else_statement953=else_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, else_statement953.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(else_statement953.getTree()));
 
 					}
 					break;
@@ -32064,14 +32854,17 @@ Token char_literal951 ;
 	// $ANTLR end "if_statement"
 
 
-	public static class else_statement_return extends ParserRuleReturnScope {
+	public static class else_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-embedded_statement_return embedded_statement955 ;
-Token string_literal954 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitelse_statement_return(this);
+}
+CommonTree string_literal954 ;
+public embedded_statement_return embedded_statement955 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32102,15 +32895,15 @@ Token string_literal954 ;
 
 			string_literal954=(Token)match(input,121,FOLLOW_121_in_else_statement12393); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal954_tree = (CommonTree)adaptor.create(string_literal954);
-			adaptor.addChild(root_0, string_literal954_tree);
+			retval.string_literal954 = string_literal954_tree=(CommonTree)adaptor.create(string_literal954);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal954_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_else_statement12397);
 			embedded_statement955=retval.embedded_statement955=embedded_statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement955.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement955.getTree()));
 
 			}
 
@@ -32136,17 +32929,20 @@ Token string_literal954 ;
 	// $ANTLR end "else_statement"
 
 
-	public static class switch_statement_return extends ParserRuleReturnScope {
+	public static class switch_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression958 ;
-switch_block_return switch_block960 ;
-Token string_literal956 ;
-Token char_literal957 ;
-Token char_literal959 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitswitch_statement_return(this);
+}
+CommonTree string_literal956 ;
+CommonTree char_literal957 ;
+CommonTree char_literal959 ;
+public expression_return expression958 ;
+public switch_block_return switch_block960 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32182,33 +32978,33 @@ Token char_literal959 ;
 
 			string_literal956=(Token)match(input,179,FOLLOW_179_in_switch_statement12419); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal956_tree = (CommonTree)adaptor.create(string_literal956);
-			adaptor.addChild(root_0, string_literal956_tree);
+			retval.string_literal956 = string_literal956_tree=(CommonTree)adaptor.create(string_literal956);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal956_tree));
 			}
 
 			char_literal957=(Token)match(input,68,FOLLOW_68_in_switch_statement12423); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal957_tree = (CommonTree)adaptor.create(char_literal957);
-			adaptor.addChild(root_0, char_literal957_tree);
+			retval.char_literal957 = char_literal957_tree=(CommonTree)adaptor.create(char_literal957);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal957_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_switch_statement12427);
 			expression958=retval.expression958=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression958.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression958.getTree()));
 
 			char_literal959=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_switch_statement12431); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal959_tree = (CommonTree)adaptor.create(char_literal959);
-			adaptor.addChild(root_0, char_literal959_tree);
+			retval.char_literal959 = char_literal959_tree=(CommonTree)adaptor.create(char_literal959);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal959_tree));
 			}
 
 			pushFollow(FOLLOW_switch_block_in_switch_statement12435);
 			switch_block960=retval.switch_block960=switch_block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, switch_block960.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(switch_block960.getTree()));
 
 			}
 
@@ -32234,15 +33030,18 @@ Token char_literal959 ;
 	// $ANTLR end "switch_statement"
 
 
-	public static class switch_block_return extends ParserRuleReturnScope {
+	public static class switch_block_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-switch_sections_return switch_sections962 ;
-Token char_literal961 ;
-Token char_literal963 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitswitch_block_return(this);
+}
+CommonTree char_literal961 ;
+CommonTree char_literal963 ;
+public switch_sections_return switch_sections962 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32275,8 +33074,8 @@ Token char_literal963 ;
 
 			char_literal961=(Token)match(input,197,FOLLOW_197_in_switch_block12450); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal961_tree = (CommonTree)adaptor.create(char_literal961);
-			adaptor.addChild(root_0, char_literal961_tree);
+			retval.char_literal961 = char_literal961_tree=(CommonTree)adaptor.create(char_literal961);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal961_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:932:15: ( switch_sections )?
@@ -32293,7 +33092,7 @@ Token char_literal963 ;
 					switch_sections962=retval.switch_sections962=switch_sections();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, switch_sections962.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(switch_sections962.getTree()));
 
 					}
 					break;
@@ -32302,8 +33101,8 @@ Token char_literal963 ;
 
 			char_literal963=(Token)match(input,201,FOLLOW_201_in_switch_block12459); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal963_tree = (CommonTree)adaptor.create(char_literal963);
-			adaptor.addChild(root_0, char_literal963_tree);
+			retval.char_literal963 = char_literal963_tree=(CommonTree)adaptor.create(char_literal963);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal963_tree));
 			}
 
 			}
@@ -32330,13 +33129,16 @@ Token char_literal963 ;
 	// $ANTLR end "switch_block"
 
 
-	public static class switch_sections_return extends ParserRuleReturnScope {
+	public static class switch_sections_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<switch_section_return> switch_section964 = new ArrayList<switch_section_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitswitch_sections_return(this);
+}
+public List<switch_section_return> switch_section964 = new ArrayList<switch_section_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32381,7 +33183,7 @@ List<switch_section_return> switch_section964 = new ArrayList<switch_section_ret
 					switch_section964=switch_section();retval.switch_section964.add((switch_section_return) switch_section964);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, switch_section964.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(switch_section964.getTree()));
 
 					}
 					break;
@@ -32419,14 +33221,17 @@ List<switch_section_return> switch_section964 = new ArrayList<switch_section_ret
 	// $ANTLR end "switch_sections"
 
 
-	public static class switch_section_return extends ParserRuleReturnScope {
+	public static class switch_section_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-switch_labels_return switch_labels965 ;
-statement_list_return statement_list966 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitswitch_section_return(this);
+}
+public switch_labels_return switch_labels965 ;
+public statement_list_return statement_list966 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32458,13 +33263,13 @@ statement_list_return statement_list966 ;
 			switch_labels965=retval.switch_labels965=switch_labels();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, switch_labels965.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(switch_labels965.getTree()));
 
 			pushFollow(FOLLOW_statement_list_in_switch_section12494);
 			statement_list966=retval.statement_list966=statement_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, statement_list966.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement_list966.getTree()));
 
 			}
 
@@ -32490,13 +33295,16 @@ statement_list_return statement_list966 ;
 	// $ANTLR end "switch_section"
 
 
-	public static class switch_labels_return extends ParserRuleReturnScope {
+	public static class switch_labels_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<switch_label_return> switch_label967 = new ArrayList<switch_label_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitswitch_labels_return(this);
+}
+public List<switch_label_return> switch_label967 = new ArrayList<switch_label_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32548,7 +33356,7 @@ List<switch_label_return> switch_label967 = new ArrayList<switch_label_return>()
 					switch_label967=switch_label();retval.switch_label967.add((switch_label_return) switch_label967);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, switch_label967.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(switch_label967.getTree()));
 
 					}
 					break;
@@ -32586,17 +33394,20 @@ List<switch_label_return> switch_label967 = new ArrayList<switch_label_return>()
 	// $ANTLR end "switch_labels"
 
 
-	public static class switch_label_return extends ParserRuleReturnScope {
+	public static class switch_label_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-constant_expression_return constant_expression969 ;
-Token string_literal968 ;
-Token char_literal970 ;
-Token string_literal971 ;
-Token char_literal972 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitswitch_label_return(this);
+}
+CommonTree string_literal968 ;
+CommonTree char_literal970 ;
+CommonTree string_literal971 ;
+CommonTree char_literal972 ;
+public constant_expression_return constant_expression969 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32654,20 +33465,20 @@ Token char_literal972 ;
 					{
 					string_literal968=(Token)match(input,107,FOLLOW_107_in_switch_label12526); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal968_tree = (CommonTree)adaptor.create(string_literal968);
-					adaptor.addChild(root_0, string_literal968_tree);
+					retval.string_literal968 = string_literal968_tree=(CommonTree)adaptor.create(string_literal968);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal968_tree));
 					}
 
 					pushFollow(FOLLOW_constant_expression_in_switch_label12530);
 					constant_expression969=retval.constant_expression969=constant_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_expression969.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_expression969.getTree()));
 
 					char_literal970=(Token)match(input,79,FOLLOW_79_in_switch_label12534); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal970_tree = (CommonTree)adaptor.create(char_literal970);
-					adaptor.addChild(root_0, char_literal970_tree);
+					retval.char_literal970 = char_literal970_tree=(CommonTree)adaptor.create(char_literal970);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal970_tree));
 					}
 
 					}
@@ -32685,14 +33496,14 @@ Token char_literal972 ;
 					{
 					string_literal971=(Token)match(input,115,FOLLOW_115_in_switch_label12548); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal971_tree = (CommonTree)adaptor.create(string_literal971);
-					adaptor.addChild(root_0, string_literal971_tree);
+					retval.string_literal971 = string_literal971_tree=(CommonTree)adaptor.create(string_literal971);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal971_tree));
 					}
 
 					char_literal972=(Token)match(input,79,FOLLOW_79_in_switch_label12552); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal972_tree = (CommonTree)adaptor.create(char_literal972);
-					adaptor.addChild(root_0, char_literal972_tree);
+					retval.char_literal972 = char_literal972_tree=(CommonTree)adaptor.create(char_literal972);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal972_tree));
 					}
 
 					}
@@ -32723,16 +33534,19 @@ Token char_literal972 ;
 	// $ANTLR end "switch_label"
 
 
-	public static class iteration_statement_return extends ParserRuleReturnScope {
+	public static class iteration_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<while_statement_return> while_statement973 = new ArrayList<while_statement_return>();
-List<do_statement_return> do_statement974 = new ArrayList<do_statement_return>();
-List<for_statement_return> for_statement975 = new ArrayList<for_statement_return>();
-List<foreach_statement_return> foreach_statement976 = new ArrayList<foreach_statement_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visititeration_statement_return(this);
+}
+public List<while_statement_return> while_statement973 = new ArrayList<while_statement_return>();
+public List<do_statement_return> do_statement974 = new ArrayList<do_statement_return>();
+public List<for_statement_return> for_statement975 = new ArrayList<for_statement_return>();
+public List<foreach_statement_return> foreach_statement976 = new ArrayList<foreach_statement_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32796,7 +33610,7 @@ List<foreach_statement_return> foreach_statement976 = new ArrayList<foreach_stat
 					while_statement973=while_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, while_statement973.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(while_statement973.getTree()));
 
 					}
 					break;
@@ -32810,7 +33624,7 @@ List<foreach_statement_return> foreach_statement976 = new ArrayList<foreach_stat
 					do_statement974=do_statement();retval.do_statement974.add((do_statement_return) do_statement974);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, do_statement974.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(do_statement974.getTree()));
 
 					}
 					break;
@@ -32824,7 +33638,7 @@ List<foreach_statement_return> foreach_statement976 = new ArrayList<foreach_stat
 					for_statement975=for_statement();retval.for_statement975.add((for_statement_return) for_statement975);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, for_statement975.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(for_statement975.getTree()));
 
 					}
 					break;
@@ -32838,7 +33652,7 @@ List<foreach_statement_return> foreach_statement976 = new ArrayList<foreach_stat
 					foreach_statement976=foreach_statement();retval.foreach_statement976.add((foreach_statement_return) foreach_statement976);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, foreach_statement976.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(foreach_statement976.getTree()));
 
 					}
 					break;
@@ -32866,17 +33680,20 @@ List<foreach_statement_return> foreach_statement976 = new ArrayList<foreach_stat
 	// $ANTLR end "iteration_statement"
 
 
-	public static class while_statement_return extends ParserRuleReturnScope {
+	public static class while_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<boolean_expression_return> boolean_expression979 = new ArrayList<boolean_expression_return>();
-List<embedded_statement_return> embedded_statement981 = new ArrayList<embedded_statement_return>();
-Token string_literal977 ;
-Token char_literal978 ;
-Token char_literal980 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitwhile_statement_return(this);
+}
+CommonTree string_literal977 ;
+CommonTree char_literal978 ;
+CommonTree char_literal980 ;
+public List<boolean_expression_return> boolean_expression979 = new ArrayList<boolean_expression_return>();
+public List<embedded_statement_return> embedded_statement981 = new ArrayList<embedded_statement_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -32912,33 +33729,33 @@ Token char_literal980 ;
 
 			string_literal977=(Token)match(input,195,FOLLOW_195_in_while_statement12619); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal977_tree = (CommonTree)adaptor.create(string_literal977);
-			adaptor.addChild(root_0, string_literal977_tree);
+			retval.string_literal977 = string_literal977_tree=(CommonTree)adaptor.create(string_literal977);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal977_tree));
 			}
 
 			char_literal978=(Token)match(input,68,FOLLOW_68_in_while_statement12623); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal978_tree = (CommonTree)adaptor.create(char_literal978);
-			adaptor.addChild(root_0, char_literal978_tree);
+			retval.char_literal978 = char_literal978_tree=(CommonTree)adaptor.create(char_literal978);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal978_tree));
 			}
 
 			pushFollow(FOLLOW_boolean_expression_in_while_statement12627);
 			boolean_expression979=boolean_expression();retval.boolean_expression979.add((boolean_expression_return) boolean_expression979);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, boolean_expression979.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(boolean_expression979.getTree()));
 
 			char_literal980=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_while_statement12631); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal980_tree = (CommonTree)adaptor.create(char_literal980);
-			adaptor.addChild(root_0, char_literal980_tree);
+			retval.char_literal980 = char_literal980_tree=(CommonTree)adaptor.create(char_literal980);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal980_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_while_statement12635);
 			embedded_statement981=embedded_statement();retval.embedded_statement981.add((embedded_statement_return) embedded_statement981);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement981.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement981.getTree()));
 
 			}
 
@@ -32964,19 +33781,22 @@ Token char_literal980 ;
 	// $ANTLR end "while_statement"
 
 
-	public static class do_statement_return extends ParserRuleReturnScope {
+	public static class do_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<embedded_statement_return> embedded_statement983 = new ArrayList<embedded_statement_return>();
-List<boolean_expression_return> boolean_expression986 = new ArrayList<boolean_expression_return>();
-Token string_literal982 ;
-Token string_literal984 ;
-Token char_literal985 ;
-Token char_literal987 ;
-Token char_literal988 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitdo_statement_return(this);
+}
+CommonTree string_literal982 ;
+CommonTree string_literal984 ;
+CommonTree char_literal985 ;
+CommonTree char_literal987 ;
+CommonTree char_literal988 ;
+public List<embedded_statement_return> embedded_statement983 = new ArrayList<embedded_statement_return>();
+public List<boolean_expression_return> boolean_expression986 = new ArrayList<boolean_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33016,44 +33836,44 @@ Token char_literal988 ;
 
 			string_literal982=(Token)match(input,118,FOLLOW_118_in_do_statement12650); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal982_tree = (CommonTree)adaptor.create(string_literal982);
-			adaptor.addChild(root_0, string_literal982_tree);
+			retval.string_literal982 = string_literal982_tree=(CommonTree)adaptor.create(string_literal982);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal982_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_do_statement12654);
 			embedded_statement983=embedded_statement();retval.embedded_statement983.add((embedded_statement_return) embedded_statement983);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement983.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement983.getTree()));
 
 			string_literal984=(Token)match(input,195,FOLLOW_195_in_do_statement12658); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal984_tree = (CommonTree)adaptor.create(string_literal984);
-			adaptor.addChild(root_0, string_literal984_tree);
+			retval.string_literal984 = string_literal984_tree=(CommonTree)adaptor.create(string_literal984);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal984_tree));
 			}
 
 			char_literal985=(Token)match(input,68,FOLLOW_68_in_do_statement12662); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal985_tree = (CommonTree)adaptor.create(char_literal985);
-			adaptor.addChild(root_0, char_literal985_tree);
+			retval.char_literal985 = char_literal985_tree=(CommonTree)adaptor.create(char_literal985);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal985_tree));
 			}
 
 			pushFollow(FOLLOW_boolean_expression_in_do_statement12666);
 			boolean_expression986=boolean_expression();retval.boolean_expression986.add((boolean_expression_return) boolean_expression986);
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, boolean_expression986.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(boolean_expression986.getTree()));
 
 			char_literal987=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_do_statement12670); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal987_tree = (CommonTree)adaptor.create(char_literal987);
-			adaptor.addChild(root_0, char_literal987_tree);
+			retval.char_literal987 = char_literal987_tree=(CommonTree)adaptor.create(char_literal987);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal987_tree));
 			}
 
 			char_literal988=(Token)match(input,SEMI,FOLLOW_SEMI_in_do_statement12674); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal988_tree = (CommonTree)adaptor.create(char_literal988);
-			adaptor.addChild(root_0, char_literal988_tree);
+			retval.char_literal988 = char_literal988_tree=(CommonTree)adaptor.create(char_literal988);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal988_tree));
 			}
 
 			}
@@ -33080,21 +33900,24 @@ Token char_literal988 ;
 	// $ANTLR end "do_statement"
 
 
-	public static class for_statement_return extends ParserRuleReturnScope {
+	public static class for_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-for_initializer_return for_initializer991 ;
-for_condition_return for_condition993 ;
-for_iterator_return for_iterator995 ;
-embedded_statement_return embedded_statement997 ;
-Token string_literal989 ;
-Token char_literal990 ;
-Token char_literal992 ;
-Token char_literal994 ;
-Token char_literal996 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfor_statement_return(this);
+}
+CommonTree string_literal989 ;
+CommonTree char_literal990 ;
+CommonTree char_literal992 ;
+CommonTree char_literal994 ;
+CommonTree char_literal996 ;
+public for_initializer_return for_initializer991 ;
+public for_condition_return for_condition993 ;
+public for_iterator_return for_iterator995 ;
+public embedded_statement_return embedded_statement997 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33159,7 +33982,7 @@ Token char_literal996 ;
 					for_initializer991=retval.for_initializer991=for_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) stream_for_initializer.add(for_initializer991.getTree());
+					if ( state.backtracking==0 ) stream_for_initializer.add(adaptor.dupTree(for_initializer991.getTree()));
 					}
 					break;
 
@@ -33182,7 +34005,7 @@ Token char_literal996 ;
 					for_condition993=retval.for_condition993=for_condition();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) stream_for_condition.add(for_condition993.getTree());
+					if ( state.backtracking==0 ) stream_for_condition.add(adaptor.dupTree(for_condition993.getTree()));
 					}
 					break;
 
@@ -33205,7 +34028,7 @@ Token char_literal996 ;
 					for_iterator995=retval.for_iterator995=for_iterator();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) stream_for_iterator.add(for_iterator995.getTree());
+					if ( state.backtracking==0 ) stream_for_iterator.add(adaptor.dupTree(for_iterator995.getTree()));
 					}
 					break;
 
@@ -33218,7 +34041,7 @@ Token char_literal996 ;
 			embedded_statement997=retval.embedded_statement997=embedded_statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) stream_embedded_statement.add(embedded_statement997.getTree());
+			if ( state.backtracking==0 ) stream_embedded_statement.add(adaptor.dupTree(embedded_statement997.getTree()));
 			// AST REWRITE
 			// elements: 130, for_condition, embedded_statement, for_iterator, for_initializer
 			// token labels: 
@@ -33274,14 +34097,17 @@ Token char_literal996 ;
 	// $ANTLR end "for_statement"
 
 
-	public static class for_initializer_return extends ParserRuleReturnScope {
+	public static class for_initializer_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-local_variable_declaration_return local_variable_declaration998 ;
-statement_expression_list_return statement_expression_list999 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfor_initializer_return(this);
+}
+public local_variable_declaration_return local_variable_declaration998 ;
+public statement_expression_list_return statement_expression_list999 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33381,7 +34207,7 @@ statement_expression_list_return statement_expression_list999 ;
 					local_variable_declaration998=retval.local_variable_declaration998=local_variable_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declaration998.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_declaration998.getTree()));
 
 					}
 					break;
@@ -33395,7 +34221,7 @@ statement_expression_list_return statement_expression_list999 ;
 					statement_expression_list999=retval.statement_expression_list999=statement_expression_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, statement_expression_list999.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement_expression_list999.getTree()));
 
 					}
 					break;
@@ -33423,13 +34249,16 @@ statement_expression_list_return statement_expression_list999 ;
 	// $ANTLR end "for_initializer"
 
 
-	public static class for_condition_return extends ParserRuleReturnScope {
+	public static class for_condition_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-boolean_expression_return boolean_expression1000 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfor_condition_return(this);
+}
+public boolean_expression_return boolean_expression1000 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33460,7 +34289,7 @@ boolean_expression_return boolean_expression1000 ;
 			boolean_expression1000=retval.boolean_expression1000=boolean_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, boolean_expression1000.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(boolean_expression1000.getTree()));
 
 			}
 
@@ -33486,13 +34315,16 @@ boolean_expression_return boolean_expression1000 ;
 	// $ANTLR end "for_condition"
 
 
-	public static class for_iterator_return extends ParserRuleReturnScope {
+	public static class for_iterator_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-statement_expression_list_return statement_expression_list1001 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfor_iterator_return(this);
+}
+public statement_expression_list_return statement_expression_list1001 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33523,7 +34355,7 @@ statement_expression_list_return statement_expression_list1001 ;
 			statement_expression_list1001=retval.statement_expression_list1001=statement_expression_list();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, statement_expression_list1001.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement_expression_list1001.getTree()));
 
 			}
 
@@ -33549,15 +34381,18 @@ statement_expression_list_return statement_expression_list1001 ;
 	// $ANTLR end "for_iterator"
 
 
-	public static class statement_expression_list_return extends ParserRuleReturnScope {
+	public static class statement_expression_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-statement_expression_return statement_expression1002 ;
-List<statement_expression_return> statement_expression1004 = new ArrayList<statement_expression_return>();
-Token char_literal1003 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitstatement_expression_list_return(this);
+}
+CommonTree char_literal1003 ;
+public statement_expression_return statement_expression1002 ;
+public List<statement_expression_return> statement_expression1004 = new ArrayList<statement_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33591,7 +34426,7 @@ Token char_literal1003 ;
 			statement_expression1002=retval.statement_expression1002=statement_expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, statement_expression1002.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement_expression1002.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:963:30: ( ',' statement_expression )*
 			loop260:
@@ -33608,15 +34443,15 @@ Token char_literal1003 ;
 					{
 					char_literal1003=(Token)match(input,74,FOLLOW_74_in_statement_expression_list12837); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1003_tree = (CommonTree)adaptor.create(char_literal1003);
-					adaptor.addChild(root_0, char_literal1003_tree);
+					retval.char_literal1003 = char_literal1003_tree=(CommonTree)adaptor.create(char_literal1003);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1003_tree));
 					}
 
 					pushFollow(FOLLOW_statement_expression_in_statement_expression_list12839);
 					statement_expression1004=statement_expression();retval.statement_expression1004.add((statement_expression_return) statement_expression1004);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, statement_expression1004.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(statement_expression1004.getTree()));
 
 					}
 					break;
@@ -33650,20 +34485,23 @@ Token char_literal1003 ;
 	// $ANTLR end "statement_expression_list"
 
 
-	public static class foreach_statement_return extends ParserRuleReturnScope {
+	public static class foreach_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-local_variable_type_return local_variable_type1007 ;
-identifier_return identifier1008 ;
-expression_return expression1010 ;
-embedded_statement_return embedded_statement1012 ;
-Token string_literal1005 ;
-Token char_literal1006 ;
-Token string_literal1009 ;
-Token char_literal1011 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitforeach_statement_return(this);
+}
+CommonTree string_literal1005 ;
+CommonTree char_literal1006 ;
+CommonTree string_literal1009 ;
+CommonTree char_literal1011 ;
+public local_variable_type_return local_variable_type1007 ;
+public identifier_return identifier1008 ;
+public expression_return expression1010 ;
+public embedded_statement_return embedded_statement1012 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33703,51 +34541,51 @@ Token char_literal1011 ;
 
 			string_literal1005=(Token)match(input,131,FOLLOW_131_in_foreach_statement12856); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1005_tree = (CommonTree)adaptor.create(string_literal1005);
-			adaptor.addChild(root_0, string_literal1005_tree);
+			retval.string_literal1005 = string_literal1005_tree=(CommonTree)adaptor.create(string_literal1005);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1005_tree));
 			}
 
 			char_literal1006=(Token)match(input,68,FOLLOW_68_in_foreach_statement12860); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1006_tree = (CommonTree)adaptor.create(char_literal1006);
-			adaptor.addChild(root_0, char_literal1006_tree);
+			retval.char_literal1006 = char_literal1006_tree=(CommonTree)adaptor.create(char_literal1006);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1006_tree));
 			}
 
 			pushFollow(FOLLOW_local_variable_type_in_foreach_statement12864);
 			local_variable_type1007=retval.local_variable_type1007=local_variable_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_type1007.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_type1007.getTree()));
 
 			pushFollow(FOLLOW_identifier_in_foreach_statement12868);
 			identifier1008=retval.identifier1008=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier1008.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier1008.getTree()));
 
 			string_literal1009=(Token)match(input,137,FOLLOW_137_in_foreach_statement12872); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1009_tree = (CommonTree)adaptor.create(string_literal1009);
-			adaptor.addChild(root_0, string_literal1009_tree);
+			retval.string_literal1009 = string_literal1009_tree=(CommonTree)adaptor.create(string_literal1009);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1009_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_foreach_statement12876);
 			expression1010=retval.expression1010=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression1010.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression1010.getTree()));
 
 			char_literal1011=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_foreach_statement12880); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1011_tree = (CommonTree)adaptor.create(char_literal1011);
-			adaptor.addChild(root_0, char_literal1011_tree);
+			retval.char_literal1011 = char_literal1011_tree=(CommonTree)adaptor.create(char_literal1011);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1011_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_foreach_statement12884);
 			embedded_statement1012=retval.embedded_statement1012=embedded_statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement1012.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement1012.getTree()));
 
 			}
 
@@ -33773,17 +34611,20 @@ Token char_literal1011 ;
 	// $ANTLR end "foreach_statement"
 
 
-	public static class jump_statement_return extends ParserRuleReturnScope {
+	public static class jump_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-break_statement_return break_statement1013 ;
-continue_statement_return continue_statement1014 ;
-goto_statement_return goto_statement1015 ;
-return_statement_return return_statement1016 ;
-throw_statement_return throw_statement1017 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitjump_statement_return(this);
+}
+public break_statement_return break_statement1013 ;
+public continue_statement_return continue_statement1014 ;
+public goto_statement_return goto_statement1015 ;
+public return_statement_return return_statement1016 ;
+public throw_statement_return throw_statement1017 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33853,7 +34694,7 @@ throw_statement_return throw_statement1017 ;
 					break_statement1013=retval.break_statement1013=break_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, break_statement1013.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(break_statement1013.getTree()));
 
 					}
 					break;
@@ -33867,7 +34708,7 @@ throw_statement_return throw_statement1017 ;
 					continue_statement1014=retval.continue_statement1014=continue_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, continue_statement1014.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(continue_statement1014.getTree()));
 
 					}
 					break;
@@ -33881,7 +34722,7 @@ throw_statement_return throw_statement1017 ;
 					goto_statement1015=retval.goto_statement1015=goto_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, goto_statement1015.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(goto_statement1015.getTree()));
 
 					}
 					break;
@@ -33895,7 +34736,7 @@ throw_statement_return throw_statement1017 ;
 					return_statement1016=retval.return_statement1016=return_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, return_statement1016.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(return_statement1016.getTree()));
 
 					}
 					break;
@@ -33909,7 +34750,7 @@ throw_statement_return throw_statement1017 ;
 					throw_statement1017=retval.throw_statement1017=throw_statement();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, throw_statement1017.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(throw_statement1017.getTree()));
 
 					}
 					break;
@@ -33937,14 +34778,17 @@ throw_statement_return throw_statement1017 ;
 	// $ANTLR end "jump_statement"
 
 
-	public static class break_statement_return extends ParserRuleReturnScope {
+	public static class break_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token string_literal1018 ;
-Token char_literal1019 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitbreak_statement_return(this);
+}
+CommonTree string_literal1018 ;
+CommonTree char_literal1019 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -33976,14 +34820,14 @@ Token char_literal1019 ;
 
 			string_literal1018=(Token)match(input,104,FOLLOW_104_in_break_statement12962); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1018_tree = (CommonTree)adaptor.create(string_literal1018);
-			adaptor.addChild(root_0, string_literal1018_tree);
+			retval.string_literal1018 = string_literal1018_tree=(CommonTree)adaptor.create(string_literal1018);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1018_tree));
 			}
 
 			char_literal1019=(Token)match(input,SEMI,FOLLOW_SEMI_in_break_statement12966); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1019_tree = (CommonTree)adaptor.create(char_literal1019);
-			adaptor.addChild(root_0, char_literal1019_tree);
+			retval.char_literal1019 = char_literal1019_tree=(CommonTree)adaptor.create(char_literal1019);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1019_tree));
 			}
 
 			}
@@ -34010,14 +34854,17 @@ Token char_literal1019 ;
 	// $ANTLR end "break_statement"
 
 
-	public static class continue_statement_return extends ParserRuleReturnScope {
+	public static class continue_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token string_literal1020 ;
-Token char_literal1021 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitcontinue_statement_return(this);
+}
+CommonTree string_literal1020 ;
+CommonTree char_literal1021 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34049,14 +34896,14 @@ Token char_literal1021 ;
 
 			string_literal1020=(Token)match(input,113,FOLLOW_113_in_continue_statement12981); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1020_tree = (CommonTree)adaptor.create(string_literal1020);
-			adaptor.addChild(root_0, string_literal1020_tree);
+			retval.string_literal1020 = string_literal1020_tree=(CommonTree)adaptor.create(string_literal1020);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1020_tree));
 			}
 
 			char_literal1021=(Token)match(input,SEMI,FOLLOW_SEMI_in_continue_statement12985); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1021_tree = (CommonTree)adaptor.create(char_literal1021);
-			adaptor.addChild(root_0, char_literal1021_tree);
+			retval.char_literal1021 = char_literal1021_tree=(CommonTree)adaptor.create(char_literal1021);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1021_tree));
 			}
 
 			}
@@ -34083,18 +34930,21 @@ Token char_literal1021 ;
 	// $ANTLR end "continue_statement"
 
 
-	public static class goto_statement_return extends ParserRuleReturnScope {
+	public static class goto_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-identifier_return identifier1023 ;
-constant_expression_return constant_expression1025 ;
-Token string_literal1022 ;
-Token string_literal1024 ;
-Token string_literal1026 ;
-Token char_literal1027 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitgoto_statement_return(this);
+}
+CommonTree string_literal1022 ;
+CommonTree string_literal1024 ;
+CommonTree string_literal1026 ;
+CommonTree char_literal1027 ;
+public identifier_return identifier1023 ;
+public constant_expression_return constant_expression1025 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34132,8 +34982,8 @@ Token char_literal1027 ;
 
 			string_literal1022=(Token)match(input,134,FOLLOW_134_in_goto_statement13000); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1022_tree = (CommonTree)adaptor.create(string_literal1022);
-			adaptor.addChild(root_0, string_literal1022_tree);
+			retval.string_literal1022 = string_literal1022_tree=(CommonTree)adaptor.create(string_literal1022);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1022_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:977:18: ( identifier | 'case' constant_expression | 'default' )
@@ -34197,7 +35047,7 @@ Token char_literal1027 ;
 					identifier1023=retval.identifier1023=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier1023.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier1023.getTree()));
 
 					}
 					break;
@@ -34206,15 +35056,15 @@ Token char_literal1027 ;
 					{
 					string_literal1024=(Token)match(input,107,FOLLOW_107_in_goto_statement13035); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal1024_tree = (CommonTree)adaptor.create(string_literal1024);
-					adaptor.addChild(root_0, string_literal1024_tree);
+					retval.string_literal1024 = string_literal1024_tree=(CommonTree)adaptor.create(string_literal1024);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal1024_tree));
 					}
 
 					pushFollow(FOLLOW_constant_expression_in_goto_statement13039);
 					constant_expression1025=retval.constant_expression1025=constant_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_expression1025.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_expression1025.getTree()));
 
 					}
 					break;
@@ -34223,8 +35073,8 @@ Token char_literal1027 ;
 					{
 					string_literal1026=(Token)match(input,115,FOLLOW_115_in_goto_statement13068); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal1026_tree = (CommonTree)adaptor.create(string_literal1026);
-					adaptor.addChild(root_0, string_literal1026_tree);
+					retval.string_literal1026 = string_literal1026_tree=(CommonTree)adaptor.create(string_literal1026);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal1026_tree));
 					}
 
 					}
@@ -34234,8 +35084,8 @@ Token char_literal1027 ;
 
 			char_literal1027=(Token)match(input,SEMI,FOLLOW_SEMI_in_goto_statement13073); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1027_tree = (CommonTree)adaptor.create(char_literal1027);
-			adaptor.addChild(root_0, char_literal1027_tree);
+			retval.char_literal1027 = char_literal1027_tree=(CommonTree)adaptor.create(char_literal1027);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1027_tree));
 			}
 
 			}
@@ -34262,15 +35112,18 @@ Token char_literal1027 ;
 	// $ANTLR end "goto_statement"
 
 
-	public static class return_statement_return extends ParserRuleReturnScope {
+	public static class return_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression1029 ;
-Token string_literal1028 ;
-Token char_literal1030 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitreturn_statement_return(this);
+}
+CommonTree string_literal1028 ;
+CommonTree char_literal1030 ;
+public expression_return expression1029 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34303,8 +35156,8 @@ Token char_literal1030 ;
 
 			string_literal1028=(Token)match(input,168,FOLLOW_168_in_return_statement13088); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1028_tree = (CommonTree)adaptor.create(string_literal1028);
-			adaptor.addChild(root_0, string_literal1028_tree);
+			retval.string_literal1028 = string_literal1028_tree=(CommonTree)adaptor.create(string_literal1028);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1028_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:981:20: ( expression )?
@@ -34321,7 +35174,7 @@ Token char_literal1030 ;
 					expression1029=retval.expression1029=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression1029.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression1029.getTree()));
 
 					}
 					break;
@@ -34330,8 +35183,8 @@ Token char_literal1030 ;
 
 			char_literal1030=(Token)match(input,SEMI,FOLLOW_SEMI_in_return_statement13097); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1030_tree = (CommonTree)adaptor.create(char_literal1030);
-			adaptor.addChild(root_0, char_literal1030_tree);
+			retval.char_literal1030 = char_literal1030_tree=(CommonTree)adaptor.create(char_literal1030);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1030_tree));
 			}
 
 			}
@@ -34358,15 +35211,18 @@ Token char_literal1030 ;
 	// $ANTLR end "return_statement"
 
 
-	public static class throw_statement_return extends ParserRuleReturnScope {
+	public static class throw_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression1032 ;
-Token string_literal1031 ;
-Token char_literal1033 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitthrow_statement_return(this);
+}
+CommonTree string_literal1031 ;
+CommonTree char_literal1033 ;
+public expression_return expression1032 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34399,8 +35255,8 @@ Token char_literal1033 ;
 
 			string_literal1031=(Token)match(input,181,FOLLOW_181_in_throw_statement13112); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1031_tree = (CommonTree)adaptor.create(string_literal1031);
-			adaptor.addChild(root_0, string_literal1031_tree);
+			retval.string_literal1031 = string_literal1031_tree=(CommonTree)adaptor.create(string_literal1031);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1031_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:983:19: ( expression )?
@@ -34417,7 +35273,7 @@ Token char_literal1033 ;
 					expression1032=retval.expression1032=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression1032.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression1032.getTree()));
 
 					}
 					break;
@@ -34426,8 +35282,8 @@ Token char_literal1033 ;
 
 			char_literal1033=(Token)match(input,SEMI,FOLLOW_SEMI_in_throw_statement13121); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1033_tree = (CommonTree)adaptor.create(char_literal1033);
-			adaptor.addChild(root_0, char_literal1033_tree);
+			retval.char_literal1033 = char_literal1033_tree=(CommonTree)adaptor.create(char_literal1033);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1033_tree));
 			}
 
 			}
@@ -34454,17 +35310,20 @@ Token char_literal1033 ;
 	// $ANTLR end "throw_statement"
 
 
-	public static class try_statement_return extends ParserRuleReturnScope {
+	public static class try_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block1035 ;
-catch_clauses_return catch_clauses1036 ;
-finally_clause_return finally_clause1037 ;
-finally_clause_return finally_clause1038 ;
-Token string_literal1034 ;
+public Object accept(CsharpVisitor v) {
+    return v.visittry_statement_return(this);
+}
+CommonTree string_literal1034 ;
+public block_return block1035 ;
+public catch_clauses_return catch_clauses1036 ;
+public finally_clause_return finally_clause1037 ;
+public finally_clause_return finally_clause1038 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34498,15 +35357,15 @@ Token string_literal1034 ;
 
 			string_literal1034=(Token)match(input,182,FOLLOW_182_in_try_statement13134); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1034_tree = (CommonTree)adaptor.create(string_literal1034);
-			adaptor.addChild(root_0, string_literal1034_tree);
+			retval.string_literal1034 = string_literal1034_tree=(CommonTree)adaptor.create(string_literal1034);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1034_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_try_statement13138);
 			block1035=retval.block1035=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block1035.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block1035.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:985:23: ( catch_clauses ( finally_clause )? | finally_clause )
 			int alt266=2;
@@ -34533,7 +35392,7 @@ Token string_literal1034 ;
 					catch_clauses1036=retval.catch_clauses1036=catch_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, catch_clauses1036.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(catch_clauses1036.getTree()));
 
 					// /Users/jeremie/ANTLR/cs.g:985:41: ( finally_clause )?
 					int alt265=2;
@@ -34549,7 +35408,7 @@ Token string_literal1034 ;
 							finally_clause1037=retval.finally_clause1037=finally_clause();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, finally_clause1037.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(finally_clause1037.getTree()));
 
 							}
 							break;
@@ -34565,7 +35424,7 @@ Token string_literal1034 ;
 					finally_clause1038=retval.finally_clause1038=finally_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, finally_clause1038.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(finally_clause1038.getTree()));
 
 					}
 					break;
@@ -34596,15 +35455,18 @@ Token string_literal1034 ;
 	// $ANTLR end "try_statement"
 
 
-	public static class catch_clauses_return extends ParserRuleReturnScope {
+	public static class catch_clauses_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-specific_catch_clauses_return specific_catch_clauses1040 ;
-general_catch_clause_return general_catch_clause1041 ;
-Token string_literal1039 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitcatch_clauses_return(this);
+}
+CommonTree string_literal1039 ;
+public specific_catch_clauses_return specific_catch_clauses1040 ;
+public general_catch_clause_return general_catch_clause1041 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34636,8 +35498,8 @@ Token string_literal1039 ;
 
 			string_literal1039=(Token)match(input,108,FOLLOW_108_in_catch_clauses13211); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1039_tree = (CommonTree)adaptor.create(string_literal1039);
-			adaptor.addChild(root_0, string_literal1039_tree);
+			retval.string_literal1039 = string_literal1039_tree=(CommonTree)adaptor.create(string_literal1039);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1039_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:989:19: ( specific_catch_clauses | general_catch_clause )
@@ -34665,7 +35527,7 @@ Token string_literal1039 ;
 					specific_catch_clauses1040=retval.specific_catch_clauses1040=specific_catch_clauses();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, specific_catch_clauses1040.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(specific_catch_clauses1040.getTree()));
 
 					}
 					break;
@@ -34676,7 +35538,7 @@ Token string_literal1039 ;
 					general_catch_clause1041=retval.general_catch_clause1041=general_catch_clause();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, general_catch_clause1041.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(general_catch_clause1041.getTree()));
 
 					}
 					break;
@@ -34707,16 +35569,19 @@ Token string_literal1039 ;
 	// $ANTLR end "catch_clauses"
 
 
-	public static class specific_catch_clauses_return extends ParserRuleReturnScope {
+	public static class specific_catch_clauses_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-specific_catch_clause_return specific_catch_clause1042 ;
-List<specific_catch_clause_return> specific_catch_clause1044 = new ArrayList<specific_catch_clause_return>();
-List<general_catch_clause_return> general_catch_clause1045 = new ArrayList<general_catch_clause_return>();
-Token string_literal1043 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitspecific_catch_clauses_return(this);
+}
+CommonTree string_literal1043 ;
+public specific_catch_clause_return specific_catch_clause1042 ;
+public List<specific_catch_clause_return> specific_catch_clause1044 = new ArrayList<specific_catch_clause_return>();
+public List<general_catch_clause_return> general_catch_clause1045 = new ArrayList<general_catch_clause_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34751,7 +35616,7 @@ Token string_literal1043 ;
 			specific_catch_clause1042=retval.specific_catch_clause1042=specific_catch_clause();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, specific_catch_clause1042.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(specific_catch_clause1042.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:991:33: ( 'catch' ( specific_catch_clause | general_catch_clause ) )*
 			loop269:
@@ -34768,8 +35633,8 @@ Token string_literal1043 ;
 					{
 					string_literal1043=(Token)match(input,108,FOLLOW_108_in_specific_catch_clauses13241); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal1043_tree = (CommonTree)adaptor.create(string_literal1043);
-					adaptor.addChild(root_0, string_literal1043_tree);
+					retval.string_literal1043 = string_literal1043_tree=(CommonTree)adaptor.create(string_literal1043);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal1043_tree));
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:991:44: ( specific_catch_clause | general_catch_clause )
@@ -34797,7 +35662,7 @@ Token string_literal1043 ;
 							specific_catch_clause1044=specific_catch_clause();retval.specific_catch_clause1044.add((specific_catch_clause_return) specific_catch_clause1044);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, specific_catch_clause1044.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(specific_catch_clause1044.getTree()));
 
 							}
 							break;
@@ -34808,7 +35673,7 @@ Token string_literal1043 ;
 							general_catch_clause1045=general_catch_clause();retval.general_catch_clause1045.add((general_catch_clause_return) general_catch_clause1045);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, general_catch_clause1045.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(general_catch_clause1045.getTree()));
 
 							}
 							break;
@@ -34847,17 +35712,20 @@ Token string_literal1043 ;
 	// $ANTLR end "specific_catch_clauses"
 
 
-	public static class specific_catch_clause_return extends ParserRuleReturnScope {
+	public static class specific_catch_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-class_type_return class_type1047 ;
-identifier_return identifier1048 ;
-block_return block1050 ;
-Token char_literal1046 ;
-Token char_literal1049 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitspecific_catch_clause_return(this);
+}
+CommonTree char_literal1046 ;
+CommonTree char_literal1049 ;
+public class_type_return class_type1047 ;
+public identifier_return identifier1048 ;
+public block_return block1050 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34892,15 +35760,15 @@ Token char_literal1049 ;
 
 			char_literal1046=(Token)match(input,68,FOLLOW_68_in_specific_catch_clause13267); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1046_tree = (CommonTree)adaptor.create(char_literal1046);
-			adaptor.addChild(root_0, char_literal1046_tree);
+			retval.char_literal1046 = char_literal1046_tree=(CommonTree)adaptor.create(char_literal1046);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1046_tree));
 			}
 
 			pushFollow(FOLLOW_class_type_in_specific_catch_clause13271);
 			class_type1047=retval.class_type1047=class_type();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, class_type1047.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(class_type1047.getTree()));
 
 			// /Users/jeremie/ANTLR/cs.g:993:28: ( identifier )?
 			int alt270=2;
@@ -34916,7 +35784,7 @@ Token char_literal1049 ;
 					identifier1048=retval.identifier1048=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier1048.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(identifier1048.getTree()));
 
 					}
 					break;
@@ -34925,15 +35793,15 @@ Token char_literal1049 ;
 
 			char_literal1049=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_specific_catch_clause13280); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1049_tree = (CommonTree)adaptor.create(char_literal1049);
-			adaptor.addChild(root_0, char_literal1049_tree);
+			retval.char_literal1049 = char_literal1049_tree=(CommonTree)adaptor.create(char_literal1049);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1049_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_specific_catch_clause13284);
 			block1050=retval.block1050=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block1050.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block1050.getTree()));
 
 			}
 
@@ -34959,13 +35827,16 @@ Token char_literal1049 ;
 	// $ANTLR end "specific_catch_clause"
 
 
-	public static class general_catch_clause_return extends ParserRuleReturnScope {
+	public static class general_catch_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block1051 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitgeneral_catch_clause_return(this);
+}
+public block_return block1051 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -34996,7 +35867,7 @@ block_return block1051 ;
 			block1051=retval.block1051=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block1051.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block1051.getTree()));
 
 			}
 
@@ -35022,14 +35893,17 @@ block_return block1051 ;
 	// $ANTLR end "general_catch_clause"
 
 
-	public static class finally_clause_return extends ParserRuleReturnScope {
+	public static class finally_clause_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block1053 ;
-Token string_literal1052 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitfinally_clause_return(this);
+}
+CommonTree string_literal1052 ;
+public block_return block1053 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35060,15 +35934,15 @@ Token string_literal1052 ;
 
 			string_literal1052=(Token)match(input,127,FOLLOW_127_in_finally_clause13314); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1052_tree = (CommonTree)adaptor.create(string_literal1052);
-			adaptor.addChild(root_0, string_literal1052_tree);
+			retval.string_literal1052 = string_literal1052_tree=(CommonTree)adaptor.create(string_literal1052);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1052_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_finally_clause13318);
 			block1053=retval.block1053=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block1053.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block1053.getTree()));
 
 			}
 
@@ -35094,14 +35968,17 @@ Token string_literal1052 ;
 	// $ANTLR end "finally_clause"
 
 
-	public static class checked_statement_return extends ParserRuleReturnScope {
+	public static class checked_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block1055 ;
-Token string_literal1054 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitchecked_statement_return(this);
+}
+CommonTree string_literal1054 ;
+public block_return block1055 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35132,15 +36009,15 @@ Token string_literal1054 ;
 
 			string_literal1054=(Token)match(input,110,FOLLOW_110_in_checked_statement13333); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1054_tree = (CommonTree)adaptor.create(string_literal1054);
-			adaptor.addChild(root_0, string_literal1054_tree);
+			retval.string_literal1054 = string_literal1054_tree=(CommonTree)adaptor.create(string_literal1054);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1054_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_checked_statement13337);
 			block1055=retval.block1055=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block1055.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block1055.getTree()));
 
 			}
 
@@ -35166,14 +36043,17 @@ Token string_literal1054 ;
 	// $ANTLR end "checked_statement"
 
 
-	public static class unchecked_statement_return extends ParserRuleReturnScope {
+	public static class unchecked_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-block_return block1057 ;
-Token string_literal1056 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunchecked_statement_return(this);
+}
+CommonTree string_literal1056 ;
+public block_return block1057 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35204,15 +36084,15 @@ Token string_literal1056 ;
 
 			string_literal1056=(Token)match(input,187,FOLLOW_187_in_unchecked_statement13352); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1056_tree = (CommonTree)adaptor.create(string_literal1056);
-			adaptor.addChild(root_0, string_literal1056_tree);
+			retval.string_literal1056 = string_literal1056_tree=(CommonTree)adaptor.create(string_literal1056);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1056_tree));
 			}
 
 			pushFollow(FOLLOW_block_in_unchecked_statement13356);
 			block1057=retval.block1057=block();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, block1057.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(block1057.getTree()));
 
 			}
 
@@ -35238,17 +36118,20 @@ Token string_literal1056 ;
 	// $ANTLR end "unchecked_statement"
 
 
-	public static class lock_statement_return extends ParserRuleReturnScope {
+	public static class lock_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression1060 ;
-embedded_statement_return embedded_statement1062 ;
-Token string_literal1058 ;
-Token char_literal1059 ;
-Token char_literal1061 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlock_statement_return(this);
+}
+CommonTree string_literal1058 ;
+CommonTree char_literal1059 ;
+CommonTree char_literal1061 ;
+public expression_return expression1060 ;
+public embedded_statement_return embedded_statement1062 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35284,33 +36167,33 @@ Token char_literal1061 ;
 
 			string_literal1058=(Token)match(input,145,FOLLOW_145_in_lock_statement13371); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1058_tree = (CommonTree)adaptor.create(string_literal1058);
-			adaptor.addChild(root_0, string_literal1058_tree);
+			retval.string_literal1058 = string_literal1058_tree=(CommonTree)adaptor.create(string_literal1058);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1058_tree));
 			}
 
 			char_literal1059=(Token)match(input,68,FOLLOW_68_in_lock_statement13375); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1059_tree = (CommonTree)adaptor.create(char_literal1059);
-			adaptor.addChild(root_0, char_literal1059_tree);
+			retval.char_literal1059 = char_literal1059_tree=(CommonTree)adaptor.create(char_literal1059);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1059_tree));
 			}
 
 			pushFollow(FOLLOW_expression_in_lock_statement13378);
 			expression1060=retval.expression1060=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression1060.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression1060.getTree()));
 
 			char_literal1061=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_lock_statement13382); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1061_tree = (CommonTree)adaptor.create(char_literal1061);
-			adaptor.addChild(root_0, char_literal1061_tree);
+			retval.char_literal1061 = char_literal1061_tree=(CommonTree)adaptor.create(char_literal1061);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1061_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_lock_statement13386);
 			embedded_statement1062=retval.embedded_statement1062=embedded_statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement1062.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement1062.getTree()));
 
 			}
 
@@ -35336,17 +36219,20 @@ Token char_literal1061 ;
 	// $ANTLR end "lock_statement"
 
 
-	public static class using_statement_return extends ParserRuleReturnScope {
+	public static class using_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-resource_acquisition_return resource_acquisition1065 ;
-embedded_statement_return embedded_statement1067 ;
-Token string_literal1063 ;
-Token char_literal1064 ;
-Token char_literal1066 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitusing_statement_return(this);
+}
+CommonTree string_literal1063 ;
+CommonTree char_literal1064 ;
+CommonTree char_literal1066 ;
+public resource_acquisition_return resource_acquisition1065 ;
+public embedded_statement_return embedded_statement1067 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35382,33 +36268,33 @@ Token char_literal1066 ;
 
 			string_literal1063=(Token)match(input,USING,FOLLOW_USING_in_using_statement13401); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1063_tree = (CommonTree)adaptor.create(string_literal1063);
-			adaptor.addChild(root_0, string_literal1063_tree);
+			retval.string_literal1063 = string_literal1063_tree=(CommonTree)adaptor.create(string_literal1063);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1063_tree));
 			}
 
 			char_literal1064=(Token)match(input,68,FOLLOW_68_in_using_statement13405); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1064_tree = (CommonTree)adaptor.create(char_literal1064);
-			adaptor.addChild(root_0, char_literal1064_tree);
+			retval.char_literal1064 = char_literal1064_tree=(CommonTree)adaptor.create(char_literal1064);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1064_tree));
 			}
 
 			pushFollow(FOLLOW_resource_acquisition_in_using_statement13410);
 			resource_acquisition1065=retval.resource_acquisition1065=resource_acquisition();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, resource_acquisition1065.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(resource_acquisition1065.getTree()));
 
 			char_literal1066=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_using_statement13414); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal1066_tree = (CommonTree)adaptor.create(char_literal1066);
-			adaptor.addChild(root_0, char_literal1066_tree);
+			retval.char_literal1066 = char_literal1066_tree=(CommonTree)adaptor.create(char_literal1066);
+			adaptor.addChild(root_0, adaptor.dupTree(char_literal1066_tree));
 			}
 
 			pushFollow(FOLLOW_embedded_statement_in_using_statement13419);
 			embedded_statement1067=retval.embedded_statement1067=embedded_statement();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, embedded_statement1067.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(embedded_statement1067.getTree()));
 
 			}
 
@@ -35434,14 +36320,17 @@ Token char_literal1066 ;
 	// $ANTLR end "using_statement"
 
 
-	public static class resource_acquisition_return extends ParserRuleReturnScope {
+	public static class resource_acquisition_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-local_variable_declaration_return local_variable_declaration1068 ;
-expression_return expression1069 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitresource_acquisition_return(this);
+}
+public local_variable_declaration_return local_variable_declaration1068 ;
+public expression_return expression1069 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35541,7 +36430,7 @@ expression_return expression1069 ;
 					local_variable_declaration1068=retval.local_variable_declaration1068=local_variable_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declaration1068.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_declaration1068.getTree()));
 
 					}
 					break;
@@ -35555,7 +36444,7 @@ expression_return expression1069 ;
 					expression1069=retval.expression1069=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression1069.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression1069.getTree()));
 
 					}
 					break;
@@ -35583,18 +36472,21 @@ expression_return expression1069 ;
 	// $ANTLR end "resource_acquisition"
 
 
-	public static class yield_statement_return extends ParserRuleReturnScope {
+	public static class yield_statement_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-expression_return expression1072 ;
-Token string_literal1070 ;
-Token string_literal1071 ;
-Token char_literal1073 ;
-Token string_literal1074 ;
-Token char_literal1075 ;
+public Object accept(CsharpVisitor v) {
+    return v.visityield_statement_return(this);
+}
+CommonTree string_literal1070 ;
+CommonTree string_literal1071 ;
+CommonTree char_literal1073 ;
+CommonTree string_literal1074 ;
+CommonTree char_literal1075 ;
+public expression_return expression1072 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35633,8 +36525,8 @@ Token char_literal1075 ;
 
 			string_literal1070=(Token)match(input,196,FOLLOW_196_in_yield_statement13467); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal1070_tree = (CommonTree)adaptor.create(string_literal1070);
-			adaptor.addChild(root_0, string_literal1070_tree);
+			retval.string_literal1070 = string_literal1070_tree=(CommonTree)adaptor.create(string_literal1070);
+			adaptor.addChild(root_0, adaptor.dupTree(string_literal1070_tree));
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:1010:19: ( 'return' expression ';' | 'break' ';' )
@@ -35660,20 +36552,20 @@ Token char_literal1075 ;
 					{
 					string_literal1071=(Token)match(input,168,FOLLOW_168_in_yield_statement13472); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal1071_tree = (CommonTree)adaptor.create(string_literal1071);
-					adaptor.addChild(root_0, string_literal1071_tree);
+					retval.string_literal1071 = string_literal1071_tree=(CommonTree)adaptor.create(string_literal1071);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal1071_tree));
 					}
 
 					pushFollow(FOLLOW_expression_in_yield_statement13476);
 					expression1072=retval.expression1072=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression1072.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression1072.getTree()));
 
 					char_literal1073=(Token)match(input,SEMI,FOLLOW_SEMI_in_yield_statement13480); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1073_tree = (CommonTree)adaptor.create(char_literal1073);
-					adaptor.addChild(root_0, char_literal1073_tree);
+					retval.char_literal1073 = char_literal1073_tree=(CommonTree)adaptor.create(char_literal1073);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1073_tree));
 					}
 
 					}
@@ -35683,14 +36575,14 @@ Token char_literal1075 ;
 					{
 					string_literal1074=(Token)match(input,104,FOLLOW_104_in_yield_statement13502); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal1074_tree = (CommonTree)adaptor.create(string_literal1074);
-					adaptor.addChild(root_0, string_literal1074_tree);
+					retval.string_literal1074 = string_literal1074_tree=(CommonTree)adaptor.create(string_literal1074);
+					adaptor.addChild(root_0, adaptor.dupTree(string_literal1074_tree));
 					}
 
 					char_literal1075=(Token)match(input,SEMI,FOLLOW_SEMI_in_yield_statement13506); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1075_tree = (CommonTree)adaptor.create(char_literal1075);
-					adaptor.addChild(root_0, char_literal1075_tree);
+					retval.char_literal1075 = char_literal1075_tree=(CommonTree)adaptor.create(char_literal1075);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1075_tree));
 					}
 
 					}
@@ -35722,13 +36614,16 @@ Token char_literal1075 ;
 	// $ANTLR end "yield_statement"
 
 
-	public static class predefined_type_return extends ParserRuleReturnScope {
+	public static class predefined_type_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set1076 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitpredefined_type_return(this);
+}
+CommonTree set1076 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35792,13 +36687,16 @@ Token set1076 ;
 	// $ANTLR end "predefined_type"
 
 
-	public static class identifier_return extends ParserRuleReturnScope {
+	public static class identifier_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set1077 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitidentifier_return(this);
+}
+CommonTree set1077 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35862,13 +36760,16 @@ Token set1077 ;
 	// $ANTLR end "identifier"
 
 
-	public static class keyword_return extends ParserRuleReturnScope {
+	public static class keyword_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set1078 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitkeyword_return(this);
+}
+CommonTree set1078 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -35932,13 +36833,16 @@ Token set1078 ;
 	// $ANTLR end "keyword"
 
 
-	public static class also_keyword_return extends ParserRuleReturnScope {
+	public static class also_keyword_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set1079 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitalso_keyword_return(this);
+}
+CommonTree set1079 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36002,13 +36906,16 @@ Token set1079 ;
 	// $ANTLR end "also_keyword"
 
 
-	public static class literal_return extends ParserRuleReturnScope {
+	public static class literal_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-Token set1080 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitliteral_return(this);
+}
+CommonTree set1080 ;
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36072,14 +36979,17 @@ Token set1080 ;
 	// $ANTLR end "literal"
 
 
-	public static class assignment_list_return extends ParserRuleReturnScope {
+	public static class assignment_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<assignment_return> assignment1081 = new ArrayList<assignment_return>();
-Token char_literal1082 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitassignment_list_return(this);
+}
+CommonTree char_literal1082 ;
+public List<assignment_return> assignment1081 = new ArrayList<assignment_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36126,12 +37036,12 @@ Token char_literal1082 ;
 					assignment1081=assignment();retval.assignment1081.add((assignment_return) assignment1081);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, assignment1081.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(assignment1081.getTree()));
 
 					char_literal1082=(Token)match(input,SEMI,FOLLOW_SEMI_in_assignment_list16721); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1082_tree = (CommonTree)adaptor.create(char_literal1082);
-					adaptor.addChild(root_0, char_literal1082_tree);
+					retval.char_literal1082 = char_literal1082_tree=(CommonTree)adaptor.create(char_literal1082);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1082_tree));
 					}
 
 					}
@@ -36170,16 +37080,19 @@ Token char_literal1082 ;
 	// $ANTLR end "assignment_list"
 
 
-	public static class field_declarations_return extends ParserRuleReturnScope {
+	public static class field_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<attributes_return> attributes1083 = new ArrayList<attributes_return>();
-List<modifiers_return> modifiers1084 = new ArrayList<modifiers_return>();
-List<type_return> type1085 = new ArrayList<type_return>();
-List<field_declaration_return> field_declaration1086 = new ArrayList<field_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitfield_declarations_return(this);
+}
+public List<attributes_return> attributes1083 = new ArrayList<attributes_return>();
+public List<modifiers_return> modifiers1084 = new ArrayList<modifiers_return>();
+public List<type_return> type1085 = new ArrayList<type_return>();
+public List<field_declaration_return> field_declaration1086 = new ArrayList<field_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36237,7 +37150,7 @@ List<field_declaration_return> field_declaration1086 = new ArrayList<field_decla
 							attributes1083=attributes();retval.attributes1083.add((attributes_return) attributes1083);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes1083.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes1083.getTree()));
 
 							}
 							break;
@@ -36258,7 +37171,7 @@ List<field_declaration_return> field_declaration1086 = new ArrayList<field_decla
 							modifiers1084=modifiers();retval.modifiers1084.add((modifiers_return) modifiers1084);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers1084.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers1084.getTree()));
 
 							}
 							break;
@@ -36269,13 +37182,13 @@ List<field_declaration_return> field_declaration1086 = new ArrayList<field_decla
 					type1085=type();retval.type1085.add((type_return) type1085);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type1085.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type1085.getTree()));
 
 					pushFollow(FOLLOW_field_declaration_in_field_declarations16753);
 					field_declaration1086=field_declaration();retval.field_declaration1086.add((field_declaration_return) field_declaration1086);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, field_declaration1086.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(field_declaration1086.getTree()));
 
 					}
 					break;
@@ -36313,16 +37226,19 @@ List<field_declaration_return> field_declaration1086 = new ArrayList<field_decla
 	// $ANTLR end "field_declarations"
 
 
-	public static class property_declaration_list_return extends ParserRuleReturnScope {
+	public static class property_declaration_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<attributes_return> attributes1087 = new ArrayList<attributes_return>();
-List<modifiers_return> modifiers1088 = new ArrayList<modifiers_return>();
-List<type_return> type1089 = new ArrayList<type_return>();
-List<property_declaration_return> property_declaration1090 = new ArrayList<property_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitproperty_declaration_list_return(this);
+}
+public List<attributes_return> attributes1087 = new ArrayList<attributes_return>();
+public List<modifiers_return> modifiers1088 = new ArrayList<modifiers_return>();
+public List<type_return> type1089 = new ArrayList<type_return>();
+public List<property_declaration_return> property_declaration1090 = new ArrayList<property_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36380,7 +37296,7 @@ List<property_declaration_return> property_declaration1090 = new ArrayList<prope
 							attributes1087=attributes();retval.attributes1087.add((attributes_return) attributes1087);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes1087.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes1087.getTree()));
 
 							}
 							break;
@@ -36401,7 +37317,7 @@ List<property_declaration_return> property_declaration1090 = new ArrayList<prope
 							modifiers1088=modifiers();retval.modifiers1088.add((modifiers_return) modifiers1088);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers1088.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers1088.getTree()));
 
 							}
 							break;
@@ -36412,13 +37328,13 @@ List<property_declaration_return> property_declaration1090 = new ArrayList<prope
 					type1089=type();retval.type1089.add((type_return) type1089);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type1089.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type1089.getTree()));
 
 					pushFollow(FOLLOW_property_declaration_in_property_declaration_list16785);
 					property_declaration1090=property_declaration();retval.property_declaration1090.add((property_declaration_return) property_declaration1090);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, property_declaration1090.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(property_declaration1090.getTree()));
 
 					}
 					break;
@@ -36456,13 +37372,16 @@ List<property_declaration_return> property_declaration1090 = new ArrayList<prope
 	// $ANTLR end "property_declaration_list"
 
 
-	public static class constant_declarations_return extends ParserRuleReturnScope {
+	public static class constant_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<constant_declaration_return> constant_declaration1091 = new ArrayList<constant_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitconstant_declarations_return(this);
+}
+public List<constant_declaration_return> constant_declaration1091 = new ArrayList<constant_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36507,7 +37426,7 @@ List<constant_declaration_return> constant_declaration1091 = new ArrayList<const
 					constant_declaration1091=constant_declaration();retval.constant_declaration1091.add((constant_declaration_return) constant_declaration1091);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declaration1091.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(constant_declaration1091.getTree()));
 
 					}
 					break;
@@ -36545,13 +37464,16 @@ List<constant_declaration_return> constant_declaration1091 = new ArrayList<const
 	// $ANTLR end "constant_declarations"
 
 
-	public static class literals_return extends ParserRuleReturnScope {
+	public static class literals_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<literal_return> literal1092 = new ArrayList<literal_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitliterals_return(this);
+}
+public List<literal_return> literal1092 = new ArrayList<literal_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36596,7 +37518,7 @@ List<literal_return> literal1092 = new ArrayList<literal_return>();
 					literal1092=literal();retval.literal1092.add((literal_return) literal1092);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, literal1092.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(literal1092.getTree()));
 
 					}
 					break;
@@ -36634,15 +37556,18 @@ List<literal_return> literal1092 = new ArrayList<literal_return>();
 	// $ANTLR end "literals"
 
 
-	public static class delegate_declaration_list_return extends ParserRuleReturnScope {
+	public static class delegate_declaration_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<attributes_return> attributes1093 = new ArrayList<attributes_return>();
-List<modifiers_return> modifiers1094 = new ArrayList<modifiers_return>();
-List<delegate_declaration_return> delegate_declaration1095 = new ArrayList<delegate_declaration_return>();
+public Object accept(CsharpVisitor v) {
+    return v.visitdelegate_declaration_list_return(this);
+}
+public List<attributes_return> attributes1093 = new ArrayList<attributes_return>();
+public List<modifiers_return> modifiers1094 = new ArrayList<modifiers_return>();
+public List<delegate_declaration_return> delegate_declaration1095 = new ArrayList<delegate_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36699,7 +37624,7 @@ List<delegate_declaration_return> delegate_declaration1095 = new ArrayList<deleg
 							attributes1093=attributes();retval.attributes1093.add((attributes_return) attributes1093);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes1093.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(attributes1093.getTree()));
 
 							}
 							break;
@@ -36720,7 +37645,7 @@ List<delegate_declaration_return> delegate_declaration1095 = new ArrayList<deleg
 							modifiers1094=modifiers();retval.modifiers1094.add((modifiers_return) modifiers1094);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers1094.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers1094.getTree()));
 
 							}
 							break;
@@ -36731,7 +37656,7 @@ List<delegate_declaration_return> delegate_declaration1095 = new ArrayList<deleg
 					delegate_declaration1095=delegate_declaration();retval.delegate_declaration1095.add((delegate_declaration_return) delegate_declaration1095);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, delegate_declaration1095.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(delegate_declaration1095.getTree()));
 
 					}
 					break;
@@ -36769,14 +37694,17 @@ List<delegate_declaration_return> delegate_declaration1095 = new ArrayList<deleg
 	// $ANTLR end "delegate_declaration_list"
 
 
-	public static class local_variable_declaration_list_return extends ParserRuleReturnScope {
+	public static class local_variable_declaration_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<local_variable_declaration_return> local_variable_declaration1096 = new ArrayList<local_variable_declaration_return>();
-Token char_literal1097 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_variable_declaration_list_return(this);
+}
+CommonTree char_literal1097 ;
+public List<local_variable_declaration_return> local_variable_declaration1096 = new ArrayList<local_variable_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36823,12 +37751,12 @@ Token char_literal1097 ;
 					local_variable_declaration1096=local_variable_declaration();retval.local_variable_declaration1096.add((local_variable_declaration_return) local_variable_declaration1096);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declaration1096.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_declaration1096.getTree()));
 
 					char_literal1097=(Token)match(input,SEMI,FOLLOW_SEMI_in_local_variable_declaration_list16864); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1097_tree = (CommonTree)adaptor.create(char_literal1097);
-					adaptor.addChild(root_0, char_literal1097_tree);
+					retval.char_literal1097 = char_literal1097_tree=(CommonTree)adaptor.create(char_literal1097);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1097_tree));
 					}
 
 					}
@@ -36867,14 +37795,17 @@ Token char_literal1097 ;
 	// $ANTLR end "local_variable_declaration_list"
 
 
-	public static class local_variable_initializer_list_return extends ParserRuleReturnScope {
+	public static class local_variable_initializer_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<local_variable_initializer_return> local_variable_initializer1098 = new ArrayList<local_variable_initializer_return>();
-Token char_literal1099 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitlocal_variable_initializer_list_return(this);
+}
+CommonTree char_literal1099 ;
+public List<local_variable_initializer_return> local_variable_initializer1098 = new ArrayList<local_variable_initializer_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -36921,12 +37852,12 @@ Token char_literal1099 ;
 					local_variable_initializer1098=local_variable_initializer();retval.local_variable_initializer1098.add((local_variable_initializer_return) local_variable_initializer1098);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_initializer1098.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(local_variable_initializer1098.getTree()));
 
 					char_literal1099=(Token)match(input,SEMI,FOLLOW_SEMI_in_local_variable_initializer_list16884); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1099_tree = (CommonTree)adaptor.create(char_literal1099);
-					adaptor.addChild(root_0, char_literal1099_tree);
+					retval.char_literal1099 = char_literal1099_tree=(CommonTree)adaptor.create(char_literal1099);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1099_tree));
 					}
 
 					}
@@ -36965,14 +37896,17 @@ Token char_literal1099 ;
 	// $ANTLR end "local_variable_initializer_list"
 
 
-	public static class expression_list_test_return extends ParserRuleReturnScope {
+	public static class expression_list_test_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<expression_return> expression1100 = new ArrayList<expression_return>();
-Token char_literal1101 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitexpression_list_test_return(this);
+}
+CommonTree char_literal1101 ;
+public List<expression_return> expression1100 = new ArrayList<expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -37019,12 +37953,12 @@ Token char_literal1101 ;
 					expression1100=expression();retval.expression1100.add((expression_return) expression1100);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression1100.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(expression1100.getTree()));
 
 					char_literal1101=(Token)match(input,SEMI,FOLLOW_SEMI_in_expression_list_test16904); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1101_tree = (CommonTree)adaptor.create(char_literal1101);
-					adaptor.addChild(root_0, char_literal1101_tree);
+					retval.char_literal1101 = char_literal1101_tree=(CommonTree)adaptor.create(char_literal1101);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1101_tree));
 					}
 
 					}
@@ -37063,14 +37997,17 @@ Token char_literal1101 ;
 	// $ANTLR end "expression_list_test"
 
 
-	public static class unary_expression_list_return extends ParserRuleReturnScope {
+	public static class unary_expression_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<unary_expression_return> unary_expression1102 = new ArrayList<unary_expression_return>();
-Token char_literal1103 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitunary_expression_list_return(this);
+}
+CommonTree char_literal1103 ;
+public List<unary_expression_return> unary_expression1102 = new ArrayList<unary_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -37117,12 +38054,12 @@ Token char_literal1103 ;
 					unary_expression1102=unary_expression();retval.unary_expression1102.add((unary_expression_return) unary_expression1102);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression1102.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(unary_expression1102.getTree()));
 
 					char_literal1103=(Token)match(input,SEMI,FOLLOW_SEMI_in_unary_expression_list16924); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1103_tree = (CommonTree)adaptor.create(char_literal1103);
-					adaptor.addChild(root_0, char_literal1103_tree);
+					retval.char_literal1103 = char_literal1103_tree=(CommonTree)adaptor.create(char_literal1103);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1103_tree));
 					}
 
 					}
@@ -37161,14 +38098,17 @@ Token char_literal1103 ;
 	// $ANTLR end "unary_expression_list"
 
 
-	public static class invocation_expression_list_return extends ParserRuleReturnScope {
+	public static class invocation_expression_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<invocation_expression_return> invocation_expression1104 = new ArrayList<invocation_expression_return>();
-Token char_literal1105 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitinvocation_expression_list_return(this);
+}
+CommonTree char_literal1105 ;
+public List<invocation_expression_return> invocation_expression1104 = new ArrayList<invocation_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -37215,12 +38155,12 @@ Token char_literal1105 ;
 					invocation_expression1104=invocation_expression();retval.invocation_expression1104.add((invocation_expression_return) invocation_expression1104);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_expression1104.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(invocation_expression1104.getTree()));
 
 					char_literal1105=(Token)match(input,SEMI,FOLLOW_SEMI_in_invocation_expression_list16944); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1105_tree = (CommonTree)adaptor.create(char_literal1105);
-					adaptor.addChild(root_0, char_literal1105_tree);
+					retval.char_literal1105 = char_literal1105_tree=(CommonTree)adaptor.create(char_literal1105);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1105_tree));
 					}
 
 					}
@@ -37259,14 +38199,17 @@ Token char_literal1105 ;
 	// $ANTLR end "invocation_expression_list"
 
 
-	public static class primary_expression_list_return extends ParserRuleReturnScope {
+	public static class primary_expression_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<primary_expression_return> primary_expression1106 = new ArrayList<primary_expression_return>();
-Token char_literal1107 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitprimary_expression_list_return(this);
+}
+CommonTree char_literal1107 ;
+public List<primary_expression_return> primary_expression1106 = new ArrayList<primary_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -37313,12 +38256,12 @@ Token char_literal1107 ;
 					primary_expression1106=primary_expression();retval.primary_expression1106.add((primary_expression_return) primary_expression1106);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression1106.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(primary_expression1106.getTree()));
 
 					char_literal1107=(Token)match(input,SEMI,FOLLOW_SEMI_in_primary_expression_list16964); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1107_tree = (CommonTree)adaptor.create(char_literal1107);
-					adaptor.addChild(root_0, char_literal1107_tree);
+					retval.char_literal1107 = char_literal1107_tree=(CommonTree)adaptor.create(char_literal1107);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1107_tree));
 					}
 
 					}
@@ -37357,14 +38300,17 @@ Token char_literal1107 ;
 	// $ANTLR end "primary_expression_list"
 
 
-	public static class non_assignment_expression_list_return extends ParserRuleReturnScope {
+	public static class non_assignment_expression_list_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<non_assignment_expression_return> non_assignment_expression1108 = new ArrayList<non_assignment_expression_return>();
-Token char_literal1109 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitnon_assignment_expression_list_return(this);
+}
+CommonTree char_literal1109 ;
+public List<non_assignment_expression_return> non_assignment_expression1108 = new ArrayList<non_assignment_expression_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -37411,12 +38357,12 @@ Token char_literal1109 ;
 					non_assignment_expression1108=non_assignment_expression();retval.non_assignment_expression1108.add((non_assignment_expression_return) non_assignment_expression1108);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, non_assignment_expression1108.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(non_assignment_expression1108.getTree()));
 
 					char_literal1109=(Token)match(input,SEMI,FOLLOW_SEMI_in_non_assignment_expression_list16984); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal1109_tree = (CommonTree)adaptor.create(char_literal1109);
-					adaptor.addChild(root_0, char_literal1109_tree);
+					retval.char_literal1109 = char_literal1109_tree=(CommonTree)adaptor.create(char_literal1109);
+					adaptor.addChild(root_0, adaptor.dupTree(char_literal1109_tree));
 					}
 
 					}
@@ -37455,16 +38401,19 @@ Token char_literal1109 ;
 	// $ANTLR end "non_assignment_expression_list"
 
 
-	public static class method_declarations_return extends ParserRuleReturnScope {
+	public static class method_declarations_return extends ParserRuleReturnScope implements CsharpNode {
 		CommonTree tree;
 @Override
 public String toString() {
 return tree.toStringTree();
 }
-List<modifiers_return> modifiers1110 = new ArrayList<modifiers_return>();
-List<type_return> type1112 = new ArrayList<type_return>();
-List<method_declaration_return> method_declaration1113 = new ArrayList<method_declaration_return>();
-Token string_literal1111 ;
+public Object accept(CsharpVisitor v) {
+    return v.visitmethod_declarations_return(this);
+}
+CommonTree string_literal1111 ;
+public List<modifiers_return> modifiers1110 = new ArrayList<modifiers_return>();
+public List<type_return> type1112 = new ArrayList<type_return>();
+public List<method_declaration_return> method_declaration1113 = new ArrayList<method_declaration_return>();
 		@Override
 		public CommonTree getTree() { return tree; }
 	};
@@ -37523,7 +38472,7 @@ Token string_literal1111 ;
 							modifiers1110=modifiers();retval.modifiers1110.add((modifiers_return) modifiers1110);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers1110.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(modifiers1110.getTree()));
 
 							}
 							break;
@@ -37573,8 +38522,8 @@ Token string_literal1111 ;
 							{
 							string_literal1111=(Token)match(input,192,FOLLOW_192_in_method_declarations17006); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal1111_tree = (CommonTree)adaptor.create(string_literal1111);
-							adaptor.addChild(root_0, string_literal1111_tree);
+							retval.string_literal1111 = string_literal1111_tree=(CommonTree)adaptor.create(string_literal1111);
+							adaptor.addChild(root_0, adaptor.dupTree(string_literal1111_tree));
 							}
 
 							}
@@ -37586,7 +38535,7 @@ Token string_literal1111 ;
 							type1112=type();retval.type1112.add((type_return) type1112);
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type1112.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(type1112.getTree()));
 
 							}
 							break;
@@ -37597,7 +38546,7 @@ Token string_literal1111 ;
 					method_declaration1113=method_declaration();retval.method_declaration1113.add((method_declaration_return) method_declaration1113);
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration1113.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, adaptor.dupTree(method_declaration1113.getTree()));
 
 					}
 					break;

@@ -24,10 +24,7 @@ public class CsharpParser  {
         
         
         
-        
-        Tree tree = result.tree;
-        System.out.println(tree.getChildCount());
-        System.out.println(tree.getChild(18).toStringTree());
+ 
         
     }
 }
