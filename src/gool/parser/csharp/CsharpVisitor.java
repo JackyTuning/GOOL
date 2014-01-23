@@ -39,4 +39,17 @@ public interface CsharpVisitor {
 
 	public Object visit_statement_list(statement_list statement_list);
 
+	public Object visit_local_variable_declaration(
+			local_variable_declaration local_variable_declaration);
+
+	public Object visit_type(type type);
+
+	public Object visit_local_variable_declarators(
+			local_variable_declarators local_variable_declarators);
+
+	public Object visit_variable_declarator(
+			local_variable_declarator local_variable_declarator);
+
+	public Object visit_identifier(identifier identifier);
+
 }
