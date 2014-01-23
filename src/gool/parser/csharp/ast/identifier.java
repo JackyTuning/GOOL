@@ -24,7 +24,7 @@ public class identifier extends CsharpNode{
 
 	@Override
 	public String toStringTree(int tab) {
-		return nbTab(tab) + "type\n" 
+		return nbTab(tab) + "identifier\n" 
 				+ nbTab(tab+1) +  code +"\n";
 	}
 
