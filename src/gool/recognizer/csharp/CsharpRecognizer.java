@@ -5,8 +5,8 @@ import gool.ast.core.ExpressionUnknown;
 import gool.ast.core.For;
 import gool.ast.core.Statement;
 import gool.ast.type.TypeNone;
-import gool.parser.csharp.CsharpVisitor;
-import gool.parser.csharp.csParser.*;
+import gool.parser.csharp2.CsharpVisitor;
+import gool.parser.csharp2.csParser.*;
 
 
 public class CsharpRecognizer extends CsharpVisitor {

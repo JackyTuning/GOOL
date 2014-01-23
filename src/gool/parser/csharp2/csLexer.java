@@ -1,6 +1,6 @@
 // $ANTLR 3.5 /Users/jeremie/ANTLR/cs.g 2014-01-23 08:58:52
 
-  package gool.parser.csharp;
+  package gool.parser.csharp2;
 
 
 import org.antlr.runtime.*;
