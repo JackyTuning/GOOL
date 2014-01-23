@@ -16,7 +16,7 @@ List<CsharpNode> namespace_member_declarations;
 	@Override
 	public Object accept(CsharpVisitor v) {
 		// TODO Auto-generated method stub
-		return null;
+		return v.visit_namespace_member_declarations(this);
 	}
 
 	public void add(CsharpNode e) {

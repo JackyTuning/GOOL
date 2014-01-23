@@ -17,7 +17,7 @@ public class namespace_member_declaration extends CsharpNode {
 
 	@Override
 	public Object accept(CsharpVisitor v) {
-		return v.vistor_namespace_member_declaration();
+		return v.visit_namespace_member_declaration(this);
 	}
 
 	public String toStringTree(int tab) {

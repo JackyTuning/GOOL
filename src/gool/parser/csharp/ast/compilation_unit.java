@@ -13,7 +13,7 @@ public class compilation_unit extends CsharpNode {
 	@Override
 	public Object accept(CsharpVisitor v) {
 		// TODO Auto-generated method stub
-		return null;
+		return v.visit_compilation_unit(this);
 	}
 	
 	public String toStringTree(int tab) {

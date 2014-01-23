@@ -21,8 +21,8 @@ public class namespace_body extends CsharpNode {
 
 	@Override
 	public Object accept(CsharpVisitor v) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return v.visit_namespace_body(this);
 	}
 	
 	public String toStringTree(int tab) {

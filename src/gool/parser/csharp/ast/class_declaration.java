@@ -19,8 +19,7 @@ public class class_declaration extends CsharpNode {
 
 	@Override
 	public Object accept(CsharpVisitor v) {
-		// TODO Auto-generated method stub
-		return null;
+		return v.visit_class_declaration(this);
 	}
 
 	@Override

@@ -13,7 +13,7 @@ public class class_body extends CsharpNode {
 
 	@Override
 	public Object accept(CsharpVisitor v) {
-		return null;
+		return v.visit_class_body(this);
 	}
 
 	@Override

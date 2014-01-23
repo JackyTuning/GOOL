@@ -13,7 +13,7 @@ public class type_declaration extends CsharpNode {
 	@Override
 	public Object accept(CsharpVisitor v) {
 		// TODO Auto-generated method stub
-		return null;
+		return v.visit_type_declaration(this);
 	}
 	
 	public String toStringTree(int tab) {

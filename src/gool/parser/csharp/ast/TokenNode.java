@@ -21,7 +21,7 @@ public class TokenNode extends CsharpNode {
 	@Override
 	public Object accept(CsharpVisitor v) {
 		// TODO Auto-generated method stub
-		return null;
+		return v.visit_TokenNode(this);
 	}
 
 	@Override
