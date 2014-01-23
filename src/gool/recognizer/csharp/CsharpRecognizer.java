@@ -2,6 +2,8 @@ package gool.recognizer.csharp;
 
 import gool.parser.csharp.CsharpVisitor;
 import gool.parser.csharp.ast.*;
+import gool.ast.core.*;
+import gool.ast.type.*;
 
 
 
@@ -56,6 +58,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_namespace_member_declaration(
 			namespace_member_declaration namespace_member_declaration) {
+		
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -63,26 +66,26 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_namespace_member_declarations(
 			namespace_member_declarations namespace_member_declarations) {
-		// TODO Auto-generated method stub
+		for(CsharpNode node:namespace_member_declarations.namespace_member_declarations)
+		{
+
+		}
 		return null;
 	}
 
 	@Override
 	public Object visit_TokenNode(TokenNode tokenNode) {
-		// TODO Auto-generated method stub
-		return null;
+		return tokenNode.toString();
 	}
 
 	@Override
 	public Object visit_type_declaration(type_declaration type_declaration) {
-		// TODO Auto-generated method stub
-		return null;
+		return type_declaration.accept(this);
 	}
 
 	@Override
 	public Object visit_UnknowNode(UnknowNode unknowNode) {
-		// TODO Auto-generated method stub
-		return null;
+		return new TypeUnknown(unknowNode.toString());
 	}
 
 

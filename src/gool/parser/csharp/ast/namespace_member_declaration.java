@@ -4,9 +4,9 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class namespace_member_declaration extends CsharpNode {
 
-	CsharpNode attributes;
-	CsharpNode modifiers;
-	CsharpNode type_declaration;
+	public CsharpNode attributes;
+	public CsharpNode modifiers;
+	public CsharpNode type_declaration;
 	
 	public namespace_member_declaration(CsharpNode a,
 			CsharpNode b, CsharpNode c) {

@@ -7,7 +7,7 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class namespace_member_declarations extends CsharpNode {
 
-List<CsharpNode> namespace_member_declarations;
+public List<CsharpNode> namespace_member_declarations;
 	
 	public namespace_member_declarations() {
 		this.namespace_member_declarations = new ArrayList<CsharpNode>();
