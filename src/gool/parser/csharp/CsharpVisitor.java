@@ -32,6 +32,11 @@ public interface CsharpVisitor {
 	public Object visit_type_declaration(type_declaration type_declaration);
 
 	public Object visit_UnknowNode(UnknowNode unknowNode);
-	
- 
+
+	public Object visit_method_declaration(method_declaration method_declaration);
+
+	public Object visit_method_header(method_header method_header);
+
+	public Object visit_statement_list(statement_list statement_list);
+
 }
