@@ -24,6 +24,9 @@ public class statement_list extends CsharpNode{
 	public String toStringTree(int tab) {
 	 String res = nbTab(tab) + "statement_list:\n";
 		for (CsharpNode c : statement_list) {
+			if (c == null) {
+				return res + "NULL";
+			}
 			res += c.toStringTree(tab+1);
 		}
 		return res;
