@@ -27,7 +27,10 @@ public class class_member_declarations extends CsharpNode {
 	public String toStringTree(int tab) {
 		String res = nbTab(tab) + "class_member_declarations:\n";
 		for (CsharpNode c : class_member_declarations) {
-			res += c.toStringTree(tab+1);
+			if (c != null) 
+				res += c.toStringTree(tab+1);
+			else 
+				System.out.println("NULL\n");
 		}
 		return res;
 	}

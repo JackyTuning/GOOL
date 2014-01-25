@@ -4,11 +4,11 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class method_declaration extends CsharpNode{
 
-	public CsharpNode method_header;
+	public method_header method_header;
 
-	public CsharpNode method_body;
+	public statement_list method_body;
 	
-	public method_declaration(CsharpNode method_header, CsharpNode method_body) {
+	public method_declaration(method_header method_header, statement_list method_body) {
 		super();
 		this.method_header = method_header;
 		this.method_body = method_body;

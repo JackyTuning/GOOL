@@ -365,7 +365,7 @@ public class GoolTest {
 	public void simpleIf() throws Exception {
 		String input = TestHelper
 				.surroundWithClassMain(
-						"boolean b = true; if (b) { System.out.println(2 + 2);} else { System.out.println(2 + 5); }",
+						"int b = 4; if (b == 3) { System.out.println(2 + 2);} else { System.out.println(2 + 5); }",
 						MAIN_CLASS_NAME);
 		String expected = "4";
 		compareResultsDifferentPlatforms(input, expected);

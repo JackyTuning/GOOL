@@ -2,14 +2,14 @@ package gool.parser.csharp.ast;
 
 import gool.parser.csharp.CsharpVisitor;
 
-public class local_variable_declaration extends CsharpNode{
+public class local_variable_declaration extends statement{
 
 
-	public CsharpNode local_variable_type;
-	public CsharpNode local_variable_declarators;
+	public type local_variable_type;
+	public local_variable_declarators local_variable_declarators;
 	
-	public local_variable_declaration(CsharpNode local_variable_type,
-			CsharpNode local_variable_declarators) {
+	public local_variable_declaration(type local_variable_type,
+			local_variable_declarators local_variable_declarators) {
 		super();
 		this.local_variable_type = local_variable_type;
 		this.local_variable_declarators = local_variable_declarators;

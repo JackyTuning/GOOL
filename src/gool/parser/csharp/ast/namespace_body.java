@@ -4,8 +4,6 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class namespace_body extends CsharpNode {
 
-	
-	
 	CsharpNode extern_alias_directives;
 	CsharpNode using_directives;
 	CsharpNode global_attributes;

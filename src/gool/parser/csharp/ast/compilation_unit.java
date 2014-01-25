@@ -4,9 +4,9 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class compilation_unit extends CsharpNode {
 
-	CsharpNode namespace_body;
+	namespace_body namespace_body;
 	
-	public compilation_unit(CsharpNode e) {
+	public compilation_unit(namespace_body e) {
 		namespace_body = e;
 	}
 	

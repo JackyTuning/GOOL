@@ -7,10 +7,10 @@ public class class_declaration extends CsharpNode {
 	CsharpNode type_or_generic;
 	CsharpNode class_base;
 	CsharpNode type_parameter_constraints_clauses;
-	CsharpNode class_body;
+	class_member_declarations class_body;
 
 	public class_declaration(CsharpNode c1, CsharpNode c2,
-			CsharpNode c3, CsharpNode c4) {
+			CsharpNode c3, class_member_declarations c4) {
 		type_or_generic = c1;
 		 class_base = c2;
 		 type_parameter_constraints_clauses = c3;

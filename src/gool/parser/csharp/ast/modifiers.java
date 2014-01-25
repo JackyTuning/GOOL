@@ -4,28 +4,28 @@ import java.util.ArrayList;
 
 import gool.parser.csharp.CsharpVisitor;
 
-public class statement_list extends statement{
+public class modifiers extends CsharpNode{
 	
-	public ArrayList<statement> statement_list; 
+	public ArrayList<modifier> modifiers; 
 
-	public statement_list() {
-		this.statement_list = new ArrayList<statement>();
+	public modifiers() {
+		this.modifiers = new ArrayList<modifier>();
 	}
 	
-	public void add(statement e){
-		statement_list.add(e);
+	public void add(modifier e){
+		modifiers.add(e);
 	}
 	@Override
 	public Object accept(CsharpVisitor v) {
 		// TODO Auto-generated method stub
-		return v.visit_statement_list(this);
+		return v.visit_modifiers(this);
 	}
 
 	@Override
 	public String toStringTree(int tab) {
 		// TODO Auto-generated method stub
-	 String res = nbTab(tab) + "statement_list:\n";
-		for (CsharpNode c : statement_list) {
+	 String res = nbTab(tab) + "modifiers:\n";
+		for (CsharpNode c : modifiers) {
 			res += c.toStringTree(tab+1);
 		}
 		return res;

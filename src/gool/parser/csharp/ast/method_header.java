@@ -3,12 +3,12 @@ package gool.parser.csharp.ast;
 import gool.parser.csharp.CsharpVisitor;
 
 public class method_header extends CsharpNode{
-	public CsharpNode member_name;
-	public CsharpNode formal_parameter_list;
+	public qid member_name;
+	public formal_parameter_list formal_parameter_list;
 	public CsharpNode type_parameter_constraints_clauses;
 
-	public method_header(CsharpNode member_name,
-			CsharpNode formal_parameter_list,
+	public method_header(qid member_name,
+			formal_parameter_list formal_parameter_list,
 			CsharpNode type_parameter_constraints_clauses) {
 		super();
 		this.member_name = member_name;

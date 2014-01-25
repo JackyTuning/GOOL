@@ -6,13 +6,13 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class local_variable_declarators extends CsharpNode {
 
-	public ArrayList<CsharpNode> local_variable_declarators;
+	public ArrayList<local_variable_declarator> local_variable_declarators;
 	
 	public local_variable_declarators(){
-		local_variable_declarators=new ArrayList<CsharpNode>();
+		local_variable_declarators=new ArrayList<local_variable_declarator>();
 	}
 	
-	public void add(CsharpNode e){
+	public void add(local_variable_declarator e){
 		local_variable_declarators.add(e);
 	}
 	@Override

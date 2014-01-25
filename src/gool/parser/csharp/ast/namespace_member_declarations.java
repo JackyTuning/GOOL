@@ -19,8 +19,8 @@ public List<CsharpNode> namespace_member_declarations;
 		return v.visit_namespace_member_declarations(this);
 	}
 
-	public void add(CsharpNode e) {
-		namespace_member_declarations.add(e);
+	public void add(CsharpNode csharpNode) {
+		namespace_member_declarations.add(csharpNode);
 	}
 
 	@Override

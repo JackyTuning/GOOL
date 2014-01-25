@@ -1,0 +1,25 @@
+package gool.parser.csharp.ast;
+
+import gool.parser.csharp.CsharpVisitor;
+
+public class return_statement extends statement {
+
+	expression expression;
+	
+	public return_statement(expression expression) {
+		this.expression = expression;
+	}
+	
+	@Override
+	public Object accept(CsharpVisitor v) {
+		// TODO Auto-generated method stub
+		return v.visit_return_statement(this);
+	}
+	
+	public String toStringTree(int tab) {
+		return nbTab(tab) + "return_statement:\n"
+		 		+ (expression != null ? expression.toStringTree(tab + 1) : "");
+
+	}
+
+}

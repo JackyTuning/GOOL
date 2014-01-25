@@ -9,6 +9,7 @@ import gool.parser.csharp.CsharpVisitor;
 public class type extends CsharpNode{
 	private CommonTree tree;
 	String code;
+	
 	public type(CommonTree root_0) {
 		TreeAdaptor adaptor = new CommonTreeAdaptor();
 		tree =  (CommonTree) adaptor.dupTree(root_0);

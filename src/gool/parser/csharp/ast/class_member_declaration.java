@@ -23,7 +23,7 @@ public class class_member_declaration extends CsharpNode {
 	@Override
 	public String toStringTree(int tab) {
 		return nbTab(tab) + "class_member_declaration:\n"
-				 + attributes.toStringTree(tab+1)
+		 		+ (attributes != null ? attributes.toStringTree(tab + 1) : "")
 				 		+ (modifiers != null ? modifiers.toStringTree(tab + 1) : "")
 		+ (class_member_declaration_type != null ? class_member_declaration_type.toStringTree(tab + 1) : "");
 	}

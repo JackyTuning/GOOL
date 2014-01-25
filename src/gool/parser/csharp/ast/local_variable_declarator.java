@@ -4,11 +4,11 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class local_variable_declarator extends CsharpNode {
 
-	public CsharpNode identifier;
-	public CsharpNode local_variable_initializer;
+	public identifier identifier;
+	public expression local_variable_initializer;
 	
-	public local_variable_declarator(CsharpNode identifier,
-			CsharpNode local_variable_initializer) {
+	public local_variable_declarator(identifier identifier,
+			expression local_variable_initializer) {
 		super();
 		this.identifier = identifier;
 		this.local_variable_initializer = local_variable_initializer;
