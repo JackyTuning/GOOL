@@ -32,4 +32,12 @@ public class unary_expression extends expression {
 						+ nbTab(tab+1) +  code +"\n";			
 	}
 
+
+	@Override
+	public String toString() {
+		return code;
+	}
+	
+	
+
 }

@@ -4,8 +4,8 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class local_variable_declarator extends CsharpNode {
 
-	public identifier identifier;
-	public expression local_variable_initializer;
+	 identifier identifier;
+	 expression local_variable_initializer;
 	
 	public local_variable_declarator(identifier identifier,
 			expression local_variable_initializer) {
@@ -16,7 +16,7 @@ public class local_variable_declarator extends CsharpNode {
 	
 	@Override
 	public Object accept(CsharpVisitor v) {
-		return v.visit_variable_declarator(this);
+		return v.visit_local_variable_declarator(this);
 	}
 
 	@Override
@@ -27,5 +27,15 @@ public class local_variable_declarator extends CsharpNode {
 				+ (local_variable_initializer != null ? local_variable_initializer.toStringTree(tab + 1) : "")
 				;
 	}
+
+	public identifier getIdentifier() {
+		return identifier;
+	}
+
+	public expression getLocal_variable_initializer() {
+		return local_variable_initializer;
+	}
+	
+	
 
 }

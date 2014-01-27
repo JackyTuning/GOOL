@@ -29,6 +29,10 @@ public class For extends While {
 		super(condition, statements);
 		this.initializer = initializer;
 		this.updater = updater;
+	
+		for (int i = 0,j,x = 3; i <= 1; i ++) {
+			
+		}
 	}
 
 	public Statement getInitializer() {

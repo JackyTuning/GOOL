@@ -6,7 +6,7 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class local_variable_declarators extends CsharpNode {
 
-	public ArrayList<local_variable_declarator> local_variable_declarators;
+	ArrayList<local_variable_declarator> local_variable_declarators;
 	
 	public local_variable_declarators(){
 		local_variable_declarators=new ArrayList<local_variable_declarator>();
@@ -28,5 +28,11 @@ public class local_variable_declarators extends CsharpNode {
 		}
 		return res;
 	}
+
+	public ArrayList<local_variable_declarator> getLocal_variable_declarators() {
+		return local_variable_declarators;
+	}
+	
+	
 
 }

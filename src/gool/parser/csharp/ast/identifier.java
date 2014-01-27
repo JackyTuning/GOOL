@@ -28,4 +28,10 @@ public class identifier extends CsharpNode{
 				+ nbTab(tab+1) +  code +"\n";
 	}
 
+	@Override
+	public String toString() {
+		return code;
+	}
+
+	
 }

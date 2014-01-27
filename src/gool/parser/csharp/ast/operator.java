@@ -9,7 +9,7 @@ import gool.parser.csharp.CsharpVisitor;
 public class operator extends CsharpNode {
 
 	String code;
-		
+
 	public operator(String string) {
 		code = string;
 	}
@@ -20,11 +20,14 @@ public class operator extends CsharpNode {
 		return v.visit_operator(this);
 	}
 
-
 	@Override
 	public String toStringTree(int tab) {
-			return nbTab(tab) + "operator\n" 
-						+ nbTab(tab+1) +  code +"\n";			
+		return nbTab(tab) + "operator\n" + nbTab(tab + 1) + code + "\n";
+	}
+
+	@Override
+	public String toString() {
+		return code;
 	}
 
 }

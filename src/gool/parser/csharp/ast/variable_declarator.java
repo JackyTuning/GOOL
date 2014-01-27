@@ -4,8 +4,8 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class variable_declarator extends CsharpNode{
 
-	public CsharpNode type_name;
-	public CsharpNode variable_initializer;
+	 CsharpNode type_name;
+	 CsharpNode variable_initializer;
 	
 	public variable_declarator(CsharpNode variable_initializer,CsharpNode type_name) {
 		super();
@@ -26,6 +26,14 @@ public class variable_declarator extends CsharpNode{
 		 		+ (type_name != null ? type_name.toStringTree(tab + 1) : "")
 		 		+ (variable_initializer != null ? variable_initializer.toStringTree(tab + 1) : "")
 		 		;
+	}
+
+	public CsharpNode getType_name() {
+		return type_name;
+	}
+
+	public CsharpNode getVariable_initializer() {
+		return variable_initializer;
 	}
 	
 

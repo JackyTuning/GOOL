@@ -35,4 +35,9 @@ public class class_member_declarations extends CsharpNode {
 		return res;
 	}
 
+	public List<CsharpNode> getClass_member_declarations() {
+		return class_member_declarations;
+	}
+	
+
 }

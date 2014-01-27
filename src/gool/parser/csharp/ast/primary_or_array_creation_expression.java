@@ -6,12 +6,12 @@ import org.antlr.runtime.tree.TreeAdaptor;
 
 import gool.parser.csharp.CsharpVisitor;
 
-public class assignment_operator extends CsharpNode {
+public class primary_or_array_creation_expression extends expression {
 
 	private CommonTree tree;
 	String code;
 		
-	public assignment_operator(CommonTree root_0) {
+	public primary_or_array_creation_expression(CommonTree root_0) {
 		TreeAdaptor adaptor = new CommonTreeAdaptor();
 		tree =  (CommonTree) adaptor.dupTree(root_0);
 		code = tree.toStringTree();	
@@ -22,20 +22,14 @@ public class assignment_operator extends CsharpNode {
 	@Override
 	public Object accept(CsharpVisitor v) {
 		// TODO Auto-generated method stub
-		return v.visit_assignment_operator(this);
+		return null;
 	}
 
 
 	@Override
 	public String toStringTree(int tab) {
-			return nbTab(tab) + "assignment_operator\n" 
+			return nbTab(tab) + "primary_or_array_creation_expression\n" 
 						+ nbTab(tab+1) +  code +"\n";			
-	}
-
-
-	@Override
-	public String toString() {
-		return code;
 	}
 
 }

@@ -7,7 +7,7 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class formal_parameter_list extends CsharpNode {
 
-public List<formal_parameter> formal_parameters;
+	List<formal_parameter> formal_parameters;
 	
 	public formal_parameter_list() {
 		this.formal_parameters = new ArrayList<formal_parameter>();
@@ -32,4 +32,9 @@ public List<formal_parameter> formal_parameters;
 		return res;
 	}
 
+	public List<formal_parameter> getFormal_parameters() {
+		return formal_parameters;
+	}
+
+	
 }

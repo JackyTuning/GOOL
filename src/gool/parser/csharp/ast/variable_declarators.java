@@ -7,7 +7,7 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class variable_declarators extends CsharpNode {
 
-public List<variable_declarator> variable_declarators;
+    List<variable_declarator> variable_declarators;
 	
 	public variable_declarators() {
 		this.variable_declarators = new ArrayList<variable_declarator>();
@@ -31,5 +31,11 @@ public List<variable_declarator> variable_declarators;
 		}
 		return res;
 	}
+
+	public List<variable_declarator> getVariable_declarators() {
+		return variable_declarators;
+	}
+	
+	
 
 }

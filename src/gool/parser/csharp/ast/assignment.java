@@ -4,9 +4,9 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class assignment extends expression{
 
-	public expression unary_expression;
-	public assignment_operator assignment_operator;
-	public expression expression;
+	 expression unary_expression;
+	 assignment_operator assignment_operator;
+	 expression expression;
 	
 	public assignment(expression unary_expression, assignment_operator assignment_operator, expression expression) {
 		super();
@@ -31,6 +31,18 @@ public class assignment extends expression{
 		 		+ (expression != null ? expression.toStringTree(tab + 1) : "")
 		 		;
 	}
-	
 
+	public expression getUnary_expression() {
+		return unary_expression;
+	}
+
+	public assignment_operator getAssignment_operator() {
+		return assignment_operator;
+	}
+
+	public expression getExpression() {
+		return expression;
+	}
+	
+	
 }

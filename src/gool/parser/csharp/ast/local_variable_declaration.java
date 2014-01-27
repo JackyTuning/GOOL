@@ -5,8 +5,8 @@ import gool.parser.csharp.CsharpVisitor;
 public class local_variable_declaration extends statement{
 
 
-	public type local_variable_type;
-	public local_variable_declarators local_variable_declarators;
+	 type local_variable_type;
+	 local_variable_declarators local_variable_declarators;
 	
 	public local_variable_declaration(type local_variable_type,
 			local_variable_declarators local_variable_declarators) {
@@ -27,4 +27,14 @@ public class local_variable_declaration extends statement{
 				+ (local_variable_type != null ? local_variable_type.toStringTree(tab + 1) : "")
 				+ (local_variable_declarators != null ? local_variable_declarators.toStringTree(tab + 1) : "");
 	}
+
+	public type getLocal_variable_type() {
+		return local_variable_type;
+	}
+
+	public local_variable_declarators getLocal_variable_declarators() {
+		return local_variable_declarators;
+	}
+	
+	
 }

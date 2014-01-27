@@ -4,9 +4,9 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class na_expression extends expression{
 
-	public expression filsGauche;
-	public operator operator;
-	public expression filsDroit;
+	 expression filsGauche;
+	 operator operator;
+	 expression filsDroit;
 	
 	public na_expression(expression filsGauche, operator operator, expression filsDroit) {
 		super();
@@ -30,6 +30,18 @@ public class na_expression extends expression{
 		 		+ (operator != null ? operator.toStringTree(tab + 1) : "")
 		 		+ (filsDroit != null ? filsDroit.toStringTree(tab + 1) : "")
 		 		;
+	}
+
+	public expression getFilsGauche() {
+		return filsGauche;
+	}
+
+	public operator getOperator() {
+		return operator;
+	}
+
+	public expression getFilsDroit() {
+		return filsDroit;
 	}
 	
 

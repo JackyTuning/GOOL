@@ -9,12 +9,12 @@ import gool.parser.csharp.CsharpVisitor;
 public class modifier extends CsharpNode {
 
 	private CommonTree tree;
-	String code;
+	String name;
 		
 	public modifier(CommonTree root_0) {
 		TreeAdaptor adaptor = new CommonTreeAdaptor();
 		tree =  (CommonTree) adaptor.dupTree(root_0);
-		code = tree.toStringTree();	
+		name = tree.toStringTree();	
 		
 	}
 
@@ -29,7 +29,13 @@ public class modifier extends CsharpNode {
 	@Override
 	public String toStringTree(int tab) {
 			return nbTab(tab) + "modifier\n" 
-						+ nbTab(tab+1) +  code +"\n";			
+						+ nbTab(tab+1) +  name +"\n";			
 	}
 
+
+	public String getName() {
+		return name;
+	}
+
+	
 }
