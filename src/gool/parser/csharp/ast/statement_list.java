@@ -17,13 +17,11 @@ public class statement_list extends statement{
 	}
 	@Override
 	public Object accept(CsharpVisitor v) {
-		// TODO Auto-generated method stub
 		return v.visit_statement_list(this);
 	}
 
 	@Override
 	public String toStringTree(int tab) {
-		// TODO Auto-generated method stub
 	 String res = nbTab(tab) + "statement_list:\n";
 		for (CsharpNode c : statement_list) {
 			res += c.toStringTree(tab+1);

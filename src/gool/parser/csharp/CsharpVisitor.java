@@ -98,6 +98,12 @@ public interface CsharpVisitor {
 			variable_declarator variable_declarator);
 
 	public Object visit_modifiers(modifiers modifiers);
+
+	public Object visit_constant_declarators(
+			constant_declarators constant_declarators);
+
+	public Object visit_constant_declarator(
+			constant_declarator constant_declarator);
 	
 	
 
