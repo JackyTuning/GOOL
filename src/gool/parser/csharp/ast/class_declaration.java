@@ -31,5 +31,20 @@ public class class_declaration extends CsharpNode {
 		+ (class_body != null ? class_body.toStringTree(tab + 1) : "");
 
 	}
-	
+
+	public CsharpNode getType_or_generic() {
+		return type_or_generic;
+	}
+
+	public CsharpNode getClass_base() {
+		return class_base;
+	}
+
+	public CsharpNode getType_parameter_constraints_clauses() {
+		return type_parameter_constraints_clauses;
+	}
+
+	public class_member_declarations getClass_body() {
+		return class_body;
+	}
 }

@@ -157,6 +157,9 @@ public class GOOLCompiler {
 			throws Exception {
 		Collection<ClassDef> classDefs = concreteJavaToAbstractGool(
 				destPlatform, inputFiles);
+		for (ClassDef c : classDefs) {
+			System.out.println(c);
+		}
 		return abstractGool2Target(classDefs);
 	}
 

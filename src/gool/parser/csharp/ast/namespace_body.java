@@ -32,4 +32,22 @@ public class namespace_body extends CsharpNode {
 
 	}
 
+	public CsharpNode getExtern_alias_directives() {
+		return extern_alias_directives;
+	}
+
+	public CsharpNode getUsing_directives() {
+		return using_directives;
+	}
+
+	public CsharpNode getGlobal_attributes() {
+		return global_attributes;
+	}
+
+	public CsharpNode getNamespace_member_declarations() {
+		return namespace_member_declarations;
+	}
+	
+	
+
 }

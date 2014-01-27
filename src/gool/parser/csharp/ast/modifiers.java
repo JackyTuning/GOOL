@@ -31,4 +31,8 @@ public class modifiers extends CsharpNode{
 		return res;
 	}
 
+	public ArrayList<modifier> getModifiers() {
+		return modifiers;
+	}
+
 }

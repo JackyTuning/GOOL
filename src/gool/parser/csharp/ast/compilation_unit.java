@@ -19,7 +19,12 @@ public class compilation_unit extends CsharpNode {
 	public String toStringTree(int tab) {
 		return nbTab(tab) + "compilation_unit:\n"
 		 		+ (namespace_body != null ? namespace_body.toStringTree(tab + 1) : "");
-
 	}
+
+	public namespace_body getNamespace_body() {
+		return namespace_body;
+	}
+	
+	
 
 }

@@ -27,5 +27,18 @@ public class namespace_member_declaration extends CsharpNode {
  		+ (type_declaration != null ? type_declaration.toStringTree(tab + 1) : "");
 	}
 
+	public CsharpNode getAttributes() {
+		return attributes;
+	}
+
+	public modifiers getModifiers() {
+		return modifiers;
+	}
+
+	public CsharpNode getType_declaration() {
+		return type_declaration;
+	}
+
+	
 	
 }
