@@ -6,7 +6,7 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class statement_list extends statement{
 	
-	public ArrayList<statement> statement_list; 
+	ArrayList<statement> statement_list; 
 
 	public statement_list() {
 		this.statement_list = new ArrayList<statement>();
@@ -28,5 +28,11 @@ public class statement_list extends statement{
 		}
 		return res;
 	}
+
+	public ArrayList<statement> getStatement_list() {
+		return statement_list;
+	}
+	
+	
 
 }

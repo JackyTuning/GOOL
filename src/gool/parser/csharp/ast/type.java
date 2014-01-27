@@ -6,15 +6,15 @@ import org.antlr.runtime.tree.TreeAdaptor;
 
 import gool.parser.csharp.CsharpVisitor;
 
-public class type extends CsharpNode{
+public class type extends CsharpNode {
 	private CommonTree tree;
 	String code;
-	
+
 	public type(CommonTree root_0) {
 		TreeAdaptor adaptor = new CommonTreeAdaptor();
-		tree =  (CommonTree) adaptor.dupTree(root_0);
-		code = tree.toStringTree();	
-		
+		tree = (CommonTree) adaptor.dupTree(root_0);
+		code = tree.toStringTree();
+
 	}
 
 	@Override
@@ -24,8 +24,12 @@ public class type extends CsharpNode{
 	}
 
 	public String toStringTree(int tab) {
-		return nbTab(tab) + "type\n" 
-					+ nbTab(tab+1) +  code +"\n";			
-}
+		return nbTab(tab) + "type\n" + nbTab(tab + 1) + code + "\n";
+	}
+
+	@Override
+	public String toString() {
+		return code;
+	}
 
 }

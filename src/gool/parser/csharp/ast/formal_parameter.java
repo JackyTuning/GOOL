@@ -4,8 +4,8 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class formal_parameter extends CsharpNode{
 
-	public CsharpNode attributes;
-	public CsharpNode parameter;
+	 CsharpNode attributes;
+	 CsharpNode parameter;
 	
 	public formal_parameter(CsharpNode attributes, CsharpNode parameter) {
 		super();
@@ -26,6 +26,14 @@ public class formal_parameter extends CsharpNode{
 		 		+ (attributes != null ? attributes.toStringTree(tab + 1) : "")
 		 		+ (parameter != null ? parameter.toStringTree(tab + 1) : "")
 		 		;
+	}
+
+	public CsharpNode getAttributes() {
+		return attributes;
+	}
+
+	public CsharpNode getParameter() {
+		return parameter;
 	}
 	
 
