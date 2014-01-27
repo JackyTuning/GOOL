@@ -4,7 +4,7 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class return_statement extends statement {
 
-	expression expression;
+	private expression expression;
 	
 	public return_statement(expression expression) {
 		this.expression = expression;
@@ -18,8 +18,12 @@ public class return_statement extends statement {
 	
 	public String toStringTree(int tab) {
 		return nbTab(tab) + "return_statement:\n"
-		 		+ (expression != null ? expression.toStringTree(tab + 1) : "");
+		 		+ (expression != null ? getExpression().toStringTree(tab + 1) : "");
 
+	}
+
+	public expression getExpression() {
+		return expression;
 	}
 
 }

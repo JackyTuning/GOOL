@@ -1,67 +1,27 @@
 package gool.recognizer.csharp;
 
-import gool.ast.core.ClassDef;
-import gool.ast.core.Modifier;
+import gool.ast.core.*;
 import gool.ast.type.TypeUnknown;
 import gool.generator.common.Platform;
 import gool.parser.csharp.CsharpVisitor;
 import gool.parser.csharp.csLexer;
 import gool.parser.csharp.csParser;
-import gool.parser.csharp.ast.CsharpNode;
-import gool.parser.csharp.ast.UnknownNode;
-import gool.parser.csharp.ast.assignment;
-import gool.parser.csharp.ast.assignment_operator;
-import gool.parser.csharp.ast.class_declaration;
-import gool.parser.csharp.ast.class_member_declaration;
-import gool.parser.csharp.ast.class_member_declaration_type;
-import gool.parser.csharp.ast.class_member_declarations;
-import gool.parser.csharp.ast.compilation_unit;
-import gool.parser.csharp.ast.conditional_expression;
-import gool.parser.csharp.ast.constant_declarator;
-import gool.parser.csharp.ast.constant_declarators;
-import gool.parser.csharp.ast.do_statement;
-import gool.parser.csharp.ast.for_statement;
-import gool.parser.csharp.ast.foreach_statement;
-import gool.parser.csharp.ast.formal_parameter;
-import gool.parser.csharp.ast.formal_parameter_list;
-import gool.parser.csharp.ast.identifier;
-import gool.parser.csharp.ast.if_statement;
-import gool.parser.csharp.ast.local_constant_declaration;
-import gool.parser.csharp.ast.local_variable_declaration;
-import gool.parser.csharp.ast.local_variable_declarator;
-import gool.parser.csharp.ast.local_variable_declarators;
-import gool.parser.csharp.ast.method_declaration;
-import gool.parser.csharp.ast.method_header;
-import gool.parser.csharp.ast.modifier;
-import gool.parser.csharp.ast.modifiers;
-import gool.parser.csharp.ast.na_expression;
-import gool.parser.csharp.ast.namespace_body;
-import gool.parser.csharp.ast.namespace_member_declaration;
-import gool.parser.csharp.ast.namespace_member_declarations;
-import gool.parser.csharp.ast.operator;
-import gool.parser.csharp.ast.qid;
-import gool.parser.csharp.ast.return_statement;
-import gool.parser.csharp.ast.statement_expression_list;
-import gool.parser.csharp.ast.statement_list;
-import gool.parser.csharp.ast.type;
-import gool.parser.csharp.ast.type_declaration;
-import gool.parser.csharp.ast.type_or_generic;
-import gool.parser.csharp.ast.unary_expression;
-import gool.parser.csharp.ast.variable_declarator;
-import gool.parser.csharp.ast.variable_declarators;
-import gool.parser.csharp.ast.while_statement;
+import gool.parser.csharp.ast.*;
 import gool.parser.csharp.csParser.compilation_unit_return;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
+
 
 public class CsharpRecognizer implements CsharpVisitor {
 	
@@ -86,7 +46,64 @@ public class CsharpRecognizer implements CsharpVisitor {
 		}
 		return result;
 	}
-
+	
+	/**
+	 * The map between CSharp operators and GOOL operators. Left are the CSharp
+	 * operators. Right are the GOOL operators.
+	 */
+	static final private Map<String, Operator> operatorMap = new HashMap<String, Operator>();
+	static {
+		operatorMap.put("+", Operator.PLUS);
+		operatorMap.put("-", Operator.MINUS);
+		operatorMap.put("*", Operator.MULT);
+		operatorMap.put("/", Operator.DIV);
+		operatorMap.put("&&", Operator.AND);
+		operatorMap.put("||", Operator.OR);
+		operatorMap.put("==", Operator.EQUAL);
+		operatorMap.put("!=", Operator.NOT_EQUAL);
+		operatorMap.put("<", Operator.LT);
+		operatorMap.put("<=", Operator.LEQ);
+		operatorMap.put(">", Operator.GT);
+		operatorMap.put(">=", Operator.GEQ);
+	}
+	
+	/**
+	 * Converts CSharp operator to GOOL operators.
+	 */
+	private Operator getOperator(String operator) {
+		Operator result = operatorMap.get(operator);
+		if (result == null) {
+			result = Operator.UNKNOWN;
+		}
+		return result;
+	}
+	
+	/**
+	 * The map between CSharp modifiers and GOOL modifiers. Left are the CSharp
+	 * modifiers. Right are the GOOL modifiers.
+	 * TODO modifier � ajouter : 'new' | 'internal' | 'unsafe' | 'readonly' | 'extern' ;
+	 */
+	static final private Map<String, Modifier> modifierMap = new HashMap<String, Modifier>();
+	static {
+		modifierMap.put("public", Modifier.PUBLIC);
+		modifierMap.put("protected", Modifier.PROTECTED);
+		modifierMap.put("private", Modifier.PRIVATE);
+		modifierMap.put("abstract", Modifier.ABSTRACT);
+		modifierMap.put("sealed", Modifier.FINAL);
+		modifierMap.put("static", Modifier.STATIC);
+		modifierMap.put("volatile", Modifier.VOLATILE);
+		modifierMap.put("virtual", Modifier.VIRTUAL);
+		modifierMap.put("override", Modifier.OVERRIDE);
+	}
+	
+	/**
+	 * Converts CSharp modifier to GOOL modifier.
+	 */
+	private Modifier getModifier(String modifier) {
+		return modifierMap.get(modifier);
+	}
+	
+	
 	@Override
 	public Object visit_class_declaration(class_declaration c) {
 		String name = (String) c.getType_or_generic().accept(this);
@@ -145,14 +162,24 @@ public class CsharpRecognizer implements CsharpVisitor {
 		return classes;
 	}
 
-	@Override
-	public Object visit_type_declaration(type_declaration type_declaration) {
-		return type_declaration.accept(this);
-	}
-
+	
 	@Override
 	public Object visit_UnknwnNode(UnknownNode unknowNode) {
 		return new TypeUnknown(unknowNode.toString());
+	}
+
+
+	@Override
+	public Object visit_modifiers(modifiers m) {
+		Collection<Modifier> modifiers = new HashSet<Modifier>();
+		for(modifier modi : m.getModifiers()) {
+			modifiers.add((Modifier) modi.accept(this));
+		}
+		return modifiers;
+	}
+	
+	public Object visit_type_declaration(type_declaration type_declaration) {
+		return type_declaration.accept(this);
 	}
 
 	@Override
@@ -227,26 +254,34 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_if_statement(if_statement if_statement) {
-		// TODO Auto-generated method stub
-		return null;
+		Expression condition = (Expression)if_statement.boolean_expression.accept(this);
+		Statement thenStmt = (Statement) if_statement.embedded_statement.accept(this);
+		Statement elseStmt = null;
+		if(if_statement.else_statement!=null) {
+			elseStmt = (Statement) if_statement.else_statement.accept(this);
+		}
+
+		return new If(condition, thenStmt, elseStmt);
 	}
 
 	@Override
 	public Object visit_while_statement(while_statement while_statement) {
-		// TODO Auto-generated method stub
-		return null;
+		return new While((Expression) while_statement.boolean_expression.accept(this),(Statement) while_statement.embedded_statement.accept(this));
 	}
 
 	@Override
 	public Object visit_do_statement(do_statement do_statement) {
 		// TODO Auto-generated method stub
-		return null;
+		return new ExpressionUnknown(null, do_statement.toString());
 	}
 
 	@Override
 	public Object visit_for_statement(for_statement for_statement) {
-		// TODO Auto-generated method stub
-		return null;
+		Statement initializer = (Statement) for_statement.for_initializer.accept(this);
+		Expression condition = (Expression) for_statement.for_condition.accept(this);
+		Statement iterator = (Statement) for_statement.for_iterator.accept(this);
+			
+		return new For(initializer, condition, iterator, (Statement) for_statement.embedded_statement.accept(this));
 	}
 
 	@Override
@@ -259,13 +294,12 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_foreach_statement(foreach_statement foreach_statement) {
 		// TODO Auto-generated method stub
-		return null;
+		return new ExpressionUnknown(null, foreach_statement.toString());
 	}
 
 	@Override
 	public Object visit_return_statement(return_statement return_statement) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Return((Expression) return_statement.getExpression().accept(this));
 	}
 
 	@Override
@@ -315,7 +349,8 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_modifier(modifier modifier) {
-		
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -338,14 +373,6 @@ public class CsharpRecognizer implements CsharpVisitor {
 		return null;
 	}
 
-	@Override
-	public Object visit_modifiers(modifiers m) {
-		Collection<Modifier> modifiers = new HashSet<Modifier>();
-		for(modifier modi : m.getModifiers()) {
-			modifiers.add((Modifier) modi.accept(this));
-		}
-		return modifiers;
-	}
 
 	@Override
 	public Object visit_constant_declarators(
