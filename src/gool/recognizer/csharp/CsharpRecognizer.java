@@ -1,16 +1,83 @@
 package gool.recognizer.csharp;
 
-import gool.ast.core.*;
+import gool.ast.core.BinaryOperation;
+import gool.ast.core.Block;
+import gool.ast.core.ClassDef;
+import gool.ast.core.Constant;
+import gool.ast.core.Expression;
+import gool.ast.core.ExpressionUnknown;
+import gool.ast.core.Field;
+import gool.ast.core.For;
+import gool.ast.core.If;
+import gool.ast.core.Meth;
+import gool.ast.core.Modifier;
+import gool.ast.core.Operator;
+import gool.ast.core.Return;
+import gool.ast.core.Statement;
+import gool.ast.core.VarAccess;
+import gool.ast.core.VarDeclaration;
+import gool.ast.core.While;
 import gool.ast.type.IType;
+import gool.ast.type.TypeBool;
+import gool.ast.type.TypeByte;
+import gool.ast.type.TypeChar;
+import gool.ast.type.TypeDecimal;
+import gool.ast.type.TypeInt;
 import gool.ast.type.TypeNone;
 import gool.ast.type.TypeString;
 import gool.ast.type.TypeUnknown;
+import gool.ast.type.TypeVoid;
 import gool.generator.common.Platform;
 import gool.parser.csharp.CsharpVisitor;
 import gool.parser.csharp.csLexer;
 import gool.parser.csharp.csParser;
-import gool.parser.csharp.ast.*;
 import gool.parser.csharp.csParser.compilation_unit_return;
+import gool.parser.csharp.ast.CsharpNode;
+import gool.parser.csharp.ast.UnknownNode;
+import gool.parser.csharp.ast.assignment;
+import gool.parser.csharp.ast.assignment_operator;
+import gool.parser.csharp.ast.block;
+import gool.parser.csharp.ast.class_declaration;
+import gool.parser.csharp.ast.class_member_declaration;
+import gool.parser.csharp.ast.class_member_declaration_field;
+import gool.parser.csharp.ast.class_member_declaration_meth;
+import gool.parser.csharp.ast.class_member_declarations;
+import gool.parser.csharp.ast.compilation_unit;
+import gool.parser.csharp.ast.conditional_expression;
+import gool.parser.csharp.ast.constant_declarator;
+import gool.parser.csharp.ast.constant_declarators;
+import gool.parser.csharp.ast.do_statement;
+import gool.parser.csharp.ast.for_statement;
+import gool.parser.csharp.ast.foreach_statement;
+import gool.parser.csharp.ast.formal_parameter;
+import gool.parser.csharp.ast.formal_parameter_list;
+import gool.parser.csharp.ast.identifier;
+import gool.parser.csharp.ast.if_statement;
+import gool.parser.csharp.ast.local_constant_declaration;
+import gool.parser.csharp.ast.local_variable_declaration;
+import gool.parser.csharp.ast.local_variable_declarator;
+import gool.parser.csharp.ast.local_variable_declarators;
+import gool.parser.csharp.ast.method_declaration;
+import gool.parser.csharp.ast.method_header;
+import gool.parser.csharp.ast.modifier;
+import gool.parser.csharp.ast.modifiers;
+import gool.parser.csharp.ast.na_expression;
+import gool.parser.csharp.ast.namespace_body;
+import gool.parser.csharp.ast.namespace_member_declaration;
+import gool.parser.csharp.ast.namespace_member_declarations;
+import gool.parser.csharp.ast.operator;
+import gool.parser.csharp.ast.qid;
+import gool.parser.csharp.ast.return_statement;
+import gool.parser.csharp.ast.statement;
+import gool.parser.csharp.ast.statement_expression_list;
+import gool.parser.csharp.ast.statement_list;
+import gool.parser.csharp.ast.type;
+import gool.parser.csharp.ast.type_declaration;
+import gool.parser.csharp.ast.type_or_generic;
+import gool.parser.csharp.ast.unary_expression;
+import gool.parser.csharp.ast.variable_declarator;
+import gool.parser.csharp.ast.variable_declarators;
+import gool.parser.csharp.ast.while_statement;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -67,6 +134,21 @@ public class CsharpRecognizer implements CsharpVisitor {
 		modifierMap.put("override", Modifier.OVERRIDE);
 	}
 	
+	static final private Map<String, IType> typeMap = new HashMap<String, IType>();
+	static {
+		typeMap.put("bool",TypeBool.INSTANCE);
+		typeMap.put("int",TypeInt.INSTANCE);
+		typeMap.put("short",TypeInt.INSTANCE);
+		typeMap.put("long",TypeInt.INSTANCE);
+		typeMap.put("float",TypeDecimal.INSTANCE);
+		typeMap.put("double",TypeDecimal.INSTANCE);
+		typeMap.put("decimal",TypeDecimal.INSTANCE);
+		typeMap.put("byte",TypeByte.INSTANCE);
+		typeMap.put("void",TypeVoid.INSTANCE);
+		typeMap.put("char",TypeChar.INSTANCE);
+		typeMap.put("string",TypeString.INSTANCE);
+	}
+	
 	public static Collection<ClassDef> parseGool(Platform defaultPlatform,
 			Collection<? extends File> inputFiles) throws Exception {
 		Collection<ClassDef> result = new ArrayList<ClassDef>();
@@ -106,6 +188,13 @@ public class CsharpRecognizer implements CsharpVisitor {
 		return result;
 	}
 	
+	private IType getIType(String type) {
+		IType result = typeMap.get(type);
+		if(result == null) {
+			result = new TypeUnknown(type);
+		}
+		return result;
+	}
 	
 	@Override
 	public Object visit_assignment(assignment o) {
@@ -386,8 +475,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_type(type o) {
-		// TODO tretezrrzrzz
-		return new TypeUnknown(o.toString());
+		return getIType(o.toString());
 	}
 
 	public Object visit_type_declaration(type_declaration type_declaration) {
