@@ -10,7 +10,7 @@ options {
 
 @header {
   package gool.parser.csharp;
-  
+  import gool.parser.csharp.ast.literal.literaltype;
   import gool.parser.csharp.ast.*;
 
 }
@@ -135,7 +135,7 @@ primary_expression  returns [expression t]
 				// try the simple one first, this has no argS and no expressions
 				// symantically could be object creation
 				| (delegate_creation_expression) => delegate_creation_expression// new FooDelegate (MyFunction)
-				| object_creation_expression
+				| e=object_creation_expression {res = new primary_expression_new($e.t);}
 				| anonymous_object_creation_expression)							// new {int X, string Y} 
 	| sizeof_expression						// sizeof (struct)
 	| checked_expression            		// checked (...
@@ -1185,17 +1185,16 @@ also_keyword:
 	| 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' 
 	| 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic';
 
-
-literal returns [expression t]:
-	a=Real_literal {$t = new Real_literal($a.tree);}
-	| a=NUMBER  {$t = new NUMBER($a.tree);}
-	| a=Hex_number  {$t = new Hex_number($a.tree);}
-	| a=Character_literal  {$t = new Character_literal($a.tree);}
-	| a=STRINGLITERAL  {$t = new STRINGLITERAL($a.tree);}
-	| a=Verbatim_string_literal  {$t = new Verbatim_string_literal($a.tree);}
-	| a=TRUE  {$t = new Bool($a.tree);}
-	| a=FALSE  {$t = new Bool($a.tree);}
-	| a=NULL   {$t = new NULL($a.tree);}
+literal returns [literal t]:
+	a=Real_literal {$t = new literal($a.tree,literaltype.Real_literal);}
+	| a=NUMBER  {$t = new literal($a.tree,literaltype.NUMBER);}
+	| a=Hex_number  {$t = new literal($a.tree,literaltype.Hex_number);}
+	| a=Character_literal  {$t = new literal($a.tree,literaltype.Character_literal);}
+	| a=STRINGLITERAL  {$t = new literal($a.tree,literaltype.STRINGLITERAL);}
+	| a=Verbatim_string_literal  {$t = new literal($a.tree,literaltype.Verbatim_string_literal);}
+	| a=TRUE  {$t = new literal($a.tree,literaltype.Bool);}
+	| a=FALSE  {$t = new literal($a.tree,literaltype.Bool);}
+	| a=NULL   {$t = new literal($a.tree,literaltype.NULL);}
 	;
 ///////////////////////////////////////////////////////
 

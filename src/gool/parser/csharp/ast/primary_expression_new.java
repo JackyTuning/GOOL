@@ -15,6 +15,12 @@ public class primary_expression_new extends expression {
 	}
 	
 	
+	public primary_expression_new(expression object_creation_expression) {
+		super();
+		this.object_creation_expression = object_creation_expression;
+	}
+
+
 	@Override
 	public Object accept(CsharpVisitor v) {
 		return v.visit_primary_expression_new(this);

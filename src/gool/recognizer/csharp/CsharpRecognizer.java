@@ -17,7 +17,6 @@ import gool.ast.core.Node;
 import gool.ast.core.Operator;
 import gool.ast.core.Return;
 import gool.ast.core.Statement;
-import gool.ast.core.VarAccess;
 import gool.ast.core.VarDeclaration;
 import gool.ast.core.While;
 import gool.ast.type.IType;
