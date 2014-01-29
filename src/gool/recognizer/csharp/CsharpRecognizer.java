@@ -26,6 +26,7 @@ import gool.ast.type.TypeChar;
 import gool.ast.type.TypeDecimal;
 import gool.ast.type.TypeInt;
 import gool.ast.type.TypeNone;
+import gool.ast.type.TypeNull;
 import gool.ast.type.TypeString;
 import gool.ast.type.TypeUnknown;
 import gool.ast.type.TypeVoid;
@@ -59,6 +60,7 @@ import gool.parser.csharp.ast.formal_parameter_list;
 import gool.parser.csharp.ast.identifier;
 import gool.parser.csharp.ast.if_statement;
 import gool.parser.csharp.ast.literal;
+import gool.parser.csharp.ast.literal.literaltype;
 import gool.parser.csharp.ast.local_constant_declaration;
 import gool.parser.csharp.ast.local_variable_declaration;
 import gool.parser.csharp.ast.local_variable_declarator;
@@ -191,7 +193,17 @@ public class CsharpRecognizer implements CsharpVisitor {
 		typeMap.put("string",TypeString.INSTANCE);
 	}
 	
-	
+	static final private Map<literal.literaltype,IType> literalTypeMap = new HashMap<literal.literaltype,IType>();
+	static {
+		literalTypeMap.put(literal.literaltype.Bool, TypeBool.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Character_literal, TypeChar.INSTANCE);
+		literalTypeMap.put(literal.literaltype.NUMBER, TypeInt.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Real_literal, TypeDecimal.INSTANCE);
+		literalTypeMap.put(literal.literaltype.STRINGLITERAL, TypeString.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Verbatim_string_literal, TypeNone.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Hex_number, TypeNone.INSTANCE);
+		literalTypeMap.put(literal.literaltype.NULL, TypeNull.INSTANCE);
+	}
 	/**
 	 * Converts CSharp modifier to GOOL modifier.
 	 */
@@ -212,13 +224,24 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 
 	private IType getIType(String type) {
-		IType result = typeMap.get(type);
-		if(result == null) {
-			result = new TypeUnknown(type);
+		IType result = typeMap.get(type.toLowerCase());
+		if(result == null) {//Perharps there is "System." at the beginning
+			result = typeMap.get(type.substring(7).toLowerCase());
+			if(result == null) {
+				result = new TypeUnknown(type);
+			}
 		}
 		return result;
 	}
 
+	private IType getIType(literal literal) {
+		IType result = literalTypeMap.get(literal.getType());
+		if(result == null) {
+			result = new TypeUnknown(literal.toString());
+		}
+		return result;
+	}
+	
 	/**
 	 * Converts CSharp operator to GOOL operators.
 	 */
@@ -229,7 +252,6 @@ public class CsharpRecognizer implements CsharpVisitor {
 		}
 		return result;
 	}
-	
 	
 	@Override
 	public Object visit_assignment(assignment o) {
@@ -640,7 +662,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_literal(literal o) {
-		return new Constant( null /* JB AU BOULOT*/, o.toString());
+		return new Constant(getIType(o), o.toString());
 	}
 
 	@Override
