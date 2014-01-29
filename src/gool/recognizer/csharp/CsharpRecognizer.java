@@ -37,6 +37,8 @@ import gool.parser.csharp.csParser;
 import gool.parser.csharp.csParser.compilation_unit_return;
 import gool.parser.csharp.ast.CsharpNode;
 import gool.parser.csharp.ast.UnknownNode;
+import gool.parser.csharp.ast.argument;
+import gool.parser.csharp.ast.argument_list;
 import gool.parser.csharp.ast.assignment;
 import gool.parser.csharp.ast.assignment_operator;
 import gool.parser.csharp.ast.block;
@@ -57,6 +59,7 @@ import gool.parser.csharp.ast.formal_parameter;
 import gool.parser.csharp.ast.formal_parameter_list;
 import gool.parser.csharp.ast.identifier;
 import gool.parser.csharp.ast.if_statement;
+import gool.parser.csharp.ast.literal;
 import gool.parser.csharp.ast.local_constant_declaration;
 import gool.parser.csharp.ast.local_variable_declaration;
 import gool.parser.csharp.ast.local_variable_declarator;
@@ -69,7 +72,12 @@ import gool.parser.csharp.ast.na_expression;
 import gool.parser.csharp.ast.namespace_body;
 import gool.parser.csharp.ast.namespace_member_declaration;
 import gool.parser.csharp.ast.namespace_member_declarations;
+import gool.parser.csharp.ast.object_creation_expression;
 import gool.parser.csharp.ast.operator;
+import gool.parser.csharp.ast.predefined_type;
+import gool.parser.csharp.ast.primary_expression;
+import gool.parser.csharp.ast.primary_expression_new;
+import gool.parser.csharp.ast.primary_or_array_creation_expression;
 import gool.parser.csharp.ast.qid;
 import gool.parser.csharp.ast.return_statement;
 import gool.parser.csharp.ast.statement;
@@ -617,6 +625,57 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_fixed_parameter(fixed_parameter o) {
 		return new VarDeclaration((IType) o.getType().accept(this),(String) o.getIdentifier().accept(this));
+	}
+
+	@Override
+	public Object visit_argument_list(argument_list argument_list) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_argument_value(argument argument) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_literal(literal literal) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_object_creation_expression(
+			object_creation_expression object_creation_expression) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_predefined_type(predefined_type predefined_type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_primary_expression_new(
+			primary_expression_new primary_expression_new) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_primary_expression(primary_expression primary_expression) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_primary_or_array_creation_expression(
+			primary_or_array_creation_expression primary_or_array_creation_expression) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

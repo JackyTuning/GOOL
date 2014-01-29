@@ -109,6 +109,26 @@ public interface CsharpVisitor {
 			local_variable_declarator local_variable_declarator);
 
 	public Object visit_fixed_parameter(fixed_parameter fixed_parameter);
+
+	public Object visit_argument_list(argument_list argument_list);
+
+	public Object visit_argument_value(argument argument);
+
+	public Object visit_literal(literal literal);
+
+	public Object visit_object_creation_expression(
+			object_creation_expression object_creation_expression);
+
+	public Object visit_predefined_type(predefined_type predefined_type);
+
+	public Object visit_primary_expression_new(
+			primary_expression_new primary_expression_new);
+
+	public Object visit_primary_expression(primary_expression primary_expression);
+
+	public Object visit_primary_or_array_creation_expression(
+			primary_or_array_creation_expression primary_or_array_creation_expression);
+	
 	
 	
 
