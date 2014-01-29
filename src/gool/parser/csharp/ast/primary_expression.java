@@ -23,4 +23,10 @@ public class primary_expression extends expression {
 				+(primary_expression_start != null ? primary_expression_start.toStringTree(tab + 1) : "");
 	}
 
+	public CsharpNode getPrimary_expression_start() {
+		return primary_expression_start;
+	}
+	
+	
+
 }

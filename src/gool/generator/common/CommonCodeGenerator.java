@@ -593,7 +593,7 @@ public abstract class CommonCodeGenerator implements CodeGenerator {
 
 	@Override
 	public String getCode(ExpressionUnknown unknownExpression) {
-		return String.format("%s /* Unrecognized by GOOL, passed on */",
+		return String.format("%s /* Unrecognized by "+ unknownExpression.getCause() +", passed on */",
 				unknownExpression.getTextual());
 	}
 

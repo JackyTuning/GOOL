@@ -10,6 +10,7 @@ import gool.ast.core.Expression;
 import gool.ast.core.ExpressionUnknown;
 import gool.ast.core.Field;
 import gool.ast.core.For;
+import gool.ast.core.Identifier;
 import gool.ast.core.If;
 import gool.ast.core.Meth;
 import gool.ast.core.Modifier;
@@ -17,6 +18,7 @@ import gool.ast.core.Node;
 import gool.ast.core.Operator;
 import gool.ast.core.Return;
 import gool.ast.core.Statement;
+import gool.ast.core.VarAccess;
 import gool.ast.core.VarDeclaration;
 import gool.ast.core.While;
 import gool.ast.type.IType;
@@ -263,8 +265,8 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_class_declaration(class_declaration c) {
-		String name = (String) c.getType_or_generic().accept(this);
-		ClassDef classe = new ClassDef(name);
+		Identifier name = (Identifier) c.getType_or_generic().accept(this);
+		ClassDef classe = new ClassDef(name.getName());
 		if (c.getClass_body() != null) {
 			List<Object> fm = (List<Object>) c.getClass_body().accept(this);
 			for (Object o : fm) {
@@ -273,7 +275,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 				}
 				if (o instanceof List<?>) {
 					for (Field f : (List<Field>) o)
-					classe.addField(f);
+						classe.addField(f);
 				}
 			}			
 		}
@@ -406,7 +408,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_identifier(identifier o) {
-		return o.toString();
+		return new Identifier(TypeNone.INSTANCE, o.toString());
 	}
 
 	@Override
@@ -447,7 +449,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_local_variable_declarator(
 			local_variable_declarator o) {
-		VarDeclaration v = new VarDeclaration(null,(String) o.getIdentifier().accept(this));
+		VarDeclaration v = new VarDeclaration(null,((Identifier) o.getIdentifier().accept(this)).getName());
 		if (o.getLocal_variable_initializer() != null) {
 			v.setInitialValue((Expression) o.getLocal_variable_initializer().accept(this));
 		}
@@ -467,7 +469,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_method_declaration(method_declaration o) {
 		method_header method_header = o.getMethod_header();
-		String name = (String) method_header.getMember_name().accept(this);
+		String name = method_header.getMember_name().toString();
 		Meth m = new Meth(null, name);
 		formal_parameter_list formal_parameter_list = method_header.getFormal_parameter_list();
 		if (formal_parameter_list != null) {
@@ -524,7 +526,10 @@ public class CsharpRecognizer implements CsharpVisitor {
 			namespace_member_declarations namespace_member_declarations) {
 		List<ClassDef> classes = new ArrayList<ClassDef>();
 		for (CsharpNode node : namespace_member_declarations.getNamespace_member_declarations()) {
-			classes.add( ( ClassDef ) node.accept(this));
+			Object accept = node.accept(this);
+			if ( accept instanceof ClassDef) {
+				classes.add( ( ClassDef ) accept);
+			}
 		}
 		return classes;
 	}
@@ -559,7 +564,8 @@ public class CsharpRecognizer implements CsharpVisitor {
 	public Object visit_statement_list(statement_list o) {
 		List<Statement> stats = new ArrayList<Statement>();
 		for (statement s : o.getStatement_list()) {
-			stats.add((Statement) s.accept(this));
+			Object accept = s.accept(this);
+			stats.add((Statement) accept);
 		}
 		return stats;
 	}
@@ -578,23 +584,17 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_unary_expression(unary_expression o) {
-		/*try {
-			Integer i = Integer.parseInt(o.toString());
-			return new Constant(TypeString.INSTANCE, i);
-		} catch (NumberFormatException e){
-			return new VarAccess(new VarDeclaration(TypeString.INSTANCE,o.toString()));
-		}*/
-		return o.getUnary_expression();
+		return o.getUnary_expression().accept(this);
 	}
 	@Override
 	public Object visit_UnknwnNode(UnknownNode unknowNode) {
-		return new ExpressionUnknown(null, unknowNode.toString());
+		return new ExpressionUnknown(null, unknowNode.toString(),"CsharpParser");
 	}
 	@Override
 	public Object visit_variable_declarator(
 			variable_declarator o) {
 		
-		Field f = new Field((String) o.getType_name().accept(this), null, null);
+		Field f = new Field(((Identifier) o.getType_name().accept(this)).getName(), null, null);
 		if (o.getVariable_initializer() != null) {
 			f.setDefaultValue((Expression) o.getVariable_initializer().accept(this));
 		}
@@ -623,24 +623,25 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_fixed_parameter(fixed_parameter o) {
-		return new VarDeclaration((IType) o.getType().accept(this),(String) o.getIdentifier().accept(this));
+		return new VarDeclaration((IType) o.getType().accept(this),((Identifier) o.getIdentifier().accept(this)).getName());
 	}
 
 	@Override
-	public Object visit_argument_list(argument_list argument_list) {
+	public Object visit_argument_list(argument_list o) {
 		// TODO Auto-generated method stub
-		return null;
+		return  new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
-	public Object visit_argument_value(argument argument) {
+	public Object visit_argument_value(argument o) {
 		// TODO Auto-generated method stub
-		return null;
+		return  new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
 	public Object visit_literal(literal o) {
-		return new Constant( null /* JB AU BOULOT*/, o.toString());
+		String string = o.toString().replace("\"", "");
+		return new Constant(TypeString.INSTANCE, string);
 	}
 
 	@Override
@@ -662,9 +663,9 @@ public class CsharpRecognizer implements CsharpVisitor {
 	}
 
 	@Override
-	public Object visit_primary_expression(primary_expression primary_expression) {
+	public Object visit_primary_expression(primary_expression o) {
 		// TODO Auto-generated method stub
-		return null;
+		return o.getPrimary_expression_start().accept(this);
 	}
 
 }

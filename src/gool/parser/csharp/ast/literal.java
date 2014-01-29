@@ -33,4 +33,11 @@ public class literal extends CsharpNode{
 		return nbTab(tab) + type.toString() +"\n"
 				+ nbTab(tab+1) +  code +"\n";
 	}
+
+	@Override
+	public String toString() {
+		return code;
+	}
+	
+	
 }

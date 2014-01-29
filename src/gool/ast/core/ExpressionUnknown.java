@@ -26,19 +26,33 @@ import gool.generator.GoolGeneratorController;
 public class ExpressionUnknown extends Expression {
 
 	String textual;
+	String cause;
 
 	public String getTextual() {
 		return textual;
 	}
+	
+	public String getCause() {
+		return cause;
+	}
+
+
 
 	public ExpressionUnknown(IType type, String textual) {
 		super(type);
 		this.textual = textual;
+		this.cause = "GOOL";
+	}
+
+	public ExpressionUnknown(IType type, String textual, String cause) {
+		this(type,textual);
+		this.cause = cause;
 	}
 
 	@Override
 	public String callGetCode() {
 		return GoolGeneratorController.generator().getCode(this);
 	}
+	
 
 }
