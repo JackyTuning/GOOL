@@ -2,31 +2,34 @@ package gool.parser.csharp.ast;
 
 import gool.parser.csharp.CsharpVisitor;
 
-public class primary_expression extends expression{
+public class primary_expression extends expression {
 
-	public CsharpNode boolean_expression;
-	public CsharpNode embedded_statement;
+	expression object_creation_expression;
+	expression primary_expression_part;
+	CsharpNode primary_expression_start;
 	
-	public primary_expression(CsharpNode boolean_expression, CsharpNode embedded_statement) {
+	public primary_expression(expression object_creation_expression,
+			expression primary_expression_part) {
 		super();
-		this.boolean_expression = boolean_expression;
-		this.embedded_statement = embedded_statement;
+		this.object_creation_expression = object_creation_expression;
+		this.primary_expression_part = primary_expression_part;
 	}
 	
+	public primary_expression(CsharpNode csharpNode) {
+		// TODO Auto-generated constructor stub
+		this.primary_expression_start=csharpNode;
+	}
+
 	@Override
 	public Object accept(CsharpVisitor v) {
-		// TODO Auto-generated method stub
-		return null;
+		return v.visit_primary_expression(this);
 	}
 
 	@Override
 	public String toStringTree(int tab) {
-		// TODO Auto-generated method stubca
-		return nbTab(tab) + "primary_expression:\n"
-		 		+ (boolean_expression != null ? boolean_expression.toStringTree(tab + 1) : "")
-		 		+ (embedded_statement != null ? embedded_statement.toStringTree(tab + 1) : "")
-		 		;
+		return nbTab(tab)+ "primary_expression:\n" + (object_creation_expression != null ? object_creation_expression.toStringTree(tab + 1) : "")
+				+(primary_expression_part != null ? primary_expression_part.toStringTree(tab + 1) : "")
+				+(primary_expression_start != null ? primary_expression_start.toStringTree(tab + 1) : "");
 	}
-	
 
 }
