@@ -28,6 +28,7 @@ import gool.ast.type.TypeChar;
 import gool.ast.type.TypeDecimal;
 import gool.ast.type.TypeInt;
 import gool.ast.type.TypeNone;
+import gool.ast.type.TypeNull;
 import gool.ast.type.TypeString;
 import gool.ast.type.TypeUnknown;
 import gool.ast.type.TypeVoid;
@@ -193,7 +194,17 @@ public class CsharpRecognizer implements CsharpVisitor {
 		typeMap.put("string",TypeString.INSTANCE);
 	}
 	
-	
+	static final private Map<literal.literaltype,IType> literalTypeMap = new HashMap<literal.literaltype,IType>();
+	static {
+		literalTypeMap.put(literal.literaltype.Bool, TypeBool.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Character_literal, TypeChar.INSTANCE);
+		literalTypeMap.put(literal.literaltype.NUMBER, TypeInt.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Real_literal, TypeDecimal.INSTANCE);
+		literalTypeMap.put(literal.literaltype.STRINGLITERAL, TypeString.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Verbatim_string_literal, TypeNone.INSTANCE);
+		literalTypeMap.put(literal.literaltype.Hex_number, TypeNone.INSTANCE);
+		literalTypeMap.put(literal.literaltype.NULL, TypeNull.INSTANCE);
+	}
 	/**
 	 * Converts CSharp modifier to GOOL modifier.
 	 */
@@ -214,13 +225,22 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 
 	private IType getIType(String type) {
-		IType result = typeMap.get(type);
+		// TODO gerer system.String
+		IType result = typeMap.get(type.toLowerCase());
 		if(result == null) {
 			result = new TypeUnknown(type);
 		}
 		return result;
 	}
 
+	private IType getIType(literal literal) {
+		IType result = literalTypeMap.get(literal.getType());
+		if(result == null) {
+			result = new TypeUnknown(literal.toString());
+		}
+		return result;
+	}
+	
 	/**
 	 * Converts CSharp operator to GOOL operators.
 	 */
@@ -641,7 +661,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_literal(literal o) {
 		String string = o.toString().replace("\"", "");
-		return new Constant(TypeString.INSTANCE, string);
+		return new Constant(getIType(o), string);
 	}
 
 	@Override

@@ -21,13 +21,16 @@ public class literal extends CsharpNode{
 		tree =  (CommonTree) adaptor.dupTree(root_0);
 		code = tree.toStringTree();	
 		type = t;
-		
 	}
 	
 	public Object accept(CsharpVisitor v) {
 		return v.visit_literal(this);
 	}
 
+	public literaltype getType() {
+		return type;	
+	}
+	
 	@Override
 	public String toStringTree(int tab) {
 		return nbTab(tab) + type.toString() +"\n"
