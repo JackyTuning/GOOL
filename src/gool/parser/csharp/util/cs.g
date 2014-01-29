@@ -149,7 +149,7 @@ primary_expression_start returns [CsharpNode t]
 @after {if (res != null) $t=res; else $t=new UnknownNode($tree);}:
 	a=predefined_type {res=$a.t;}            
 	| (identifier    '<') => identifier   generic_argument_list
-	| identifier ('::'   identifier)?
+	| d=identifier ('::'   identifier)? {res = $d.t;}
 	| 'this' 
 	| 'base'
 	| b=paren_expression{res=$b.t;}
@@ -224,7 +224,7 @@ primary_or_array_creation_expression returns [expression t]
 	@init {expression res = null;}
 	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);}:
 	(array_creation_expression) => array_creation_expression
-	| a=primary_expression {res = new primary_or_array_creation_expression($a.t);}
+	| a=primary_expression {res = $a.t;}
 	;
 // new Type[2] { }
 array_creation_expression:
@@ -1186,17 +1186,16 @@ also_keyword:
 	| 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic';
 
 
-literal returns [literal t]
-@after {$t = new literal($tree);}:
-	Real_literal
-	| NUMBER
-	| Hex_number
-	| Character_literal
-	| STRINGLITERAL
-	| Verbatim_string_literal
-	| TRUE
-	| FALSE
-	| NULL 
+literal returns [expression t]:
+	a=Real_literal {$t = new Real_literal($a.tree);}
+	| a=NUMBER  {$t = new NUMBER($a.tree);}
+	| a=Hex_number  {$t = new Hex_number($a.tree);}
+	| a=Character_literal  {$t = new Character_literal($a.tree);}
+	| a=STRINGLITERAL  {$t = new STRINGLITERAL($a.tree);}
+	| a=Verbatim_string_literal  {$t = new Verbatim_string_literal($a.tree);}
+	| a=TRUE  {$t = new Bool($a.tree);}
+	| a=FALSE  {$t = new Bool($a.tree);}
+	| a=NULL   {$t = new NULL($a.tree);}
 	;
 ///////////////////////////////////////////////////////
 

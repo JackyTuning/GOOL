@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jeremie/ANTLR/cs.g 2014-01-29 12:09:41
+// $ANTLR 3.5 /Users/jeremie/ANTLR/cs.g 2014-01-29 13:54:12
 
   package gool.parser.csharp;
   
@@ -2546,15 +2546,7 @@ public class csParser extends Parser {
 
 						}
 						break;
-					case Character_literal:
-					case FALSE:
-					case Hex_number:
-					case NULL:
-					case NUMBER:
 					case Real_literal:
-					case STRINGLITERAL:
-					case TRUE:
-					case Verbatim_string_literal:
 						{
 						int LA20_3 = input.LA(2);
 						if ( (synpred2_cs()) ) {
@@ -2571,6 +2563,206 @@ public class csParser extends Parser {
 								input.consume();
 								NoViableAltException nvae =
 									new NoViableAltException("", 20, 3, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case NUMBER:
+						{
+						int LA20_4 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 4, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case Hex_number:
+						{
+						int LA20_5 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 5, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case Character_literal:
+						{
+						int LA20_6 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 6, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case STRINGLITERAL:
+						{
+						int LA20_7 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 7, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case Verbatim_string_literal:
+						{
+						int LA20_8 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 8, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case TRUE:
+						{
+						int LA20_9 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 9, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case FALSE:
+						{
+						int LA20_10 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 10, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case NULL:
+						{
+						int LA20_11 = input.LA(2);
+						if ( (synpred2_cs()) ) {
+							alt20=1;
+						}
+						else if ( (synpred3_cs()) ) {
+							alt20=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 20, 11, input);
 								throw nvae;
 							} finally {
 								input.rewind(nvaeMark);
@@ -3401,7 +3593,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "primary_expression_start"
-	// /Users/jeremie/ANTLR/cs.g:147:1: primary_expression_start returns [CsharpNode t] : (a= predefined_type | ( identifier '<' )=> identifier generic_argument_list | identifier ( '::' identifier )? | 'this' | 'base' |b= paren_expression | typeof_expression |c= literal );
+	// /Users/jeremie/ANTLR/cs.g:147:1: primary_expression_start returns [CsharpNode t] : (a= predefined_type | ( identifier '<' )=> identifier generic_argument_list |d= identifier ( '::' identifier )? | 'this' | 'base' |b= paren_expression | typeof_expression |c= literal );
 	public final csParser.primary_expression_start_return primary_expression_start() throws RecognitionException {
 		csParser.primary_expression_start_return retval = new csParser.primary_expression_start_return();
 		retval.start = input.LT(1);
@@ -3409,27 +3601,27 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token string_literal78=null;
+		Token string_literal77=null;
+		Token string_literal79=null;
 		Token string_literal80=null;
-		Token string_literal81=null;
 		ParserRuleReturnScope a =null;
+		ParserRuleReturnScope d =null;
 		ParserRuleReturnScope b =null;
 		ParserRuleReturnScope c =null;
 		ParserRuleReturnScope identifier75 =null;
 		ParserRuleReturnScope generic_argument_list76 =null;
-		ParserRuleReturnScope identifier77 =null;
-		ParserRuleReturnScope identifier79 =null;
-		ParserRuleReturnScope typeof_expression82 =null;
+		ParserRuleReturnScope identifier78 =null;
+		ParserRuleReturnScope typeof_expression81 =null;
 
-		CommonTree string_literal78_tree=null;
+		CommonTree string_literal77_tree=null;
+		CommonTree string_literal79_tree=null;
 		CommonTree string_literal80_tree=null;
-		CommonTree string_literal81_tree=null;
 
 		CsharpNode res = null;
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 20) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:149:66: (a= predefined_type | ( identifier '<' )=> identifier generic_argument_list | identifier ( '::' identifier )? | 'this' | 'base' |b= paren_expression | typeof_expression |c= literal )
+			// /Users/jeremie/ANTLR/cs.g:149:66: (a= predefined_type | ( identifier '<' )=> identifier generic_argument_list |d= identifier ( '::' identifier )? | 'this' | 'base' |b= paren_expression | typeof_expression |c= literal )
 			int alt29=8;
 			switch ( input.LA(1) ) {
 			case 103:
@@ -3568,18 +3760,18 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:152:4: identifier ( '::' identifier )?
+					// /Users/jeremie/ANTLR/cs.g:152:4: d= identifier ( '::' identifier )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_identifier_in_primary_expression_start1798);
-					identifier77=identifier();
+					pushFollow(FOLLOW_identifier_in_primary_expression_start1800);
+					d=identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier77.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, d.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:152:15: ( '::' identifier )?
+					// /Users/jeremie/ANTLR/cs.g:152:17: ( '::' identifier )?
 					int alt28=2;
 					int LA28_0 = input.LA(1);
 					if ( (LA28_0==80) ) {
@@ -3587,25 +3779,26 @@ public class csParser extends Parser {
 					}
 					switch (alt28) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:152:16: '::' identifier
+							// /Users/jeremie/ANTLR/cs.g:152:18: '::' identifier
 							{
-							string_literal78=(Token)match(input,80,FOLLOW_80_in_primary_expression_start1801); if (state.failed) return retval;
+							string_literal77=(Token)match(input,80,FOLLOW_80_in_primary_expression_start1803); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal78_tree = (CommonTree)adaptor.create(string_literal78);
-							adaptor.addChild(root_0, string_literal78_tree);
+							string_literal77_tree = (CommonTree)adaptor.create(string_literal77);
+							adaptor.addChild(root_0, string_literal77_tree);
 							}
 
-							pushFollow(FOLLOW_identifier_in_primary_expression_start1805);
-							identifier79=identifier();
+							pushFollow(FOLLOW_identifier_in_primary_expression_start1807);
+							identifier78=identifier();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier79.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier78.getTree());
 
 							}
 							break;
 
 					}
 
+					if ( state.backtracking==0 ) {res = (d!=null?((csParser.identifier_return)d).t:null);}
 					}
 					break;
 				case 4 :
@@ -3614,10 +3807,10 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					string_literal80=(Token)match(input,180,FOLLOW_180_in_primary_expression_start1812); if (state.failed) return retval;
+					string_literal79=(Token)match(input,180,FOLLOW_180_in_primary_expression_start1816); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal80_tree = (CommonTree)adaptor.create(string_literal80);
-					adaptor.addChild(root_0, string_literal80_tree);
+					string_literal79_tree = (CommonTree)adaptor.create(string_literal79);
+					adaptor.addChild(root_0, string_literal79_tree);
 					}
 
 					}
@@ -3628,10 +3821,10 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					string_literal81=(Token)match(input,102,FOLLOW_102_in_primary_expression_start1818); if (state.failed) return retval;
+					string_literal80=(Token)match(input,102,FOLLOW_102_in_primary_expression_start1822); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal81_tree = (CommonTree)adaptor.create(string_literal81);
-					adaptor.addChild(root_0, string_literal81_tree);
+					string_literal80_tree = (CommonTree)adaptor.create(string_literal80);
+					adaptor.addChild(root_0, string_literal80_tree);
 					}
 
 					}
@@ -3642,7 +3835,7 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_paren_expression_in_primary_expression_start1825);
+					pushFollow(FOLLOW_paren_expression_in_primary_expression_start1829);
 					b=paren_expression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -3657,11 +3850,11 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_typeof_expression_in_primary_expression_start1831);
-					typeof_expression82=typeof_expression();
+					pushFollow(FOLLOW_typeof_expression_in_primary_expression_start1835);
+					typeof_expression81=typeof_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, typeof_expression82.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, typeof_expression81.getTree());
 
 					}
 					break;
@@ -3671,7 +3864,7 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_literal_in_primary_expression_start1851);
+					pushFollow(FOLLOW_literal_in_primary_expression_start1855);
 					c=literal();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -3722,8 +3915,8 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope access_identifier83 =null;
-		ParserRuleReturnScope brackets_or_arguments84 =null;
+		ParserRuleReturnScope access_identifier82 =null;
+		ParserRuleReturnScope brackets_or_arguments83 =null;
 
 
 		try {
@@ -3753,11 +3946,11 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_access_identifier_in_primary_expression_part1875);
-					access_identifier83=access_identifier();
+					pushFollow(FOLLOW_access_identifier_in_primary_expression_part1879);
+					access_identifier82=access_identifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, access_identifier83.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, access_identifier82.getTree());
 
 					}
 					break;
@@ -3767,11 +3960,11 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_brackets_or_arguments_in_primary_expression_part1880);
-					brackets_or_arguments84=brackets_or_arguments();
+					pushFollow(FOLLOW_brackets_or_arguments_in_primary_expression_part1884);
+					brackets_or_arguments83=brackets_or_arguments();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets_or_arguments84.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets_or_arguments83.getTree());
 
 					}
 					break;
@@ -3816,8 +4009,8 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope access_operator85 =null;
-		ParserRuleReturnScope type_or_generic86 =null;
+		ParserRuleReturnScope access_operator84 =null;
+		ParserRuleReturnScope type_or_generic85 =null;
 
 
 		try {
@@ -3829,17 +4022,17 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_access_operator_in_access_identifier1888);
-			access_operator85=access_operator();
+			pushFollow(FOLLOW_access_operator_in_access_identifier1892);
+			access_operator84=access_operator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, access_operator85.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, access_operator84.getTree());
 
-			pushFollow(FOLLOW_type_or_generic_in_access_identifier1892);
-			type_or_generic86=type_or_generic();
+			pushFollow(FOLLOW_type_or_generic_in_access_identifier1896);
+			type_or_generic85=type_or_generic();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic86.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic85.getTree());
 
 			}
 
@@ -3881,9 +4074,9 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token set87=null;
+		Token set86=null;
 
-		CommonTree set87_tree=null;
+		CommonTree set86_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 23) ) { return retval; }
@@ -3894,10 +4087,10 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			set87=input.LT(1);
+			set86=input.LT(1);
 			if ( input.LA(1)==DOT||input.LA(1)==PTR ) {
 				input.consume();
-				if ( state.backtracking==0 ) adaptor.addChild(root_0, (CommonTree)adaptor.create(set87));
+				if ( state.backtracking==0 ) adaptor.addChild(root_0, (CommonTree)adaptor.create(set86));
 				state.errorRecovery=false;
 				state.failed=false;
 			}
@@ -3946,8 +4139,8 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope brackets88 =null;
-		ParserRuleReturnScope arguments89 =null;
+		ParserRuleReturnScope brackets87 =null;
+		ParserRuleReturnScope arguments88 =null;
 
 
 		try {
@@ -3977,11 +4170,11 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_brackets_in_brackets_or_arguments1914);
-					brackets88=brackets();
+					pushFollow(FOLLOW_brackets_in_brackets_or_arguments1918);
+					brackets87=brackets();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets88.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, brackets87.getTree());
 
 					}
 					break;
@@ -3991,11 +4184,11 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_arguments_in_brackets_or_arguments1918);
-					arguments89=arguments();
+					pushFollow(FOLLOW_arguments_in_brackets_or_arguments1922);
+					arguments88=arguments();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments89.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments88.getTree());
 
 					}
 					break;
@@ -4039,12 +4232,12 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal90=null;
-		Token char_literal92=null;
-		ParserRuleReturnScope expression_list91 =null;
+		Token char_literal89=null;
+		Token char_literal91=null;
+		ParserRuleReturnScope expression_list90 =null;
 
-		CommonTree char_literal90_tree=null;
-		CommonTree char_literal92_tree=null;
+		CommonTree char_literal89_tree=null;
+		CommonTree char_literal91_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 25) ) { return retval; }
@@ -4055,10 +4248,10 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			char_literal90=(Token)match(input,91,FOLLOW_91_in_brackets1926); if (state.failed) return retval;
+			char_literal89=(Token)match(input,91,FOLLOW_91_in_brackets1930); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal90_tree = (CommonTree)adaptor.create(char_literal90);
-			adaptor.addChild(root_0, char_literal90_tree);
+			char_literal89_tree = (CommonTree)adaptor.create(char_literal89);
+			adaptor.addChild(root_0, char_literal89_tree);
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:171:8: ( expression_list )?
@@ -4071,21 +4264,21 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:171:8: expression_list
 					{
-					pushFollow(FOLLOW_expression_list_in_brackets1930);
-					expression_list91=expression_list();
+					pushFollow(FOLLOW_expression_list_in_brackets1934);
+					expression_list90=expression_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression_list91.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression_list90.getTree());
 
 					}
 					break;
 
 			}
 
-			char_literal92=(Token)match(input,92,FOLLOW_92_in_brackets1935); if (state.failed) return retval;
+			char_literal91=(Token)match(input,92,FOLLOW_92_in_brackets1939); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal92_tree = (CommonTree)adaptor.create(char_literal92);
-			adaptor.addChild(root_0, char_literal92_tree);
+			char_literal91_tree = (CommonTree)adaptor.create(char_literal91);
+			adaptor.addChild(root_0, char_literal91_tree);
 			}
 
 			}
@@ -4129,12 +4322,12 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
+		Token char_literal92=null;
 		Token char_literal93=null;
-		Token char_literal94=null;
 		ParserRuleReturnScope a =null;
 
+		CommonTree char_literal92_tree=null;
 		CommonTree char_literal93_tree=null;
-		CommonTree char_literal94_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 26) ) { return retval; }
@@ -4145,22 +4338,22 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			char_literal93=(Token)match(input,68,FOLLOW_68_in_paren_expression1949); if (state.failed) return retval;
+			char_literal92=(Token)match(input,68,FOLLOW_68_in_paren_expression1953); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal93_tree = (CommonTree)adaptor.create(char_literal93);
-			adaptor.addChild(root_0, char_literal93_tree);
+			char_literal92_tree = (CommonTree)adaptor.create(char_literal92);
+			adaptor.addChild(root_0, char_literal92_tree);
 			}
 
-			pushFollow(FOLLOW_expression_in_paren_expression1955);
+			pushFollow(FOLLOW_expression_in_paren_expression1959);
 			a=expression();
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
-			char_literal94=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_paren_expression1959); if (state.failed) return retval;
+			char_literal93=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_paren_expression1963); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal94_tree = (CommonTree)adaptor.create(char_literal94);
-			adaptor.addChild(root_0, char_literal94_tree);
+			char_literal93_tree = (CommonTree)adaptor.create(char_literal93);
+			adaptor.addChild(root_0, char_literal93_tree);
 			}
 
 			if ( state.backtracking==0 ) {retval.t =(a!=null?((csParser.expression_return)a).t:null);}
@@ -4204,12 +4397,12 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal95=null;
-		Token char_literal97=null;
-		ParserRuleReturnScope argument_list96 =null;
+		Token char_literal94=null;
+		Token char_literal96=null;
+		ParserRuleReturnScope argument_list95 =null;
 
-		CommonTree char_literal95_tree=null;
-		CommonTree char_literal97_tree=null;
+		CommonTree char_literal94_tree=null;
+		CommonTree char_literal96_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 27) ) { return retval; }
@@ -4220,10 +4413,10 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			char_literal95=(Token)match(input,68,FOLLOW_68_in_arguments1969); if (state.failed) return retval;
+			char_literal94=(Token)match(input,68,FOLLOW_68_in_arguments1973); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal95_tree = (CommonTree)adaptor.create(char_literal95);
-			adaptor.addChild(root_0, char_literal95_tree);
+			char_literal94_tree = (CommonTree)adaptor.create(char_literal94);
+			adaptor.addChild(root_0, char_literal94_tree);
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:175:8: ( argument_list )?
@@ -4236,21 +4429,21 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:175:8: argument_list
 					{
-					pushFollow(FOLLOW_argument_list_in_arguments1973);
-					argument_list96=argument_list();
+					pushFollow(FOLLOW_argument_list_in_arguments1977);
+					argument_list95=argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_list96.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_list95.getTree());
 
 					}
 					break;
 
 			}
 
-			char_literal97=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_arguments1978); if (state.failed) return retval;
+			char_literal96=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_arguments1982); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal97_tree = (CommonTree)adaptor.create(char_literal97);
-			adaptor.addChild(root_0, char_literal97_tree);
+			char_literal96_tree = (CommonTree)adaptor.create(char_literal96);
+			adaptor.addChild(root_0, char_literal96_tree);
 			}
 
 			}
@@ -4294,10 +4487,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal98=null;
+		Token char_literal97=null;
 		ParserRuleReturnScope a =null;
 
-		CommonTree char_literal98_tree=null;
+		CommonTree char_literal97_tree=null;
 
 		argument_list res = new argument_list();
 		try {
@@ -4309,7 +4502,7 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_argument_in_argument_list2002);
+			pushFollow(FOLLOW_argument_in_argument_list2006);
 			a=argument();
 			state._fsp--;
 			if (state.failed) return retval;
@@ -4329,13 +4522,13 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:179:31: ',' a= argument
 					{
-					char_literal98=(Token)match(input,74,FOLLOW_74_in_argument_list2007); if (state.failed) return retval;
+					char_literal97=(Token)match(input,74,FOLLOW_74_in_argument_list2011); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal98_tree = (CommonTree)adaptor.create(char_literal98);
-					adaptor.addChild(root_0, char_literal98_tree);
+					char_literal97_tree = (CommonTree)adaptor.create(char_literal97);
+					adaptor.addChild(root_0, char_literal97_tree);
 					}
 
-					pushFollow(FOLLOW_argument_in_argument_list2011);
+					pushFollow(FOLLOW_argument_in_argument_list2015);
 					a=argument();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -4393,8 +4586,8 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		ParserRuleReturnScope a =null;
-		ParserRuleReturnScope argument_name99 =null;
-		ParserRuleReturnScope argument_value100 =null;
+		ParserRuleReturnScope argument_name98 =null;
+		ParserRuleReturnScope argument_value99 =null;
 
 
 		CsharpNode res = null;
@@ -4543,17 +4736,17 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_argument_name_in_argument2038);
-					argument_name99=argument_name();
+					pushFollow(FOLLOW_argument_name_in_argument2042);
+					argument_name98=argument_name();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_name99.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_name98.getTree());
 
-					pushFollow(FOLLOW_argument_value_in_argument2042);
-					argument_value100=argument_value();
+					pushFollow(FOLLOW_argument_value_in_argument2046);
+					argument_value99=argument_value();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_value100.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, argument_value99.getTree());
 
 					}
 					break;
@@ -4563,7 +4756,7 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_argument_value_in_argument2050);
+					pushFollow(FOLLOW_argument_value_in_argument2054);
 					a=argument_value();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -4613,10 +4806,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal102=null;
-		ParserRuleReturnScope identifier101 =null;
+		Token char_literal101=null;
+		ParserRuleReturnScope identifier100 =null;
 
-		CommonTree char_literal102_tree=null;
+		CommonTree char_literal101_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 30) ) { return retval; }
@@ -4627,16 +4820,16 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_identifier_in_argument_name2058);
-			identifier101=identifier();
+			pushFollow(FOLLOW_identifier_in_argument_name2062);
+			identifier100=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier101.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier100.getTree());
 
-			char_literal102=(Token)match(input,79,FOLLOW_79_in_argument_name2062); if (state.failed) return retval;
+			char_literal101=(Token)match(input,79,FOLLOW_79_in_argument_name2066); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal102_tree = (CommonTree)adaptor.create(char_literal102);
-			adaptor.addChild(root_0, char_literal102_tree);
+			char_literal101_tree = (CommonTree)adaptor.create(char_literal101);
+			adaptor.addChild(root_0, char_literal101_tree);
 			}
 
 			}
@@ -4680,12 +4873,12 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token string_literal104=null;
+		Token string_literal103=null;
 		ParserRuleReturnScope a =null;
-		ParserRuleReturnScope ref_variable_reference103 =null;
-		ParserRuleReturnScope variable_reference105 =null;
+		ParserRuleReturnScope ref_variable_reference102 =null;
+		ParserRuleReturnScope variable_reference104 =null;
 
-		CommonTree string_literal104_tree=null;
+		CommonTree string_literal103_tree=null;
 
 		CsharpNode res = null;
 		try {
@@ -4793,7 +4986,7 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_expression_in_argument_value2086);
+					pushFollow(FOLLOW_expression_in_argument_value2090);
 					a=expression();
 					state._fsp--;
 					if (state.failed) return retval;
@@ -4808,11 +5001,11 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_ref_variable_reference_in_argument_value2093);
-					ref_variable_reference103=ref_variable_reference();
+					pushFollow(FOLLOW_ref_variable_reference_in_argument_value2097);
+					ref_variable_reference102=ref_variable_reference();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, ref_variable_reference103.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, ref_variable_reference102.getTree());
 
 					}
 					break;
@@ -4822,17 +5015,17 @@ public class csParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					string_literal104=(Token)match(input,155,FOLLOW_155_in_argument_value2099); if (state.failed) return retval;
+					string_literal103=(Token)match(input,155,FOLLOW_155_in_argument_value2103); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					string_literal104_tree = (CommonTree)adaptor.create(string_literal104);
-					adaptor.addChild(root_0, string_literal104_tree);
+					string_literal103_tree = (CommonTree)adaptor.create(string_literal103);
+					adaptor.addChild(root_0, string_literal103_tree);
 					}
 
-					pushFollow(FOLLOW_variable_reference_in_argument_value2103);
-					variable_reference105=variable_reference();
+					pushFollow(FOLLOW_variable_reference_in_argument_value2107);
+					variable_reference104=variable_reference();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference105.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference104.getTree());
 
 					}
 					break;
@@ -4877,17 +5070,17 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token string_literal106=null;
-		Token char_literal107=null;
-		Token char_literal109=null;
-		ParserRuleReturnScope type108 =null;
-		ParserRuleReturnScope ref_variable_reference110 =null;
+		Token string_literal105=null;
+		Token char_literal106=null;
+		Token char_literal108=null;
+		ParserRuleReturnScope type107 =null;
+		ParserRuleReturnScope ref_variable_reference109 =null;
+		ParserRuleReturnScope variable_reference110 =null;
 		ParserRuleReturnScope variable_reference111 =null;
-		ParserRuleReturnScope variable_reference112 =null;
 
-		CommonTree string_literal106_tree=null;
-		CommonTree char_literal107_tree=null;
-		CommonTree char_literal109_tree=null;
+		CommonTree string_literal105_tree=null;
+		CommonTree char_literal106_tree=null;
+		CommonTree char_literal108_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 32) ) { return retval; }
@@ -4898,10 +5091,10 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			string_literal106=(Token)match(input,166,FOLLOW_166_in_ref_variable_reference2111); if (state.failed) return retval;
+			string_literal105=(Token)match(input,166,FOLLOW_166_in_ref_variable_reference2115); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			string_literal106_tree = (CommonTree)adaptor.create(string_literal106);
-			adaptor.addChild(root_0, string_literal106_tree);
+			string_literal105_tree = (CommonTree)adaptor.create(string_literal105);
+			adaptor.addChild(root_0, string_literal105_tree);
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:196:3: ( ( '(' type ')' )=> '(' type ')' ( ref_variable_reference | variable_reference ) | variable_reference )
@@ -4932,22 +5125,22 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:196:4: ( '(' type ')' )=> '(' type ')' ( ref_variable_reference | variable_reference )
 					{
-					char_literal107=(Token)match(input,68,FOLLOW_68_in_ref_variable_reference2133); if (state.failed) return retval;
+					char_literal106=(Token)match(input,68,FOLLOW_68_in_ref_variable_reference2137); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal107_tree = (CommonTree)adaptor.create(char_literal107);
-					adaptor.addChild(root_0, char_literal107_tree);
+					char_literal106_tree = (CommonTree)adaptor.create(char_literal106);
+					adaptor.addChild(root_0, char_literal106_tree);
 					}
 
-					pushFollow(FOLLOW_type_in_ref_variable_reference2137);
-					type108=type();
+					pushFollow(FOLLOW_type_in_ref_variable_reference2141);
+					type107=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type108.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, type107.getTree());
 
-					char_literal109=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_ref_variable_reference2141); if (state.failed) return retval;
+					char_literal108=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_ref_variable_reference2145); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal109_tree = (CommonTree)adaptor.create(char_literal109);
-					adaptor.addChild(root_0, char_literal109_tree);
+					char_literal108_tree = (CommonTree)adaptor.create(char_literal108);
+					adaptor.addChild(root_0, char_literal108_tree);
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:196:47: ( ref_variable_reference | variable_reference )
@@ -4971,22 +5164,22 @@ public class csParser extends Parser {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:196:48: ref_variable_reference
 							{
-							pushFollow(FOLLOW_ref_variable_reference_in_ref_variable_reference2146);
-							ref_variable_reference110=ref_variable_reference();
+							pushFollow(FOLLOW_ref_variable_reference_in_ref_variable_reference2150);
+							ref_variable_reference109=ref_variable_reference();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, ref_variable_reference110.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, ref_variable_reference109.getTree());
 
 							}
 							break;
 						case 2 :
 							// /Users/jeremie/ANTLR/cs.g:196:73: variable_reference
 							{
-							pushFollow(FOLLOW_variable_reference_in_ref_variable_reference2150);
-							variable_reference111=variable_reference();
+							pushFollow(FOLLOW_variable_reference_in_ref_variable_reference2154);
+							variable_reference110=variable_reference();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference111.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference110.getTree());
 
 							}
 							break;
@@ -4998,11 +5191,11 @@ public class csParser extends Parser {
 				case 2 :
 					// /Users/jeremie/ANTLR/cs.g:198:5: variable_reference
 					{
-					pushFollow(FOLLOW_variable_reference_in_ref_variable_reference2186);
-					variable_reference112=variable_reference();
+					pushFollow(FOLLOW_variable_reference_in_ref_variable_reference2190);
+					variable_reference111=variable_reference();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference112.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_reference111.getTree());
 
 					}
 					break;
@@ -5049,7 +5242,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope expression113 =null;
+		ParserRuleReturnScope expression112 =null;
 
 
 		try {
@@ -5061,11 +5254,11 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_expression_in_variable_reference2196);
-			expression113=expression();
+			pushFollow(FOLLOW_expression_in_variable_reference2200);
+			expression112=expression();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression113.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression112.getTree());
 
 			}
 
@@ -5107,7 +5300,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope rank_specifier114 =null;
+		ParserRuleReturnScope rank_specifier113 =null;
 
 
 		try {
@@ -5137,11 +5330,11 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:203:2: rank_specifier
 					{
-					pushFollow(FOLLOW_rank_specifier_in_rank_specifiers2204);
-					rank_specifier114=rank_specifier();
+					pushFollow(FOLLOW_rank_specifier_in_rank_specifiers2208);
+					rank_specifier113=rank_specifier();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifier114.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifier113.getTree());
 
 					}
 					break;
@@ -5195,12 +5388,12 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal115=null;
-		Token char_literal117=null;
-		ParserRuleReturnScope dim_separators116 =null;
+		Token char_literal114=null;
+		Token char_literal116=null;
+		ParserRuleReturnScope dim_separators115 =null;
 
-		CommonTree char_literal115_tree=null;
-		CommonTree char_literal117_tree=null;
+		CommonTree char_literal114_tree=null;
+		CommonTree char_literal116_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 35) ) { return retval; }
@@ -5211,10 +5404,10 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			char_literal115=(Token)match(input,91,FOLLOW_91_in_rank_specifier2222); if (state.failed) return retval;
+			char_literal114=(Token)match(input,91,FOLLOW_91_in_rank_specifier2226); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal115_tree = (CommonTree)adaptor.create(char_literal115);
-			adaptor.addChild(root_0, char_literal115_tree);
+			char_literal114_tree = (CommonTree)adaptor.create(char_literal114);
+			adaptor.addChild(root_0, char_literal114_tree);
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:205:8: ( dim_separators )?
@@ -5227,21 +5420,21 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:205:8: dim_separators
 					{
-					pushFollow(FOLLOW_dim_separators_in_rank_specifier2226);
-					dim_separators116=dim_separators();
+					pushFollow(FOLLOW_dim_separators_in_rank_specifier2230);
+					dim_separators115=dim_separators();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, dim_separators116.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, dim_separators115.getTree());
 
 					}
 					break;
 
 			}
 
-			char_literal117=(Token)match(input,92,FOLLOW_92_in_rank_specifier2231); if (state.failed) return retval;
+			char_literal116=(Token)match(input,92,FOLLOW_92_in_rank_specifier2235); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal117_tree = (CommonTree)adaptor.create(char_literal117);
-			adaptor.addChild(root_0, char_literal117_tree);
+			char_literal116_tree = (CommonTree)adaptor.create(char_literal116);
+			adaptor.addChild(root_0, char_literal116_tree);
 			}
 
 			}
@@ -5284,9 +5477,9 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal118=null;
+		Token char_literal117=null;
 
-		CommonTree char_literal118_tree=null;
+		CommonTree char_literal117_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 36) ) { return retval; }
@@ -5311,10 +5504,10 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:207:2: ','
 					{
-					char_literal118=(Token)match(input,74,FOLLOW_74_in_dim_separators2240); if (state.failed) return retval;
+					char_literal117=(Token)match(input,74,FOLLOW_74_in_dim_separators2244); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal118_tree = (CommonTree)adaptor.create(char_literal118);
-					adaptor.addChild(root_0, char_literal118_tree);
+					char_literal117_tree = (CommonTree)adaptor.create(char_literal117);
+					adaptor.addChild(root_0, char_literal117_tree);
 					}
 
 					}
@@ -5369,13 +5562,13 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal120=null;
-		Token char_literal122=null;
-		ParserRuleReturnScope type_name119 =null;
-		ParserRuleReturnScope type_name121 =null;
+		Token char_literal119=null;
+		Token char_literal121=null;
+		ParserRuleReturnScope type_name118 =null;
+		ParserRuleReturnScope type_name120 =null;
 
-		CommonTree char_literal120_tree=null;
-		CommonTree char_literal122_tree=null;
+		CommonTree char_literal119_tree=null;
+		CommonTree char_literal121_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 37) ) { return retval; }
@@ -5386,28 +5579,28 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_type_name_in_delegate_creation_expression2253);
-			type_name119=type_name();
+			pushFollow(FOLLOW_type_name_in_delegate_creation_expression2257);
+			type_name118=type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name119.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name118.getTree());
 
-			char_literal120=(Token)match(input,68,FOLLOW_68_in_delegate_creation_expression2257); if (state.failed) return retval;
+			char_literal119=(Token)match(input,68,FOLLOW_68_in_delegate_creation_expression2261); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal120_tree = (CommonTree)adaptor.create(char_literal120);
-			adaptor.addChild(root_0, char_literal120_tree);
+			char_literal119_tree = (CommonTree)adaptor.create(char_literal119);
+			adaptor.addChild(root_0, char_literal119_tree);
 			}
 
-			pushFollow(FOLLOW_type_name_in_delegate_creation_expression2261);
-			type_name121=type_name();
+			pushFollow(FOLLOW_type_name_in_delegate_creation_expression2265);
+			type_name120=type_name();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name121.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name120.getTree());
 
-			char_literal122=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_delegate_creation_expression2265); if (state.failed) return retval;
+			char_literal121=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_delegate_creation_expression2269); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal122_tree = (CommonTree)adaptor.create(char_literal122);
-			adaptor.addChild(root_0, char_literal122_tree);
+			char_literal121_tree = (CommonTree)adaptor.create(char_literal121);
+			adaptor.addChild(root_0, char_literal121_tree);
 			}
 
 			}
@@ -5450,7 +5643,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope anonymous_object_initializer123 =null;
+		ParserRuleReturnScope anonymous_object_initializer122 =null;
 
 
 		try {
@@ -5462,11 +5655,11 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_anonymous_object_initializer_in_anonymous_object_creation_expression2276);
-			anonymous_object_initializer123=anonymous_object_initializer();
+			pushFollow(FOLLOW_anonymous_object_initializer_in_anonymous_object_creation_expression2280);
+			anonymous_object_initializer122=anonymous_object_initializer();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_object_initializer123.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, anonymous_object_initializer122.getTree());
 
 			}
 
@@ -5508,14 +5701,14 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal124=null;
+		Token char_literal123=null;
+		Token char_literal125=null;
 		Token char_literal126=null;
-		Token char_literal127=null;
-		ParserRuleReturnScope member_declarator_list125 =null;
+		ParserRuleReturnScope member_declarator_list124 =null;
 
-		CommonTree char_literal124_tree=null;
+		CommonTree char_literal123_tree=null;
+		CommonTree char_literal125_tree=null;
 		CommonTree char_literal126_tree=null;
-		CommonTree char_literal127_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 39) ) { return retval; }
@@ -5526,10 +5719,10 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			char_literal124=(Token)match(input,197,FOLLOW_197_in_anonymous_object_initializer2285); if (state.failed) return retval;
+			char_literal123=(Token)match(input,197,FOLLOW_197_in_anonymous_object_initializer2289); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal124_tree = (CommonTree)adaptor.create(char_literal124);
-			adaptor.addChild(root_0, char_literal124_tree);
+			char_literal123_tree = (CommonTree)adaptor.create(char_literal123);
+			adaptor.addChild(root_0, char_literal123_tree);
 			}
 
 			// /Users/jeremie/ANTLR/cs.g:216:8: ( member_declarator_list )?
@@ -5542,11 +5735,11 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:216:8: member_declarator_list
 					{
-					pushFollow(FOLLOW_member_declarator_list_in_anonymous_object_initializer2289);
-					member_declarator_list125=member_declarator_list();
+					pushFollow(FOLLOW_member_declarator_list_in_anonymous_object_initializer2293);
+					member_declarator_list124=member_declarator_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator_list125.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator_list124.getTree());
 
 					}
 					break;
@@ -5563,10 +5756,10 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:216:34: ','
 					{
-					char_literal126=(Token)match(input,74,FOLLOW_74_in_anonymous_object_initializer2294); if (state.failed) return retval;
+					char_literal125=(Token)match(input,74,FOLLOW_74_in_anonymous_object_initializer2298); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal126_tree = (CommonTree)adaptor.create(char_literal126);
-					adaptor.addChild(root_0, char_literal126_tree);
+					char_literal125_tree = (CommonTree)adaptor.create(char_literal125);
+					adaptor.addChild(root_0, char_literal125_tree);
 					}
 
 					}
@@ -5574,10 +5767,10 @@ public class csParser extends Parser {
 
 			}
 
-			char_literal127=(Token)match(input,201,FOLLOW_201_in_anonymous_object_initializer2299); if (state.failed) return retval;
+			char_literal126=(Token)match(input,201,FOLLOW_201_in_anonymous_object_initializer2303); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			char_literal127_tree = (CommonTree)adaptor.create(char_literal127);
-			adaptor.addChild(root_0, char_literal127_tree);
+			char_literal126_tree = (CommonTree)adaptor.create(char_literal126);
+			adaptor.addChild(root_0, char_literal126_tree);
 			}
 
 			}
@@ -5620,11 +5813,11 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal129=null;
-		ParserRuleReturnScope member_declarator128 =null;
-		ParserRuleReturnScope member_declarator130 =null;
+		Token char_literal128=null;
+		ParserRuleReturnScope member_declarator127 =null;
+		ParserRuleReturnScope member_declarator129 =null;
 
-		CommonTree char_literal129_tree=null;
+		CommonTree char_literal128_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 40) ) { return retval; }
@@ -5635,11 +5828,11 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_member_declarator_in_member_declarator_list2307);
-			member_declarator128=member_declarator();
+			pushFollow(FOLLOW_member_declarator_in_member_declarator_list2311);
+			member_declarator127=member_declarator();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator128.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator127.getTree());
 
 			// /Users/jeremie/ANTLR/cs.g:218:21: ( ',' member_declarator )*
 			loop44:
@@ -5658,17 +5851,17 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:218:22: ',' member_declarator
 					{
-					char_literal129=(Token)match(input,74,FOLLOW_74_in_member_declarator_list2311); if (state.failed) return retval;
+					char_literal128=(Token)match(input,74,FOLLOW_74_in_member_declarator_list2315); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal129_tree = (CommonTree)adaptor.create(char_literal129);
-					adaptor.addChild(root_0, char_literal129_tree);
+					char_literal128_tree = (CommonTree)adaptor.create(char_literal128);
+					adaptor.addChild(root_0, char_literal128_tree);
 					}
 
-					pushFollow(FOLLOW_member_declarator_in_member_declarator_list2313);
-					member_declarator130=member_declarator();
+					pushFollow(FOLLOW_member_declarator_in_member_declarator_list2317);
+					member_declarator129=member_declarator();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator130.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, member_declarator129.getTree());
 
 					}
 					break;
@@ -5718,15 +5911,15 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal133=null;
-		Token char_literal135=null;
-		ParserRuleReturnScope identifier131 =null;
-		ParserRuleReturnScope generic_argument_list132 =null;
-		ParserRuleReturnScope primary_or_array_creation_expression134 =null;
-		ParserRuleReturnScope expression136 =null;
+		Token char_literal132=null;
+		Token char_literal134=null;
+		ParserRuleReturnScope identifier130 =null;
+		ParserRuleReturnScope generic_argument_list131 =null;
+		ParserRuleReturnScope primary_or_array_creation_expression133 =null;
+		ParserRuleReturnScope expression135 =null;
 
-		CommonTree char_literal133_tree=null;
-		CommonTree char_literal135_tree=null;
+		CommonTree char_literal132_tree=null;
+		CommonTree char_literal134_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 41) ) { return retval; }
@@ -5737,11 +5930,11 @@ public class csParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			pushFollow(FOLLOW_identifier_in_member_declarator2325);
-			identifier131=identifier();
+			pushFollow(FOLLOW_identifier_in_member_declarator2329);
+			identifier130=identifier();
 			state._fsp--;
 			if (state.failed) return retval;
-			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier131.getTree());
+			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier130.getTree());
 
 			// /Users/jeremie/ANTLR/cs.g:220:15: ( generic_argument_list | ( '.' primary_or_array_creation_expression ) | '=' expression )
 			int alt45=3;
@@ -5771,11 +5964,11 @@ public class csParser extends Parser {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:220:16: generic_argument_list
 					{
-					pushFollow(FOLLOW_generic_argument_list_in_member_declarator2330);
-					generic_argument_list132=generic_argument_list();
+					pushFollow(FOLLOW_generic_argument_list_in_member_declarator2334);
+					generic_argument_list131=generic_argument_list();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list132.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, generic_argument_list131.getTree());
 
 					}
 					break;
@@ -5785,17 +5978,17 @@ public class csParser extends Parser {
 					// /Users/jeremie/ANTLR/cs.g:221:8: ( '.' primary_or_array_creation_expression )
 					// /Users/jeremie/ANTLR/cs.g:221:9: '.' primary_or_array_creation_expression
 					{
-					char_literal133=(Token)match(input,DOT,FOLLOW_DOT_in_member_declarator2340); if (state.failed) return retval;
+					char_literal132=(Token)match(input,DOT,FOLLOW_DOT_in_member_declarator2344); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal133_tree = (CommonTree)adaptor.create(char_literal133);
-					adaptor.addChild(root_0, char_literal133_tree);
+					char_literal132_tree = (CommonTree)adaptor.create(char_literal132);
+					adaptor.addChild(root_0, char_literal132_tree);
 					}
 
-					pushFollow(FOLLOW_primary_or_array_creation_expression_in_member_declarator2344);
-					primary_or_array_creation_expression134=primary_or_array_creation_expression();
+					pushFollow(FOLLOW_primary_or_array_creation_expression_in_member_declarator2348);
+					primary_or_array_creation_expression133=primary_or_array_creation_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_or_array_creation_expression134.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_or_array_creation_expression133.getTree());
 
 					}
 
@@ -5804,17 +5997,17 @@ public class csParser extends Parser {
 				case 3 :
 					// /Users/jeremie/ANTLR/cs.g:222:8: '=' expression
 					{
-					char_literal135=(Token)match(input,85,FOLLOW_85_in_member_declarator2354); if (state.failed) return retval;
+					char_literal134=(Token)match(input,85,FOLLOW_85_in_member_declarator2358); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal135_tree = (CommonTree)adaptor.create(char_literal135);
-					adaptor.addChild(root_0, char_literal135_tree);
+					char_literal134_tree = (CommonTree)adaptor.create(char_literal134);
+					adaptor.addChild(root_0, char_literal134_tree);
 					}
 
-					pushFollow(FOLLOW_expression_in_member_declarator2358);
-					expression136=expression();
+					pushFollow(FOLLOW_expression_in_member_declarator2362);
+					expression135=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression136.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression135.getTree());
 
 					}
 					break;
@@ -5854,7 +6047,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "primary_or_array_creation_expression"
-	// /Users/jeremie/ANTLR/cs.g:223:1: primary_or_array_creation_expression returns [expression t] : ( ( array_creation_expression )=>a= array_creation_expression |b= primary_expression );
+	// /Users/jeremie/ANTLR/cs.g:223:1: primary_or_array_creation_expression returns [expression t] : ( ( array_creation_expression )=> array_creation_expression |a= primary_expression );
 	public final csParser.primary_or_array_creation_expression_return primary_or_array_creation_expression() throws RecognitionException {
 		csParser.primary_or_array_creation_expression_return retval = new csParser.primary_or_array_creation_expression_return();
 		retval.start = input.LT(1);
@@ -5863,13 +6056,14 @@ public class csParser extends Parser {
 		CommonTree root_0 = null;
 
 		ParserRuleReturnScope a =null;
-		ParserRuleReturnScope b =null;
+		ParserRuleReturnScope array_creation_expression136 =null;
 
 
+		expression res = null;
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 42) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:223:61: ( ( array_creation_expression )=>a= array_creation_expression |b= primary_expression )
+			// /Users/jeremie/ANTLR/cs.g:225:67: ( ( array_creation_expression )=> array_creation_expression |a= primary_expression )
 			int alt46=2;
 			int LA46_0 = input.LA(1);
 			if ( (LA46_0==150) ) {
@@ -5895,33 +6089,32 @@ public class csParser extends Parser {
 
 			switch (alt46) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:224:2: ( array_creation_expression )=>a= array_creation_expression
+					// /Users/jeremie/ANTLR/cs.g:226:2: ( array_creation_expression )=> array_creation_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					pushFollow(FOLLOW_array_creation_expression_in_primary_or_array_creation_expression2380);
-					a=array_creation_expression();
+					pushFollow(FOLLOW_array_creation_expression_in_primary_or_array_creation_expression2393);
+					array_creation_expression136=array_creation_expression();
+					state._fsp--;
+					if (state.failed) return retval;
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, array_creation_expression136.getTree());
+
+					}
+					break;
+				case 2 :
+					// /Users/jeremie/ANTLR/cs.g:227:4: a= primary_expression
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					pushFollow(FOLLOW_primary_expression_in_primary_or_array_creation_expression2400);
+					a=primary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
-					if ( state.backtracking==0 ) {retval.t = (a!=null?((csParser.array_creation_expression_return)a).t:null);}
-					}
-					break;
-				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:225:4: b= primary_expression
-					{
-					root_0 = (CommonTree)adaptor.nil();
-
-
-					pushFollow(FOLLOW_primary_expression_in_primary_or_array_creation_expression2389);
-					b=primary_expression();
-					state._fsp--;
-					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, b.getTree());
-
-					if ( state.backtracking==0 ) {retval.t = (b!=null?((csParser.primary_expression_return)b).t:null);}
+					if ( state.backtracking==0 ) {res = (a!=null?((csParser.primary_expression_return)a).t:null);}
 					}
 					break;
 
@@ -5932,6 +6125,7 @@ public class csParser extends Parser {
 			retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
 			adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
 			}
+			if ( state.backtracking==0 ) {if (res != null) retval.t =res; else retval.t =new UnknownNode(retval.tree);}
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -5949,7 +6143,6 @@ public class csParser extends Parser {
 
 
 	public static class array_creation_expression_return extends ParserRuleReturnScope {
-		public UnknownNode t;
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
@@ -5957,7 +6150,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "array_creation_expression"
-	// /Users/jeremie/ANTLR/cs.g:228:1: array_creation_expression returns [UnknownNode t] : 'new' ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) ) ;
+	// /Users/jeremie/ANTLR/cs.g:230:1: array_creation_expression : 'new' ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) ) ;
 	public final csParser.array_creation_expression_return array_creation_expression() throws RecognitionException {
 		csParser.array_creation_expression_return retval = new csParser.array_creation_expression_return();
 		retval.start = input.LT(1);
@@ -5987,8 +6180,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 43) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:229:37: ( 'new' ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) ) )
-			// /Users/jeremie/ANTLR/cs.g:230:2: 'new' ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) )
+			// /Users/jeremie/ANTLR/cs.g:230:26: ( 'new' ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) ) )
+			// /Users/jeremie/ANTLR/cs.g:231:2: 'new' ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -5999,7 +6192,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal137_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:231:3: ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) )
+			// /Users/jeremie/ANTLR/cs.g:232:3: ( type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer ) | rank_specifier ( array_initializer ) )
 			int alt52=2;
 			int LA52_0 = input.LA(1);
 			if ( (LA52_0==IDENTIFIER||LA52_0==95||(LA52_0 >= 97 && LA52_0 <= 98)||(LA52_0 >= 100 && LA52_0 <= 101)||LA52_0==103||(LA52_0 >= 105 && LA52_0 <= 106)||LA52_0==109||LA52_0==114||LA52_0==117||(LA52_0 >= 119 && LA52_0 <= 120)||LA52_0==122||LA52_0==126||LA52_0==129||LA52_0==132||LA52_0==135||LA52_0==138||LA52_0==141||(LA52_0 >= 143 && LA52_0 <= 144)||(LA52_0 >= 146 && LA52_0 <= 148)||(LA52_0 >= 151 && LA52_0 <= 152)||LA52_0==154||LA52_0==157||LA52_0==160||LA52_0==162||LA52_0==167||LA52_0==169||(LA52_0 >= 171 && LA52_0 <= 173)||LA52_0==177||LA52_0==183||(LA52_0 >= 185 && LA52_0 <= 186)||(LA52_0 >= 189 && LA52_0 <= 190)||LA52_0==192||LA52_0==194||LA52_0==196) ) {
@@ -6018,7 +6211,7 @@ public class csParser extends Parser {
 
 			switch (alt52) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:231:4: type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer )
+					// /Users/jeremie/ANTLR/cs.g:232:4: type ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer )
 					{
 					pushFollow(FOLLOW_type_in_array_creation_expression2420);
 					type138=type();
@@ -6026,7 +6219,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type138.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:231:11: ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer )
+					// /Users/jeremie/ANTLR/cs.g:232:11: ( '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ) | array_initializer )
 					int alt51=2;
 					int LA51_0 = input.LA(1);
 					if ( (LA51_0==91) ) {
@@ -6045,7 +6238,7 @@ public class csParser extends Parser {
 
 					switch (alt51) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:231:12: '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )
+							// /Users/jeremie/ANTLR/cs.g:232:12: '[' expression_list ']' ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )
 							{
 							char_literal139=(Token)match(input,91,FOLLOW_91_in_array_creation_expression2425); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -6065,14 +6258,14 @@ public class csParser extends Parser {
 							adaptor.addChild(root_0, char_literal141_tree);
 							}
 
-							// /Users/jeremie/ANTLR/cs.g:232:6: ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )
+							// /Users/jeremie/ANTLR/cs.g:233:6: ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )
 							int alt50=2;
 							alt50 = dfa50.predict(input);
 							switch (alt50) {
 								case 1 :
-									// /Users/jeremie/ANTLR/cs.g:232:8: ( rank_specifiers )? ( array_initializer )?
+									// /Users/jeremie/ANTLR/cs.g:233:8: ( rank_specifiers )? ( array_initializer )?
 									{
-									// /Users/jeremie/ANTLR/cs.g:232:8: ( rank_specifiers )?
+									// /Users/jeremie/ANTLR/cs.g:233:8: ( rank_specifiers )?
 									int alt47=2;
 									int LA47_0 = input.LA(1);
 									if ( (LA47_0==91) ) {
@@ -6080,7 +6273,7 @@ public class csParser extends Parser {
 									}
 									switch (alt47) {
 										case 1 :
-											// /Users/jeremie/ANTLR/cs.g:232:8: rank_specifiers
+											// /Users/jeremie/ANTLR/cs.g:233:8: rank_specifiers
 											{
 											pushFollow(FOLLOW_rank_specifiers_in_array_creation_expression2445);
 											rank_specifiers142=rank_specifiers();
@@ -6093,7 +6286,7 @@ public class csParser extends Parser {
 
 									}
 
-									// /Users/jeremie/ANTLR/cs.g:232:27: ( array_initializer )?
+									// /Users/jeremie/ANTLR/cs.g:233:27: ( array_initializer )?
 									int alt48=2;
 									int LA48_0 = input.LA(1);
 									if ( (LA48_0==197) ) {
@@ -6101,7 +6294,7 @@ public class csParser extends Parser {
 									}
 									switch (alt48) {
 										case 1 :
-											// /Users/jeremie/ANTLR/cs.g:232:27: array_initializer
+											// /Users/jeremie/ANTLR/cs.g:233:27: array_initializer
 											{
 											pushFollow(FOLLOW_array_initializer_in_array_creation_expression2450);
 											array_initializer143=array_initializer();
@@ -6117,9 +6310,9 @@ public class csParser extends Parser {
 									}
 									break;
 								case 2 :
-									// /Users/jeremie/ANTLR/cs.g:234:8: ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments
+									// /Users/jeremie/ANTLR/cs.g:235:8: ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments
 									{
-									// /Users/jeremie/ANTLR/cs.g:234:8: ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )*
+									// /Users/jeremie/ANTLR/cs.g:235:8: ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )*
 									loop49:
 									while (true) {
 										int alt49=3;
@@ -6137,10 +6330,10 @@ public class csParser extends Parser {
 
 										switch (alt49) {
 										case 1 :
-											// /Users/jeremie/ANTLR/cs.g:234:10: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
+											// /Users/jeremie/ANTLR/cs.g:235:10: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
 											{
-											// /Users/jeremie/ANTLR/cs.g:234:10: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
-											// /Users/jeremie/ANTLR/cs.g:234:11: ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part
+											// /Users/jeremie/ANTLR/cs.g:235:10: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
+											// /Users/jeremie/ANTLR/cs.g:235:11: ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part
 											{
 											pushFollow(FOLLOW_arguments_in_array_creation_expression2486);
 											arguments144=arguments();
@@ -6159,7 +6352,7 @@ public class csParser extends Parser {
 											}
 											break;
 										case 2 :
-											// /Users/jeremie/ANTLR/cs.g:235:10: invocation_part
+											// /Users/jeremie/ANTLR/cs.g:236:10: invocation_part
 											{
 											pushFollow(FOLLOW_invocation_part_in_array_creation_expression2502);
 											invocation_part146=invocation_part();
@@ -6189,7 +6382,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:237:7: array_initializer
+							// /Users/jeremie/ANTLR/cs.g:238:7: array_initializer
 							{
 							pushFollow(FOLLOW_array_initializer_in_array_creation_expression2530);
 							array_initializer148=array_initializer();
@@ -6205,7 +6398,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:239:5: rank_specifier ( array_initializer )
+					// /Users/jeremie/ANTLR/cs.g:240:5: rank_specifier ( array_initializer )
 					{
 					pushFollow(FOLLOW_rank_specifier_in_array_creation_expression2544);
 					rank_specifier149=rank_specifier();
@@ -6213,8 +6406,8 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifier149.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:240:4: ( array_initializer )
-					// /Users/jeremie/ANTLR/cs.g:240:5: array_initializer
+					// /Users/jeremie/ANTLR/cs.g:241:4: ( array_initializer )
+					// /Users/jeremie/ANTLR/cs.g:241:5: array_initializer
 					{
 					pushFollow(FOLLOW_array_initializer_in_array_creation_expression2553);
 					array_initializer150=array_initializer();
@@ -6237,7 +6430,6 @@ public class csParser extends Parser {
 			retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
 			adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
 			}
-			if ( state.backtracking==0 ) {retval.t =new UnknownNode(retval.tree);}
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -6263,7 +6455,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "array_initializer"
-	// /Users/jeremie/ANTLR/cs.g:243:1: array_initializer returns [UnknownNode t] : '{' ( variable_initializer_list )? ( ',' )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:244:1: array_initializer returns [UnknownNode t] : '{' ( variable_initializer_list )? ( ',' )? '}' ;
 	public final csParser.array_initializer_return array_initializer() throws RecognitionException {
 		csParser.array_initializer_return retval = new csParser.array_initializer_return();
 		retval.start = input.LT(1);
@@ -6283,8 +6475,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 44) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:244:37: ( '{' ( variable_initializer_list )? ( ',' )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:245:9: '{' ( variable_initializer_list )? ( ',' )? '}'
+			// /Users/jeremie/ANTLR/cs.g:245:37: ( '{' ( variable_initializer_list )? ( ',' )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:246:9: '{' ( variable_initializer_list )? ( ',' )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -6295,7 +6487,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal151_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:245:15: ( variable_initializer_list )?
+			// /Users/jeremie/ANTLR/cs.g:246:15: ( variable_initializer_list )?
 			int alt53=2;
 			int LA53_0 = input.LA(1);
 			if ( (LA53_0==Character_literal||LA53_0==FALSE||(LA53_0 >= Hex_number && LA53_0 <= IDENTIFIER)||(LA53_0 >= MINUS && LA53_0 <= NUMBER)||LA53_0==Real_literal||LA53_0==STRINGLITERAL||LA53_0==TRUE||LA53_0==Verbatim_string_literal||LA53_0==61||LA53_0==66||(LA53_0 >= 68 && LA53_0 <= 69)||(LA53_0 >= 71 && LA53_0 <= 72)||LA53_0==75||LA53_0==95||(LA53_0 >= 97 && LA53_0 <= 98)||(LA53_0 >= 100 && LA53_0 <= 103)||(LA53_0 >= 105 && LA53_0 <= 106)||(LA53_0 >= 109 && LA53_0 <= 110)||(LA53_0 >= 114 && LA53_0 <= 117)||(LA53_0 >= 119 && LA53_0 <= 120)||LA53_0==122||LA53_0==126||LA53_0==129||LA53_0==132||LA53_0==135||LA53_0==138||LA53_0==141||(LA53_0 >= 143 && LA53_0 <= 144)||(LA53_0 >= 146 && LA53_0 <= 148)||(LA53_0 >= 150 && LA53_0 <= 152)||LA53_0==154||LA53_0==157||LA53_0==160||LA53_0==162||LA53_0==167||LA53_0==169||(LA53_0 >= 171 && LA53_0 <= 174)||LA53_0==177||LA53_0==180||(LA53_0 >= 183 && LA53_0 <= 187)||(LA53_0 >= 189 && LA53_0 <= 190)||LA53_0==194||(LA53_0 >= 196 && LA53_0 <= 197)||LA53_0==202) ) {
@@ -6303,7 +6495,7 @@ public class csParser extends Parser {
 			}
 			switch (alt53) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:245:15: variable_initializer_list
+					// /Users/jeremie/ANTLR/cs.g:246:15: variable_initializer_list
 					{
 					pushFollow(FOLLOW_variable_initializer_list_in_array_initializer2596);
 					variable_initializer_list152=variable_initializer_list();
@@ -6316,7 +6508,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:245:44: ( ',' )?
+			// /Users/jeremie/ANTLR/cs.g:246:44: ( ',' )?
 			int alt54=2;
 			int LA54_0 = input.LA(1);
 			if ( (LA54_0==74) ) {
@@ -6324,7 +6516,7 @@ public class csParser extends Parser {
 			}
 			switch (alt54) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:245:44: ','
+					// /Users/jeremie/ANTLR/cs.g:246:44: ','
 					{
 					char_literal153=(Token)match(input,74,FOLLOW_74_in_array_initializer2601); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -6376,7 +6568,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variable_initializer_list"
-	// /Users/jeremie/ANTLR/cs.g:247:1: variable_initializer_list : variable_initializer ( ',' variable_initializer )* ;
+	// /Users/jeremie/ANTLR/cs.g:248:1: variable_initializer_list : variable_initializer ( ',' variable_initializer )* ;
 	public final csParser.variable_initializer_list_return variable_initializer_list() throws RecognitionException {
 		csParser.variable_initializer_list_return retval = new csParser.variable_initializer_list_return();
 		retval.start = input.LT(1);
@@ -6393,8 +6585,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 45) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:247:26: ( variable_initializer ( ',' variable_initializer )* )
-			// /Users/jeremie/ANTLR/cs.g:248:2: variable_initializer ( ',' variable_initializer )*
+			// /Users/jeremie/ANTLR/cs.g:248:26: ( variable_initializer ( ',' variable_initializer )* )
+			// /Users/jeremie/ANTLR/cs.g:249:2: variable_initializer ( ',' variable_initializer )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -6405,7 +6597,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variable_initializer155.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:248:23: ( ',' variable_initializer )*
+			// /Users/jeremie/ANTLR/cs.g:249:23: ( ',' variable_initializer )*
 			loop55:
 			while (true) {
 				int alt55=2;
@@ -6420,7 +6612,7 @@ public class csParser extends Parser {
 
 				switch (alt55) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:248:24: ',' variable_initializer
+					// /Users/jeremie/ANTLR/cs.g:249:24: ',' variable_initializer
 					{
 					char_literal156=(Token)match(input,74,FOLLOW_74_in_variable_initializer_list2622); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -6475,7 +6667,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variable_initializer"
-	// /Users/jeremie/ANTLR/cs.g:249:1: variable_initializer returns [expression t] : (a= expression |b= array_initializer );
+	// /Users/jeremie/ANTLR/cs.g:250:1: variable_initializer returns [expression t] : (a= expression |b= array_initializer );
 	public final csParser.variable_initializer_return variable_initializer() throws RecognitionException {
 		csParser.variable_initializer_return retval = new csParser.variable_initializer_return();
 		retval.start = input.LT(1);
@@ -6490,7 +6682,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 46) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:249:46: (a= expression |b= array_initializer )
+			// /Users/jeremie/ANTLR/cs.g:250:46: (a= expression |b= array_initializer )
 			int alt56=2;
 			int LA56_0 = input.LA(1);
 			if ( (LA56_0==Character_literal||LA56_0==FALSE||(LA56_0 >= Hex_number && LA56_0 <= IDENTIFIER)||(LA56_0 >= MINUS && LA56_0 <= NUMBER)||LA56_0==Real_literal||LA56_0==STRINGLITERAL||LA56_0==TRUE||LA56_0==Verbatim_string_literal||LA56_0==61||LA56_0==66||(LA56_0 >= 68 && LA56_0 <= 69)||(LA56_0 >= 71 && LA56_0 <= 72)||LA56_0==75||LA56_0==95||(LA56_0 >= 97 && LA56_0 <= 98)||(LA56_0 >= 100 && LA56_0 <= 103)||(LA56_0 >= 105 && LA56_0 <= 106)||(LA56_0 >= 109 && LA56_0 <= 110)||(LA56_0 >= 114 && LA56_0 <= 117)||(LA56_0 >= 119 && LA56_0 <= 120)||LA56_0==122||LA56_0==126||LA56_0==129||LA56_0==132||LA56_0==135||LA56_0==138||LA56_0==141||(LA56_0 >= 143 && LA56_0 <= 144)||(LA56_0 >= 146 && LA56_0 <= 148)||(LA56_0 >= 150 && LA56_0 <= 152)||LA56_0==154||LA56_0==157||LA56_0==160||LA56_0==162||LA56_0==167||LA56_0==169||(LA56_0 >= 171 && LA56_0 <= 174)||LA56_0==177||LA56_0==180||(LA56_0 >= 183 && LA56_0 <= 187)||(LA56_0 >= 189 && LA56_0 <= 190)||LA56_0==194||LA56_0==196||LA56_0==202) ) {
@@ -6509,7 +6701,7 @@ public class csParser extends Parser {
 
 			switch (alt56) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:250:2: a= expression
+					// /Users/jeremie/ANTLR/cs.g:251:2: a= expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -6524,7 +6716,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:250:28: b= array_initializer
+					// /Users/jeremie/ANTLR/cs.g:251:28: b= array_initializer
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -6570,7 +6762,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "sizeof_expression"
-	// /Users/jeremie/ANTLR/cs.g:251:1: sizeof_expression : 'sizeof' '(' unmanaged_type ')' ;
+	// /Users/jeremie/ANTLR/cs.g:252:1: sizeof_expression : 'sizeof' '(' unmanaged_type ')' ;
 	public final csParser.sizeof_expression_return sizeof_expression() throws RecognitionException {
 		csParser.sizeof_expression_return retval = new csParser.sizeof_expression_return();
 		retval.start = input.LT(1);
@@ -6590,8 +6782,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 47) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:251:18: ( 'sizeof' '(' unmanaged_type ')' )
-			// /Users/jeremie/ANTLR/cs.g:252:2: 'sizeof' '(' unmanaged_type ')'
+			// /Users/jeremie/ANTLR/cs.g:252:18: ( 'sizeof' '(' unmanaged_type ')' )
+			// /Users/jeremie/ANTLR/cs.g:253:2: 'sizeof' '(' unmanaged_type ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -6652,7 +6844,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "checked_expression"
-	// /Users/jeremie/ANTLR/cs.g:253:1: checked_expression : 'checked' '(' expression ')' ;
+	// /Users/jeremie/ANTLR/cs.g:254:1: checked_expression : 'checked' '(' expression ')' ;
 	public final csParser.checked_expression_return checked_expression() throws RecognitionException {
 		csParser.checked_expression_return retval = new csParser.checked_expression_return();
 		retval.start = input.LT(1);
@@ -6672,8 +6864,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 48) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:253:19: ( 'checked' '(' expression ')' )
-			// /Users/jeremie/ANTLR/cs.g:254:2: 'checked' '(' expression ')'
+			// /Users/jeremie/ANTLR/cs.g:254:19: ( 'checked' '(' expression ')' )
+			// /Users/jeremie/ANTLR/cs.g:255:2: 'checked' '(' expression ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -6734,7 +6926,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unchecked_expression"
-	// /Users/jeremie/ANTLR/cs.g:255:1: unchecked_expression : 'unchecked' '(' expression ')' ;
+	// /Users/jeremie/ANTLR/cs.g:256:1: unchecked_expression : 'unchecked' '(' expression ')' ;
 	public final csParser.unchecked_expression_return unchecked_expression() throws RecognitionException {
 		csParser.unchecked_expression_return retval = new csParser.unchecked_expression_return();
 		retval.start = input.LT(1);
@@ -6754,8 +6946,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 49) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:255:21: ( 'unchecked' '(' expression ')' )
-			// /Users/jeremie/ANTLR/cs.g:256:2: 'unchecked' '(' expression ')'
+			// /Users/jeremie/ANTLR/cs.g:256:21: ( 'unchecked' '(' expression ')' )
+			// /Users/jeremie/ANTLR/cs.g:257:2: 'unchecked' '(' expression ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -6816,7 +7008,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "default_value_expression"
-	// /Users/jeremie/ANTLR/cs.g:257:1: default_value_expression : 'default' '(' type ')' ;
+	// /Users/jeremie/ANTLR/cs.g:258:1: default_value_expression : 'default' '(' type ')' ;
 	public final csParser.default_value_expression_return default_value_expression() throws RecognitionException {
 		csParser.default_value_expression_return retval = new csParser.default_value_expression_return();
 		retval.start = input.LT(1);
@@ -6836,8 +7028,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 50) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:257:25: ( 'default' '(' type ')' )
-			// /Users/jeremie/ANTLR/cs.g:258:2: 'default' '(' type ')'
+			// /Users/jeremie/ANTLR/cs.g:258:25: ( 'default' '(' type ')' )
+			// /Users/jeremie/ANTLR/cs.g:259:2: 'default' '(' type ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -6898,7 +7090,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "anonymous_method_expression"
-	// /Users/jeremie/ANTLR/cs.g:259:1: anonymous_method_expression : 'delegate' ( explicit_anonymous_function_signature )? block ;
+	// /Users/jeremie/ANTLR/cs.g:260:1: anonymous_method_expression : 'delegate' ( explicit_anonymous_function_signature )? block ;
 	public final csParser.anonymous_method_expression_return anonymous_method_expression() throws RecognitionException {
 		csParser.anonymous_method_expression_return retval = new csParser.anonymous_method_expression_return();
 		retval.start = input.LT(1);
@@ -6915,8 +7107,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 51) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:259:28: ( 'delegate' ( explicit_anonymous_function_signature )? block )
-			// /Users/jeremie/ANTLR/cs.g:260:2: 'delegate' ( explicit_anonymous_function_signature )? block
+			// /Users/jeremie/ANTLR/cs.g:260:28: ( 'delegate' ( explicit_anonymous_function_signature )? block )
+			// /Users/jeremie/ANTLR/cs.g:261:2: 'delegate' ( explicit_anonymous_function_signature )? block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -6927,7 +7119,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal174_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:260:15: ( explicit_anonymous_function_signature )?
+			// /Users/jeremie/ANTLR/cs.g:261:15: ( explicit_anonymous_function_signature )?
 			int alt57=2;
 			int LA57_0 = input.LA(1);
 			if ( (LA57_0==68) ) {
@@ -6935,7 +7127,7 @@ public class csParser extends Parser {
 			}
 			switch (alt57) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:260:15: explicit_anonymous_function_signature
+					// /Users/jeremie/ANTLR/cs.g:261:15: explicit_anonymous_function_signature
 					{
 					pushFollow(FOLLOW_explicit_anonymous_function_signature_in_anonymous_method_expression2746);
 					explicit_anonymous_function_signature175=explicit_anonymous_function_signature();
@@ -6986,7 +7178,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "explicit_anonymous_function_signature"
-	// /Users/jeremie/ANTLR/cs.g:261:1: explicit_anonymous_function_signature : '(' ( explicit_anonymous_function_parameter_list )? ')' ;
+	// /Users/jeremie/ANTLR/cs.g:262:1: explicit_anonymous_function_signature : '(' ( explicit_anonymous_function_parameter_list )? ')' ;
 	public final csParser.explicit_anonymous_function_signature_return explicit_anonymous_function_signature() throws RecognitionException {
 		csParser.explicit_anonymous_function_signature_return retval = new csParser.explicit_anonymous_function_signature_return();
 		retval.start = input.LT(1);
@@ -7004,8 +7196,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 52) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:261:38: ( '(' ( explicit_anonymous_function_parameter_list )? ')' )
-			// /Users/jeremie/ANTLR/cs.g:262:2: '(' ( explicit_anonymous_function_parameter_list )? ')'
+			// /Users/jeremie/ANTLR/cs.g:262:38: ( '(' ( explicit_anonymous_function_parameter_list )? ')' )
+			// /Users/jeremie/ANTLR/cs.g:263:2: '(' ( explicit_anonymous_function_parameter_list )? ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -7016,7 +7208,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal177_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:262:8: ( explicit_anonymous_function_parameter_list )?
+			// /Users/jeremie/ANTLR/cs.g:263:8: ( explicit_anonymous_function_parameter_list )?
 			int alt58=2;
 			int LA58_0 = input.LA(1);
 			if ( (LA58_0==IDENTIFIER||LA58_0==95||(LA58_0 >= 97 && LA58_0 <= 98)||(LA58_0 >= 100 && LA58_0 <= 101)||LA58_0==103||(LA58_0 >= 105 && LA58_0 <= 106)||LA58_0==109||LA58_0==114||LA58_0==117||(LA58_0 >= 119 && LA58_0 <= 120)||LA58_0==122||LA58_0==126||LA58_0==129||LA58_0==132||LA58_0==135||LA58_0==138||LA58_0==141||(LA58_0 >= 143 && LA58_0 <= 144)||(LA58_0 >= 146 && LA58_0 <= 148)||(LA58_0 >= 151 && LA58_0 <= 152)||(LA58_0 >= 154 && LA58_0 <= 155)||LA58_0==157||LA58_0==160||LA58_0==162||(LA58_0 >= 166 && LA58_0 <= 167)||LA58_0==169||(LA58_0 >= 171 && LA58_0 <= 173)||LA58_0==177||LA58_0==183||(LA58_0 >= 185 && LA58_0 <= 186)||(LA58_0 >= 189 && LA58_0 <= 190)||LA58_0==192||LA58_0==194||LA58_0==196) ) {
@@ -7024,7 +7216,7 @@ public class csParser extends Parser {
 			}
 			switch (alt58) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:262:8: explicit_anonymous_function_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:263:8: explicit_anonymous_function_parameter_list
 					{
 					pushFollow(FOLLOW_explicit_anonymous_function_parameter_list_in_explicit_anonymous_function_signature2762);
 					explicit_anonymous_function_parameter_list178=explicit_anonymous_function_parameter_list();
@@ -7075,7 +7267,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "explicit_anonymous_function_parameter_list"
-	// /Users/jeremie/ANTLR/cs.g:263:1: explicit_anonymous_function_parameter_list : explicit_anonymous_function_parameter ( ',' explicit_anonymous_function_parameter )* ;
+	// /Users/jeremie/ANTLR/cs.g:264:1: explicit_anonymous_function_parameter_list : explicit_anonymous_function_parameter ( ',' explicit_anonymous_function_parameter )* ;
 	public final csParser.explicit_anonymous_function_parameter_list_return explicit_anonymous_function_parameter_list() throws RecognitionException {
 		csParser.explicit_anonymous_function_parameter_list_return retval = new csParser.explicit_anonymous_function_parameter_list_return();
 		retval.start = input.LT(1);
@@ -7092,8 +7284,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 53) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:263:43: ( explicit_anonymous_function_parameter ( ',' explicit_anonymous_function_parameter )* )
-			// /Users/jeremie/ANTLR/cs.g:264:2: explicit_anonymous_function_parameter ( ',' explicit_anonymous_function_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:264:43: ( explicit_anonymous_function_parameter ( ',' explicit_anonymous_function_parameter )* )
+			// /Users/jeremie/ANTLR/cs.g:265:2: explicit_anonymous_function_parameter ( ',' explicit_anonymous_function_parameter )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -7104,7 +7296,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, explicit_anonymous_function_parameter180.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:264:42: ( ',' explicit_anonymous_function_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:265:42: ( ',' explicit_anonymous_function_parameter )*
 			loop59:
 			while (true) {
 				int alt59=2;
@@ -7115,7 +7307,7 @@ public class csParser extends Parser {
 
 				switch (alt59) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:264:43: ',' explicit_anonymous_function_parameter
+					// /Users/jeremie/ANTLR/cs.g:265:43: ',' explicit_anonymous_function_parameter
 					{
 					char_literal181=(Token)match(input,74,FOLLOW_74_in_explicit_anonymous_function_parameter_list2780); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7169,7 +7361,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "explicit_anonymous_function_parameter"
-	// /Users/jeremie/ANTLR/cs.g:265:1: explicit_anonymous_function_parameter : ( anonymous_function_parameter_modifier )? type identifier ;
+	// /Users/jeremie/ANTLR/cs.g:266:1: explicit_anonymous_function_parameter : ( anonymous_function_parameter_modifier )? type identifier ;
 	public final csParser.explicit_anonymous_function_parameter_return explicit_anonymous_function_parameter() throws RecognitionException {
 		csParser.explicit_anonymous_function_parameter_return retval = new csParser.explicit_anonymous_function_parameter_return();
 		retval.start = input.LT(1);
@@ -7185,13 +7377,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 54) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:265:38: ( ( anonymous_function_parameter_modifier )? type identifier )
-			// /Users/jeremie/ANTLR/cs.g:266:2: ( anonymous_function_parameter_modifier )? type identifier
+			// /Users/jeremie/ANTLR/cs.g:266:38: ( ( anonymous_function_parameter_modifier )? type identifier )
+			// /Users/jeremie/ANTLR/cs.g:267:2: ( anonymous_function_parameter_modifier )? type identifier
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:266:2: ( anonymous_function_parameter_modifier )?
+			// /Users/jeremie/ANTLR/cs.g:267:2: ( anonymous_function_parameter_modifier )?
 			int alt60=2;
 			int LA60_0 = input.LA(1);
 			if ( (LA60_0==155||LA60_0==166) ) {
@@ -7199,7 +7391,7 @@ public class csParser extends Parser {
 			}
 			switch (alt60) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:266:2: anonymous_function_parameter_modifier
+					// /Users/jeremie/ANTLR/cs.g:267:2: anonymous_function_parameter_modifier
 					{
 					pushFollow(FOLLOW_anonymous_function_parameter_modifier_in_explicit_anonymous_function_parameter2795);
 					anonymous_function_parameter_modifier183=anonymous_function_parameter_modifier();
@@ -7256,7 +7448,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "anonymous_function_parameter_modifier"
-	// /Users/jeremie/ANTLR/cs.g:267:1: anonymous_function_parameter_modifier : ( 'ref' | 'out' );
+	// /Users/jeremie/ANTLR/cs.g:268:1: anonymous_function_parameter_modifier : ( 'ref' | 'out' );
 	public final csParser.anonymous_function_parameter_modifier_return anonymous_function_parameter_modifier() throws RecognitionException {
 		csParser.anonymous_function_parameter_modifier_return retval = new csParser.anonymous_function_parameter_modifier_return();
 		retval.start = input.LT(1);
@@ -7271,7 +7463,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 55) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:267:38: ( 'ref' | 'out' )
+			// /Users/jeremie/ANTLR/cs.g:268:38: ( 'ref' | 'out' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -7322,7 +7514,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "object_creation_expression"
-	// /Users/jeremie/ANTLR/cs.g:272:1: object_creation_expression returns [expression t] : a= type ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer ) ;
+	// /Users/jeremie/ANTLR/cs.g:273:1: object_creation_expression returns [expression t] : a= type ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer ) ;
 	public final csParser.object_creation_expression_return object_creation_expression() throws RecognitionException {
 		csParser.object_creation_expression_return retval = new csParser.object_creation_expression_return();
 		retval.start = input.LT(1);
@@ -7344,8 +7536,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 56) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:274:66: (a= type ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer ) )
-			// /Users/jeremie/ANTLR/cs.g:276:2: a= type ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer )
+			// /Users/jeremie/ANTLR/cs.g:275:66: (a= type ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer ) )
+			// /Users/jeremie/ANTLR/cs.g:277:2: a= type ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -7356,7 +7548,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:277:3: ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer )
+			// /Users/jeremie/ANTLR/cs.g:278:3: ( '(' (b= argument_list )? ')' ( object_or_collection_initializer )? | object_or_collection_initializer )
 			int alt63=2;
 			int LA63_0 = input.LA(1);
 			if ( (LA63_0==68) ) {
@@ -7375,7 +7567,7 @@ public class csParser extends Parser {
 
 			switch (alt63) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:277:5: '(' (b= argument_list )? ')' ( object_or_collection_initializer )?
+					// /Users/jeremie/ANTLR/cs.g:278:5: '(' (b= argument_list )? ')' ( object_or_collection_initializer )?
 					{
 					char_literal187=(Token)match(input,68,FOLLOW_68_in_object_creation_expression2853); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7383,7 +7575,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, char_literal187_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:277:12: (b= argument_list )?
+					// /Users/jeremie/ANTLR/cs.g:278:12: (b= argument_list )?
 					int alt61=2;
 					int LA61_0 = input.LA(1);
 					if ( (LA61_0==Character_literal||LA61_0==FALSE||(LA61_0 >= Hex_number && LA61_0 <= IDENTIFIER)||(LA61_0 >= MINUS && LA61_0 <= NUMBER)||LA61_0==Real_literal||LA61_0==STRINGLITERAL||LA61_0==TRUE||LA61_0==Verbatim_string_literal||LA61_0==61||LA61_0==66||(LA61_0 >= 68 && LA61_0 <= 69)||(LA61_0 >= 71 && LA61_0 <= 72)||LA61_0==75||LA61_0==95||(LA61_0 >= 97 && LA61_0 <= 98)||(LA61_0 >= 100 && LA61_0 <= 103)||(LA61_0 >= 105 && LA61_0 <= 106)||(LA61_0 >= 109 && LA61_0 <= 110)||(LA61_0 >= 114 && LA61_0 <= 117)||(LA61_0 >= 119 && LA61_0 <= 120)||LA61_0==122||LA61_0==126||LA61_0==129||LA61_0==132||LA61_0==135||LA61_0==138||LA61_0==141||(LA61_0 >= 143 && LA61_0 <= 144)||(LA61_0 >= 146 && LA61_0 <= 148)||(LA61_0 >= 150 && LA61_0 <= 152)||(LA61_0 >= 154 && LA61_0 <= 155)||LA61_0==157||LA61_0==160||LA61_0==162||(LA61_0 >= 166 && LA61_0 <= 167)||LA61_0==169||(LA61_0 >= 171 && LA61_0 <= 174)||LA61_0==177||LA61_0==180||(LA61_0 >= 183 && LA61_0 <= 187)||(LA61_0 >= 189 && LA61_0 <= 190)||LA61_0==194||LA61_0==196||LA61_0==202) ) {
@@ -7391,7 +7583,7 @@ public class csParser extends Parser {
 					}
 					switch (alt61) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:277:12: b= argument_list
+							// /Users/jeremie/ANTLR/cs.g:278:12: b= argument_list
 							{
 							pushFollow(FOLLOW_argument_list_in_object_creation_expression2859);
 							b=argument_list();
@@ -7410,7 +7602,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, char_literal188_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:277:36: ( object_or_collection_initializer )?
+					// /Users/jeremie/ANTLR/cs.g:278:36: ( object_or_collection_initializer )?
 					int alt62=2;
 					int LA62_0 = input.LA(1);
 					if ( (LA62_0==197) ) {
@@ -7418,7 +7610,7 @@ public class csParser extends Parser {
 					}
 					switch (alt62) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:277:36: object_or_collection_initializer
+							// /Users/jeremie/ANTLR/cs.g:278:36: object_or_collection_initializer
 							{
 							pushFollow(FOLLOW_object_or_collection_initializer_in_object_creation_expression2868);
 							object_or_collection_initializer189=object_or_collection_initializer();
@@ -7435,7 +7627,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:278:7: object_or_collection_initializer
+					// /Users/jeremie/ANTLR/cs.g:279:7: object_or_collection_initializer
 					{
 					pushFollow(FOLLOW_object_or_collection_initializer_in_object_creation_expression2880);
 					object_or_collection_initializer190=object_or_collection_initializer();
@@ -7481,7 +7673,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "object_or_collection_initializer"
-	// /Users/jeremie/ANTLR/cs.g:280:1: object_or_collection_initializer : '{' ( object_initializer | collection_initializer ) ;
+	// /Users/jeremie/ANTLR/cs.g:281:1: object_or_collection_initializer : '{' ( object_initializer | collection_initializer ) ;
 	public final csParser.object_or_collection_initializer_return object_or_collection_initializer() throws RecognitionException {
 		csParser.object_or_collection_initializer_return retval = new csParser.object_or_collection_initializer_return();
 		retval.start = input.LT(1);
@@ -7498,8 +7690,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 57) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:280:33: ( '{' ( object_initializer | collection_initializer ) )
-			// /Users/jeremie/ANTLR/cs.g:281:2: '{' ( object_initializer | collection_initializer )
+			// /Users/jeremie/ANTLR/cs.g:281:33: ( '{' ( object_initializer | collection_initializer ) )
+			// /Users/jeremie/ANTLR/cs.g:282:2: '{' ( object_initializer | collection_initializer )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -7510,7 +7702,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal191_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:281:7: ( object_initializer | collection_initializer )
+			// /Users/jeremie/ANTLR/cs.g:282:7: ( object_initializer | collection_initializer )
 			int alt64=2;
 			switch ( input.LA(1) ) {
 			case 132:
@@ -7652,7 +7844,7 @@ public class csParser extends Parser {
 			}
 			switch (alt64) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:281:8: object_initializer
+					// /Users/jeremie/ANTLR/cs.g:282:8: object_initializer
 					{
 					pushFollow(FOLLOW_object_initializer_in_object_or_collection_initializer2896);
 					object_initializer192=object_initializer();
@@ -7663,7 +7855,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:282:5: collection_initializer
+					// /Users/jeremie/ANTLR/cs.g:283:5: collection_initializer
 					{
 					pushFollow(FOLLOW_collection_initializer_in_object_or_collection_initializer2903);
 					collection_initializer193=collection_initializer();
@@ -7708,7 +7900,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "collection_initializer"
-	// /Users/jeremie/ANTLR/cs.g:283:1: collection_initializer : element_initializer_list ( ',' )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:284:1: collection_initializer : element_initializer_list ( ',' )? '}' ;
 	public final csParser.collection_initializer_return collection_initializer() throws RecognitionException {
 		csParser.collection_initializer_return retval = new csParser.collection_initializer_return();
 		retval.start = input.LT(1);
@@ -7726,8 +7918,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 58) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:283:23: ( element_initializer_list ( ',' )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:284:2: element_initializer_list ( ',' )? '}'
+			// /Users/jeremie/ANTLR/cs.g:284:23: ( element_initializer_list ( ',' )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:285:2: element_initializer_list ( ',' )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -7738,7 +7930,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, element_initializer_list194.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:284:29: ( ',' )?
+			// /Users/jeremie/ANTLR/cs.g:285:29: ( ',' )?
 			int alt65=2;
 			int LA65_0 = input.LA(1);
 			if ( (LA65_0==74) ) {
@@ -7746,7 +7938,7 @@ public class csParser extends Parser {
 			}
 			switch (alt65) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:284:29: ','
+					// /Users/jeremie/ANTLR/cs.g:285:29: ','
 					{
 					char_literal195=(Token)match(input,74,FOLLOW_74_in_collection_initializer2917); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7797,7 +7989,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "element_initializer_list"
-	// /Users/jeremie/ANTLR/cs.g:285:1: element_initializer_list : element_initializer ( ',' element_initializer )* ;
+	// /Users/jeremie/ANTLR/cs.g:286:1: element_initializer_list : element_initializer ( ',' element_initializer )* ;
 	public final csParser.element_initializer_list_return element_initializer_list() throws RecognitionException {
 		csParser.element_initializer_list_return retval = new csParser.element_initializer_list_return();
 		retval.start = input.LT(1);
@@ -7814,8 +8006,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 59) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:285:25: ( element_initializer ( ',' element_initializer )* )
-			// /Users/jeremie/ANTLR/cs.g:286:2: element_initializer ( ',' element_initializer )*
+			// /Users/jeremie/ANTLR/cs.g:286:25: ( element_initializer ( ',' element_initializer )* )
+			// /Users/jeremie/ANTLR/cs.g:287:2: element_initializer ( ',' element_initializer )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -7826,7 +8018,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, element_initializer197.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:286:23: ( ',' element_initializer )*
+			// /Users/jeremie/ANTLR/cs.g:287:23: ( ',' element_initializer )*
 			loop66:
 			while (true) {
 				int alt66=2;
@@ -7841,7 +8033,7 @@ public class csParser extends Parser {
 
 				switch (alt66) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:286:24: ',' element_initializer
+					// /Users/jeremie/ANTLR/cs.g:287:24: ',' element_initializer
 					{
 					char_literal198=(Token)match(input,74,FOLLOW_74_in_element_initializer_list2935); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7895,7 +8087,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "element_initializer"
-	// /Users/jeremie/ANTLR/cs.g:287:1: element_initializer : ( non_assignment_expression | '{' expression_list '}' );
+	// /Users/jeremie/ANTLR/cs.g:288:1: element_initializer : ( non_assignment_expression | '{' expression_list '}' );
 	public final csParser.element_initializer_return element_initializer() throws RecognitionException {
 		csParser.element_initializer_return retval = new csParser.element_initializer_return();
 		retval.start = input.LT(1);
@@ -7914,7 +8106,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 60) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:287:20: ( non_assignment_expression | '{' expression_list '}' )
+			// /Users/jeremie/ANTLR/cs.g:288:20: ( non_assignment_expression | '{' expression_list '}' )
 			int alt67=2;
 			int LA67_0 = input.LA(1);
 			if ( (LA67_0==Character_literal||LA67_0==FALSE||(LA67_0 >= Hex_number && LA67_0 <= IDENTIFIER)||(LA67_0 >= MINUS && LA67_0 <= NUMBER)||LA67_0==Real_literal||LA67_0==STRINGLITERAL||LA67_0==TRUE||LA67_0==Verbatim_string_literal||LA67_0==61||LA67_0==66||(LA67_0 >= 68 && LA67_0 <= 69)||(LA67_0 >= 71 && LA67_0 <= 72)||LA67_0==75||LA67_0==95||(LA67_0 >= 97 && LA67_0 <= 98)||(LA67_0 >= 100 && LA67_0 <= 103)||(LA67_0 >= 105 && LA67_0 <= 106)||(LA67_0 >= 109 && LA67_0 <= 110)||(LA67_0 >= 114 && LA67_0 <= 117)||(LA67_0 >= 119 && LA67_0 <= 120)||LA67_0==122||LA67_0==126||LA67_0==129||LA67_0==132||LA67_0==135||LA67_0==138||LA67_0==141||(LA67_0 >= 143 && LA67_0 <= 144)||(LA67_0 >= 146 && LA67_0 <= 148)||(LA67_0 >= 150 && LA67_0 <= 152)||LA67_0==154||LA67_0==157||LA67_0==160||LA67_0==162||LA67_0==167||LA67_0==169||(LA67_0 >= 171 && LA67_0 <= 174)||LA67_0==177||LA67_0==180||(LA67_0 >= 183 && LA67_0 <= 187)||(LA67_0 >= 189 && LA67_0 <= 190)||LA67_0==194||LA67_0==196||LA67_0==202) ) {
@@ -7933,7 +8125,7 @@ public class csParser extends Parser {
 
 			switch (alt67) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:288:2: non_assignment_expression
+					// /Users/jeremie/ANTLR/cs.g:289:2: non_assignment_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -7947,7 +8139,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:289:4: '{' expression_list '}'
+					// /Users/jeremie/ANTLR/cs.g:290:4: '{' expression_list '}'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -8004,7 +8196,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "object_initializer"
-	// /Users/jeremie/ANTLR/cs.g:296:1: object_initializer : ( member_initializer_list )? ( ',' )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:297:1: object_initializer : ( member_initializer_list )? ( ',' )? '}' ;
 	public final csParser.object_initializer_return object_initializer() throws RecognitionException {
 		csParser.object_initializer_return retval = new csParser.object_initializer_return();
 		retval.start = input.LT(1);
@@ -8022,13 +8214,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 61) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:296:19: ( ( member_initializer_list )? ( ',' )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:297:2: ( member_initializer_list )? ( ',' )? '}'
+			// /Users/jeremie/ANTLR/cs.g:297:19: ( ( member_initializer_list )? ( ',' )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:298:2: ( member_initializer_list )? ( ',' )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:297:2: ( member_initializer_list )?
+			// /Users/jeremie/ANTLR/cs.g:298:2: ( member_initializer_list )?
 			int alt68=2;
 			int LA68_0 = input.LA(1);
 			if ( (LA68_0==IDENTIFIER||LA68_0==95||(LA68_0 >= 97 && LA68_0 <= 98)||(LA68_0 >= 100 && LA68_0 <= 101)||LA68_0==105||LA68_0==117||LA68_0==120||LA68_0==122||LA68_0==126||LA68_0==132||LA68_0==135||LA68_0==141||(LA68_0 >= 143 && LA68_0 <= 144)||(LA68_0 >= 147 && LA68_0 <= 148)||LA68_0==152||LA68_0==154||LA68_0==157||LA68_0==160||LA68_0==162||LA68_0==167||(LA68_0 >= 171 && LA68_0 <= 172)||LA68_0==183||LA68_0==190||LA68_0==194||LA68_0==196) ) {
@@ -8036,7 +8228,7 @@ public class csParser extends Parser {
 			}
 			switch (alt68) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:297:2: member_initializer_list
+					// /Users/jeremie/ANTLR/cs.g:298:2: member_initializer_list
 					{
 					pushFollow(FOLLOW_member_initializer_list_in_object_initializer2977);
 					member_initializer_list204=member_initializer_list();
@@ -8049,7 +8241,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:297:29: ( ',' )?
+			// /Users/jeremie/ANTLR/cs.g:298:29: ( ',' )?
 			int alt69=2;
 			int LA69_0 = input.LA(1);
 			if ( (LA69_0==74) ) {
@@ -8057,7 +8249,7 @@ public class csParser extends Parser {
 			}
 			switch (alt69) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:297:29: ','
+					// /Users/jeremie/ANTLR/cs.g:298:29: ','
 					{
 					char_literal205=(Token)match(input,74,FOLLOW_74_in_object_initializer2982); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -8108,7 +8300,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "member_initializer_list"
-	// /Users/jeremie/ANTLR/cs.g:298:1: member_initializer_list : member_initializer ( ',' member_initializer ) ;
+	// /Users/jeremie/ANTLR/cs.g:299:1: member_initializer_list : member_initializer ( ',' member_initializer ) ;
 	public final csParser.member_initializer_list_return member_initializer_list() throws RecognitionException {
 		csParser.member_initializer_list_return retval = new csParser.member_initializer_list_return();
 		retval.start = input.LT(1);
@@ -8125,8 +8317,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 62) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:298:24: ( member_initializer ( ',' member_initializer ) )
-			// /Users/jeremie/ANTLR/cs.g:299:2: member_initializer ( ',' member_initializer )
+			// /Users/jeremie/ANTLR/cs.g:299:24: ( member_initializer ( ',' member_initializer ) )
+			// /Users/jeremie/ANTLR/cs.g:300:2: member_initializer ( ',' member_initializer )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8137,8 +8329,8 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, member_initializer207.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:299:22: ( ',' member_initializer )
-			// /Users/jeremie/ANTLR/cs.g:299:23: ',' member_initializer
+			// /Users/jeremie/ANTLR/cs.g:300:22: ( ',' member_initializer )
+			// /Users/jeremie/ANTLR/cs.g:300:23: ',' member_initializer
 			{
 			char_literal208=(Token)match(input,74,FOLLOW_74_in_member_initializer_list3000); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
@@ -8186,7 +8378,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "member_initializer"
-	// /Users/jeremie/ANTLR/cs.g:300:1: member_initializer : identifier '=' initializer_value ;
+	// /Users/jeremie/ANTLR/cs.g:301:1: member_initializer : identifier '=' initializer_value ;
 	public final csParser.member_initializer_return member_initializer() throws RecognitionException {
 		csParser.member_initializer_return retval = new csParser.member_initializer_return();
 		retval.start = input.LT(1);
@@ -8203,8 +8395,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 63) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:300:19: ( identifier '=' initializer_value )
-			// /Users/jeremie/ANTLR/cs.g:301:2: identifier '=' initializer_value
+			// /Users/jeremie/ANTLR/cs.g:301:19: ( identifier '=' initializer_value )
+			// /Users/jeremie/ANTLR/cs.g:302:2: identifier '=' initializer_value
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8259,7 +8451,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "initializer_value"
-	// /Users/jeremie/ANTLR/cs.g:302:1: initializer_value : ( expression | object_or_collection_initializer );
+	// /Users/jeremie/ANTLR/cs.g:303:1: initializer_value : ( expression | object_or_collection_initializer );
 	public final csParser.initializer_value_return initializer_value() throws RecognitionException {
 		csParser.initializer_value_return retval = new csParser.initializer_value_return();
 		retval.start = input.LT(1);
@@ -8274,7 +8466,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 64) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:302:18: ( expression | object_or_collection_initializer )
+			// /Users/jeremie/ANTLR/cs.g:303:18: ( expression | object_or_collection_initializer )
 			int alt70=2;
 			int LA70_0 = input.LA(1);
 			if ( (LA70_0==Character_literal||LA70_0==FALSE||(LA70_0 >= Hex_number && LA70_0 <= IDENTIFIER)||(LA70_0 >= MINUS && LA70_0 <= NUMBER)||LA70_0==Real_literal||LA70_0==STRINGLITERAL||LA70_0==TRUE||LA70_0==Verbatim_string_literal||LA70_0==61||LA70_0==66||(LA70_0 >= 68 && LA70_0 <= 69)||(LA70_0 >= 71 && LA70_0 <= 72)||LA70_0==75||LA70_0==95||(LA70_0 >= 97 && LA70_0 <= 98)||(LA70_0 >= 100 && LA70_0 <= 103)||(LA70_0 >= 105 && LA70_0 <= 106)||(LA70_0 >= 109 && LA70_0 <= 110)||(LA70_0 >= 114 && LA70_0 <= 117)||(LA70_0 >= 119 && LA70_0 <= 120)||LA70_0==122||LA70_0==126||LA70_0==129||LA70_0==132||LA70_0==135||LA70_0==138||LA70_0==141||(LA70_0 >= 143 && LA70_0 <= 144)||(LA70_0 >= 146 && LA70_0 <= 148)||(LA70_0 >= 150 && LA70_0 <= 152)||LA70_0==154||LA70_0==157||LA70_0==160||LA70_0==162||LA70_0==167||LA70_0==169||(LA70_0 >= 171 && LA70_0 <= 174)||LA70_0==177||LA70_0==180||(LA70_0 >= 183 && LA70_0 <= 187)||(LA70_0 >= 189 && LA70_0 <= 190)||LA70_0==194||LA70_0==196||LA70_0==202) ) {
@@ -8293,7 +8485,7 @@ public class csParser extends Parser {
 
 			switch (alt70) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:303:2: expression
+					// /Users/jeremie/ANTLR/cs.g:304:2: expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -8307,7 +8499,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:304:4: object_or_collection_initializer
+					// /Users/jeremie/ANTLR/cs.g:305:4: object_or_collection_initializer
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -8352,7 +8544,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "typeof_expression"
-	// /Users/jeremie/ANTLR/cs.g:308:1: typeof_expression : 'typeof' '(' ( ( unbound_type_name )=> unbound_type_name | type | 'void' ) ')' ;
+	// /Users/jeremie/ANTLR/cs.g:309:1: typeof_expression : 'typeof' '(' ( ( unbound_type_name )=> unbound_type_name | type | 'void' ) ')' ;
 	public final csParser.typeof_expression_return typeof_expression() throws RecognitionException {
 		csParser.typeof_expression_return retval = new csParser.typeof_expression_return();
 		retval.start = input.LT(1);
@@ -8375,8 +8567,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 65) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:308:18: ( 'typeof' '(' ( ( unbound_type_name )=> unbound_type_name | type | 'void' ) ')' )
-			// /Users/jeremie/ANTLR/cs.g:309:2: 'typeof' '(' ( ( unbound_type_name )=> unbound_type_name | type | 'void' ) ')'
+			// /Users/jeremie/ANTLR/cs.g:309:18: ( 'typeof' '(' ( ( unbound_type_name )=> unbound_type_name | type | 'void' ) ')' )
+			// /Users/jeremie/ANTLR/cs.g:310:2: 'typeof' '(' ( ( unbound_type_name )=> unbound_type_name | type | 'void' ) ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8393,12 +8585,12 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal216_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:309:19: ( ( unbound_type_name )=> unbound_type_name | type | 'void' )
+			// /Users/jeremie/ANTLR/cs.g:310:19: ( ( unbound_type_name )=> unbound_type_name | type | 'void' )
 			int alt71=3;
 			alt71 = dfa71.predict(input);
 			switch (alt71) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:309:20: ( unbound_type_name )=> unbound_type_name
+					// /Users/jeremie/ANTLR/cs.g:310:20: ( unbound_type_name )=> unbound_type_name
 					{
 					pushFollow(FOLLOW_unbound_type_name_in_typeof_expression3062);
 					unbound_type_name217=unbound_type_name();
@@ -8409,7 +8601,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:310:10: type
+					// /Users/jeremie/ANTLR/cs.g:311:10: type
 					{
 					pushFollow(FOLLOW_type_in_typeof_expression3073);
 					type218=type();
@@ -8420,7 +8612,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:311:10: 'void'
+					// /Users/jeremie/ANTLR/cs.g:312:10: 'void'
 					{
 					string_literal219=(Token)match(input,192,FOLLOW_192_in_typeof_expression3085); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -8471,7 +8663,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unbound_type_name"
-	// /Users/jeremie/ANTLR/cs.g:316:1: unbound_type_name : unbound_type_name_start ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )* generic_dimension_specifier ;
+	// /Users/jeremie/ANTLR/cs.g:317:1: unbound_type_name : unbound_type_name_start ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )* generic_dimension_specifier ;
 	public final csParser.unbound_type_name_return unbound_type_name() throws RecognitionException {
 		csParser.unbound_type_name_return retval = new csParser.unbound_type_name_return();
 		retval.start = input.LT(1);
@@ -8489,8 +8681,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 66) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:316:18: ( unbound_type_name_start ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )* generic_dimension_specifier )
-			// /Users/jeremie/ANTLR/cs.g:318:2: unbound_type_name_start ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )* generic_dimension_specifier
+			// /Users/jeremie/ANTLR/cs.g:317:18: ( unbound_type_name_start ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )* generic_dimension_specifier )
+			// /Users/jeremie/ANTLR/cs.g:319:2: unbound_type_name_start ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )* generic_dimension_specifier
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8501,17 +8693,17 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, unbound_type_name_start221.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:319:3: ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )*
+			// /Users/jeremie/ANTLR/cs.g:320:3: ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )*
 			loop72:
 			while (true) {
 				int alt72=3;
 				alt72 = dfa72.predict(input);
 				switch (alt72) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:319:4: ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part )
+					// /Users/jeremie/ANTLR/cs.g:320:4: ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part )
 					{
-					// /Users/jeremie/ANTLR/cs.g:319:4: ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part )
-					// /Users/jeremie/ANTLR/cs.g:319:5: ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part
+					// /Users/jeremie/ANTLR/cs.g:320:4: ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part )
+					// /Users/jeremie/ANTLR/cs.g:320:5: ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part
 					{
 					pushFollow(FOLLOW_generic_dimension_specifier_in_unbound_type_name3124);
 					generic_dimension_specifier222=generic_dimension_specifier();
@@ -8530,7 +8722,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:320:5: unbound_type_name_part
+					// /Users/jeremie/ANTLR/cs.g:321:5: unbound_type_name_part
 					{
 					pushFollow(FOLLOW_unbound_type_name_part_in_unbound_type_name3135);
 					unbound_type_name_part224=unbound_type_name_part();
@@ -8584,7 +8776,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unbound_type_name_start"
-	// /Users/jeremie/ANTLR/cs.g:324:1: unbound_type_name_start : identifier ( '::' identifier )? ;
+	// /Users/jeremie/ANTLR/cs.g:325:1: unbound_type_name_start : identifier ( '::' identifier )? ;
 	public final csParser.unbound_type_name_start_return unbound_type_name_start() throws RecognitionException {
 		csParser.unbound_type_name_start_return retval = new csParser.unbound_type_name_start_return();
 		retval.start = input.LT(1);
@@ -8601,8 +8793,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 67) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:324:24: ( identifier ( '::' identifier )? )
-			// /Users/jeremie/ANTLR/cs.g:325:2: identifier ( '::' identifier )?
+			// /Users/jeremie/ANTLR/cs.g:325:24: ( identifier ( '::' identifier )? )
+			// /Users/jeremie/ANTLR/cs.g:326:2: identifier ( '::' identifier )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8613,7 +8805,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier226.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:325:13: ( '::' identifier )?
+			// /Users/jeremie/ANTLR/cs.g:326:13: ( '::' identifier )?
 			int alt73=2;
 			int LA73_0 = input.LA(1);
 			if ( (LA73_0==80) ) {
@@ -8621,7 +8813,7 @@ public class csParser extends Parser {
 			}
 			switch (alt73) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:325:14: '::' identifier
+					// /Users/jeremie/ANTLR/cs.g:326:14: '::' identifier
 					{
 					string_literal227=(Token)match(input,80,FOLLOW_80_in_unbound_type_name_start3158); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -8672,7 +8864,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unbound_type_name_part"
-	// /Users/jeremie/ANTLR/cs.g:326:1: unbound_type_name_part : '.' identifier ;
+	// /Users/jeremie/ANTLR/cs.g:327:1: unbound_type_name_part : '.' identifier ;
 	public final csParser.unbound_type_name_part_return unbound_type_name_part() throws RecognitionException {
 		csParser.unbound_type_name_part_return retval = new csParser.unbound_type_name_part_return();
 		retval.start = input.LT(1);
@@ -8688,8 +8880,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 68) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:326:23: ( '.' identifier )
-			// /Users/jeremie/ANTLR/cs.g:327:2: '.' identifier
+			// /Users/jeremie/ANTLR/cs.g:327:23: ( '.' identifier )
+			// /Users/jeremie/ANTLR/cs.g:328:2: '.' identifier
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8738,7 +8930,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "generic_dimension_specifier"
-	// /Users/jeremie/ANTLR/cs.g:328:1: generic_dimension_specifier : '<' ( commas )? '>' ;
+	// /Users/jeremie/ANTLR/cs.g:329:1: generic_dimension_specifier : '<' ( commas )? '>' ;
 	public final csParser.generic_dimension_specifier_return generic_dimension_specifier() throws RecognitionException {
 		csParser.generic_dimension_specifier_return retval = new csParser.generic_dimension_specifier_return();
 		retval.start = input.LT(1);
@@ -8756,8 +8948,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 69) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:328:28: ( '<' ( commas )? '>' )
-			// /Users/jeremie/ANTLR/cs.g:329:2: '<' ( commas )? '>'
+			// /Users/jeremie/ANTLR/cs.g:329:28: ( '<' ( commas )? '>' )
+			// /Users/jeremie/ANTLR/cs.g:330:2: '<' ( commas )? '>'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8768,7 +8960,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal231_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:329:8: ( commas )?
+			// /Users/jeremie/ANTLR/cs.g:330:8: ( commas )?
 			int alt74=2;
 			int LA74_0 = input.LA(1);
 			if ( (LA74_0==74) ) {
@@ -8776,7 +8968,7 @@ public class csParser extends Parser {
 			}
 			switch (alt74) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:329:8: commas
+					// /Users/jeremie/ANTLR/cs.g:330:8: commas
 					{
 					pushFollow(FOLLOW_commas_in_generic_dimension_specifier3185);
 					commas232=commas();
@@ -8827,7 +9019,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "commas"
-	// /Users/jeremie/ANTLR/cs.g:330:1: commas : ( ',' )+ ;
+	// /Users/jeremie/ANTLR/cs.g:331:1: commas : ( ',' )+ ;
 	public final csParser.commas_return commas() throws RecognitionException {
 		csParser.commas_return retval = new csParser.commas_return();
 		retval.start = input.LT(1);
@@ -8842,13 +9034,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 70) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:330:7: ( ( ',' )+ )
-			// /Users/jeremie/ANTLR/cs.g:331:2: ( ',' )+
+			// /Users/jeremie/ANTLR/cs.g:331:7: ( ( ',' )+ )
+			// /Users/jeremie/ANTLR/cs.g:332:2: ( ',' )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:331:2: ( ',' )+
+			// /Users/jeremie/ANTLR/cs.g:332:2: ( ',' )+
 			int cnt75=0;
 			loop75:
 			while (true) {
@@ -8860,7 +9052,7 @@ public class csParser extends Parser {
 
 				switch (alt75) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:331:2: ','
+					// /Users/jeremie/ANTLR/cs.g:332:2: ','
 					{
 					char_literal234=(Token)match(input,74,FOLLOW_74_in_commas3199); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -8913,7 +9105,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type_name"
-	// /Users/jeremie/ANTLR/cs.g:337:1: type_name returns [CsharpNode t] : a= namespace_or_type_name ;
+	// /Users/jeremie/ANTLR/cs.g:338:1: type_name returns [CsharpNode t] : a= namespace_or_type_name ;
 	public final csParser.type_name_return type_name() throws RecognitionException {
 		csParser.type_name_return retval = new csParser.type_name_return();
 		retval.start = input.LT(1);
@@ -8927,8 +9119,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 71) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:337:35: (a= namespace_or_type_name )
-			// /Users/jeremie/ANTLR/cs.g:338:2: a= namespace_or_type_name
+			// /Users/jeremie/ANTLR/cs.g:338:35: (a= namespace_or_type_name )
+			// /Users/jeremie/ANTLR/cs.g:339:2: a= namespace_or_type_name
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -8973,7 +9165,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "namespace_or_type_name"
-	// /Users/jeremie/ANTLR/cs.g:340:1: namespace_or_type_name returns [CsharpNode t] : a= type_or_generic ( '::' type_or_generic )? ( '.' type_or_generic )* ;
+	// /Users/jeremie/ANTLR/cs.g:341:1: namespace_or_type_name returns [CsharpNode t] : a= type_or_generic ( '::' type_or_generic )? ( '.' type_or_generic )* ;
 	public final csParser.namespace_or_type_name_return namespace_or_type_name() throws RecognitionException {
 		csParser.namespace_or_type_name_return retval = new csParser.namespace_or_type_name_return();
 		retval.start = input.LT(1);
@@ -8993,8 +9185,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 72) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:340:48: (a= type_or_generic ( '::' type_or_generic )? ( '.' type_or_generic )* )
-			// /Users/jeremie/ANTLR/cs.g:341:3: a= type_or_generic ( '::' type_or_generic )? ( '.' type_or_generic )*
+			// /Users/jeremie/ANTLR/cs.g:341:48: (a= type_or_generic ( '::' type_or_generic )? ( '.' type_or_generic )* )
+			// /Users/jeremie/ANTLR/cs.g:342:3: a= type_or_generic ( '::' type_or_generic )? ( '.' type_or_generic )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -9006,7 +9198,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {retval.t =(a!=null?((csParser.type_or_generic_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:341:34: ( '::' type_or_generic )?
+			// /Users/jeremie/ANTLR/cs.g:342:34: ( '::' type_or_generic )?
 			int alt76=2;
 			int LA76_0 = input.LA(1);
 			if ( (LA76_0==80) ) {
@@ -9014,7 +9206,7 @@ public class csParser extends Parser {
 			}
 			switch (alt76) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:341:35: '::' type_or_generic
+					// /Users/jeremie/ANTLR/cs.g:342:35: '::' type_or_generic
 					{
 					string_literal235=(Token)match(input,80,FOLLOW_80_in_namespace_or_type_name3250); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9033,7 +9225,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:341:58: ( '.' type_or_generic )*
+			// /Users/jeremie/ANTLR/cs.g:342:58: ( '.' type_or_generic )*
 			loop77:
 			while (true) {
 				int alt77=2;
@@ -9048,7 +9240,7 @@ public class csParser extends Parser {
 
 				switch (alt77) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:341:59: '.' type_or_generic
+					// /Users/jeremie/ANTLR/cs.g:342:59: '.' type_or_generic
 					{
 					char_literal237=(Token)match(input,DOT,FOLLOW_DOT_in_namespace_or_type_name3257); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9103,7 +9295,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type_or_generic"
-	// /Users/jeremie/ANTLR/cs.g:342:1: type_or_generic returns [CsharpNode t] : ( ( identifier '<' )=>a= identifier b= generic_argument_list |a= identifier );
+	// /Users/jeremie/ANTLR/cs.g:343:1: type_or_generic returns [CsharpNode t] : ( ( identifier '<' )=>a= identifier b= generic_argument_list |a= identifier );
 	public final csParser.type_or_generic_return type_or_generic() throws RecognitionException {
 		csParser.type_or_generic_return retval = new csParser.type_or_generic_return();
 		retval.start = input.LT(1);
@@ -9118,7 +9310,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 73) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:343:32: ( ( identifier '<' )=>a= identifier b= generic_argument_list |a= identifier )
+			// /Users/jeremie/ANTLR/cs.g:344:32: ( ( identifier '<' )=>a= identifier b= generic_argument_list |a= identifier )
 			int alt78=2;
 			int LA78_0 = input.LA(1);
 			if ( (LA78_0==IDENTIFIER||LA78_0==95||(LA78_0 >= 97 && LA78_0 <= 98)||(LA78_0 >= 100 && LA78_0 <= 101)||LA78_0==105||LA78_0==117||LA78_0==120||LA78_0==122||LA78_0==126||LA78_0==132||LA78_0==135||LA78_0==141||(LA78_0 >= 143 && LA78_0 <= 144)||(LA78_0 >= 147 && LA78_0 <= 148)||LA78_0==152||LA78_0==154||LA78_0==157||LA78_0==160||LA78_0==162||LA78_0==167||(LA78_0 >= 171 && LA78_0 <= 172)||LA78_0==183||LA78_0==190||LA78_0==194||LA78_0==196) ) {
@@ -9141,7 +9333,7 @@ public class csParser extends Parser {
 
 			switch (alt78) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:344:9: ( identifier '<' )=>a= identifier b= generic_argument_list
+					// /Users/jeremie/ANTLR/cs.g:345:9: ( identifier '<' )=>a= identifier b= generic_argument_list
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -9162,7 +9354,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:345:11: a= identifier
+					// /Users/jeremie/ANTLR/cs.g:346:11: a= identifier
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -9210,7 +9402,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "qid"
-	// /Users/jeremie/ANTLR/cs.g:347:1: qid returns [qid t] : qid_start ( qid_part )* ;
+	// /Users/jeremie/ANTLR/cs.g:348:1: qid returns [qid t] : qid_start ( qid_part )* ;
 	public final csParser.qid_return qid() throws RecognitionException {
 		csParser.qid_return retval = new csParser.qid_return();
 		retval.start = input.LT(1);
@@ -9225,8 +9417,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 74) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:348:29: ( qid_start ( qid_part )* )
-			// /Users/jeremie/ANTLR/cs.g:350:2: qid_start ( qid_part )*
+			// /Users/jeremie/ANTLR/cs.g:349:29: ( qid_start ( qid_part )* )
+			// /Users/jeremie/ANTLR/cs.g:351:2: qid_start ( qid_part )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -9237,7 +9429,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, qid_start239.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:350:14: ( qid_part )*
+			// /Users/jeremie/ANTLR/cs.g:351:14: ( qid_part )*
 			loop79:
 			while (true) {
 				int alt79=2;
@@ -9255,7 +9447,7 @@ public class csParser extends Parser {
 
 				switch (alt79) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:350:14: qid_part
+					// /Users/jeremie/ANTLR/cs.g:351:14: qid_part
 					{
 					pushFollow(FOLLOW_qid_part_in_qid3350);
 					qid_part240=qid_part();
@@ -9304,7 +9496,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "qid_start"
-	// /Users/jeremie/ANTLR/cs.g:352:1: qid_start : ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | identifier ( '::' identifier )? | literal );
+	// /Users/jeremie/ANTLR/cs.g:353:1: qid_start : ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | identifier ( '::' identifier )? | literal );
 	public final csParser.qid_start_return qid_start() throws RecognitionException {
 		csParser.qid_start_return retval = new csParser.qid_start_return();
 		retval.start = input.LT(1);
@@ -9325,7 +9517,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 75) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:352:10: ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | identifier ( '::' identifier )? | literal )
+			// /Users/jeremie/ANTLR/cs.g:353:10: ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | identifier ( '::' identifier )? | literal )
 			int alt81=4;
 			switch ( input.LA(1) ) {
 			case 103:
@@ -9422,7 +9614,7 @@ public class csParser extends Parser {
 			}
 			switch (alt81) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:353:2: predefined_type
+					// /Users/jeremie/ANTLR/cs.g:354:2: predefined_type
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -9436,7 +9628,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:354:4: ( identifier '<' )=> identifier generic_argument_list
+					// /Users/jeremie/ANTLR/cs.g:355:4: ( identifier '<' )=> identifier generic_argument_list
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -9456,7 +9648,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:357:4: identifier ( '::' identifier )?
+					// /Users/jeremie/ANTLR/cs.g:358:4: identifier ( '::' identifier )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -9467,7 +9659,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier244.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:357:17: ( '::' identifier )?
+					// /Users/jeremie/ANTLR/cs.g:358:17: ( '::' identifier )?
 					int alt80=2;
 					int LA80_0 = input.LA(1);
 					if ( (LA80_0==80) ) {
@@ -9475,7 +9667,7 @@ public class csParser extends Parser {
 					}
 					switch (alt80) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:357:18: '::' identifier
+							// /Users/jeremie/ANTLR/cs.g:358:18: '::' identifier
 							{
 							string_literal245=(Token)match(input,80,FOLLOW_80_in_qid_start3392); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -9497,7 +9689,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:358:4: literal
+					// /Users/jeremie/ANTLR/cs.g:359:4: literal
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -9542,7 +9734,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "qid_part"
-	// /Users/jeremie/ANTLR/cs.g:362:1: qid_part : access_identifier ;
+	// /Users/jeremie/ANTLR/cs.g:363:1: qid_part : access_identifier ;
 	public final csParser.qid_part_return qid_part() throws RecognitionException {
 		csParser.qid_part_return retval = new csParser.qid_part_return();
 		retval.start = input.LT(1);
@@ -9556,8 +9748,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 76) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:362:9: ( access_identifier )
-			// /Users/jeremie/ANTLR/cs.g:363:2: access_identifier
+			// /Users/jeremie/ANTLR/cs.g:363:9: ( access_identifier )
+			// /Users/jeremie/ANTLR/cs.g:364:2: access_identifier
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -9601,7 +9793,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "generic_argument_list"
-	// /Users/jeremie/ANTLR/cs.g:365:1: generic_argument_list returns [UnknownNode t] : '<' type_arguments '>' ;
+	// /Users/jeremie/ANTLR/cs.g:366:1: generic_argument_list returns [UnknownNode t] : '<' type_arguments '>' ;
 	public final csParser.generic_argument_list_return generic_argument_list() throws RecognitionException {
 		csParser.generic_argument_list_return retval = new csParser.generic_argument_list_return();
 		retval.start = input.LT(1);
@@ -9619,8 +9811,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 77) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:366:37: ( '<' type_arguments '>' )
-			// /Users/jeremie/ANTLR/cs.g:367:2: '<' type_arguments '>'
+			// /Users/jeremie/ANTLR/cs.g:367:37: ( '<' type_arguments '>' )
+			// /Users/jeremie/ANTLR/cs.g:368:2: '<' type_arguments '>'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -9676,7 +9868,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type_arguments"
-	// /Users/jeremie/ANTLR/cs.g:368:1: type_arguments : type ( ',' type )* ;
+	// /Users/jeremie/ANTLR/cs.g:369:1: type_arguments : type ( ',' type )* ;
 	public final csParser.type_arguments_return type_arguments() throws RecognitionException {
 		csParser.type_arguments_return retval = new csParser.type_arguments_return();
 		retval.start = input.LT(1);
@@ -9693,8 +9885,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 78) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:368:15: ( type ( ',' type )* )
-			// /Users/jeremie/ANTLR/cs.g:369:2: type ( ',' type )*
+			// /Users/jeremie/ANTLR/cs.g:369:15: ( type ( ',' type )* )
+			// /Users/jeremie/ANTLR/cs.g:370:2: type ( ',' type )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -9705,7 +9897,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type252.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:369:7: ( ',' type )*
+			// /Users/jeremie/ANTLR/cs.g:370:7: ( ',' type )*
 			loop82:
 			while (true) {
 				int alt82=2;
@@ -9716,7 +9908,7 @@ public class csParser extends Parser {
 
 				switch (alt82) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:369:8: ',' type
+					// /Users/jeremie/ANTLR/cs.g:370:8: ',' type
 					{
 					char_literal253=(Token)match(input,74,FOLLOW_74_in_type_arguments3458); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9771,7 +9963,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type"
-	// /Users/jeremie/ANTLR/cs.g:370:1: type returns [type t] : ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ ) ;
+	// /Users/jeremie/ANTLR/cs.g:371:1: type returns [type t] : ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ ) ;
 	public final csParser.type_return type() throws RecognitionException {
 		csParser.type_return retval = new csParser.type_return();
 		retval.start = input.LT(1);
@@ -9801,13 +9993,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 79) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:371:31: ( ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ ) )
-			// /Users/jeremie/ANTLR/cs.g:372:9: ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ )
+			// /Users/jeremie/ANTLR/cs.g:372:31: ( ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ ) )
+			// /Users/jeremie/ANTLR/cs.g:373:9: ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:372:9: ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ )
+			// /Users/jeremie/ANTLR/cs.g:373:9: ( ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )* | ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' ) | ( predefined_type | type_name ) | 'void' ( '*' )+ )
 			int alt90=4;
 			switch ( input.LA(1) ) {
 			case 103:
@@ -9896,9 +10088,9 @@ public class csParser extends Parser {
 			}
 			switch (alt90) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:372:12: ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )*
+					// /Users/jeremie/ANTLR/cs.g:373:12: ( ( predefined_type | type_name ) rank_specifiers )=> ( predefined_type | type_name ) rank_specifiers ( '*' )*
 					{
-					// /Users/jeremie/ANTLR/cs.g:372:64: ( predefined_type | type_name )
+					// /Users/jeremie/ANTLR/cs.g:373:64: ( predefined_type | type_name )
 					int alt83=2;
 					int LA83_0 = input.LA(1);
 					if ( (LA83_0==103||LA83_0==106||LA83_0==109||LA83_0==114||LA83_0==119||LA83_0==129||LA83_0==138||LA83_0==146||LA83_0==151||LA83_0==169||LA83_0==173||LA83_0==177||(LA83_0 >= 185 && LA83_0 <= 186)||LA83_0==189) ) {
@@ -9917,7 +10109,7 @@ public class csParser extends Parser {
 
 					switch (alt83) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:372:65: predefined_type
+							// /Users/jeremie/ANTLR/cs.g:373:65: predefined_type
 							{
 							pushFollow(FOLLOW_predefined_type_in_type3508);
 							predefined_type255=predefined_type();
@@ -9928,7 +10120,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:372:83: type_name
+							// /Users/jeremie/ANTLR/cs.g:373:83: type_name
 							{
 							pushFollow(FOLLOW_type_name_in_type3512);
 							type_name256=type_name();
@@ -9947,7 +10139,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifiers257.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:372:114: ( '*' )*
+					// /Users/jeremie/ANTLR/cs.g:373:114: ( '*' )*
 					loop84:
 					while (true) {
 						int alt84=2;
@@ -9958,7 +10150,7 @@ public class csParser extends Parser {
 
 						switch (alt84) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:372:114: '*'
+							// /Users/jeremie/ANTLR/cs.g:373:114: '*'
 							{
 							char_literal258=(Token)match(input,69,FOLLOW_69_in_type3521); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -9977,9 +10169,9 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:373:11: ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' )
+					// /Users/jeremie/ANTLR/cs.g:374:11: ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )=> ( predefined_type | type_name ) ( ( '*' )+ | '?' )
 					{
-					// /Users/jeremie/ANTLR/cs.g:373:60: ( predefined_type | type_name )
+					// /Users/jeremie/ANTLR/cs.g:374:60: ( predefined_type | type_name )
 					int alt85=2;
 					int LA85_0 = input.LA(1);
 					if ( (LA85_0==103||LA85_0==106||LA85_0==109||LA85_0==114||LA85_0==119||LA85_0==129||LA85_0==138||LA85_0==146||LA85_0==151||LA85_0==169||LA85_0==173||LA85_0==177||(LA85_0 >= 185 && LA85_0 <= 186)||LA85_0==189) ) {
@@ -9998,7 +10190,7 @@ public class csParser extends Parser {
 
 					switch (alt85) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:373:61: predefined_type
+							// /Users/jeremie/ANTLR/cs.g:374:61: predefined_type
 							{
 							pushFollow(FOLLOW_predefined_type_in_type3557);
 							predefined_type259=predefined_type();
@@ -10009,7 +10201,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:373:79: type_name
+							// /Users/jeremie/ANTLR/cs.g:374:79: type_name
 							{
 							pushFollow(FOLLOW_type_name_in_type3561);
 							type_name260=type_name();
@@ -10022,7 +10214,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:373:92: ( ( '*' )+ | '?' )
+					// /Users/jeremie/ANTLR/cs.g:374:92: ( ( '*' )+ | '?' )
 					int alt87=2;
 					int LA87_0 = input.LA(1);
 					if ( (LA87_0==69) ) {
@@ -10041,9 +10233,9 @@ public class csParser extends Parser {
 
 					switch (alt87) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:373:93: ( '*' )+
+							// /Users/jeremie/ANTLR/cs.g:374:93: ( '*' )+
 							{
-							// /Users/jeremie/ANTLR/cs.g:373:93: ( '*' )+
+							// /Users/jeremie/ANTLR/cs.g:374:93: ( '*' )+
 							int cnt86=0;
 							loop86:
 							while (true) {
@@ -10055,7 +10247,7 @@ public class csParser extends Parser {
 
 								switch (alt86) {
 								case 1 :
-									// /Users/jeremie/ANTLR/cs.g:373:93: '*'
+									// /Users/jeremie/ANTLR/cs.g:374:93: '*'
 									{
 									char_literal261=(Token)match(input,69,FOLLOW_69_in_type3567); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
@@ -10078,7 +10270,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:373:100: '?'
+							// /Users/jeremie/ANTLR/cs.g:374:100: '?'
 							{
 							char_literal262=(Token)match(input,89,FOLLOW_89_in_type3572); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10094,9 +10286,9 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:374:11: ( predefined_type | type_name )
+					// /Users/jeremie/ANTLR/cs.g:375:11: ( predefined_type | type_name )
 					{
-					// /Users/jeremie/ANTLR/cs.g:374:11: ( predefined_type | type_name )
+					// /Users/jeremie/ANTLR/cs.g:375:11: ( predefined_type | type_name )
 					int alt88=2;
 					int LA88_0 = input.LA(1);
 					if ( (LA88_0==103||LA88_0==106||LA88_0==109||LA88_0==114||LA88_0==119||LA88_0==129||LA88_0==138||LA88_0==146||LA88_0==151||LA88_0==169||LA88_0==173||LA88_0==177||(LA88_0 >= 185 && LA88_0 <= 186)||LA88_0==189) ) {
@@ -10115,7 +10307,7 @@ public class csParser extends Parser {
 
 					switch (alt88) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:374:12: predefined_type
+							// /Users/jeremie/ANTLR/cs.g:375:12: predefined_type
 							{
 							pushFollow(FOLLOW_predefined_type_in_type3586);
 							predefined_type263=predefined_type();
@@ -10126,7 +10318,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:374:30: type_name
+							// /Users/jeremie/ANTLR/cs.g:375:30: type_name
 							{
 							pushFollow(FOLLOW_type_name_in_type3590);
 							type_name264=type_name();
@@ -10142,7 +10334,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:375:11: 'void' ( '*' )+
+					// /Users/jeremie/ANTLR/cs.g:376:11: 'void' ( '*' )+
 					{
 					string_literal265=(Token)match(input,192,FOLLOW_192_in_type3603); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -10150,7 +10342,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, string_literal265_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:375:18: ( '*' )+
+					// /Users/jeremie/ANTLR/cs.g:376:18: ( '*' )+
 					int cnt89=0;
 					loop89:
 					while (true) {
@@ -10162,7 +10354,7 @@ public class csParser extends Parser {
 
 						switch (alt89) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:375:18: '*'
+							// /Users/jeremie/ANTLR/cs.g:376:18: '*'
 							{
 							char_literal266=(Token)match(input,69,FOLLOW_69_in_type3605); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10221,7 +10413,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "non_nullable_type"
-	// /Users/jeremie/ANTLR/cs.g:377:1: non_nullable_type returns [UnknownNode t] : ( ( predefined_type | type_name ) ( rank_specifiers ( '*' )* | ( ( '*' )+ )? ) | 'void' ( '*' )+ );
+	// /Users/jeremie/ANTLR/cs.g:378:1: non_nullable_type returns [UnknownNode t] : ( ( predefined_type | type_name ) ( rank_specifiers ( '*' )* | ( ( '*' )+ )? ) | 'void' ( '*' )+ );
 	public final csParser.non_nullable_type_return non_nullable_type() throws RecognitionException {
 		csParser.non_nullable_type_return retval = new csParser.non_nullable_type_return();
 		retval.start = input.LT(1);
@@ -10245,7 +10437,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 80) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:378:37: ( ( predefined_type | type_name ) ( rank_specifiers ( '*' )* | ( ( '*' )+ )? ) | 'void' ( '*' )+ )
+			// /Users/jeremie/ANTLR/cs.g:379:37: ( ( predefined_type | type_name ) ( rank_specifiers ( '*' )* | ( ( '*' )+ )? ) | 'void' ( '*' )+ )
 			int alt97=2;
 			int LA97_0 = input.LA(1);
 			if ( (LA97_0==IDENTIFIER||LA97_0==95||(LA97_0 >= 97 && LA97_0 <= 98)||(LA97_0 >= 100 && LA97_0 <= 101)||LA97_0==103||(LA97_0 >= 105 && LA97_0 <= 106)||LA97_0==109||LA97_0==114||LA97_0==117||(LA97_0 >= 119 && LA97_0 <= 120)||LA97_0==122||LA97_0==126||LA97_0==129||LA97_0==132||LA97_0==135||LA97_0==138||LA97_0==141||(LA97_0 >= 143 && LA97_0 <= 144)||(LA97_0 >= 146 && LA97_0 <= 148)||(LA97_0 >= 151 && LA97_0 <= 152)||LA97_0==154||LA97_0==157||LA97_0==160||LA97_0==162||LA97_0==167||LA97_0==169||(LA97_0 >= 171 && LA97_0 <= 173)||LA97_0==177||LA97_0==183||(LA97_0 >= 185 && LA97_0 <= 186)||(LA97_0 >= 189 && LA97_0 <= 190)||LA97_0==194||LA97_0==196) ) {
@@ -10264,12 +10456,12 @@ public class csParser extends Parser {
 
 			switch (alt97) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:379:2: ( predefined_type | type_name ) ( rank_specifiers ( '*' )* | ( ( '*' )+ )? )
+					// /Users/jeremie/ANTLR/cs.g:380:2: ( predefined_type | type_name ) ( rank_specifiers ( '*' )* | ( ( '*' )+ )? )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					// /Users/jeremie/ANTLR/cs.g:379:2: ( predefined_type | type_name )
+					// /Users/jeremie/ANTLR/cs.g:380:2: ( predefined_type | type_name )
 					int alt91=2;
 					int LA91_0 = input.LA(1);
 					if ( (LA91_0==103||LA91_0==106||LA91_0==109||LA91_0==114||LA91_0==119||LA91_0==129||LA91_0==138||LA91_0==146||LA91_0==151||LA91_0==169||LA91_0==173||LA91_0==177||(LA91_0 >= 185 && LA91_0 <= 186)||LA91_0==189) ) {
@@ -10288,7 +10480,7 @@ public class csParser extends Parser {
 
 					switch (alt91) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:379:3: predefined_type
+							// /Users/jeremie/ANTLR/cs.g:380:3: predefined_type
 							{
 							pushFollow(FOLLOW_predefined_type_in_non_nullable_type3636);
 							predefined_type267=predefined_type();
@@ -10299,7 +10491,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:379:21: type_name
+							// /Users/jeremie/ANTLR/cs.g:380:21: type_name
 							{
 							pushFollow(FOLLOW_type_name_in_non_nullable_type3640);
 							type_name268=type_name();
@@ -10312,7 +10504,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:380:3: ( rank_specifiers ( '*' )* | ( ( '*' )+ )? )
+					// /Users/jeremie/ANTLR/cs.g:381:3: ( rank_specifiers ( '*' )* | ( ( '*' )+ )? )
 					int alt95=2;
 					int LA95_0 = input.LA(1);
 					if ( (LA95_0==91) ) {
@@ -10331,7 +10523,7 @@ public class csParser extends Parser {
 
 					switch (alt95) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:380:7: rank_specifiers ( '*' )*
+							// /Users/jeremie/ANTLR/cs.g:381:7: rank_specifiers ( '*' )*
 							{
 							pushFollow(FOLLOW_rank_specifiers_in_non_nullable_type3649);
 							rank_specifiers269=rank_specifiers();
@@ -10339,7 +10531,7 @@ public class csParser extends Parser {
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, rank_specifiers269.getTree());
 
-							// /Users/jeremie/ANTLR/cs.g:380:25: ( '*' )*
+							// /Users/jeremie/ANTLR/cs.g:381:25: ( '*' )*
 							loop92:
 							while (true) {
 								int alt92=2;
@@ -10350,7 +10542,7 @@ public class csParser extends Parser {
 
 								switch (alt92) {
 								case 1 :
-									// /Users/jeremie/ANTLR/cs.g:380:25: '*'
+									// /Users/jeremie/ANTLR/cs.g:381:25: '*'
 									{
 									char_literal270=(Token)match(input,69,FOLLOW_69_in_non_nullable_type3653); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
@@ -10369,9 +10561,9 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:381:6: ( ( '*' )+ )?
+							// /Users/jeremie/ANTLR/cs.g:382:6: ( ( '*' )+ )?
 							{
-							// /Users/jeremie/ANTLR/cs.g:381:6: ( ( '*' )+ )?
+							// /Users/jeremie/ANTLR/cs.g:382:6: ( ( '*' )+ )?
 							int alt94=2;
 							int LA94_0 = input.LA(1);
 							if ( (LA94_0==69) ) {
@@ -10379,9 +10571,9 @@ public class csParser extends Parser {
 							}
 							switch (alt94) {
 								case 1 :
-									// /Users/jeremie/ANTLR/cs.g:381:7: ( '*' )+
+									// /Users/jeremie/ANTLR/cs.g:382:7: ( '*' )+
 									{
-									// /Users/jeremie/ANTLR/cs.g:381:7: ( '*' )+
+									// /Users/jeremie/ANTLR/cs.g:382:7: ( '*' )+
 									int cnt93=0;
 									loop93:
 									while (true) {
@@ -10393,7 +10585,7 @@ public class csParser extends Parser {
 
 										switch (alt93) {
 										case 1 :
-											// /Users/jeremie/ANTLR/cs.g:381:7: '*'
+											// /Users/jeremie/ANTLR/cs.g:382:7: '*'
 											{
 											char_literal271=(Token)match(input,69,FOLLOW_69_in_non_nullable_type3662); if (state.failed) return retval;
 											if ( state.backtracking==0 ) {
@@ -10426,7 +10618,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:383:4: 'void' ( '*' )+
+					// /Users/jeremie/ANTLR/cs.g:384:4: 'void' ( '*' )+
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -10437,7 +10629,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, string_literal272_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:383:13: ( '*' )+
+					// /Users/jeremie/ANTLR/cs.g:384:13: ( '*' )+
 					int cnt96=0;
 					loop96:
 					while (true) {
@@ -10449,7 +10641,7 @@ public class csParser extends Parser {
 
 						switch (alt96) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:383:13: '*'
+							// /Users/jeremie/ANTLR/cs.g:384:13: '*'
 							{
 							char_literal273=(Token)match(input,69,FOLLOW_69_in_non_nullable_type3678); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10504,7 +10696,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "non_array_type"
-	// /Users/jeremie/ANTLR/cs.g:385:1: non_array_type : type ;
+	// /Users/jeremie/ANTLR/cs.g:386:1: non_array_type : type ;
 	public final csParser.non_array_type_return non_array_type() throws RecognitionException {
 		csParser.non_array_type_return retval = new csParser.non_array_type_return();
 		retval.start = input.LT(1);
@@ -10518,8 +10710,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 81) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:385:15: ( type )
-			// /Users/jeremie/ANTLR/cs.g:386:2: type
+			// /Users/jeremie/ANTLR/cs.g:386:15: ( type )
+			// /Users/jeremie/ANTLR/cs.g:387:2: type
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -10562,7 +10754,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "array_type"
-	// /Users/jeremie/ANTLR/cs.g:387:1: array_type : type ;
+	// /Users/jeremie/ANTLR/cs.g:388:1: array_type : type ;
 	public final csParser.array_type_return array_type() throws RecognitionException {
 		csParser.array_type_return retval = new csParser.array_type_return();
 		retval.start = input.LT(1);
@@ -10576,8 +10768,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 82) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:387:11: ( type )
-			// /Users/jeremie/ANTLR/cs.g:388:2: type
+			// /Users/jeremie/ANTLR/cs.g:388:11: ( type )
+			// /Users/jeremie/ANTLR/cs.g:389:2: type
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -10620,7 +10812,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unmanaged_type"
-	// /Users/jeremie/ANTLR/cs.g:389:1: unmanaged_type : type ;
+	// /Users/jeremie/ANTLR/cs.g:390:1: unmanaged_type : type ;
 	public final csParser.unmanaged_type_return unmanaged_type() throws RecognitionException {
 		csParser.unmanaged_type_return retval = new csParser.unmanaged_type_return();
 		retval.start = input.LT(1);
@@ -10634,8 +10826,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 83) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:389:15: ( type )
-			// /Users/jeremie/ANTLR/cs.g:390:2: type
+			// /Users/jeremie/ANTLR/cs.g:390:15: ( type )
+			// /Users/jeremie/ANTLR/cs.g:391:2: type
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -10678,7 +10870,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "class_type"
-	// /Users/jeremie/ANTLR/cs.g:391:1: class_type : type ;
+	// /Users/jeremie/ANTLR/cs.g:392:1: class_type : type ;
 	public final csParser.class_type_return class_type() throws RecognitionException {
 		csParser.class_type_return retval = new csParser.class_type_return();
 		retval.start = input.LT(1);
@@ -10692,8 +10884,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 84) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:391:11: ( type )
-			// /Users/jeremie/ANTLR/cs.g:392:2: type
+			// /Users/jeremie/ANTLR/cs.g:392:11: ( type )
+			// /Users/jeremie/ANTLR/cs.g:393:2: type
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -10736,7 +10928,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "pointer_type"
-	// /Users/jeremie/ANTLR/cs.g:393:1: pointer_type : type ;
+	// /Users/jeremie/ANTLR/cs.g:394:1: pointer_type : type ;
 	public final csParser.pointer_type_return pointer_type() throws RecognitionException {
 		csParser.pointer_type_return retval = new csParser.pointer_type_return();
 		retval.start = input.LT(1);
@@ -10750,8 +10942,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 85) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:393:13: ( type )
-			// /Users/jeremie/ANTLR/cs.g:394:2: type
+			// /Users/jeremie/ANTLR/cs.g:394:13: ( type )
+			// /Users/jeremie/ANTLR/cs.g:395:2: type
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -10795,7 +10987,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "block"
-	// /Users/jeremie/ANTLR/cs.g:400:1: block returns [block t] : ( ';' | '{' (a= statement_list )? '}' );
+	// /Users/jeremie/ANTLR/cs.g:401:1: block returns [block t] : ( ';' | '{' (a= statement_list )? '}' );
 	public final csParser.block_return block() throws RecognitionException {
 		csParser.block_return retval = new csParser.block_return();
 		retval.start = input.LT(1);
@@ -10815,7 +11007,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 86) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:400:25: ( ';' | '{' (a= statement_list )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:401:25: ( ';' | '{' (a= statement_list )? '}' )
 			int alt99=2;
 			int LA99_0 = input.LA(1);
 			if ( (LA99_0==SEMI) ) {
@@ -10834,7 +11026,7 @@ public class csParser extends Parser {
 
 			switch (alt99) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:401:9: ';'
+					// /Users/jeremie/ANTLR/cs.g:402:9: ';'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -10848,7 +11040,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:402:11: '{' (a= statement_list )? '}'
+					// /Users/jeremie/ANTLR/cs.g:403:11: '{' (a= statement_list )? '}'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -10859,7 +11051,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, char_literal280_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:402:18: (a= statement_list )?
+					// /Users/jeremie/ANTLR/cs.g:403:18: (a= statement_list )?
 					int alt98=2;
 					int LA98_0 = input.LA(1);
 					if ( (LA98_0==Character_literal||LA98_0==FALSE||(LA98_0 >= Hex_number && LA98_0 <= IF)||(LA98_0 >= MINUS && LA98_0 <= NUMBER)||LA98_0==Real_literal||(LA98_0 >= SEMI && LA98_0 <= STRINGLITERAL)||LA98_0==TRUE||(LA98_0 >= USING && LA98_0 <= Verbatim_string_literal)||LA98_0==61||LA98_0==66||(LA98_0 >= 68 && LA98_0 <= 69)||(LA98_0 >= 71 && LA98_0 <= 72)||LA98_0==75||LA98_0==95||(LA98_0 >= 97 && LA98_0 <= 98)||(LA98_0 >= 100 && LA98_0 <= 106)||(LA98_0 >= 109 && LA98_0 <= 110)||(LA98_0 >= 112 && LA98_0 <= 120)||LA98_0==122||LA98_0==126||(LA98_0 >= 128 && LA98_0 <= 132)||(LA98_0 >= 134 && LA98_0 <= 135)||LA98_0==138||LA98_0==141||(LA98_0 >= 143 && LA98_0 <= 148)||(LA98_0 >= 150 && LA98_0 <= 152)||LA98_0==154||LA98_0==157||LA98_0==160||LA98_0==162||(LA98_0 >= 167 && LA98_0 <= 169)||(LA98_0 >= 171 && LA98_0 <= 174)||LA98_0==177||(LA98_0 >= 179 && LA98_0 <= 190)||LA98_0==192||(LA98_0 >= 194 && LA98_0 <= 197)||LA98_0==202) ) {
@@ -10867,7 +11059,7 @@ public class csParser extends Parser {
 					}
 					switch (alt98) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:402:18: a= statement_list
+							// /Users/jeremie/ANTLR/cs.g:403:18: a= statement_list
 							{
 							pushFollow(FOLLOW_statement_list_in_block3759);
 							a=statement_list();
@@ -10922,7 +11114,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "statement_list"
-	// /Users/jeremie/ANTLR/cs.g:403:1: statement_list returns [statement_list t] : (a= statement )+ ;
+	// /Users/jeremie/ANTLR/cs.g:404:1: statement_list returns [statement_list t] : (a= statement )+ ;
 	public final csParser.statement_list_return statement_list() throws RecognitionException {
 		csParser.statement_list_return retval = new csParser.statement_list_return();
 		retval.start = input.LT(1);
@@ -10937,13 +11129,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 87) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:405:42: ( (a= statement )+ )
-			// /Users/jeremie/ANTLR/cs.g:407:8: (a= statement )+
+			// /Users/jeremie/ANTLR/cs.g:406:42: ( (a= statement )+ )
+			// /Users/jeremie/ANTLR/cs.g:408:8: (a= statement )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:407:8: (a= statement )+
+			// /Users/jeremie/ANTLR/cs.g:408:8: (a= statement )+
 			int cnt100=0;
 			loop100:
 			while (true) {
@@ -10962,7 +11154,7 @@ public class csParser extends Parser {
 
 				switch (alt100) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:407:10: a= statement
+					// /Users/jeremie/ANTLR/cs.g:408:10: a= statement
 					{
 					pushFollow(FOLLOW_statement_in_statement_list3802);
 					a=statement();
@@ -11017,7 +11209,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// /Users/jeremie/ANTLR/cs.g:412:1: expression returns [expression t] : ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression ) ;
+	// /Users/jeremie/ANTLR/cs.g:413:1: expression returns [expression t] : ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression ) ;
 	public final csParser.expression_return expression() throws RecognitionException {
 		csParser.expression_return retval = new csParser.expression_return();
 		retval.start = input.LT(1);
@@ -11032,13 +11224,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 88) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:412:34: ( ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression ) )
-			// /Users/jeremie/ANTLR/cs.g:413:9: ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression )
+			// /Users/jeremie/ANTLR/cs.g:413:34: ( ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression ) )
+			// /Users/jeremie/ANTLR/cs.g:414:9: ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:413:9: ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression )
+			// /Users/jeremie/ANTLR/cs.g:414:9: ( ( unary_expression assignment_operator )=>a= assignment |b= non_assignment_expression )
 			int alt101=2;
 			switch ( input.LA(1) ) {
 			case 68:
@@ -11139,15 +11331,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case Character_literal:
-			case FALSE:
-			case Hex_number:
-			case NULL:
-			case NUMBER:
 			case Real_literal:
-			case STRINGLITERAL:
-			case TRUE:
-			case Verbatim_string_literal:
 				{
 				int LA101_8 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11159,7 +11343,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 174:
+			case NUMBER:
 				{
 				int LA101_9 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11171,7 +11355,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 110:
+			case Hex_number:
 				{
 				int LA101_10 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11183,7 +11367,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 187:
+			case Character_literal:
 				{
 				int LA101_11 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11195,7 +11379,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 115:
+			case STRINGLITERAL:
 				{
 				int LA101_12 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11207,7 +11391,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 116:
+			case Verbatim_string_literal:
 				{
 				int LA101_13 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11219,7 +11403,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 71:
+			case TRUE:
 				{
 				int LA101_14 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11231,7 +11415,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case MINUS:
+			case FALSE:
 				{
 				int LA101_15 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11243,7 +11427,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 61:
+			case NULL:
 				{
 				int LA101_16 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11255,7 +11439,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 202:
+			case 174:
 				{
 				int LA101_17 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11267,7 +11451,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 72:
+			case 110:
 				{
 				int LA101_18 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11279,7 +11463,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 75:
+			case 187:
 				{
 				int LA101_19 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11291,7 +11475,7 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 69:
+			case 115:
 				{
 				int LA101_20 = input.LA(2);
 				if ( (synpred19_cs()) ) {
@@ -11303,9 +11487,105 @@ public class csParser extends Parser {
 
 				}
 				break;
-			case 66:
+			case 116:
 				{
 				int LA101_21 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case 71:
+				{
+				int LA101_22 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case MINUS:
+				{
+				int LA101_23 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case 61:
+				{
+				int LA101_24 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case 202:
+				{
+				int LA101_25 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case 72:
+				{
+				int LA101_26 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case 75:
+				{
+				int LA101_27 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case 69:
+				{
+				int LA101_28 = input.LA(2);
+				if ( (synpred19_cs()) ) {
+					alt101=1;
+				}
+				else if ( (true) ) {
+					alt101=2;
+				}
+
+				}
+				break;
+			case 66:
+				{
+				int LA101_29 = input.LA(2);
 				if ( (synpred19_cs()) ) {
 					alt101=1;
 				}
@@ -11345,7 +11625,7 @@ public class csParser extends Parser {
 			case 194:
 			case 196:
 				{
-				int LA101_22 = input.LA(2);
+				int LA101_30 = input.LA(2);
 				if ( (synpred19_cs()) ) {
 					alt101=1;
 				}
@@ -11363,7 +11643,7 @@ public class csParser extends Parser {
 			}
 			switch (alt101) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:413:10: ( unary_expression assignment_operator )=>a= assignment
+					// /Users/jeremie/ANTLR/cs.g:414:10: ( unary_expression assignment_operator )=>a= assignment
 					{
 					pushFollow(FOLLOW_assignment_in_expression3852);
 					a=assignment();
@@ -11375,7 +11655,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:414:11: b= non_assignment_expression
+					// /Users/jeremie/ANTLR/cs.g:415:11: b= non_assignment_expression
 					{
 					pushFollow(FOLLOW_non_assignment_expression_in_expression3876);
 					b=non_assignment_expression();
@@ -11421,7 +11701,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "expression_list"
-	// /Users/jeremie/ANTLR/cs.g:418:1: expression_list : expression ( ',' expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:419:1: expression_list : expression ( ',' expression )* ;
 	public final csParser.expression_list_return expression_list() throws RecognitionException {
 		csParser.expression_list_return retval = new csParser.expression_list_return();
 		retval.start = input.LT(1);
@@ -11438,8 +11718,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 89) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:418:16: ( expression ( ',' expression )* )
-			// /Users/jeremie/ANTLR/cs.g:419:2: expression ( ',' expression )*
+			// /Users/jeremie/ANTLR/cs.g:419:16: ( expression ( ',' expression )* )
+			// /Users/jeremie/ANTLR/cs.g:420:2: expression ( ',' expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -11450,7 +11730,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression282.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:419:14: ( ',' expression )*
+			// /Users/jeremie/ANTLR/cs.g:420:14: ( ',' expression )*
 			loop102:
 			while (true) {
 				int alt102=2;
@@ -11461,7 +11741,7 @@ public class csParser extends Parser {
 
 				switch (alt102) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:419:15: ',' expression
+					// /Users/jeremie/ANTLR/cs.g:420:15: ',' expression
 					{
 					char_literal283=(Token)match(input,74,FOLLOW_74_in_expression_list3910); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -11516,7 +11796,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "assignment"
-	// /Users/jeremie/ANTLR/cs.g:420:1: assignment returns [assignment t] : a= unary_expression b= assignment_operator c= expression ;
+	// /Users/jeremie/ANTLR/cs.g:421:1: assignment returns [assignment t] : a= unary_expression b= assignment_operator c= expression ;
 	public final csParser.assignment_return assignment() throws RecognitionException {
 		csParser.assignment_return retval = new csParser.assignment_return();
 		retval.start = input.LT(1);
@@ -11532,8 +11812,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 90) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:421:32: (a= unary_expression b= assignment_operator c= expression )
-			// /Users/jeremie/ANTLR/cs.g:422:2: a= unary_expression b= assignment_operator c= expression
+			// /Users/jeremie/ANTLR/cs.g:422:32: (a= unary_expression b= assignment_operator c= expression )
+			// /Users/jeremie/ANTLR/cs.g:423:2: a= unary_expression b= assignment_operator c= expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -11591,7 +11871,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unary_expression"
-	// /Users/jeremie/ANTLR/cs.g:424:1: unary_expression returns [expression t] : ( ( cast_expression )=> cast_expression |b= primary_or_array_creation_expression ( '++' )? ( '--' )? | '+' unary_expression | '-' unary_expression | '!' unary_expression | '~' unary_expression | pre_increment_expression | pre_decrement_expression | pointer_indirection_expression | addressof_expression );
+	// /Users/jeremie/ANTLR/cs.g:425:1: unary_expression returns [expression t] : ( ( cast_expression )=> cast_expression |b= primary_or_array_creation_expression ( '++' )? ( '--' )? | '+' unary_expression | '-' unary_expression | '!' unary_expression | '~' unary_expression | pre_increment_expression | pre_decrement_expression | pointer_indirection_expression | addressof_expression );
 	public final csParser.unary_expression_return unary_expression() throws RecognitionException {
 		csParser.unary_expression_return retval = new csParser.unary_expression_return();
 		retval.start = input.LT(1);
@@ -11627,7 +11907,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:426:67: ( ( cast_expression )=> cast_expression |b= primary_or_array_creation_expression ( '++' )? ( '--' )? | '+' unary_expression | '-' unary_expression | '!' unary_expression | '~' unary_expression | pre_increment_expression | pre_decrement_expression | pointer_indirection_expression | addressof_expression )
+			// /Users/jeremie/ANTLR/cs.g:427:67: ( ( cast_expression )=> cast_expression |b= primary_or_array_creation_expression ( '++' )? ( '--' )? | '+' unary_expression | '-' unary_expression | '!' unary_expression | '~' unary_expression | pre_increment_expression | pre_decrement_expression | pointer_indirection_expression | addressof_expression )
 			int alt105=10;
 			switch ( input.LA(1) ) {
 			case 68:
@@ -11757,7 +12037,7 @@ public class csParser extends Parser {
 			}
 			switch (alt105) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:428:2: ( cast_expression )=> cast_expression
+					// /Users/jeremie/ANTLR/cs.g:429:2: ( cast_expression )=> cast_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11771,7 +12051,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:429:4: b= primary_or_array_creation_expression ( '++' )? ( '--' )?
+					// /Users/jeremie/ANTLR/cs.g:430:4: b= primary_or_array_creation_expression ( '++' )? ( '--' )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11782,7 +12062,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, b.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:429:45: ( '++' )?
+					// /Users/jeremie/ANTLR/cs.g:430:45: ( '++' )?
 					int alt103=2;
 					int LA103_0 = input.LA(1);
 					if ( (LA103_0==72) ) {
@@ -11790,7 +12070,7 @@ public class csParser extends Parser {
 					}
 					switch (alt103) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:429:45: '++'
+							// /Users/jeremie/ANTLR/cs.g:430:45: '++'
 							{
 							string_literal286=(Token)match(input,72,FOLLOW_72_in_unary_expression3994); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11803,7 +12083,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:429:53: ( '--' )?
+					// /Users/jeremie/ANTLR/cs.g:430:53: ( '--' )?
 					int alt104=2;
 					int LA104_0 = input.LA(1);
 					if ( (LA104_0==75) ) {
@@ -11811,7 +12091,7 @@ public class csParser extends Parser {
 					}
 					switch (alt104) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:429:53: '--'
+							// /Users/jeremie/ANTLR/cs.g:430:53: '--'
 							{
 							string_literal287=(Token)match(input,75,FOLLOW_75_in_unary_expression3999); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11828,7 +12108,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:430:4: '+' unary_expression
+					// /Users/jeremie/ANTLR/cs.g:431:4: '+' unary_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11848,7 +12128,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:431:4: '-' unary_expression
+					// /Users/jeremie/ANTLR/cs.g:432:4: '-' unary_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11868,7 +12148,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:432:4: '!' unary_expression
+					// /Users/jeremie/ANTLR/cs.g:433:4: '!' unary_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11888,7 +12168,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jeremie/ANTLR/cs.g:433:4: '~' unary_expression
+					// /Users/jeremie/ANTLR/cs.g:434:4: '~' unary_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11908,7 +12188,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jeremie/ANTLR/cs.g:434:4: pre_increment_expression
+					// /Users/jeremie/ANTLR/cs.g:435:4: pre_increment_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11922,7 +12202,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jeremie/ANTLR/cs.g:435:4: pre_decrement_expression
+					// /Users/jeremie/ANTLR/cs.g:436:4: pre_decrement_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11936,7 +12216,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jeremie/ANTLR/cs.g:436:4: pointer_indirection_expression
+					// /Users/jeremie/ANTLR/cs.g:437:4: pointer_indirection_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11950,7 +12230,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jeremie/ANTLR/cs.g:437:4: addressof_expression
+					// /Users/jeremie/ANTLR/cs.g:438:4: addressof_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -11996,7 +12276,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "cast_expression"
-	// /Users/jeremie/ANTLR/cs.g:438:1: cast_expression : '(' type ')' unary_expression ;
+	// /Users/jeremie/ANTLR/cs.g:439:1: cast_expression : '(' type ')' unary_expression ;
 	public final csParser.cast_expression_return cast_expression() throws RecognitionException {
 		csParser.cast_expression_return retval = new csParser.cast_expression_return();
 		retval.start = input.LT(1);
@@ -12015,8 +12295,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 92) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:439:2: ( '(' type ')' unary_expression )
-			// /Users/jeremie/ANTLR/cs.g:440:2: '(' type ')' unary_expression
+			// /Users/jeremie/ANTLR/cs.g:440:2: ( '(' type ')' unary_expression )
+			// /Users/jeremie/ANTLR/cs.g:441:2: '(' type ')' unary_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -12078,7 +12358,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "assignment_operator"
-	// /Users/jeremie/ANTLR/cs.g:441:1: assignment_operator returns [assignment_operator t] : ( '=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>' '>=' );
+	// /Users/jeremie/ANTLR/cs.g:442:1: assignment_operator returns [assignment_operator t] : ( '=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>' '>=' );
 	public final csParser.assignment_operator_return assignment_operator() throws RecognitionException {
 		csParser.assignment_operator_return retval = new csParser.assignment_operator_return();
 		retval.start = input.LT(1);
@@ -12115,7 +12395,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 93) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:442:66: ( '=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>' '>=' )
+			// /Users/jeremie/ANTLR/cs.g:443:66: ( '=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>' '>=' )
 			int alt106=11;
 			switch ( input.LA(1) ) {
 			case 85:
@@ -12181,7 +12461,7 @@ public class csParser extends Parser {
 			}
 			switch (alt106) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:443:2: '='
+					// /Users/jeremie/ANTLR/cs.g:444:2: '='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12195,7 +12475,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:443:8: '+='
+					// /Users/jeremie/ANTLR/cs.g:444:8: '+='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12209,7 +12489,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:443:15: '-='
+					// /Users/jeremie/ANTLR/cs.g:444:15: '-='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12223,7 +12503,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:443:22: '*='
+					// /Users/jeremie/ANTLR/cs.g:444:22: '*='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12237,7 +12517,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:443:29: '/='
+					// /Users/jeremie/ANTLR/cs.g:444:29: '/='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12251,7 +12531,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jeremie/ANTLR/cs.g:443:36: '%='
+					// /Users/jeremie/ANTLR/cs.g:444:36: '%='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12265,7 +12545,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jeremie/ANTLR/cs.g:443:43: '&='
+					// /Users/jeremie/ANTLR/cs.g:444:43: '&='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12279,7 +12559,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jeremie/ANTLR/cs.g:443:50: '|='
+					// /Users/jeremie/ANTLR/cs.g:444:50: '|='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12293,7 +12573,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jeremie/ANTLR/cs.g:443:57: '^='
+					// /Users/jeremie/ANTLR/cs.g:444:57: '^='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12307,7 +12587,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jeremie/ANTLR/cs.g:443:64: '<<='
+					// /Users/jeremie/ANTLR/cs.g:444:64: '<<='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12321,7 +12601,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jeremie/ANTLR/cs.g:443:72: '>' '>='
+					// /Users/jeremie/ANTLR/cs.g:444:72: '>' '>='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12373,7 +12653,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "pre_increment_expression"
-	// /Users/jeremie/ANTLR/cs.g:444:1: pre_increment_expression : '++' unary_expression ;
+	// /Users/jeremie/ANTLR/cs.g:445:1: pre_increment_expression : '++' unary_expression ;
 	public final csParser.pre_increment_expression_return pre_increment_expression() throws RecognitionException {
 		csParser.pre_increment_expression_return retval = new csParser.pre_increment_expression_return();
 		retval.start = input.LT(1);
@@ -12389,8 +12669,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 94) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:444:25: ( '++' unary_expression )
-			// /Users/jeremie/ANTLR/cs.g:445:2: '++' unary_expression
+			// /Users/jeremie/ANTLR/cs.g:445:25: ( '++' unary_expression )
+			// /Users/jeremie/ANTLR/cs.g:446:2: '++' unary_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -12439,7 +12719,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "pre_decrement_expression"
-	// /Users/jeremie/ANTLR/cs.g:446:1: pre_decrement_expression : '--' unary_expression ;
+	// /Users/jeremie/ANTLR/cs.g:447:1: pre_decrement_expression : '--' unary_expression ;
 	public final csParser.pre_decrement_expression_return pre_decrement_expression() throws RecognitionException {
 		csParser.pre_decrement_expression_return retval = new csParser.pre_decrement_expression_return();
 		retval.start = input.LT(1);
@@ -12455,8 +12735,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 95) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:446:25: ( '--' unary_expression )
-			// /Users/jeremie/ANTLR/cs.g:447:2: '--' unary_expression
+			// /Users/jeremie/ANTLR/cs.g:447:25: ( '--' unary_expression )
+			// /Users/jeremie/ANTLR/cs.g:448:2: '--' unary_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -12505,7 +12785,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "pointer_indirection_expression"
-	// /Users/jeremie/ANTLR/cs.g:448:1: pointer_indirection_expression : '*' unary_expression ;
+	// /Users/jeremie/ANTLR/cs.g:449:1: pointer_indirection_expression : '*' unary_expression ;
 	public final csParser.pointer_indirection_expression_return pointer_indirection_expression() throws RecognitionException {
 		csParser.pointer_indirection_expression_return retval = new csParser.pointer_indirection_expression_return();
 		retval.start = input.LT(1);
@@ -12521,8 +12801,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 96) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:448:31: ( '*' unary_expression )
-			// /Users/jeremie/ANTLR/cs.g:449:2: '*' unary_expression
+			// /Users/jeremie/ANTLR/cs.g:449:31: ( '*' unary_expression )
+			// /Users/jeremie/ANTLR/cs.g:450:2: '*' unary_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -12571,7 +12851,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "addressof_expression"
-	// /Users/jeremie/ANTLR/cs.g:450:1: addressof_expression : '&' unary_expression ;
+	// /Users/jeremie/ANTLR/cs.g:451:1: addressof_expression : '&' unary_expression ;
 	public final csParser.addressof_expression_return addressof_expression() throws RecognitionException {
 		csParser.addressof_expression_return retval = new csParser.addressof_expression_return();
 		retval.start = input.LT(1);
@@ -12587,8 +12867,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 97) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:450:21: ( '&' unary_expression )
-			// /Users/jeremie/ANTLR/cs.g:451:2: '&' unary_expression
+			// /Users/jeremie/ANTLR/cs.g:451:21: ( '&' unary_expression )
+			// /Users/jeremie/ANTLR/cs.g:452:2: '&' unary_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -12638,7 +12918,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "non_assignment_expression"
-	// /Users/jeremie/ANTLR/cs.g:453:1: non_assignment_expression returns [expression t] : ( ( anonymous_function_signature '=>' )=>a= lambda_expression | ( query_expression )=>b= query_expression |c= conditional_expression );
+	// /Users/jeremie/ANTLR/cs.g:454:1: non_assignment_expression returns [expression t] : ( ( anonymous_function_signature '=>' )=>a= lambda_expression | ( query_expression )=>b= query_expression |c= conditional_expression );
 	public final csParser.non_assignment_expression_return non_assignment_expression() throws RecognitionException {
 		csParser.non_assignment_expression_return retval = new csParser.non_assignment_expression_return();
 		retval.start = input.LT(1);
@@ -12654,7 +12934,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 98) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:453:49: ( ( anonymous_function_signature '=>' )=>a= lambda_expression | ( query_expression )=>b= query_expression |c= conditional_expression )
+			// /Users/jeremie/ANTLR/cs.g:454:49: ( ( anonymous_function_signature '=>' )=>a= lambda_expression | ( query_expression )=>b= query_expression |c= conditional_expression )
 			int alt107=3;
 			switch ( input.LA(1) ) {
 			case 68:
@@ -12777,7 +13057,7 @@ public class csParser extends Parser {
 			}
 			switch (alt107) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:455:2: ( anonymous_function_signature '=>' )=>a= lambda_expression
+					// /Users/jeremie/ANTLR/cs.g:456:2: ( anonymous_function_signature '=>' )=>a= lambda_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12792,7 +13072,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:456:4: ( query_expression )=>b= query_expression
+					// /Users/jeremie/ANTLR/cs.g:457:4: ( query_expression )=>b= query_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12807,7 +13087,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:457:4: c= conditional_expression
+					// /Users/jeremie/ANTLR/cs.g:458:4: c= conditional_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -12854,7 +13134,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "multiplicative_expression"
-	// /Users/jeremie/ANTLR/cs.g:464:1: multiplicative_expression returns [expression t] : a= unary_expression ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:465:1: multiplicative_expression returns [expression t] : a= unary_expression ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )* ;
 	public final csParser.multiplicative_expression_return multiplicative_expression() throws RecognitionException {
 		csParser.multiplicative_expression_return retval = new csParser.multiplicative_expression_return();
 		retval.start = input.LT(1);
@@ -12872,8 +13152,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 99) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:466:39: (a= unary_expression ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:467:2: a= unary_expression ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )*
+			// /Users/jeremie/ANTLR/cs.g:467:39: (a= unary_expression ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:468:2: a= unary_expression ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -12885,7 +13165,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.unary_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:467:36: ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )*
+			// /Users/jeremie/ANTLR/cs.g:468:36: ( (o= '*' |o= '/' |o= '%' ) b= unary_expression )*
 			loop109:
 			while (true) {
 				int alt109=2;
@@ -12896,9 +13176,9 @@ public class csParser extends Parser {
 
 				switch (alt109) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:467:39: (o= '*' |o= '/' |o= '%' ) b= unary_expression
+					// /Users/jeremie/ANTLR/cs.g:468:39: (o= '*' |o= '/' |o= '%' ) b= unary_expression
 					{
-					// /Users/jeremie/ANTLR/cs.g:467:39: (o= '*' |o= '/' |o= '%' )
+					// /Users/jeremie/ANTLR/cs.g:468:39: (o= '*' |o= '/' |o= '%' )
 					int alt108=3;
 					switch ( input.LA(1) ) {
 					case 69:
@@ -12924,7 +13204,7 @@ public class csParser extends Parser {
 					}
 					switch (alt108) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:467:40: o= '*'
+							// /Users/jeremie/ANTLR/cs.g:468:40: o= '*'
 							{
 							o=(Token)match(input,69,FOLLOW_69_in_multiplicative_expression4288); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -12935,7 +13215,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:467:46: o= '/'
+							// /Users/jeremie/ANTLR/cs.g:468:46: o= '/'
 							{
 							o=(Token)match(input,77,FOLLOW_77_in_multiplicative_expression4292); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -12946,7 +13226,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /Users/jeremie/ANTLR/cs.g:467:52: o= '%'
+							// /Users/jeremie/ANTLR/cs.g:468:52: o= '%'
 							{
 							o=(Token)match(input,63,FOLLOW_63_in_multiplicative_expression4296); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13008,7 +13288,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "additive_expression"
-	// /Users/jeremie/ANTLR/cs.g:468:1: additive_expression returns [expression t] : a= multiplicative_expression ( (o= '+' |o= '-' ) b= multiplicative_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:469:1: additive_expression returns [expression t] : a= multiplicative_expression ( (o= '+' |o= '-' ) b= multiplicative_expression )* ;
 	public final csParser.additive_expression_return additive_expression() throws RecognitionException {
 		csParser.additive_expression_return retval = new csParser.additive_expression_return();
 		retval.start = input.LT(1);
@@ -13026,8 +13306,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 100) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:470:39: (a= multiplicative_expression ( (o= '+' |o= '-' ) b= multiplicative_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:471:2: a= multiplicative_expression ( (o= '+' |o= '-' ) b= multiplicative_expression )*
+			// /Users/jeremie/ANTLR/cs.g:471:39: (a= multiplicative_expression ( (o= '+' |o= '-' ) b= multiplicative_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:472:2: a= multiplicative_expression ( (o= '+' |o= '-' ) b= multiplicative_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13039,7 +13319,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.multiplicative_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:471:45: ( (o= '+' |o= '-' ) b= multiplicative_expression )*
+			// /Users/jeremie/ANTLR/cs.g:472:45: ( (o= '+' |o= '-' ) b= multiplicative_expression )*
 			loop111:
 			while (true) {
 				int alt111=2;
@@ -13050,9 +13330,9 @@ public class csParser extends Parser {
 
 				switch (alt111) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:471:46: (o= '+' |o= '-' ) b= multiplicative_expression
+					// /Users/jeremie/ANTLR/cs.g:472:46: (o= '+' |o= '-' ) b= multiplicative_expression
 					{
-					// /Users/jeremie/ANTLR/cs.g:471:46: (o= '+' |o= '-' )
+					// /Users/jeremie/ANTLR/cs.g:472:46: (o= '+' |o= '-' )
 					int alt110=2;
 					int LA110_0 = input.LA(1);
 					if ( (LA110_0==71) ) {
@@ -13071,7 +13351,7 @@ public class csParser extends Parser {
 
 					switch (alt110) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:471:47: o= '+'
+							// /Users/jeremie/ANTLR/cs.g:472:47: o= '+'
 							{
 							o=(Token)match(input,71,FOLLOW_71_in_additive_expression4343); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13082,7 +13362,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:471:53: o= '-'
+							// /Users/jeremie/ANTLR/cs.g:472:53: o= '-'
 							{
 							o=(Token)match(input,MINUS,FOLLOW_MINUS_in_additive_expression4347); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13144,7 +13424,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "shift_expression"
-	// /Users/jeremie/ANTLR/cs.g:473:1: shift_expression returns [expression t] : a= additive_expression ( (o= '<<' |o= '>' '>' ) b= additive_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:474:1: shift_expression returns [expression t] : a= additive_expression ( (o= '<<' |o= '>' '>' ) b= additive_expression )* ;
 	public final csParser.shift_expression_return shift_expression() throws RecognitionException {
 		csParser.shift_expression_return retval = new csParser.shift_expression_return();
 		retval.start = input.LT(1);
@@ -13164,8 +13444,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 101) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:475:39: (a= additive_expression ( (o= '<<' |o= '>' '>' ) b= additive_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:476:2: a= additive_expression ( (o= '<<' |o= '>' '>' ) b= additive_expression )*
+			// /Users/jeremie/ANTLR/cs.g:476:39: (a= additive_expression ( (o= '<<' |o= '>' '>' ) b= additive_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:477:2: a= additive_expression ( (o= '<<' |o= '>' '>' ) b= additive_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13177,7 +13457,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.additive_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:476:39: ( (o= '<<' |o= '>' '>' ) b= additive_expression )*
+			// /Users/jeremie/ANTLR/cs.g:477:39: ( (o= '<<' |o= '>' '>' ) b= additive_expression )*
 			loop113:
 			while (true) {
 				int alt113=2;
@@ -13195,9 +13475,9 @@ public class csParser extends Parser {
 
 				switch (alt113) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:476:40: (o= '<<' |o= '>' '>' ) b= additive_expression
+					// /Users/jeremie/ANTLR/cs.g:477:40: (o= '<<' |o= '>' '>' ) b= additive_expression
 					{
-					// /Users/jeremie/ANTLR/cs.g:476:40: (o= '<<' |o= '>' '>' )
+					// /Users/jeremie/ANTLR/cs.g:477:40: (o= '<<' |o= '>' '>' )
 					int alt112=2;
 					int LA112_0 = input.LA(1);
 					if ( (LA112_0==82) ) {
@@ -13216,7 +13496,7 @@ public class csParser extends Parser {
 
 					switch (alt112) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:476:41: o= '<<'
+							// /Users/jeremie/ANTLR/cs.g:477:41: o= '<<'
 							{
 							o=(Token)match(input,82,FOLLOW_82_in_shift_expression4395); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13227,7 +13507,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:476:48: o= '>' '>'
+							// /Users/jeremie/ANTLR/cs.g:477:48: o= '>' '>'
 							{
 							o=(Token)match(input,GT,FOLLOW_GT_in_shift_expression4399); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13295,7 +13575,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "relational_expression"
-	// /Users/jeremie/ANTLR/cs.g:477:1: relational_expression returns [expression t] : a= shift_expression ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )* ;
+	// /Users/jeremie/ANTLR/cs.g:478:1: relational_expression returns [expression t] : a= shift_expression ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )* ;
 	public final csParser.relational_expression_return relational_expression() throws RecognitionException {
 		csParser.relational_expression_return retval = new csParser.relational_expression_return();
 		retval.start = input.LT(1);
@@ -13314,8 +13594,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 102) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:479:39: (a= shift_expression ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )* )
-			// /Users/jeremie/ANTLR/cs.g:480:2: a= shift_expression ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )*
+			// /Users/jeremie/ANTLR/cs.g:480:39: (a= shift_expression ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )* )
+			// /Users/jeremie/ANTLR/cs.g:481:2: a= shift_expression ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13327,7 +13607,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.shift_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:481:3: ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )*
+			// /Users/jeremie/ANTLR/cs.g:482:3: ( ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression ) | ( (o= 'is' |o= 'as' ) c= non_nullable_type ) )*
 			loop116:
 			while (true) {
 				int alt116=3;
@@ -13341,12 +13621,12 @@ public class csParser extends Parser {
 
 				switch (alt116) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:481:5: ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression )
+					// /Users/jeremie/ANTLR/cs.g:482:5: ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression )
 					{
-					// /Users/jeremie/ANTLR/cs.g:481:5: ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression )
-					// /Users/jeremie/ANTLR/cs.g:481:6: (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression
+					// /Users/jeremie/ANTLR/cs.g:482:5: ( (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression )
+					// /Users/jeremie/ANTLR/cs.g:482:6: (o= '<' |o= '>' |o= '>=' |o= '<=' ) b= shift_expression
 					{
-					// /Users/jeremie/ANTLR/cs.g:481:6: (o= '<' |o= '>' |o= '>=' |o= '<=' )
+					// /Users/jeremie/ANTLR/cs.g:482:6: (o= '<' |o= '>' |o= '>=' |o= '<=' )
 					int alt114=4;
 					switch ( input.LA(1) ) {
 					case 81:
@@ -13377,7 +13657,7 @@ public class csParser extends Parser {
 					}
 					switch (alt114) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:481:7: o= '<'
+							// /Users/jeremie/ANTLR/cs.g:482:7: o= '<'
 							{
 							o=(Token)match(input,81,FOLLOW_81_in_relational_expression4450); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13388,7 +13668,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:481:13: o= '>'
+							// /Users/jeremie/ANTLR/cs.g:482:13: o= '>'
 							{
 							o=(Token)match(input,GT,FOLLOW_GT_in_relational_expression4454); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13399,7 +13679,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /Users/jeremie/ANTLR/cs.g:481:19: o= '>='
+							// /Users/jeremie/ANTLR/cs.g:482:19: o= '>='
 							{
 							o=(Token)match(input,88,FOLLOW_88_in_relational_expression4458); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13410,7 +13690,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 4 :
-							// /Users/jeremie/ANTLR/cs.g:481:26: o= '<='
+							// /Users/jeremie/ANTLR/cs.g:482:26: o= '<='
 							{
 							o=(Token)match(input,84,FOLLOW_84_in_relational_expression4462); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13435,12 +13715,12 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:482:6: ( (o= 'is' |o= 'as' ) c= non_nullable_type )
+					// /Users/jeremie/ANTLR/cs.g:483:6: ( (o= 'is' |o= 'as' ) c= non_nullable_type )
 					{
-					// /Users/jeremie/ANTLR/cs.g:482:6: ( (o= 'is' |o= 'as' ) c= non_nullable_type )
-					// /Users/jeremie/ANTLR/cs.g:482:7: (o= 'is' |o= 'as' ) c= non_nullable_type
+					// /Users/jeremie/ANTLR/cs.g:483:6: ( (o= 'is' |o= 'as' ) c= non_nullable_type )
+					// /Users/jeremie/ANTLR/cs.g:483:7: (o= 'is' |o= 'as' ) c= non_nullable_type
 					{
-					// /Users/jeremie/ANTLR/cs.g:482:7: (o= 'is' |o= 'as' )
+					// /Users/jeremie/ANTLR/cs.g:483:7: (o= 'is' |o= 'as' )
 					int alt115=2;
 					int LA115_0 = input.LA(1);
 					if ( (LA115_0==142) ) {
@@ -13459,7 +13739,7 @@ public class csParser extends Parser {
 
 					switch (alt115) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:482:8: o= 'is'
+							// /Users/jeremie/ANTLR/cs.g:483:8: o= 'is'
 							{
 							o=(Token)match(input,142,FOLLOW_142_in_relational_expression4481); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13470,7 +13750,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:482:15: o= 'as'
+							// /Users/jeremie/ANTLR/cs.g:483:15: o= 'as'
 							{
 							o=(Token)match(input,99,FOLLOW_99_in_relational_expression4485); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13534,7 +13814,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "equality_expression"
-	// /Users/jeremie/ANTLR/cs.g:485:1: equality_expression returns [expression t] : a= relational_expression ( (o= '==' |o= '!=' ) b= relational_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:486:1: equality_expression returns [expression t] : a= relational_expression ( (o= '==' |o= '!=' ) b= relational_expression )* ;
 	public final csParser.equality_expression_return equality_expression() throws RecognitionException {
 		csParser.equality_expression_return retval = new csParser.equality_expression_return();
 		retval.start = input.LT(1);
@@ -13552,8 +13832,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 103) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:487:39: (a= relational_expression ( (o= '==' |o= '!=' ) b= relational_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:489:2: a= relational_expression ( (o= '==' |o= '!=' ) b= relational_expression )*
+			// /Users/jeremie/ANTLR/cs.g:488:39: (a= relational_expression ( (o= '==' |o= '!=' ) b= relational_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:490:2: a= relational_expression ( (o= '==' |o= '!=' ) b= relational_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13565,7 +13845,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.relational_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:490:5: ( (o= '==' |o= '!=' ) b= relational_expression )*
+			// /Users/jeremie/ANTLR/cs.g:491:5: ( (o= '==' |o= '!=' ) b= relational_expression )*
 			loop118:
 			while (true) {
 				int alt118=2;
@@ -13576,9 +13856,9 @@ public class csParser extends Parser {
 
 				switch (alt118) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:490:6: (o= '==' |o= '!=' ) b= relational_expression
+					// /Users/jeremie/ANTLR/cs.g:491:6: (o= '==' |o= '!=' ) b= relational_expression
 					{
-					// /Users/jeremie/ANTLR/cs.g:490:6: (o= '==' |o= '!=' )
+					// /Users/jeremie/ANTLR/cs.g:491:6: (o= '==' |o= '!=' )
 					int alt117=2;
 					int LA117_0 = input.LA(1);
 					if ( (LA117_0==86) ) {
@@ -13597,7 +13877,7 @@ public class csParser extends Parser {
 
 					switch (alt117) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:490:7: o= '=='
+							// /Users/jeremie/ANTLR/cs.g:491:7: o= '=='
 							{
 							o=(Token)match(input,86,FOLLOW_86_in_equality_expression4544); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13608,7 +13888,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:490:14: o= '!='
+							// /Users/jeremie/ANTLR/cs.g:491:14: o= '!='
 							{
 							o=(Token)match(input,62,FOLLOW_62_in_equality_expression4548); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -13670,7 +13950,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "and_expression"
-	// /Users/jeremie/ANTLR/cs.g:491:1: and_expression returns [expression t] : a= equality_expression (o= '&' b= equality_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:492:1: and_expression returns [expression t] : a= equality_expression (o= '&' b= equality_expression )* ;
 	public final csParser.and_expression_return and_expression() throws RecognitionException {
 		csParser.and_expression_return retval = new csParser.and_expression_return();
 		retval.start = input.LT(1);
@@ -13688,8 +13968,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 104) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:493:39: (a= equality_expression (o= '&' b= equality_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:494:2: a= equality_expression (o= '&' b= equality_expression )*
+			// /Users/jeremie/ANTLR/cs.g:494:39: (a= equality_expression (o= '&' b= equality_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:495:2: a= equality_expression (o= '&' b= equality_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13701,7 +13981,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.equality_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:494:38: (o= '&' b= equality_expression )*
+			// /Users/jeremie/ANTLR/cs.g:495:38: (o= '&' b= equality_expression )*
 			loop119:
 			while (true) {
 				int alt119=2;
@@ -13712,7 +13992,7 @@ public class csParser extends Parser {
 
 				switch (alt119) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:494:39: o= '&' b= equality_expression
+					// /Users/jeremie/ANTLR/cs.g:495:39: o= '&' b= equality_expression
 					{
 					o=(Token)match(input,66,FOLLOW_66_in_and_expression4593); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -13769,7 +14049,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "exclusive_or_expression"
-	// /Users/jeremie/ANTLR/cs.g:495:1: exclusive_or_expression returns [expression t] : a= and_expression (o= '^' b= and_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:496:1: exclusive_or_expression returns [expression t] : a= and_expression (o= '^' b= and_expression )* ;
 	public final csParser.exclusive_or_expression_return exclusive_or_expression() throws RecognitionException {
 		csParser.exclusive_or_expression_return retval = new csParser.exclusive_or_expression_return();
 		retval.start = input.LT(1);
@@ -13787,8 +14067,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 105) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:497:39: (a= and_expression (o= '^' b= and_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:498:2: a= and_expression (o= '^' b= and_expression )*
+			// /Users/jeremie/ANTLR/cs.g:498:39: (a= and_expression (o= '^' b= and_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:499:2: a= and_expression (o= '^' b= and_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13800,7 +14080,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.and_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:498:33: (o= '^' b= and_expression )*
+			// /Users/jeremie/ANTLR/cs.g:499:33: (o= '^' b= and_expression )*
 			loop120:
 			while (true) {
 				int alt120=2;
@@ -13811,7 +14091,7 @@ public class csParser extends Parser {
 
 				switch (alt120) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:498:34: o= '^' b= and_expression
+					// /Users/jeremie/ANTLR/cs.g:499:34: o= '^' b= and_expression
 					{
 					o=(Token)match(input,93,FOLLOW_93_in_exclusive_or_expression4638); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -13868,7 +14148,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "inclusive_or_expression"
-	// /Users/jeremie/ANTLR/cs.g:499:1: inclusive_or_expression returns [expression t] : a= exclusive_or_expression (o= '|' b= exclusive_or_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:500:1: inclusive_or_expression returns [expression t] : a= exclusive_or_expression (o= '|' b= exclusive_or_expression )* ;
 	public final csParser.inclusive_or_expression_return inclusive_or_expression() throws RecognitionException {
 		csParser.inclusive_or_expression_return retval = new csParser.inclusive_or_expression_return();
 		retval.start = input.LT(1);
@@ -13886,8 +14166,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 106) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:501:39: (a= exclusive_or_expression (o= '|' b= exclusive_or_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:502:2: a= exclusive_or_expression (o= '|' b= exclusive_or_expression )*
+			// /Users/jeremie/ANTLR/cs.g:502:39: (a= exclusive_or_expression (o= '|' b= exclusive_or_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:503:2: a= exclusive_or_expression (o= '|' b= exclusive_or_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13899,7 +14179,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.exclusive_or_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:502:44: (o= '|' b= exclusive_or_expression )*
+			// /Users/jeremie/ANTLR/cs.g:503:44: (o= '|' b= exclusive_or_expression )*
 			loop121:
 			while (true) {
 				int alt121=2;
@@ -13910,7 +14190,7 @@ public class csParser extends Parser {
 
 				switch (alt121) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:502:45: o= '|' b= exclusive_or_expression
+					// /Users/jeremie/ANTLR/cs.g:503:45: o= '|' b= exclusive_or_expression
 					{
 					o=(Token)match(input,198,FOLLOW_198_in_inclusive_or_expression4685); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -13967,7 +14247,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "conditional_and_expression"
-	// /Users/jeremie/ANTLR/cs.g:503:1: conditional_and_expression returns [expression t] : a= inclusive_or_expression (o= '&&' b= inclusive_or_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:504:1: conditional_and_expression returns [expression t] : a= inclusive_or_expression (o= '&&' b= inclusive_or_expression )* ;
 	public final csParser.conditional_and_expression_return conditional_and_expression() throws RecognitionException {
 		csParser.conditional_and_expression_return retval = new csParser.conditional_and_expression_return();
 		retval.start = input.LT(1);
@@ -13985,8 +14265,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 107) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:505:39: (a= inclusive_or_expression (o= '&&' b= inclusive_or_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:506:2: a= inclusive_or_expression (o= '&&' b= inclusive_or_expression )*
+			// /Users/jeremie/ANTLR/cs.g:506:39: (a= inclusive_or_expression (o= '&&' b= inclusive_or_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:507:2: a= inclusive_or_expression (o= '&&' b= inclusive_or_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -13998,7 +14278,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.inclusive_or_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:506:43: (o= '&&' b= inclusive_or_expression )*
+			// /Users/jeremie/ANTLR/cs.g:507:43: (o= '&&' b= inclusive_or_expression )*
 			loop122:
 			while (true) {
 				int alt122=2;
@@ -14009,7 +14289,7 @@ public class csParser extends Parser {
 
 				switch (alt122) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:506:44: o= '&&' b= inclusive_or_expression
+					// /Users/jeremie/ANTLR/cs.g:507:44: o= '&&' b= inclusive_or_expression
 					{
 					o=(Token)match(input,65,FOLLOW_65_in_conditional_and_expression4730); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14066,7 +14346,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "conditional_or_expression"
-	// /Users/jeremie/ANTLR/cs.g:507:1: conditional_or_expression returns [expression t] : a= conditional_and_expression (o= '||' b= conditional_and_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:508:1: conditional_or_expression returns [expression t] : a= conditional_and_expression (o= '||' b= conditional_and_expression )* ;
 	public final csParser.conditional_or_expression_return conditional_or_expression() throws RecognitionException {
 		csParser.conditional_or_expression_return retval = new csParser.conditional_or_expression_return();
 		retval.start = input.LT(1);
@@ -14084,8 +14364,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 108) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:509:39: (a= conditional_and_expression (o= '||' b= conditional_and_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:510:2: a= conditional_and_expression (o= '||' b= conditional_and_expression )*
+			// /Users/jeremie/ANTLR/cs.g:510:39: (a= conditional_and_expression (o= '||' b= conditional_and_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:511:2: a= conditional_and_expression (o= '||' b= conditional_and_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -14097,7 +14377,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.conditional_and_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:510:45: (o= '||' b= conditional_and_expression )*
+			// /Users/jeremie/ANTLR/cs.g:511:45: (o= '||' b= conditional_and_expression )*
 			loop123:
 			while (true) {
 				int alt123=2;
@@ -14108,7 +14388,7 @@ public class csParser extends Parser {
 
 				switch (alt123) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:510:46: o= '||' b= conditional_and_expression
+					// /Users/jeremie/ANTLR/cs.g:511:46: o= '||' b= conditional_and_expression
 					{
 					o=(Token)match(input,200,FOLLOW_200_in_conditional_or_expression4775); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14165,7 +14445,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "null_coalescing_expression"
-	// /Users/jeremie/ANTLR/cs.g:512:1: null_coalescing_expression returns [expression t] : a= conditional_or_expression (o= '??' b= conditional_or_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:513:1: null_coalescing_expression returns [expression t] : a= conditional_or_expression (o= '??' b= conditional_or_expression )* ;
 	public final csParser.null_coalescing_expression_return null_coalescing_expression() throws RecognitionException {
 		csParser.null_coalescing_expression_return retval = new csParser.null_coalescing_expression_return();
 		retval.start = input.LT(1);
@@ -14183,8 +14463,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 109) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:514:39: (a= conditional_or_expression (o= '??' b= conditional_or_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:515:2: a= conditional_or_expression (o= '??' b= conditional_or_expression )*
+			// /Users/jeremie/ANTLR/cs.g:515:39: (a= conditional_or_expression (o= '??' b= conditional_or_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:516:2: a= conditional_or_expression (o= '??' b= conditional_or_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -14196,7 +14476,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res = (a!=null?((csParser.conditional_or_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:515:45: (o= '??' b= conditional_or_expression )*
+			// /Users/jeremie/ANTLR/cs.g:516:45: (o= '??' b= conditional_or_expression )*
 			loop124:
 			while (true) {
 				int alt124=2;
@@ -14207,7 +14487,7 @@ public class csParser extends Parser {
 
 				switch (alt124) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:515:46: o= '??' b= conditional_or_expression
+					// /Users/jeremie/ANTLR/cs.g:516:46: o= '??' b= conditional_or_expression
 					{
 					o=(Token)match(input,90,FOLLOW_90_in_null_coalescing_expression4821); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14264,7 +14544,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "conditional_expression"
-	// /Users/jeremie/ANTLR/cs.g:516:1: conditional_expression returns [expression t] : a= null_coalescing_expression ( '?' b= expression ':' c= expression )? ;
+	// /Users/jeremie/ANTLR/cs.g:517:1: conditional_expression returns [expression t] : a= null_coalescing_expression ( '?' b= expression ':' c= expression )? ;
 	public final csParser.conditional_expression_return conditional_expression() throws RecognitionException {
 		csParser.conditional_expression_return retval = new csParser.conditional_expression_return();
 		retval.start = input.LT(1);
@@ -14284,8 +14564,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 110) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:517:32: (a= null_coalescing_expression ( '?' b= expression ':' c= expression )? )
-			// /Users/jeremie/ANTLR/cs.g:518:2: a= null_coalescing_expression ( '?' b= expression ':' c= expression )?
+			// /Users/jeremie/ANTLR/cs.g:518:32: (a= null_coalescing_expression ( '?' b= expression ':' c= expression )? )
+			// /Users/jeremie/ANTLR/cs.g:519:2: a= null_coalescing_expression ( '?' b= expression ':' c= expression )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -14297,7 +14577,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {retval.t = (a!=null?((csParser.null_coalescing_expression_return)a).t:null);}
-			// /Users/jeremie/ANTLR/cs.g:518:45: ( '?' b= expression ':' c= expression )?
+			// /Users/jeremie/ANTLR/cs.g:519:45: ( '?' b= expression ':' c= expression )?
 			int alt125=2;
 			int LA125_0 = input.LA(1);
 			if ( (LA125_0==89) ) {
@@ -14305,7 +14585,7 @@ public class csParser extends Parser {
 			}
 			switch (alt125) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:518:46: '?' b= expression ':' c= expression
+					// /Users/jeremie/ANTLR/cs.g:519:46: '?' b= expression ':' c= expression
 					{
 					char_literal325=(Token)match(input,89,FOLLOW_89_in_conditional_expression4859); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14371,7 +14651,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "lambda_expression"
-	// /Users/jeremie/ANTLR/cs.g:523:1: lambda_expression returns [UnknownNode t] : anonymous_function_signature '=>' anonymous_function_body ;
+	// /Users/jeremie/ANTLR/cs.g:524:1: lambda_expression returns [UnknownNode t] : anonymous_function_signature '=>' anonymous_function_body ;
 	public final csParser.lambda_expression_return lambda_expression() throws RecognitionException {
 		csParser.lambda_expression_return retval = new csParser.lambda_expression_return();
 		retval.start = input.LT(1);
@@ -14388,8 +14668,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 111) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:524:37: ( anonymous_function_signature '=>' anonymous_function_body )
-			// /Users/jeremie/ANTLR/cs.g:525:2: anonymous_function_signature '=>' anonymous_function_body
+			// /Users/jeremie/ANTLR/cs.g:525:37: ( anonymous_function_signature '=>' anonymous_function_body )
+			// /Users/jeremie/ANTLR/cs.g:526:2: anonymous_function_signature '=>' anonymous_function_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -14445,7 +14725,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "anonymous_function_signature"
-	// /Users/jeremie/ANTLR/cs.g:526:1: anonymous_function_signature : ( '(' ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )? ')' | implicit_anonymous_function_parameter_list );
+	// /Users/jeremie/ANTLR/cs.g:527:1: anonymous_function_signature : ( '(' ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )? ')' | implicit_anonymous_function_parameter_list );
 	public final csParser.anonymous_function_signature_return anonymous_function_signature() throws RecognitionException {
 		csParser.anonymous_function_signature_return retval = new csParser.anonymous_function_signature_return();
 		retval.start = input.LT(1);
@@ -14465,7 +14745,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 112) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:526:29: ( '(' ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )? ')' | implicit_anonymous_function_parameter_list )
+			// /Users/jeremie/ANTLR/cs.g:527:29: ( '(' ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )? ')' | implicit_anonymous_function_parameter_list )
 			int alt127=2;
 			int LA127_0 = input.LA(1);
 			if ( (LA127_0==68) ) {
@@ -14484,7 +14764,7 @@ public class csParser extends Parser {
 
 			switch (alt127) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:527:2: '(' ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )? ')'
+					// /Users/jeremie/ANTLR/cs.g:528:2: '(' ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )? ')'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -14495,7 +14775,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, char_literal330_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:527:6: ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )?
+					// /Users/jeremie/ANTLR/cs.g:528:6: ( explicit_anonymous_function_parameter_list | implicit_anonymous_function_parameter_list )?
 					int alt126=3;
 					int LA126_0 = input.LA(1);
 					if ( (LA126_0==103||LA126_0==106||LA126_0==109||LA126_0==114||LA126_0==119||LA126_0==129||LA126_0==138||LA126_0==146||LA126_0==151||LA126_0==155||LA126_0==166||LA126_0==169||LA126_0==173||LA126_0==177||(LA126_0 >= 185 && LA126_0 <= 186)||LA126_0==189||LA126_0==192) ) {
@@ -14512,7 +14792,7 @@ public class csParser extends Parser {
 					}
 					switch (alt126) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:527:7: explicit_anonymous_function_parameter_list
+							// /Users/jeremie/ANTLR/cs.g:528:7: explicit_anonymous_function_parameter_list
 							{
 							pushFollow(FOLLOW_explicit_anonymous_function_parameter_list_in_anonymous_function_signature4926);
 							explicit_anonymous_function_parameter_list331=explicit_anonymous_function_parameter_list();
@@ -14523,7 +14803,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:528:5: implicit_anonymous_function_parameter_list
+							// /Users/jeremie/ANTLR/cs.g:529:5: implicit_anonymous_function_parameter_list
 							{
 							pushFollow(FOLLOW_implicit_anonymous_function_parameter_list_in_anonymous_function_signature4932);
 							implicit_anonymous_function_parameter_list332=implicit_anonymous_function_parameter_list();
@@ -14545,7 +14825,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:529:4: implicit_anonymous_function_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:530:4: implicit_anonymous_function_parameter_list
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -14590,7 +14870,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "implicit_anonymous_function_parameter_list"
-	// /Users/jeremie/ANTLR/cs.g:531:1: implicit_anonymous_function_parameter_list : implicit_anonymous_function_parameter ( ',' implicit_anonymous_function_parameter )* ;
+	// /Users/jeremie/ANTLR/cs.g:532:1: implicit_anonymous_function_parameter_list : implicit_anonymous_function_parameter ( ',' implicit_anonymous_function_parameter )* ;
 	public final csParser.implicit_anonymous_function_parameter_list_return implicit_anonymous_function_parameter_list() throws RecognitionException {
 		csParser.implicit_anonymous_function_parameter_list_return retval = new csParser.implicit_anonymous_function_parameter_list_return();
 		retval.start = input.LT(1);
@@ -14607,8 +14887,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 113) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:531:43: ( implicit_anonymous_function_parameter ( ',' implicit_anonymous_function_parameter )* )
-			// /Users/jeremie/ANTLR/cs.g:532:2: implicit_anonymous_function_parameter ( ',' implicit_anonymous_function_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:532:43: ( implicit_anonymous_function_parameter ( ',' implicit_anonymous_function_parameter )* )
+			// /Users/jeremie/ANTLR/cs.g:533:2: implicit_anonymous_function_parameter ( ',' implicit_anonymous_function_parameter )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -14619,7 +14899,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, implicit_anonymous_function_parameter335.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:532:42: ( ',' implicit_anonymous_function_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:533:42: ( ',' implicit_anonymous_function_parameter )*
 			loop128:
 			while (true) {
 				int alt128=2;
@@ -14630,7 +14910,7 @@ public class csParser extends Parser {
 
 				switch (alt128) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:532:43: ',' implicit_anonymous_function_parameter
+					// /Users/jeremie/ANTLR/cs.g:533:43: ',' implicit_anonymous_function_parameter
 					{
 					char_literal336=(Token)match(input,74,FOLLOW_74_in_implicit_anonymous_function_parameter_list4955); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14684,7 +14964,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "implicit_anonymous_function_parameter"
-	// /Users/jeremie/ANTLR/cs.g:533:1: implicit_anonymous_function_parameter : identifier ;
+	// /Users/jeremie/ANTLR/cs.g:534:1: implicit_anonymous_function_parameter : identifier ;
 	public final csParser.implicit_anonymous_function_parameter_return implicit_anonymous_function_parameter() throws RecognitionException {
 		csParser.implicit_anonymous_function_parameter_return retval = new csParser.implicit_anonymous_function_parameter_return();
 		retval.start = input.LT(1);
@@ -14698,8 +14978,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 114) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:533:38: ( identifier )
-			// /Users/jeremie/ANTLR/cs.g:534:2: identifier
+			// /Users/jeremie/ANTLR/cs.g:534:38: ( identifier )
+			// /Users/jeremie/ANTLR/cs.g:535:2: identifier
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -14742,7 +15022,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "anonymous_function_body"
-	// /Users/jeremie/ANTLR/cs.g:535:1: anonymous_function_body : ( expression | block );
+	// /Users/jeremie/ANTLR/cs.g:536:1: anonymous_function_body : ( expression | block );
 	public final csParser.anonymous_function_body_return anonymous_function_body() throws RecognitionException {
 		csParser.anonymous_function_body_return retval = new csParser.anonymous_function_body_return();
 		retval.start = input.LT(1);
@@ -14757,7 +15037,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 115) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:535:24: ( expression | block )
+			// /Users/jeremie/ANTLR/cs.g:536:24: ( expression | block )
 			int alt129=2;
 			int LA129_0 = input.LA(1);
 			if ( (LA129_0==Character_literal||LA129_0==FALSE||(LA129_0 >= Hex_number && LA129_0 <= IDENTIFIER)||(LA129_0 >= MINUS && LA129_0 <= NUMBER)||LA129_0==Real_literal||LA129_0==STRINGLITERAL||LA129_0==TRUE||LA129_0==Verbatim_string_literal||LA129_0==61||LA129_0==66||(LA129_0 >= 68 && LA129_0 <= 69)||(LA129_0 >= 71 && LA129_0 <= 72)||LA129_0==75||LA129_0==95||(LA129_0 >= 97 && LA129_0 <= 98)||(LA129_0 >= 100 && LA129_0 <= 103)||(LA129_0 >= 105 && LA129_0 <= 106)||(LA129_0 >= 109 && LA129_0 <= 110)||(LA129_0 >= 114 && LA129_0 <= 117)||(LA129_0 >= 119 && LA129_0 <= 120)||LA129_0==122||LA129_0==126||LA129_0==129||LA129_0==132||LA129_0==135||LA129_0==138||LA129_0==141||(LA129_0 >= 143 && LA129_0 <= 144)||(LA129_0 >= 146 && LA129_0 <= 148)||(LA129_0 >= 150 && LA129_0 <= 152)||LA129_0==154||LA129_0==157||LA129_0==160||LA129_0==162||LA129_0==167||LA129_0==169||(LA129_0 >= 171 && LA129_0 <= 174)||LA129_0==177||LA129_0==180||(LA129_0 >= 183 && LA129_0 <= 187)||(LA129_0 >= 189 && LA129_0 <= 190)||LA129_0==194||LA129_0==196||LA129_0==202) ) {
@@ -14776,7 +15056,7 @@ public class csParser extends Parser {
 
 			switch (alt129) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:536:2: expression
+					// /Users/jeremie/ANTLR/cs.g:537:2: expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -14790,7 +15070,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:537:4: block
+					// /Users/jeremie/ANTLR/cs.g:538:4: block
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -14836,7 +15116,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "query_expression"
-	// /Users/jeremie/ANTLR/cs.g:542:1: query_expression returns [UnknownNode t] : from_clause query_body ;
+	// /Users/jeremie/ANTLR/cs.g:543:1: query_expression returns [UnknownNode t] : from_clause query_body ;
 	public final csParser.query_expression_return query_expression() throws RecognitionException {
 		csParser.query_expression_return retval = new csParser.query_expression_return();
 		retval.start = input.LT(1);
@@ -14851,8 +15131,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 116) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:543:37: ( from_clause query_body )
-			// /Users/jeremie/ANTLR/cs.g:544:2: from_clause query_body
+			// /Users/jeremie/ANTLR/cs.g:544:37: ( from_clause query_body )
+			// /Users/jeremie/ANTLR/cs.g:545:2: from_clause query_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -14902,7 +15182,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "query_body"
-	// /Users/jeremie/ANTLR/cs.g:545:1: query_body : ( query_body_clauses )? select_or_group_clause ( ( 'into' )=> query_continuation )? ;
+	// /Users/jeremie/ANTLR/cs.g:546:1: query_body : ( query_body_clauses )? select_or_group_clause ( ( 'into' )=> query_continuation )? ;
 	public final csParser.query_body_return query_body() throws RecognitionException {
 		csParser.query_body_return retval = new csParser.query_body_return();
 		retval.start = input.LT(1);
@@ -14918,13 +15198,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 117) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:545:11: ( ( query_body_clauses )? select_or_group_clause ( ( 'into' )=> query_continuation )? )
-			// /Users/jeremie/ANTLR/cs.g:547:2: ( query_body_clauses )? select_or_group_clause ( ( 'into' )=> query_continuation )?
+			// /Users/jeremie/ANTLR/cs.g:546:11: ( ( query_body_clauses )? select_or_group_clause ( ( 'into' )=> query_continuation )? )
+			// /Users/jeremie/ANTLR/cs.g:548:2: ( query_body_clauses )? select_or_group_clause ( ( 'into' )=> query_continuation )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:547:2: ( query_body_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:548:2: ( query_body_clauses )?
 			int alt130=2;
 			int LA130_0 = input.LA(1);
 			if ( (LA130_0==132||(LA130_0 >= 143 && LA130_0 <= 144)||LA130_0==154||LA130_0==194) ) {
@@ -14932,7 +15212,7 @@ public class csParser extends Parser {
 			}
 			switch (alt130) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:547:2: query_body_clauses
+					// /Users/jeremie/ANTLR/cs.g:548:2: query_body_clauses
 					{
 					pushFollow(FOLLOW_query_body_clauses_in_query_body5017);
 					query_body_clauses343=query_body_clauses();
@@ -14951,7 +15231,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, select_or_group_clause344.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:547:49: ( ( 'into' )=> query_continuation )?
+			// /Users/jeremie/ANTLR/cs.g:548:49: ( ( 'into' )=> query_continuation )?
 			int alt131=2;
 			int LA131_0 = input.LA(1);
 			if ( (LA131_0==141) ) {
@@ -14962,7 +15242,7 @@ public class csParser extends Parser {
 			}
 			switch (alt131) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:547:50: ( 'into' )=> query_continuation
+					// /Users/jeremie/ANTLR/cs.g:548:50: ( 'into' )=> query_continuation
 					{
 					pushFollow(FOLLOW_query_continuation_in_query_body5033);
 					query_continuation345=query_continuation();
@@ -15007,7 +15287,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "query_continuation"
-	// /Users/jeremie/ANTLR/cs.g:548:1: query_continuation : 'into' identifier query_body ;
+	// /Users/jeremie/ANTLR/cs.g:549:1: query_continuation : 'into' identifier query_body ;
 	public final csParser.query_continuation_return query_continuation() throws RecognitionException {
 		csParser.query_continuation_return retval = new csParser.query_continuation_return();
 		retval.start = input.LT(1);
@@ -15024,8 +15304,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 118) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:548:19: ( 'into' identifier query_body )
-			// /Users/jeremie/ANTLR/cs.g:549:2: 'into' identifier query_body
+			// /Users/jeremie/ANTLR/cs.g:549:19: ( 'into' identifier query_body )
+			// /Users/jeremie/ANTLR/cs.g:550:2: 'into' identifier query_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15080,7 +15360,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "query_body_clauses"
-	// /Users/jeremie/ANTLR/cs.g:550:1: query_body_clauses : ( query_body_clause )+ ;
+	// /Users/jeremie/ANTLR/cs.g:551:1: query_body_clauses : ( query_body_clause )+ ;
 	public final csParser.query_body_clauses_return query_body_clauses() throws RecognitionException {
 		csParser.query_body_clauses_return retval = new csParser.query_body_clauses_return();
 		retval.start = input.LT(1);
@@ -15094,13 +15374,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 119) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:550:19: ( ( query_body_clause )+ )
-			// /Users/jeremie/ANTLR/cs.g:551:2: ( query_body_clause )+
+			// /Users/jeremie/ANTLR/cs.g:551:19: ( ( query_body_clause )+ )
+			// /Users/jeremie/ANTLR/cs.g:552:2: ( query_body_clause )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:551:2: ( query_body_clause )+
+			// /Users/jeremie/ANTLR/cs.g:552:2: ( query_body_clause )+
 			int cnt132=0;
 			loop132:
 			while (true) {
@@ -15112,7 +15392,7 @@ public class csParser extends Parser {
 
 				switch (alt132) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:551:2: query_body_clause
+					// /Users/jeremie/ANTLR/cs.g:552:2: query_body_clause
 					{
 					pushFollow(FOLLOW_query_body_clause_in_query_body_clauses5058);
 					query_body_clause349=query_body_clause();
@@ -15164,7 +15444,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "query_body_clause"
-	// /Users/jeremie/ANTLR/cs.g:552:1: query_body_clause : ( from_clause | let_clause | where_clause | join_clause | orderby_clause );
+	// /Users/jeremie/ANTLR/cs.g:553:1: query_body_clause : ( from_clause | let_clause | where_clause | join_clause | orderby_clause );
 	public final csParser.query_body_clause_return query_body_clause() throws RecognitionException {
 		csParser.query_body_clause_return retval = new csParser.query_body_clause_return();
 		retval.start = input.LT(1);
@@ -15182,7 +15462,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 120) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:552:18: ( from_clause | let_clause | where_clause | join_clause | orderby_clause )
+			// /Users/jeremie/ANTLR/cs.g:553:18: ( from_clause | let_clause | where_clause | join_clause | orderby_clause )
 			int alt133=5;
 			switch ( input.LA(1) ) {
 			case 132:
@@ -15218,7 +15498,7 @@ public class csParser extends Parser {
 			}
 			switch (alt133) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:553:2: from_clause
+					// /Users/jeremie/ANTLR/cs.g:554:2: from_clause
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -15232,7 +15512,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:554:4: let_clause
+					// /Users/jeremie/ANTLR/cs.g:555:4: let_clause
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -15246,7 +15526,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:555:4: where_clause
+					// /Users/jeremie/ANTLR/cs.g:556:4: where_clause
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -15260,7 +15540,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:556:4: join_clause
+					// /Users/jeremie/ANTLR/cs.g:557:4: join_clause
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -15274,7 +15554,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:557:4: orderby_clause
+					// /Users/jeremie/ANTLR/cs.g:558:4: orderby_clause
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -15319,7 +15599,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "from_clause"
-	// /Users/jeremie/ANTLR/cs.g:558:1: from_clause : 'from' ( type )? identifier 'in' expression ;
+	// /Users/jeremie/ANTLR/cs.g:559:1: from_clause : 'from' ( type )? identifier 'in' expression ;
 	public final csParser.from_clause_return from_clause() throws RecognitionException {
 		csParser.from_clause_return retval = new csParser.from_clause_return();
 		retval.start = input.LT(1);
@@ -15339,8 +15619,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 121) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:558:12: ( 'from' ( type )? identifier 'in' expression )
-			// /Users/jeremie/ANTLR/cs.g:559:2: 'from' ( type )? identifier 'in' expression
+			// /Users/jeremie/ANTLR/cs.g:559:12: ( 'from' ( type )? identifier 'in' expression )
+			// /Users/jeremie/ANTLR/cs.g:560:2: 'from' ( type )? identifier 'in' expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15351,7 +15631,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal355_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:559:11: ( type )?
+			// /Users/jeremie/ANTLR/cs.g:560:11: ( type )?
 			int alt134=2;
 			int LA134_0 = input.LA(1);
 			if ( (LA134_0==103||LA134_0==106||LA134_0==109||LA134_0==114||LA134_0==119||LA134_0==129||LA134_0==138||LA134_0==146||LA134_0==151||LA134_0==169||LA134_0==173||LA134_0==177||(LA134_0 >= 185 && LA134_0 <= 186)||LA134_0==189||LA134_0==192) ) {
@@ -15365,7 +15645,7 @@ public class csParser extends Parser {
 			}
 			switch (alt134) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:559:11: type
+					// /Users/jeremie/ANTLR/cs.g:560:11: type
 					{
 					pushFollow(FOLLOW_type_in_from_clause5098);
 					type356=type();
@@ -15428,7 +15708,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "join_clause"
-	// /Users/jeremie/ANTLR/cs.g:560:1: join_clause : 'join' ( type )? identifier 'in' expression 'on' expression 'equals' expression ( 'into' identifier )? ;
+	// /Users/jeremie/ANTLR/cs.g:561:1: join_clause : 'join' ( type )? identifier 'in' expression 'on' expression 'equals' expression ( 'into' identifier )? ;
 	public final csParser.join_clause_return join_clause() throws RecognitionException {
 		csParser.join_clause_return retval = new csParser.join_clause_return();
 		retval.start = input.LT(1);
@@ -15457,8 +15737,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 122) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:560:12: ( 'join' ( type )? identifier 'in' expression 'on' expression 'equals' expression ( 'into' identifier )? )
-			// /Users/jeremie/ANTLR/cs.g:561:2: 'join' ( type )? identifier 'in' expression 'on' expression 'equals' expression ( 'into' identifier )?
+			// /Users/jeremie/ANTLR/cs.g:561:12: ( 'join' ( type )? identifier 'in' expression 'on' expression 'equals' expression ( 'into' identifier )? )
+			// /Users/jeremie/ANTLR/cs.g:562:2: 'join' ( type )? identifier 'in' expression 'on' expression 'equals' expression ( 'into' identifier )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15469,7 +15749,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal360_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:561:11: ( type )?
+			// /Users/jeremie/ANTLR/cs.g:562:11: ( type )?
 			int alt135=2;
 			int LA135_0 = input.LA(1);
 			if ( (LA135_0==103||LA135_0==106||LA135_0==109||LA135_0==114||LA135_0==119||LA135_0==129||LA135_0==138||LA135_0==146||LA135_0==151||LA135_0==169||LA135_0==173||LA135_0==177||(LA135_0 >= 185 && LA135_0 <= 186)||LA135_0==189||LA135_0==192) ) {
@@ -15483,7 +15763,7 @@ public class csParser extends Parser {
 			}
 			switch (alt135) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:561:11: type
+					// /Users/jeremie/ANTLR/cs.g:562:11: type
 					{
 					pushFollow(FOLLOW_type_in_join_clause5123);
 					type361=type();
@@ -15538,7 +15818,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression368.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:561:94: ( 'into' identifier )?
+			// /Users/jeremie/ANTLR/cs.g:562:94: ( 'into' identifier )?
 			int alt136=2;
 			int LA136_0 = input.LA(1);
 			if ( (LA136_0==141) ) {
@@ -15546,7 +15826,7 @@ public class csParser extends Parser {
 			}
 			switch (alt136) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:561:95: 'into' identifier
+					// /Users/jeremie/ANTLR/cs.g:562:95: 'into' identifier
 					{
 					string_literal369=(Token)match(input,141,FOLLOW_141_in_join_clause5155); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -15597,7 +15877,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "let_clause"
-	// /Users/jeremie/ANTLR/cs.g:562:1: let_clause : 'let' identifier '=' expression ;
+	// /Users/jeremie/ANTLR/cs.g:563:1: let_clause : 'let' identifier '=' expression ;
 	public final csParser.let_clause_return let_clause() throws RecognitionException {
 		csParser.let_clause_return retval = new csParser.let_clause_return();
 		retval.start = input.LT(1);
@@ -15616,8 +15896,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 123) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:562:11: ( 'let' identifier '=' expression )
-			// /Users/jeremie/ANTLR/cs.g:563:2: 'let' identifier '=' expression
+			// /Users/jeremie/ANTLR/cs.g:563:11: ( 'let' identifier '=' expression )
+			// /Users/jeremie/ANTLR/cs.g:564:2: 'let' identifier '=' expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15678,7 +15958,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "orderby_clause"
-	// /Users/jeremie/ANTLR/cs.g:564:1: orderby_clause : 'orderby' ordering_list ;
+	// /Users/jeremie/ANTLR/cs.g:565:1: orderby_clause : 'orderby' ordering_list ;
 	public final csParser.orderby_clause_return orderby_clause() throws RecognitionException {
 		csParser.orderby_clause_return retval = new csParser.orderby_clause_return();
 		retval.start = input.LT(1);
@@ -15694,8 +15974,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 124) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:564:15: ( 'orderby' ordering_list )
-			// /Users/jeremie/ANTLR/cs.g:565:2: 'orderby' ordering_list
+			// /Users/jeremie/ANTLR/cs.g:565:15: ( 'orderby' ordering_list )
+			// /Users/jeremie/ANTLR/cs.g:566:2: 'orderby' ordering_list
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15744,7 +16024,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "ordering_list"
-	// /Users/jeremie/ANTLR/cs.g:566:1: ordering_list : ordering ( ',' ordering )* ;
+	// /Users/jeremie/ANTLR/cs.g:567:1: ordering_list : ordering ( ',' ordering )* ;
 	public final csParser.ordering_list_return ordering_list() throws RecognitionException {
 		csParser.ordering_list_return retval = new csParser.ordering_list_return();
 		retval.start = input.LT(1);
@@ -15761,8 +16041,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 125) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:566:14: ( ordering ( ',' ordering )* )
-			// /Users/jeremie/ANTLR/cs.g:567:2: ordering ( ',' ordering )*
+			// /Users/jeremie/ANTLR/cs.g:567:14: ( ordering ( ',' ordering )* )
+			// /Users/jeremie/ANTLR/cs.g:568:2: ordering ( ',' ordering )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15773,7 +16053,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, ordering377.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:567:13: ( ',' ordering )*
+			// /Users/jeremie/ANTLR/cs.g:568:13: ( ',' ordering )*
 			loop137:
 			while (true) {
 				int alt137=2;
@@ -15784,7 +16064,7 @@ public class csParser extends Parser {
 
 				switch (alt137) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:567:14: ',' ordering
+					// /Users/jeremie/ANTLR/cs.g:568:14: ',' ordering
 					{
 					char_literal378=(Token)match(input,74,FOLLOW_74_in_ordering_list5203); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -15838,7 +16118,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "ordering"
-	// /Users/jeremie/ANTLR/cs.g:568:1: ordering : expression ordering_direction ;
+	// /Users/jeremie/ANTLR/cs.g:569:1: ordering : expression ordering_direction ;
 	public final csParser.ordering_return ordering() throws RecognitionException {
 		csParser.ordering_return retval = new csParser.ordering_return();
 		retval.start = input.LT(1);
@@ -15853,8 +16133,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 126) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:568:9: ( expression ordering_direction )
-			// /Users/jeremie/ANTLR/cs.g:569:2: expression ordering_direction
+			// /Users/jeremie/ANTLR/cs.g:569:9: ( expression ordering_direction )
+			// /Users/jeremie/ANTLR/cs.g:570:2: expression ordering_direction
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15903,7 +16183,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "ordering_direction"
-	// /Users/jeremie/ANTLR/cs.g:571:1: ordering_direction : ( 'ascending' | 'descending' );
+	// /Users/jeremie/ANTLR/cs.g:572:1: ordering_direction : ( 'ascending' | 'descending' );
 	public final csParser.ordering_direction_return ordering_direction() throws RecognitionException {
 		csParser.ordering_direction_return retval = new csParser.ordering_direction_return();
 		retval.start = input.LT(1);
@@ -15918,7 +16198,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 127) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:571:19: ( 'ascending' | 'descending' )
+			// /Users/jeremie/ANTLR/cs.g:572:19: ( 'ascending' | 'descending' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -15968,7 +16248,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "select_or_group_clause"
-	// /Users/jeremie/ANTLR/cs.g:574:1: select_or_group_clause : ( select_clause | group_clause );
+	// /Users/jeremie/ANTLR/cs.g:575:1: select_or_group_clause : ( select_clause | group_clause );
 	public final csParser.select_or_group_clause_return select_or_group_clause() throws RecognitionException {
 		csParser.select_or_group_clause_return retval = new csParser.select_or_group_clause_return();
 		retval.start = input.LT(1);
@@ -15983,7 +16263,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 128) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:574:23: ( select_clause | group_clause )
+			// /Users/jeremie/ANTLR/cs.g:575:23: ( select_clause | group_clause )
 			int alt138=2;
 			int LA138_0 = input.LA(1);
 			if ( (LA138_0==171) ) {
@@ -16002,7 +16282,7 @@ public class csParser extends Parser {
 
 			switch (alt138) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:575:2: select_clause
+					// /Users/jeremie/ANTLR/cs.g:576:2: select_clause
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -16016,7 +16296,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:576:4: group_clause
+					// /Users/jeremie/ANTLR/cs.g:577:4: group_clause
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -16061,7 +16341,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "select_clause"
-	// /Users/jeremie/ANTLR/cs.g:577:1: select_clause : 'select' expression ;
+	// /Users/jeremie/ANTLR/cs.g:578:1: select_clause : 'select' expression ;
 	public final csParser.select_clause_return select_clause() throws RecognitionException {
 		csParser.select_clause_return retval = new csParser.select_clause_return();
 		retval.start = input.LT(1);
@@ -16077,8 +16357,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 129) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:577:14: ( 'select' expression )
-			// /Users/jeremie/ANTLR/cs.g:578:2: 'select' expression
+			// /Users/jeremie/ANTLR/cs.g:578:14: ( 'select' expression )
+			// /Users/jeremie/ANTLR/cs.g:579:2: 'select' expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16127,7 +16407,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "group_clause"
-	// /Users/jeremie/ANTLR/cs.g:579:1: group_clause : 'group' expression 'by' expression ;
+	// /Users/jeremie/ANTLR/cs.g:580:1: group_clause : 'group' expression 'by' expression ;
 	public final csParser.group_clause_return group_clause() throws RecognitionException {
 		csParser.group_clause_return retval = new csParser.group_clause_return();
 		retval.start = input.LT(1);
@@ -16146,8 +16426,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 130) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:579:13: ( 'group' expression 'by' expression )
-			// /Users/jeremie/ANTLR/cs.g:580:2: 'group' expression 'by' expression
+			// /Users/jeremie/ANTLR/cs.g:580:13: ( 'group' expression 'by' expression )
+			// /Users/jeremie/ANTLR/cs.g:581:2: 'group' expression 'by' expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16208,7 +16488,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "where_clause"
-	// /Users/jeremie/ANTLR/cs.g:581:1: where_clause : 'where' boolean_expression ;
+	// /Users/jeremie/ANTLR/cs.g:582:1: where_clause : 'where' boolean_expression ;
 	public final csParser.where_clause_return where_clause() throws RecognitionException {
 		csParser.where_clause_return retval = new csParser.where_clause_return();
 		retval.start = input.LT(1);
@@ -16224,8 +16504,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 131) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:581:13: ( 'where' boolean_expression )
-			// /Users/jeremie/ANTLR/cs.g:582:2: 'where' boolean_expression
+			// /Users/jeremie/ANTLR/cs.g:582:13: ( 'where' boolean_expression )
+			// /Users/jeremie/ANTLR/cs.g:583:2: 'where' boolean_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16275,7 +16555,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "boolean_expression"
-	// /Users/jeremie/ANTLR/cs.g:583:1: boolean_expression returns [expression t] : a= expression ;
+	// /Users/jeremie/ANTLR/cs.g:584:1: boolean_expression returns [expression t] : a= expression ;
 	public final csParser.boolean_expression_return boolean_expression() throws RecognitionException {
 		csParser.boolean_expression_return retval = new csParser.boolean_expression_return();
 		retval.start = input.LT(1);
@@ -16289,8 +16569,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 132) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:583:44: (a= expression )
-			// /Users/jeremie/ANTLR/cs.g:584:2: a= expression
+			// /Users/jeremie/ANTLR/cs.g:584:44: (a= expression )
+			// /Users/jeremie/ANTLR/cs.g:585:2: a= expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16335,7 +16615,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "global_attributes"
-	// /Users/jeremie/ANTLR/cs.g:589:1: global_attributes returns [UnknownNode t] : ( global_attribute )+ ;
+	// /Users/jeremie/ANTLR/cs.g:590:1: global_attributes returns [UnknownNode t] : ( global_attribute )+ ;
 	public final csParser.global_attributes_return global_attributes() throws RecognitionException {
 		csParser.global_attributes_return retval = new csParser.global_attributes_return();
 		retval.start = input.LT(1);
@@ -16349,13 +16629,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 133) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:590:37: ( ( global_attribute )+ )
-			// /Users/jeremie/ANTLR/cs.g:591:9: ( global_attribute )+
+			// /Users/jeremie/ANTLR/cs.g:591:37: ( ( global_attribute )+ )
+			// /Users/jeremie/ANTLR/cs.g:592:9: ( global_attribute )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:591:9: ( global_attribute )+
+			// /Users/jeremie/ANTLR/cs.g:592:9: ( global_attribute )+
 			int cnt139=0;
 			loop139:
 			while (true) {
@@ -16375,7 +16655,7 @@ public class csParser extends Parser {
 
 				switch (alt139) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:591:9: global_attribute
+					// /Users/jeremie/ANTLR/cs.g:592:9: global_attribute
 					{
 					pushFollow(FOLLOW_global_attribute_in_global_attributes5340);
 					global_attribute393=global_attribute();
@@ -16428,7 +16708,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "global_attribute"
-	// /Users/jeremie/ANTLR/cs.g:593:1: global_attribute : '[' global_attribute_target_specifier attribute_list ( ',' )? ']' ;
+	// /Users/jeremie/ANTLR/cs.g:594:1: global_attribute : '[' global_attribute_target_specifier attribute_list ( ',' )? ']' ;
 	public final csParser.global_attribute_return global_attribute() throws RecognitionException {
 		csParser.global_attribute_return retval = new csParser.global_attribute_return();
 		retval.start = input.LT(1);
@@ -16449,8 +16729,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 134) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:593:17: ( '[' global_attribute_target_specifier attribute_list ( ',' )? ']' )
-			// /Users/jeremie/ANTLR/cs.g:594:2: '[' global_attribute_target_specifier attribute_list ( ',' )? ']'
+			// /Users/jeremie/ANTLR/cs.g:594:17: ( '[' global_attribute_target_specifier attribute_list ( ',' )? ']' )
+			// /Users/jeremie/ANTLR/cs.g:595:2: '[' global_attribute_target_specifier attribute_list ( ',' )? ']'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16473,7 +16753,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_list396.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:594:61: ( ',' )?
+			// /Users/jeremie/ANTLR/cs.g:595:61: ( ',' )?
 			int alt140=2;
 			int LA140_0 = input.LA(1);
 			if ( (LA140_0==74) ) {
@@ -16481,7 +16761,7 @@ public class csParser extends Parser {
 			}
 			switch (alt140) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:594:61: ','
+					// /Users/jeremie/ANTLR/cs.g:595:61: ','
 					{
 					char_literal397=(Token)match(input,74,FOLLOW_74_in_global_attribute5370); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16532,7 +16812,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "global_attribute_target_specifier"
-	// /Users/jeremie/ANTLR/cs.g:595:1: global_attribute_target_specifier : global_attribute_target ':' ;
+	// /Users/jeremie/ANTLR/cs.g:596:1: global_attribute_target_specifier : global_attribute_target ':' ;
 	public final csParser.global_attribute_target_specifier_return global_attribute_target_specifier() throws RecognitionException {
 		csParser.global_attribute_target_specifier_return retval = new csParser.global_attribute_target_specifier_return();
 		retval.start = input.LT(1);
@@ -16548,8 +16828,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 135) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:595:34: ( global_attribute_target ':' )
-			// /Users/jeremie/ANTLR/cs.g:596:2: global_attribute_target ':'
+			// /Users/jeremie/ANTLR/cs.g:596:34: ( global_attribute_target ':' )
+			// /Users/jeremie/ANTLR/cs.g:597:2: global_attribute_target ':'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16598,7 +16878,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "global_attribute_target"
-	// /Users/jeremie/ANTLR/cs.g:597:1: global_attribute_target : ( 'assembly' | 'module' );
+	// /Users/jeremie/ANTLR/cs.g:598:1: global_attribute_target : ( 'assembly' | 'module' );
 	public final csParser.global_attribute_target_return global_attribute_target() throws RecognitionException {
 		csParser.global_attribute_target_return retval = new csParser.global_attribute_target_return();
 		retval.start = input.LT(1);
@@ -16613,7 +16893,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 136) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:597:24: ( 'assembly' | 'module' )
+			// /Users/jeremie/ANTLR/cs.g:598:24: ( 'assembly' | 'module' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -16664,7 +16944,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attributes"
-	// /Users/jeremie/ANTLR/cs.g:599:1: attributes returns [UnknownNode t] : attribute_sections ;
+	// /Users/jeremie/ANTLR/cs.g:600:1: attributes returns [UnknownNode t] : attribute_sections ;
 	public final csParser.attributes_return attributes() throws RecognitionException {
 		csParser.attributes_return retval = new csParser.attributes_return();
 		retval.start = input.LT(1);
@@ -16678,8 +16958,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 137) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:600:37: ( attribute_sections )
-			// /Users/jeremie/ANTLR/cs.g:601:9: attribute_sections
+			// /Users/jeremie/ANTLR/cs.g:601:37: ( attribute_sections )
+			// /Users/jeremie/ANTLR/cs.g:602:9: attribute_sections
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16723,7 +17003,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute_sections"
-	// /Users/jeremie/ANTLR/cs.g:602:1: attribute_sections : ( attribute_section )+ ;
+	// /Users/jeremie/ANTLR/cs.g:603:1: attribute_sections : ( attribute_section )+ ;
 	public final csParser.attribute_sections_return attribute_sections() throws RecognitionException {
 		csParser.attribute_sections_return retval = new csParser.attribute_sections_return();
 		retval.start = input.LT(1);
@@ -16737,13 +17017,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 138) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:602:19: ( ( attribute_section )+ )
-			// /Users/jeremie/ANTLR/cs.g:603:2: ( attribute_section )+
+			// /Users/jeremie/ANTLR/cs.g:603:19: ( ( attribute_section )+ )
+			// /Users/jeremie/ANTLR/cs.g:604:2: ( attribute_section )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:603:2: ( attribute_section )+
+			// /Users/jeremie/ANTLR/cs.g:604:2: ( attribute_section )+
 			int cnt141=0;
 			loop141:
 			while (true) {
@@ -16755,7 +17035,7 @@ public class csParser extends Parser {
 
 				switch (alt141) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:603:2: attribute_section
+					// /Users/jeremie/ANTLR/cs.g:604:2: attribute_section
 					{
 					pushFollow(FOLLOW_attribute_section_in_attribute_sections5435);
 					attribute_section403=attribute_section();
@@ -16807,7 +17087,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute_section"
-	// /Users/jeremie/ANTLR/cs.g:604:1: attribute_section : '[' ( attribute_target_specifier )? attribute_list ( ',' )? ']' ;
+	// /Users/jeremie/ANTLR/cs.g:605:1: attribute_section : '[' ( attribute_target_specifier )? attribute_list ( ',' )? ']' ;
 	public final csParser.attribute_section_return attribute_section() throws RecognitionException {
 		csParser.attribute_section_return retval = new csParser.attribute_section_return();
 		retval.start = input.LT(1);
@@ -16828,8 +17108,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 139) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:604:18: ( '[' ( attribute_target_specifier )? attribute_list ( ',' )? ']' )
-			// /Users/jeremie/ANTLR/cs.g:605:2: '[' ( attribute_target_specifier )? attribute_list ( ',' )? ']'
+			// /Users/jeremie/ANTLR/cs.g:605:18: ( '[' ( attribute_target_specifier )? attribute_list ( ',' )? ']' )
+			// /Users/jeremie/ANTLR/cs.g:606:2: '[' ( attribute_target_specifier )? attribute_list ( ',' )? ']'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16840,7 +17120,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal404_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:605:8: ( attribute_target_specifier )?
+			// /Users/jeremie/ANTLR/cs.g:606:8: ( attribute_target_specifier )?
 			int alt142=2;
 			int LA142_0 = input.LA(1);
 			if ( (LA142_0==126||LA142_0==147||LA142_0==157||LA142_0==162||LA142_0==183) ) {
@@ -16854,7 +17134,7 @@ public class csParser extends Parser {
 			}
 			switch (alt142) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:605:8: attribute_target_specifier
+					// /Users/jeremie/ANTLR/cs.g:606:8: attribute_target_specifier
 					{
 					pushFollow(FOLLOW_attribute_target_specifier_in_attribute_section5449);
 					attribute_target_specifier405=attribute_target_specifier();
@@ -16873,7 +17153,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute_list406.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:605:55: ( ',' )?
+			// /Users/jeremie/ANTLR/cs.g:606:55: ( ',' )?
 			int alt143=2;
 			int LA143_0 = input.LA(1);
 			if ( (LA143_0==74) ) {
@@ -16881,7 +17161,7 @@ public class csParser extends Parser {
 			}
 			switch (alt143) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:605:55: ','
+					// /Users/jeremie/ANTLR/cs.g:606:55: ','
 					{
 					char_literal407=(Token)match(input,74,FOLLOW_74_in_attribute_section5458); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16932,7 +17212,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute_target_specifier"
-	// /Users/jeremie/ANTLR/cs.g:606:1: attribute_target_specifier : attribute_target ':' ;
+	// /Users/jeremie/ANTLR/cs.g:607:1: attribute_target_specifier : attribute_target ':' ;
 	public final csParser.attribute_target_specifier_return attribute_target_specifier() throws RecognitionException {
 		csParser.attribute_target_specifier_return retval = new csParser.attribute_target_specifier_return();
 		retval.start = input.LT(1);
@@ -16948,8 +17228,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 140) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:606:27: ( attribute_target ':' )
-			// /Users/jeremie/ANTLR/cs.g:607:2: attribute_target ':'
+			// /Users/jeremie/ANTLR/cs.g:607:27: ( attribute_target ':' )
+			// /Users/jeremie/ANTLR/cs.g:608:2: attribute_target ':'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16998,7 +17278,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute_target"
-	// /Users/jeremie/ANTLR/cs.g:608:1: attribute_target : ( 'field' | 'event' | 'method' | 'param' | 'property' | 'return' | 'type' );
+	// /Users/jeremie/ANTLR/cs.g:609:1: attribute_target : ( 'field' | 'event' | 'method' | 'param' | 'property' | 'return' | 'type' );
 	public final csParser.attribute_target_return attribute_target() throws RecognitionException {
 		csParser.attribute_target_return retval = new csParser.attribute_target_return();
 		retval.start = input.LT(1);
@@ -17013,7 +17293,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 141) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:608:17: ( 'field' | 'event' | 'method' | 'param' | 'property' | 'return' | 'type' )
+			// /Users/jeremie/ANTLR/cs.g:609:17: ( 'field' | 'event' | 'method' | 'param' | 'property' | 'return' | 'type' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -17063,7 +17343,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute_list"
-	// /Users/jeremie/ANTLR/cs.g:610:1: attribute_list : attribute ( ',' attribute )* ;
+	// /Users/jeremie/ANTLR/cs.g:611:1: attribute_list : attribute ( ',' attribute )* ;
 	public final csParser.attribute_list_return attribute_list() throws RecognitionException {
 		csParser.attribute_list_return retval = new csParser.attribute_list_return();
 		retval.start = input.LT(1);
@@ -17080,8 +17360,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 142) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:610:15: ( attribute ( ',' attribute )* )
-			// /Users/jeremie/ANTLR/cs.g:611:2: attribute ( ',' attribute )*
+			// /Users/jeremie/ANTLR/cs.g:611:15: ( attribute ( ',' attribute )* )
+			// /Users/jeremie/ANTLR/cs.g:612:2: attribute ( ',' attribute )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17092,7 +17372,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, attribute412.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:611:12: ( ',' attribute )*
+			// /Users/jeremie/ANTLR/cs.g:612:12: ( ',' attribute )*
 			loop144:
 			while (true) {
 				int alt144=2;
@@ -17107,7 +17387,7 @@ public class csParser extends Parser {
 
 				switch (alt144) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:611:13: ',' attribute
+					// /Users/jeremie/ANTLR/cs.g:612:13: ',' attribute
 					{
 					char_literal413=(Token)match(input,74,FOLLOW_74_in_attribute_list5521); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -17161,7 +17441,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute"
-	// /Users/jeremie/ANTLR/cs.g:612:1: attribute : type_name ( attribute_arguments )? ;
+	// /Users/jeremie/ANTLR/cs.g:613:1: attribute : type_name ( attribute_arguments )? ;
 	public final csParser.attribute_return attribute() throws RecognitionException {
 		csParser.attribute_return retval = new csParser.attribute_return();
 		retval.start = input.LT(1);
@@ -17176,8 +17456,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 143) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:612:10: ( type_name ( attribute_arguments )? )
-			// /Users/jeremie/ANTLR/cs.g:613:2: type_name ( attribute_arguments )?
+			// /Users/jeremie/ANTLR/cs.g:613:10: ( type_name ( attribute_arguments )? )
+			// /Users/jeremie/ANTLR/cs.g:614:2: type_name ( attribute_arguments )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17188,7 +17468,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_name415.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:613:14: ( attribute_arguments )?
+			// /Users/jeremie/ANTLR/cs.g:614:14: ( attribute_arguments )?
 			int alt145=2;
 			int LA145_0 = input.LA(1);
 			if ( (LA145_0==68) ) {
@@ -17196,7 +17476,7 @@ public class csParser extends Parser {
 			}
 			switch (alt145) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:613:14: attribute_arguments
+					// /Users/jeremie/ANTLR/cs.g:614:14: attribute_arguments
 					{
 					pushFollow(FOLLOW_attribute_arguments_in_attribute5539);
 					attribute_arguments416=attribute_arguments();
@@ -17241,7 +17521,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute_arguments"
-	// /Users/jeremie/ANTLR/cs.g:615:1: attribute_arguments : '(' ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' ) ;
+	// /Users/jeremie/ANTLR/cs.g:616:1: attribute_arguments : '(' ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' ) ;
 	public final csParser.attribute_arguments_return attribute_arguments() throws RecognitionException {
 		csParser.attribute_arguments_return retval = new csParser.attribute_arguments_return();
 		retval.start = input.LT(1);
@@ -17265,8 +17545,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 144) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:615:20: ( '(' ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' ) )
-			// /Users/jeremie/ANTLR/cs.g:616:2: '(' ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' )
+			// /Users/jeremie/ANTLR/cs.g:616:20: ( '(' ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' ) )
+			// /Users/jeremie/ANTLR/cs.g:617:2: '(' ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17277,7 +17557,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal417_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:616:8: ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' )
+			// /Users/jeremie/ANTLR/cs.g:617:8: ( ')' | ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')' )
 			int alt147=2;
 			int LA147_0 = input.LA(1);
 			if ( (LA147_0==RPAREN) ) {
@@ -17296,7 +17576,7 @@ public class csParser extends Parser {
 
 			switch (alt147) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:616:9: ')'
+					// /Users/jeremie/ANTLR/cs.g:617:9: ')'
 					{
 					char_literal418=(Token)match(input,RPAREN,FOLLOW_RPAREN_in_attribute_arguments5555); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -17307,10 +17587,10 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:617:8: ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')'
+					// /Users/jeremie/ANTLR/cs.g:618:8: ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* ) ')'
 					{
-					// /Users/jeremie/ANTLR/cs.g:617:8: ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* )
-					// /Users/jeremie/ANTLR/cs.g:617:9: positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )*
+					// /Users/jeremie/ANTLR/cs.g:618:8: ( positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )* )
+					// /Users/jeremie/ANTLR/cs.g:618:9: positional_argument ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )*
 					{
 					pushFollow(FOLLOW_positional_argument_in_attribute_arguments5575);
 					positional_argument419=positional_argument();
@@ -17318,7 +17598,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, positional_argument419.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:617:31: ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )*
+					// /Users/jeremie/ANTLR/cs.g:618:31: ( ( ',' identifier '=' )=> named_argument | ',' positional_argument )*
 					loop146:
 					while (true) {
 						int alt146=3;
@@ -17332,7 +17612,7 @@ public class csParser extends Parser {
 
 						switch (alt146) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:617:32: ( ',' identifier '=' )=> named_argument
+							// /Users/jeremie/ANTLR/cs.g:618:32: ( ',' identifier '=' )=> named_argument
 							{
 							pushFollow(FOLLOW_named_argument_in_attribute_arguments5594);
 							named_argument420=named_argument();
@@ -17343,7 +17623,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:618:15: ',' positional_argument
+							// /Users/jeremie/ANTLR/cs.g:619:15: ',' positional_argument
 							{
 							char_literal421=(Token)match(input,74,FOLLOW_74_in_attribute_arguments5610); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17410,7 +17690,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "positional_argument_list"
-	// /Users/jeremie/ANTLR/cs.g:621:1: positional_argument_list : positional_argument ( ',' positional_argument )* ;
+	// /Users/jeremie/ANTLR/cs.g:622:1: positional_argument_list : positional_argument ( ',' positional_argument )* ;
 	public final csParser.positional_argument_list_return positional_argument_list() throws RecognitionException {
 		csParser.positional_argument_list_return retval = new csParser.positional_argument_list_return();
 		retval.start = input.LT(1);
@@ -17427,8 +17707,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 145) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:621:25: ( positional_argument ( ',' positional_argument )* )
-			// /Users/jeremie/ANTLR/cs.g:622:2: positional_argument ( ',' positional_argument )*
+			// /Users/jeremie/ANTLR/cs.g:622:25: ( positional_argument ( ',' positional_argument )* )
+			// /Users/jeremie/ANTLR/cs.g:623:2: positional_argument ( ',' positional_argument )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17439,7 +17719,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, positional_argument424.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:622:22: ( ',' positional_argument )*
+			// /Users/jeremie/ANTLR/cs.g:623:22: ( ',' positional_argument )*
 			loop148:
 			while (true) {
 				int alt148=2;
@@ -17450,7 +17730,7 @@ public class csParser extends Parser {
 
 				switch (alt148) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:622:23: ',' positional_argument
+					// /Users/jeremie/ANTLR/cs.g:623:23: ',' positional_argument
 					{
 					char_literal425=(Token)match(input,74,FOLLOW_74_in_positional_argument_list5640); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -17504,7 +17784,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "positional_argument"
-	// /Users/jeremie/ANTLR/cs.g:623:1: positional_argument : attribute_argument_expression ;
+	// /Users/jeremie/ANTLR/cs.g:624:1: positional_argument : attribute_argument_expression ;
 	public final csParser.positional_argument_return positional_argument() throws RecognitionException {
 		csParser.positional_argument_return retval = new csParser.positional_argument_return();
 		retval.start = input.LT(1);
@@ -17518,8 +17798,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 146) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:623:20: ( attribute_argument_expression )
-			// /Users/jeremie/ANTLR/cs.g:624:2: attribute_argument_expression
+			// /Users/jeremie/ANTLR/cs.g:624:20: ( attribute_argument_expression )
+			// /Users/jeremie/ANTLR/cs.g:625:2: attribute_argument_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17562,7 +17842,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "named_argument_list"
-	// /Users/jeremie/ANTLR/cs.g:625:1: named_argument_list : named_argument ( ',' named_argument )* ;
+	// /Users/jeremie/ANTLR/cs.g:626:1: named_argument_list : named_argument ( ',' named_argument )* ;
 	public final csParser.named_argument_list_return named_argument_list() throws RecognitionException {
 		csParser.named_argument_list_return retval = new csParser.named_argument_list_return();
 		retval.start = input.LT(1);
@@ -17579,8 +17859,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 147) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:625:20: ( named_argument ( ',' named_argument )* )
-			// /Users/jeremie/ANTLR/cs.g:626:2: named_argument ( ',' named_argument )*
+			// /Users/jeremie/ANTLR/cs.g:626:20: ( named_argument ( ',' named_argument )* )
+			// /Users/jeremie/ANTLR/cs.g:627:2: named_argument ( ',' named_argument )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17591,7 +17871,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, named_argument428.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:626:17: ( ',' named_argument )*
+			// /Users/jeremie/ANTLR/cs.g:627:17: ( ',' named_argument )*
 			loop149:
 			while (true) {
 				int alt149=2;
@@ -17602,7 +17882,7 @@ public class csParser extends Parser {
 
 				switch (alt149) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:626:18: ',' named_argument
+					// /Users/jeremie/ANTLR/cs.g:627:18: ',' named_argument
 					{
 					char_literal429=(Token)match(input,74,FOLLOW_74_in_named_argument_list5665); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -17656,7 +17936,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "named_argument"
-	// /Users/jeremie/ANTLR/cs.g:627:1: named_argument : identifier '=' attribute_argument_expression ;
+	// /Users/jeremie/ANTLR/cs.g:628:1: named_argument : identifier '=' attribute_argument_expression ;
 	public final csParser.named_argument_return named_argument() throws RecognitionException {
 		csParser.named_argument_return retval = new csParser.named_argument_return();
 		retval.start = input.LT(1);
@@ -17673,8 +17953,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 148) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:627:15: ( identifier '=' attribute_argument_expression )
-			// /Users/jeremie/ANTLR/cs.g:628:2: identifier '=' attribute_argument_expression
+			// /Users/jeremie/ANTLR/cs.g:628:15: ( identifier '=' attribute_argument_expression )
+			// /Users/jeremie/ANTLR/cs.g:629:2: identifier '=' attribute_argument_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17729,7 +18009,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "attribute_argument_expression"
-	// /Users/jeremie/ANTLR/cs.g:629:1: attribute_argument_expression : expression ;
+	// /Users/jeremie/ANTLR/cs.g:630:1: attribute_argument_expression : expression ;
 	public final csParser.attribute_argument_expression_return attribute_argument_expression() throws RecognitionException {
 		csParser.attribute_argument_expression_return retval = new csParser.attribute_argument_expression_return();
 		retval.start = input.LT(1);
@@ -17743,8 +18023,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 149) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:629:30: ( expression )
-			// /Users/jeremie/ANTLR/cs.g:630:2: expression
+			// /Users/jeremie/ANTLR/cs.g:630:30: ( expression )
+			// /Users/jeremie/ANTLR/cs.g:631:2: expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17788,7 +18068,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "class_declaration"
-	// /Users/jeremie/ANTLR/cs.g:636:1: class_declaration returns [class_declaration t] : 'class' a= type_or_generic (b= class_base )? (c= type_parameter_constraints_clauses )? d= class_body ( ';' )? ;
+	// /Users/jeremie/ANTLR/cs.g:637:1: class_declaration returns [class_declaration t] : 'class' a= type_or_generic (b= class_base )? (c= type_parameter_constraints_clauses )? d= class_body ( ';' )? ;
 	public final csParser.class_declaration_return class_declaration() throws RecognitionException {
 		csParser.class_declaration_return retval = new csParser.class_declaration_return();
 		retval.start = input.LT(1);
@@ -17809,8 +18089,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 150) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:637:32: ( 'class' a= type_or_generic (b= class_base )? (c= type_parameter_constraints_clauses )? d= class_body ( ';' )? )
-			// /Users/jeremie/ANTLR/cs.g:638:9: 'class' a= type_or_generic (b= class_base )? (c= type_parameter_constraints_clauses )? d= class_body ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:638:32: ( 'class' a= type_or_generic (b= class_base )? (c= type_parameter_constraints_clauses )? d= class_body ( ';' )? )
+			// /Users/jeremie/ANTLR/cs.g:639:9: 'class' a= type_or_generic (b= class_base )? (c= type_parameter_constraints_clauses )? d= class_body ( ';' )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17827,7 +18107,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:638:39: (b= class_base )?
+			// /Users/jeremie/ANTLR/cs.g:639:39: (b= class_base )?
 			int alt150=2;
 			int LA150_0 = input.LA(1);
 			if ( (LA150_0==79) ) {
@@ -17835,7 +18115,7 @@ public class csParser extends Parser {
 			}
 			switch (alt150) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:638:39: b= class_base
+					// /Users/jeremie/ANTLR/cs.g:639:39: b= class_base
 					{
 					pushFollow(FOLLOW_class_base_in_class_declaration5737);
 					b=class_base();
@@ -17848,7 +18128,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:638:55: (c= type_parameter_constraints_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:639:55: (c= type_parameter_constraints_clauses )?
 			int alt151=2;
 			int LA151_0 = input.LA(1);
 			if ( (LA151_0==194) ) {
@@ -17856,7 +18136,7 @@ public class csParser extends Parser {
 			}
 			switch (alt151) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:638:55: c= type_parameter_constraints_clauses
+					// /Users/jeremie/ANTLR/cs.g:639:55: c= type_parameter_constraints_clauses
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_class_declaration5744);
 					c=type_parameter_constraints_clauses();
@@ -17875,7 +18155,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, d.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:638:109: ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:639:109: ( ';' )?
 			int alt152=2;
 			int LA152_0 = input.LA(1);
 			if ( (LA152_0==SEMI) ) {
@@ -17883,7 +18163,7 @@ public class csParser extends Parser {
 			}
 			switch (alt152) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:638:109: ';'
+					// /Users/jeremie/ANTLR/cs.g:639:109: ';'
 					{
 					char_literal436=(Token)match(input,SEMI,FOLLOW_SEMI_in_class_declaration5755); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -17931,7 +18211,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "class_base"
-	// /Users/jeremie/ANTLR/cs.g:640:1: class_base returns [UnknownNode t] : ':' interface_type_list ;
+	// /Users/jeremie/ANTLR/cs.g:641:1: class_base returns [UnknownNode t] : ':' interface_type_list ;
 	public final csParser.class_base_return class_base() throws RecognitionException {
 		csParser.class_base_return retval = new csParser.class_base_return();
 		retval.start = input.LT(1);
@@ -17947,8 +18227,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 151) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:641:37: ( ':' interface_type_list )
-			// /Users/jeremie/ANTLR/cs.g:644:9: ':' interface_type_list
+			// /Users/jeremie/ANTLR/cs.g:642:37: ( ':' interface_type_list )
+			// /Users/jeremie/ANTLR/cs.g:645:9: ':' interface_type_list
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17998,7 +18278,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_type_list"
-	// /Users/jeremie/ANTLR/cs.g:647:1: interface_type_list : type ( ',' type )* ;
+	// /Users/jeremie/ANTLR/cs.g:648:1: interface_type_list : type ( ',' type )* ;
 	public final csParser.interface_type_list_return interface_type_list() throws RecognitionException {
 		csParser.interface_type_list_return retval = new csParser.interface_type_list_return();
 		retval.start = input.LT(1);
@@ -18015,8 +18295,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 152) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:647:20: ( type ( ',' type )* )
-			// /Users/jeremie/ANTLR/cs.g:648:2: type ( ',' type )*
+			// /Users/jeremie/ANTLR/cs.g:648:20: ( type ( ',' type )* )
+			// /Users/jeremie/ANTLR/cs.g:649:2: type ( ',' type )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18027,7 +18307,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type439.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:648:7: ( ',' type )*
+			// /Users/jeremie/ANTLR/cs.g:649:7: ( ',' type )*
 			loop153:
 			while (true) {
 				int alt153=2;
@@ -18038,7 +18318,7 @@ public class csParser extends Parser {
 
 				switch (alt153) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:648:8: ',' type
+					// /Users/jeremie/ANTLR/cs.g:649:8: ',' type
 					{
 					char_literal440=(Token)match(input,74,FOLLOW_74_in_interface_type_list5828); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -18093,7 +18373,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "class_body"
-	// /Users/jeremie/ANTLR/cs.g:650:1: class_body returns [class_member_declarations t] : '{' (a= class_member_declarations )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:651:1: class_body returns [class_member_declarations t] : '{' (a= class_member_declarations )? '}' ;
 	public final csParser.class_body_return class_body() throws RecognitionException {
 		csParser.class_body_return retval = new csParser.class_body_return();
 		retval.start = input.LT(1);
@@ -18111,8 +18391,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 153) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:651:32: ( '{' (a= class_member_declarations )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:652:9: '{' (a= class_member_declarations )? '}'
+			// /Users/jeremie/ANTLR/cs.g:652:32: ( '{' (a= class_member_declarations )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:653:9: '{' (a= class_member_declarations )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18123,7 +18403,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal442_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:652:16: (a= class_member_declarations )?
+			// /Users/jeremie/ANTLR/cs.g:653:16: (a= class_member_declarations )?
 			int alt154=2;
 			int LA154_0 = input.LA(1);
 			if ( (LA154_0==ENUM||LA154_0==IDENTIFIER||LA154_0==91||(LA154_0 >= 95 && LA154_0 <= 98)||(LA154_0 >= 100 && LA154_0 <= 101)||LA154_0==103||(LA154_0 >= 105 && LA154_0 <= 106)||LA154_0==109||(LA154_0 >= 111 && LA154_0 <= 112)||LA154_0==114||(LA154_0 >= 116 && LA154_0 <= 117)||(LA154_0 >= 119 && LA154_0 <= 120)||(LA154_0 >= 122 && LA154_0 <= 126)||LA154_0==129||LA154_0==132||(LA154_0 >= 135 && LA154_0 <= 136)||(LA154_0 >= 138 && LA154_0 <= 141)||(LA154_0 >= 143 && LA154_0 <= 144)||(LA154_0 >= 146 && LA154_0 <= 148)||(LA154_0 >= 150 && LA154_0 <= 152)||LA154_0==154||(LA154_0 >= 156 && LA154_0 <= 157)||(LA154_0 >= 159 && LA154_0 <= 165)||LA154_0==167||(LA154_0 >= 169 && LA154_0 <= 173)||(LA154_0 >= 176 && LA154_0 <= 178)||LA154_0==183||(LA154_0 >= 185 && LA154_0 <= 186)||(LA154_0 >= 188 && LA154_0 <= 194)||LA154_0==196||LA154_0==202) ) {
@@ -18131,7 +18411,7 @@ public class csParser extends Parser {
 			}
 			switch (alt154) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:652:16: a= class_member_declarations
+					// /Users/jeremie/ANTLR/cs.g:653:16: a= class_member_declarations
 					{
 					pushFollow(FOLLOW_class_member_declarations_in_class_body5868);
 					a=class_member_declarations();
@@ -18185,7 +18465,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "class_member_declarations"
-	// /Users/jeremie/ANTLR/cs.g:653:1: class_member_declarations returns [class_member_declarations t] : (a= class_member_declaration )+ ;
+	// /Users/jeremie/ANTLR/cs.g:654:1: class_member_declarations returns [class_member_declarations t] : (a= class_member_declaration )+ ;
 	public final csParser.class_member_declarations_return class_member_declarations() throws RecognitionException {
 		csParser.class_member_declarations_return retval = new csParser.class_member_declarations_return();
 		retval.start = input.LT(1);
@@ -18200,13 +18480,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 154) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:655:32: ( (a= class_member_declaration )+ )
-			// /Users/jeremie/ANTLR/cs.g:656:9: (a= class_member_declaration )+
+			// /Users/jeremie/ANTLR/cs.g:656:32: ( (a= class_member_declaration )+ )
+			// /Users/jeremie/ANTLR/cs.g:657:9: (a= class_member_declaration )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:656:9: (a= class_member_declaration )+
+			// /Users/jeremie/ANTLR/cs.g:657:9: (a= class_member_declaration )+
 			int cnt155=0;
 			loop155:
 			while (true) {
@@ -18218,7 +18498,7 @@ public class csParser extends Parser {
 
 				switch (alt155) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:656:10: a= class_member_declaration
+					// /Users/jeremie/ANTLR/cs.g:657:10: a= class_member_declaration
 					{
 					pushFollow(FOLLOW_class_member_declaration_in_class_member_declarations5909);
 					a=class_member_declaration();
@@ -18272,7 +18552,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constant_declaration"
-	// /Users/jeremie/ANTLR/cs.g:660:1: constant_declaration : 'const' type constant_declarators ';' ;
+	// /Users/jeremie/ANTLR/cs.g:661:1: constant_declaration : 'const' type constant_declarators ';' ;
 	public final csParser.constant_declaration_return constant_declaration() throws RecognitionException {
 		csParser.constant_declaration_return retval = new csParser.constant_declaration_return();
 		retval.start = input.LT(1);
@@ -18291,8 +18571,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 155) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:660:21: ( 'const' type constant_declarators ';' )
-			// /Users/jeremie/ANTLR/cs.g:661:2: 'const' type constant_declarators ';'
+			// /Users/jeremie/ANTLR/cs.g:661:21: ( 'const' type constant_declarators ';' )
+			// /Users/jeremie/ANTLR/cs.g:662:2: 'const' type constant_declarators ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18354,7 +18634,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constant_declarators"
-	// /Users/jeremie/ANTLR/cs.g:662:1: constant_declarators returns [UnknownNode t] : constant_declarator ( ',' constant_declarator )* ;
+	// /Users/jeremie/ANTLR/cs.g:663:1: constant_declarators returns [UnknownNode t] : constant_declarator ( ',' constant_declarator )* ;
 	public final csParser.constant_declarators_return constant_declarators() throws RecognitionException {
 		csParser.constant_declarators_return retval = new csParser.constant_declarators_return();
 		retval.start = input.LT(1);
@@ -18371,8 +18651,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 156) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:663:37: ( constant_declarator ( ',' constant_declarator )* )
-			// /Users/jeremie/ANTLR/cs.g:664:9: constant_declarator ( ',' constant_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:664:37: ( constant_declarator ( ',' constant_declarator )* )
+			// /Users/jeremie/ANTLR/cs.g:665:9: constant_declarator ( ',' constant_declarator )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18383,7 +18663,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declarator448.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:664:29: ( ',' constant_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:665:29: ( ',' constant_declarator )*
 			loop156:
 			while (true) {
 				int alt156=2;
@@ -18394,7 +18674,7 @@ public class csParser extends Parser {
 
 				switch (alt156) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:664:30: ',' constant_declarator
+					// /Users/jeremie/ANTLR/cs.g:665:30: ',' constant_declarator
 					{
 					char_literal449=(Token)match(input,74,FOLLOW_74_in_constant_declarators5974); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -18449,7 +18729,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constant_declarator"
-	// /Users/jeremie/ANTLR/cs.g:666:1: constant_declarator : identifier ( '=' constant_expression )? ;
+	// /Users/jeremie/ANTLR/cs.g:667:1: constant_declarator : identifier ( '=' constant_expression )? ;
 	public final csParser.constant_declarator_return constant_declarator() throws RecognitionException {
 		csParser.constant_declarator_return retval = new csParser.constant_declarator_return();
 		retval.start = input.LT(1);
@@ -18466,8 +18746,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 157) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:666:20: ( identifier ( '=' constant_expression )? )
-			// /Users/jeremie/ANTLR/cs.g:667:2: identifier ( '=' constant_expression )?
+			// /Users/jeremie/ANTLR/cs.g:667:20: ( identifier ( '=' constant_expression )? )
+			// /Users/jeremie/ANTLR/cs.g:668:2: identifier ( '=' constant_expression )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18478,7 +18758,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier451.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:667:15: ( '=' constant_expression )?
+			// /Users/jeremie/ANTLR/cs.g:668:15: ( '=' constant_expression )?
 			int alt157=2;
 			int LA157_0 = input.LA(1);
 			if ( (LA157_0==85) ) {
@@ -18486,7 +18766,7 @@ public class csParser extends Parser {
 			}
 			switch (alt157) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:667:16: '=' constant_expression
+					// /Users/jeremie/ANTLR/cs.g:668:16: '=' constant_expression
 					{
 					char_literal452=(Token)match(input,85,FOLLOW_85_in_constant_declarator5992); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -18537,7 +18817,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constant_expression"
-	// /Users/jeremie/ANTLR/cs.g:668:1: constant_expression : expression ;
+	// /Users/jeremie/ANTLR/cs.g:669:1: constant_expression : expression ;
 	public final csParser.constant_expression_return constant_expression() throws RecognitionException {
 		csParser.constant_expression_return retval = new csParser.constant_expression_return();
 		retval.start = input.LT(1);
@@ -18551,8 +18831,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 158) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:668:20: ( expression )
-			// /Users/jeremie/ANTLR/cs.g:669:2: expression
+			// /Users/jeremie/ANTLR/cs.g:669:20: ( expression )
+			// /Users/jeremie/ANTLR/cs.g:670:2: expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18596,7 +18876,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "field_declaration"
-	// /Users/jeremie/ANTLR/cs.g:672:1: field_declaration returns [variable_declarators t] : a= variable_declarators ';' ;
+	// /Users/jeremie/ANTLR/cs.g:673:1: field_declaration returns [variable_declarators t] : a= variable_declarators ';' ;
 	public final csParser.field_declaration_return field_declaration() throws RecognitionException {
 		csParser.field_declaration_return retval = new csParser.field_declaration_return();
 		retval.start = input.LT(1);
@@ -18612,8 +18892,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 159) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:672:51: (a= variable_declarators ';' )
-			// /Users/jeremie/ANTLR/cs.g:673:2: a= variable_declarators ';'
+			// /Users/jeremie/ANTLR/cs.g:673:51: (a= variable_declarators ';' )
+			// /Users/jeremie/ANTLR/cs.g:674:2: a= variable_declarators ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18664,7 +18944,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variable_declarators"
-	// /Users/jeremie/ANTLR/cs.g:674:1: variable_declarators returns [variable_declarators t] : a= variable_declarator ( ',' a= variable_declarator )* ;
+	// /Users/jeremie/ANTLR/cs.g:675:1: variable_declarators returns [variable_declarators t] : a= variable_declarator ( ',' a= variable_declarator )* ;
 	public final csParser.variable_declarators_return variable_declarators() throws RecognitionException {
 		csParser.variable_declarators_return retval = new csParser.variable_declarators_return();
 		retval.start = input.LT(1);
@@ -18681,8 +18961,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 160) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:676:39: (a= variable_declarator ( ',' a= variable_declarator )* )
-			// /Users/jeremie/ANTLR/cs.g:677:2: a= variable_declarator ( ',' a= variable_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:677:39: (a= variable_declarator ( ',' a= variable_declarator )* )
+			// /Users/jeremie/ANTLR/cs.g:678:2: a= variable_declarator ( ',' a= variable_declarator )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18694,7 +18974,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res.add((a!=null?((csParser.variable_declarator_return)a).t:null));}
-			// /Users/jeremie/ANTLR/cs.g:677:41: ( ',' a= variable_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:678:41: ( ',' a= variable_declarator )*
 			loop158:
 			while (true) {
 				int alt158=2;
@@ -18705,7 +18985,7 @@ public class csParser extends Parser {
 
 				switch (alt158) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:677:42: ',' a= variable_declarator
+					// /Users/jeremie/ANTLR/cs.g:678:42: ',' a= variable_declarator
 					{
 					char_literal456=(Token)match(input,74,FOLLOW_74_in_variable_declarators6063); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -18762,7 +19042,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variable_declarator"
-	// /Users/jeremie/ANTLR/cs.g:679:1: variable_declarator returns [variable_declarator t] : a= type_name ( '=' b= variable_initializer )? ;
+	// /Users/jeremie/ANTLR/cs.g:680:1: variable_declarator returns [variable_declarator t] : a= type_name ( '=' b= variable_initializer )? ;
 	public final csParser.variable_declarator_return variable_declarator() throws RecognitionException {
 		csParser.variable_declarator_return retval = new csParser.variable_declarator_return();
 		retval.start = input.LT(1);
@@ -18779,8 +19059,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 161) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:680:32: (a= type_name ( '=' b= variable_initializer )? )
-			// /Users/jeremie/ANTLR/cs.g:681:2: a= type_name ( '=' b= variable_initializer )?
+			// /Users/jeremie/ANTLR/cs.g:681:32: (a= type_name ( '=' b= variable_initializer )? )
+			// /Users/jeremie/ANTLR/cs.g:682:2: a= type_name ( '=' b= variable_initializer )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18791,7 +19071,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:681:14: ( '=' b= variable_initializer )?
+			// /Users/jeremie/ANTLR/cs.g:682:14: ( '=' b= variable_initializer )?
 			int alt159=2;
 			int LA159_0 = input.LA(1);
 			if ( (LA159_0==85) ) {
@@ -18799,7 +19079,7 @@ public class csParser extends Parser {
 			}
 			switch (alt159) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:681:15: '=' b= variable_initializer
+					// /Users/jeremie/ANTLR/cs.g:682:15: '=' b= variable_initializer
 					{
 					char_literal457=(Token)match(input,85,FOLLOW_85_in_variable_declarator6100); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -18853,7 +19133,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "method_declaration"
-	// /Users/jeremie/ANTLR/cs.g:684:1: method_declaration returns [method_declaration t] : a= method_header b= method_body ;
+	// /Users/jeremie/ANTLR/cs.g:685:1: method_declaration returns [method_declaration t] : a= method_header b= method_body ;
 	public final csParser.method_declaration_return method_declaration() throws RecognitionException {
 		csParser.method_declaration_return retval = new csParser.method_declaration_return();
 		retval.start = input.LT(1);
@@ -18868,8 +19148,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 162) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:685:32: (a= method_header b= method_body )
-			// /Users/jeremie/ANTLR/cs.g:686:9: a= method_header b= method_body
+			// /Users/jeremie/ANTLR/cs.g:686:32: (a= method_header b= method_body )
+			// /Users/jeremie/ANTLR/cs.g:687:9: a= method_header b= method_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18921,7 +19201,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "method_header"
-	// /Users/jeremie/ANTLR/cs.g:687:1: method_header returns [method_header t] : a= member_name '(' (b= formal_parameter_list )? ')' (c= type_parameter_constraints_clauses )? ;
+	// /Users/jeremie/ANTLR/cs.g:688:1: method_header returns [method_header t] : a= member_name '(' (b= formal_parameter_list )? ')' (c= type_parameter_constraints_clauses )? ;
 	public final csParser.method_header_return method_header() throws RecognitionException {
 		csParser.method_header_return retval = new csParser.method_header_return();
 		retval.start = input.LT(1);
@@ -18941,8 +19221,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 163) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:688:32: (a= member_name '(' (b= formal_parameter_list )? ')' (c= type_parameter_constraints_clauses )? )
-			// /Users/jeremie/ANTLR/cs.g:689:9: a= member_name '(' (b= formal_parameter_list )? ')' (c= type_parameter_constraints_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:689:32: (a= member_name '(' (b= formal_parameter_list )? ')' (c= type_parameter_constraints_clauses )? )
+			// /Users/jeremie/ANTLR/cs.g:690:9: a= member_name '(' (b= formal_parameter_list )? ')' (c= type_parameter_constraints_clauses )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -18959,7 +19239,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal458_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:689:31: (b= formal_parameter_list )?
+			// /Users/jeremie/ANTLR/cs.g:690:31: (b= formal_parameter_list )?
 			int alt160=2;
 			int LA160_0 = input.LA(1);
 			if ( (LA160_0==IDENTIFIER||LA160_0==91||LA160_0==95||(LA160_0 >= 97 && LA160_0 <= 98)||(LA160_0 >= 100 && LA160_0 <= 101)||LA160_0==103||(LA160_0 >= 105 && LA160_0 <= 106)||LA160_0==109||LA160_0==114||LA160_0==117||(LA160_0 >= 119 && LA160_0 <= 120)||LA160_0==122||LA160_0==126||LA160_0==129||LA160_0==132||LA160_0==135||LA160_0==138||LA160_0==141||(LA160_0 >= 143 && LA160_0 <= 144)||(LA160_0 >= 146 && LA160_0 <= 148)||(LA160_0 >= 151 && LA160_0 <= 152)||(LA160_0 >= 154 && LA160_0 <= 155)||(LA160_0 >= 157 && LA160_0 <= 158)||LA160_0==160||LA160_0==162||(LA160_0 >= 166 && LA160_0 <= 167)||LA160_0==169||(LA160_0 >= 171 && LA160_0 <= 173)||LA160_0==177||LA160_0==180||LA160_0==183||(LA160_0 >= 185 && LA160_0 <= 186)||(LA160_0 >= 189 && LA160_0 <= 190)||LA160_0==192||LA160_0==194||LA160_0==196) ) {
@@ -18967,7 +19247,7 @@ public class csParser extends Parser {
 			}
 			switch (alt160) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:689:31: b= formal_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:690:31: b= formal_parameter_list
 					{
 					pushFollow(FOLLOW_formal_parameter_list_in_method_header6184);
 					b=formal_parameter_list();
@@ -18986,7 +19266,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal459_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:689:64: (c= type_parameter_constraints_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:690:64: (c= type_parameter_constraints_clauses )?
 			int alt161=2;
 			int LA161_0 = input.LA(1);
 			if ( (LA161_0==194) ) {
@@ -18994,7 +19274,7 @@ public class csParser extends Parser {
 			}
 			switch (alt161) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:689:64: c= type_parameter_constraints_clauses
+					// /Users/jeremie/ANTLR/cs.g:690:64: c= type_parameter_constraints_clauses
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_method_header6195);
 					c=type_parameter_constraints_clauses();
@@ -19042,7 +19322,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "method_body"
-	// /Users/jeremie/ANTLR/cs.g:691:1: method_body returns [block t] : a= block ;
+	// /Users/jeremie/ANTLR/cs.g:692:1: method_body returns [block t] : a= block ;
 	public final csParser.method_body_return method_body() throws RecognitionException {
 		csParser.method_body_return retval = new csParser.method_body_return();
 		retval.start = input.LT(1);
@@ -19056,8 +19336,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 164) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:691:30: (a= block )
-			// /Users/jeremie/ANTLR/cs.g:692:9: a= block
+			// /Users/jeremie/ANTLR/cs.g:692:30: (a= block )
+			// /Users/jeremie/ANTLR/cs.g:693:9: a= block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -19102,7 +19382,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "member_name"
-	// /Users/jeremie/ANTLR/cs.g:693:1: member_name returns [qid t] : a= qid ;
+	// /Users/jeremie/ANTLR/cs.g:694:1: member_name returns [qid t] : a= qid ;
 	public final csParser.member_name_return member_name() throws RecognitionException {
 		csParser.member_name_return retval = new csParser.member_name_return();
 		retval.start = input.LT(1);
@@ -19116,8 +19396,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 165) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:693:29: (a= qid )
-			// /Users/jeremie/ANTLR/cs.g:694:9: a= qid
+			// /Users/jeremie/ANTLR/cs.g:694:29: (a= qid )
+			// /Users/jeremie/ANTLR/cs.g:695:9: a= qid
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -19161,7 +19441,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "property_declaration"
-	// /Users/jeremie/ANTLR/cs.g:698:1: property_declaration : member_name '{' accessor_declarations '}' ;
+	// /Users/jeremie/ANTLR/cs.g:699:1: property_declaration : member_name '{' accessor_declarations '}' ;
 	public final csParser.property_declaration_return property_declaration() throws RecognitionException {
 		csParser.property_declaration_return retval = new csParser.property_declaration_return();
 		retval.start = input.LT(1);
@@ -19180,8 +19460,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 166) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:698:21: ( member_name '{' accessor_declarations '}' )
-			// /Users/jeremie/ANTLR/cs.g:699:2: member_name '{' accessor_declarations '}'
+			// /Users/jeremie/ANTLR/cs.g:699:21: ( member_name '{' accessor_declarations '}' )
+			// /Users/jeremie/ANTLR/cs.g:700:2: member_name '{' accessor_declarations '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -19242,7 +19522,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "accessor_declarations"
-	// /Users/jeremie/ANTLR/cs.g:700:1: accessor_declarations : ( attributes )? ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? ) ;
+	// /Users/jeremie/ANTLR/cs.g:701:1: accessor_declarations : ( attributes )? ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? ) ;
 	public final csParser.accessor_declarations_return accessor_declarations() throws RecognitionException {
 		csParser.accessor_declarations_return retval = new csParser.accessor_declarations_return();
 		retval.start = input.LT(1);
@@ -19262,13 +19542,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 167) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:700:22: ( ( attributes )? ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? ) )
-			// /Users/jeremie/ANTLR/cs.g:701:2: ( attributes )? ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? )
+			// /Users/jeremie/ANTLR/cs.g:701:22: ( ( attributes )? ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? ) )
+			// /Users/jeremie/ANTLR/cs.g:702:2: ( attributes )? ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:701:2: ( attributes )?
+			// /Users/jeremie/ANTLR/cs.g:702:2: ( attributes )?
 			int alt162=2;
 			int LA162_0 = input.LA(1);
 			if ( (LA162_0==91) ) {
@@ -19276,7 +19556,7 @@ public class csParser extends Parser {
 			}
 			switch (alt162) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:701:2: attributes
+					// /Users/jeremie/ANTLR/cs.g:702:2: attributes
 					{
 					pushFollow(FOLLOW_attributes_in_accessor_declarations6306);
 					attributes464=attributes();
@@ -19289,7 +19569,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:702:3: ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? )
+			// /Users/jeremie/ANTLR/cs.g:703:3: ( get_accessor_declaration ( attributes )? ( set_accessor_declaration )? | set_accessor_declaration ( attributes )? ( get_accessor_declaration )? )
 			int alt167=2;
 			switch ( input.LA(1) ) {
 			case 140:
@@ -19338,7 +19618,7 @@ public class csParser extends Parser {
 			}
 			switch (alt167) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:702:4: get_accessor_declaration ( attributes )? ( set_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:703:4: get_accessor_declaration ( attributes )? ( set_accessor_declaration )?
 					{
 					pushFollow(FOLLOW_get_accessor_declaration_in_accessor_declarations6312);
 					get_accessor_declaration465=get_accessor_declaration();
@@ -19346,7 +19626,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, get_accessor_declaration465.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:702:31: ( attributes )?
+					// /Users/jeremie/ANTLR/cs.g:703:31: ( attributes )?
 					int alt163=2;
 					int LA163_0 = input.LA(1);
 					if ( (LA163_0==91) ) {
@@ -19354,7 +19634,7 @@ public class csParser extends Parser {
 					}
 					switch (alt163) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:702:31: attributes
+							// /Users/jeremie/ANTLR/cs.g:703:31: attributes
 							{
 							pushFollow(FOLLOW_attributes_in_accessor_declarations6316);
 							attributes466=attributes();
@@ -19367,7 +19647,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:702:45: ( set_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:703:45: ( set_accessor_declaration )?
 					int alt164=2;
 					int LA164_0 = input.LA(1);
 					if ( (LA164_0==140||LA164_0==161||(LA164_0 >= 163 && LA164_0 <= 164)||LA164_0==172) ) {
@@ -19375,7 +19655,7 @@ public class csParser extends Parser {
 					}
 					switch (alt164) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:702:45: set_accessor_declaration
+							// /Users/jeremie/ANTLR/cs.g:703:45: set_accessor_declaration
 							{
 							pushFollow(FOLLOW_set_accessor_declaration_in_accessor_declarations6321);
 							set_accessor_declaration467=set_accessor_declaration();
@@ -19391,7 +19671,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:703:5: set_accessor_declaration ( attributes )? ( get_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:704:5: set_accessor_declaration ( attributes )? ( get_accessor_declaration )?
 					{
 					pushFollow(FOLLOW_set_accessor_declaration_in_accessor_declarations6328);
 					set_accessor_declaration468=set_accessor_declaration();
@@ -19399,7 +19679,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, set_accessor_declaration468.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:703:32: ( attributes )?
+					// /Users/jeremie/ANTLR/cs.g:704:32: ( attributes )?
 					int alt165=2;
 					int LA165_0 = input.LA(1);
 					if ( (LA165_0==91) ) {
@@ -19407,7 +19687,7 @@ public class csParser extends Parser {
 					}
 					switch (alt165) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:703:32: attributes
+							// /Users/jeremie/ANTLR/cs.g:704:32: attributes
 							{
 							pushFollow(FOLLOW_attributes_in_accessor_declarations6332);
 							attributes469=attributes();
@@ -19420,7 +19700,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:703:46: ( get_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:704:46: ( get_accessor_declaration )?
 					int alt166=2;
 					int LA166_0 = input.LA(1);
 					if ( (LA166_0==133||LA166_0==140||LA166_0==161||(LA166_0 >= 163 && LA166_0 <= 164)) ) {
@@ -19428,7 +19708,7 @@ public class csParser extends Parser {
 					}
 					switch (alt166) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:703:46: get_accessor_declaration
+							// /Users/jeremie/ANTLR/cs.g:704:46: get_accessor_declaration
 							{
 							pushFollow(FOLLOW_get_accessor_declaration_in_accessor_declarations6337);
 							get_accessor_declaration470=get_accessor_declaration();
@@ -19478,7 +19758,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "get_accessor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:704:1: get_accessor_declaration : ( accessor_modifier )? 'get' accessor_body ;
+	// /Users/jeremie/ANTLR/cs.g:705:1: get_accessor_declaration : ( accessor_modifier )? 'get' accessor_body ;
 	public final csParser.get_accessor_declaration_return get_accessor_declaration() throws RecognitionException {
 		csParser.get_accessor_declaration_return retval = new csParser.get_accessor_declaration_return();
 		retval.start = input.LT(1);
@@ -19495,13 +19775,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 168) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:704:25: ( ( accessor_modifier )? 'get' accessor_body )
-			// /Users/jeremie/ANTLR/cs.g:705:2: ( accessor_modifier )? 'get' accessor_body
+			// /Users/jeremie/ANTLR/cs.g:705:25: ( ( accessor_modifier )? 'get' accessor_body )
+			// /Users/jeremie/ANTLR/cs.g:706:2: ( accessor_modifier )? 'get' accessor_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:705:2: ( accessor_modifier )?
+			// /Users/jeremie/ANTLR/cs.g:706:2: ( accessor_modifier )?
 			int alt168=2;
 			int LA168_0 = input.LA(1);
 			if ( (LA168_0==140||LA168_0==161||(LA168_0 >= 163 && LA168_0 <= 164)) ) {
@@ -19509,7 +19789,7 @@ public class csParser extends Parser {
 			}
 			switch (alt168) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:705:2: accessor_modifier
+					// /Users/jeremie/ANTLR/cs.g:706:2: accessor_modifier
 					{
 					pushFollow(FOLLOW_accessor_modifier_in_get_accessor_declaration6347);
 					accessor_modifier471=accessor_modifier();
@@ -19566,7 +19846,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "set_accessor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:706:1: set_accessor_declaration : ( accessor_modifier )? 'set' accessor_body ;
+	// /Users/jeremie/ANTLR/cs.g:707:1: set_accessor_declaration : ( accessor_modifier )? 'set' accessor_body ;
 	public final csParser.set_accessor_declaration_return set_accessor_declaration() throws RecognitionException {
 		csParser.set_accessor_declaration_return retval = new csParser.set_accessor_declaration_return();
 		retval.start = input.LT(1);
@@ -19583,13 +19863,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 169) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:706:25: ( ( accessor_modifier )? 'set' accessor_body )
-			// /Users/jeremie/ANTLR/cs.g:707:2: ( accessor_modifier )? 'set' accessor_body
+			// /Users/jeremie/ANTLR/cs.g:707:25: ( ( accessor_modifier )? 'set' accessor_body )
+			// /Users/jeremie/ANTLR/cs.g:708:2: ( accessor_modifier )? 'set' accessor_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:707:2: ( accessor_modifier )?
+			// /Users/jeremie/ANTLR/cs.g:708:2: ( accessor_modifier )?
 			int alt169=2;
 			int LA169_0 = input.LA(1);
 			if ( (LA169_0==140||LA169_0==161||(LA169_0 >= 163 && LA169_0 <= 164)) ) {
@@ -19597,7 +19877,7 @@ public class csParser extends Parser {
 			}
 			switch (alt169) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:707:2: accessor_modifier
+					// /Users/jeremie/ANTLR/cs.g:708:2: accessor_modifier
 					{
 					pushFollow(FOLLOW_accessor_modifier_in_set_accessor_declaration6364);
 					accessor_modifier474=accessor_modifier();
@@ -19654,7 +19934,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "accessor_modifier"
-	// /Users/jeremie/ANTLR/cs.g:708:1: accessor_modifier : ( 'public' | 'protected' | 'private' | 'internal' );
+	// /Users/jeremie/ANTLR/cs.g:709:1: accessor_modifier : ( 'public' | 'protected' | 'private' | 'internal' );
 	public final csParser.accessor_modifier_return accessor_modifier() throws RecognitionException {
 		csParser.accessor_modifier_return retval = new csParser.accessor_modifier_return();
 		retval.start = input.LT(1);
@@ -19669,7 +19949,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 170) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:708:18: ( 'public' | 'protected' | 'private' | 'internal' )
+			// /Users/jeremie/ANTLR/cs.g:709:18: ( 'public' | 'protected' | 'private' | 'internal' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -19719,7 +19999,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "accessor_body"
-	// /Users/jeremie/ANTLR/cs.g:710:1: accessor_body : block ;
+	// /Users/jeremie/ANTLR/cs.g:711:1: accessor_body : block ;
 	public final csParser.accessor_body_return accessor_body() throws RecognitionException {
 		csParser.accessor_body_return retval = new csParser.accessor_body_return();
 		retval.start = input.LT(1);
@@ -19733,8 +20013,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 171) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:710:14: ( block )
-			// /Users/jeremie/ANTLR/cs.g:711:2: block
+			// /Users/jeremie/ANTLR/cs.g:711:14: ( block )
+			// /Users/jeremie/ANTLR/cs.g:712:2: block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -19777,7 +20057,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "event_declaration"
-	// /Users/jeremie/ANTLR/cs.g:714:1: event_declaration : 'event' type ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' ) ;
+	// /Users/jeremie/ANTLR/cs.g:715:1: event_declaration : 'event' type ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' ) ;
 	public final csParser.event_declaration_return event_declaration() throws RecognitionException {
 		csParser.event_declaration_return retval = new csParser.event_declaration_return();
 		retval.start = input.LT(1);
@@ -19802,8 +20082,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 172) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:714:18: ( 'event' type ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' ) )
-			// /Users/jeremie/ANTLR/cs.g:715:2: 'event' type ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' )
+			// /Users/jeremie/ANTLR/cs.g:715:18: ( 'event' type ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' ) )
+			// /Users/jeremie/ANTLR/cs.g:716:2: 'event' type ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -19820,7 +20100,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type480.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:716:3: ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' )
+			// /Users/jeremie/ANTLR/cs.g:717:3: ( ( member_name '{' )=> member_name '{' event_accessor_declarations '}' | variable_declarators ';' )
 			int alt170=2;
 			int LA170_0 = input.LA(1);
 			if ( (LA170_0==103||LA170_0==106||LA170_0==109||LA170_0==114||LA170_0==119||LA170_0==129||LA170_0==138||LA170_0==146||LA170_0==151||LA170_0==169||LA170_0==173||LA170_0==177||(LA170_0 >= 185 && LA170_0 <= 186)||LA170_0==189) && (synpred25_cs())) {
@@ -19836,13 +20116,37 @@ public class csParser extends Parser {
 				}
 
 			}
-			else if ( (LA170_0==Character_literal||LA170_0==FALSE||LA170_0==Hex_number||(LA170_0 >= NULL && LA170_0 <= NUMBER)||LA170_0==Real_literal||LA170_0==STRINGLITERAL||LA170_0==TRUE||LA170_0==Verbatim_string_literal) && (synpred25_cs())) {
+			else if ( (LA170_0==Real_literal) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==NUMBER) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==Hex_number) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==Character_literal) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==STRINGLITERAL) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==Verbatim_string_literal) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==TRUE) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==FALSE) && (synpred25_cs())) {
+				alt170=1;
+			}
+			else if ( (LA170_0==NULL) && (synpred25_cs())) {
 				alt170=1;
 			}
 
 			switch (alt170) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:716:4: ( member_name '{' )=> member_name '{' event_accessor_declarations '}'
+					// /Users/jeremie/ANTLR/cs.g:717:4: ( member_name '{' )=> member_name '{' event_accessor_declarations '}'
 					{
 					pushFollow(FOLLOW_member_name_in_event_declaration6430);
 					member_name481=member_name();
@@ -19871,7 +20175,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:717:5: variable_declarators ';'
+					// /Users/jeremie/ANTLR/cs.g:718:5: variable_declarators ';'
 					{
 					pushFollow(FOLLOW_variable_declarators_in_event_declaration6448);
 					variable_declarators485=variable_declarators();
@@ -19922,7 +20226,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "event_modifiers"
-	// /Users/jeremie/ANTLR/cs.g:719:1: event_modifiers : ( modifier )+ ;
+	// /Users/jeremie/ANTLR/cs.g:720:1: event_modifiers : ( modifier )+ ;
 	public final csParser.event_modifiers_return event_modifiers() throws RecognitionException {
 		csParser.event_modifiers_return retval = new csParser.event_modifiers_return();
 		retval.start = input.LT(1);
@@ -19936,13 +20240,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 173) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:719:16: ( ( modifier )+ )
-			// /Users/jeremie/ANTLR/cs.g:720:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:720:16: ( ( modifier )+ )
+			// /Users/jeremie/ANTLR/cs.g:721:2: ( modifier )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:720:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:721:2: ( modifier )+
 			int cnt171=0;
 			loop171:
 			while (true) {
@@ -19954,7 +20258,7 @@ public class csParser extends Parser {
 
 				switch (alt171) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:720:2: modifier
+					// /Users/jeremie/ANTLR/cs.g:721:2: modifier
 					{
 					pushFollow(FOLLOW_modifier_in_event_modifiers6464);
 					modifier487=modifier();
@@ -20006,7 +20310,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "event_accessor_declarations"
-	// /Users/jeremie/ANTLR/cs.g:721:1: event_accessor_declarations : ( attributes )? ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) ) ;
+	// /Users/jeremie/ANTLR/cs.g:722:1: event_accessor_declarations : ( attributes )? ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) ) ;
 	public final csParser.event_accessor_declarations_return event_accessor_declarations() throws RecognitionException {
 		csParser.event_accessor_declarations_return retval = new csParser.event_accessor_declarations_return();
 		retval.start = input.LT(1);
@@ -20026,13 +20330,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 174) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:721:28: ( ( attributes )? ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) ) )
-			// /Users/jeremie/ANTLR/cs.g:722:2: ( attributes )? ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) )
+			// /Users/jeremie/ANTLR/cs.g:722:28: ( ( attributes )? ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) ) )
+			// /Users/jeremie/ANTLR/cs.g:723:2: ( attributes )? ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:722:2: ( attributes )?
+			// /Users/jeremie/ANTLR/cs.g:723:2: ( attributes )?
 			int alt172=2;
 			int LA172_0 = input.LA(1);
 			if ( (LA172_0==91) ) {
@@ -20040,7 +20344,7 @@ public class csParser extends Parser {
 			}
 			switch (alt172) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:722:2: attributes
+					// /Users/jeremie/ANTLR/cs.g:723:2: attributes
 					{
 					pushFollow(FOLLOW_attributes_in_event_accessor_declarations6473);
 					attributes488=attributes();
@@ -20053,7 +20357,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:722:16: ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) )
+			// /Users/jeremie/ANTLR/cs.g:723:16: ( ( add_accessor_declaration ( attributes )? remove_accessor_declaration ) | ( remove_accessor_declaration ( attributes )? add_accessor_declaration ) )
 			int alt175=2;
 			int LA175_0 = input.LA(1);
 			if ( (LA175_0==97) ) {
@@ -20072,10 +20376,10 @@ public class csParser extends Parser {
 
 			switch (alt175) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:722:17: ( add_accessor_declaration ( attributes )? remove_accessor_declaration )
+					// /Users/jeremie/ANTLR/cs.g:723:17: ( add_accessor_declaration ( attributes )? remove_accessor_declaration )
 					{
-					// /Users/jeremie/ANTLR/cs.g:722:17: ( add_accessor_declaration ( attributes )? remove_accessor_declaration )
-					// /Users/jeremie/ANTLR/cs.g:722:18: add_accessor_declaration ( attributes )? remove_accessor_declaration
+					// /Users/jeremie/ANTLR/cs.g:723:17: ( add_accessor_declaration ( attributes )? remove_accessor_declaration )
+					// /Users/jeremie/ANTLR/cs.g:723:18: add_accessor_declaration ( attributes )? remove_accessor_declaration
 					{
 					pushFollow(FOLLOW_add_accessor_declaration_in_event_accessor_declarations6480);
 					add_accessor_declaration489=add_accessor_declaration();
@@ -20083,7 +20387,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, add_accessor_declaration489.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:722:45: ( attributes )?
+					// /Users/jeremie/ANTLR/cs.g:723:45: ( attributes )?
 					int alt173=2;
 					int LA173_0 = input.LA(1);
 					if ( (LA173_0==91) ) {
@@ -20091,7 +20395,7 @@ public class csParser extends Parser {
 					}
 					switch (alt173) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:722:45: attributes
+							// /Users/jeremie/ANTLR/cs.g:723:45: attributes
 							{
 							pushFollow(FOLLOW_attributes_in_event_accessor_declarations6484);
 							attributes490=attributes();
@@ -20115,10 +20419,10 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:723:18: ( remove_accessor_declaration ( attributes )? add_accessor_declaration )
+					// /Users/jeremie/ANTLR/cs.g:724:18: ( remove_accessor_declaration ( attributes )? add_accessor_declaration )
 					{
-					// /Users/jeremie/ANTLR/cs.g:723:18: ( remove_accessor_declaration ( attributes )? add_accessor_declaration )
-					// /Users/jeremie/ANTLR/cs.g:723:19: remove_accessor_declaration ( attributes )? add_accessor_declaration
+					// /Users/jeremie/ANTLR/cs.g:724:18: ( remove_accessor_declaration ( attributes )? add_accessor_declaration )
+					// /Users/jeremie/ANTLR/cs.g:724:19: remove_accessor_declaration ( attributes )? add_accessor_declaration
 					{
 					pushFollow(FOLLOW_remove_accessor_declaration_in_event_accessor_declarations6510);
 					remove_accessor_declaration492=remove_accessor_declaration();
@@ -20126,7 +20430,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, remove_accessor_declaration492.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:723:49: ( attributes )?
+					// /Users/jeremie/ANTLR/cs.g:724:49: ( attributes )?
 					int alt174=2;
 					int LA174_0 = input.LA(1);
 					if ( (LA174_0==91) ) {
@@ -20134,7 +20438,7 @@ public class csParser extends Parser {
 					}
 					switch (alt174) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:723:49: attributes
+							// /Users/jeremie/ANTLR/cs.g:724:49: attributes
 							{
 							pushFollow(FOLLOW_attributes_in_event_accessor_declarations6514);
 							attributes493=attributes();
@@ -20192,7 +20496,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "add_accessor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:724:1: add_accessor_declaration : 'add' block ;
+	// /Users/jeremie/ANTLR/cs.g:725:1: add_accessor_declaration : 'add' block ;
 	public final csParser.add_accessor_declaration_return add_accessor_declaration() throws RecognitionException {
 		csParser.add_accessor_declaration_return retval = new csParser.add_accessor_declaration_return();
 		retval.start = input.LT(1);
@@ -20208,8 +20512,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 175) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:724:25: ( 'add' block )
-			// /Users/jeremie/ANTLR/cs.g:725:2: 'add' block
+			// /Users/jeremie/ANTLR/cs.g:725:25: ( 'add' block )
+			// /Users/jeremie/ANTLR/cs.g:726:2: 'add' block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -20258,7 +20562,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "remove_accessor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:726:1: remove_accessor_declaration : 'remove' block ;
+	// /Users/jeremie/ANTLR/cs.g:727:1: remove_accessor_declaration : 'remove' block ;
 	public final csParser.remove_accessor_declaration_return remove_accessor_declaration() throws RecognitionException {
 		csParser.remove_accessor_declaration_return retval = new csParser.remove_accessor_declaration_return();
 		retval.start = input.LT(1);
@@ -20274,8 +20578,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 176) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:726:28: ( 'remove' block )
-			// /Users/jeremie/ANTLR/cs.g:727:2: 'remove' block
+			// /Users/jeremie/ANTLR/cs.g:727:28: ( 'remove' block )
+			// /Users/jeremie/ANTLR/cs.g:728:2: 'remove' block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -20324,7 +20628,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "enum_declaration"
-	// /Users/jeremie/ANTLR/cs.g:732:1: enum_declaration : 'enum' identifier ( enum_base )? enum_body ( ';' )? ;
+	// /Users/jeremie/ANTLR/cs.g:733:1: enum_declaration : 'enum' identifier ( enum_base )? enum_body ( ';' )? ;
 	public final csParser.enum_declaration_return enum_declaration() throws RecognitionException {
 		csParser.enum_declaration_return retval = new csParser.enum_declaration_return();
 		retval.start = input.LT(1);
@@ -20344,8 +20648,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 177) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:732:17: ( 'enum' identifier ( enum_base )? enum_body ( ';' )? )
-			// /Users/jeremie/ANTLR/cs.g:733:2: 'enum' identifier ( enum_base )? enum_body ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:733:17: ( 'enum' identifier ( enum_base )? enum_body ( ';' )? )
+			// /Users/jeremie/ANTLR/cs.g:734:2: 'enum' identifier ( enum_base )? enum_body ( ';' )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -20362,7 +20666,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier500.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:733:24: ( enum_base )?
+			// /Users/jeremie/ANTLR/cs.g:734:24: ( enum_base )?
 			int alt176=2;
 			int LA176_0 = input.LA(1);
 			if ( (LA176_0==79) ) {
@@ -20370,7 +20674,7 @@ public class csParser extends Parser {
 			}
 			switch (alt176) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:733:24: enum_base
+					// /Users/jeremie/ANTLR/cs.g:734:24: enum_base
 					{
 					pushFollow(FOLLOW_enum_base_in_enum_declaration6565);
 					enum_base501=enum_base();
@@ -20389,7 +20693,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_body502.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:733:49: ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:734:49: ( ';' )?
 			int alt177=2;
 			int LA177_0 = input.LA(1);
 			if ( (LA177_0==SEMI) ) {
@@ -20397,7 +20701,7 @@ public class csParser extends Parser {
 			}
 			switch (alt177) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:733:49: ';'
+					// /Users/jeremie/ANTLR/cs.g:734:49: ';'
 					{
 					char_literal503=(Token)match(input,SEMI,FOLLOW_SEMI_in_enum_declaration6574); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -20442,7 +20746,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "enum_base"
-	// /Users/jeremie/ANTLR/cs.g:734:1: enum_base : ':' integral_type ;
+	// /Users/jeremie/ANTLR/cs.g:735:1: enum_base : ':' integral_type ;
 	public final csParser.enum_base_return enum_base() throws RecognitionException {
 		csParser.enum_base_return retval = new csParser.enum_base_return();
 		retval.start = input.LT(1);
@@ -20458,8 +20762,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 178) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:734:10: ( ':' integral_type )
-			// /Users/jeremie/ANTLR/cs.g:735:2: ':' integral_type
+			// /Users/jeremie/ANTLR/cs.g:735:10: ( ':' integral_type )
+			// /Users/jeremie/ANTLR/cs.g:736:2: ':' integral_type
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -20508,7 +20812,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "enum_body"
-	// /Users/jeremie/ANTLR/cs.g:736:1: enum_body : '{' ( enum_member_declarations ( ',' )? )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:737:1: enum_body : '{' ( enum_member_declarations ( ',' )? )? '}' ;
 	public final csParser.enum_body_return enum_body() throws RecognitionException {
 		csParser.enum_body_return retval = new csParser.enum_body_return();
 		retval.start = input.LT(1);
@@ -20528,8 +20832,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 179) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:736:10: ( '{' ( enum_member_declarations ( ',' )? )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:737:2: '{' ( enum_member_declarations ( ',' )? )? '}'
+			// /Users/jeremie/ANTLR/cs.g:737:10: ( '{' ( enum_member_declarations ( ',' )? )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:738:2: '{' ( enum_member_declarations ( ',' )? )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -20540,7 +20844,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal506_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:737:6: ( enum_member_declarations ( ',' )? )?
+			// /Users/jeremie/ANTLR/cs.g:738:6: ( enum_member_declarations ( ',' )? )?
 			int alt179=2;
 			int LA179_0 = input.LA(1);
 			if ( (LA179_0==IDENTIFIER||LA179_0==91||LA179_0==95||(LA179_0 >= 97 && LA179_0 <= 98)||(LA179_0 >= 100 && LA179_0 <= 101)||LA179_0==105||LA179_0==117||LA179_0==120||LA179_0==122||LA179_0==126||LA179_0==132||LA179_0==135||LA179_0==141||(LA179_0 >= 143 && LA179_0 <= 144)||(LA179_0 >= 147 && LA179_0 <= 148)||LA179_0==152||LA179_0==154||LA179_0==157||LA179_0==160||LA179_0==162||LA179_0==167||(LA179_0 >= 171 && LA179_0 <= 172)||LA179_0==183||LA179_0==190||LA179_0==194||LA179_0==196) ) {
@@ -20548,7 +20852,7 @@ public class csParser extends Parser {
 			}
 			switch (alt179) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:737:7: enum_member_declarations ( ',' )?
+					// /Users/jeremie/ANTLR/cs.g:738:7: enum_member_declarations ( ',' )?
 					{
 					pushFollow(FOLLOW_enum_member_declarations_in_enum_body6598);
 					enum_member_declarations507=enum_member_declarations();
@@ -20556,7 +20860,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declarations507.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:737:32: ( ',' )?
+					// /Users/jeremie/ANTLR/cs.g:738:32: ( ',' )?
 					int alt178=2;
 					int LA178_0 = input.LA(1);
 					if ( (LA178_0==74) ) {
@@ -20564,7 +20868,7 @@ public class csParser extends Parser {
 					}
 					switch (alt178) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:737:32: ','
+							// /Users/jeremie/ANTLR/cs.g:738:32: ','
 							{
 							char_literal508=(Token)match(input,74,FOLLOW_74_in_enum_body6600); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -20620,7 +20924,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "enum_member_declarations"
-	// /Users/jeremie/ANTLR/cs.g:738:1: enum_member_declarations : enum_member_declaration ( ',' enum_member_declaration )* ;
+	// /Users/jeremie/ANTLR/cs.g:739:1: enum_member_declarations : enum_member_declaration ( ',' enum_member_declaration )* ;
 	public final csParser.enum_member_declarations_return enum_member_declarations() throws RecognitionException {
 		csParser.enum_member_declarations_return retval = new csParser.enum_member_declarations_return();
 		retval.start = input.LT(1);
@@ -20637,8 +20941,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 180) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:738:25: ( enum_member_declaration ( ',' enum_member_declaration )* )
-			// /Users/jeremie/ANTLR/cs.g:739:2: enum_member_declaration ( ',' enum_member_declaration )*
+			// /Users/jeremie/ANTLR/cs.g:739:25: ( enum_member_declaration ( ',' enum_member_declaration )* )
+			// /Users/jeremie/ANTLR/cs.g:740:2: enum_member_declaration ( ',' enum_member_declaration )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -20649,7 +20953,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, enum_member_declaration510.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:739:26: ( ',' enum_member_declaration )*
+			// /Users/jeremie/ANTLR/cs.g:740:26: ( ',' enum_member_declaration )*
 			loop180:
 			while (true) {
 				int alt180=2;
@@ -20664,7 +20968,7 @@ public class csParser extends Parser {
 
 				switch (alt180) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:739:27: ',' enum_member_declaration
+					// /Users/jeremie/ANTLR/cs.g:740:27: ',' enum_member_declaration
 					{
 					char_literal511=(Token)match(input,74,FOLLOW_74_in_enum_member_declarations6618); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -20718,7 +21022,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "enum_member_declaration"
-	// /Users/jeremie/ANTLR/cs.g:740:1: enum_member_declaration : ( attributes )? identifier ( '=' expression )? ;
+	// /Users/jeremie/ANTLR/cs.g:741:1: enum_member_declaration : ( attributes )? identifier ( '=' expression )? ;
 	public final csParser.enum_member_declaration_return enum_member_declaration() throws RecognitionException {
 		csParser.enum_member_declaration_return retval = new csParser.enum_member_declaration_return();
 		retval.start = input.LT(1);
@@ -20736,13 +21040,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 181) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:740:24: ( ( attributes )? identifier ( '=' expression )? )
-			// /Users/jeremie/ANTLR/cs.g:741:2: ( attributes )? identifier ( '=' expression )?
+			// /Users/jeremie/ANTLR/cs.g:741:24: ( ( attributes )? identifier ( '=' expression )? )
+			// /Users/jeremie/ANTLR/cs.g:742:2: ( attributes )? identifier ( '=' expression )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:741:2: ( attributes )?
+			// /Users/jeremie/ANTLR/cs.g:742:2: ( attributes )?
 			int alt181=2;
 			int LA181_0 = input.LA(1);
 			if ( (LA181_0==91) ) {
@@ -20750,7 +21054,7 @@ public class csParser extends Parser {
 			}
 			switch (alt181) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:741:2: attributes
+					// /Users/jeremie/ANTLR/cs.g:742:2: attributes
 					{
 					pushFollow(FOLLOW_attributes_in_enum_member_declaration6630);
 					attributes513=attributes();
@@ -20769,7 +21073,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier514.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:741:29: ( '=' expression )?
+			// /Users/jeremie/ANTLR/cs.g:742:29: ( '=' expression )?
 			int alt182=2;
 			int LA182_0 = input.LA(1);
 			if ( (LA182_0==85) ) {
@@ -20777,7 +21081,7 @@ public class csParser extends Parser {
 			}
 			switch (alt182) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:741:30: '=' expression
+					// /Users/jeremie/ANTLR/cs.g:742:30: '=' expression
 					{
 					char_literal515=(Token)match(input,85,FOLLOW_85_in_enum_member_declaration6640); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -20828,7 +21132,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "integral_type"
-	// /Users/jeremie/ANTLR/cs.g:746:1: integral_type : ( 'sbyte' | 'byte' | 'short' | 'ushort' | 'int' | 'uint' | 'long' | 'ulong' | 'char' );
+	// /Users/jeremie/ANTLR/cs.g:747:1: integral_type : ( 'sbyte' | 'byte' | 'short' | 'ushort' | 'int' | 'uint' | 'long' | 'ulong' | 'char' );
 	public final csParser.integral_type_return integral_type() throws RecognitionException {
 		csParser.integral_type_return retval = new csParser.integral_type_return();
 		retval.start = input.LT(1);
@@ -20843,7 +21147,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 182) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:746:14: ( 'sbyte' | 'byte' | 'short' | 'ushort' | 'int' | 'uint' | 'long' | 'ulong' | 'char' )
+			// /Users/jeremie/ANTLR/cs.g:747:14: ( 'sbyte' | 'byte' | 'short' | 'ushort' | 'int' | 'uint' | 'long' | 'ulong' | 'char' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -20893,7 +21197,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "delegate_declaration"
-	// /Users/jeremie/ANTLR/cs.g:750:1: delegate_declaration : 'delegate' return_type identifier ( variant_generic_parameter_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' ;
+	// /Users/jeremie/ANTLR/cs.g:751:1: delegate_declaration : 'delegate' return_type identifier ( variant_generic_parameter_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' ;
 	public final csParser.delegate_declaration_return delegate_declaration() throws RecognitionException {
 		csParser.delegate_declaration_return retval = new csParser.delegate_declaration_return();
 		retval.start = input.LT(1);
@@ -20919,8 +21223,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 183) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:750:21: ( 'delegate' return_type identifier ( variant_generic_parameter_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' )
-			// /Users/jeremie/ANTLR/cs.g:751:2: 'delegate' return_type identifier ( variant_generic_parameter_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';'
+			// /Users/jeremie/ANTLR/cs.g:751:21: ( 'delegate' return_type identifier ( variant_generic_parameter_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' )
+			// /Users/jeremie/ANTLR/cs.g:752:2: 'delegate' return_type identifier ( variant_generic_parameter_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -20943,7 +21247,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier520.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:751:41: ( variant_generic_parameter_list )?
+			// /Users/jeremie/ANTLR/cs.g:752:41: ( variant_generic_parameter_list )?
 			int alt183=2;
 			int LA183_0 = input.LA(1);
 			if ( (LA183_0==81) ) {
@@ -20951,7 +21255,7 @@ public class csParser extends Parser {
 			}
 			switch (alt183) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:751:41: variant_generic_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:752:41: variant_generic_parameter_list
 					{
 					pushFollow(FOLLOW_variant_generic_parameter_list_in_delegate_declaration6712);
 					variant_generic_parameter_list521=variant_generic_parameter_list();
@@ -20970,7 +21274,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal522_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:752:9: ( formal_parameter_list )?
+			// /Users/jeremie/ANTLR/cs.g:753:9: ( formal_parameter_list )?
 			int alt184=2;
 			int LA184_0 = input.LA(1);
 			if ( (LA184_0==IDENTIFIER||LA184_0==91||LA184_0==95||(LA184_0 >= 97 && LA184_0 <= 98)||(LA184_0 >= 100 && LA184_0 <= 101)||LA184_0==103||(LA184_0 >= 105 && LA184_0 <= 106)||LA184_0==109||LA184_0==114||LA184_0==117||(LA184_0 >= 119 && LA184_0 <= 120)||LA184_0==122||LA184_0==126||LA184_0==129||LA184_0==132||LA184_0==135||LA184_0==138||LA184_0==141||(LA184_0 >= 143 && LA184_0 <= 144)||(LA184_0 >= 146 && LA184_0 <= 148)||(LA184_0 >= 151 && LA184_0 <= 152)||(LA184_0 >= 154 && LA184_0 <= 155)||(LA184_0 >= 157 && LA184_0 <= 158)||LA184_0==160||LA184_0==162||(LA184_0 >= 166 && LA184_0 <= 167)||LA184_0==169||(LA184_0 >= 171 && LA184_0 <= 173)||LA184_0==177||LA184_0==180||LA184_0==183||(LA184_0 >= 185 && LA184_0 <= 186)||(LA184_0 >= 189 && LA184_0 <= 190)||LA184_0==192||LA184_0==194||LA184_0==196) ) {
@@ -20978,7 +21282,7 @@ public class csParser extends Parser {
 			}
 			switch (alt184) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:752:9: formal_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:753:9: formal_parameter_list
 					{
 					pushFollow(FOLLOW_formal_parameter_list_in_delegate_declaration6724);
 					formal_parameter_list523=formal_parameter_list();
@@ -20997,7 +21301,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal524_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:752:40: ( type_parameter_constraints_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:753:40: ( type_parameter_constraints_clauses )?
 			int alt185=2;
 			int LA185_0 = input.LA(1);
 			if ( (LA185_0==194) ) {
@@ -21005,7 +21309,7 @@ public class csParser extends Parser {
 			}
 			switch (alt185) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:752:40: type_parameter_constraints_clauses
+					// /Users/jeremie/ANTLR/cs.g:753:40: type_parameter_constraints_clauses
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_delegate_declaration6733);
 					type_parameter_constraints_clauses525=type_parameter_constraints_clauses();
@@ -21056,7 +21360,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "delegate_modifiers"
-	// /Users/jeremie/ANTLR/cs.g:753:1: delegate_modifiers : ( modifier )+ ;
+	// /Users/jeremie/ANTLR/cs.g:754:1: delegate_modifiers : ( modifier )+ ;
 	public final csParser.delegate_modifiers_return delegate_modifiers() throws RecognitionException {
 		csParser.delegate_modifiers_return retval = new csParser.delegate_modifiers_return();
 		retval.start = input.LT(1);
@@ -21070,13 +21374,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 184) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:753:19: ( ( modifier )+ )
-			// /Users/jeremie/ANTLR/cs.g:754:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:754:19: ( ( modifier )+ )
+			// /Users/jeremie/ANTLR/cs.g:755:2: ( modifier )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:754:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:755:2: ( modifier )+
 			int cnt186=0;
 			loop186:
 			while (true) {
@@ -21088,7 +21392,7 @@ public class csParser extends Parser {
 
 				switch (alt186) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:754:2: modifier
+					// /Users/jeremie/ANTLR/cs.g:755:2: modifier
 					{
 					pushFollow(FOLLOW_modifier_in_delegate_modifiers6746);
 					modifier527=modifier();
@@ -21140,7 +21444,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variant_generic_parameter_list"
-	// /Users/jeremie/ANTLR/cs.g:756:1: variant_generic_parameter_list : '<' variant_type_parameters '>' ;
+	// /Users/jeremie/ANTLR/cs.g:757:1: variant_generic_parameter_list : '<' variant_type_parameters '>' ;
 	public final csParser.variant_generic_parameter_list_return variant_generic_parameter_list() throws RecognitionException {
 		csParser.variant_generic_parameter_list_return retval = new csParser.variant_generic_parameter_list_return();
 		retval.start = input.LT(1);
@@ -21158,8 +21462,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 185) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:756:31: ( '<' variant_type_parameters '>' )
-			// /Users/jeremie/ANTLR/cs.g:757:2: '<' variant_type_parameters '>'
+			// /Users/jeremie/ANTLR/cs.g:757:31: ( '<' variant_type_parameters '>' )
+			// /Users/jeremie/ANTLR/cs.g:758:2: '<' variant_type_parameters '>'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -21214,7 +21518,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variant_type_parameters"
-	// /Users/jeremie/ANTLR/cs.g:758:1: variant_type_parameters : variant_type_variable_name ( ',' variant_type_variable_name )* ;
+	// /Users/jeremie/ANTLR/cs.g:759:1: variant_type_parameters : variant_type_variable_name ( ',' variant_type_variable_name )* ;
 	public final csParser.variant_type_parameters_return variant_type_parameters() throws RecognitionException {
 		csParser.variant_type_parameters_return retval = new csParser.variant_type_parameters_return();
 		retval.start = input.LT(1);
@@ -21231,8 +21535,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 186) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:758:24: ( variant_type_variable_name ( ',' variant_type_variable_name )* )
-			// /Users/jeremie/ANTLR/cs.g:759:2: variant_type_variable_name ( ',' variant_type_variable_name )*
+			// /Users/jeremie/ANTLR/cs.g:759:24: ( variant_type_variable_name ( ',' variant_type_variable_name )* )
+			// /Users/jeremie/ANTLR/cs.g:760:2: variant_type_variable_name ( ',' variant_type_variable_name )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -21243,7 +21547,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variant_type_variable_name531.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:759:29: ( ',' variant_type_variable_name )*
+			// /Users/jeremie/ANTLR/cs.g:760:29: ( ',' variant_type_variable_name )*
 			loop187:
 			while (true) {
 				int alt187=2;
@@ -21254,7 +21558,7 @@ public class csParser extends Parser {
 
 				switch (alt187) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:759:30: ',' variant_type_variable_name
+					// /Users/jeremie/ANTLR/cs.g:760:30: ',' variant_type_variable_name
 					{
 					char_literal532=(Token)match(input,74,FOLLOW_74_in_variant_type_parameters6775); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -21308,7 +21612,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variant_type_variable_name"
-	// /Users/jeremie/ANTLR/cs.g:760:1: variant_type_variable_name : ( attributes )? ( variance_annotation )? type_variable_name ;
+	// /Users/jeremie/ANTLR/cs.g:761:1: variant_type_variable_name : ( attributes )? ( variance_annotation )? type_variable_name ;
 	public final csParser.variant_type_variable_name_return variant_type_variable_name() throws RecognitionException {
 		csParser.variant_type_variable_name_return retval = new csParser.variant_type_variable_name_return();
 		retval.start = input.LT(1);
@@ -21324,13 +21628,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 187) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:760:27: ( ( attributes )? ( variance_annotation )? type_variable_name )
-			// /Users/jeremie/ANTLR/cs.g:761:2: ( attributes )? ( variance_annotation )? type_variable_name
+			// /Users/jeremie/ANTLR/cs.g:761:27: ( ( attributes )? ( variance_annotation )? type_variable_name )
+			// /Users/jeremie/ANTLR/cs.g:762:2: ( attributes )? ( variance_annotation )? type_variable_name
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:761:2: ( attributes )?
+			// /Users/jeremie/ANTLR/cs.g:762:2: ( attributes )?
 			int alt188=2;
 			int LA188_0 = input.LA(1);
 			if ( (LA188_0==91) ) {
@@ -21338,7 +21642,7 @@ public class csParser extends Parser {
 			}
 			switch (alt188) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:761:2: attributes
+					// /Users/jeremie/ANTLR/cs.g:762:2: attributes
 					{
 					pushFollow(FOLLOW_attributes_in_variant_type_variable_name6787);
 					attributes534=attributes();
@@ -21351,7 +21655,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:761:16: ( variance_annotation )?
+			// /Users/jeremie/ANTLR/cs.g:762:16: ( variance_annotation )?
 			int alt189=2;
 			int LA189_0 = input.LA(1);
 			if ( (LA189_0==137||LA189_0==155) ) {
@@ -21359,7 +21663,7 @@ public class csParser extends Parser {
 			}
 			switch (alt189) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:761:16: variance_annotation
+					// /Users/jeremie/ANTLR/cs.g:762:16: variance_annotation
 					{
 					pushFollow(FOLLOW_variance_annotation_in_variant_type_variable_name6792);
 					variance_annotation535=variance_annotation();
@@ -21410,7 +21714,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "variance_annotation"
-	// /Users/jeremie/ANTLR/cs.g:762:1: variance_annotation : ( 'in' | 'out' );
+	// /Users/jeremie/ANTLR/cs.g:763:1: variance_annotation : ( 'in' | 'out' );
 	public final csParser.variance_annotation_return variance_annotation() throws RecognitionException {
 		csParser.variance_annotation_return retval = new csParser.variance_annotation_return();
 		retval.start = input.LT(1);
@@ -21425,7 +21729,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 188) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:762:20: ( 'in' | 'out' )
+			// /Users/jeremie/ANTLR/cs.g:763:20: ( 'in' | 'out' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -21476,7 +21780,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type_parameter_constraints_clauses"
-	// /Users/jeremie/ANTLR/cs.g:765:1: type_parameter_constraints_clauses returns [UnknownNode t] : type_parameter_constraints_clause ( ',' type_parameter_constraints_clause )* ;
+	// /Users/jeremie/ANTLR/cs.g:766:1: type_parameter_constraints_clauses returns [UnknownNode t] : type_parameter_constraints_clause ( ',' type_parameter_constraints_clause )* ;
 	public final csParser.type_parameter_constraints_clauses_return type_parameter_constraints_clauses() throws RecognitionException {
 		csParser.type_parameter_constraints_clauses_return retval = new csParser.type_parameter_constraints_clauses_return();
 		retval.start = input.LT(1);
@@ -21493,8 +21797,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 189) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:766:37: ( type_parameter_constraints_clause ( ',' type_parameter_constraints_clause )* )
-			// /Users/jeremie/ANTLR/cs.g:767:9: type_parameter_constraints_clause ( ',' type_parameter_constraints_clause )*
+			// /Users/jeremie/ANTLR/cs.g:767:37: ( type_parameter_constraints_clause ( ',' type_parameter_constraints_clause )* )
+			// /Users/jeremie/ANTLR/cs.g:768:9: type_parameter_constraints_clause ( ',' type_parameter_constraints_clause )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -21505,7 +21809,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_parameter_constraints_clause538.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:767:45: ( ',' type_parameter_constraints_clause )*
+			// /Users/jeremie/ANTLR/cs.g:768:45: ( ',' type_parameter_constraints_clause )*
 			loop190:
 			while (true) {
 				int alt190=2;
@@ -21516,7 +21820,7 @@ public class csParser extends Parser {
 
 				switch (alt190) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:767:46: ',' type_parameter_constraints_clause
+					// /Users/jeremie/ANTLR/cs.g:768:46: ',' type_parameter_constraints_clause
 					{
 					char_literal539=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraints_clauses6841); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -21571,7 +21875,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type_parameter_constraints_clause"
-	// /Users/jeremie/ANTLR/cs.g:769:1: type_parameter_constraints_clause : 'where' type_variable_name ':' type_parameter_constraint_list ;
+	// /Users/jeremie/ANTLR/cs.g:770:1: type_parameter_constraints_clause : 'where' type_variable_name ':' type_parameter_constraint_list ;
 	public final csParser.type_parameter_constraints_clause_return type_parameter_constraints_clause() throws RecognitionException {
 		csParser.type_parameter_constraints_clause_return retval = new csParser.type_parameter_constraints_clause_return();
 		retval.start = input.LT(1);
@@ -21590,8 +21894,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 190) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:769:34: ( 'where' type_variable_name ':' type_parameter_constraint_list )
-			// /Users/jeremie/ANTLR/cs.g:770:2: 'where' type_variable_name ':' type_parameter_constraint_list
+			// /Users/jeremie/ANTLR/cs.g:770:34: ( 'where' type_variable_name ':' type_parameter_constraint_list )
+			// /Users/jeremie/ANTLR/cs.g:771:2: 'where' type_variable_name ':' type_parameter_constraint_list
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -21652,7 +21956,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type_parameter_constraint_list"
-	// /Users/jeremie/ANTLR/cs.g:772:1: type_parameter_constraint_list : ( ( 'class' | 'struct' ) ( ',' secondary_constraint_list )? ( ',' constructor_constraint )? | secondary_constraint_list ( ',' constructor_constraint )? | constructor_constraint );
+	// /Users/jeremie/ANTLR/cs.g:773:1: type_parameter_constraint_list : ( ( 'class' | 'struct' ) ( ',' secondary_constraint_list )? ( ',' constructor_constraint )? | secondary_constraint_list ( ',' constructor_constraint )? | constructor_constraint );
 	public final csParser.type_parameter_constraint_list_return type_parameter_constraint_list() throws RecognitionException {
 		csParser.type_parameter_constraint_list_return retval = new csParser.type_parameter_constraint_list_return();
 		retval.start = input.LT(1);
@@ -21678,7 +21982,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 191) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:772:31: ( ( 'class' | 'struct' ) ( ',' secondary_constraint_list )? ( ',' constructor_constraint )? | secondary_constraint_list ( ',' constructor_constraint )? | constructor_constraint )
+			// /Users/jeremie/ANTLR/cs.g:773:31: ( ( 'class' | 'struct' ) ( ',' secondary_constraint_list )? ( ',' constructor_constraint )? | secondary_constraint_list ( ',' constructor_constraint )? | constructor_constraint )
 			int alt194=3;
 			switch ( input.LA(1) ) {
 			case 111:
@@ -21734,7 +22038,7 @@ public class csParser extends Parser {
 			}
 			switch (alt194) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:773:5: ( 'class' | 'struct' ) ( ',' secondary_constraint_list )? ( ',' constructor_constraint )?
+					// /Users/jeremie/ANTLR/cs.g:774:5: ( 'class' | 'struct' ) ( ',' secondary_constraint_list )? ( ',' constructor_constraint )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -21751,7 +22055,7 @@ public class csParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					// /Users/jeremie/ANTLR/cs.g:773:28: ( ',' secondary_constraint_list )?
+					// /Users/jeremie/ANTLR/cs.g:774:28: ( ',' secondary_constraint_list )?
 					int alt191=2;
 					int LA191_0 = input.LA(1);
 					if ( (LA191_0==74) ) {
@@ -21768,7 +22072,7 @@ public class csParser extends Parser {
 					}
 					switch (alt191) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:773:29: ',' secondary_constraint_list
+							// /Users/jeremie/ANTLR/cs.g:774:29: ',' secondary_constraint_list
 							{
 							char_literal546=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraint_list6942); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -21787,7 +22091,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:773:65: ( ',' constructor_constraint )?
+					// /Users/jeremie/ANTLR/cs.g:774:65: ( ',' constructor_constraint )?
 					int alt192=2;
 					int LA192_0 = input.LA(1);
 					if ( (LA192_0==74) ) {
@@ -21798,7 +22102,7 @@ public class csParser extends Parser {
 					}
 					switch (alt192) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:773:66: ',' constructor_constraint
+							// /Users/jeremie/ANTLR/cs.g:774:66: ',' constructor_constraint
 							{
 							char_literal548=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraint_list6953); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -21820,7 +22124,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:774:4: secondary_constraint_list ( ',' constructor_constraint )?
+					// /Users/jeremie/ANTLR/cs.g:775:4: secondary_constraint_list ( ',' constructor_constraint )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -21831,7 +22135,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint_list550.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:774:32: ( ',' constructor_constraint )?
+					// /Users/jeremie/ANTLR/cs.g:775:32: ( ',' constructor_constraint )?
 					int alt193=2;
 					int LA193_0 = input.LA(1);
 					if ( (LA193_0==74) ) {
@@ -21842,7 +22146,7 @@ public class csParser extends Parser {
 					}
 					switch (alt193) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:774:33: ',' constructor_constraint
+							// /Users/jeremie/ANTLR/cs.g:775:33: ',' constructor_constraint
 							{
 							char_literal551=(Token)match(input,74,FOLLOW_74_in_type_parameter_constraint_list6969); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -21864,7 +22168,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:775:4: constructor_constraint
+					// /Users/jeremie/ANTLR/cs.g:776:4: constructor_constraint
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -21909,7 +22213,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "secondary_constraint_list"
-	// /Users/jeremie/ANTLR/cs.g:780:1: secondary_constraint_list : secondary_constraint ( ',' secondary_constraint )* ;
+	// /Users/jeremie/ANTLR/cs.g:781:1: secondary_constraint_list : secondary_constraint ( ',' secondary_constraint )* ;
 	public final csParser.secondary_constraint_list_return secondary_constraint_list() throws RecognitionException {
 		csParser.secondary_constraint_list_return retval = new csParser.secondary_constraint_list_return();
 		retval.start = input.LT(1);
@@ -21926,8 +22230,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 192) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:780:26: ( secondary_constraint ( ',' secondary_constraint )* )
-			// /Users/jeremie/ANTLR/cs.g:781:2: secondary_constraint ( ',' secondary_constraint )*
+			// /Users/jeremie/ANTLR/cs.g:781:26: ( secondary_constraint ( ',' secondary_constraint )* )
+			// /Users/jeremie/ANTLR/cs.g:782:2: secondary_constraint ( ',' secondary_constraint )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -21938,7 +22242,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, secondary_constraint554.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:781:23: ( ',' secondary_constraint )*
+			// /Users/jeremie/ANTLR/cs.g:782:23: ( ',' secondary_constraint )*
 			loop195:
 			while (true) {
 				int alt195=2;
@@ -21960,7 +22264,7 @@ public class csParser extends Parser {
 
 				switch (alt195) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:781:24: ',' secondary_constraint
+					// /Users/jeremie/ANTLR/cs.g:782:24: ',' secondary_constraint
 					{
 					char_literal555=(Token)match(input,74,FOLLOW_74_in_secondary_constraint_list6995); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -22014,7 +22318,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "secondary_constraint"
-	// /Users/jeremie/ANTLR/cs.g:782:1: secondary_constraint : type_name ;
+	// /Users/jeremie/ANTLR/cs.g:783:1: secondary_constraint : type_name ;
 	public final csParser.secondary_constraint_return secondary_constraint() throws RecognitionException {
 		csParser.secondary_constraint_return retval = new csParser.secondary_constraint_return();
 		retval.start = input.LT(1);
@@ -22028,8 +22332,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 193) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:782:21: ( type_name )
-			// /Users/jeremie/ANTLR/cs.g:783:2: type_name
+			// /Users/jeremie/ANTLR/cs.g:783:21: ( type_name )
+			// /Users/jeremie/ANTLR/cs.g:784:2: type_name
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -22072,7 +22376,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "type_variable_name"
-	// /Users/jeremie/ANTLR/cs.g:784:1: type_variable_name : identifier ;
+	// /Users/jeremie/ANTLR/cs.g:785:1: type_variable_name : identifier ;
 	public final csParser.type_variable_name_return type_variable_name() throws RecognitionException {
 		csParser.type_variable_name_return retval = new csParser.type_variable_name_return();
 		retval.start = input.LT(1);
@@ -22086,8 +22390,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 194) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:784:19: ( identifier )
-			// /Users/jeremie/ANTLR/cs.g:785:2: identifier
+			// /Users/jeremie/ANTLR/cs.g:785:19: ( identifier )
+			// /Users/jeremie/ANTLR/cs.g:786:2: identifier
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -22130,7 +22434,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constructor_constraint"
-	// /Users/jeremie/ANTLR/cs.g:786:1: constructor_constraint : 'new' '(' ')' ;
+	// /Users/jeremie/ANTLR/cs.g:787:1: constructor_constraint : 'new' '(' ')' ;
 	public final csParser.constructor_constraint_return constructor_constraint() throws RecognitionException {
 		csParser.constructor_constraint_return retval = new csParser.constructor_constraint_return();
 		retval.start = input.LT(1);
@@ -22149,8 +22453,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 195) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:786:23: ( 'new' '(' ')' )
-			// /Users/jeremie/ANTLR/cs.g:787:2: 'new' '(' ')'
+			// /Users/jeremie/ANTLR/cs.g:787:23: ( 'new' '(' ')' )
+			// /Users/jeremie/ANTLR/cs.g:788:2: 'new' '(' ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -22205,7 +22509,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "return_type"
-	// /Users/jeremie/ANTLR/cs.g:788:1: return_type : ( type | 'void' );
+	// /Users/jeremie/ANTLR/cs.g:789:1: return_type : ( type | 'void' );
 	public final csParser.return_type_return return_type() throws RecognitionException {
 		csParser.return_type_return retval = new csParser.return_type_return();
 		retval.start = input.LT(1);
@@ -22221,7 +22525,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 196) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:788:12: ( type | 'void' )
+			// /Users/jeremie/ANTLR/cs.g:789:12: ( type | 'void' )
 			int alt196=2;
 			int LA196_0 = input.LA(1);
 			if ( (LA196_0==IDENTIFIER||LA196_0==95||(LA196_0 >= 97 && LA196_0 <= 98)||(LA196_0 >= 100 && LA196_0 <= 101)||LA196_0==103||(LA196_0 >= 105 && LA196_0 <= 106)||LA196_0==109||LA196_0==114||LA196_0==117||(LA196_0 >= 119 && LA196_0 <= 120)||LA196_0==122||LA196_0==126||LA196_0==129||LA196_0==132||LA196_0==135||LA196_0==138||LA196_0==141||(LA196_0 >= 143 && LA196_0 <= 144)||(LA196_0 >= 146 && LA196_0 <= 148)||(LA196_0 >= 151 && LA196_0 <= 152)||LA196_0==154||LA196_0==157||LA196_0==160||LA196_0==162||LA196_0==167||LA196_0==169||(LA196_0 >= 171 && LA196_0 <= 173)||LA196_0==177||LA196_0==183||(LA196_0 >= 185 && LA196_0 <= 186)||(LA196_0 >= 189 && LA196_0 <= 190)||LA196_0==194||LA196_0==196) ) {
@@ -22260,7 +22564,7 @@ public class csParser extends Parser {
 
 			switch (alt196) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:789:2: type
+					// /Users/jeremie/ANTLR/cs.g:790:2: type
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -22274,7 +22578,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:790:5: 'void'
+					// /Users/jeremie/ANTLR/cs.g:791:5: 'void'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -22320,7 +22624,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "formal_parameter_list"
-	// /Users/jeremie/ANTLR/cs.g:791:1: formal_parameter_list returns [formal_parameter_list t] : a= formal_parameter ( ',' a= formal_parameter )* ;
+	// /Users/jeremie/ANTLR/cs.g:792:1: formal_parameter_list returns [formal_parameter_list t] : a= formal_parameter ( ',' a= formal_parameter )* ;
 	public final csParser.formal_parameter_list_return formal_parameter_list() throws RecognitionException {
 		csParser.formal_parameter_list_return retval = new csParser.formal_parameter_list_return();
 		retval.start = input.LT(1);
@@ -22337,8 +22641,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 197) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:793:39: (a= formal_parameter ( ',' a= formal_parameter )* )
-			// /Users/jeremie/ANTLR/cs.g:794:9: a= formal_parameter ( ',' a= formal_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:794:39: (a= formal_parameter ( ',' a= formal_parameter )* )
+			// /Users/jeremie/ANTLR/cs.g:795:9: a= formal_parameter ( ',' a= formal_parameter )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -22350,7 +22654,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res.add((a!=null?((csParser.formal_parameter_return)a).t:null));}
-			// /Users/jeremie/ANTLR/cs.g:794:45: ( ',' a= formal_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:795:45: ( ',' a= formal_parameter )*
 			loop197:
 			while (true) {
 				int alt197=2;
@@ -22361,7 +22665,7 @@ public class csParser extends Parser {
 
 				switch (alt197) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:794:46: ',' a= formal_parameter
+					// /Users/jeremie/ANTLR/cs.g:795:46: ',' a= formal_parameter
 					{
 					char_literal564=(Token)match(input,74,FOLLOW_74_in_formal_parameter_list7085); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -22418,7 +22722,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "formal_parameter"
-	// /Users/jeremie/ANTLR/cs.g:796:1: formal_parameter returns [formal_parameter t] : ( (a= attributes )? (b= fixed_parameter |c= parameter_array ) | '__arglist' );
+	// /Users/jeremie/ANTLR/cs.g:797:1: formal_parameter returns [formal_parameter t] : ( (a= attributes )? (b= fixed_parameter |c= parameter_array ) | '__arglist' );
 	public final csParser.formal_parameter_return formal_parameter() throws RecognitionException {
 		csParser.formal_parameter_return retval = new csParser.formal_parameter_return();
 		retval.start = input.LT(1);
@@ -22437,7 +22741,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 198) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:798:32: ( (a= attributes )? (b= fixed_parameter |c= parameter_array ) | '__arglist' )
+			// /Users/jeremie/ANTLR/cs.g:799:32: ( (a= attributes )? (b= fixed_parameter |c= parameter_array ) | '__arglist' )
 			int alt200=2;
 			int LA200_0 = input.LA(1);
 			if ( (LA200_0==IDENTIFIER||LA200_0==91||(LA200_0 >= 97 && LA200_0 <= 98)||(LA200_0 >= 100 && LA200_0 <= 101)||LA200_0==103||(LA200_0 >= 105 && LA200_0 <= 106)||LA200_0==109||LA200_0==114||LA200_0==117||(LA200_0 >= 119 && LA200_0 <= 120)||LA200_0==122||LA200_0==126||LA200_0==129||LA200_0==132||LA200_0==135||LA200_0==138||LA200_0==141||(LA200_0 >= 143 && LA200_0 <= 144)||(LA200_0 >= 146 && LA200_0 <= 148)||(LA200_0 >= 151 && LA200_0 <= 152)||(LA200_0 >= 154 && LA200_0 <= 155)||(LA200_0 >= 157 && LA200_0 <= 158)||LA200_0==160||LA200_0==162||(LA200_0 >= 166 && LA200_0 <= 167)||LA200_0==169||(LA200_0 >= 171 && LA200_0 <= 173)||LA200_0==177||LA200_0==180||LA200_0==183||(LA200_0 >= 185 && LA200_0 <= 186)||(LA200_0 >= 189 && LA200_0 <= 190)||LA200_0==192||LA200_0==194||LA200_0==196) ) {
@@ -22476,12 +22780,12 @@ public class csParser extends Parser {
 
 			switch (alt200) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:799:2: (a= attributes )? (b= fixed_parameter |c= parameter_array )
+					// /Users/jeremie/ANTLR/cs.g:800:2: (a= attributes )? (b= fixed_parameter |c= parameter_array )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					// /Users/jeremie/ANTLR/cs.g:799:3: (a= attributes )?
+					// /Users/jeremie/ANTLR/cs.g:800:3: (a= attributes )?
 					int alt198=2;
 					int LA198_0 = input.LA(1);
 					if ( (LA198_0==91) ) {
@@ -22489,7 +22793,7 @@ public class csParser extends Parser {
 					}
 					switch (alt198) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:799:3: a= attributes
+							// /Users/jeremie/ANTLR/cs.g:800:3: a= attributes
 							{
 							pushFollow(FOLLOW_attributes_in_formal_parameter7120);
 							a=attributes();
@@ -22502,7 +22806,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:799:18: (b= fixed_parameter |c= parameter_array )
+					// /Users/jeremie/ANTLR/cs.g:800:18: (b= fixed_parameter |c= parameter_array )
 					int alt199=2;
 					int LA199_0 = input.LA(1);
 					if ( (LA199_0==IDENTIFIER||LA199_0==95||(LA199_0 >= 97 && LA199_0 <= 98)||(LA199_0 >= 100 && LA199_0 <= 101)||LA199_0==103||(LA199_0 >= 105 && LA199_0 <= 106)||LA199_0==109||LA199_0==114||LA199_0==117||(LA199_0 >= 119 && LA199_0 <= 120)||LA199_0==122||LA199_0==126||LA199_0==129||LA199_0==132||LA199_0==135||LA199_0==138||LA199_0==141||(LA199_0 >= 143 && LA199_0 <= 144)||(LA199_0 >= 146 && LA199_0 <= 148)||(LA199_0 >= 151 && LA199_0 <= 152)||(LA199_0 >= 154 && LA199_0 <= 155)||LA199_0==157||LA199_0==160||LA199_0==162||(LA199_0 >= 166 && LA199_0 <= 167)||LA199_0==169||(LA199_0 >= 171 && LA199_0 <= 173)||LA199_0==177||LA199_0==180||LA199_0==183||(LA199_0 >= 185 && LA199_0 <= 186)||(LA199_0 >= 189 && LA199_0 <= 190)||LA199_0==192||LA199_0==194||LA199_0==196) ) {
@@ -22521,7 +22825,7 @@ public class csParser extends Parser {
 
 					switch (alt199) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:799:19: b= fixed_parameter
+							// /Users/jeremie/ANTLR/cs.g:800:19: b= fixed_parameter
 							{
 							pushFollow(FOLLOW_fixed_parameter_in_formal_parameter7128);
 							b=fixed_parameter();
@@ -22533,7 +22837,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:799:51: c= parameter_array
+							// /Users/jeremie/ANTLR/cs.g:800:51: c= parameter_array
 							{
 							pushFollow(FOLLOW_parameter_array_in_formal_parameter7136);
 							c=parameter_array();
@@ -22551,7 +22855,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:800:4: '__arglist'
+					// /Users/jeremie/ANTLR/cs.g:801:4: '__arglist'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -22598,7 +22902,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "fixed_parameters"
-	// /Users/jeremie/ANTLR/cs.g:801:1: fixed_parameters returns [UnknownNode t] : fixed_parameter ( ',' fixed_parameter )* ;
+	// /Users/jeremie/ANTLR/cs.g:802:1: fixed_parameters returns [UnknownNode t] : fixed_parameter ( ',' fixed_parameter )* ;
 	public final csParser.fixed_parameters_return fixed_parameters() throws RecognitionException {
 		csParser.fixed_parameters_return retval = new csParser.fixed_parameters_return();
 		retval.start = input.LT(1);
@@ -22615,8 +22919,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 199) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:802:37: ( fixed_parameter ( ',' fixed_parameter )* )
-			// /Users/jeremie/ANTLR/cs.g:803:2: fixed_parameter ( ',' fixed_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:803:37: ( fixed_parameter ( ',' fixed_parameter )* )
+			// /Users/jeremie/ANTLR/cs.g:804:2: fixed_parameter ( ',' fixed_parameter )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -22627,7 +22931,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_parameter566.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:803:20: ( ',' fixed_parameter )*
+			// /Users/jeremie/ANTLR/cs.g:804:20: ( ',' fixed_parameter )*
 			loop201:
 			while (true) {
 				int alt201=2;
@@ -22638,7 +22942,7 @@ public class csParser extends Parser {
 
 				switch (alt201) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:803:21: ',' fixed_parameter
+					// /Users/jeremie/ANTLR/cs.g:804:21: ',' fixed_parameter
 					{
 					char_literal567=(Token)match(input,74,FOLLOW_74_in_fixed_parameters7171); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -22694,7 +22998,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "fixed_parameter"
-	// /Users/jeremie/ANTLR/cs.g:805:1: fixed_parameter returns [fixed_parameter t] : (a= parameter_modifier )? b= type c= identifier (d= default_argument )? ;
+	// /Users/jeremie/ANTLR/cs.g:806:1: fixed_parameter returns [fixed_parameter t] : (a= parameter_modifier )? b= type c= identifier (d= default_argument )? ;
 	public final csParser.fixed_parameter_return fixed_parameter() throws RecognitionException {
 		csParser.fixed_parameter_return retval = new csParser.fixed_parameter_return();
 		retval.start = input.LT(1);
@@ -22711,13 +23015,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 200) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:806:32: ( (a= parameter_modifier )? b= type c= identifier (d= default_argument )? )
-			// /Users/jeremie/ANTLR/cs.g:807:2: (a= parameter_modifier )? b= type c= identifier (d= default_argument )?
+			// /Users/jeremie/ANTLR/cs.g:807:32: ( (a= parameter_modifier )? b= type c= identifier (d= default_argument )? )
+			// /Users/jeremie/ANTLR/cs.g:808:2: (a= parameter_modifier )? b= type c= identifier (d= default_argument )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:807:3: (a= parameter_modifier )?
+			// /Users/jeremie/ANTLR/cs.g:808:3: (a= parameter_modifier )?
 			int alt202=2;
 			int LA202_0 = input.LA(1);
 			if ( (LA202_0==155||LA202_0==166||LA202_0==180) ) {
@@ -22725,7 +23029,7 @@ public class csParser extends Parser {
 			}
 			switch (alt202) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:807:3: a= parameter_modifier
+					// /Users/jeremie/ANTLR/cs.g:808:3: a= parameter_modifier
 					{
 					pushFollow(FOLLOW_parameter_modifier_in_fixed_parameter7199);
 					a=parameter_modifier();
@@ -22750,7 +23054,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, c.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:807:51: (d= default_argument )?
+			// /Users/jeremie/ANTLR/cs.g:808:51: (d= default_argument )?
 			int alt203=2;
 			int LA203_0 = input.LA(1);
 			if ( (LA203_0==85) ) {
@@ -22758,7 +23062,7 @@ public class csParser extends Parser {
 			}
 			switch (alt203) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:807:51: d= default_argument
+					// /Users/jeremie/ANTLR/cs.g:808:51: d= default_argument
 					{
 					pushFollow(FOLLOW_default_argument_in_fixed_parameter7218);
 					d=default_argument();
@@ -22806,7 +23110,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "default_argument"
-	// /Users/jeremie/ANTLR/cs.g:809:1: default_argument returns [UnknownNode t] : '=' expression ;
+	// /Users/jeremie/ANTLR/cs.g:810:1: default_argument returns [UnknownNode t] : '=' expression ;
 	public final csParser.default_argument_return default_argument() throws RecognitionException {
 		csParser.default_argument_return retval = new csParser.default_argument_return();
 		retval.start = input.LT(1);
@@ -22822,8 +23126,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 201) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:810:37: ( '=' expression )
-			// /Users/jeremie/ANTLR/cs.g:811:2: '=' expression
+			// /Users/jeremie/ANTLR/cs.g:811:37: ( '=' expression )
+			// /Users/jeremie/ANTLR/cs.g:812:2: '=' expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -22874,7 +23178,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "parameter_modifier"
-	// /Users/jeremie/ANTLR/cs.g:812:1: parameter_modifier returns [UnknownNode t] : ( 'ref' | 'out' | 'this' );
+	// /Users/jeremie/ANTLR/cs.g:813:1: parameter_modifier returns [UnknownNode t] : ( 'ref' | 'out' | 'this' );
 	public final csParser.parameter_modifier_return parameter_modifier() throws RecognitionException {
 		csParser.parameter_modifier_return retval = new csParser.parameter_modifier_return();
 		retval.start = input.LT(1);
@@ -22889,7 +23193,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 202) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:813:37: ( 'ref' | 'out' | 'this' )
+			// /Users/jeremie/ANTLR/cs.g:814:37: ( 'ref' | 'out' | 'this' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -22941,7 +23245,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "parameter_array"
-	// /Users/jeremie/ANTLR/cs.g:815:1: parameter_array returns [UnknownNode t] : 'params' type identifier ;
+	// /Users/jeremie/ANTLR/cs.g:816:1: parameter_array returns [UnknownNode t] : 'params' type identifier ;
 	public final csParser.parameter_array_return parameter_array() throws RecognitionException {
 		csParser.parameter_array_return retval = new csParser.parameter_array_return();
 		retval.start = input.LT(1);
@@ -22958,8 +23262,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 203) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:816:37: ( 'params' type identifier )
-			// /Users/jeremie/ANTLR/cs.g:817:2: 'params' type identifier
+			// /Users/jeremie/ANTLR/cs.g:817:37: ( 'params' type identifier )
+			// /Users/jeremie/ANTLR/cs.g:818:2: 'params' type identifier
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -23015,7 +23319,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_declaration"
-	// /Users/jeremie/ANTLR/cs.g:820:1: interface_declaration : 'interface' identifier ( variant_generic_parameter_list )? ( interface_base )? ( type_parameter_constraints_clauses )? interface_body ( ';' )? ;
+	// /Users/jeremie/ANTLR/cs.g:821:1: interface_declaration : 'interface' identifier ( variant_generic_parameter_list )? ( interface_base )? ( type_parameter_constraints_clauses )? interface_body ( ';' )? ;
 	public final csParser.interface_declaration_return interface_declaration() throws RecognitionException {
 		csParser.interface_declaration_return retval = new csParser.interface_declaration_return();
 		retval.start = input.LT(1);
@@ -23037,8 +23341,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 204) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:820:22: ( 'interface' identifier ( variant_generic_parameter_list )? ( interface_base )? ( type_parameter_constraints_clauses )? interface_body ( ';' )? )
-			// /Users/jeremie/ANTLR/cs.g:821:2: 'interface' identifier ( variant_generic_parameter_list )? ( interface_base )? ( type_parameter_constraints_clauses )? interface_body ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:821:22: ( 'interface' identifier ( variant_generic_parameter_list )? ( interface_base )? ( type_parameter_constraints_clauses )? interface_body ( ';' )? )
+			// /Users/jeremie/ANTLR/cs.g:822:2: 'interface' identifier ( variant_generic_parameter_list )? ( interface_base )? ( type_parameter_constraints_clauses )? interface_body ( ';' )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -23055,7 +23359,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier576.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:821:29: ( variant_generic_parameter_list )?
+			// /Users/jeremie/ANTLR/cs.g:822:29: ( variant_generic_parameter_list )?
 			int alt204=2;
 			int LA204_0 = input.LA(1);
 			if ( (LA204_0==81) ) {
@@ -23063,7 +23367,7 @@ public class csParser extends Parser {
 			}
 			switch (alt204) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:821:29: variant_generic_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:822:29: variant_generic_parameter_list
 					{
 					pushFollow(FOLLOW_variant_generic_parameter_list_in_interface_declaration7314);
 					variant_generic_parameter_list577=variant_generic_parameter_list();
@@ -23076,7 +23380,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:822:6: ( interface_base )?
+			// /Users/jeremie/ANTLR/cs.g:823:6: ( interface_base )?
 			int alt205=2;
 			int LA205_0 = input.LA(1);
 			if ( (LA205_0==79) ) {
@@ -23084,7 +23388,7 @@ public class csParser extends Parser {
 			}
 			switch (alt205) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:822:6: interface_base
+					// /Users/jeremie/ANTLR/cs.g:823:6: interface_base
 					{
 					pushFollow(FOLLOW_interface_base_in_interface_declaration7323);
 					interface_base578=interface_base();
@@ -23097,7 +23401,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:822:24: ( type_parameter_constraints_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:823:24: ( type_parameter_constraints_clauses )?
 			int alt206=2;
 			int LA206_0 = input.LA(1);
 			if ( (LA206_0==194) ) {
@@ -23105,7 +23409,7 @@ public class csParser extends Parser {
 			}
 			switch (alt206) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:822:24: type_parameter_constraints_clauses
+					// /Users/jeremie/ANTLR/cs.g:823:24: type_parameter_constraints_clauses
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_interface_declaration7328);
 					type_parameter_constraints_clauses579=type_parameter_constraints_clauses();
@@ -23124,7 +23428,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_body580.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:822:79: ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:823:79: ( ';' )?
 			int alt207=2;
 			int LA207_0 = input.LA(1);
 			if ( (LA207_0==SEMI) ) {
@@ -23132,7 +23436,7 @@ public class csParser extends Parser {
 			}
 			switch (alt207) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:822:79: ';'
+					// /Users/jeremie/ANTLR/cs.g:823:79: ';'
 					{
 					char_literal581=(Token)match(input,SEMI,FOLLOW_SEMI_in_interface_declaration7337); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -23177,7 +23481,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_modifiers"
-	// /Users/jeremie/ANTLR/cs.g:823:1: interface_modifiers : ( modifier )+ ;
+	// /Users/jeremie/ANTLR/cs.g:824:1: interface_modifiers : ( modifier )+ ;
 	public final csParser.interface_modifiers_return interface_modifiers() throws RecognitionException {
 		csParser.interface_modifiers_return retval = new csParser.interface_modifiers_return();
 		retval.start = input.LT(1);
@@ -23191,13 +23495,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 205) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:823:20: ( ( modifier )+ )
-			// /Users/jeremie/ANTLR/cs.g:824:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:824:20: ( ( modifier )+ )
+			// /Users/jeremie/ANTLR/cs.g:825:2: ( modifier )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:824:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:825:2: ( modifier )+
 			int cnt208=0;
 			loop208:
 			while (true) {
@@ -23209,7 +23513,7 @@ public class csParser extends Parser {
 
 				switch (alt208) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:824:2: modifier
+					// /Users/jeremie/ANTLR/cs.g:825:2: modifier
 					{
 					pushFollow(FOLLOW_modifier_in_interface_modifiers7347);
 					modifier582=modifier();
@@ -23261,7 +23565,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_base"
-	// /Users/jeremie/ANTLR/cs.g:825:1: interface_base : ':' interface_type_list ;
+	// /Users/jeremie/ANTLR/cs.g:826:1: interface_base : ':' interface_type_list ;
 	public final csParser.interface_base_return interface_base() throws RecognitionException {
 		csParser.interface_base_return retval = new csParser.interface_base_return();
 		retval.start = input.LT(1);
@@ -23277,8 +23581,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 206) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:825:15: ( ':' interface_type_list )
-			// /Users/jeremie/ANTLR/cs.g:826:5: ':' interface_type_list
+			// /Users/jeremie/ANTLR/cs.g:826:15: ( ':' interface_type_list )
+			// /Users/jeremie/ANTLR/cs.g:827:5: ':' interface_type_list
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -23327,7 +23631,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_body"
-	// /Users/jeremie/ANTLR/cs.g:827:1: interface_body : '{' ( interface_member_declarations )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:828:1: interface_body : '{' ( interface_member_declarations )? '}' ;
 	public final csParser.interface_body_return interface_body() throws RecognitionException {
 		csParser.interface_body_return retval = new csParser.interface_body_return();
 		retval.start = input.LT(1);
@@ -23345,8 +23649,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 207) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:827:15: ( '{' ( interface_member_declarations )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:828:2: '{' ( interface_member_declarations )? '}'
+			// /Users/jeremie/ANTLR/cs.g:828:15: ( '{' ( interface_member_declarations )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:829:2: '{' ( interface_member_declarations )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -23357,7 +23661,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal585_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:828:8: ( interface_member_declarations )?
+			// /Users/jeremie/ANTLR/cs.g:829:8: ( interface_member_declarations )?
 			int alt209=2;
 			int LA209_0 = input.LA(1);
 			if ( (LA209_0==IDENTIFIER||LA209_0==91||(LA209_0 >= 95 && LA209_0 <= 98)||(LA209_0 >= 100 && LA209_0 <= 101)||LA209_0==103||(LA209_0 >= 105 && LA209_0 <= 106)||LA209_0==109||LA209_0==114||LA209_0==117||(LA209_0 >= 119 && LA209_0 <= 120)||(LA209_0 >= 122 && LA209_0 <= 123)||(LA209_0 >= 125 && LA209_0 <= 126)||LA209_0==129||LA209_0==132||LA209_0==135||LA209_0==138||(LA209_0 >= 140 && LA209_0 <= 141)||(LA209_0 >= 143 && LA209_0 <= 144)||(LA209_0 >= 146 && LA209_0 <= 148)||(LA209_0 >= 150 && LA209_0 <= 152)||LA209_0==154||(LA209_0 >= 156 && LA209_0 <= 157)||(LA209_0 >= 160 && LA209_0 <= 165)||LA209_0==167||(LA209_0 >= 169 && LA209_0 <= 173)||(LA209_0 >= 176 && LA209_0 <= 177)||LA209_0==183||(LA209_0 >= 185 && LA209_0 <= 186)||(LA209_0 >= 188 && LA209_0 <= 194)||LA209_0==196) ) {
@@ -23365,7 +23669,7 @@ public class csParser extends Parser {
 			}
 			switch (alt209) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:828:8: interface_member_declarations
+					// /Users/jeremie/ANTLR/cs.g:829:8: interface_member_declarations
 					{
 					pushFollow(FOLLOW_interface_member_declarations_in_interface_body7374);
 					interface_member_declarations586=interface_member_declarations();
@@ -23416,7 +23720,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_member_declarations"
-	// /Users/jeremie/ANTLR/cs.g:829:1: interface_member_declarations : ( interface_member_declaration )+ ;
+	// /Users/jeremie/ANTLR/cs.g:830:1: interface_member_declarations : ( interface_member_declaration )+ ;
 	public final csParser.interface_member_declarations_return interface_member_declarations() throws RecognitionException {
 		csParser.interface_member_declarations_return retval = new csParser.interface_member_declarations_return();
 		retval.start = input.LT(1);
@@ -23430,13 +23734,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 208) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:829:30: ( ( interface_member_declaration )+ )
-			// /Users/jeremie/ANTLR/cs.g:830:2: ( interface_member_declaration )+
+			// /Users/jeremie/ANTLR/cs.g:830:30: ( ( interface_member_declaration )+ )
+			// /Users/jeremie/ANTLR/cs.g:831:2: ( interface_member_declaration )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:830:2: ( interface_member_declaration )+
+			// /Users/jeremie/ANTLR/cs.g:831:2: ( interface_member_declaration )+
 			int cnt210=0;
 			loop210:
 			while (true) {
@@ -23448,7 +23752,7 @@ public class csParser extends Parser {
 
 				switch (alt210) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:830:2: interface_member_declaration
+					// /Users/jeremie/ANTLR/cs.g:831:2: interface_member_declaration
 					{
 					pushFollow(FOLLOW_interface_member_declaration_in_interface_member_declarations7387);
 					interface_member_declaration588=interface_member_declaration();
@@ -23500,7 +23804,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_member_declaration"
-	// /Users/jeremie/ANTLR/cs.g:831:1: interface_member_declaration : ( attributes )? ( modifiers )? ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) ) ;
+	// /Users/jeremie/ANTLR/cs.g:832:1: interface_member_declaration : ( attributes )? ( modifiers )? ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) ) ;
 	public final csParser.interface_member_declaration_return interface_member_declaration() throws RecognitionException {
 		csParser.interface_member_declaration_return retval = new csParser.interface_member_declaration_return();
 		retval.start = input.LT(1);
@@ -23523,13 +23827,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 209) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:831:29: ( ( attributes )? ( modifiers )? ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) ) )
-			// /Users/jeremie/ANTLR/cs.g:832:2: ( attributes )? ( modifiers )? ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) )
+			// /Users/jeremie/ANTLR/cs.g:832:29: ( ( attributes )? ( modifiers )? ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) ) )
+			// /Users/jeremie/ANTLR/cs.g:833:2: ( attributes )? ( modifiers )? ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:832:2: ( attributes )?
+			// /Users/jeremie/ANTLR/cs.g:833:2: ( attributes )?
 			int alt211=2;
 			int LA211_0 = input.LA(1);
 			if ( (LA211_0==91) ) {
@@ -23537,7 +23841,7 @@ public class csParser extends Parser {
 			}
 			switch (alt211) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:832:2: attributes
+					// /Users/jeremie/ANTLR/cs.g:833:2: attributes
 					{
 					pushFollow(FOLLOW_attributes_in_interface_member_declaration7396);
 					attributes589=attributes();
@@ -23550,7 +23854,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:832:17: ( modifiers )?
+			// /Users/jeremie/ANTLR/cs.g:833:17: ( modifiers )?
 			int alt212=2;
 			int LA212_0 = input.LA(1);
 			if ( (LA212_0==96||LA212_0==125||LA212_0==140||LA212_0==150||LA212_0==156||LA212_0==161||(LA212_0 >= 163 && LA212_0 <= 165)||LA212_0==170||LA212_0==176||LA212_0==188||LA212_0==191||LA212_0==193) ) {
@@ -23558,7 +23862,7 @@ public class csParser extends Parser {
 			}
 			switch (alt212) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:832:17: modifiers
+					// /Users/jeremie/ANTLR/cs.g:833:17: modifiers
 					{
 					pushFollow(FOLLOW_modifiers_in_interface_member_declaration7402);
 					modifiers590=modifiers();
@@ -23571,7 +23875,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:833:3: ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) )
+			// /Users/jeremie/ANTLR/cs.g:834:3: ( 'void' interface_method_declaration | interface_event_declaration | type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration ) )
 			int alt214=3;
 			switch ( input.LA(1) ) {
 			case 192:
@@ -23661,7 +23965,7 @@ public class csParser extends Parser {
 			}
 			switch (alt214) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:833:4: 'void' interface_method_declaration
+					// /Users/jeremie/ANTLR/cs.g:834:4: 'void' interface_method_declaration
 					{
 					string_literal591=(Token)match(input,192,FOLLOW_192_in_interface_member_declaration7408); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -23678,7 +23982,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:834:5: interface_event_declaration
+					// /Users/jeremie/ANTLR/cs.g:835:5: interface_event_declaration
 					{
 					pushFollow(FOLLOW_interface_event_declaration_in_interface_member_declaration7418);
 					interface_event_declaration593=interface_event_declaration();
@@ -23689,7 +23993,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:835:5: type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration )
+					// /Users/jeremie/ANTLR/cs.g:836:5: type ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration )
 					{
 					pushFollow(FOLLOW_type_in_interface_member_declaration7424);
 					type594=type();
@@ -23697,7 +24001,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type594.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:835:12: ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration )
+					// /Users/jeremie/ANTLR/cs.g:836:12: ( ( member_name '(' )=> interface_method_declaration | ( member_name '{' )=> interface_property_declaration | interface_indexer_declaration )
 					int alt213=3;
 					int LA213_0 = input.LA(1);
 					if ( (LA213_0==IDENTIFIER||LA213_0==95||(LA213_0 >= 97 && LA213_0 <= 98)||(LA213_0 >= 100 && LA213_0 <= 101)||LA213_0==105||LA213_0==117||LA213_0==120||LA213_0==122||LA213_0==126||LA213_0==132||LA213_0==135||LA213_0==141||(LA213_0 >= 143 && LA213_0 <= 144)||(LA213_0 >= 147 && LA213_0 <= 148)||LA213_0==152||LA213_0==154||LA213_0==157||LA213_0==160||LA213_0==162||LA213_0==167||(LA213_0 >= 171 && LA213_0 <= 172)||LA213_0==183||LA213_0==190||LA213_0==194||LA213_0==196) ) {
@@ -23726,7 +24030,7 @@ public class csParser extends Parser {
 
 					switch (alt213) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:835:14: ( member_name '(' )=> interface_method_declaration
+							// /Users/jeremie/ANTLR/cs.g:836:14: ( member_name '(' )=> interface_method_declaration
 							{
 							pushFollow(FOLLOW_interface_method_declaration_in_interface_member_declaration7440);
 							interface_method_declaration595=interface_method_declaration();
@@ -23737,7 +24041,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:836:14: ( member_name '{' )=> interface_property_declaration
+							// /Users/jeremie/ANTLR/cs.g:837:14: ( member_name '{' )=> interface_property_declaration
 							{
 							pushFollow(FOLLOW_interface_property_declaration_in_interface_member_declaration7465);
 							interface_property_declaration596=interface_property_declaration();
@@ -23748,7 +24052,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /Users/jeremie/ANTLR/cs.g:837:8: interface_indexer_declaration
+							// /Users/jeremie/ANTLR/cs.g:838:8: interface_indexer_declaration
 							{
 							pushFollow(FOLLOW_interface_indexer_declaration_in_interface_member_declaration7475);
 							interface_indexer_declaration597=interface_indexer_declaration();
@@ -23798,7 +24102,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_property_declaration"
-	// /Users/jeremie/ANTLR/cs.g:840:1: interface_property_declaration : identifier '{' interface_accessor_declarations '}' ;
+	// /Users/jeremie/ANTLR/cs.g:841:1: interface_property_declaration : identifier '{' interface_accessor_declarations '}' ;
 	public final csParser.interface_property_declaration_return interface_property_declaration() throws RecognitionException {
 		csParser.interface_property_declaration_return retval = new csParser.interface_property_declaration_return();
 		retval.start = input.LT(1);
@@ -23817,8 +24121,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 210) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:840:31: ( identifier '{' interface_accessor_declarations '}' )
-			// /Users/jeremie/ANTLR/cs.g:841:2: identifier '{' interface_accessor_declarations '}'
+			// /Users/jeremie/ANTLR/cs.g:841:31: ( identifier '{' interface_accessor_declarations '}' )
+			// /Users/jeremie/ANTLR/cs.g:842:2: identifier '{' interface_accessor_declarations '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -23879,7 +24183,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_method_declaration"
-	// /Users/jeremie/ANTLR/cs.g:842:1: interface_method_declaration : identifier ( generic_argument_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' ;
+	// /Users/jeremie/ANTLR/cs.g:843:1: interface_method_declaration : identifier ( generic_argument_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' ;
 	public final csParser.interface_method_declaration_return interface_method_declaration() throws RecognitionException {
 		csParser.interface_method_declaration_return retval = new csParser.interface_method_declaration_return();
 		retval.start = input.LT(1);
@@ -23902,8 +24206,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 211) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:842:29: ( identifier ( generic_argument_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' )
-			// /Users/jeremie/ANTLR/cs.g:843:2: identifier ( generic_argument_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';'
+			// /Users/jeremie/ANTLR/cs.g:843:29: ( identifier ( generic_argument_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';' )
+			// /Users/jeremie/ANTLR/cs.g:844:2: identifier ( generic_argument_list )? '(' ( formal_parameter_list )? ')' ( type_parameter_constraints_clauses )? ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -23914,7 +24218,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier602.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:843:15: ( generic_argument_list )?
+			// /Users/jeremie/ANTLR/cs.g:844:15: ( generic_argument_list )?
 			int alt215=2;
 			int LA215_0 = input.LA(1);
 			if ( (LA215_0==81) ) {
@@ -23922,7 +24226,7 @@ public class csParser extends Parser {
 			}
 			switch (alt215) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:843:15: generic_argument_list
+					// /Users/jeremie/ANTLR/cs.g:844:15: generic_argument_list
 					{
 					pushFollow(FOLLOW_generic_argument_list_in_interface_method_declaration7516);
 					generic_argument_list603=generic_argument_list();
@@ -23941,7 +24245,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal604_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:844:12: ( formal_parameter_list )?
+			// /Users/jeremie/ANTLR/cs.g:845:12: ( formal_parameter_list )?
 			int alt216=2;
 			int LA216_0 = input.LA(1);
 			if ( (LA216_0==IDENTIFIER||LA216_0==91||LA216_0==95||(LA216_0 >= 97 && LA216_0 <= 98)||(LA216_0 >= 100 && LA216_0 <= 101)||LA216_0==103||(LA216_0 >= 105 && LA216_0 <= 106)||LA216_0==109||LA216_0==114||LA216_0==117||(LA216_0 >= 119 && LA216_0 <= 120)||LA216_0==122||LA216_0==126||LA216_0==129||LA216_0==132||LA216_0==135||LA216_0==138||LA216_0==141||(LA216_0 >= 143 && LA216_0 <= 144)||(LA216_0 >= 146 && LA216_0 <= 148)||(LA216_0 >= 151 && LA216_0 <= 152)||(LA216_0 >= 154 && LA216_0 <= 155)||(LA216_0 >= 157 && LA216_0 <= 158)||LA216_0==160||LA216_0==162||(LA216_0 >= 166 && LA216_0 <= 167)||LA216_0==169||(LA216_0 >= 171 && LA216_0 <= 173)||LA216_0==177||LA216_0==180||LA216_0==183||(LA216_0 >= 185 && LA216_0 <= 186)||(LA216_0 >= 189 && LA216_0 <= 190)||LA216_0==192||LA216_0==194||LA216_0==196) ) {
@@ -23949,7 +24253,7 @@ public class csParser extends Parser {
 			}
 			switch (alt216) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:844:12: formal_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:845:12: formal_parameter_list
 					{
 					pushFollow(FOLLOW_formal_parameter_list_in_interface_method_declaration7528);
 					formal_parameter_list605=formal_parameter_list();
@@ -23968,7 +24272,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal606_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:844:43: ( type_parameter_constraints_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:845:43: ( type_parameter_constraints_clauses )?
 			int alt217=2;
 			int LA217_0 = input.LA(1);
 			if ( (LA217_0==194) ) {
@@ -23976,7 +24280,7 @@ public class csParser extends Parser {
 			}
 			switch (alt217) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:844:43: type_parameter_constraints_clauses
+					// /Users/jeremie/ANTLR/cs.g:845:43: type_parameter_constraints_clauses
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_interface_method_declaration7537);
 					type_parameter_constraints_clauses607=type_parameter_constraints_clauses();
@@ -24027,7 +24331,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_event_declaration"
-	// /Users/jeremie/ANTLR/cs.g:845:1: interface_event_declaration : 'event' type identifier ';' ;
+	// /Users/jeremie/ANTLR/cs.g:846:1: interface_event_declaration : 'event' type identifier ';' ;
 	public final csParser.interface_event_declaration_return interface_event_declaration() throws RecognitionException {
 		csParser.interface_event_declaration_return retval = new csParser.interface_event_declaration_return();
 		retval.start = input.LT(1);
@@ -24046,8 +24350,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 212) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:845:28: ( 'event' type identifier ';' )
-			// /Users/jeremie/ANTLR/cs.g:847:2: 'event' type identifier ';'
+			// /Users/jeremie/ANTLR/cs.g:846:28: ( 'event' type identifier ';' )
+			// /Users/jeremie/ANTLR/cs.g:848:2: 'event' type identifier ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -24108,7 +24412,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_indexer_declaration"
-	// /Users/jeremie/ANTLR/cs.g:848:1: interface_indexer_declaration : 'this' '[' formal_parameter_list ']' '{' interface_accessor_declarations '}' ;
+	// /Users/jeremie/ANTLR/cs.g:849:1: interface_indexer_declaration : 'this' '[' formal_parameter_list ']' '{' interface_accessor_declarations '}' ;
 	public final csParser.interface_indexer_declaration_return interface_indexer_declaration() throws RecognitionException {
 		csParser.interface_indexer_declaration_return retval = new csParser.interface_indexer_declaration_return();
 		retval.start = input.LT(1);
@@ -24133,8 +24437,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 213) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:848:30: ( 'this' '[' formal_parameter_list ']' '{' interface_accessor_declarations '}' )
-			// /Users/jeremie/ANTLR/cs.g:850:2: 'this' '[' formal_parameter_list ']' '{' interface_accessor_declarations '}'
+			// /Users/jeremie/ANTLR/cs.g:849:30: ( 'this' '[' formal_parameter_list ']' '{' interface_accessor_declarations '}' )
+			// /Users/jeremie/ANTLR/cs.g:851:2: 'this' '[' formal_parameter_list ']' '{' interface_accessor_declarations '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -24213,7 +24517,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_accessor_declarations"
-	// /Users/jeremie/ANTLR/cs.g:851:1: interface_accessor_declarations : ( attributes )? ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? ) ;
+	// /Users/jeremie/ANTLR/cs.g:852:1: interface_accessor_declarations : ( attributes )? ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? ) ;
 	public final csParser.interface_accessor_declarations_return interface_accessor_declarations() throws RecognitionException {
 		csParser.interface_accessor_declarations_return retval = new csParser.interface_accessor_declarations_return();
 		retval.start = input.LT(1);
@@ -24233,13 +24537,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 214) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:851:32: ( ( attributes )? ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? ) )
-			// /Users/jeremie/ANTLR/cs.g:852:2: ( attributes )? ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? )
+			// /Users/jeremie/ANTLR/cs.g:852:32: ( ( attributes )? ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? ) )
+			// /Users/jeremie/ANTLR/cs.g:853:2: ( attributes )? ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:852:2: ( attributes )?
+			// /Users/jeremie/ANTLR/cs.g:853:2: ( attributes )?
 			int alt218=2;
 			int LA218_0 = input.LA(1);
 			if ( (LA218_0==91) ) {
@@ -24247,7 +24551,7 @@ public class csParser extends Parser {
 			}
 			switch (alt218) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:852:2: attributes
+					// /Users/jeremie/ANTLR/cs.g:853:2: attributes
 					{
 					pushFollow(FOLLOW_attributes_in_interface_accessor_declarations7609);
 					attributes620=attributes();
@@ -24260,7 +24564,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:853:3: ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? )
+			// /Users/jeremie/ANTLR/cs.g:854:3: ( interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )? | interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )? )
 			int alt223=2;
 			int LA223_0 = input.LA(1);
 			if ( (LA223_0==133) ) {
@@ -24279,7 +24583,7 @@ public class csParser extends Parser {
 
 			switch (alt223) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:853:4: interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:854:4: interface_get_accessor_declaration ( attributes )? ( interface_set_accessor_declaration )?
 					{
 					pushFollow(FOLLOW_interface_get_accessor_declaration_in_interface_accessor_declarations7618);
 					interface_get_accessor_declaration621=interface_get_accessor_declaration();
@@ -24287,7 +24591,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_get_accessor_declaration621.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:853:41: ( attributes )?
+					// /Users/jeremie/ANTLR/cs.g:854:41: ( attributes )?
 					int alt219=2;
 					int LA219_0 = input.LA(1);
 					if ( (LA219_0==91) ) {
@@ -24295,7 +24599,7 @@ public class csParser extends Parser {
 					}
 					switch (alt219) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:853:41: attributes
+							// /Users/jeremie/ANTLR/cs.g:854:41: attributes
 							{
 							pushFollow(FOLLOW_attributes_in_interface_accessor_declarations7622);
 							attributes622=attributes();
@@ -24308,7 +24612,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:853:55: ( interface_set_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:854:55: ( interface_set_accessor_declaration )?
 					int alt220=2;
 					int LA220_0 = input.LA(1);
 					if ( (LA220_0==172) ) {
@@ -24316,7 +24620,7 @@ public class csParser extends Parser {
 					}
 					switch (alt220) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:853:55: interface_set_accessor_declaration
+							// /Users/jeremie/ANTLR/cs.g:854:55: interface_set_accessor_declaration
 							{
 							pushFollow(FOLLOW_interface_set_accessor_declaration_in_interface_accessor_declarations7627);
 							interface_set_accessor_declaration623=interface_set_accessor_declaration();
@@ -24332,7 +24636,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:854:5: interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:855:5: interface_set_accessor_declaration ( attributes )? ( interface_get_accessor_declaration )?
 					{
 					pushFollow(FOLLOW_interface_set_accessor_declaration_in_interface_accessor_declarations7634);
 					interface_set_accessor_declaration624=interface_set_accessor_declaration();
@@ -24340,7 +24644,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, interface_set_accessor_declaration624.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:854:42: ( attributes )?
+					// /Users/jeremie/ANTLR/cs.g:855:42: ( attributes )?
 					int alt221=2;
 					int LA221_0 = input.LA(1);
 					if ( (LA221_0==91) ) {
@@ -24348,7 +24652,7 @@ public class csParser extends Parser {
 					}
 					switch (alt221) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:854:42: attributes
+							// /Users/jeremie/ANTLR/cs.g:855:42: attributes
 							{
 							pushFollow(FOLLOW_attributes_in_interface_accessor_declarations7638);
 							attributes625=attributes();
@@ -24361,7 +24665,7 @@ public class csParser extends Parser {
 
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:854:56: ( interface_get_accessor_declaration )?
+					// /Users/jeremie/ANTLR/cs.g:855:56: ( interface_get_accessor_declaration )?
 					int alt222=2;
 					int LA222_0 = input.LA(1);
 					if ( (LA222_0==133) ) {
@@ -24369,7 +24673,7 @@ public class csParser extends Parser {
 					}
 					switch (alt222) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:854:56: interface_get_accessor_declaration
+							// /Users/jeremie/ANTLR/cs.g:855:56: interface_get_accessor_declaration
 							{
 							pushFollow(FOLLOW_interface_get_accessor_declaration_in_interface_accessor_declarations7643);
 							interface_get_accessor_declaration626=interface_get_accessor_declaration();
@@ -24419,7 +24723,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_get_accessor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:855:1: interface_get_accessor_declaration : 'get' ';' ;
+	// /Users/jeremie/ANTLR/cs.g:856:1: interface_get_accessor_declaration : 'get' ';' ;
 	public final csParser.interface_get_accessor_declaration_return interface_get_accessor_declaration() throws RecognitionException {
 		csParser.interface_get_accessor_declaration_return retval = new csParser.interface_get_accessor_declaration_return();
 		retval.start = input.LT(1);
@@ -24436,8 +24740,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 215) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:855:35: ( 'get' ';' )
-			// /Users/jeremie/ANTLR/cs.g:856:2: 'get' ';'
+			// /Users/jeremie/ANTLR/cs.g:856:35: ( 'get' ';' )
+			// /Users/jeremie/ANTLR/cs.g:857:2: 'get' ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -24486,7 +24790,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "interface_set_accessor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:857:1: interface_set_accessor_declaration : 'set' ';' ;
+	// /Users/jeremie/ANTLR/cs.g:858:1: interface_set_accessor_declaration : 'set' ';' ;
 	public final csParser.interface_set_accessor_declaration_return interface_set_accessor_declaration() throws RecognitionException {
 		csParser.interface_set_accessor_declaration_return retval = new csParser.interface_set_accessor_declaration_return();
 		retval.start = input.LT(1);
@@ -24503,8 +24807,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 216) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:857:35: ( 'set' ';' )
-			// /Users/jeremie/ANTLR/cs.g:858:2: 'set' ';'
+			// /Users/jeremie/ANTLR/cs.g:858:35: ( 'set' ';' )
+			// /Users/jeremie/ANTLR/cs.g:859:2: 'set' ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -24553,7 +24857,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "method_modifiers"
-	// /Users/jeremie/ANTLR/cs.g:859:1: method_modifiers : ( modifier )+ ;
+	// /Users/jeremie/ANTLR/cs.g:860:1: method_modifiers : ( modifier )+ ;
 	public final csParser.method_modifiers_return method_modifiers() throws RecognitionException {
 		csParser.method_modifiers_return retval = new csParser.method_modifiers_return();
 		retval.start = input.LT(1);
@@ -24567,13 +24871,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 217) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:859:17: ( ( modifier )+ )
-			// /Users/jeremie/ANTLR/cs.g:860:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:860:17: ( ( modifier )+ )
+			// /Users/jeremie/ANTLR/cs.g:861:2: ( modifier )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:860:2: ( modifier )+
+			// /Users/jeremie/ANTLR/cs.g:861:2: ( modifier )+
 			int cnt224=0;
 			loop224:
 			while (true) {
@@ -24585,7 +24889,7 @@ public class csParser extends Parser {
 
 				switch (alt224) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:860:2: modifier
+					// /Users/jeremie/ANTLR/cs.g:861:2: modifier
 					{
 					pushFollow(FOLLOW_modifier_in_method_modifiers7681);
 					modifier631=modifier();
@@ -24637,7 +24941,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "struct_declaration"
-	// /Users/jeremie/ANTLR/cs.g:863:1: struct_declaration : 'struct' type_or_generic ( struct_interfaces )? ( type_parameter_constraints_clauses )? struct_body ( ';' )? ;
+	// /Users/jeremie/ANTLR/cs.g:864:1: struct_declaration : 'struct' type_or_generic ( struct_interfaces )? ( type_parameter_constraints_clauses )? struct_body ( ';' )? ;
 	public final csParser.struct_declaration_return struct_declaration() throws RecognitionException {
 		csParser.struct_declaration_return retval = new csParser.struct_declaration_return();
 		retval.start = input.LT(1);
@@ -24658,8 +24962,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 218) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:863:19: ( 'struct' type_or_generic ( struct_interfaces )? ( type_parameter_constraints_clauses )? struct_body ( ';' )? )
-			// /Users/jeremie/ANTLR/cs.g:864:2: 'struct' type_or_generic ( struct_interfaces )? ( type_parameter_constraints_clauses )? struct_body ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:864:19: ( 'struct' type_or_generic ( struct_interfaces )? ( type_parameter_constraints_clauses )? struct_body ( ';' )? )
+			// /Users/jeremie/ANTLR/cs.g:865:2: 'struct' type_or_generic ( struct_interfaces )? ( type_parameter_constraints_clauses )? struct_body ( ';' )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -24676,7 +24980,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type_or_generic633.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:864:31: ( struct_interfaces )?
+			// /Users/jeremie/ANTLR/cs.g:865:31: ( struct_interfaces )?
 			int alt225=2;
 			int LA225_0 = input.LA(1);
 			if ( (LA225_0==79) ) {
@@ -24684,7 +24988,7 @@ public class csParser extends Parser {
 			}
 			switch (alt225) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:864:31: struct_interfaces
+					// /Users/jeremie/ANTLR/cs.g:865:31: struct_interfaces
 					{
 					pushFollow(FOLLOW_struct_interfaces_in_struct_declaration7701);
 					struct_interfaces634=struct_interfaces();
@@ -24697,7 +25001,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:864:52: ( type_parameter_constraints_clauses )?
+			// /Users/jeremie/ANTLR/cs.g:865:52: ( type_parameter_constraints_clauses )?
 			int alt226=2;
 			int LA226_0 = input.LA(1);
 			if ( (LA226_0==194) ) {
@@ -24705,7 +25009,7 @@ public class csParser extends Parser {
 			}
 			switch (alt226) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:864:52: type_parameter_constraints_clauses
+					// /Users/jeremie/ANTLR/cs.g:865:52: type_parameter_constraints_clauses
 					{
 					pushFollow(FOLLOW_type_parameter_constraints_clauses_in_struct_declaration7706);
 					type_parameter_constraints_clauses635=type_parameter_constraints_clauses();
@@ -24724,7 +25028,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, struct_body636.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:864:104: ( ';' )?
+			// /Users/jeremie/ANTLR/cs.g:865:104: ( ';' )?
 			int alt227=2;
 			int LA227_0 = input.LA(1);
 			if ( (LA227_0==SEMI) ) {
@@ -24732,7 +25036,7 @@ public class csParser extends Parser {
 			}
 			switch (alt227) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:864:104: ';'
+					// /Users/jeremie/ANTLR/cs.g:865:104: ';'
 					{
 					char_literal637=(Token)match(input,SEMI,FOLLOW_SEMI_in_struct_declaration7715); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -24777,7 +25081,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "struct_modifiers"
-	// /Users/jeremie/ANTLR/cs.g:865:1: struct_modifiers : ( struct_modifier )+ ;
+	// /Users/jeremie/ANTLR/cs.g:866:1: struct_modifiers : ( struct_modifier )+ ;
 	public final csParser.struct_modifiers_return struct_modifiers() throws RecognitionException {
 		csParser.struct_modifiers_return retval = new csParser.struct_modifiers_return();
 		retval.start = input.LT(1);
@@ -24791,13 +25095,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 219) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:865:17: ( ( struct_modifier )+ )
-			// /Users/jeremie/ANTLR/cs.g:866:2: ( struct_modifier )+
+			// /Users/jeremie/ANTLR/cs.g:866:17: ( ( struct_modifier )+ )
+			// /Users/jeremie/ANTLR/cs.g:867:2: ( struct_modifier )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:866:2: ( struct_modifier )+
+			// /Users/jeremie/ANTLR/cs.g:867:2: ( struct_modifier )+
 			int cnt228=0;
 			loop228:
 			while (true) {
@@ -24809,7 +25113,7 @@ public class csParser extends Parser {
 
 				switch (alt228) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:866:2: struct_modifier
+					// /Users/jeremie/ANTLR/cs.g:867:2: struct_modifier
 					{
 					pushFollow(FOLLOW_struct_modifier_in_struct_modifiers7724);
 					struct_modifier638=struct_modifier();
@@ -24861,7 +25165,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "struct_modifier"
-	// /Users/jeremie/ANTLR/cs.g:867:1: struct_modifier : ( 'new' | 'public' | 'protected' | 'internal' | 'private' | 'unsafe' );
+	// /Users/jeremie/ANTLR/cs.g:868:1: struct_modifier : ( 'new' | 'public' | 'protected' | 'internal' | 'private' | 'unsafe' );
 	public final csParser.struct_modifier_return struct_modifier() throws RecognitionException {
 		csParser.struct_modifier_return retval = new csParser.struct_modifier_return();
 		retval.start = input.LT(1);
@@ -24876,7 +25180,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 220) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:867:16: ( 'new' | 'public' | 'protected' | 'internal' | 'private' | 'unsafe' )
+			// /Users/jeremie/ANTLR/cs.g:868:16: ( 'new' | 'public' | 'protected' | 'internal' | 'private' | 'unsafe' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -24926,7 +25230,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "struct_interfaces"
-	// /Users/jeremie/ANTLR/cs.g:869:1: struct_interfaces : ':' interface_type_list ;
+	// /Users/jeremie/ANTLR/cs.g:870:1: struct_interfaces : ':' interface_type_list ;
 	public final csParser.struct_interfaces_return struct_interfaces() throws RecognitionException {
 		csParser.struct_interfaces_return retval = new csParser.struct_interfaces_return();
 		retval.start = input.LT(1);
@@ -24942,8 +25246,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 221) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:869:18: ( ':' interface_type_list )
-			// /Users/jeremie/ANTLR/cs.g:870:2: ':' interface_type_list
+			// /Users/jeremie/ANTLR/cs.g:870:18: ( ':' interface_type_list )
+			// /Users/jeremie/ANTLR/cs.g:871:2: ':' interface_type_list
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -24992,7 +25296,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "struct_body"
-	// /Users/jeremie/ANTLR/cs.g:871:1: struct_body : '{' ( struct_member_declarations )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:872:1: struct_body : '{' ( struct_member_declarations )? '}' ;
 	public final csParser.struct_body_return struct_body() throws RecognitionException {
 		csParser.struct_body_return retval = new csParser.struct_body_return();
 		retval.start = input.LT(1);
@@ -25010,8 +25314,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 222) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:871:12: ( '{' ( struct_member_declarations )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:872:2: '{' ( struct_member_declarations )? '}'
+			// /Users/jeremie/ANTLR/cs.g:872:12: ( '{' ( struct_member_declarations )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:873:2: '{' ( struct_member_declarations )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -25022,7 +25326,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal642_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:872:8: ( struct_member_declarations )?
+			// /Users/jeremie/ANTLR/cs.g:873:8: ( struct_member_declarations )?
 			int alt229=2;
 			int LA229_0 = input.LA(1);
 			if ( (LA229_0==ENUM||LA229_0==IDENTIFIER||LA229_0==91||(LA229_0 >= 95 && LA229_0 <= 98)||(LA229_0 >= 100 && LA229_0 <= 101)||LA229_0==103||(LA229_0 >= 105 && LA229_0 <= 106)||LA229_0==109||(LA229_0 >= 111 && LA229_0 <= 112)||LA229_0==114||(LA229_0 >= 116 && LA229_0 <= 117)||(LA229_0 >= 119 && LA229_0 <= 120)||(LA229_0 >= 122 && LA229_0 <= 126)||LA229_0==129||LA229_0==132||(LA229_0 >= 135 && LA229_0 <= 136)||(LA229_0 >= 138 && LA229_0 <= 141)||(LA229_0 >= 143 && LA229_0 <= 144)||(LA229_0 >= 146 && LA229_0 <= 148)||(LA229_0 >= 150 && LA229_0 <= 152)||LA229_0==154||(LA229_0 >= 156 && LA229_0 <= 157)||(LA229_0 >= 159 && LA229_0 <= 165)||LA229_0==167||(LA229_0 >= 169 && LA229_0 <= 173)||(LA229_0 >= 176 && LA229_0 <= 178)||LA229_0==183||(LA229_0 >= 185 && LA229_0 <= 186)||(LA229_0 >= 188 && LA229_0 <= 194)||LA229_0==196) ) {
@@ -25030,7 +25334,7 @@ public class csParser extends Parser {
 			}
 			switch (alt229) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:872:8: struct_member_declarations
+					// /Users/jeremie/ANTLR/cs.g:873:8: struct_member_declarations
 					{
 					pushFollow(FOLLOW_struct_member_declarations_in_struct_body7776);
 					struct_member_declarations643=struct_member_declarations();
@@ -25081,7 +25385,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "struct_member_declarations"
-	// /Users/jeremie/ANTLR/cs.g:873:1: struct_member_declarations : ( struct_member_declaration )+ ;
+	// /Users/jeremie/ANTLR/cs.g:874:1: struct_member_declarations : ( struct_member_declaration )+ ;
 	public final csParser.struct_member_declarations_return struct_member_declarations() throws RecognitionException {
 		csParser.struct_member_declarations_return retval = new csParser.struct_member_declarations_return();
 		retval.start = input.LT(1);
@@ -25095,13 +25399,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 223) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:873:27: ( ( struct_member_declaration )+ )
-			// /Users/jeremie/ANTLR/cs.g:874:2: ( struct_member_declaration )+
+			// /Users/jeremie/ANTLR/cs.g:874:27: ( ( struct_member_declaration )+ )
+			// /Users/jeremie/ANTLR/cs.g:875:2: ( struct_member_declaration )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:874:2: ( struct_member_declaration )+
+			// /Users/jeremie/ANTLR/cs.g:875:2: ( struct_member_declaration )+
 			int cnt230=0;
 			loop230:
 			while (true) {
@@ -25113,7 +25417,7 @@ public class csParser extends Parser {
 
 				switch (alt230) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:874:2: struct_member_declaration
+					// /Users/jeremie/ANTLR/cs.g:875:2: struct_member_declaration
 					{
 					pushFollow(FOLLOW_struct_member_declaration_in_struct_member_declarations7788);
 					struct_member_declaration645=struct_member_declaration();
@@ -25165,7 +25469,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "struct_member_declaration"
-	// /Users/jeremie/ANTLR/cs.g:875:1: struct_member_declaration : ( attributes )? (m= modifiers )? ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration ) ;
+	// /Users/jeremie/ANTLR/cs.g:876:1: struct_member_declaration : ( attributes )? (m= modifiers )? ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration ) ;
 	public final csParser.struct_member_declaration_return struct_member_declaration() throws RecognitionException {
 		csParser.struct_member_declaration_return retval = new csParser.struct_member_declaration_return();
 		retval.start = input.LT(1);
@@ -25213,13 +25517,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 224) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:875:26: ( ( attributes )? (m= modifiers )? ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration ) )
-			// /Users/jeremie/ANTLR/cs.g:876:2: ( attributes )? (m= modifiers )? ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration )
+			// /Users/jeremie/ANTLR/cs.g:876:26: ( ( attributes )? (m= modifiers )? ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration ) )
+			// /Users/jeremie/ANTLR/cs.g:877:2: ( attributes )? (m= modifiers )? ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:876:2: ( attributes )?
+			// /Users/jeremie/ANTLR/cs.g:877:2: ( attributes )?
 			int alt231=2;
 			int LA231_0 = input.LA(1);
 			if ( (LA231_0==91) ) {
@@ -25227,7 +25531,7 @@ public class csParser extends Parser {
 			}
 			switch (alt231) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:876:2: attributes
+					// /Users/jeremie/ANTLR/cs.g:877:2: attributes
 					{
 					pushFollow(FOLLOW_attributes_in_struct_member_declaration7797);
 					attributes646=attributes();
@@ -25240,7 +25544,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:876:17: (m= modifiers )?
+			// /Users/jeremie/ANTLR/cs.g:877:17: (m= modifiers )?
 			int alt232=2;
 			int LA232_0 = input.LA(1);
 			if ( (LA232_0==96||LA232_0==125||LA232_0==140||LA232_0==150||LA232_0==156||LA232_0==161||(LA232_0 >= 163 && LA232_0 <= 165)||LA232_0==170||LA232_0==176||LA232_0==188||LA232_0==191||LA232_0==193) ) {
@@ -25248,7 +25552,7 @@ public class csParser extends Parser {
 			}
 			switch (alt232) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:876:17: m= modifiers
+					// /Users/jeremie/ANTLR/cs.g:877:17: m= modifiers
 					{
 					pushFollow(FOLLOW_modifiers_in_struct_member_declaration7804);
 					m=modifiers();
@@ -25261,7 +25565,7 @@ public class csParser extends Parser {
 
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:877:2: ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration )
+			// /Users/jeremie/ANTLR/cs.g:878:2: ( 'const' type constant_declarators ';' | event_declaration | 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration ) | interface_declaration | class_declaration | 'void' method_declaration | type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration ) | struct_declaration | enum_declaration | delegate_declaration | conversion_operator_declaration | constructor_declaration )
 			int alt235=12;
 			switch ( input.LA(1) ) {
 			case 112:
@@ -25416,7 +25720,7 @@ public class csParser extends Parser {
 			}
 			switch (alt235) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:877:4: 'const' type constant_declarators ';'
+					// /Users/jeremie/ANTLR/cs.g:878:4: 'const' type constant_declarators ';'
 					{
 					string_literal647=(Token)match(input,112,FOLLOW_112_in_struct_member_declaration7810); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -25445,7 +25749,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:878:4: event_declaration
+					// /Users/jeremie/ANTLR/cs.g:879:4: event_declaration
 					{
 					pushFollow(FOLLOW_event_declaration_in_struct_member_declaration7827);
 					event_declaration651=event_declaration();
@@ -25456,7 +25760,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:879:4: 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration )
+					// /Users/jeremie/ANTLR/cs.g:880:4: 'partial' ( method_declaration | interface_declaration | class_declaration | struct_declaration )
 					{
 					string_literal652=(Token)match(input,159,FOLLOW_159_in_struct_member_declaration7834); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -25464,7 +25768,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, string_literal652_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:879:14: ( method_declaration | interface_declaration | class_declaration | struct_declaration )
+					// /Users/jeremie/ANTLR/cs.g:880:14: ( method_declaration | interface_declaration | class_declaration | struct_declaration )
 					int alt233=4;
 					switch ( input.LA(1) ) {
 					case Character_literal:
@@ -25548,7 +25852,7 @@ public class csParser extends Parser {
 					}
 					switch (alt233) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:879:15: method_declaration
+							// /Users/jeremie/ANTLR/cs.g:880:15: method_declaration
 							{
 							pushFollow(FOLLOW_method_declaration_in_struct_member_declaration7837);
 							method_declaration653=method_declaration();
@@ -25559,7 +25863,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:880:9: interface_declaration
+							// /Users/jeremie/ANTLR/cs.g:881:9: interface_declaration
 							{
 							pushFollow(FOLLOW_interface_declaration_in_struct_member_declaration7848);
 							interface_declaration654=interface_declaration();
@@ -25570,7 +25874,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /Users/jeremie/ANTLR/cs.g:881:9: class_declaration
+							// /Users/jeremie/ANTLR/cs.g:882:9: class_declaration
 							{
 							pushFollow(FOLLOW_class_declaration_in_struct_member_declaration7859);
 							class_declaration655=class_declaration();
@@ -25581,7 +25885,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 4 :
-							// /Users/jeremie/ANTLR/cs.g:882:9: struct_declaration
+							// /Users/jeremie/ANTLR/cs.g:883:9: struct_declaration
 							{
 							pushFollow(FOLLOW_struct_declaration_in_struct_member_declaration7870);
 							struct_declaration656=struct_declaration();
@@ -25597,7 +25901,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:884:4: interface_declaration
+					// /Users/jeremie/ANTLR/cs.g:885:4: interface_declaration
 					{
 					pushFollow(FOLLOW_interface_declaration_in_struct_member_declaration7877);
 					interface_declaration657=interface_declaration();
@@ -25608,7 +25912,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:885:4: class_declaration
+					// /Users/jeremie/ANTLR/cs.g:886:4: class_declaration
 					{
 					pushFollow(FOLLOW_class_declaration_in_struct_member_declaration7883);
 					class_declaration658=class_declaration();
@@ -25619,7 +25923,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jeremie/ANTLR/cs.g:886:4: 'void' method_declaration
+					// /Users/jeremie/ANTLR/cs.g:887:4: 'void' method_declaration
 					{
 					string_literal659=(Token)match(input,192,FOLLOW_192_in_struct_member_declaration7890); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -25636,7 +25940,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jeremie/ANTLR/cs.g:887:4: type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration )
+					// /Users/jeremie/ANTLR/cs.g:888:4: type ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration )
 					{
 					pushFollow(FOLLOW_type_in_struct_member_declaration7899);
 					type661=type();
@@ -25644,7 +25948,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, type661.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:887:9: ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration )
+					// /Users/jeremie/ANTLR/cs.g:888:9: ( ( member_name '(' )=> method_declaration | ( member_name '{' )=> property_declaration | ( member_name '.' 'this' )=> type_name '.' indexer_declaration | indexer_declaration | field_declaration | operator_declaration )
 					int alt234=6;
 					switch ( input.LA(1) ) {
 					case 103:
@@ -25733,15 +26037,7 @@ public class csParser extends Parser {
 
 						}
 						break;
-					case Character_literal:
-					case FALSE:
-					case Hex_number:
-					case NULL:
-					case NUMBER:
 					case Real_literal:
-					case STRINGLITERAL:
-					case TRUE:
-					case Verbatim_string_literal:
 						{
 						int LA234_3 = input.LA(2);
 						if ( (synpred28_cs()) ) {
@@ -25758,6 +26054,206 @@ public class csParser extends Parser {
 								input.consume();
 								NoViableAltException nvae =
 									new NoViableAltException("", 234, 3, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case NUMBER:
+						{
+						int LA234_4 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 4, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case Hex_number:
+						{
+						int LA234_5 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 5, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case Character_literal:
+						{
+						int LA234_6 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 6, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case STRINGLITERAL:
+						{
+						int LA234_7 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 7, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case Verbatim_string_literal:
+						{
+						int LA234_8 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 8, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case TRUE:
+						{
+						int LA234_9 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 9, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case FALSE:
+						{
+						int LA234_10 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 10, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case NULL:
+						{
+						int LA234_11 = input.LA(2);
+						if ( (synpred28_cs()) ) {
+							alt234=1;
+						}
+						else if ( (synpred29_cs()) ) {
+							alt234=2;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								input.consume();
+								NoViableAltException nvae =
+									new NoViableAltException("", 234, 11, input);
 								throw nvae;
 							} finally {
 								input.rewind(nvaeMark);
@@ -25784,7 +26280,7 @@ public class csParser extends Parser {
 					}
 					switch (alt234) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:887:11: ( member_name '(' )=> method_declaration
+							// /Users/jeremie/ANTLR/cs.g:888:11: ( member_name '(' )=> method_declaration
 							{
 							pushFollow(FOLLOW_method_declaration_in_struct_member_declaration7913);
 							method_declaration662=method_declaration();
@@ -25795,7 +26291,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:888:8: ( member_name '{' )=> property_declaration
+							// /Users/jeremie/ANTLR/cs.g:889:8: ( member_name '{' )=> property_declaration
 							{
 							pushFollow(FOLLOW_property_declaration_in_struct_member_declaration7932);
 							property_declaration663=property_declaration();
@@ -25806,7 +26302,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /Users/jeremie/ANTLR/cs.g:889:8: ( member_name '.' 'this' )=> type_name '.' indexer_declaration
+							// /Users/jeremie/ANTLR/cs.g:890:8: ( member_name '.' 'this' )=> type_name '.' indexer_declaration
 							{
 							pushFollow(FOLLOW_type_name_in_struct_member_declaration7955);
 							type_name664=type_name();
@@ -25829,7 +26325,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 4 :
-							// /Users/jeremie/ANTLR/cs.g:890:8: indexer_declaration
+							// /Users/jeremie/ANTLR/cs.g:891:8: indexer_declaration
 							{
 							pushFollow(FOLLOW_indexer_declaration_in_struct_member_declaration7968);
 							indexer_declaration667=indexer_declaration();
@@ -25840,7 +26336,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 5 :
-							// /Users/jeremie/ANTLR/cs.g:891:11: field_declaration
+							// /Users/jeremie/ANTLR/cs.g:892:11: field_declaration
 							{
 							pushFollow(FOLLOW_field_declaration_in_struct_member_declaration7981);
 							field_declaration668=field_declaration();
@@ -25851,7 +26347,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 6 :
-							// /Users/jeremie/ANTLR/cs.g:892:11: operator_declaration
+							// /Users/jeremie/ANTLR/cs.g:893:11: operator_declaration
 							{
 							pushFollow(FOLLOW_operator_declaration_in_struct_member_declaration7999);
 							operator_declaration669=operator_declaration();
@@ -25867,7 +26363,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jeremie/ANTLR/cs.g:896:4: struct_declaration
+					// /Users/jeremie/ANTLR/cs.g:897:4: struct_declaration
 					{
 					pushFollow(FOLLOW_struct_declaration_in_struct_member_declaration8017);
 					struct_declaration670=struct_declaration();
@@ -25878,7 +26374,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jeremie/ANTLR/cs.g:897:4: enum_declaration
+					// /Users/jeremie/ANTLR/cs.g:898:4: enum_declaration
 					{
 					pushFollow(FOLLOW_enum_declaration_in_struct_member_declaration8023);
 					enum_declaration671=enum_declaration();
@@ -25889,7 +26385,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jeremie/ANTLR/cs.g:898:4: delegate_declaration
+					// /Users/jeremie/ANTLR/cs.g:899:4: delegate_declaration
 					{
 					pushFollow(FOLLOW_delegate_declaration_in_struct_member_declaration8030);
 					delegate_declaration672=delegate_declaration();
@@ -25900,7 +26396,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jeremie/ANTLR/cs.g:899:4: conversion_operator_declaration
+					// /Users/jeremie/ANTLR/cs.g:900:4: conversion_operator_declaration
 					{
 					pushFollow(FOLLOW_conversion_operator_declaration_in_struct_member_declaration8036);
 					conversion_operator_declaration673=conversion_operator_declaration();
@@ -25911,7 +26407,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jeremie/ANTLR/cs.g:900:4: constructor_declaration
+					// /Users/jeremie/ANTLR/cs.g:901:4: constructor_declaration
 					{
 					pushFollow(FOLLOW_constructor_declaration_in_struct_member_declaration8041);
 					constructor_declaration674=constructor_declaration();
@@ -25956,7 +26452,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "indexer_declaration"
-	// /Users/jeremie/ANTLR/cs.g:906:1: indexer_declaration : indexer_declarator '{' accessor_declarations '}' ;
+	// /Users/jeremie/ANTLR/cs.g:907:1: indexer_declaration : indexer_declarator '{' accessor_declarations '}' ;
 	public final csParser.indexer_declaration_return indexer_declaration() throws RecognitionException {
 		csParser.indexer_declaration_return retval = new csParser.indexer_declaration_return();
 		retval.start = input.LT(1);
@@ -25975,8 +26471,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 225) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:906:20: ( indexer_declarator '{' accessor_declarations '}' )
-			// /Users/jeremie/ANTLR/cs.g:907:2: indexer_declarator '{' accessor_declarations '}'
+			// /Users/jeremie/ANTLR/cs.g:907:20: ( indexer_declarator '{' accessor_declarations '}' )
+			// /Users/jeremie/ANTLR/cs.g:908:2: indexer_declarator '{' accessor_declarations '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -26037,7 +26533,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "indexer_declarator"
-	// /Users/jeremie/ANTLR/cs.g:908:1: indexer_declarator : 'this' '[' formal_parameter_list ']' ;
+	// /Users/jeremie/ANTLR/cs.g:909:1: indexer_declarator : 'this' '[' formal_parameter_list ']' ;
 	public final csParser.indexer_declarator_return indexer_declarator() throws RecognitionException {
 		csParser.indexer_declarator_return retval = new csParser.indexer_declarator_return();
 		retval.start = input.LT(1);
@@ -26057,8 +26553,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 226) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:908:19: ( 'this' '[' formal_parameter_list ']' )
-			// /Users/jeremie/ANTLR/cs.g:910:2: 'this' '[' formal_parameter_list ']'
+			// /Users/jeremie/ANTLR/cs.g:909:19: ( 'this' '[' formal_parameter_list ']' )
+			// /Users/jeremie/ANTLR/cs.g:911:2: 'this' '[' formal_parameter_list ']'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -26119,7 +26615,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "operator_declaration"
-	// /Users/jeremie/ANTLR/cs.g:913:1: operator_declaration : operator_declarator operator_body ;
+	// /Users/jeremie/ANTLR/cs.g:914:1: operator_declaration : operator_declarator operator_body ;
 	public final csParser.operator_declaration_return operator_declaration() throws RecognitionException {
 		csParser.operator_declaration_return retval = new csParser.operator_declaration_return();
 		retval.start = input.LT(1);
@@ -26134,8 +26630,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 227) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:913:21: ( operator_declarator operator_body )
-			// /Users/jeremie/ANTLR/cs.g:914:2: operator_declarator operator_body
+			// /Users/jeremie/ANTLR/cs.g:914:21: ( operator_declarator operator_body )
+			// /Users/jeremie/ANTLR/cs.g:915:2: operator_declarator operator_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -26184,7 +26680,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "operator_declarator"
-	// /Users/jeremie/ANTLR/cs.g:915:1: operator_declarator : 'operator' ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator ) ;
+	// /Users/jeremie/ANTLR/cs.g:916:1: operator_declarator : 'operator' ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator ) ;
 	public final csParser.operator_declarator_return operator_declarator() throws RecognitionException {
 		csParser.operator_declarator_return retval = new csParser.operator_declarator_return();
 		retval.start = input.LT(1);
@@ -26211,8 +26707,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 228) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:915:20: ( 'operator' ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator ) )
-			// /Users/jeremie/ANTLR/cs.g:916:2: 'operator' ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator )
+			// /Users/jeremie/ANTLR/cs.g:916:20: ( 'operator' ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator ) )
+			// /Users/jeremie/ANTLR/cs.g:917:2: 'operator' ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -26223,7 +26719,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal685_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:917:3: ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator )
+			// /Users/jeremie/ANTLR/cs.g:918:3: ( ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator ) | overloadable_unary_operator unary_operator_declarator | overloadable_binary_operator binary_operator_declarator )
 			int alt237=3;
 			switch ( input.LA(1) ) {
 			case MINUS:
@@ -26267,7 +26763,7 @@ public class csParser extends Parser {
 			}
 			switch (alt237) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:917:4: ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator )
+					// /Users/jeremie/ANTLR/cs.g:918:4: ( '+' | '-' ) '(' type identifier ( binary_operator_declarator | unary_operator_declarator )
 					{
 					set686=input.LT(1);
 					if ( input.LA(1)==MINUS||input.LA(1)==71 ) {
@@ -26299,7 +26795,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier689.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:917:42: ( binary_operator_declarator | unary_operator_declarator )
+					// /Users/jeremie/ANTLR/cs.g:918:42: ( binary_operator_declarator | unary_operator_declarator )
 					int alt236=2;
 					int LA236_0 = input.LA(1);
 					if ( (LA236_0==74) ) {
@@ -26318,7 +26814,7 @@ public class csParser extends Parser {
 
 					switch (alt236) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:917:43: binary_operator_declarator
+							// /Users/jeremie/ANTLR/cs.g:918:43: binary_operator_declarator
 							{
 							pushFollow(FOLLOW_binary_operator_declarator_in_operator_declarator8144);
 							binary_operator_declarator690=binary_operator_declarator();
@@ -26329,7 +26825,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:917:72: unary_operator_declarator
+							// /Users/jeremie/ANTLR/cs.g:918:72: unary_operator_declarator
 							{
 							pushFollow(FOLLOW_unary_operator_declarator_in_operator_declarator8148);
 							unary_operator_declarator691=unary_operator_declarator();
@@ -26345,7 +26841,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:918:5: overloadable_unary_operator unary_operator_declarator
+					// /Users/jeremie/ANTLR/cs.g:919:5: overloadable_unary_operator unary_operator_declarator
 					{
 					pushFollow(FOLLOW_overloadable_unary_operator_in_operator_declarator8155);
 					overloadable_unary_operator692=overloadable_unary_operator();
@@ -26362,7 +26858,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:919:5: overloadable_binary_operator binary_operator_declarator
+					// /Users/jeremie/ANTLR/cs.g:920:5: overloadable_binary_operator binary_operator_declarator
 					{
 					pushFollow(FOLLOW_overloadable_binary_operator_in_operator_declarator8165);
 					overloadable_binary_operator694=overloadable_binary_operator();
@@ -26413,7 +26909,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unary_operator_declarator"
-	// /Users/jeremie/ANTLR/cs.g:920:1: unary_operator_declarator : ')' ;
+	// /Users/jeremie/ANTLR/cs.g:921:1: unary_operator_declarator : ')' ;
 	public final csParser.unary_operator_declarator_return unary_operator_declarator() throws RecognitionException {
 		csParser.unary_operator_declarator_return retval = new csParser.unary_operator_declarator_return();
 		retval.start = input.LT(1);
@@ -26428,8 +26924,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 229) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:920:26: ( ')' )
-			// /Users/jeremie/ANTLR/cs.g:921:5: ')'
+			// /Users/jeremie/ANTLR/cs.g:921:26: ( ')' )
+			// /Users/jeremie/ANTLR/cs.g:922:5: ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -26472,7 +26968,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "overloadable_unary_operator"
-	// /Users/jeremie/ANTLR/cs.g:922:1: overloadable_unary_operator : ( '!' | '~' | '++' | '--' | 'true' | 'false' );
+	// /Users/jeremie/ANTLR/cs.g:923:1: overloadable_unary_operator : ( '!' | '~' | '++' | '--' | 'true' | 'false' );
 	public final csParser.overloadable_unary_operator_return overloadable_unary_operator() throws RecognitionException {
 		csParser.overloadable_unary_operator_return retval = new csParser.overloadable_unary_operator_return();
 		retval.start = input.LT(1);
@@ -26487,7 +26983,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 230) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:922:28: ( '!' | '~' | '++' | '--' | 'true' | 'false' )
+			// /Users/jeremie/ANTLR/cs.g:923:28: ( '!' | '~' | '++' | '--' | 'true' | 'false' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -26537,7 +27033,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "binary_operator_declarator"
-	// /Users/jeremie/ANTLR/cs.g:924:1: binary_operator_declarator : ',' type identifier ')' ;
+	// /Users/jeremie/ANTLR/cs.g:925:1: binary_operator_declarator : ',' type identifier ')' ;
 	public final csParser.binary_operator_declarator_return binary_operator_declarator() throws RecognitionException {
 		csParser.binary_operator_declarator_return retval = new csParser.binary_operator_declarator_return();
 		retval.start = input.LT(1);
@@ -26556,8 +27052,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 231) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:924:27: ( ',' type identifier ')' )
-			// /Users/jeremie/ANTLR/cs.g:925:2: ',' type identifier ')'
+			// /Users/jeremie/ANTLR/cs.g:925:27: ( ',' type identifier ')' )
+			// /Users/jeremie/ANTLR/cs.g:926:2: ',' type identifier ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -26618,7 +27114,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "overloadable_binary_operator"
-	// /Users/jeremie/ANTLR/cs.g:927:1: overloadable_binary_operator : ( '*' | '/' | '%' | '&' | '|' | '^' | '<<' | '>' '>' | '==' | '!=' | '>' | '<' | '>=' | '<=' );
+	// /Users/jeremie/ANTLR/cs.g:928:1: overloadable_binary_operator : ( '*' | '/' | '%' | '&' | '|' | '^' | '<<' | '>' '>' | '==' | '!=' | '>' | '<' | '>=' | '<=' );
 	public final csParser.overloadable_binary_operator_return overloadable_binary_operator() throws RecognitionException {
 		csParser.overloadable_binary_operator_return retval = new csParser.overloadable_binary_operator_return();
 		retval.start = input.LT(1);
@@ -26661,7 +27157,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 232) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:927:29: ( '*' | '/' | '%' | '&' | '|' | '^' | '<<' | '>' '>' | '==' | '!=' | '>' | '<' | '>=' | '<=' )
+			// /Users/jeremie/ANTLR/cs.g:928:29: ( '*' | '/' | '%' | '&' | '|' | '^' | '<<' | '>' '>' | '==' | '!=' | '>' | '<' | '>=' | '<=' )
 			int alt238=14;
 			switch ( input.LA(1) ) {
 			case 69:
@@ -26757,7 +27253,7 @@ public class csParser extends Parser {
 			}
 			switch (alt238) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:928:19: '*'
+					// /Users/jeremie/ANTLR/cs.g:929:19: '*'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26771,7 +27267,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:928:25: '/'
+					// /Users/jeremie/ANTLR/cs.g:929:25: '/'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26785,7 +27281,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:928:31: '%'
+					// /Users/jeremie/ANTLR/cs.g:929:31: '%'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26799,7 +27295,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:928:37: '&'
+					// /Users/jeremie/ANTLR/cs.g:929:37: '&'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26813,7 +27309,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:928:43: '|'
+					// /Users/jeremie/ANTLR/cs.g:929:43: '|'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26827,7 +27323,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jeremie/ANTLR/cs.g:928:49: '^'
+					// /Users/jeremie/ANTLR/cs.g:929:49: '^'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26841,7 +27337,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jeremie/ANTLR/cs.g:928:55: '<<'
+					// /Users/jeremie/ANTLR/cs.g:929:55: '<<'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26855,7 +27351,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jeremie/ANTLR/cs.g:928:62: '>' '>'
+					// /Users/jeremie/ANTLR/cs.g:929:62: '>' '>'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26875,7 +27371,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jeremie/ANTLR/cs.g:928:72: '=='
+					// /Users/jeremie/ANTLR/cs.g:929:72: '=='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26889,7 +27385,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jeremie/ANTLR/cs.g:928:79: '!='
+					// /Users/jeremie/ANTLR/cs.g:929:79: '!='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26903,7 +27399,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jeremie/ANTLR/cs.g:928:86: '>'
+					// /Users/jeremie/ANTLR/cs.g:929:86: '>'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26917,7 +27413,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jeremie/ANTLR/cs.g:928:92: '<'
+					// /Users/jeremie/ANTLR/cs.g:929:92: '<'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26931,7 +27427,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jeremie/ANTLR/cs.g:928:98: '>='
+					// /Users/jeremie/ANTLR/cs.g:929:98: '>='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26945,7 +27441,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /Users/jeremie/ANTLR/cs.g:928:105: '<='
+					// /Users/jeremie/ANTLR/cs.g:929:105: '<='
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -26990,7 +27486,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "conversion_operator_declaration"
-	// /Users/jeremie/ANTLR/cs.g:930:1: conversion_operator_declaration : conversion_operator_declarator operator_body ;
+	// /Users/jeremie/ANTLR/cs.g:931:1: conversion_operator_declaration : conversion_operator_declarator operator_body ;
 	public final csParser.conversion_operator_declaration_return conversion_operator_declaration() throws RecognitionException {
 		csParser.conversion_operator_declaration_return retval = new csParser.conversion_operator_declaration_return();
 		retval.start = input.LT(1);
@@ -27005,8 +27501,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 233) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:930:32: ( conversion_operator_declarator operator_body )
-			// /Users/jeremie/ANTLR/cs.g:931:2: conversion_operator_declarator operator_body
+			// /Users/jeremie/ANTLR/cs.g:931:32: ( conversion_operator_declarator operator_body )
+			// /Users/jeremie/ANTLR/cs.g:932:2: conversion_operator_declarator operator_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27055,7 +27551,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "conversion_operator_declarator"
-	// /Users/jeremie/ANTLR/cs.g:932:1: conversion_operator_declarator : ( 'implicit' | 'explicit' ) 'operator' type '(' type identifier ')' ;
+	// /Users/jeremie/ANTLR/cs.g:933:1: conversion_operator_declarator : ( 'implicit' | 'explicit' ) 'operator' type '(' type identifier ')' ;
 	public final csParser.conversion_operator_declarator_return conversion_operator_declarator() throws RecognitionException {
 		csParser.conversion_operator_declarator_return retval = new csParser.conversion_operator_declarator_return();
 		retval.start = input.LT(1);
@@ -27079,8 +27575,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 234) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:932:31: ( ( 'implicit' | 'explicit' ) 'operator' type '(' type identifier ')' )
-			// /Users/jeremie/ANTLR/cs.g:933:2: ( 'implicit' | 'explicit' ) 'operator' type '(' type identifier ')'
+			// /Users/jeremie/ANTLR/cs.g:933:31: ( ( 'implicit' | 'explicit' ) 'operator' type '(' type identifier ')' )
+			// /Users/jeremie/ANTLR/cs.g:934:2: ( 'implicit' | 'explicit' ) 'operator' type '(' type identifier ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27165,7 +27661,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "operator_body"
-	// /Users/jeremie/ANTLR/cs.g:934:1: operator_body : block ;
+	// /Users/jeremie/ANTLR/cs.g:935:1: operator_body : block ;
 	public final csParser.operator_body_return operator_body() throws RecognitionException {
 		csParser.operator_body_return retval = new csParser.operator_body_return();
 		retval.start = input.LT(1);
@@ -27179,8 +27675,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 235) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:934:14: ( block )
-			// /Users/jeremie/ANTLR/cs.g:935:2: block
+			// /Users/jeremie/ANTLR/cs.g:935:14: ( block )
+			// /Users/jeremie/ANTLR/cs.g:936:2: block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27223,7 +27719,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constructor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:938:1: constructor_declaration : constructor_declarator constructor_body ;
+	// /Users/jeremie/ANTLR/cs.g:939:1: constructor_declaration : constructor_declarator constructor_body ;
 	public final csParser.constructor_declaration_return constructor_declaration() throws RecognitionException {
 		csParser.constructor_declaration_return retval = new csParser.constructor_declaration_return();
 		retval.start = input.LT(1);
@@ -27238,8 +27734,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 236) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:938:24: ( constructor_declarator constructor_body )
-			// /Users/jeremie/ANTLR/cs.g:939:2: constructor_declarator constructor_body
+			// /Users/jeremie/ANTLR/cs.g:939:24: ( constructor_declarator constructor_body )
+			// /Users/jeremie/ANTLR/cs.g:940:2: constructor_declarator constructor_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27288,7 +27784,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constructor_declarator"
-	// /Users/jeremie/ANTLR/cs.g:940:1: constructor_declarator : identifier '(' ( formal_parameter_list )? ')' ( constructor_initializer )? ;
+	// /Users/jeremie/ANTLR/cs.g:941:1: constructor_declarator : identifier '(' ( formal_parameter_list )? ')' ( constructor_initializer )? ;
 	public final csParser.constructor_declarator_return constructor_declarator() throws RecognitionException {
 		csParser.constructor_declarator_return retval = new csParser.constructor_declarator_return();
 		retval.start = input.LT(1);
@@ -27308,8 +27804,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 237) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:940:23: ( identifier '(' ( formal_parameter_list )? ')' ( constructor_initializer )? )
-			// /Users/jeremie/ANTLR/cs.g:941:2: identifier '(' ( formal_parameter_list )? ')' ( constructor_initializer )?
+			// /Users/jeremie/ANTLR/cs.g:941:23: ( identifier '(' ( formal_parameter_list )? ')' ( constructor_initializer )? )
+			// /Users/jeremie/ANTLR/cs.g:942:2: identifier '(' ( formal_parameter_list )? ')' ( constructor_initializer )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27326,7 +27822,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal730_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:941:21: ( formal_parameter_list )?
+			// /Users/jeremie/ANTLR/cs.g:942:21: ( formal_parameter_list )?
 			int alt239=2;
 			int LA239_0 = input.LA(1);
 			if ( (LA239_0==IDENTIFIER||LA239_0==91||LA239_0==95||(LA239_0 >= 97 && LA239_0 <= 98)||(LA239_0 >= 100 && LA239_0 <= 101)||LA239_0==103||(LA239_0 >= 105 && LA239_0 <= 106)||LA239_0==109||LA239_0==114||LA239_0==117||(LA239_0 >= 119 && LA239_0 <= 120)||LA239_0==122||LA239_0==126||LA239_0==129||LA239_0==132||LA239_0==135||LA239_0==138||LA239_0==141||(LA239_0 >= 143 && LA239_0 <= 144)||(LA239_0 >= 146 && LA239_0 <= 148)||(LA239_0 >= 151 && LA239_0 <= 152)||(LA239_0 >= 154 && LA239_0 <= 155)||(LA239_0 >= 157 && LA239_0 <= 158)||LA239_0==160||LA239_0==162||(LA239_0 >= 166 && LA239_0 <= 167)||LA239_0==169||(LA239_0 >= 171 && LA239_0 <= 173)||LA239_0==177||LA239_0==180||LA239_0==183||(LA239_0 >= 185 && LA239_0 <= 186)||(LA239_0 >= 189 && LA239_0 <= 190)||LA239_0==192||LA239_0==194||LA239_0==196) ) {
@@ -27334,7 +27830,7 @@ public class csParser extends Parser {
 			}
 			switch (alt239) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:941:21: formal_parameter_list
+					// /Users/jeremie/ANTLR/cs.g:942:21: formal_parameter_list
 					{
 					pushFollow(FOLLOW_formal_parameter_list_in_constructor_declarator8390);
 					formal_parameter_list731=formal_parameter_list();
@@ -27353,7 +27849,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal732_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:941:52: ( constructor_initializer )?
+			// /Users/jeremie/ANTLR/cs.g:942:52: ( constructor_initializer )?
 			int alt240=2;
 			int LA240_0 = input.LA(1);
 			if ( (LA240_0==79) ) {
@@ -27361,7 +27857,7 @@ public class csParser extends Parser {
 			}
 			switch (alt240) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:941:52: constructor_initializer
+					// /Users/jeremie/ANTLR/cs.g:942:52: constructor_initializer
 					{
 					pushFollow(FOLLOW_constructor_initializer_in_constructor_declarator8399);
 					constructor_initializer733=constructor_initializer();
@@ -27406,7 +27902,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constructor_initializer"
-	// /Users/jeremie/ANTLR/cs.g:942:1: constructor_initializer : ':' ( 'base' | 'this' ) '(' ( argument_list )? ')' ;
+	// /Users/jeremie/ANTLR/cs.g:943:1: constructor_initializer : ':' ( 'base' | 'this' ) '(' ( argument_list )? ')' ;
 	public final csParser.constructor_initializer_return constructor_initializer() throws RecognitionException {
 		csParser.constructor_initializer_return retval = new csParser.constructor_initializer_return();
 		retval.start = input.LT(1);
@@ -27428,8 +27924,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 238) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:942:24: ( ':' ( 'base' | 'this' ) '(' ( argument_list )? ')' )
-			// /Users/jeremie/ANTLR/cs.g:943:2: ':' ( 'base' | 'this' ) '(' ( argument_list )? ')'
+			// /Users/jeremie/ANTLR/cs.g:943:24: ( ':' ( 'base' | 'this' ) '(' ( argument_list )? ')' )
+			// /Users/jeremie/ANTLR/cs.g:944:2: ':' ( 'base' | 'this' ) '(' ( argument_list )? ')'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27458,7 +27954,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal736_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:943:34: ( argument_list )?
+			// /Users/jeremie/ANTLR/cs.g:944:34: ( argument_list )?
 			int alt241=2;
 			int LA241_0 = input.LA(1);
 			if ( (LA241_0==Character_literal||LA241_0==FALSE||(LA241_0 >= Hex_number && LA241_0 <= IDENTIFIER)||(LA241_0 >= MINUS && LA241_0 <= NUMBER)||LA241_0==Real_literal||LA241_0==STRINGLITERAL||LA241_0==TRUE||LA241_0==Verbatim_string_literal||LA241_0==61||LA241_0==66||(LA241_0 >= 68 && LA241_0 <= 69)||(LA241_0 >= 71 && LA241_0 <= 72)||LA241_0==75||LA241_0==95||(LA241_0 >= 97 && LA241_0 <= 98)||(LA241_0 >= 100 && LA241_0 <= 103)||(LA241_0 >= 105 && LA241_0 <= 106)||(LA241_0 >= 109 && LA241_0 <= 110)||(LA241_0 >= 114 && LA241_0 <= 117)||(LA241_0 >= 119 && LA241_0 <= 120)||LA241_0==122||LA241_0==126||LA241_0==129||LA241_0==132||LA241_0==135||LA241_0==138||LA241_0==141||(LA241_0 >= 143 && LA241_0 <= 144)||(LA241_0 >= 146 && LA241_0 <= 148)||(LA241_0 >= 150 && LA241_0 <= 152)||(LA241_0 >= 154 && LA241_0 <= 155)||LA241_0==157||LA241_0==160||LA241_0==162||(LA241_0 >= 166 && LA241_0 <= 167)||LA241_0==169||(LA241_0 >= 171 && LA241_0 <= 174)||LA241_0==177||LA241_0==180||(LA241_0 >= 183 && LA241_0 <= 187)||(LA241_0 >= 189 && LA241_0 <= 190)||LA241_0==194||LA241_0==196||LA241_0==202) ) {
@@ -27466,7 +27962,7 @@ public class csParser extends Parser {
 			}
 			switch (alt241) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:943:34: argument_list
+					// /Users/jeremie/ANTLR/cs.g:944:34: argument_list
 					{
 					pushFollow(FOLLOW_argument_list_in_constructor_initializer8426);
 					argument_list737=argument_list();
@@ -27517,7 +28013,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "constructor_body"
-	// /Users/jeremie/ANTLR/cs.g:944:1: constructor_body : block ;
+	// /Users/jeremie/ANTLR/cs.g:945:1: constructor_body : block ;
 	public final csParser.constructor_body_return constructor_body() throws RecognitionException {
 		csParser.constructor_body_return retval = new csParser.constructor_body_return();
 		retval.start = input.LT(1);
@@ -27531,8 +28027,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 239) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:944:17: ( block )
-			// /Users/jeremie/ANTLR/cs.g:945:2: block
+			// /Users/jeremie/ANTLR/cs.g:945:17: ( block )
+			// /Users/jeremie/ANTLR/cs.g:946:2: block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27575,7 +28071,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "destructor_declaration"
-	// /Users/jeremie/ANTLR/cs.g:954:1: destructor_declaration : '~' identifier '(' ')' destructor_body ;
+	// /Users/jeremie/ANTLR/cs.g:955:1: destructor_declaration : '~' identifier '(' ')' destructor_body ;
 	public final csParser.destructor_declaration_return destructor_declaration() throws RecognitionException {
 		csParser.destructor_declaration_return retval = new csParser.destructor_declaration_return();
 		retval.start = input.LT(1);
@@ -27596,8 +28092,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 240) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:954:23: ( '~' identifier '(' ')' destructor_body )
-			// /Users/jeremie/ANTLR/cs.g:955:2: '~' identifier '(' ')' destructor_body
+			// /Users/jeremie/ANTLR/cs.g:955:23: ( '~' identifier '(' ')' destructor_body )
+			// /Users/jeremie/ANTLR/cs.g:956:2: '~' identifier '(' ')' destructor_body
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27664,7 +28160,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "destructor_body"
-	// /Users/jeremie/ANTLR/cs.g:956:1: destructor_body : block ;
+	// /Users/jeremie/ANTLR/cs.g:957:1: destructor_body : block ;
 	public final csParser.destructor_body_return destructor_body() throws RecognitionException {
 		csParser.destructor_body_return retval = new csParser.destructor_body_return();
 		retval.start = input.LT(1);
@@ -27678,8 +28174,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 241) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:956:16: ( block )
-			// /Users/jeremie/ANTLR/cs.g:957:2: block
+			// /Users/jeremie/ANTLR/cs.g:957:16: ( block )
+			// /Users/jeremie/ANTLR/cs.g:958:2: block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27722,7 +28218,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "invocation_expression"
-	// /Users/jeremie/ANTLR/cs.g:960:1: invocation_expression : invocation_start ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ;
+	// /Users/jeremie/ANTLR/cs.g:961:1: invocation_expression : invocation_start ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments ;
 	public final csParser.invocation_expression_return invocation_expression() throws RecognitionException {
 		csParser.invocation_expression_return retval = new csParser.invocation_expression_return();
 		retval.start = input.LT(1);
@@ -27740,8 +28236,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 242) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:960:22: ( invocation_start ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )
-			// /Users/jeremie/ANTLR/cs.g:961:2: invocation_start ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments
+			// /Users/jeremie/ANTLR/cs.g:961:22: ( invocation_start ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )
+			// /Users/jeremie/ANTLR/cs.g:962:2: invocation_start ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -27752,7 +28248,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_start746.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:961:21: ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )*
+			// /Users/jeremie/ANTLR/cs.g:962:21: ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )*
 			loop242:
 			while (true) {
 				int alt242=3;
@@ -27770,10 +28266,10 @@ public class csParser extends Parser {
 
 				switch (alt242) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:961:22: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
+					// /Users/jeremie/ANTLR/cs.g:962:22: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
 					{
-					// /Users/jeremie/ANTLR/cs.g:961:22: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
-					// /Users/jeremie/ANTLR/cs.g:961:23: ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part
+					// /Users/jeremie/ANTLR/cs.g:962:22: ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part )
+					// /Users/jeremie/ANTLR/cs.g:962:23: ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part
 					{
 					pushFollow(FOLLOW_arguments_in_invocation_expression8511);
 					arguments747=arguments();
@@ -27792,7 +28288,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:962:9: invocation_part
+					// /Users/jeremie/ANTLR/cs.g:963:9: invocation_part
 					{
 					pushFollow(FOLLOW_invocation_part_in_invocation_expression8526);
 					invocation_part749=invocation_part();
@@ -27846,7 +28342,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "invocation_start"
-	// /Users/jeremie/ANTLR/cs.g:963:1: invocation_start : ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | 'this' | 'base' | identifier ( '::' identifier )? | typeof_expression );
+	// /Users/jeremie/ANTLR/cs.g:964:1: invocation_start : ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | 'this' | 'base' | identifier ( '::' identifier )? | typeof_expression );
 	public final csParser.invocation_start_return invocation_start() throws RecognitionException {
 		csParser.invocation_start_return retval = new csParser.invocation_start_return();
 		retval.start = input.LT(1);
@@ -27871,7 +28367,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 243) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:963:17: ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | 'this' | 'base' | identifier ( '::' identifier )? | typeof_expression )
+			// /Users/jeremie/ANTLR/cs.g:964:17: ( predefined_type | ( identifier '<' )=> identifier generic_argument_list | 'this' | 'base' | identifier ( '::' identifier )? | typeof_expression )
 			int alt244=6;
 			switch ( input.LA(1) ) {
 			case 103:
@@ -27970,7 +28466,7 @@ public class csParser extends Parser {
 			}
 			switch (alt244) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:964:2: predefined_type
+					// /Users/jeremie/ANTLR/cs.g:965:2: predefined_type
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -27984,7 +28480,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:965:4: ( identifier '<' )=> identifier generic_argument_list
+					// /Users/jeremie/ANTLR/cs.g:966:4: ( identifier '<' )=> identifier generic_argument_list
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28004,7 +28500,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:966:4: 'this'
+					// /Users/jeremie/ANTLR/cs.g:967:4: 'this'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28018,7 +28514,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:967:4: 'base'
+					// /Users/jeremie/ANTLR/cs.g:968:4: 'base'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28032,7 +28528,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:968:4: identifier ( '::' identifier )?
+					// /Users/jeremie/ANTLR/cs.g:969:4: identifier ( '::' identifier )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28043,7 +28539,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier756.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:968:17: ( '::' identifier )?
+					// /Users/jeremie/ANTLR/cs.g:969:17: ( '::' identifier )?
 					int alt243=2;
 					int LA243_0 = input.LA(1);
 					if ( (LA243_0==80) ) {
@@ -28051,7 +28547,7 @@ public class csParser extends Parser {
 					}
 					switch (alt243) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:968:18: '::' identifier
+							// /Users/jeremie/ANTLR/cs.g:969:18: '::' identifier
 							{
 							string_literal757=(Token)match(input,80,FOLLOW_80_in_invocation_start8582); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -28073,7 +28569,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jeremie/ANTLR/cs.g:969:4: typeof_expression
+					// /Users/jeremie/ANTLR/cs.g:970:4: typeof_expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28118,7 +28614,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "invocation_part"
-	// /Users/jeremie/ANTLR/cs.g:971:1: invocation_part : ( access_identifier | brackets );
+	// /Users/jeremie/ANTLR/cs.g:972:1: invocation_part : ( access_identifier | brackets );
 	public final csParser.invocation_part_return invocation_part() throws RecognitionException {
 		csParser.invocation_part_return retval = new csParser.invocation_part_return();
 		retval.start = input.LT(1);
@@ -28133,7 +28629,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 244) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:971:16: ( access_identifier | brackets )
+			// /Users/jeremie/ANTLR/cs.g:972:16: ( access_identifier | brackets )
 			int alt245=2;
 			int LA245_0 = input.LA(1);
 			if ( (LA245_0==DOT||LA245_0==PTR) ) {
@@ -28152,7 +28648,7 @@ public class csParser extends Parser {
 
 			switch (alt245) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:972:3: access_identifier
+					// /Users/jeremie/ANTLR/cs.g:973:3: access_identifier
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28166,7 +28662,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:973:4: brackets
+					// /Users/jeremie/ANTLR/cs.g:974:4: brackets
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28212,7 +28708,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "statement"
-	// /Users/jeremie/ANTLR/cs.g:978:1: statement returns [statement t] : ( ( declaration_statement )=>a= declaration_statement | ( identifier ':' )=>b= labeled_statement |c= embedded_statement );
+	// /Users/jeremie/ANTLR/cs.g:979:1: statement returns [statement t] : ( ( declaration_statement )=>a= declaration_statement | ( identifier ':' )=>b= labeled_statement |c= embedded_statement );
 	public final csParser.statement_return statement() throws RecognitionException {
 		csParser.statement_return retval = new csParser.statement_return();
 		retval.start = input.LT(1);
@@ -28228,7 +28724,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 245) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:978:33: ( ( declaration_statement )=>a= declaration_statement | ( identifier ':' )=>b= labeled_statement |c= embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:979:33: ( ( declaration_statement )=>a= declaration_statement | ( identifier ':' )=>b= labeled_statement |c= embedded_statement )
 			int alt246=3;
 			int LA246_0 = input.LA(1);
 			if ( (LA246_0==190) ) {
@@ -28303,7 +28799,7 @@ public class csParser extends Parser {
 
 			}
 			else if ( (LA246_0==IDENTIFIER||LA246_0==95||(LA246_0 >= 97 && LA246_0 <= 98)||(LA246_0 >= 100 && LA246_0 <= 101)||LA246_0==105||LA246_0==117||LA246_0==122||LA246_0==126||LA246_0==135||LA246_0==141||(LA246_0 >= 143 && LA246_0 <= 144)||(LA246_0 >= 147 && LA246_0 <= 148)||LA246_0==152||LA246_0==154||LA246_0==157||LA246_0==160||LA246_0==162||LA246_0==167||(LA246_0 >= 171 && LA246_0 <= 172)||LA246_0==183||LA246_0==194) ) {
-				int LA246_45 = input.LA(2);
+				int LA246_53 = input.LA(2);
 				if ( (synpred33_cs()) ) {
 					alt246=1;
 				}
@@ -28325,7 +28821,7 @@ public class csParser extends Parser {
 
 			switch (alt246) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:979:9: ( declaration_statement )=>a= declaration_statement
+					// /Users/jeremie/ANTLR/cs.g:980:9: ( declaration_statement )=>a= declaration_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28340,7 +28836,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:980:11: ( identifier ':' )=>b= labeled_statement
+					// /Users/jeremie/ANTLR/cs.g:981:11: ( identifier ':' )=>b= labeled_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28355,7 +28851,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:981:11: c= embedded_statement
+					// /Users/jeremie/ANTLR/cs.g:982:11: c= embedded_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28402,7 +28898,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "embedded_statement"
-	// /Users/jeremie/ANTLR/cs.g:983:1: embedded_statement returns [statement t] : (a= block |b= selection_statement |c= iteration_statement |d= jump_statement |e= try_statement |f= checked_statement |g= unchecked_statement |h= lock_statement |i= using_statement |j= yield_statement |k= unsafe_statement |l= fixed_statement |m= expression_statement );
+	// /Users/jeremie/ANTLR/cs.g:984:1: embedded_statement returns [statement t] : (a= block |b= selection_statement |c= iteration_statement |d= jump_statement |e= try_statement |f= checked_statement |g= unchecked_statement |h= lock_statement |i= using_statement |j= yield_statement |k= unsafe_statement |l= fixed_statement |m= expression_statement );
 	public final csParser.embedded_statement_return embedded_statement() throws RecognitionException {
 		csParser.embedded_statement_return retval = new csParser.embedded_statement_return();
 		retval.start = input.LT(1);
@@ -28428,7 +28924,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 246) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:983:42: (a= block |b= selection_statement |c= iteration_statement |d= jump_statement |e= try_statement |f= checked_statement |g= unchecked_statement |h= lock_statement |i= using_statement |j= yield_statement |k= unsafe_statement |l= fixed_statement |m= expression_statement )
+			// /Users/jeremie/ANTLR/cs.g:984:42: (a= block |b= selection_statement |c= iteration_statement |d= jump_statement |e= try_statement |f= checked_statement |g= unchecked_statement |h= lock_statement |i= using_statement |j= yield_statement |k= unsafe_statement |l= fixed_statement |m= expression_statement )
 			int alt247=13;
 			switch ( input.LA(1) ) {
 			case SEMI:
@@ -28641,7 +29137,7 @@ public class csParser extends Parser {
 			}
 			switch (alt247) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:984:9: a= block
+					// /Users/jeremie/ANTLR/cs.g:985:9: a= block
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28656,7 +29152,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:985:11: b= selection_statement
+					// /Users/jeremie/ANTLR/cs.g:986:11: b= selection_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28671,7 +29167,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:986:11: c= iteration_statement
+					// /Users/jeremie/ANTLR/cs.g:987:11: c= iteration_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28686,7 +29182,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:987:11: d= jump_statement
+					// /Users/jeremie/ANTLR/cs.g:988:11: d= jump_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28701,7 +29197,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:988:11: e= try_statement
+					// /Users/jeremie/ANTLR/cs.g:989:11: e= try_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28716,7 +29212,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jeremie/ANTLR/cs.g:989:11: f= checked_statement
+					// /Users/jeremie/ANTLR/cs.g:990:11: f= checked_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28731,7 +29227,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jeremie/ANTLR/cs.g:990:11: g= unchecked_statement
+					// /Users/jeremie/ANTLR/cs.g:991:11: g= unchecked_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28746,7 +29242,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jeremie/ANTLR/cs.g:991:11: h= lock_statement
+					// /Users/jeremie/ANTLR/cs.g:992:11: h= lock_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28761,7 +29257,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jeremie/ANTLR/cs.g:992:11: i= using_statement
+					// /Users/jeremie/ANTLR/cs.g:993:11: i= using_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28776,7 +29272,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jeremie/ANTLR/cs.g:993:11: j= yield_statement
+					// /Users/jeremie/ANTLR/cs.g:994:11: j= yield_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28791,7 +29287,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jeremie/ANTLR/cs.g:994:11: k= unsafe_statement
+					// /Users/jeremie/ANTLR/cs.g:995:11: k= unsafe_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28806,7 +29302,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jeremie/ANTLR/cs.g:995:11: l= fixed_statement
+					// /Users/jeremie/ANTLR/cs.g:996:11: l= fixed_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28821,7 +29317,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jeremie/ANTLR/cs.g:996:11: m= expression_statement
+					// /Users/jeremie/ANTLR/cs.g:997:11: m= expression_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -28868,7 +29364,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "fixed_statement"
-	// /Users/jeremie/ANTLR/cs.g:999:1: fixed_statement returns [UnknownNode t] : 'fixed' '(' pointer_type fixed_pointer_declarators ')' embedded_statement ;
+	// /Users/jeremie/ANTLR/cs.g:1000:1: fixed_statement returns [UnknownNode t] : 'fixed' '(' pointer_type fixed_pointer_declarators ')' embedded_statement ;
 	public final csParser.fixed_statement_return fixed_statement() throws RecognitionException {
 		csParser.fixed_statement_return retval = new csParser.fixed_statement_return();
 		retval.start = input.LT(1);
@@ -28890,8 +29386,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 247) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1000:37: ( 'fixed' '(' pointer_type fixed_pointer_declarators ')' embedded_statement )
-			// /Users/jeremie/ANTLR/cs.g:1001:2: 'fixed' '(' pointer_type fixed_pointer_declarators ')' embedded_statement
+			// /Users/jeremie/ANTLR/cs.g:1001:37: ( 'fixed' '(' pointer_type fixed_pointer_declarators ')' embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:1002:2: 'fixed' '(' pointer_type fixed_pointer_declarators ')' embedded_statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -28965,7 +29461,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "fixed_pointer_declarators"
-	// /Users/jeremie/ANTLR/cs.g:1002:1: fixed_pointer_declarators : fixed_pointer_declarator ( ',' fixed_pointer_declarator )* ;
+	// /Users/jeremie/ANTLR/cs.g:1003:1: fixed_pointer_declarators : fixed_pointer_declarator ( ',' fixed_pointer_declarator )* ;
 	public final csParser.fixed_pointer_declarators_return fixed_pointer_declarators() throws RecognitionException {
 		csParser.fixed_pointer_declarators_return retval = new csParser.fixed_pointer_declarators_return();
 		retval.start = input.LT(1);
@@ -28982,8 +29478,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 248) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1002:26: ( fixed_pointer_declarator ( ',' fixed_pointer_declarator )* )
-			// /Users/jeremie/ANTLR/cs.g:1003:2: fixed_pointer_declarator ( ',' fixed_pointer_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:1003:26: ( fixed_pointer_declarator ( ',' fixed_pointer_declarator )* )
+			// /Users/jeremie/ANTLR/cs.g:1004:2: fixed_pointer_declarator ( ',' fixed_pointer_declarator )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -28994,7 +29490,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, fixed_pointer_declarator768.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:1003:29: ( ',' fixed_pointer_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:1004:29: ( ',' fixed_pointer_declarator )*
 			loop248:
 			while (true) {
 				int alt248=2;
@@ -29005,7 +29501,7 @@ public class csParser extends Parser {
 
 				switch (alt248) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1003:30: ',' fixed_pointer_declarator
+					// /Users/jeremie/ANTLR/cs.g:1004:30: ',' fixed_pointer_declarator
 					{
 					char_literal769=(Token)match(input,74,FOLLOW_74_in_fixed_pointer_declarators9027); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -29059,7 +29555,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "fixed_pointer_declarator"
-	// /Users/jeremie/ANTLR/cs.g:1004:1: fixed_pointer_declarator : identifier '=' fixed_pointer_initializer ;
+	// /Users/jeremie/ANTLR/cs.g:1005:1: fixed_pointer_declarator : identifier '=' fixed_pointer_initializer ;
 	public final csParser.fixed_pointer_declarator_return fixed_pointer_declarator() throws RecognitionException {
 		csParser.fixed_pointer_declarator_return retval = new csParser.fixed_pointer_declarator_return();
 		retval.start = input.LT(1);
@@ -29076,8 +29572,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 249) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1004:25: ( identifier '=' fixed_pointer_initializer )
-			// /Users/jeremie/ANTLR/cs.g:1005:2: identifier '=' fixed_pointer_initializer
+			// /Users/jeremie/ANTLR/cs.g:1005:25: ( identifier '=' fixed_pointer_initializer )
+			// /Users/jeremie/ANTLR/cs.g:1006:2: identifier '=' fixed_pointer_initializer
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -29132,7 +29628,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "fixed_pointer_initializer"
-	// /Users/jeremie/ANTLR/cs.g:1006:1: fixed_pointer_initializer : expression ;
+	// /Users/jeremie/ANTLR/cs.g:1007:1: fixed_pointer_initializer : expression ;
 	public final csParser.fixed_pointer_initializer_return fixed_pointer_initializer() throws RecognitionException {
 		csParser.fixed_pointer_initializer_return retval = new csParser.fixed_pointer_initializer_return();
 		retval.start = input.LT(1);
@@ -29146,8 +29642,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 250) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1006:26: ( expression )
-			// /Users/jeremie/ANTLR/cs.g:1008:2: expression
+			// /Users/jeremie/ANTLR/cs.g:1007:26: ( expression )
+			// /Users/jeremie/ANTLR/cs.g:1009:2: expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -29191,7 +29687,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unsafe_statement"
-	// /Users/jeremie/ANTLR/cs.g:1009:1: unsafe_statement returns [UnknownNode t] : 'unsafe' block ;
+	// /Users/jeremie/ANTLR/cs.g:1010:1: unsafe_statement returns [UnknownNode t] : 'unsafe' block ;
 	public final csParser.unsafe_statement_return unsafe_statement() throws RecognitionException {
 		csParser.unsafe_statement_return retval = new csParser.unsafe_statement_return();
 		retval.start = input.LT(1);
@@ -29207,8 +29703,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 251) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1010:37: ( 'unsafe' block )
-			// /Users/jeremie/ANTLR/cs.g:1011:2: 'unsafe' block
+			// /Users/jeremie/ANTLR/cs.g:1011:37: ( 'unsafe' block )
+			// /Users/jeremie/ANTLR/cs.g:1012:2: 'unsafe' block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -29259,7 +29755,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "labeled_statement"
-	// /Users/jeremie/ANTLR/cs.g:1012:1: labeled_statement returns [UnknownNode t] : identifier ':' statement ;
+	// /Users/jeremie/ANTLR/cs.g:1013:1: labeled_statement returns [UnknownNode t] : identifier ':' statement ;
 	public final csParser.labeled_statement_return labeled_statement() throws RecognitionException {
 		csParser.labeled_statement_return retval = new csParser.labeled_statement_return();
 		retval.start = input.LT(1);
@@ -29276,8 +29772,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 252) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1013:37: ( identifier ':' statement )
-			// /Users/jeremie/ANTLR/cs.g:1014:9: identifier ':' statement
+			// /Users/jeremie/ANTLR/cs.g:1014:37: ( identifier ':' statement )
+			// /Users/jeremie/ANTLR/cs.g:1015:9: identifier ':' statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -29334,7 +29830,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "declaration_statement"
-	// /Users/jeremie/ANTLR/cs.g:1015:1: declaration_statement returns [statement t] : (b= local_variable_declaration |c= local_constant_declaration ) ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1016:1: declaration_statement returns [statement t] : (b= local_variable_declaration |c= local_constant_declaration ) ';' ;
 	public final csParser.declaration_statement_return declaration_statement() throws RecognitionException {
 		csParser.declaration_statement_return retval = new csParser.declaration_statement_return();
 		retval.start = input.LT(1);
@@ -29351,13 +29847,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 253) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1015:44: ( (b= local_variable_declaration |c= local_constant_declaration ) ';' )
-			// /Users/jeremie/ANTLR/cs.g:1016:9: (b= local_variable_declaration |c= local_constant_declaration ) ';'
+			// /Users/jeremie/ANTLR/cs.g:1016:44: ( (b= local_variable_declaration |c= local_constant_declaration ) ';' )
+			// /Users/jeremie/ANTLR/cs.g:1017:9: (b= local_variable_declaration |c= local_constant_declaration ) ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:1016:9: (b= local_variable_declaration |c= local_constant_declaration )
+			// /Users/jeremie/ANTLR/cs.g:1017:9: (b= local_variable_declaration |c= local_constant_declaration )
 			int alt249=2;
 			int LA249_0 = input.LA(1);
 			if ( (LA249_0==IDENTIFIER||LA249_0==95||(LA249_0 >= 97 && LA249_0 <= 98)||(LA249_0 >= 100 && LA249_0 <= 101)||LA249_0==103||(LA249_0 >= 105 && LA249_0 <= 106)||LA249_0==109||LA249_0==114||LA249_0==117||(LA249_0 >= 119 && LA249_0 <= 120)||LA249_0==122||LA249_0==126||LA249_0==129||LA249_0==132||LA249_0==135||LA249_0==138||LA249_0==141||(LA249_0 >= 143 && LA249_0 <= 144)||(LA249_0 >= 146 && LA249_0 <= 148)||(LA249_0 >= 151 && LA249_0 <= 152)||LA249_0==154||LA249_0==157||LA249_0==160||LA249_0==162||LA249_0==167||LA249_0==169||(LA249_0 >= 171 && LA249_0 <= 173)||LA249_0==177||LA249_0==183||(LA249_0 >= 185 && LA249_0 <= 186)||(LA249_0 >= 189 && LA249_0 <= 190)||LA249_0==192||LA249_0==194||LA249_0==196) ) {
@@ -29376,7 +29872,7 @@ public class csParser extends Parser {
 
 			switch (alt249) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1016:10: b= local_variable_declaration
+					// /Users/jeremie/ANTLR/cs.g:1017:10: b= local_variable_declaration
 					{
 					pushFollow(FOLLOW_local_variable_declaration_in_declaration_statement9135);
 					b=local_variable_declaration();
@@ -29388,7 +29884,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1017:11: c= local_constant_declaration
+					// /Users/jeremie/ANTLR/cs.g:1018:11: c= local_constant_declaration
 					{
 					pushFollow(FOLLOW_local_constant_declaration_in_declaration_statement9151);
 					c=local_constant_declaration();
@@ -29441,7 +29937,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "local_variable_declaration"
-	// /Users/jeremie/ANTLR/cs.g:1019:1: local_variable_declaration returns [local_variable_declaration t] : a= local_variable_type b= local_variable_declarators ;
+	// /Users/jeremie/ANTLR/cs.g:1020:1: local_variable_declaration returns [local_variable_declaration t] : a= local_variable_type b= local_variable_declarators ;
 	public final csParser.local_variable_declaration_return local_variable_declaration() throws RecognitionException {
 		csParser.local_variable_declaration_return retval = new csParser.local_variable_declaration_return();
 		retval.start = input.LT(1);
@@ -29456,8 +29952,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 254) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1020:32: (a= local_variable_type b= local_variable_declarators )
-			// /Users/jeremie/ANTLR/cs.g:1021:9: a= local_variable_type b= local_variable_declarators
+			// /Users/jeremie/ANTLR/cs.g:1021:32: (a= local_variable_type b= local_variable_declarators )
+			// /Users/jeremie/ANTLR/cs.g:1022:9: a= local_variable_type b= local_variable_declarators
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -29509,7 +30005,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "local_variable_type"
-	// /Users/jeremie/ANTLR/cs.g:1023:1: local_variable_type returns [type t] : ( ( 'var' )=>a= 'var' | ( 'dynamic' )=>b= 'dynamic' |c= type );
+	// /Users/jeremie/ANTLR/cs.g:1024:1: local_variable_type returns [type t] : ( ( 'var' )=>a= 'var' | ( 'dynamic' )=>b= 'dynamic' |c= type );
 	public final csParser.local_variable_type_return local_variable_type() throws RecognitionException {
 		csParser.local_variable_type_return retval = new csParser.local_variable_type_return();
 		retval.start = input.LT(1);
@@ -29527,7 +30023,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 255) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1023:37: ( ( 'var' )=>a= 'var' | ( 'dynamic' )=>b= 'dynamic' |c= type )
+			// /Users/jeremie/ANTLR/cs.g:1024:37: ( ( 'var' )=>a= 'var' | ( 'dynamic' )=>b= 'dynamic' |c= type )
 			int alt250=3;
 			switch ( input.LA(1) ) {
 			case 190:
@@ -29610,7 +30106,7 @@ public class csParser extends Parser {
 			}
 			switch (alt250) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1024:9: ( 'var' )=>a= 'var'
+					// /Users/jeremie/ANTLR/cs.g:1025:9: ( 'var' )=>a= 'var'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -29625,7 +30121,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1025:11: ( 'dynamic' )=>b= 'dynamic'
+					// /Users/jeremie/ANTLR/cs.g:1026:11: ( 'dynamic' )=>b= 'dynamic'
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -29640,7 +30136,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:1026:11: c= type
+					// /Users/jeremie/ANTLR/cs.g:1027:11: c= type
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -29687,7 +30183,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "local_variable_declarators"
-	// /Users/jeremie/ANTLR/cs.g:1027:1: local_variable_declarators returns [local_variable_declarators t] : a= local_variable_declarator ( ',' a= local_variable_declarator )* ;
+	// /Users/jeremie/ANTLR/cs.g:1028:1: local_variable_declarators returns [local_variable_declarators t] : a= local_variable_declarator ( ',' a= local_variable_declarator )* ;
 	public final csParser.local_variable_declarators_return local_variable_declarators() throws RecognitionException {
 		csParser.local_variable_declarators_return retval = new csParser.local_variable_declarators_return();
 		retval.start = input.LT(1);
@@ -29704,8 +30200,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 256) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1029:39: (a= local_variable_declarator ( ',' a= local_variable_declarator )* )
-			// /Users/jeremie/ANTLR/cs.g:1030:9: a= local_variable_declarator ( ',' a= local_variable_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:1030:39: (a= local_variable_declarator ( ',' a= local_variable_declarator )* )
+			// /Users/jeremie/ANTLR/cs.g:1031:9: a= local_variable_declarator ( ',' a= local_variable_declarator )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -29717,7 +30213,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res.add((a!=null?((csParser.local_variable_declarator_return)a).t:null));}
-			// /Users/jeremie/ANTLR/cs.g:1030:54: ( ',' a= local_variable_declarator )*
+			// /Users/jeremie/ANTLR/cs.g:1031:54: ( ',' a= local_variable_declarator )*
 			loop251:
 			while (true) {
 				int alt251=2;
@@ -29728,7 +30224,7 @@ public class csParser extends Parser {
 
 				switch (alt251) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1030:55: ',' a= local_variable_declarator
+					// /Users/jeremie/ANTLR/cs.g:1031:55: ',' a= local_variable_declarator
 					{
 					char_literal781=(Token)match(input,74,FOLLOW_74_in_local_variable_declarators9308); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -29785,7 +30281,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "local_variable_declarator"
-	// /Users/jeremie/ANTLR/cs.g:1031:1: local_variable_declarator returns [local_variable_declarator t] : a= identifier ( '=' b= local_variable_initializer )? ;
+	// /Users/jeremie/ANTLR/cs.g:1032:1: local_variable_declarator returns [local_variable_declarator t] : a= identifier ( '=' b= local_variable_initializer )? ;
 	public final csParser.local_variable_declarator_return local_variable_declarator() throws RecognitionException {
 		csParser.local_variable_declarator_return retval = new csParser.local_variable_declarator_return();
 		retval.start = input.LT(1);
@@ -29802,8 +30298,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 257) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1032:32: (a= identifier ( '=' b= local_variable_initializer )? )
-			// /Users/jeremie/ANTLR/cs.g:1033:9: a= identifier ( '=' b= local_variable_initializer )?
+			// /Users/jeremie/ANTLR/cs.g:1033:32: (a= identifier ( '=' b= local_variable_initializer )? )
+			// /Users/jeremie/ANTLR/cs.g:1034:9: a= identifier ( '=' b= local_variable_initializer )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -29814,7 +30310,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:1033:22: ( '=' b= local_variable_initializer )?
+			// /Users/jeremie/ANTLR/cs.g:1034:22: ( '=' b= local_variable_initializer )?
 			int alt252=2;
 			int LA252_0 = input.LA(1);
 			if ( (LA252_0==85) ) {
@@ -29822,7 +30318,7 @@ public class csParser extends Parser {
 			}
 			switch (alt252) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1033:23: '=' b= local_variable_initializer
+					// /Users/jeremie/ANTLR/cs.g:1034:23: '=' b= local_variable_initializer
 					{
 					char_literal782=(Token)match(input,85,FOLLOW_85_in_local_variable_declarator9347); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -29876,7 +30372,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "local_variable_initializer"
-	// /Users/jeremie/ANTLR/cs.g:1034:1: local_variable_initializer returns [expression t] : (a= expression |b= array_initializer |c= stackalloc_initializer );
+	// /Users/jeremie/ANTLR/cs.g:1035:1: local_variable_initializer returns [expression t] : (a= expression |b= array_initializer |c= stackalloc_initializer );
 	public final csParser.local_variable_initializer_return local_variable_initializer() throws RecognitionException {
 		csParser.local_variable_initializer_return retval = new csParser.local_variable_initializer_return();
 		retval.start = input.LT(1);
@@ -29892,7 +30388,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 258) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1034:50: (a= expression |b= array_initializer |c= stackalloc_initializer )
+			// /Users/jeremie/ANTLR/cs.g:1035:50: (a= expression |b= array_initializer |c= stackalloc_initializer )
 			int alt253=3;
 			switch ( input.LA(1) ) {
 			case Character_literal:
@@ -29989,7 +30485,7 @@ public class csParser extends Parser {
 			}
 			switch (alt253) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1035:9: a= expression
+					// /Users/jeremie/ANTLR/cs.g:1036:9: a= expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -30004,7 +30500,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1036:11: b= array_initializer
+					// /Users/jeremie/ANTLR/cs.g:1037:11: b= array_initializer
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -30019,7 +30515,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:1037:11: c= stackalloc_initializer
+					// /Users/jeremie/ANTLR/cs.g:1038:11: c= stackalloc_initializer
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -30066,7 +30562,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "stackalloc_initializer"
-	// /Users/jeremie/ANTLR/cs.g:1038:1: stackalloc_initializer returns [UnknownNode t] : 'stackalloc' unmanaged_type '[' expression ']' ;
+	// /Users/jeremie/ANTLR/cs.g:1039:1: stackalloc_initializer returns [UnknownNode t] : 'stackalloc' unmanaged_type '[' expression ']' ;
 	public final csParser.stackalloc_initializer_return stackalloc_initializer() throws RecognitionException {
 		csParser.stackalloc_initializer_return retval = new csParser.stackalloc_initializer_return();
 		retval.start = input.LT(1);
@@ -30087,8 +30583,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 259) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1039:37: ( 'stackalloc' unmanaged_type '[' expression ']' )
-			// /Users/jeremie/ANTLR/cs.g:1040:9: 'stackalloc' unmanaged_type '[' expression ']'
+			// /Users/jeremie/ANTLR/cs.g:1040:37: ( 'stackalloc' unmanaged_type '[' expression ']' )
+			// /Users/jeremie/ANTLR/cs.g:1041:9: 'stackalloc' unmanaged_type '[' expression ']'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30157,7 +30653,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "local_constant_declaration"
-	// /Users/jeremie/ANTLR/cs.g:1041:1: local_constant_declaration returns [local_constant_declaration t] : 'const' a= type b= constant_declarators ;
+	// /Users/jeremie/ANTLR/cs.g:1042:1: local_constant_declaration returns [local_constant_declaration t] : 'const' a= type b= constant_declarators ;
 	public final csParser.local_constant_declaration_return local_constant_declaration() throws RecognitionException {
 		csParser.local_constant_declaration_return retval = new csParser.local_constant_declaration_return();
 		retval.start = input.LT(1);
@@ -30174,8 +30670,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 260) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1042:32: ( 'const' a= type b= constant_declarators )
-			// /Users/jeremie/ANTLR/cs.g:1043:9: 'const' a= type b= constant_declarators
+			// /Users/jeremie/ANTLR/cs.g:1043:32: ( 'const' a= type b= constant_declarators )
+			// /Users/jeremie/ANTLR/cs.g:1044:9: 'const' a= type b= constant_declarators
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30233,7 +30729,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "expression_statement"
-	// /Users/jeremie/ANTLR/cs.g:1044:1: expression_statement returns [expression t] : a= expression ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1045:1: expression_statement returns [expression t] : a= expression ';' ;
 	public final csParser.expression_statement_return expression_statement() throws RecognitionException {
 		csParser.expression_statement_return retval = new csParser.expression_statement_return();
 		retval.start = input.LT(1);
@@ -30249,8 +30745,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 261) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1044:46: (a= expression ';' )
-			// /Users/jeremie/ANTLR/cs.g:1045:9: a= expression ';'
+			// /Users/jeremie/ANTLR/cs.g:1045:46: (a= expression ';' )
+			// /Users/jeremie/ANTLR/cs.g:1046:9: a= expression ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30301,7 +30797,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "statement_expression"
-	// /Users/jeremie/ANTLR/cs.g:1048:1: statement_expression returns [expression t] : a= expression ;
+	// /Users/jeremie/ANTLR/cs.g:1049:1: statement_expression returns [expression t] : a= expression ;
 	public final csParser.statement_expression_return statement_expression() throws RecognitionException {
 		csParser.statement_expression_return retval = new csParser.statement_expression_return();
 		retval.start = input.LT(1);
@@ -30315,8 +30811,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 262) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1048:45: (a= expression )
-			// /Users/jeremie/ANTLR/cs.g:1049:2: a= expression
+			// /Users/jeremie/ANTLR/cs.g:1049:45: (a= expression )
+			// /Users/jeremie/ANTLR/cs.g:1050:2: a= expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30361,7 +30857,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "selection_statement"
-	// /Users/jeremie/ANTLR/cs.g:1051:1: selection_statement returns [statement t] : (a= if_statement |b= switch_statement );
+	// /Users/jeremie/ANTLR/cs.g:1052:1: selection_statement returns [statement t] : (a= if_statement |b= switch_statement );
 	public final csParser.selection_statement_return selection_statement() throws RecognitionException {
 		csParser.selection_statement_return retval = new csParser.selection_statement_return();
 		retval.start = input.LT(1);
@@ -30376,7 +30872,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 263) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1051:43: (a= if_statement |b= switch_statement )
+			// /Users/jeremie/ANTLR/cs.g:1052:43: (a= if_statement |b= switch_statement )
 			int alt254=2;
 			int LA254_0 = input.LA(1);
 			if ( (LA254_0==IF) ) {
@@ -30395,7 +30891,7 @@ public class csParser extends Parser {
 
 			switch (alt254) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1052:2: a= if_statement
+					// /Users/jeremie/ANTLR/cs.g:1053:2: a= if_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -30410,7 +30906,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1053:4: b= switch_statement
+					// /Users/jeremie/ANTLR/cs.g:1054:4: b= switch_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -30457,7 +30953,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "if_statement"
-	// /Users/jeremie/ANTLR/cs.g:1054:1: if_statement returns [if_statement t] : 'if' '(' a= boolean_expression ')' b= embedded_statement ( ( 'else' )=>c= else_statement )? ;
+	// /Users/jeremie/ANTLR/cs.g:1055:1: if_statement returns [if_statement t] : 'if' '(' a= boolean_expression ')' b= embedded_statement ( ( 'else' )=>c= else_statement )? ;
 	public final csParser.if_statement_return if_statement() throws RecognitionException {
 		csParser.if_statement_return retval = new csParser.if_statement_return();
 		retval.start = input.LT(1);
@@ -30479,8 +30975,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 264) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1055:32: ( 'if' '(' a= boolean_expression ')' b= embedded_statement ( ( 'else' )=>c= else_statement )? )
-			// /Users/jeremie/ANTLR/cs.g:1057:2: 'if' '(' a= boolean_expression ')' b= embedded_statement ( ( 'else' )=>c= else_statement )?
+			// /Users/jeremie/ANTLR/cs.g:1056:32: ( 'if' '(' a= boolean_expression ')' b= embedded_statement ( ( 'else' )=>c= else_statement )? )
+			// /Users/jeremie/ANTLR/cs.g:1058:2: 'if' '(' a= boolean_expression ')' b= embedded_statement ( ( 'else' )=>c= else_statement )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30515,7 +31011,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, b.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:1057:65: ( ( 'else' )=>c= else_statement )?
+			// /Users/jeremie/ANTLR/cs.g:1058:65: ( ( 'else' )=>c= else_statement )?
 			int alt255=2;
 			int LA255_0 = input.LA(1);
 			if ( (LA255_0==121) ) {
@@ -30526,7 +31022,7 @@ public class csParser extends Parser {
 			}
 			switch (alt255) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1057:66: ( 'else' )=>c= else_statement
+					// /Users/jeremie/ANTLR/cs.g:1058:66: ( 'else' )=>c= else_statement
 					{
 					pushFollow(FOLLOW_else_statement_in_if_statement9623);
 					c=else_statement();
@@ -30574,7 +31070,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "else_statement"
-	// /Users/jeremie/ANTLR/cs.g:1059:1: else_statement returns [statement t] : 'else' a= embedded_statement ;
+	// /Users/jeremie/ANTLR/cs.g:1060:1: else_statement returns [statement t] : 'else' a= embedded_statement ;
 	public final csParser.else_statement_return else_statement() throws RecognitionException {
 		csParser.else_statement_return retval = new csParser.else_statement_return();
 		retval.start = input.LT(1);
@@ -30590,8 +31086,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 265) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1059:38: ( 'else' a= embedded_statement )
-			// /Users/jeremie/ANTLR/cs.g:1060:2: 'else' a= embedded_statement
+			// /Users/jeremie/ANTLR/cs.g:1060:38: ( 'else' a= embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:1061:2: 'else' a= embedded_statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30642,7 +31138,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "switch_statement"
-	// /Users/jeremie/ANTLR/cs.g:1061:1: switch_statement returns [UnknownNode t] : 'switch' '(' expression ')' switch_block ;
+	// /Users/jeremie/ANTLR/cs.g:1062:1: switch_statement returns [UnknownNode t] : 'switch' '(' expression ')' switch_block ;
 	public final csParser.switch_statement_return switch_statement() throws RecognitionException {
 		csParser.switch_statement_return retval = new csParser.switch_statement_return();
 		retval.start = input.LT(1);
@@ -30663,8 +31159,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 266) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1062:37: ( 'switch' '(' expression ')' switch_block )
-			// /Users/jeremie/ANTLR/cs.g:1063:2: 'switch' '(' expression ')' switch_block
+			// /Users/jeremie/ANTLR/cs.g:1063:37: ( 'switch' '(' expression ')' switch_block )
+			// /Users/jeremie/ANTLR/cs.g:1064:2: 'switch' '(' expression ')' switch_block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30732,7 +31228,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "switch_block"
-	// /Users/jeremie/ANTLR/cs.g:1064:1: switch_block : '{' ( switch_sections )? '}' ;
+	// /Users/jeremie/ANTLR/cs.g:1065:1: switch_block : '{' ( switch_sections )? '}' ;
 	public final csParser.switch_block_return switch_block() throws RecognitionException {
 		csParser.switch_block_return retval = new csParser.switch_block_return();
 		retval.start = input.LT(1);
@@ -30750,8 +31246,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 267) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1064:13: ( '{' ( switch_sections )? '}' )
-			// /Users/jeremie/ANTLR/cs.g:1065:2: '{' ( switch_sections )? '}'
+			// /Users/jeremie/ANTLR/cs.g:1065:13: ( '{' ( switch_sections )? '}' )
+			// /Users/jeremie/ANTLR/cs.g:1066:2: '{' ( switch_sections )? '}'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30762,7 +31258,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal799_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1065:8: ( switch_sections )?
+			// /Users/jeremie/ANTLR/cs.g:1066:8: ( switch_sections )?
 			int alt256=2;
 			int LA256_0 = input.LA(1);
 			if ( (LA256_0==107||LA256_0==115) ) {
@@ -30770,7 +31266,7 @@ public class csParser extends Parser {
 			}
 			switch (alt256) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1065:8: switch_sections
+					// /Users/jeremie/ANTLR/cs.g:1066:8: switch_sections
 					{
 					pushFollow(FOLLOW_switch_sections_in_switch_block9696);
 					switch_sections800=switch_sections();
@@ -30821,7 +31317,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "switch_sections"
-	// /Users/jeremie/ANTLR/cs.g:1066:1: switch_sections : ( switch_section )+ ;
+	// /Users/jeremie/ANTLR/cs.g:1067:1: switch_sections : ( switch_section )+ ;
 	public final csParser.switch_sections_return switch_sections() throws RecognitionException {
 		csParser.switch_sections_return retval = new csParser.switch_sections_return();
 		retval.start = input.LT(1);
@@ -30835,13 +31331,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 268) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1066:16: ( ( switch_section )+ )
-			// /Users/jeremie/ANTLR/cs.g:1067:2: ( switch_section )+
+			// /Users/jeremie/ANTLR/cs.g:1067:16: ( ( switch_section )+ )
+			// /Users/jeremie/ANTLR/cs.g:1068:2: ( switch_section )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:1067:2: ( switch_section )+
+			// /Users/jeremie/ANTLR/cs.g:1068:2: ( switch_section )+
 			int cnt257=0;
 			loop257:
 			while (true) {
@@ -30853,7 +31349,7 @@ public class csParser extends Parser {
 
 				switch (alt257) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1067:2: switch_section
+					// /Users/jeremie/ANTLR/cs.g:1068:2: switch_section
 					{
 					pushFollow(FOLLOW_switch_section_in_switch_sections9709);
 					switch_section802=switch_section();
@@ -30905,7 +31401,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "switch_section"
-	// /Users/jeremie/ANTLR/cs.g:1068:1: switch_section : switch_labels statement_list ;
+	// /Users/jeremie/ANTLR/cs.g:1069:1: switch_section : switch_labels statement_list ;
 	public final csParser.switch_section_return switch_section() throws RecognitionException {
 		csParser.switch_section_return retval = new csParser.switch_section_return();
 		retval.start = input.LT(1);
@@ -30920,8 +31416,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 269) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1068:15: ( switch_labels statement_list )
-			// /Users/jeremie/ANTLR/cs.g:1069:2: switch_labels statement_list
+			// /Users/jeremie/ANTLR/cs.g:1069:15: ( switch_labels statement_list )
+			// /Users/jeremie/ANTLR/cs.g:1070:2: switch_labels statement_list
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -30970,7 +31466,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "switch_labels"
-	// /Users/jeremie/ANTLR/cs.g:1070:1: switch_labels : ( switch_label )+ ;
+	// /Users/jeremie/ANTLR/cs.g:1071:1: switch_labels : ( switch_label )+ ;
 	public final csParser.switch_labels_return switch_labels() throws RecognitionException {
 		csParser.switch_labels_return retval = new csParser.switch_labels_return();
 		retval.start = input.LT(1);
@@ -30984,13 +31480,13 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 270) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1070:14: ( ( switch_label )+ )
-			// /Users/jeremie/ANTLR/cs.g:1071:2: ( switch_label )+
+			// /Users/jeremie/ANTLR/cs.g:1071:14: ( ( switch_label )+ )
+			// /Users/jeremie/ANTLR/cs.g:1072:2: ( switch_label )+
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			// /Users/jeremie/ANTLR/cs.g:1071:2: ( switch_label )+
+			// /Users/jeremie/ANTLR/cs.g:1072:2: ( switch_label )+
 			int cnt258=0;
 			loop258:
 			while (true) {
@@ -31009,7 +31505,7 @@ public class csParser extends Parser {
 
 				switch (alt258) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1071:2: switch_label
+					// /Users/jeremie/ANTLR/cs.g:1072:2: switch_label
 					{
 					pushFollow(FOLLOW_switch_label_in_switch_labels9730);
 					switch_label805=switch_label();
@@ -31061,7 +31557,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "switch_label"
-	// /Users/jeremie/ANTLR/cs.g:1072:1: switch_label : ( ( 'case' constant_expression ':' ) | ( 'default' ':' ) );
+	// /Users/jeremie/ANTLR/cs.g:1073:1: switch_label : ( ( 'case' constant_expression ':' ) | ( 'default' ':' ) );
 	public final csParser.switch_label_return switch_label() throws RecognitionException {
 		csParser.switch_label_return retval = new csParser.switch_label_return();
 		retval.start = input.LT(1);
@@ -31083,7 +31579,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 271) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1072:13: ( ( 'case' constant_expression ':' ) | ( 'default' ':' ) )
+			// /Users/jeremie/ANTLR/cs.g:1073:13: ( ( 'case' constant_expression ':' ) | ( 'default' ':' ) )
 			int alt259=2;
 			int LA259_0 = input.LA(1);
 			if ( (LA259_0==107) ) {
@@ -31102,13 +31598,13 @@ public class csParser extends Parser {
 
 			switch (alt259) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1073:2: ( 'case' constant_expression ':' )
+					// /Users/jeremie/ANTLR/cs.g:1074:2: ( 'case' constant_expression ':' )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					// /Users/jeremie/ANTLR/cs.g:1073:2: ( 'case' constant_expression ':' )
-					// /Users/jeremie/ANTLR/cs.g:1073:3: 'case' constant_expression ':'
+					// /Users/jeremie/ANTLR/cs.g:1074:2: ( 'case' constant_expression ':' )
+					// /Users/jeremie/ANTLR/cs.g:1074:3: 'case' constant_expression ':'
 					{
 					string_literal806=(Token)match(input,107,FOLLOW_107_in_switch_label9740); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -31133,13 +31629,13 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1074:4: ( 'default' ':' )
+					// /Users/jeremie/ANTLR/cs.g:1075:4: ( 'default' ':' )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					// /Users/jeremie/ANTLR/cs.g:1074:4: ( 'default' ':' )
-					// /Users/jeremie/ANTLR/cs.g:1074:5: 'default' ':'
+					// /Users/jeremie/ANTLR/cs.g:1075:4: ( 'default' ':' )
+					// /Users/jeremie/ANTLR/cs.g:1075:5: 'default' ':'
 					{
 					string_literal809=(Token)match(input,115,FOLLOW_115_in_switch_label9755); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -31190,7 +31686,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "iteration_statement"
-	// /Users/jeremie/ANTLR/cs.g:1075:1: iteration_statement returns [statement t] : (a= while_statement |b= do_statement |c= for_statement |d= foreach_statement );
+	// /Users/jeremie/ANTLR/cs.g:1076:1: iteration_statement returns [statement t] : (a= while_statement |b= do_statement |c= for_statement |d= foreach_statement );
 	public final csParser.iteration_statement_return iteration_statement() throws RecognitionException {
 		csParser.iteration_statement_return retval = new csParser.iteration_statement_return();
 		retval.start = input.LT(1);
@@ -31207,7 +31703,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 272) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1075:44: (a= while_statement |b= do_statement |c= for_statement |d= foreach_statement )
+			// /Users/jeremie/ANTLR/cs.g:1076:44: (a= while_statement |b= do_statement |c= for_statement |d= foreach_statement )
 			int alt260=4;
 			switch ( input.LA(1) ) {
 			case 195:
@@ -31238,7 +31734,7 @@ public class csParser extends Parser {
 			}
 			switch (alt260) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1076:2: a= while_statement
+					// /Users/jeremie/ANTLR/cs.g:1077:2: a= while_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -31253,7 +31749,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1077:4: b= do_statement
+					// /Users/jeremie/ANTLR/cs.g:1078:4: b= do_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -31268,7 +31764,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:1078:4: c= for_statement
+					// /Users/jeremie/ANTLR/cs.g:1079:4: c= for_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -31283,7 +31779,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:1079:4: d= foreach_statement
+					// /Users/jeremie/ANTLR/cs.g:1080:4: d= foreach_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -31330,7 +31826,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "while_statement"
-	// /Users/jeremie/ANTLR/cs.g:1080:1: while_statement returns [while_statement t] : 'while' '(' a= boolean_expression ')' b= embedded_statement ;
+	// /Users/jeremie/ANTLR/cs.g:1081:1: while_statement returns [while_statement t] : 'while' '(' a= boolean_expression ')' b= embedded_statement ;
 	public final csParser.while_statement_return while_statement() throws RecognitionException {
 		csParser.while_statement_return retval = new csParser.while_statement_return();
 		retval.start = input.LT(1);
@@ -31351,8 +31847,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 273) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1081:32: ( 'while' '(' a= boolean_expression ')' b= embedded_statement )
-			// /Users/jeremie/ANTLR/cs.g:1082:2: 'while' '(' a= boolean_expression ')' b= embedded_statement
+			// /Users/jeremie/ANTLR/cs.g:1082:32: ( 'while' '(' a= boolean_expression ')' b= embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:1083:2: 'while' '(' a= boolean_expression ')' b= embedded_statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -31422,7 +31918,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "do_statement"
-	// /Users/jeremie/ANTLR/cs.g:1083:1: do_statement returns [do_statement t] : 'do' a= embedded_statement 'while' '(' b= boolean_expression ')' ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1084:1: do_statement returns [do_statement t] : 'do' a= embedded_statement 'while' '(' b= boolean_expression ')' ';' ;
 	public final csParser.do_statement_return do_statement() throws RecognitionException {
 		csParser.do_statement_return retval = new csParser.do_statement_return();
 		retval.start = input.LT(1);
@@ -31447,8 +31943,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 274) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1084:32: ( 'do' a= embedded_statement 'while' '(' b= boolean_expression ')' ';' )
-			// /Users/jeremie/ANTLR/cs.g:1085:2: 'do' a= embedded_statement 'while' '(' b= boolean_expression ')' ';'
+			// /Users/jeremie/ANTLR/cs.g:1085:32: ( 'do' a= embedded_statement 'while' '(' b= boolean_expression ')' ';' )
+			// /Users/jeremie/ANTLR/cs.g:1086:2: 'do' a= embedded_statement 'while' '(' b= boolean_expression ')' ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -31530,7 +32026,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "for_statement"
-	// /Users/jeremie/ANTLR/cs.g:1086:1: for_statement returns [for_statement t] : 'for' '(' (a= for_initializer )? ';' (b= for_condition )? ';' (c= for_iterator )? ')' d= embedded_statement ;
+	// /Users/jeremie/ANTLR/cs.g:1087:1: for_statement returns [for_statement t] : 'for' '(' (a= for_initializer )? ';' (b= for_condition )? ';' (c= for_iterator )? ')' d= embedded_statement ;
 	public final csParser.for_statement_return for_statement() throws RecognitionException {
 		csParser.for_statement_return retval = new csParser.for_statement_return();
 		retval.start = input.LT(1);
@@ -31557,8 +32053,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 275) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1087:32: ( 'for' '(' (a= for_initializer )? ';' (b= for_condition )? ';' (c= for_iterator )? ')' d= embedded_statement )
-			// /Users/jeremie/ANTLR/cs.g:1088:2: 'for' '(' (a= for_initializer )? ';' (b= for_condition )? ';' (c= for_iterator )? ')' d= embedded_statement
+			// /Users/jeremie/ANTLR/cs.g:1088:32: ( 'for' '(' (a= for_initializer )? ';' (b= for_condition )? ';' (c= for_iterator )? ')' d= embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:1089:2: 'for' '(' (a= for_initializer )? ';' (b= for_condition )? ';' (c= for_iterator )? ')' d= embedded_statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -31575,7 +32071,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal820_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1088:17: (a= for_initializer )?
+			// /Users/jeremie/ANTLR/cs.g:1089:17: (a= for_initializer )?
 			int alt261=2;
 			int LA261_0 = input.LA(1);
 			if ( (LA261_0==Character_literal||LA261_0==FALSE||(LA261_0 >= Hex_number && LA261_0 <= IDENTIFIER)||(LA261_0 >= MINUS && LA261_0 <= NUMBER)||LA261_0==Real_literal||LA261_0==STRINGLITERAL||LA261_0==TRUE||LA261_0==Verbatim_string_literal||LA261_0==61||LA261_0==66||(LA261_0 >= 68 && LA261_0 <= 69)||(LA261_0 >= 71 && LA261_0 <= 72)||LA261_0==75||LA261_0==95||(LA261_0 >= 97 && LA261_0 <= 98)||(LA261_0 >= 100 && LA261_0 <= 103)||(LA261_0 >= 105 && LA261_0 <= 106)||(LA261_0 >= 109 && LA261_0 <= 110)||(LA261_0 >= 114 && LA261_0 <= 117)||(LA261_0 >= 119 && LA261_0 <= 120)||LA261_0==122||LA261_0==126||LA261_0==129||LA261_0==132||LA261_0==135||LA261_0==138||LA261_0==141||(LA261_0 >= 143 && LA261_0 <= 144)||(LA261_0 >= 146 && LA261_0 <= 148)||(LA261_0 >= 150 && LA261_0 <= 152)||LA261_0==154||LA261_0==157||LA261_0==160||LA261_0==162||LA261_0==167||LA261_0==169||(LA261_0 >= 171 && LA261_0 <= 174)||LA261_0==177||LA261_0==180||(LA261_0 >= 183 && LA261_0 <= 187)||(LA261_0 >= 189 && LA261_0 <= 190)||LA261_0==192||LA261_0==194||LA261_0==196||LA261_0==202) ) {
@@ -31583,7 +32079,7 @@ public class csParser extends Parser {
 			}
 			switch (alt261) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1088:17: a= for_initializer
+					// /Users/jeremie/ANTLR/cs.g:1089:17: a= for_initializer
 					{
 					pushFollow(FOLLOW_for_initializer_in_for_statement9922);
 					a=for_initializer();
@@ -31602,7 +32098,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal821_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1088:44: (b= for_condition )?
+			// /Users/jeremie/ANTLR/cs.g:1089:44: (b= for_condition )?
 			int alt262=2;
 			int LA262_0 = input.LA(1);
 			if ( (LA262_0==Character_literal||LA262_0==FALSE||(LA262_0 >= Hex_number && LA262_0 <= IDENTIFIER)||(LA262_0 >= MINUS && LA262_0 <= NUMBER)||LA262_0==Real_literal||LA262_0==STRINGLITERAL||LA262_0==TRUE||LA262_0==Verbatim_string_literal||LA262_0==61||LA262_0==66||(LA262_0 >= 68 && LA262_0 <= 69)||(LA262_0 >= 71 && LA262_0 <= 72)||LA262_0==75||LA262_0==95||(LA262_0 >= 97 && LA262_0 <= 98)||(LA262_0 >= 100 && LA262_0 <= 103)||(LA262_0 >= 105 && LA262_0 <= 106)||(LA262_0 >= 109 && LA262_0 <= 110)||(LA262_0 >= 114 && LA262_0 <= 117)||(LA262_0 >= 119 && LA262_0 <= 120)||LA262_0==122||LA262_0==126||LA262_0==129||LA262_0==132||LA262_0==135||LA262_0==138||LA262_0==141||(LA262_0 >= 143 && LA262_0 <= 144)||(LA262_0 >= 146 && LA262_0 <= 148)||(LA262_0 >= 150 && LA262_0 <= 152)||LA262_0==154||LA262_0==157||LA262_0==160||LA262_0==162||LA262_0==167||LA262_0==169||(LA262_0 >= 171 && LA262_0 <= 174)||LA262_0==177||LA262_0==180||(LA262_0 >= 183 && LA262_0 <= 187)||(LA262_0 >= 189 && LA262_0 <= 190)||LA262_0==194||LA262_0==196||LA262_0==202) ) {
@@ -31610,7 +32106,7 @@ public class csParser extends Parser {
 			}
 			switch (alt262) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1088:44: b= for_condition
+					// /Users/jeremie/ANTLR/cs.g:1089:44: b= for_condition
 					{
 					pushFollow(FOLLOW_for_condition_in_for_statement9933);
 					b=for_condition();
@@ -31629,7 +32125,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, char_literal822_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1088:69: (c= for_iterator )?
+			// /Users/jeremie/ANTLR/cs.g:1089:69: (c= for_iterator )?
 			int alt263=2;
 			int LA263_0 = input.LA(1);
 			if ( (LA263_0==Character_literal||LA263_0==FALSE||(LA263_0 >= Hex_number && LA263_0 <= IDENTIFIER)||(LA263_0 >= MINUS && LA263_0 <= NUMBER)||LA263_0==Real_literal||LA263_0==STRINGLITERAL||LA263_0==TRUE||LA263_0==Verbatim_string_literal||LA263_0==61||LA263_0==66||(LA263_0 >= 68 && LA263_0 <= 69)||(LA263_0 >= 71 && LA263_0 <= 72)||LA263_0==75||LA263_0==95||(LA263_0 >= 97 && LA263_0 <= 98)||(LA263_0 >= 100 && LA263_0 <= 103)||(LA263_0 >= 105 && LA263_0 <= 106)||(LA263_0 >= 109 && LA263_0 <= 110)||(LA263_0 >= 114 && LA263_0 <= 117)||(LA263_0 >= 119 && LA263_0 <= 120)||LA263_0==122||LA263_0==126||LA263_0==129||LA263_0==132||LA263_0==135||LA263_0==138||LA263_0==141||(LA263_0 >= 143 && LA263_0 <= 144)||(LA263_0 >= 146 && LA263_0 <= 148)||(LA263_0 >= 150 && LA263_0 <= 152)||LA263_0==154||LA263_0==157||LA263_0==160||LA263_0==162||LA263_0==167||LA263_0==169||(LA263_0 >= 171 && LA263_0 <= 174)||LA263_0==177||LA263_0==180||(LA263_0 >= 183 && LA263_0 <= 187)||(LA263_0 >= 189 && LA263_0 <= 190)||LA263_0==194||LA263_0==196||LA263_0==202) ) {
@@ -31637,7 +32133,7 @@ public class csParser extends Parser {
 			}
 			switch (alt263) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1088:69: c= for_iterator
+					// /Users/jeremie/ANTLR/cs.g:1089:69: c= for_iterator
 					{
 					pushFollow(FOLLOW_for_iterator_in_for_statement9944);
 					c=for_iterator();
@@ -31697,7 +32193,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "for_initializer"
-	// /Users/jeremie/ANTLR/cs.g:1090:1: for_initializer returns [CsharpNode t] : ( ( local_variable_declaration )=>a= local_variable_declaration |b= statement_expression_list );
+	// /Users/jeremie/ANTLR/cs.g:1091:1: for_initializer returns [CsharpNode t] : ( ( local_variable_declaration )=>a= local_variable_declaration |b= statement_expression_list );
 	public final csParser.for_initializer_return for_initializer() throws RecognitionException {
 		csParser.for_initializer_return retval = new csParser.for_initializer_return();
 		retval.start = input.LT(1);
@@ -31712,7 +32208,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 276) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1090:40: ( ( local_variable_declaration )=>a= local_variable_declaration |b= statement_expression_list )
+			// /Users/jeremie/ANTLR/cs.g:1091:40: ( ( local_variable_declaration )=>a= local_variable_declaration |b= statement_expression_list )
 			int alt264=2;
 			int LA264_0 = input.LA(1);
 			if ( (LA264_0==190) ) {
@@ -31762,7 +32258,7 @@ public class csParser extends Parser {
 				alt264=2;
 			}
 			else if ( (LA264_0==IDENTIFIER||LA264_0==95||(LA264_0 >= 97 && LA264_0 <= 98)||(LA264_0 >= 100 && LA264_0 <= 101)||LA264_0==105||LA264_0==117||LA264_0==122||LA264_0==126||LA264_0==135||LA264_0==141||(LA264_0 >= 143 && LA264_0 <= 144)||(LA264_0 >= 147 && LA264_0 <= 148)||LA264_0==152||LA264_0==154||LA264_0==157||LA264_0==160||LA264_0==162||LA264_0==167||(LA264_0 >= 171 && LA264_0 <= 172)||LA264_0==183||LA264_0==194||LA264_0==196) ) {
-				int LA264_25 = input.LA(2);
+				int LA264_33 = input.LA(2);
 				if ( (synpred38_cs()) ) {
 					alt264=1;
 				}
@@ -31781,7 +32277,7 @@ public class csParser extends Parser {
 
 			switch (alt264) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1091:2: ( local_variable_declaration )=>a= local_variable_declaration
+					// /Users/jeremie/ANTLR/cs.g:1092:2: ( local_variable_declaration )=>a= local_variable_declaration
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -31796,7 +32292,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1092:4: b= statement_expression_list
+					// /Users/jeremie/ANTLR/cs.g:1093:4: b= statement_expression_list
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -31843,7 +32339,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "for_condition"
-	// /Users/jeremie/ANTLR/cs.g:1094:1: for_condition returns [expression t] : a= boolean_expression ;
+	// /Users/jeremie/ANTLR/cs.g:1095:1: for_condition returns [expression t] : a= boolean_expression ;
 	public final csParser.for_condition_return for_condition() throws RecognitionException {
 		csParser.for_condition_return retval = new csParser.for_condition_return();
 		retval.start = input.LT(1);
@@ -31857,8 +32353,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 277) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1094:38: (a= boolean_expression )
-			// /Users/jeremie/ANTLR/cs.g:1095:2: a= boolean_expression
+			// /Users/jeremie/ANTLR/cs.g:1095:38: (a= boolean_expression )
+			// /Users/jeremie/ANTLR/cs.g:1096:2: a= boolean_expression
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -31903,7 +32399,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "for_iterator"
-	// /Users/jeremie/ANTLR/cs.g:1096:1: for_iterator returns [CsharpNode t] : a= statement_expression_list ;
+	// /Users/jeremie/ANTLR/cs.g:1097:1: for_iterator returns [CsharpNode t] : a= statement_expression_list ;
 	public final csParser.for_iterator_return for_iterator() throws RecognitionException {
 		csParser.for_iterator_return retval = new csParser.for_iterator_return();
 		retval.start = input.LT(1);
@@ -31917,8 +32413,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 278) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1096:37: (a= statement_expression_list )
-			// /Users/jeremie/ANTLR/cs.g:1097:2: a= statement_expression_list
+			// /Users/jeremie/ANTLR/cs.g:1097:37: (a= statement_expression_list )
+			// /Users/jeremie/ANTLR/cs.g:1098:2: a= statement_expression_list
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -31963,7 +32459,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "statement_expression_list"
-	// /Users/jeremie/ANTLR/cs.g:1098:1: statement_expression_list returns [statement_expression_list t] : a= statement_expression ( ',' a= statement_expression )* ;
+	// /Users/jeremie/ANTLR/cs.g:1099:1: statement_expression_list returns [statement_expression_list t] : a= statement_expression ( ',' a= statement_expression )* ;
 	public final csParser.statement_expression_list_return statement_expression_list() throws RecognitionException {
 		csParser.statement_expression_list_return retval = new csParser.statement_expression_list_return();
 		retval.start = input.LT(1);
@@ -31980,8 +32476,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 279) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1100:39: (a= statement_expression ( ',' a= statement_expression )* )
-			// /Users/jeremie/ANTLR/cs.g:1101:2: a= statement_expression ( ',' a= statement_expression )*
+			// /Users/jeremie/ANTLR/cs.g:1101:39: (a= statement_expression ( ',' a= statement_expression )* )
+			// /Users/jeremie/ANTLR/cs.g:1102:2: a= statement_expression ( ',' a= statement_expression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -31993,7 +32489,7 @@ public class csParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, a.getTree());
 
 			if ( state.backtracking==0 ) {res.add((a!=null?((csParser.statement_expression_return)a).t:null));}
-			// /Users/jeremie/ANTLR/cs.g:1101:41: ( ',' a= statement_expression )*
+			// /Users/jeremie/ANTLR/cs.g:1102:41: ( ',' a= statement_expression )*
 			loop265:
 			while (true) {
 				int alt265=2;
@@ -32004,7 +32500,7 @@ public class csParser extends Parser {
 
 				switch (alt265) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1101:42: ',' a= statement_expression
+					// /Users/jeremie/ANTLR/cs.g:1102:42: ',' a= statement_expression
 					{
 					char_literal824=(Token)match(input,74,FOLLOW_74_in_statement_expression_list10056); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -32061,7 +32557,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "foreach_statement"
-	// /Users/jeremie/ANTLR/cs.g:1102:1: foreach_statement returns [foreach_statement t] : 'foreach' '(' a= local_variable_type b= identifier 'in' c= expression ')' d= embedded_statement ;
+	// /Users/jeremie/ANTLR/cs.g:1103:1: foreach_statement returns [foreach_statement t] : 'foreach' '(' a= local_variable_type b= identifier 'in' c= expression ')' d= embedded_statement ;
 	public final csParser.foreach_statement_return foreach_statement() throws RecognitionException {
 		csParser.foreach_statement_return retval = new csParser.foreach_statement_return();
 		retval.start = input.LT(1);
@@ -32086,8 +32582,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 280) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1103:32: ( 'foreach' '(' a= local_variable_type b= identifier 'in' c= expression ')' d= embedded_statement )
-			// /Users/jeremie/ANTLR/cs.g:1104:2: 'foreach' '(' a= local_variable_type b= identifier 'in' c= expression ')' d= embedded_statement
+			// /Users/jeremie/ANTLR/cs.g:1104:32: ( 'foreach' '(' a= local_variable_type b= identifier 'in' c= expression ')' d= embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:1105:2: 'foreach' '(' a= local_variable_type b= identifier 'in' c= expression ')' d= embedded_statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32175,7 +32671,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "jump_statement"
-	// /Users/jeremie/ANTLR/cs.g:1106:1: jump_statement returns [statement t] : (a= break_statement |b= continue_statement |c= goto_statement |d= return_statement |e= throw_statement );
+	// /Users/jeremie/ANTLR/cs.g:1107:1: jump_statement returns [statement t] : (a= break_statement |b= continue_statement |c= goto_statement |d= return_statement |e= throw_statement );
 	public final csParser.jump_statement_return jump_statement() throws RecognitionException {
 		csParser.jump_statement_return retval = new csParser.jump_statement_return();
 		retval.start = input.LT(1);
@@ -32193,7 +32689,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 281) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1106:38: (a= break_statement |b= continue_statement |c= goto_statement |d= return_statement |e= throw_statement )
+			// /Users/jeremie/ANTLR/cs.g:1107:38: (a= break_statement |b= continue_statement |c= goto_statement |d= return_statement |e= throw_statement )
 			int alt266=5;
 			switch ( input.LA(1) ) {
 			case 104:
@@ -32229,7 +32725,7 @@ public class csParser extends Parser {
 			}
 			switch (alt266) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1107:2: a= break_statement
+					// /Users/jeremie/ANTLR/cs.g:1108:2: a= break_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -32244,7 +32740,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1108:4: b= continue_statement
+					// /Users/jeremie/ANTLR/cs.g:1109:4: b= continue_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -32259,7 +32755,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:1109:4: c= goto_statement
+					// /Users/jeremie/ANTLR/cs.g:1110:4: c= goto_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -32274,7 +32770,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jeremie/ANTLR/cs.g:1110:4: d= return_statement
+					// /Users/jeremie/ANTLR/cs.g:1111:4: d= return_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -32289,7 +32785,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jeremie/ANTLR/cs.g:1111:4: e= throw_statement
+					// /Users/jeremie/ANTLR/cs.g:1112:4: e= throw_statement
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -32336,7 +32832,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "break_statement"
-	// /Users/jeremie/ANTLR/cs.g:1112:1: break_statement returns [UnknownNode t] : 'break' ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1113:1: break_statement returns [UnknownNode t] : 'break' ';' ;
 	public final csParser.break_statement_return break_statement() throws RecognitionException {
 		csParser.break_statement_return retval = new csParser.break_statement_return();
 		retval.start = input.LT(1);
@@ -32353,8 +32849,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 282) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1113:37: ( 'break' ';' )
-			// /Users/jeremie/ANTLR/cs.g:1114:2: 'break' ';'
+			// /Users/jeremie/ANTLR/cs.g:1114:37: ( 'break' ';' )
+			// /Users/jeremie/ANTLR/cs.g:1115:2: 'break' ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32405,7 +32901,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "continue_statement"
-	// /Users/jeremie/ANTLR/cs.g:1115:1: continue_statement returns [UnknownNode t] : 'continue' ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1116:1: continue_statement returns [UnknownNode t] : 'continue' ';' ;
 	public final csParser.continue_statement_return continue_statement() throws RecognitionException {
 		csParser.continue_statement_return retval = new csParser.continue_statement_return();
 		retval.start = input.LT(1);
@@ -32422,8 +32918,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 283) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1116:37: ( 'continue' ';' )
-			// /Users/jeremie/ANTLR/cs.g:1117:2: 'continue' ';'
+			// /Users/jeremie/ANTLR/cs.g:1117:37: ( 'continue' ';' )
+			// /Users/jeremie/ANTLR/cs.g:1118:2: 'continue' ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32474,7 +32970,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "goto_statement"
-	// /Users/jeremie/ANTLR/cs.g:1118:1: goto_statement returns [UnknownNode t] : 'goto' ( identifier | 'case' constant_expression | 'default' ) ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1119:1: goto_statement returns [UnknownNode t] : 'goto' ( identifier | 'case' constant_expression | 'default' ) ';' ;
 	public final csParser.goto_statement_return goto_statement() throws RecognitionException {
 		csParser.goto_statement_return retval = new csParser.goto_statement_return();
 		retval.start = input.LT(1);
@@ -32497,8 +32993,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 284) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1119:37: ( 'goto' ( identifier | 'case' constant_expression | 'default' ) ';' )
-			// /Users/jeremie/ANTLR/cs.g:1120:2: 'goto' ( identifier | 'case' constant_expression | 'default' ) ';'
+			// /Users/jeremie/ANTLR/cs.g:1120:37: ( 'goto' ( identifier | 'case' constant_expression | 'default' ) ';' )
+			// /Users/jeremie/ANTLR/cs.g:1121:2: 'goto' ( identifier | 'case' constant_expression | 'default' ) ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32509,7 +33005,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal833_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1120:11: ( identifier | 'case' constant_expression | 'default' )
+			// /Users/jeremie/ANTLR/cs.g:1121:11: ( identifier | 'case' constant_expression | 'default' )
 			int alt267=3;
 			switch ( input.LA(1) ) {
 			case IDENTIFIER:
@@ -32564,7 +33060,7 @@ public class csParser extends Parser {
 			}
 			switch (alt267) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1120:13: identifier
+					// /Users/jeremie/ANTLR/cs.g:1121:13: identifier
 					{
 					pushFollow(FOLLOW_identifier_in_goto_statement10245);
 					identifier834=identifier();
@@ -32575,7 +33071,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1121:7: 'case' constant_expression
+					// /Users/jeremie/ANTLR/cs.g:1122:7: 'case' constant_expression
 					{
 					string_literal835=(Token)match(input,107,FOLLOW_107_in_goto_statement10253); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -32592,7 +33088,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jeremie/ANTLR/cs.g:1122:7: 'default'
+					// /Users/jeremie/ANTLR/cs.g:1123:7: 'default'
 					{
 					string_literal837=(Token)match(input,115,FOLLOW_115_in_goto_statement10265); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -32645,7 +33141,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "return_statement"
-	// /Users/jeremie/ANTLR/cs.g:1123:1: return_statement returns [return_statement t] : 'return' (a= expression )? ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1124:1: return_statement returns [return_statement t] : 'return' (a= expression )? ';' ;
 	public final csParser.return_statement_return return_statement() throws RecognitionException {
 		csParser.return_statement_return retval = new csParser.return_statement_return();
 		retval.start = input.LT(1);
@@ -32663,8 +33159,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 285) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1124:32: ( 'return' (a= expression )? ';' )
-			// /Users/jeremie/ANTLR/cs.g:1125:2: 'return' (a= expression )? ';'
+			// /Users/jeremie/ANTLR/cs.g:1125:32: ( 'return' (a= expression )? ';' )
+			// /Users/jeremie/ANTLR/cs.g:1126:2: 'return' (a= expression )? ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32675,7 +33171,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal839_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1125:14: (a= expression )?
+			// /Users/jeremie/ANTLR/cs.g:1126:14: (a= expression )?
 			int alt268=2;
 			int LA268_0 = input.LA(1);
 			if ( (LA268_0==Character_literal||LA268_0==FALSE||(LA268_0 >= Hex_number && LA268_0 <= IDENTIFIER)||(LA268_0 >= MINUS && LA268_0 <= NUMBER)||LA268_0==Real_literal||LA268_0==STRINGLITERAL||LA268_0==TRUE||LA268_0==Verbatim_string_literal||LA268_0==61||LA268_0==66||(LA268_0 >= 68 && LA268_0 <= 69)||(LA268_0 >= 71 && LA268_0 <= 72)||LA268_0==75||LA268_0==95||(LA268_0 >= 97 && LA268_0 <= 98)||(LA268_0 >= 100 && LA268_0 <= 103)||(LA268_0 >= 105 && LA268_0 <= 106)||(LA268_0 >= 109 && LA268_0 <= 110)||(LA268_0 >= 114 && LA268_0 <= 117)||(LA268_0 >= 119 && LA268_0 <= 120)||LA268_0==122||LA268_0==126||LA268_0==129||LA268_0==132||LA268_0==135||LA268_0==138||LA268_0==141||(LA268_0 >= 143 && LA268_0 <= 144)||(LA268_0 >= 146 && LA268_0 <= 148)||(LA268_0 >= 150 && LA268_0 <= 152)||LA268_0==154||LA268_0==157||LA268_0==160||LA268_0==162||LA268_0==167||LA268_0==169||(LA268_0 >= 171 && LA268_0 <= 174)||LA268_0==177||LA268_0==180||(LA268_0 >= 183 && LA268_0 <= 187)||(LA268_0 >= 189 && LA268_0 <= 190)||LA268_0==194||LA268_0==196||LA268_0==202) ) {
@@ -32683,7 +33179,7 @@ public class csParser extends Parser {
 			}
 			switch (alt268) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1125:14: a= expression
+					// /Users/jeremie/ANTLR/cs.g:1126:14: a= expression
 					{
 					pushFollow(FOLLOW_expression_in_return_statement10295);
 					a=expression();
@@ -32737,7 +33233,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "throw_statement"
-	// /Users/jeremie/ANTLR/cs.g:1126:1: throw_statement returns [UnknownNode t] : 'throw' ( expression )? ';' ;
+	// /Users/jeremie/ANTLR/cs.g:1127:1: throw_statement returns [UnknownNode t] : 'throw' ( expression )? ';' ;
 	public final csParser.throw_statement_return throw_statement() throws RecognitionException {
 		csParser.throw_statement_return retval = new csParser.throw_statement_return();
 		retval.start = input.LT(1);
@@ -32755,8 +33251,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 286) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1127:37: ( 'throw' ( expression )? ';' )
-			// /Users/jeremie/ANTLR/cs.g:1128:2: 'throw' ( expression )? ';'
+			// /Users/jeremie/ANTLR/cs.g:1128:37: ( 'throw' ( expression )? ';' )
+			// /Users/jeremie/ANTLR/cs.g:1129:2: 'throw' ( expression )? ';'
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32767,7 +33263,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal841_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1128:12: ( expression )?
+			// /Users/jeremie/ANTLR/cs.g:1129:12: ( expression )?
 			int alt269=2;
 			int LA269_0 = input.LA(1);
 			if ( (LA269_0==Character_literal||LA269_0==FALSE||(LA269_0 >= Hex_number && LA269_0 <= IDENTIFIER)||(LA269_0 >= MINUS && LA269_0 <= NUMBER)||LA269_0==Real_literal||LA269_0==STRINGLITERAL||LA269_0==TRUE||LA269_0==Verbatim_string_literal||LA269_0==61||LA269_0==66||(LA269_0 >= 68 && LA269_0 <= 69)||(LA269_0 >= 71 && LA269_0 <= 72)||LA269_0==75||LA269_0==95||(LA269_0 >= 97 && LA269_0 <= 98)||(LA269_0 >= 100 && LA269_0 <= 103)||(LA269_0 >= 105 && LA269_0 <= 106)||(LA269_0 >= 109 && LA269_0 <= 110)||(LA269_0 >= 114 && LA269_0 <= 117)||(LA269_0 >= 119 && LA269_0 <= 120)||LA269_0==122||LA269_0==126||LA269_0==129||LA269_0==132||LA269_0==135||LA269_0==138||LA269_0==141||(LA269_0 >= 143 && LA269_0 <= 144)||(LA269_0 >= 146 && LA269_0 <= 148)||(LA269_0 >= 150 && LA269_0 <= 152)||LA269_0==154||LA269_0==157||LA269_0==160||LA269_0==162||LA269_0==167||LA269_0==169||(LA269_0 >= 171 && LA269_0 <= 174)||LA269_0==177||LA269_0==180||(LA269_0 >= 183 && LA269_0 <= 187)||(LA269_0 >= 189 && LA269_0 <= 190)||LA269_0==194||LA269_0==196||LA269_0==202) ) {
@@ -32775,7 +33271,7 @@ public class csParser extends Parser {
 			}
 			switch (alt269) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1128:12: expression
+					// /Users/jeremie/ANTLR/cs.g:1129:12: expression
 					{
 					pushFollow(FOLLOW_expression_in_throw_statement10325);
 					expression842=expression();
@@ -32828,7 +33324,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "try_statement"
-	// /Users/jeremie/ANTLR/cs.g:1129:1: try_statement returns [UnknownNode t] : 'try' block ( catch_clauses ( finally_clause )? | finally_clause ) ;
+	// /Users/jeremie/ANTLR/cs.g:1130:1: try_statement returns [UnknownNode t] : 'try' block ( catch_clauses ( finally_clause )? | finally_clause ) ;
 	public final csParser.try_statement_return try_statement() throws RecognitionException {
 		csParser.try_statement_return retval = new csParser.try_statement_return();
 		retval.start = input.LT(1);
@@ -32847,8 +33343,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 287) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1130:37: ( 'try' block ( catch_clauses ( finally_clause )? | finally_clause ) )
-			// /Users/jeremie/ANTLR/cs.g:1131:7: 'try' block ( catch_clauses ( finally_clause )? | finally_clause )
+			// /Users/jeremie/ANTLR/cs.g:1131:37: ( 'try' block ( catch_clauses ( finally_clause )? | finally_clause ) )
+			// /Users/jeremie/ANTLR/cs.g:1132:7: 'try' block ( catch_clauses ( finally_clause )? | finally_clause )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32865,7 +33361,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, block845.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:1131:23: ( catch_clauses ( finally_clause )? | finally_clause )
+			// /Users/jeremie/ANTLR/cs.g:1132:23: ( catch_clauses ( finally_clause )? | finally_clause )
 			int alt271=2;
 			int LA271_0 = input.LA(1);
 			if ( (LA271_0==108) ) {
@@ -32884,7 +33380,7 @@ public class csParser extends Parser {
 
 			switch (alt271) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1131:25: catch_clauses ( finally_clause )?
+					// /Users/jeremie/ANTLR/cs.g:1132:25: catch_clauses ( finally_clause )?
 					{
 					pushFollow(FOLLOW_catch_clauses_in_try_statement10363);
 					catch_clauses846=catch_clauses();
@@ -32892,7 +33388,7 @@ public class csParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, catch_clauses846.getTree());
 
-					// /Users/jeremie/ANTLR/cs.g:1131:41: ( finally_clause )?
+					// /Users/jeremie/ANTLR/cs.g:1132:41: ( finally_clause )?
 					int alt270=2;
 					int LA270_0 = input.LA(1);
 					if ( (LA270_0==127) ) {
@@ -32900,7 +33396,7 @@ public class csParser extends Parser {
 					}
 					switch (alt270) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:1131:41: finally_clause
+							// /Users/jeremie/ANTLR/cs.g:1132:41: finally_clause
 							{
 							pushFollow(FOLLOW_finally_clause_in_try_statement10367);
 							finally_clause847=finally_clause();
@@ -32916,7 +33412,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1132:10: finally_clause
+					// /Users/jeremie/ANTLR/cs.g:1133:10: finally_clause
 					{
 					pushFollow(FOLLOW_finally_clause_in_try_statement10379);
 					finally_clause848=finally_clause();
@@ -32962,7 +33458,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "catch_clauses"
-	// /Users/jeremie/ANTLR/cs.g:1134:1: catch_clauses : 'catch' ( specific_catch_clauses | general_catch_clause ) ;
+	// /Users/jeremie/ANTLR/cs.g:1135:1: catch_clauses : 'catch' ( specific_catch_clauses | general_catch_clause ) ;
 	public final csParser.catch_clauses_return catch_clauses() throws RecognitionException {
 		csParser.catch_clauses_return retval = new csParser.catch_clauses_return();
 		retval.start = input.LT(1);
@@ -32979,8 +33475,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 288) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1134:14: ( 'catch' ( specific_catch_clauses | general_catch_clause ) )
-			// /Users/jeremie/ANTLR/cs.g:1135:2: 'catch' ( specific_catch_clauses | general_catch_clause )
+			// /Users/jeremie/ANTLR/cs.g:1135:14: ( 'catch' ( specific_catch_clauses | general_catch_clause ) )
+			// /Users/jeremie/ANTLR/cs.g:1136:2: 'catch' ( specific_catch_clauses | general_catch_clause )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -32991,7 +33487,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal849_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1135:12: ( specific_catch_clauses | general_catch_clause )
+			// /Users/jeremie/ANTLR/cs.g:1136:12: ( specific_catch_clauses | general_catch_clause )
 			int alt272=2;
 			int LA272_0 = input.LA(1);
 			if ( (LA272_0==68) ) {
@@ -33010,7 +33506,7 @@ public class csParser extends Parser {
 
 			switch (alt272) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1135:13: specific_catch_clauses
+					// /Users/jeremie/ANTLR/cs.g:1136:13: specific_catch_clauses
 					{
 					pushFollow(FOLLOW_specific_catch_clauses_in_catch_clauses10393);
 					specific_catch_clauses850=specific_catch_clauses();
@@ -33021,7 +33517,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1135:38: general_catch_clause
+					// /Users/jeremie/ANTLR/cs.g:1136:38: general_catch_clause
 					{
 					pushFollow(FOLLOW_general_catch_clause_in_catch_clauses10397);
 					general_catch_clause851=general_catch_clause();
@@ -33066,7 +33562,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "specific_catch_clauses"
-	// /Users/jeremie/ANTLR/cs.g:1136:1: specific_catch_clauses : specific_catch_clause ( 'catch' ( specific_catch_clause | general_catch_clause ) )* ;
+	// /Users/jeremie/ANTLR/cs.g:1137:1: specific_catch_clauses : specific_catch_clause ( 'catch' ( specific_catch_clause | general_catch_clause ) )* ;
 	public final csParser.specific_catch_clauses_return specific_catch_clauses() throws RecognitionException {
 		csParser.specific_catch_clauses_return retval = new csParser.specific_catch_clauses_return();
 		retval.start = input.LT(1);
@@ -33084,8 +33580,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 289) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1136:23: ( specific_catch_clause ( 'catch' ( specific_catch_clause | general_catch_clause ) )* )
-			// /Users/jeremie/ANTLR/cs.g:1137:2: specific_catch_clause ( 'catch' ( specific_catch_clause | general_catch_clause ) )*
+			// /Users/jeremie/ANTLR/cs.g:1137:23: ( specific_catch_clause ( 'catch' ( specific_catch_clause | general_catch_clause ) )* )
+			// /Users/jeremie/ANTLR/cs.g:1138:2: specific_catch_clause ( 'catch' ( specific_catch_clause | general_catch_clause ) )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33096,7 +33592,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, specific_catch_clause852.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:1137:26: ( 'catch' ( specific_catch_clause | general_catch_clause ) )*
+			// /Users/jeremie/ANTLR/cs.g:1138:26: ( 'catch' ( specific_catch_clause | general_catch_clause ) )*
 			loop274:
 			while (true) {
 				int alt274=2;
@@ -33107,7 +33603,7 @@ public class csParser extends Parser {
 
 				switch (alt274) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1137:27: 'catch' ( specific_catch_clause | general_catch_clause )
+					// /Users/jeremie/ANTLR/cs.g:1138:27: 'catch' ( specific_catch_clause | general_catch_clause )
 					{
 					string_literal853=(Token)match(input,108,FOLLOW_108_in_specific_catch_clauses10411); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -33115,7 +33611,7 @@ public class csParser extends Parser {
 					adaptor.addChild(root_0, string_literal853_tree);
 					}
 
-					// /Users/jeremie/ANTLR/cs.g:1137:37: ( specific_catch_clause | general_catch_clause )
+					// /Users/jeremie/ANTLR/cs.g:1138:37: ( specific_catch_clause | general_catch_clause )
 					int alt273=2;
 					int LA273_0 = input.LA(1);
 					if ( (LA273_0==68) ) {
@@ -33134,7 +33630,7 @@ public class csParser extends Parser {
 
 					switch (alt273) {
 						case 1 :
-							// /Users/jeremie/ANTLR/cs.g:1137:38: specific_catch_clause
+							// /Users/jeremie/ANTLR/cs.g:1138:38: specific_catch_clause
 							{
 							pushFollow(FOLLOW_specific_catch_clause_in_specific_catch_clauses10416);
 							specific_catch_clause854=specific_catch_clause();
@@ -33145,7 +33641,7 @@ public class csParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jeremie/ANTLR/cs.g:1137:62: general_catch_clause
+							// /Users/jeremie/ANTLR/cs.g:1138:62: general_catch_clause
 							{
 							pushFollow(FOLLOW_general_catch_clause_in_specific_catch_clauses10420);
 							general_catch_clause855=general_catch_clause();
@@ -33198,7 +33694,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "specific_catch_clause"
-	// /Users/jeremie/ANTLR/cs.g:1138:1: specific_catch_clause : '(' class_type ( identifier )? ')' block ;
+	// /Users/jeremie/ANTLR/cs.g:1139:1: specific_catch_clause : '(' class_type ( identifier )? ')' block ;
 	public final csParser.specific_catch_clause_return specific_catch_clause() throws RecognitionException {
 		csParser.specific_catch_clause_return retval = new csParser.specific_catch_clause_return();
 		retval.start = input.LT(1);
@@ -33218,8 +33714,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 290) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1138:22: ( '(' class_type ( identifier )? ')' block )
-			// /Users/jeremie/ANTLR/cs.g:1139:2: '(' class_type ( identifier )? ')' block
+			// /Users/jeremie/ANTLR/cs.g:1139:22: ( '(' class_type ( identifier )? ')' block )
+			// /Users/jeremie/ANTLR/cs.g:1140:2: '(' class_type ( identifier )? ')' block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33236,7 +33732,7 @@ public class csParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, class_type857.getTree());
 
-			// /Users/jeremie/ANTLR/cs.g:1139:21: ( identifier )?
+			// /Users/jeremie/ANTLR/cs.g:1140:21: ( identifier )?
 			int alt275=2;
 			int LA275_0 = input.LA(1);
 			if ( (LA275_0==IDENTIFIER||LA275_0==95||(LA275_0 >= 97 && LA275_0 <= 98)||(LA275_0 >= 100 && LA275_0 <= 101)||LA275_0==105||LA275_0==117||LA275_0==120||LA275_0==122||LA275_0==126||LA275_0==132||LA275_0==135||LA275_0==141||(LA275_0 >= 143 && LA275_0 <= 144)||(LA275_0 >= 147 && LA275_0 <= 148)||LA275_0==152||LA275_0==154||LA275_0==157||LA275_0==160||LA275_0==162||LA275_0==167||(LA275_0 >= 171 && LA275_0 <= 172)||LA275_0==183||LA275_0==190||LA275_0==194||LA275_0==196) ) {
@@ -33244,7 +33740,7 @@ public class csParser extends Parser {
 			}
 			switch (alt275) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1139:21: identifier
+					// /Users/jeremie/ANTLR/cs.g:1140:21: identifier
 					{
 					pushFollow(FOLLOW_identifier_in_specific_catch_clause10438);
 					identifier858=identifier();
@@ -33301,7 +33797,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "general_catch_clause"
-	// /Users/jeremie/ANTLR/cs.g:1140:1: general_catch_clause : block ;
+	// /Users/jeremie/ANTLR/cs.g:1141:1: general_catch_clause : block ;
 	public final csParser.general_catch_clause_return general_catch_clause() throws RecognitionException {
 		csParser.general_catch_clause_return retval = new csParser.general_catch_clause_return();
 		retval.start = input.LT(1);
@@ -33315,8 +33811,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 291) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1140:21: ( block )
-			// /Users/jeremie/ANTLR/cs.g:1141:2: block
+			// /Users/jeremie/ANTLR/cs.g:1141:21: ( block )
+			// /Users/jeremie/ANTLR/cs.g:1142:2: block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33359,7 +33855,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "finally_clause"
-	// /Users/jeremie/ANTLR/cs.g:1142:1: finally_clause : 'finally' block ;
+	// /Users/jeremie/ANTLR/cs.g:1143:1: finally_clause : 'finally' block ;
 	public final csParser.finally_clause_return finally_clause() throws RecognitionException {
 		csParser.finally_clause_return retval = new csParser.finally_clause_return();
 		retval.start = input.LT(1);
@@ -33375,8 +33871,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 292) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1142:15: ( 'finally' block )
-			// /Users/jeremie/ANTLR/cs.g:1143:2: 'finally' block
+			// /Users/jeremie/ANTLR/cs.g:1143:15: ( 'finally' block )
+			// /Users/jeremie/ANTLR/cs.g:1144:2: 'finally' block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33426,7 +33922,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "checked_statement"
-	// /Users/jeremie/ANTLR/cs.g:1144:1: checked_statement returns [UnknownNode t] : 'checked' block ;
+	// /Users/jeremie/ANTLR/cs.g:1145:1: checked_statement returns [UnknownNode t] : 'checked' block ;
 	public final csParser.checked_statement_return checked_statement() throws RecognitionException {
 		csParser.checked_statement_return retval = new csParser.checked_statement_return();
 		retval.start = input.LT(1);
@@ -33442,8 +33938,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 293) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1145:37: ( 'checked' block )
-			// /Users/jeremie/ANTLR/cs.g:1146:2: 'checked' block
+			// /Users/jeremie/ANTLR/cs.g:1146:37: ( 'checked' block )
+			// /Users/jeremie/ANTLR/cs.g:1147:2: 'checked' block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33494,7 +33990,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "unchecked_statement"
-	// /Users/jeremie/ANTLR/cs.g:1147:1: unchecked_statement returns [UnknownNode t] : 'unchecked' block ;
+	// /Users/jeremie/ANTLR/cs.g:1148:1: unchecked_statement returns [UnknownNode t] : 'unchecked' block ;
 	public final csParser.unchecked_statement_return unchecked_statement() throws RecognitionException {
 		csParser.unchecked_statement_return retval = new csParser.unchecked_statement_return();
 		retval.start = input.LT(1);
@@ -33510,8 +34006,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 294) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1148:37: ( 'unchecked' block )
-			// /Users/jeremie/ANTLR/cs.g:1149:2: 'unchecked' block
+			// /Users/jeremie/ANTLR/cs.g:1149:37: ( 'unchecked' block )
+			// /Users/jeremie/ANTLR/cs.g:1150:2: 'unchecked' block
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33562,7 +34058,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "lock_statement"
-	// /Users/jeremie/ANTLR/cs.g:1150:1: lock_statement returns [UnknownNode t] : 'lock' '(' expression ')' embedded_statement ;
+	// /Users/jeremie/ANTLR/cs.g:1151:1: lock_statement returns [UnknownNode t] : 'lock' '(' expression ')' embedded_statement ;
 	public final csParser.lock_statement_return lock_statement() throws RecognitionException {
 		csParser.lock_statement_return retval = new csParser.lock_statement_return();
 		retval.start = input.LT(1);
@@ -33583,8 +34079,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 295) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1151:37: ( 'lock' '(' expression ')' embedded_statement )
-			// /Users/jeremie/ANTLR/cs.g:1152:2: 'lock' '(' expression ')' embedded_statement
+			// /Users/jeremie/ANTLR/cs.g:1152:37: ( 'lock' '(' expression ')' embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:1153:2: 'lock' '(' expression ')' embedded_statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33653,7 +34149,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "using_statement"
-	// /Users/jeremie/ANTLR/cs.g:1153:1: using_statement returns [UnknownNode t] : 'using' '(' resource_acquisition ')' embedded_statement ;
+	// /Users/jeremie/ANTLR/cs.g:1154:1: using_statement returns [UnknownNode t] : 'using' '(' resource_acquisition ')' embedded_statement ;
 	public final csParser.using_statement_return using_statement() throws RecognitionException {
 		csParser.using_statement_return retval = new csParser.using_statement_return();
 		retval.start = input.LT(1);
@@ -33674,8 +34170,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 296) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1154:37: ( 'using' '(' resource_acquisition ')' embedded_statement )
-			// /Users/jeremie/ANTLR/cs.g:1155:2: 'using' '(' resource_acquisition ')' embedded_statement
+			// /Users/jeremie/ANTLR/cs.g:1155:37: ( 'using' '(' resource_acquisition ')' embedded_statement )
+			// /Users/jeremie/ANTLR/cs.g:1156:2: 'using' '(' resource_acquisition ')' embedded_statement
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33743,7 +34239,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "resource_acquisition"
-	// /Users/jeremie/ANTLR/cs.g:1156:1: resource_acquisition : ( ( local_variable_declaration )=> local_variable_declaration | expression );
+	// /Users/jeremie/ANTLR/cs.g:1157:1: resource_acquisition : ( ( local_variable_declaration )=> local_variable_declaration | expression );
 	public final csParser.resource_acquisition_return resource_acquisition() throws RecognitionException {
 		csParser.resource_acquisition_return retval = new csParser.resource_acquisition_return();
 		retval.start = input.LT(1);
@@ -33758,7 +34254,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 297) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1156:21: ( ( local_variable_declaration )=> local_variable_declaration | expression )
+			// /Users/jeremie/ANTLR/cs.g:1157:21: ( ( local_variable_declaration )=> local_variable_declaration | expression )
 			int alt276=2;
 			int LA276_0 = input.LA(1);
 			if ( (LA276_0==190) ) {
@@ -33808,7 +34304,7 @@ public class csParser extends Parser {
 				alt276=2;
 			}
 			else if ( (LA276_0==IDENTIFIER||LA276_0==95||(LA276_0 >= 97 && LA276_0 <= 98)||(LA276_0 >= 100 && LA276_0 <= 101)||LA276_0==105||LA276_0==117||LA276_0==122||LA276_0==126||LA276_0==135||LA276_0==141||(LA276_0 >= 143 && LA276_0 <= 144)||(LA276_0 >= 147 && LA276_0 <= 148)||LA276_0==152||LA276_0==154||LA276_0==157||LA276_0==160||LA276_0==162||LA276_0==167||(LA276_0 >= 171 && LA276_0 <= 172)||LA276_0==183||LA276_0==194||LA276_0==196) ) {
-				int LA276_25 = input.LA(2);
+				int LA276_33 = input.LA(2);
 				if ( (synpred39_cs()) ) {
 					alt276=1;
 				}
@@ -33827,7 +34323,7 @@ public class csParser extends Parser {
 
 			switch (alt276) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1157:2: ( local_variable_declaration )=> local_variable_declaration
+					// /Users/jeremie/ANTLR/cs.g:1158:2: ( local_variable_declaration )=> local_variable_declaration
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -33841,7 +34337,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1158:4: expression
+					// /Users/jeremie/ANTLR/cs.g:1159:4: expression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -33887,7 +34383,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "yield_statement"
-	// /Users/jeremie/ANTLR/cs.g:1159:1: yield_statement returns [UnknownNode t] : 'yield' ( 'return' expression ';' | 'break' ';' ) ;
+	// /Users/jeremie/ANTLR/cs.g:1160:1: yield_statement returns [UnknownNode t] : 'yield' ( 'return' expression ';' | 'break' ';' ) ;
 	public final csParser.yield_statement_return yield_statement() throws RecognitionException {
 		csParser.yield_statement_return retval = new csParser.yield_statement_return();
 		retval.start = input.LT(1);
@@ -33911,8 +34407,8 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 298) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1160:37: ( 'yield' ( 'return' expression ';' | 'break' ';' ) )
-			// /Users/jeremie/ANTLR/cs.g:1161:2: 'yield' ( 'return' expression ';' | 'break' ';' )
+			// /Users/jeremie/ANTLR/cs.g:1161:37: ( 'yield' ( 'return' expression ';' | 'break' ';' ) )
+			// /Users/jeremie/ANTLR/cs.g:1162:2: 'yield' ( 'return' expression ';' | 'break' ';' )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -33923,7 +34419,7 @@ public class csParser extends Parser {
 			adaptor.addChild(root_0, string_literal880_tree);
 			}
 
-			// /Users/jeremie/ANTLR/cs.g:1161:12: ( 'return' expression ';' | 'break' ';' )
+			// /Users/jeremie/ANTLR/cs.g:1162:12: ( 'return' expression ';' | 'break' ';' )
 			int alt277=2;
 			int LA277_0 = input.LA(1);
 			if ( (LA277_0==168) ) {
@@ -33942,7 +34438,7 @@ public class csParser extends Parser {
 
 			switch (alt277) {
 				case 1 :
-					// /Users/jeremie/ANTLR/cs.g:1161:13: 'return' expression ';'
+					// /Users/jeremie/ANTLR/cs.g:1162:13: 'return' expression ';'
 					{
 					string_literal881=(Token)match(input,168,FOLLOW_168_in_yield_statement10626); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -33965,7 +34461,7 @@ public class csParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jeremie/ANTLR/cs.g:1162:14: 'break' ';'
+					// /Users/jeremie/ANTLR/cs.g:1163:14: 'break' ';'
 					{
 					string_literal884=(Token)match(input,104,FOLLOW_104_in_yield_statement10649); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -34018,7 +34514,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "predefined_type"
-	// /Users/jeremie/ANTLR/cs.g:1168:1: predefined_type returns [predefined_type t] : ( 'bool' | 'byte' | 'char' | 'decimal' | 'double' | 'float' | 'int' | 'long' | 'object' | 'sbyte' | 'short' | 'string' | 'uint' | 'ulong' | 'ushort' );
+	// /Users/jeremie/ANTLR/cs.g:1169:1: predefined_type returns [predefined_type t] : ( 'bool' | 'byte' | 'char' | 'decimal' | 'double' | 'float' | 'int' | 'long' | 'object' | 'sbyte' | 'short' | 'string' | 'uint' | 'ulong' | 'ushort' );
 	public final csParser.predefined_type_return predefined_type() throws RecognitionException {
 		csParser.predefined_type_return retval = new csParser.predefined_type_return();
 		retval.start = input.LT(1);
@@ -34033,7 +34529,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 299) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1169:41: ( 'bool' | 'byte' | 'char' | 'decimal' | 'double' | 'float' | 'int' | 'long' | 'object' | 'sbyte' | 'short' | 'string' | 'uint' | 'ulong' | 'ushort' )
+			// /Users/jeremie/ANTLR/cs.g:1170:41: ( 'bool' | 'byte' | 'char' | 'decimal' | 'double' | 'float' | 'int' | 'long' | 'object' | 'sbyte' | 'short' | 'string' | 'uint' | 'ulong' | 'ushort' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -34085,7 +34581,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "identifier"
-	// /Users/jeremie/ANTLR/cs.g:1173:1: identifier returns [identifier t] : ( IDENTIFIER | 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' ) ;
+	// /Users/jeremie/ANTLR/cs.g:1174:1: identifier returns [identifier t] : ( IDENTIFIER | 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' ) ;
 	public final csParser.identifier_return identifier() throws RecognitionException {
 		csParser.identifier_return retval = new csParser.identifier_return();
 		retval.start = input.LT(1);
@@ -34100,7 +34596,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 300) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1174:37: ( ( IDENTIFIER | 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' ) )
+			// /Users/jeremie/ANTLR/cs.g:1175:37: ( ( IDENTIFIER | 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' ) )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -34151,7 +34647,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "keyword"
-	// /Users/jeremie/ANTLR/cs.g:1179:1: keyword : ( 'abstract' | 'as' | 'base' | 'bool' | 'break' | 'byte' | 'case' | 'catch' | 'char' | 'checked' | 'class' | 'const' | 'continue' | 'decimal' | 'default' | 'delegate' | 'do' | 'double' | 'else' | 'enum' | 'event' | 'explicit' | 'extern' | 'false' | 'finally' | 'fixed' | 'float' | 'for' | 'foreach' | 'goto' | 'if' | 'implicit' | 'in' | 'int' | 'interface' | 'internal' | 'is' | 'lock' | 'long' | 'namespace' | 'new' | 'null' | 'object' | 'operator' | 'out' | 'override' | 'params' | 'private' | 'protected' | 'public' | 'readonly' | 'ref' | 'return' | 'sbyte' | 'sealed' | 'short' | 'sizeof' | 'stackalloc' | 'static' | 'string' | 'struct' | 'switch' | 'this' | 'throw' | 'true' | 'try' | 'typeof' | 'uint' | 'ulong' | 'unchecked' | 'unsafe' | 'ushort' | 'using' | 'virtual' | 'void' | 'volatile' );
+	// /Users/jeremie/ANTLR/cs.g:1180:1: keyword : ( 'abstract' | 'as' | 'base' | 'bool' | 'break' | 'byte' | 'case' | 'catch' | 'char' | 'checked' | 'class' | 'const' | 'continue' | 'decimal' | 'default' | 'delegate' | 'do' | 'double' | 'else' | 'enum' | 'event' | 'explicit' | 'extern' | 'false' | 'finally' | 'fixed' | 'float' | 'for' | 'foreach' | 'goto' | 'if' | 'implicit' | 'in' | 'int' | 'interface' | 'internal' | 'is' | 'lock' | 'long' | 'namespace' | 'new' | 'null' | 'object' | 'operator' | 'out' | 'override' | 'params' | 'private' | 'protected' | 'public' | 'readonly' | 'ref' | 'return' | 'sbyte' | 'sealed' | 'short' | 'sizeof' | 'stackalloc' | 'static' | 'string' | 'struct' | 'switch' | 'this' | 'throw' | 'true' | 'try' | 'typeof' | 'uint' | 'ulong' | 'unchecked' | 'unsafe' | 'ushort' | 'using' | 'virtual' | 'void' | 'volatile' );
 	public final csParser.keyword_return keyword() throws RecognitionException {
 		csParser.keyword_return retval = new csParser.keyword_return();
 		retval.start = input.LT(1);
@@ -34166,7 +34662,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 301) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1179:8: ( 'abstract' | 'as' | 'base' | 'bool' | 'break' | 'byte' | 'case' | 'catch' | 'char' | 'checked' | 'class' | 'const' | 'continue' | 'decimal' | 'default' | 'delegate' | 'do' | 'double' | 'else' | 'enum' | 'event' | 'explicit' | 'extern' | 'false' | 'finally' | 'fixed' | 'float' | 'for' | 'foreach' | 'goto' | 'if' | 'implicit' | 'in' | 'int' | 'interface' | 'internal' | 'is' | 'lock' | 'long' | 'namespace' | 'new' | 'null' | 'object' | 'operator' | 'out' | 'override' | 'params' | 'private' | 'protected' | 'public' | 'readonly' | 'ref' | 'return' | 'sbyte' | 'sealed' | 'short' | 'sizeof' | 'stackalloc' | 'static' | 'string' | 'struct' | 'switch' | 'this' | 'throw' | 'true' | 'try' | 'typeof' | 'uint' | 'ulong' | 'unchecked' | 'unsafe' | 'ushort' | 'using' | 'virtual' | 'void' | 'volatile' )
+			// /Users/jeremie/ANTLR/cs.g:1180:8: ( 'abstract' | 'as' | 'base' | 'bool' | 'break' | 'byte' | 'case' | 'catch' | 'char' | 'checked' | 'class' | 'const' | 'continue' | 'decimal' | 'default' | 'delegate' | 'do' | 'double' | 'else' | 'enum' | 'event' | 'explicit' | 'extern' | 'false' | 'finally' | 'fixed' | 'float' | 'for' | 'foreach' | 'goto' | 'if' | 'implicit' | 'in' | 'int' | 'interface' | 'internal' | 'is' | 'lock' | 'long' | 'namespace' | 'new' | 'null' | 'object' | 'operator' | 'out' | 'override' | 'params' | 'private' | 'protected' | 'public' | 'readonly' | 'ref' | 'return' | 'sbyte' | 'sealed' | 'short' | 'sizeof' | 'stackalloc' | 'static' | 'string' | 'struct' | 'switch' | 'this' | 'throw' | 'true' | 'try' | 'typeof' | 'uint' | 'ulong' | 'unchecked' | 'unsafe' | 'ushort' | 'using' | 'virtual' | 'void' | 'volatile' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -34216,7 +34712,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "also_keyword"
-	// /Users/jeremie/ANTLR/cs.g:1182:1: also_keyword : ( 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'event' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' );
+	// /Users/jeremie/ANTLR/cs.g:1183:1: also_keyword : ( 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'event' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' );
 	public final csParser.also_keyword_return also_keyword() throws RecognitionException {
 		csParser.also_keyword_return retval = new csParser.also_keyword_return();
 		retval.start = input.LT(1);
@@ -34231,7 +34727,7 @@ public class csParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 302) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1182:13: ( 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'event' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' )
+			// /Users/jeremie/ANTLR/cs.g:1183:13: ( 'add' | 'alias' | 'assembly' | 'module' | 'field' | 'event' | 'method' | 'param' | 'property' | 'type' | 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' | 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic' )
 			// /Users/jeremie/ANTLR/cs.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
@@ -34274,7 +34770,7 @@ public class csParser extends Parser {
 
 
 	public static class literal_return extends ParserRuleReturnScope {
-		public literal t;
+		public expression t;
 		CommonTree tree;
 		@Override
 		public CommonTree getTree() { return tree; }
@@ -34282,7 +34778,7 @@ public class csParser extends Parser {
 
 
 	// $ANTLR start "literal"
-	// /Users/jeremie/ANTLR/cs.g:1188:1: literal returns [literal t] : ( Real_literal | NUMBER | Hex_number | Character_literal | STRINGLITERAL | Verbatim_string_literal | TRUE | FALSE | NULL );
+	// /Users/jeremie/ANTLR/cs.g:1189:1: literal returns [expression t] : (a= Real_literal |a= NUMBER |a= Hex_number |a= Character_literal |a= STRINGLITERAL |a= Verbatim_string_literal |a= TRUE |a= FALSE |a= NULL );
 	public final csParser.literal_return literal() throws RecognitionException {
 		csParser.literal_return retval = new csParser.literal_return();
 		retval.start = input.LT(1);
@@ -34290,40 +34786,211 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token set890=null;
+		Token a=null;
 
-		CommonTree set890_tree=null;
+		CommonTree a_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 303) ) { return retval; }
 
-			// /Users/jeremie/ANTLR/cs.g:1189:34: ( Real_literal | NUMBER | Hex_number | Character_literal | STRINGLITERAL | Verbatim_string_literal | TRUE | FALSE | NULL )
-			// /Users/jeremie/ANTLR/cs.g:
-			{
-			root_0 = (CommonTree)adaptor.nil();
-
-
-			set890=input.LT(1);
-			if ( input.LA(1)==Character_literal||input.LA(1)==FALSE||input.LA(1)==Hex_number||(input.LA(1) >= NULL && input.LA(1) <= NUMBER)||input.LA(1)==Real_literal||input.LA(1)==STRINGLITERAL||input.LA(1)==TRUE||input.LA(1)==Verbatim_string_literal ) {
-				input.consume();
-				if ( state.backtracking==0 ) adaptor.addChild(root_0, (CommonTree)adaptor.create(set890));
-				state.errorRecovery=false;
-				state.failed=false;
-			}
-			else {
+			// /Users/jeremie/ANTLR/cs.g:1189:31: (a= Real_literal |a= NUMBER |a= Hex_number |a= Character_literal |a= STRINGLITERAL |a= Verbatim_string_literal |a= TRUE |a= FALSE |a= NULL )
+			int alt278=9;
+			switch ( input.LA(1) ) {
+			case Real_literal:
+				{
+				alt278=1;
+				}
+				break;
+			case NUMBER:
+				{
+				alt278=2;
+				}
+				break;
+			case Hex_number:
+				{
+				alt278=3;
+				}
+				break;
+			case Character_literal:
+				{
+				alt278=4;
+				}
+				break;
+			case STRINGLITERAL:
+				{
+				alt278=5;
+				}
+				break;
+			case Verbatim_string_literal:
+				{
+				alt278=6;
+				}
+				break;
+			case TRUE:
+				{
+				alt278=7;
+				}
+				break;
+			case FALSE:
+				{
+				alt278=8;
+				}
+				break;
+			case NULL:
+				{
+				alt278=9;
+				}
+				break;
+			default:
 				if (state.backtracking>0) {state.failed=true; return retval;}
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
+				NoViableAltException nvae =
+					new NoViableAltException("", 278, 0, input);
+				throw nvae;
 			}
-			}
+			switch (alt278) {
+				case 1 :
+					// /Users/jeremie/ANTLR/cs.g:1190:2: a= Real_literal
+					{
+					root_0 = (CommonTree)adaptor.nil();
 
+
+					a=(Token)match(input,Real_literal,FOLLOW_Real_literal_in_literal11357); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new Real_literal(a_tree);}
+					}
+					break;
+				case 2 :
+					// /Users/jeremie/ANTLR/cs.g:1191:4: a= NUMBER
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_literal11366); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new NUMBER(a_tree);}
+					}
+					break;
+				case 3 :
+					// /Users/jeremie/ANTLR/cs.g:1192:4: a= Hex_number
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,Hex_number,FOLLOW_Hex_number_in_literal11376); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new Hex_number(a_tree);}
+					}
+					break;
+				case 4 :
+					// /Users/jeremie/ANTLR/cs.g:1193:4: a= Character_literal
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,Character_literal,FOLLOW_Character_literal_in_literal11386); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new Character_literal(a_tree);}
+					}
+					break;
+				case 5 :
+					// /Users/jeremie/ANTLR/cs.g:1194:4: a= STRINGLITERAL
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,STRINGLITERAL,FOLLOW_STRINGLITERAL_in_literal11396); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new STRINGLITERAL(a_tree);}
+					}
+					break;
+				case 6 :
+					// /Users/jeremie/ANTLR/cs.g:1195:4: a= Verbatim_string_literal
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,Verbatim_string_literal,FOLLOW_Verbatim_string_literal_in_literal11406); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new Verbatim_string_literal(a_tree);}
+					}
+					break;
+				case 7 :
+					// /Users/jeremie/ANTLR/cs.g:1196:4: a= TRUE
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,TRUE,FOLLOW_TRUE_in_literal11416); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new Bool(a_tree);}
+					}
+					break;
+				case 8 :
+					// /Users/jeremie/ANTLR/cs.g:1197:4: a= FALSE
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,FALSE,FOLLOW_FALSE_in_literal11426); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new Bool(a_tree);}
+					}
+					break;
+				case 9 :
+					// /Users/jeremie/ANTLR/cs.g:1198:4: a= NULL
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					a=(Token)match(input,NULL,FOLLOW_NULL_in_literal11436); if (state.failed) return retval;
+					if ( state.backtracking==0 ) {
+					a_tree = (CommonTree)adaptor.create(a);
+					adaptor.addChild(root_0, a_tree);
+					}
+
+					if ( state.backtracking==0 ) {retval.t = new NULL(a_tree);}
+					}
+					break;
+
+			}
 			retval.stop = input.LT(-1);
 
 			if ( state.backtracking==0 ) {
 			retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
 			adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
 			}
-			if ( state.backtracking==0 ) {retval.t = new literal(retval.tree);}
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -34356,10 +35023,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal892=null;
-		ParserRuleReturnScope assignment891 =null;
+		Token char_literal891=null;
+		ParserRuleReturnScope assignment890 =null;
 
-		CommonTree char_literal892_tree=null;
+		CommonTree char_literal891_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 304) ) { return retval; }
@@ -34371,41 +35038,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1398:2: ( assignment ';' )+
-			int cnt278=0;
-			loop278:
+			int cnt279=0;
+			loop279:
 			while (true) {
-				int alt278=2;
-				int LA278_0 = input.LA(1);
-				if ( (LA278_0==Character_literal||LA278_0==FALSE||(LA278_0 >= Hex_number && LA278_0 <= IDENTIFIER)||(LA278_0 >= MINUS && LA278_0 <= NUMBER)||LA278_0==Real_literal||LA278_0==STRINGLITERAL||LA278_0==TRUE||LA278_0==Verbatim_string_literal||LA278_0==61||LA278_0==66||(LA278_0 >= 68 && LA278_0 <= 69)||(LA278_0 >= 71 && LA278_0 <= 72)||LA278_0==75||LA278_0==95||(LA278_0 >= 97 && LA278_0 <= 98)||(LA278_0 >= 100 && LA278_0 <= 103)||(LA278_0 >= 105 && LA278_0 <= 106)||(LA278_0 >= 109 && LA278_0 <= 110)||(LA278_0 >= 114 && LA278_0 <= 117)||(LA278_0 >= 119 && LA278_0 <= 120)||LA278_0==122||LA278_0==126||LA278_0==129||LA278_0==132||LA278_0==135||LA278_0==138||LA278_0==141||(LA278_0 >= 143 && LA278_0 <= 144)||(LA278_0 >= 146 && LA278_0 <= 148)||(LA278_0 >= 150 && LA278_0 <= 152)||LA278_0==154||LA278_0==157||LA278_0==160||LA278_0==162||LA278_0==167||LA278_0==169||(LA278_0 >= 171 && LA278_0 <= 174)||LA278_0==177||LA278_0==180||(LA278_0 >= 183 && LA278_0 <= 187)||(LA278_0 >= 189 && LA278_0 <= 190)||LA278_0==194||LA278_0==196||LA278_0==202) ) {
-					alt278=1;
+				int alt279=2;
+				int LA279_0 = input.LA(1);
+				if ( (LA279_0==Character_literal||LA279_0==FALSE||(LA279_0 >= Hex_number && LA279_0 <= IDENTIFIER)||(LA279_0 >= MINUS && LA279_0 <= NUMBER)||LA279_0==Real_literal||LA279_0==STRINGLITERAL||LA279_0==TRUE||LA279_0==Verbatim_string_literal||LA279_0==61||LA279_0==66||(LA279_0 >= 68 && LA279_0 <= 69)||(LA279_0 >= 71 && LA279_0 <= 72)||LA279_0==75||LA279_0==95||(LA279_0 >= 97 && LA279_0 <= 98)||(LA279_0 >= 100 && LA279_0 <= 103)||(LA279_0 >= 105 && LA279_0 <= 106)||(LA279_0 >= 109 && LA279_0 <= 110)||(LA279_0 >= 114 && LA279_0 <= 117)||(LA279_0 >= 119 && LA279_0 <= 120)||LA279_0==122||LA279_0==126||LA279_0==129||LA279_0==132||LA279_0==135||LA279_0==138||LA279_0==141||(LA279_0 >= 143 && LA279_0 <= 144)||(LA279_0 >= 146 && LA279_0 <= 148)||(LA279_0 >= 150 && LA279_0 <= 152)||LA279_0==154||LA279_0==157||LA279_0==160||LA279_0==162||LA279_0==167||LA279_0==169||(LA279_0 >= 171 && LA279_0 <= 174)||LA279_0==177||LA279_0==180||(LA279_0 >= 183 && LA279_0 <= 187)||(LA279_0 >= 189 && LA279_0 <= 190)||LA279_0==194||LA279_0==196||LA279_0==202) ) {
+					alt279=1;
 				}
 
-				switch (alt278) {
+				switch (alt279) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1398:3: assignment ';'
 					{
-					pushFollow(FOLLOW_assignment_in_assignment_list13379);
-					assignment891=assignment();
+					pushFollow(FOLLOW_assignment_in_assignment_list13418);
+					assignment890=assignment();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, assignment891.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, assignment890.getTree());
 
-					char_literal892=(Token)match(input,SEMI,FOLLOW_SEMI_in_assignment_list13381); if (state.failed) return retval;
+					char_literal891=(Token)match(input,SEMI,FOLLOW_SEMI_in_assignment_list13420); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal892_tree = (CommonTree)adaptor.create(char_literal892);
-					adaptor.addChild(root_0, char_literal892_tree);
+					char_literal891_tree = (CommonTree)adaptor.create(char_literal891);
+					adaptor.addChild(root_0, char_literal891_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt278 >= 1 ) break loop278;
+					if ( cnt279 >= 1 ) break loop279;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(278, input);
+					EarlyExitException eee = new EarlyExitException(279, input);
 					throw eee;
 				}
-				cnt278++;
+				cnt279++;
 			}
 
 			}
@@ -34448,10 +35115,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope attributes893 =null;
-		ParserRuleReturnScope modifiers894 =null;
-		ParserRuleReturnScope type895 =null;
-		ParserRuleReturnScope field_declaration896 =null;
+		ParserRuleReturnScope attributes892 =null;
+		ParserRuleReturnScope modifiers893 =null;
+		ParserRuleReturnScope type894 =null;
+		ParserRuleReturnScope field_declaration895 =null;
 
 
 		try {
@@ -34464,34 +35131,34 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1400:2: ( ( attributes )? ( modifiers )? type field_declaration )+
-			int cnt281=0;
-			loop281:
+			int cnt282=0;
+			loop282:
 			while (true) {
-				int alt281=2;
-				int LA281_0 = input.LA(1);
-				if ( (LA281_0==IDENTIFIER||LA281_0==91||(LA281_0 >= 95 && LA281_0 <= 98)||(LA281_0 >= 100 && LA281_0 <= 101)||LA281_0==103||(LA281_0 >= 105 && LA281_0 <= 106)||LA281_0==109||LA281_0==114||LA281_0==117||(LA281_0 >= 119 && LA281_0 <= 120)||LA281_0==122||(LA281_0 >= 125 && LA281_0 <= 126)||LA281_0==129||LA281_0==132||LA281_0==135||LA281_0==138||(LA281_0 >= 140 && LA281_0 <= 141)||(LA281_0 >= 143 && LA281_0 <= 144)||(LA281_0 >= 146 && LA281_0 <= 148)||(LA281_0 >= 150 && LA281_0 <= 152)||LA281_0==154||(LA281_0 >= 156 && LA281_0 <= 157)||(LA281_0 >= 160 && LA281_0 <= 165)||LA281_0==167||(LA281_0 >= 169 && LA281_0 <= 173)||(LA281_0 >= 176 && LA281_0 <= 177)||LA281_0==183||(LA281_0 >= 185 && LA281_0 <= 186)||(LA281_0 >= 188 && LA281_0 <= 194)||LA281_0==196) ) {
-					alt281=1;
+				int alt282=2;
+				int LA282_0 = input.LA(1);
+				if ( (LA282_0==IDENTIFIER||LA282_0==91||(LA282_0 >= 95 && LA282_0 <= 98)||(LA282_0 >= 100 && LA282_0 <= 101)||LA282_0==103||(LA282_0 >= 105 && LA282_0 <= 106)||LA282_0==109||LA282_0==114||LA282_0==117||(LA282_0 >= 119 && LA282_0 <= 120)||LA282_0==122||(LA282_0 >= 125 && LA282_0 <= 126)||LA282_0==129||LA282_0==132||LA282_0==135||LA282_0==138||(LA282_0 >= 140 && LA282_0 <= 141)||(LA282_0 >= 143 && LA282_0 <= 144)||(LA282_0 >= 146 && LA282_0 <= 148)||(LA282_0 >= 150 && LA282_0 <= 152)||LA282_0==154||(LA282_0 >= 156 && LA282_0 <= 157)||(LA282_0 >= 160 && LA282_0 <= 165)||LA282_0==167||(LA282_0 >= 169 && LA282_0 <= 173)||(LA282_0 >= 176 && LA282_0 <= 177)||LA282_0==183||(LA282_0 >= 185 && LA282_0 <= 186)||(LA282_0 >= 188 && LA282_0 <= 194)||LA282_0==196) ) {
+					alt282=1;
 				}
 
-				switch (alt281) {
+				switch (alt282) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1400:3: ( attributes )? ( modifiers )? type field_declaration
 					{
 					// /Users/jeremie/ANTLR/cs.g:1400:3: ( attributes )?
-					int alt279=2;
-					int LA279_0 = input.LA(1);
-					if ( (LA279_0==91) ) {
-						alt279=1;
+					int alt280=2;
+					int LA280_0 = input.LA(1);
+					if ( (LA280_0==91) ) {
+						alt280=1;
 					}
-					switch (alt279) {
+					switch (alt280) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1400:3: attributes
 							{
-							pushFollow(FOLLOW_attributes_in_field_declarations13392);
-							attributes893=attributes();
+							pushFollow(FOLLOW_attributes_in_field_declarations13431);
+							attributes892=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes893.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes892.getTree());
 
 							}
 							break;
@@ -34499,48 +35166,48 @@ public class csParser extends Parser {
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:1400:17: ( modifiers )?
-					int alt280=2;
-					int LA280_0 = input.LA(1);
-					if ( (LA280_0==96||LA280_0==125||LA280_0==140||LA280_0==150||LA280_0==156||LA280_0==161||(LA280_0 >= 163 && LA280_0 <= 165)||LA280_0==170||LA280_0==176||LA280_0==188||LA280_0==191||LA280_0==193) ) {
-						alt280=1;
+					int alt281=2;
+					int LA281_0 = input.LA(1);
+					if ( (LA281_0==96||LA281_0==125||LA281_0==140||LA281_0==150||LA281_0==156||LA281_0==161||(LA281_0 >= 163 && LA281_0 <= 165)||LA281_0==170||LA281_0==176||LA281_0==188||LA281_0==191||LA281_0==193) ) {
+						alt281=1;
 					}
-					switch (alt280) {
+					switch (alt281) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1400:17: modifiers
 							{
-							pushFollow(FOLLOW_modifiers_in_field_declarations13397);
-							modifiers894=modifiers();
+							pushFollow(FOLLOW_modifiers_in_field_declarations13436);
+							modifiers893=modifiers();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers894.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers893.getTree());
 
 							}
 							break;
 
 					}
 
-					pushFollow(FOLLOW_type_in_field_declarations13402);
-					type895=type();
+					pushFollow(FOLLOW_type_in_field_declarations13441);
+					type894=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type895.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, type894.getTree());
 
-					pushFollow(FOLLOW_field_declaration_in_field_declarations13406);
-					field_declaration896=field_declaration();
+					pushFollow(FOLLOW_field_declaration_in_field_declarations13445);
+					field_declaration895=field_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, field_declaration896.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, field_declaration895.getTree());
 
 					}
 					break;
 
 				default :
-					if ( cnt281 >= 1 ) break loop281;
+					if ( cnt282 >= 1 ) break loop282;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(281, input);
+					EarlyExitException eee = new EarlyExitException(282, input);
 					throw eee;
 				}
-				cnt281++;
+				cnt282++;
 			}
 
 			}
@@ -34583,10 +35250,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope attributes897 =null;
-		ParserRuleReturnScope modifiers898 =null;
-		ParserRuleReturnScope type899 =null;
-		ParserRuleReturnScope property_declaration900 =null;
+		ParserRuleReturnScope attributes896 =null;
+		ParserRuleReturnScope modifiers897 =null;
+		ParserRuleReturnScope type898 =null;
+		ParserRuleReturnScope property_declaration899 =null;
 
 
 		try {
@@ -34599,34 +35266,34 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1402:2: ( ( attributes )? ( modifiers )? type property_declaration )+
-			int cnt284=0;
-			loop284:
+			int cnt285=0;
+			loop285:
 			while (true) {
-				int alt284=2;
-				int LA284_0 = input.LA(1);
-				if ( (LA284_0==IDENTIFIER||LA284_0==91||(LA284_0 >= 95 && LA284_0 <= 98)||(LA284_0 >= 100 && LA284_0 <= 101)||LA284_0==103||(LA284_0 >= 105 && LA284_0 <= 106)||LA284_0==109||LA284_0==114||LA284_0==117||(LA284_0 >= 119 && LA284_0 <= 120)||LA284_0==122||(LA284_0 >= 125 && LA284_0 <= 126)||LA284_0==129||LA284_0==132||LA284_0==135||LA284_0==138||(LA284_0 >= 140 && LA284_0 <= 141)||(LA284_0 >= 143 && LA284_0 <= 144)||(LA284_0 >= 146 && LA284_0 <= 148)||(LA284_0 >= 150 && LA284_0 <= 152)||LA284_0==154||(LA284_0 >= 156 && LA284_0 <= 157)||(LA284_0 >= 160 && LA284_0 <= 165)||LA284_0==167||(LA284_0 >= 169 && LA284_0 <= 173)||(LA284_0 >= 176 && LA284_0 <= 177)||LA284_0==183||(LA284_0 >= 185 && LA284_0 <= 186)||(LA284_0 >= 188 && LA284_0 <= 194)||LA284_0==196) ) {
-					alt284=1;
+				int alt285=2;
+				int LA285_0 = input.LA(1);
+				if ( (LA285_0==IDENTIFIER||LA285_0==91||(LA285_0 >= 95 && LA285_0 <= 98)||(LA285_0 >= 100 && LA285_0 <= 101)||LA285_0==103||(LA285_0 >= 105 && LA285_0 <= 106)||LA285_0==109||LA285_0==114||LA285_0==117||(LA285_0 >= 119 && LA285_0 <= 120)||LA285_0==122||(LA285_0 >= 125 && LA285_0 <= 126)||LA285_0==129||LA285_0==132||LA285_0==135||LA285_0==138||(LA285_0 >= 140 && LA285_0 <= 141)||(LA285_0 >= 143 && LA285_0 <= 144)||(LA285_0 >= 146 && LA285_0 <= 148)||(LA285_0 >= 150 && LA285_0 <= 152)||LA285_0==154||(LA285_0 >= 156 && LA285_0 <= 157)||(LA285_0 >= 160 && LA285_0 <= 165)||LA285_0==167||(LA285_0 >= 169 && LA285_0 <= 173)||(LA285_0 >= 176 && LA285_0 <= 177)||LA285_0==183||(LA285_0 >= 185 && LA285_0 <= 186)||(LA285_0 >= 188 && LA285_0 <= 194)||LA285_0==196) ) {
+					alt285=1;
 				}
 
-				switch (alt284) {
+				switch (alt285) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1402:3: ( attributes )? ( modifiers )? type property_declaration
 					{
 					// /Users/jeremie/ANTLR/cs.g:1402:3: ( attributes )?
-					int alt282=2;
-					int LA282_0 = input.LA(1);
-					if ( (LA282_0==91) ) {
-						alt282=1;
+					int alt283=2;
+					int LA283_0 = input.LA(1);
+					if ( (LA283_0==91) ) {
+						alt283=1;
 					}
-					switch (alt282) {
+					switch (alt283) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1402:3: attributes
 							{
-							pushFollow(FOLLOW_attributes_in_property_declaration_list13417);
-							attributes897=attributes();
+							pushFollow(FOLLOW_attributes_in_property_declaration_list13456);
+							attributes896=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes897.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes896.getTree());
 
 							}
 							break;
@@ -34634,48 +35301,48 @@ public class csParser extends Parser {
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:1402:17: ( modifiers )?
-					int alt283=2;
-					int LA283_0 = input.LA(1);
-					if ( (LA283_0==96||LA283_0==125||LA283_0==140||LA283_0==150||LA283_0==156||LA283_0==161||(LA283_0 >= 163 && LA283_0 <= 165)||LA283_0==170||LA283_0==176||LA283_0==188||LA283_0==191||LA283_0==193) ) {
-						alt283=1;
+					int alt284=2;
+					int LA284_0 = input.LA(1);
+					if ( (LA284_0==96||LA284_0==125||LA284_0==140||LA284_0==150||LA284_0==156||LA284_0==161||(LA284_0 >= 163 && LA284_0 <= 165)||LA284_0==170||LA284_0==176||LA284_0==188||LA284_0==191||LA284_0==193) ) {
+						alt284=1;
 					}
-					switch (alt283) {
+					switch (alt284) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1402:17: modifiers
 							{
-							pushFollow(FOLLOW_modifiers_in_property_declaration_list13422);
-							modifiers898=modifiers();
+							pushFollow(FOLLOW_modifiers_in_property_declaration_list13461);
+							modifiers897=modifiers();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers898.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers897.getTree());
 
 							}
 							break;
 
 					}
 
-					pushFollow(FOLLOW_type_in_property_declaration_list13427);
-					type899=type();
+					pushFollow(FOLLOW_type_in_property_declaration_list13466);
+					type898=type();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, type899.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, type898.getTree());
 
-					pushFollow(FOLLOW_property_declaration_in_property_declaration_list13431);
-					property_declaration900=property_declaration();
+					pushFollow(FOLLOW_property_declaration_in_property_declaration_list13470);
+					property_declaration899=property_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, property_declaration900.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, property_declaration899.getTree());
 
 					}
 					break;
 
 				default :
-					if ( cnt284 >= 1 ) break loop284;
+					if ( cnt285 >= 1 ) break loop285;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(284, input);
+					EarlyExitException eee = new EarlyExitException(285, input);
 					throw eee;
 				}
-				cnt284++;
+				cnt285++;
 			}
 
 			}
@@ -34718,7 +35385,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope constant_declaration901 =null;
+		ParserRuleReturnScope constant_declaration900 =null;
 
 
 		try {
@@ -34731,35 +35398,35 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1404:2: ( constant_declaration )+
-			int cnt285=0;
-			loop285:
+			int cnt286=0;
+			loop286:
 			while (true) {
-				int alt285=2;
-				int LA285_0 = input.LA(1);
-				if ( (LA285_0==112) ) {
-					alt285=1;
+				int alt286=2;
+				int LA286_0 = input.LA(1);
+				if ( (LA286_0==112) ) {
+					alt286=1;
 				}
 
-				switch (alt285) {
+				switch (alt286) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1404:2: constant_declaration
 					{
-					pushFollow(FOLLOW_constant_declaration_in_constant_declarations13441);
-					constant_declaration901=constant_declaration();
+					pushFollow(FOLLOW_constant_declaration_in_constant_declarations13480);
+					constant_declaration900=constant_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declaration901.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, constant_declaration900.getTree());
 
 					}
 					break;
 
 				default :
-					if ( cnt285 >= 1 ) break loop285;
+					if ( cnt286 >= 1 ) break loop286;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(285, input);
+					EarlyExitException eee = new EarlyExitException(286, input);
 					throw eee;
 				}
-				cnt285++;
+				cnt286++;
 			}
 
 			}
@@ -34802,7 +35469,7 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope literal902 =null;
+		ParserRuleReturnScope literal901 =null;
 
 
 		try {
@@ -34815,35 +35482,35 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1406:2: ( literal )+
-			int cnt286=0;
-			loop286:
+			int cnt287=0;
+			loop287:
 			while (true) {
-				int alt286=2;
-				int LA286_0 = input.LA(1);
-				if ( (LA286_0==Character_literal||LA286_0==FALSE||LA286_0==Hex_number||(LA286_0 >= NULL && LA286_0 <= NUMBER)||LA286_0==Real_literal||LA286_0==STRINGLITERAL||LA286_0==TRUE||LA286_0==Verbatim_string_literal) ) {
-					alt286=1;
+				int alt287=2;
+				int LA287_0 = input.LA(1);
+				if ( (LA287_0==Character_literal||LA287_0==FALSE||LA287_0==Hex_number||(LA287_0 >= NULL && LA287_0 <= NUMBER)||LA287_0==Real_literal||LA287_0==STRINGLITERAL||LA287_0==TRUE||LA287_0==Verbatim_string_literal) ) {
+					alt287=1;
 				}
 
-				switch (alt286) {
+				switch (alt287) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1406:2: literal
 					{
-					pushFollow(FOLLOW_literal_in_literals13449);
-					literal902=literal();
+					pushFollow(FOLLOW_literal_in_literals13488);
+					literal901=literal();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, literal902.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, literal901.getTree());
 
 					}
 					break;
 
 				default :
-					if ( cnt286 >= 1 ) break loop286;
+					if ( cnt287 >= 1 ) break loop287;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(286, input);
+					EarlyExitException eee = new EarlyExitException(287, input);
 					throw eee;
 				}
-				cnt286++;
+				cnt287++;
 			}
 
 			}
@@ -34886,9 +35553,9 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		ParserRuleReturnScope attributes903 =null;
-		ParserRuleReturnScope modifiers904 =null;
-		ParserRuleReturnScope delegate_declaration905 =null;
+		ParserRuleReturnScope attributes902 =null;
+		ParserRuleReturnScope modifiers903 =null;
+		ParserRuleReturnScope delegate_declaration904 =null;
 
 
 		try {
@@ -34901,34 +35568,34 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1408:2: ( ( attributes )? ( modifiers )? delegate_declaration )+
-			int cnt289=0;
-			loop289:
+			int cnt290=0;
+			loop290:
 			while (true) {
-				int alt289=2;
-				int LA289_0 = input.LA(1);
-				if ( (LA289_0==91||LA289_0==96||LA289_0==116||LA289_0==125||LA289_0==140||LA289_0==150||LA289_0==156||LA289_0==161||(LA289_0 >= 163 && LA289_0 <= 165)||LA289_0==170||LA289_0==176||LA289_0==188||LA289_0==191||LA289_0==193) ) {
-					alt289=1;
+				int alt290=2;
+				int LA290_0 = input.LA(1);
+				if ( (LA290_0==91||LA290_0==96||LA290_0==116||LA290_0==125||LA290_0==140||LA290_0==150||LA290_0==156||LA290_0==161||(LA290_0 >= 163 && LA290_0 <= 165)||LA290_0==170||LA290_0==176||LA290_0==188||LA290_0==191||LA290_0==193) ) {
+					alt290=1;
 				}
 
-				switch (alt289) {
+				switch (alt290) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1408:3: ( attributes )? ( modifiers )? delegate_declaration
 					{
 					// /Users/jeremie/ANTLR/cs.g:1408:3: ( attributes )?
-					int alt287=2;
-					int LA287_0 = input.LA(1);
-					if ( (LA287_0==91) ) {
-						alt287=1;
+					int alt288=2;
+					int LA288_0 = input.LA(1);
+					if ( (LA288_0==91) ) {
+						alt288=1;
 					}
-					switch (alt287) {
+					switch (alt288) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1408:3: attributes
 							{
-							pushFollow(FOLLOW_attributes_in_delegate_declaration_list13459);
-							attributes903=attributes();
+							pushFollow(FOLLOW_attributes_in_delegate_declaration_list13498);
+							attributes902=attributes();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes903.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, attributes902.getTree());
 
 							}
 							break;
@@ -34936,42 +35603,42 @@ public class csParser extends Parser {
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:1408:17: ( modifiers )?
-					int alt288=2;
-					int LA288_0 = input.LA(1);
-					if ( (LA288_0==96||LA288_0==125||LA288_0==140||LA288_0==150||LA288_0==156||LA288_0==161||(LA288_0 >= 163 && LA288_0 <= 165)||LA288_0==170||LA288_0==176||LA288_0==188||LA288_0==191||LA288_0==193) ) {
-						alt288=1;
+					int alt289=2;
+					int LA289_0 = input.LA(1);
+					if ( (LA289_0==96||LA289_0==125||LA289_0==140||LA289_0==150||LA289_0==156||LA289_0==161||(LA289_0 >= 163 && LA289_0 <= 165)||LA289_0==170||LA289_0==176||LA289_0==188||LA289_0==191||LA289_0==193) ) {
+						alt289=1;
 					}
-					switch (alt288) {
+					switch (alt289) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1408:17: modifiers
 							{
-							pushFollow(FOLLOW_modifiers_in_delegate_declaration_list13464);
-							modifiers904=modifiers();
+							pushFollow(FOLLOW_modifiers_in_delegate_declaration_list13503);
+							modifiers903=modifiers();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers904.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers903.getTree());
 
 							}
 							break;
 
 					}
 
-					pushFollow(FOLLOW_delegate_declaration_in_delegate_declaration_list13469);
-					delegate_declaration905=delegate_declaration();
+					pushFollow(FOLLOW_delegate_declaration_in_delegate_declaration_list13508);
+					delegate_declaration904=delegate_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, delegate_declaration905.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, delegate_declaration904.getTree());
 
 					}
 					break;
 
 				default :
-					if ( cnt289 >= 1 ) break loop289;
+					if ( cnt290 >= 1 ) break loop290;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(289, input);
+					EarlyExitException eee = new EarlyExitException(290, input);
 					throw eee;
 				}
-				cnt289++;
+				cnt290++;
 			}
 
 			}
@@ -35014,10 +35681,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal907=null;
-		ParserRuleReturnScope local_variable_declaration906 =null;
+		Token char_literal906=null;
+		ParserRuleReturnScope local_variable_declaration905 =null;
 
-		CommonTree char_literal907_tree=null;
+		CommonTree char_literal906_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 310) ) { return retval; }
@@ -35029,41 +35696,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1410:2: ( local_variable_declaration ';' )+
-			int cnt290=0;
-			loop290:
+			int cnt291=0;
+			loop291:
 			while (true) {
-				int alt290=2;
-				int LA290_0 = input.LA(1);
-				if ( (LA290_0==IDENTIFIER||LA290_0==95||(LA290_0 >= 97 && LA290_0 <= 98)||(LA290_0 >= 100 && LA290_0 <= 101)||LA290_0==103||(LA290_0 >= 105 && LA290_0 <= 106)||LA290_0==109||LA290_0==114||LA290_0==117||(LA290_0 >= 119 && LA290_0 <= 120)||LA290_0==122||LA290_0==126||LA290_0==129||LA290_0==132||LA290_0==135||LA290_0==138||LA290_0==141||(LA290_0 >= 143 && LA290_0 <= 144)||(LA290_0 >= 146 && LA290_0 <= 148)||(LA290_0 >= 151 && LA290_0 <= 152)||LA290_0==154||LA290_0==157||LA290_0==160||LA290_0==162||LA290_0==167||LA290_0==169||(LA290_0 >= 171 && LA290_0 <= 173)||LA290_0==177||LA290_0==183||(LA290_0 >= 185 && LA290_0 <= 186)||(LA290_0 >= 189 && LA290_0 <= 190)||LA290_0==192||LA290_0==194||LA290_0==196) ) {
-					alt290=1;
+				int alt291=2;
+				int LA291_0 = input.LA(1);
+				if ( (LA291_0==IDENTIFIER||LA291_0==95||(LA291_0 >= 97 && LA291_0 <= 98)||(LA291_0 >= 100 && LA291_0 <= 101)||LA291_0==103||(LA291_0 >= 105 && LA291_0 <= 106)||LA291_0==109||LA291_0==114||LA291_0==117||(LA291_0 >= 119 && LA291_0 <= 120)||LA291_0==122||LA291_0==126||LA291_0==129||LA291_0==132||LA291_0==135||LA291_0==138||LA291_0==141||(LA291_0 >= 143 && LA291_0 <= 144)||(LA291_0 >= 146 && LA291_0 <= 148)||(LA291_0 >= 151 && LA291_0 <= 152)||LA291_0==154||LA291_0==157||LA291_0==160||LA291_0==162||LA291_0==167||LA291_0==169||(LA291_0 >= 171 && LA291_0 <= 173)||LA291_0==177||LA291_0==183||(LA291_0 >= 185 && LA291_0 <= 186)||(LA291_0 >= 189 && LA291_0 <= 190)||LA291_0==192||LA291_0==194||LA291_0==196) ) {
+					alt291=1;
 				}
 
-				switch (alt290) {
+				switch (alt291) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1410:3: local_variable_declaration ';'
 					{
-					pushFollow(FOLLOW_local_variable_declaration_in_local_variable_declaration_list13480);
-					local_variable_declaration906=local_variable_declaration();
+					pushFollow(FOLLOW_local_variable_declaration_in_local_variable_declaration_list13519);
+					local_variable_declaration905=local_variable_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declaration906.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_declaration905.getTree());
 
-					char_literal907=(Token)match(input,SEMI,FOLLOW_SEMI_in_local_variable_declaration_list13482); if (state.failed) return retval;
+					char_literal906=(Token)match(input,SEMI,FOLLOW_SEMI_in_local_variable_declaration_list13521); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal907_tree = (CommonTree)adaptor.create(char_literal907);
-					adaptor.addChild(root_0, char_literal907_tree);
+					char_literal906_tree = (CommonTree)adaptor.create(char_literal906);
+					adaptor.addChild(root_0, char_literal906_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt290 >= 1 ) break loop290;
+					if ( cnt291 >= 1 ) break loop291;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(290, input);
+					EarlyExitException eee = new EarlyExitException(291, input);
 					throw eee;
 				}
-				cnt290++;
+				cnt291++;
 			}
 
 			}
@@ -35106,10 +35773,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal909=null;
-		ParserRuleReturnScope local_variable_initializer908 =null;
+		Token char_literal908=null;
+		ParserRuleReturnScope local_variable_initializer907 =null;
 
-		CommonTree char_literal909_tree=null;
+		CommonTree char_literal908_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 311) ) { return retval; }
@@ -35121,41 +35788,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1412:2: ( local_variable_initializer ';' )+
-			int cnt291=0;
-			loop291:
+			int cnt292=0;
+			loop292:
 			while (true) {
-				int alt291=2;
-				int LA291_0 = input.LA(1);
-				if ( (LA291_0==Character_literal||LA291_0==FALSE||(LA291_0 >= Hex_number && LA291_0 <= IDENTIFIER)||(LA291_0 >= MINUS && LA291_0 <= NUMBER)||LA291_0==Real_literal||LA291_0==STRINGLITERAL||LA291_0==TRUE||LA291_0==Verbatim_string_literal||LA291_0==61||LA291_0==66||(LA291_0 >= 68 && LA291_0 <= 69)||(LA291_0 >= 71 && LA291_0 <= 72)||LA291_0==75||LA291_0==95||(LA291_0 >= 97 && LA291_0 <= 98)||(LA291_0 >= 100 && LA291_0 <= 103)||(LA291_0 >= 105 && LA291_0 <= 106)||(LA291_0 >= 109 && LA291_0 <= 110)||(LA291_0 >= 114 && LA291_0 <= 117)||(LA291_0 >= 119 && LA291_0 <= 120)||LA291_0==122||LA291_0==126||LA291_0==129||LA291_0==132||LA291_0==135||LA291_0==138||LA291_0==141||(LA291_0 >= 143 && LA291_0 <= 144)||(LA291_0 >= 146 && LA291_0 <= 148)||(LA291_0 >= 150 && LA291_0 <= 152)||LA291_0==154||LA291_0==157||LA291_0==160||LA291_0==162||LA291_0==167||LA291_0==169||(LA291_0 >= 171 && LA291_0 <= 175)||LA291_0==177||LA291_0==180||(LA291_0 >= 183 && LA291_0 <= 187)||(LA291_0 >= 189 && LA291_0 <= 190)||LA291_0==194||(LA291_0 >= 196 && LA291_0 <= 197)||LA291_0==202) ) {
-					alt291=1;
+				int alt292=2;
+				int LA292_0 = input.LA(1);
+				if ( (LA292_0==Character_literal||LA292_0==FALSE||(LA292_0 >= Hex_number && LA292_0 <= IDENTIFIER)||(LA292_0 >= MINUS && LA292_0 <= NUMBER)||LA292_0==Real_literal||LA292_0==STRINGLITERAL||LA292_0==TRUE||LA292_0==Verbatim_string_literal||LA292_0==61||LA292_0==66||(LA292_0 >= 68 && LA292_0 <= 69)||(LA292_0 >= 71 && LA292_0 <= 72)||LA292_0==75||LA292_0==95||(LA292_0 >= 97 && LA292_0 <= 98)||(LA292_0 >= 100 && LA292_0 <= 103)||(LA292_0 >= 105 && LA292_0 <= 106)||(LA292_0 >= 109 && LA292_0 <= 110)||(LA292_0 >= 114 && LA292_0 <= 117)||(LA292_0 >= 119 && LA292_0 <= 120)||LA292_0==122||LA292_0==126||LA292_0==129||LA292_0==132||LA292_0==135||LA292_0==138||LA292_0==141||(LA292_0 >= 143 && LA292_0 <= 144)||(LA292_0 >= 146 && LA292_0 <= 148)||(LA292_0 >= 150 && LA292_0 <= 152)||LA292_0==154||LA292_0==157||LA292_0==160||LA292_0==162||LA292_0==167||LA292_0==169||(LA292_0 >= 171 && LA292_0 <= 175)||LA292_0==177||LA292_0==180||(LA292_0 >= 183 && LA292_0 <= 187)||(LA292_0 >= 189 && LA292_0 <= 190)||LA292_0==194||(LA292_0 >= 196 && LA292_0 <= 197)||LA292_0==202) ) {
+					alt292=1;
 				}
 
-				switch (alt291) {
+				switch (alt292) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1412:3: local_variable_initializer ';'
 					{
-					pushFollow(FOLLOW_local_variable_initializer_in_local_variable_initializer_list13493);
-					local_variable_initializer908=local_variable_initializer();
+					pushFollow(FOLLOW_local_variable_initializer_in_local_variable_initializer_list13532);
+					local_variable_initializer907=local_variable_initializer();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_initializer908.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, local_variable_initializer907.getTree());
 
-					char_literal909=(Token)match(input,SEMI,FOLLOW_SEMI_in_local_variable_initializer_list13495); if (state.failed) return retval;
+					char_literal908=(Token)match(input,SEMI,FOLLOW_SEMI_in_local_variable_initializer_list13534); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal909_tree = (CommonTree)adaptor.create(char_literal909);
-					adaptor.addChild(root_0, char_literal909_tree);
+					char_literal908_tree = (CommonTree)adaptor.create(char_literal908);
+					adaptor.addChild(root_0, char_literal908_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt291 >= 1 ) break loop291;
+					if ( cnt292 >= 1 ) break loop292;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(291, input);
+					EarlyExitException eee = new EarlyExitException(292, input);
 					throw eee;
 				}
-				cnt291++;
+				cnt292++;
 			}
 
 			}
@@ -35198,10 +35865,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal911=null;
-		ParserRuleReturnScope expression910 =null;
+		Token char_literal910=null;
+		ParserRuleReturnScope expression909 =null;
 
-		CommonTree char_literal911_tree=null;
+		CommonTree char_literal910_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 312) ) { return retval; }
@@ -35213,41 +35880,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1414:2: ( expression ';' )+
-			int cnt292=0;
-			loop292:
+			int cnt293=0;
+			loop293:
 			while (true) {
-				int alt292=2;
-				int LA292_0 = input.LA(1);
-				if ( (LA292_0==Character_literal||LA292_0==FALSE||(LA292_0 >= Hex_number && LA292_0 <= IDENTIFIER)||(LA292_0 >= MINUS && LA292_0 <= NUMBER)||LA292_0==Real_literal||LA292_0==STRINGLITERAL||LA292_0==TRUE||LA292_0==Verbatim_string_literal||LA292_0==61||LA292_0==66||(LA292_0 >= 68 && LA292_0 <= 69)||(LA292_0 >= 71 && LA292_0 <= 72)||LA292_0==75||LA292_0==95||(LA292_0 >= 97 && LA292_0 <= 98)||(LA292_0 >= 100 && LA292_0 <= 103)||(LA292_0 >= 105 && LA292_0 <= 106)||(LA292_0 >= 109 && LA292_0 <= 110)||(LA292_0 >= 114 && LA292_0 <= 117)||(LA292_0 >= 119 && LA292_0 <= 120)||LA292_0==122||LA292_0==126||LA292_0==129||LA292_0==132||LA292_0==135||LA292_0==138||LA292_0==141||(LA292_0 >= 143 && LA292_0 <= 144)||(LA292_0 >= 146 && LA292_0 <= 148)||(LA292_0 >= 150 && LA292_0 <= 152)||LA292_0==154||LA292_0==157||LA292_0==160||LA292_0==162||LA292_0==167||LA292_0==169||(LA292_0 >= 171 && LA292_0 <= 174)||LA292_0==177||LA292_0==180||(LA292_0 >= 183 && LA292_0 <= 187)||(LA292_0 >= 189 && LA292_0 <= 190)||LA292_0==194||LA292_0==196||LA292_0==202) ) {
-					alt292=1;
+				int alt293=2;
+				int LA293_0 = input.LA(1);
+				if ( (LA293_0==Character_literal||LA293_0==FALSE||(LA293_0 >= Hex_number && LA293_0 <= IDENTIFIER)||(LA293_0 >= MINUS && LA293_0 <= NUMBER)||LA293_0==Real_literal||LA293_0==STRINGLITERAL||LA293_0==TRUE||LA293_0==Verbatim_string_literal||LA293_0==61||LA293_0==66||(LA293_0 >= 68 && LA293_0 <= 69)||(LA293_0 >= 71 && LA293_0 <= 72)||LA293_0==75||LA293_0==95||(LA293_0 >= 97 && LA293_0 <= 98)||(LA293_0 >= 100 && LA293_0 <= 103)||(LA293_0 >= 105 && LA293_0 <= 106)||(LA293_0 >= 109 && LA293_0 <= 110)||(LA293_0 >= 114 && LA293_0 <= 117)||(LA293_0 >= 119 && LA293_0 <= 120)||LA293_0==122||LA293_0==126||LA293_0==129||LA293_0==132||LA293_0==135||LA293_0==138||LA293_0==141||(LA293_0 >= 143 && LA293_0 <= 144)||(LA293_0 >= 146 && LA293_0 <= 148)||(LA293_0 >= 150 && LA293_0 <= 152)||LA293_0==154||LA293_0==157||LA293_0==160||LA293_0==162||LA293_0==167||LA293_0==169||(LA293_0 >= 171 && LA293_0 <= 174)||LA293_0==177||LA293_0==180||(LA293_0 >= 183 && LA293_0 <= 187)||(LA293_0 >= 189 && LA293_0 <= 190)||LA293_0==194||LA293_0==196||LA293_0==202) ) {
+					alt293=1;
 				}
 
-				switch (alt292) {
+				switch (alt293) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1414:3: expression ';'
 					{
-					pushFollow(FOLLOW_expression_in_expression_list_test13506);
-					expression910=expression();
+					pushFollow(FOLLOW_expression_in_expression_list_test13545);
+					expression909=expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression910.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression909.getTree());
 
-					char_literal911=(Token)match(input,SEMI,FOLLOW_SEMI_in_expression_list_test13508); if (state.failed) return retval;
+					char_literal910=(Token)match(input,SEMI,FOLLOW_SEMI_in_expression_list_test13547); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal911_tree = (CommonTree)adaptor.create(char_literal911);
-					adaptor.addChild(root_0, char_literal911_tree);
+					char_literal910_tree = (CommonTree)adaptor.create(char_literal910);
+					adaptor.addChild(root_0, char_literal910_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt292 >= 1 ) break loop292;
+					if ( cnt293 >= 1 ) break loop293;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(292, input);
+					EarlyExitException eee = new EarlyExitException(293, input);
 					throw eee;
 				}
-				cnt292++;
+				cnt293++;
 			}
 
 			}
@@ -35290,10 +35957,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal913=null;
-		ParserRuleReturnScope unary_expression912 =null;
+		Token char_literal912=null;
+		ParserRuleReturnScope unary_expression911 =null;
 
-		CommonTree char_literal913_tree=null;
+		CommonTree char_literal912_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 313) ) { return retval; }
@@ -35305,41 +35972,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1416:2: ( unary_expression ';' )+
-			int cnt293=0;
-			loop293:
+			int cnt294=0;
+			loop294:
 			while (true) {
-				int alt293=2;
-				int LA293_0 = input.LA(1);
-				if ( (LA293_0==Character_literal||LA293_0==FALSE||(LA293_0 >= Hex_number && LA293_0 <= IDENTIFIER)||(LA293_0 >= MINUS && LA293_0 <= NUMBER)||LA293_0==Real_literal||LA293_0==STRINGLITERAL||LA293_0==TRUE||LA293_0==Verbatim_string_literal||LA293_0==61||LA293_0==66||(LA293_0 >= 68 && LA293_0 <= 69)||(LA293_0 >= 71 && LA293_0 <= 72)||LA293_0==75||LA293_0==95||(LA293_0 >= 97 && LA293_0 <= 98)||(LA293_0 >= 100 && LA293_0 <= 103)||(LA293_0 >= 105 && LA293_0 <= 106)||(LA293_0 >= 109 && LA293_0 <= 110)||(LA293_0 >= 114 && LA293_0 <= 117)||(LA293_0 >= 119 && LA293_0 <= 120)||LA293_0==122||LA293_0==126||LA293_0==129||LA293_0==132||LA293_0==135||LA293_0==138||LA293_0==141||(LA293_0 >= 143 && LA293_0 <= 144)||(LA293_0 >= 146 && LA293_0 <= 148)||(LA293_0 >= 150 && LA293_0 <= 152)||LA293_0==154||LA293_0==157||LA293_0==160||LA293_0==162||LA293_0==167||LA293_0==169||(LA293_0 >= 171 && LA293_0 <= 174)||LA293_0==177||LA293_0==180||(LA293_0 >= 183 && LA293_0 <= 187)||(LA293_0 >= 189 && LA293_0 <= 190)||LA293_0==194||LA293_0==196||LA293_0==202) ) {
-					alt293=1;
+				int alt294=2;
+				int LA294_0 = input.LA(1);
+				if ( (LA294_0==Character_literal||LA294_0==FALSE||(LA294_0 >= Hex_number && LA294_0 <= IDENTIFIER)||(LA294_0 >= MINUS && LA294_0 <= NUMBER)||LA294_0==Real_literal||LA294_0==STRINGLITERAL||LA294_0==TRUE||LA294_0==Verbatim_string_literal||LA294_0==61||LA294_0==66||(LA294_0 >= 68 && LA294_0 <= 69)||(LA294_0 >= 71 && LA294_0 <= 72)||LA294_0==75||LA294_0==95||(LA294_0 >= 97 && LA294_0 <= 98)||(LA294_0 >= 100 && LA294_0 <= 103)||(LA294_0 >= 105 && LA294_0 <= 106)||(LA294_0 >= 109 && LA294_0 <= 110)||(LA294_0 >= 114 && LA294_0 <= 117)||(LA294_0 >= 119 && LA294_0 <= 120)||LA294_0==122||LA294_0==126||LA294_0==129||LA294_0==132||LA294_0==135||LA294_0==138||LA294_0==141||(LA294_0 >= 143 && LA294_0 <= 144)||(LA294_0 >= 146 && LA294_0 <= 148)||(LA294_0 >= 150 && LA294_0 <= 152)||LA294_0==154||LA294_0==157||LA294_0==160||LA294_0==162||LA294_0==167||LA294_0==169||(LA294_0 >= 171 && LA294_0 <= 174)||LA294_0==177||LA294_0==180||(LA294_0 >= 183 && LA294_0 <= 187)||(LA294_0 >= 189 && LA294_0 <= 190)||LA294_0==194||LA294_0==196||LA294_0==202) ) {
+					alt294=1;
 				}
 
-				switch (alt293) {
+				switch (alt294) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1416:3: unary_expression ';'
 					{
-					pushFollow(FOLLOW_unary_expression_in_unary_expression_list13519);
-					unary_expression912=unary_expression();
+					pushFollow(FOLLOW_unary_expression_in_unary_expression_list13558);
+					unary_expression911=unary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression912.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, unary_expression911.getTree());
 
-					char_literal913=(Token)match(input,SEMI,FOLLOW_SEMI_in_unary_expression_list13521); if (state.failed) return retval;
+					char_literal912=(Token)match(input,SEMI,FOLLOW_SEMI_in_unary_expression_list13560); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal913_tree = (CommonTree)adaptor.create(char_literal913);
-					adaptor.addChild(root_0, char_literal913_tree);
+					char_literal912_tree = (CommonTree)adaptor.create(char_literal912);
+					adaptor.addChild(root_0, char_literal912_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt293 >= 1 ) break loop293;
+					if ( cnt294 >= 1 ) break loop294;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(293, input);
+					EarlyExitException eee = new EarlyExitException(294, input);
 					throw eee;
 				}
-				cnt293++;
+				cnt294++;
 			}
 
 			}
@@ -35382,10 +36049,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal915=null;
-		ParserRuleReturnScope invocation_expression914 =null;
+		Token char_literal914=null;
+		ParserRuleReturnScope invocation_expression913 =null;
 
-		CommonTree char_literal915_tree=null;
+		CommonTree char_literal914_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 314) ) { return retval; }
@@ -35397,41 +36064,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1418:2: ( invocation_expression ';' )+
-			int cnt294=0;
-			loop294:
+			int cnt295=0;
+			loop295:
 			while (true) {
-				int alt294=2;
-				int LA294_0 = input.LA(1);
-				if ( (LA294_0==IDENTIFIER||LA294_0==95||(LA294_0 >= 97 && LA294_0 <= 98)||(LA294_0 >= 100 && LA294_0 <= 103)||(LA294_0 >= 105 && LA294_0 <= 106)||LA294_0==109||LA294_0==114||LA294_0==117||(LA294_0 >= 119 && LA294_0 <= 120)||LA294_0==122||LA294_0==126||LA294_0==129||LA294_0==132||LA294_0==135||LA294_0==138||LA294_0==141||(LA294_0 >= 143 && LA294_0 <= 144)||(LA294_0 >= 146 && LA294_0 <= 148)||(LA294_0 >= 151 && LA294_0 <= 152)||LA294_0==154||LA294_0==157||LA294_0==160||LA294_0==162||LA294_0==167||LA294_0==169||(LA294_0 >= 171 && LA294_0 <= 173)||LA294_0==177||LA294_0==180||(LA294_0 >= 183 && LA294_0 <= 186)||(LA294_0 >= 189 && LA294_0 <= 190)||LA294_0==194||LA294_0==196) ) {
-					alt294=1;
+				int alt295=2;
+				int LA295_0 = input.LA(1);
+				if ( (LA295_0==IDENTIFIER||LA295_0==95||(LA295_0 >= 97 && LA295_0 <= 98)||(LA295_0 >= 100 && LA295_0 <= 103)||(LA295_0 >= 105 && LA295_0 <= 106)||LA295_0==109||LA295_0==114||LA295_0==117||(LA295_0 >= 119 && LA295_0 <= 120)||LA295_0==122||LA295_0==126||LA295_0==129||LA295_0==132||LA295_0==135||LA295_0==138||LA295_0==141||(LA295_0 >= 143 && LA295_0 <= 144)||(LA295_0 >= 146 && LA295_0 <= 148)||(LA295_0 >= 151 && LA295_0 <= 152)||LA295_0==154||LA295_0==157||LA295_0==160||LA295_0==162||LA295_0==167||LA295_0==169||(LA295_0 >= 171 && LA295_0 <= 173)||LA295_0==177||LA295_0==180||(LA295_0 >= 183 && LA295_0 <= 186)||(LA295_0 >= 189 && LA295_0 <= 190)||LA295_0==194||LA295_0==196) ) {
+					alt295=1;
 				}
 
-				switch (alt294) {
+				switch (alt295) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1418:3: invocation_expression ';'
 					{
-					pushFollow(FOLLOW_invocation_expression_in_invocation_expression_list13532);
-					invocation_expression914=invocation_expression();
+					pushFollow(FOLLOW_invocation_expression_in_invocation_expression_list13571);
+					invocation_expression913=invocation_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_expression914.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, invocation_expression913.getTree());
 
-					char_literal915=(Token)match(input,SEMI,FOLLOW_SEMI_in_invocation_expression_list13534); if (state.failed) return retval;
+					char_literal914=(Token)match(input,SEMI,FOLLOW_SEMI_in_invocation_expression_list13573); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal915_tree = (CommonTree)adaptor.create(char_literal915);
-					adaptor.addChild(root_0, char_literal915_tree);
+					char_literal914_tree = (CommonTree)adaptor.create(char_literal914);
+					adaptor.addChild(root_0, char_literal914_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt294 >= 1 ) break loop294;
+					if ( cnt295 >= 1 ) break loop295;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(294, input);
+					EarlyExitException eee = new EarlyExitException(295, input);
 					throw eee;
 				}
-				cnt294++;
+				cnt295++;
 			}
 
 			}
@@ -35474,10 +36141,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal917=null;
-		ParserRuleReturnScope primary_expression916 =null;
+		Token char_literal916=null;
+		ParserRuleReturnScope primary_expression915 =null;
 
-		CommonTree char_literal917_tree=null;
+		CommonTree char_literal916_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 315) ) { return retval; }
@@ -35489,41 +36156,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1420:2: ( primary_expression ';' )+
-			int cnt295=0;
-			loop295:
+			int cnt296=0;
+			loop296:
 			while (true) {
-				int alt295=2;
-				int LA295_0 = input.LA(1);
-				if ( (LA295_0==Character_literal||LA295_0==FALSE||(LA295_0 >= Hex_number && LA295_0 <= IDENTIFIER)||(LA295_0 >= NULL && LA295_0 <= NUMBER)||LA295_0==Real_literal||LA295_0==STRINGLITERAL||LA295_0==TRUE||LA295_0==Verbatim_string_literal||LA295_0==68||LA295_0==95||(LA295_0 >= 97 && LA295_0 <= 98)||(LA295_0 >= 100 && LA295_0 <= 103)||(LA295_0 >= 105 && LA295_0 <= 106)||(LA295_0 >= 109 && LA295_0 <= 110)||(LA295_0 >= 114 && LA295_0 <= 117)||(LA295_0 >= 119 && LA295_0 <= 120)||LA295_0==122||LA295_0==126||LA295_0==129||LA295_0==132||LA295_0==135||LA295_0==138||LA295_0==141||(LA295_0 >= 143 && LA295_0 <= 144)||(LA295_0 >= 146 && LA295_0 <= 148)||(LA295_0 >= 150 && LA295_0 <= 152)||LA295_0==154||LA295_0==157||LA295_0==160||LA295_0==162||LA295_0==167||LA295_0==169||(LA295_0 >= 171 && LA295_0 <= 174)||LA295_0==177||LA295_0==180||(LA295_0 >= 183 && LA295_0 <= 187)||(LA295_0 >= 189 && LA295_0 <= 190)||LA295_0==194||LA295_0==196) ) {
-					alt295=1;
+				int alt296=2;
+				int LA296_0 = input.LA(1);
+				if ( (LA296_0==Character_literal||LA296_0==FALSE||(LA296_0 >= Hex_number && LA296_0 <= IDENTIFIER)||(LA296_0 >= NULL && LA296_0 <= NUMBER)||LA296_0==Real_literal||LA296_0==STRINGLITERAL||LA296_0==TRUE||LA296_0==Verbatim_string_literal||LA296_0==68||LA296_0==95||(LA296_0 >= 97 && LA296_0 <= 98)||(LA296_0 >= 100 && LA296_0 <= 103)||(LA296_0 >= 105 && LA296_0 <= 106)||(LA296_0 >= 109 && LA296_0 <= 110)||(LA296_0 >= 114 && LA296_0 <= 117)||(LA296_0 >= 119 && LA296_0 <= 120)||LA296_0==122||LA296_0==126||LA296_0==129||LA296_0==132||LA296_0==135||LA296_0==138||LA296_0==141||(LA296_0 >= 143 && LA296_0 <= 144)||(LA296_0 >= 146 && LA296_0 <= 148)||(LA296_0 >= 150 && LA296_0 <= 152)||LA296_0==154||LA296_0==157||LA296_0==160||LA296_0==162||LA296_0==167||LA296_0==169||(LA296_0 >= 171 && LA296_0 <= 174)||LA296_0==177||LA296_0==180||(LA296_0 >= 183 && LA296_0 <= 187)||(LA296_0 >= 189 && LA296_0 <= 190)||LA296_0==194||LA296_0==196) ) {
+					alt296=1;
 				}
 
-				switch (alt295) {
+				switch (alt296) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1420:3: primary_expression ';'
 					{
-					pushFollow(FOLLOW_primary_expression_in_primary_expression_list13545);
-					primary_expression916=primary_expression();
+					pushFollow(FOLLOW_primary_expression_in_primary_expression_list13584);
+					primary_expression915=primary_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression916.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary_expression915.getTree());
 
-					char_literal917=(Token)match(input,SEMI,FOLLOW_SEMI_in_primary_expression_list13547); if (state.failed) return retval;
+					char_literal916=(Token)match(input,SEMI,FOLLOW_SEMI_in_primary_expression_list13586); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal917_tree = (CommonTree)adaptor.create(char_literal917);
-					adaptor.addChild(root_0, char_literal917_tree);
+					char_literal916_tree = (CommonTree)adaptor.create(char_literal916);
+					adaptor.addChild(root_0, char_literal916_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt295 >= 1 ) break loop295;
+					if ( cnt296 >= 1 ) break loop296;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(295, input);
+					EarlyExitException eee = new EarlyExitException(296, input);
 					throw eee;
 				}
-				cnt295++;
+				cnt296++;
 			}
 
 			}
@@ -35566,10 +36233,10 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token char_literal919=null;
-		ParserRuleReturnScope non_assignment_expression918 =null;
+		Token char_literal918=null;
+		ParserRuleReturnScope non_assignment_expression917 =null;
 
-		CommonTree char_literal919_tree=null;
+		CommonTree char_literal918_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 316) ) { return retval; }
@@ -35581,41 +36248,41 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1422:2: ( non_assignment_expression ';' )+
-			int cnt296=0;
-			loop296:
+			int cnt297=0;
+			loop297:
 			while (true) {
-				int alt296=2;
-				int LA296_0 = input.LA(1);
-				if ( (LA296_0==Character_literal||LA296_0==FALSE||(LA296_0 >= Hex_number && LA296_0 <= IDENTIFIER)||(LA296_0 >= MINUS && LA296_0 <= NUMBER)||LA296_0==Real_literal||LA296_0==STRINGLITERAL||LA296_0==TRUE||LA296_0==Verbatim_string_literal||LA296_0==61||LA296_0==66||(LA296_0 >= 68 && LA296_0 <= 69)||(LA296_0 >= 71 && LA296_0 <= 72)||LA296_0==75||LA296_0==95||(LA296_0 >= 97 && LA296_0 <= 98)||(LA296_0 >= 100 && LA296_0 <= 103)||(LA296_0 >= 105 && LA296_0 <= 106)||(LA296_0 >= 109 && LA296_0 <= 110)||(LA296_0 >= 114 && LA296_0 <= 117)||(LA296_0 >= 119 && LA296_0 <= 120)||LA296_0==122||LA296_0==126||LA296_0==129||LA296_0==132||LA296_0==135||LA296_0==138||LA296_0==141||(LA296_0 >= 143 && LA296_0 <= 144)||(LA296_0 >= 146 && LA296_0 <= 148)||(LA296_0 >= 150 && LA296_0 <= 152)||LA296_0==154||LA296_0==157||LA296_0==160||LA296_0==162||LA296_0==167||LA296_0==169||(LA296_0 >= 171 && LA296_0 <= 174)||LA296_0==177||LA296_0==180||(LA296_0 >= 183 && LA296_0 <= 187)||(LA296_0 >= 189 && LA296_0 <= 190)||LA296_0==194||LA296_0==196||LA296_0==202) ) {
-					alt296=1;
+				int alt297=2;
+				int LA297_0 = input.LA(1);
+				if ( (LA297_0==Character_literal||LA297_0==FALSE||(LA297_0 >= Hex_number && LA297_0 <= IDENTIFIER)||(LA297_0 >= MINUS && LA297_0 <= NUMBER)||LA297_0==Real_literal||LA297_0==STRINGLITERAL||LA297_0==TRUE||LA297_0==Verbatim_string_literal||LA297_0==61||LA297_0==66||(LA297_0 >= 68 && LA297_0 <= 69)||(LA297_0 >= 71 && LA297_0 <= 72)||LA297_0==75||LA297_0==95||(LA297_0 >= 97 && LA297_0 <= 98)||(LA297_0 >= 100 && LA297_0 <= 103)||(LA297_0 >= 105 && LA297_0 <= 106)||(LA297_0 >= 109 && LA297_0 <= 110)||(LA297_0 >= 114 && LA297_0 <= 117)||(LA297_0 >= 119 && LA297_0 <= 120)||LA297_0==122||LA297_0==126||LA297_0==129||LA297_0==132||LA297_0==135||LA297_0==138||LA297_0==141||(LA297_0 >= 143 && LA297_0 <= 144)||(LA297_0 >= 146 && LA297_0 <= 148)||(LA297_0 >= 150 && LA297_0 <= 152)||LA297_0==154||LA297_0==157||LA297_0==160||LA297_0==162||LA297_0==167||LA297_0==169||(LA297_0 >= 171 && LA297_0 <= 174)||LA297_0==177||LA297_0==180||(LA297_0 >= 183 && LA297_0 <= 187)||(LA297_0 >= 189 && LA297_0 <= 190)||LA297_0==194||LA297_0==196||LA297_0==202) ) {
+					alt297=1;
 				}
 
-				switch (alt296) {
+				switch (alt297) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1422:3: non_assignment_expression ';'
 					{
-					pushFollow(FOLLOW_non_assignment_expression_in_non_assignment_expression_list13558);
-					non_assignment_expression918=non_assignment_expression();
+					pushFollow(FOLLOW_non_assignment_expression_in_non_assignment_expression_list13597);
+					non_assignment_expression917=non_assignment_expression();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, non_assignment_expression918.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, non_assignment_expression917.getTree());
 
-					char_literal919=(Token)match(input,SEMI,FOLLOW_SEMI_in_non_assignment_expression_list13560); if (state.failed) return retval;
+					char_literal918=(Token)match(input,SEMI,FOLLOW_SEMI_in_non_assignment_expression_list13599); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
-					char_literal919_tree = (CommonTree)adaptor.create(char_literal919);
-					adaptor.addChild(root_0, char_literal919_tree);
+					char_literal918_tree = (CommonTree)adaptor.create(char_literal918);
+					adaptor.addChild(root_0, char_literal918_tree);
 					}
 
 					}
 					break;
 
 				default :
-					if ( cnt296 >= 1 ) break loop296;
+					if ( cnt297 >= 1 ) break loop297;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(296, input);
+					EarlyExitException eee = new EarlyExitException(297, input);
 					throw eee;
 				}
-				cnt296++;
+				cnt297++;
 			}
 
 			}
@@ -35658,12 +36325,12 @@ public class csParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token string_literal921=null;
-		ParserRuleReturnScope modifiers920 =null;
-		ParserRuleReturnScope type922 =null;
-		ParserRuleReturnScope method_declaration923 =null;
+		Token string_literal920=null;
+		ParserRuleReturnScope modifiers919 =null;
+		ParserRuleReturnScope type921 =null;
+		ParserRuleReturnScope method_declaration922 =null;
 
-		CommonTree string_literal921_tree=null;
+		CommonTree string_literal920_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 317) ) { return retval; }
@@ -35675,34 +36342,34 @@ public class csParser extends Parser {
 
 
 			// /Users/jeremie/ANTLR/cs.g:1424:2: ( ( modifiers )? ( 'void' | type ) method_declaration )+
-			int cnt299=0;
-			loop299:
+			int cnt300=0;
+			loop300:
 			while (true) {
-				int alt299=2;
-				int LA299_0 = input.LA(1);
-				if ( (LA299_0==IDENTIFIER||(LA299_0 >= 95 && LA299_0 <= 98)||(LA299_0 >= 100 && LA299_0 <= 101)||LA299_0==103||(LA299_0 >= 105 && LA299_0 <= 106)||LA299_0==109||LA299_0==114||LA299_0==117||(LA299_0 >= 119 && LA299_0 <= 120)||LA299_0==122||(LA299_0 >= 125 && LA299_0 <= 126)||LA299_0==129||LA299_0==132||LA299_0==135||LA299_0==138||(LA299_0 >= 140 && LA299_0 <= 141)||(LA299_0 >= 143 && LA299_0 <= 144)||(LA299_0 >= 146 && LA299_0 <= 148)||(LA299_0 >= 150 && LA299_0 <= 152)||LA299_0==154||(LA299_0 >= 156 && LA299_0 <= 157)||(LA299_0 >= 160 && LA299_0 <= 165)||LA299_0==167||(LA299_0 >= 169 && LA299_0 <= 173)||(LA299_0 >= 176 && LA299_0 <= 177)||LA299_0==183||(LA299_0 >= 185 && LA299_0 <= 186)||(LA299_0 >= 188 && LA299_0 <= 194)||LA299_0==196) ) {
-					alt299=1;
+				int alt300=2;
+				int LA300_0 = input.LA(1);
+				if ( (LA300_0==IDENTIFIER||(LA300_0 >= 95 && LA300_0 <= 98)||(LA300_0 >= 100 && LA300_0 <= 101)||LA300_0==103||(LA300_0 >= 105 && LA300_0 <= 106)||LA300_0==109||LA300_0==114||LA300_0==117||(LA300_0 >= 119 && LA300_0 <= 120)||LA300_0==122||(LA300_0 >= 125 && LA300_0 <= 126)||LA300_0==129||LA300_0==132||LA300_0==135||LA300_0==138||(LA300_0 >= 140 && LA300_0 <= 141)||(LA300_0 >= 143 && LA300_0 <= 144)||(LA300_0 >= 146 && LA300_0 <= 148)||(LA300_0 >= 150 && LA300_0 <= 152)||LA300_0==154||(LA300_0 >= 156 && LA300_0 <= 157)||(LA300_0 >= 160 && LA300_0 <= 165)||LA300_0==167||(LA300_0 >= 169 && LA300_0 <= 173)||(LA300_0 >= 176 && LA300_0 <= 177)||LA300_0==183||(LA300_0 >= 185 && LA300_0 <= 186)||(LA300_0 >= 188 && LA300_0 <= 194)||LA300_0==196) ) {
+					alt300=1;
 				}
 
-				switch (alt299) {
+				switch (alt300) {
 				case 1 :
 					// /Users/jeremie/ANTLR/cs.g:1424:3: ( modifiers )? ( 'void' | type ) method_declaration
 					{
 					// /Users/jeremie/ANTLR/cs.g:1424:3: ( modifiers )?
-					int alt297=2;
-					int LA297_0 = input.LA(1);
-					if ( (LA297_0==96||LA297_0==125||LA297_0==140||LA297_0==150||LA297_0==156||LA297_0==161||(LA297_0 >= 163 && LA297_0 <= 165)||LA297_0==170||LA297_0==176||LA297_0==188||LA297_0==191||LA297_0==193) ) {
-						alt297=1;
+					int alt298=2;
+					int LA298_0 = input.LA(1);
+					if ( (LA298_0==96||LA298_0==125||LA298_0==140||LA298_0==150||LA298_0==156||LA298_0==161||(LA298_0 >= 163 && LA298_0 <= 165)||LA298_0==170||LA298_0==176||LA298_0==188||LA298_0==191||LA298_0==193) ) {
+						alt298=1;
 					}
-					switch (alt297) {
+					switch (alt298) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1424:3: modifiers
 							{
-							pushFollow(FOLLOW_modifiers_in_method_declarations13571);
-							modifiers920=modifiers();
+							pushFollow(FOLLOW_modifiers_in_method_declarations13610);
+							modifiers919=modifiers();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers920.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, modifiers919.getTree());
 
 							}
 							break;
@@ -35710,15 +36377,15 @@ public class csParser extends Parser {
 					}
 
 					// /Users/jeremie/ANTLR/cs.g:1424:14: ( 'void' | type )
-					int alt298=2;
-					int LA298_0 = input.LA(1);
-					if ( (LA298_0==192) ) {
-						int LA298_1 = input.LA(2);
-						if ( (LA298_1==Character_literal||LA298_1==FALSE||(LA298_1 >= Hex_number && LA298_1 <= IDENTIFIER)||(LA298_1 >= NULL && LA298_1 <= NUMBER)||LA298_1==Real_literal||LA298_1==STRINGLITERAL||LA298_1==TRUE||LA298_1==Verbatim_string_literal||LA298_1==95||(LA298_1 >= 97 && LA298_1 <= 98)||(LA298_1 >= 100 && LA298_1 <= 101)||LA298_1==103||(LA298_1 >= 105 && LA298_1 <= 106)||LA298_1==109||LA298_1==114||LA298_1==117||(LA298_1 >= 119 && LA298_1 <= 120)||LA298_1==122||LA298_1==126||LA298_1==129||LA298_1==132||LA298_1==135||LA298_1==138||LA298_1==141||(LA298_1 >= 143 && LA298_1 <= 144)||(LA298_1 >= 146 && LA298_1 <= 148)||(LA298_1 >= 151 && LA298_1 <= 152)||LA298_1==154||LA298_1==157||LA298_1==160||LA298_1==162||LA298_1==167||LA298_1==169||(LA298_1 >= 171 && LA298_1 <= 173)||LA298_1==177||LA298_1==183||(LA298_1 >= 185 && LA298_1 <= 186)||(LA298_1 >= 189 && LA298_1 <= 190)||LA298_1==194||LA298_1==196) ) {
-							alt298=1;
+					int alt299=2;
+					int LA299_0 = input.LA(1);
+					if ( (LA299_0==192) ) {
+						int LA299_1 = input.LA(2);
+						if ( (LA299_1==Character_literal||LA299_1==FALSE||(LA299_1 >= Hex_number && LA299_1 <= IDENTIFIER)||(LA299_1 >= NULL && LA299_1 <= NUMBER)||LA299_1==Real_literal||LA299_1==STRINGLITERAL||LA299_1==TRUE||LA299_1==Verbatim_string_literal||LA299_1==95||(LA299_1 >= 97 && LA299_1 <= 98)||(LA299_1 >= 100 && LA299_1 <= 101)||LA299_1==103||(LA299_1 >= 105 && LA299_1 <= 106)||LA299_1==109||LA299_1==114||LA299_1==117||(LA299_1 >= 119 && LA299_1 <= 120)||LA299_1==122||LA299_1==126||LA299_1==129||LA299_1==132||LA299_1==135||LA299_1==138||LA299_1==141||(LA299_1 >= 143 && LA299_1 <= 144)||(LA299_1 >= 146 && LA299_1 <= 148)||(LA299_1 >= 151 && LA299_1 <= 152)||LA299_1==154||LA299_1==157||LA299_1==160||LA299_1==162||LA299_1==167||LA299_1==169||(LA299_1 >= 171 && LA299_1 <= 173)||LA299_1==177||LA299_1==183||(LA299_1 >= 185 && LA299_1 <= 186)||(LA299_1 >= 189 && LA299_1 <= 190)||LA299_1==194||LA299_1==196) ) {
+							alt299=1;
 						}
-						else if ( (LA298_1==69) ) {
-							alt298=2;
+						else if ( (LA299_1==69) ) {
+							alt299=2;
 						}
 
 						else {
@@ -35727,7 +36394,7 @@ public class csParser extends Parser {
 							try {
 								input.consume();
 								NoViableAltException nvae =
-									new NoViableAltException("", 298, 1, input);
+									new NoViableAltException("", 299, 1, input);
 								throw nvae;
 							} finally {
 								input.rewind(nvaeMark);
@@ -35735,25 +36402,25 @@ public class csParser extends Parser {
 						}
 
 					}
-					else if ( (LA298_0==IDENTIFIER||LA298_0==95||(LA298_0 >= 97 && LA298_0 <= 98)||(LA298_0 >= 100 && LA298_0 <= 101)||LA298_0==103||(LA298_0 >= 105 && LA298_0 <= 106)||LA298_0==109||LA298_0==114||LA298_0==117||(LA298_0 >= 119 && LA298_0 <= 120)||LA298_0==122||LA298_0==126||LA298_0==129||LA298_0==132||LA298_0==135||LA298_0==138||LA298_0==141||(LA298_0 >= 143 && LA298_0 <= 144)||(LA298_0 >= 146 && LA298_0 <= 148)||(LA298_0 >= 151 && LA298_0 <= 152)||LA298_0==154||LA298_0==157||LA298_0==160||LA298_0==162||LA298_0==167||LA298_0==169||(LA298_0 >= 171 && LA298_0 <= 173)||LA298_0==177||LA298_0==183||(LA298_0 >= 185 && LA298_0 <= 186)||(LA298_0 >= 189 && LA298_0 <= 190)||LA298_0==194||LA298_0==196) ) {
-						alt298=2;
+					else if ( (LA299_0==IDENTIFIER||LA299_0==95||(LA299_0 >= 97 && LA299_0 <= 98)||(LA299_0 >= 100 && LA299_0 <= 101)||LA299_0==103||(LA299_0 >= 105 && LA299_0 <= 106)||LA299_0==109||LA299_0==114||LA299_0==117||(LA299_0 >= 119 && LA299_0 <= 120)||LA299_0==122||LA299_0==126||LA299_0==129||LA299_0==132||LA299_0==135||LA299_0==138||LA299_0==141||(LA299_0 >= 143 && LA299_0 <= 144)||(LA299_0 >= 146 && LA299_0 <= 148)||(LA299_0 >= 151 && LA299_0 <= 152)||LA299_0==154||LA299_0==157||LA299_0==160||LA299_0==162||LA299_0==167||LA299_0==169||(LA299_0 >= 171 && LA299_0 <= 173)||LA299_0==177||LA299_0==183||(LA299_0 >= 185 && LA299_0 <= 186)||(LA299_0 >= 189 && LA299_0 <= 190)||LA299_0==194||LA299_0==196) ) {
+						alt299=2;
 					}
 
 					else {
 						if (state.backtracking>0) {state.failed=true; return retval;}
 						NoViableAltException nvae =
-							new NoViableAltException("", 298, 0, input);
+							new NoViableAltException("", 299, 0, input);
 						throw nvae;
 					}
 
-					switch (alt298) {
+					switch (alt299) {
 						case 1 :
 							// /Users/jeremie/ANTLR/cs.g:1424:15: 'void'
 							{
-							string_literal921=(Token)match(input,192,FOLLOW_192_in_method_declarations13575); if (state.failed) return retval;
+							string_literal920=(Token)match(input,192,FOLLOW_192_in_method_declarations13614); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
-							string_literal921_tree = (CommonTree)adaptor.create(string_literal921);
-							adaptor.addChild(root_0, string_literal921_tree);
+							string_literal920_tree = (CommonTree)adaptor.create(string_literal920);
+							adaptor.addChild(root_0, string_literal920_tree);
 							}
 
 							}
@@ -35761,33 +36428,33 @@ public class csParser extends Parser {
 						case 2 :
 							// /Users/jeremie/ANTLR/cs.g:1424:24: type
 							{
-							pushFollow(FOLLOW_type_in_method_declarations13579);
-							type922=type();
+							pushFollow(FOLLOW_type_in_method_declarations13618);
+							type921=type();
 							state._fsp--;
 							if (state.failed) return retval;
-							if ( state.backtracking==0 ) adaptor.addChild(root_0, type922.getTree());
+							if ( state.backtracking==0 ) adaptor.addChild(root_0, type921.getTree());
 
 							}
 							break;
 
 					}
 
-					pushFollow(FOLLOW_method_declaration_in_method_declarations13582);
-					method_declaration923=method_declaration();
+					pushFollow(FOLLOW_method_declaration_in_method_declarations13621);
+					method_declaration922=method_declaration();
 					state._fsp--;
 					if (state.failed) return retval;
-					if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration923.getTree());
+					if ( state.backtracking==0 ) adaptor.addChild(root_0, method_declaration922.getTree());
 
 					}
 					break;
 
 				default :
-					if ( cnt299 >= 1 ) break loop299;
+					if ( cnt300 >= 1 ) break loop300;
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee = new EarlyExitException(299, input);
+					EarlyExitException eee = new EarlyExitException(300, input);
 					throw eee;
 				}
-				cnt299++;
+				cnt300++;
 			}
 
 			}
@@ -35958,12 +36625,12 @@ public class csParser extends Parser {
 		// /Users/jeremie/ANTLR/cs.g:196:4: ( '(' type ')' )
 		// /Users/jeremie/ANTLR/cs.g:196:5: '(' type ')'
 		{
-		match(input,68,FOLLOW_68_in_synpred10_cs2118); if (state.failed) return;
-		pushFollow(FOLLOW_type_in_synpred10_cs2122);
+		match(input,68,FOLLOW_68_in_synpred10_cs2122); if (state.failed) return;
+		pushFollow(FOLLOW_type_in_synpred10_cs2126);
 		type();
 		state._fsp--;
 		if (state.failed) return;
-		match(input,RPAREN,FOLLOW_RPAREN_in_synpred10_cs2126); if (state.failed) return;
+		match(input,RPAREN,FOLLOW_RPAREN_in_synpred10_cs2130); if (state.failed) return;
 		}
 
 	}
@@ -35971,10 +36638,10 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred11_cs
 	public final void synpred11_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:224:2: ( array_creation_expression )
-		// /Users/jeremie/ANTLR/cs.g:224:3: array_creation_expression
+		// /Users/jeremie/ANTLR/cs.g:226:2: ( array_creation_expression )
+		// /Users/jeremie/ANTLR/cs.g:226:3: array_creation_expression
 		{
-		pushFollow(FOLLOW_array_creation_expression_in_synpred11_cs2373);
+		pushFollow(FOLLOW_array_creation_expression_in_synpred11_cs2388);
 		array_creation_expression();
 		state._fsp--;
 		if (state.failed) return;
@@ -35985,8 +36652,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred12_cs
 	public final void synpred12_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:234:11: ( arguments ( '[' | '.' | '->' ) )
-		// /Users/jeremie/ANTLR/cs.g:234:12: arguments ( '[' | '.' | '->' )
+		// /Users/jeremie/ANTLR/cs.g:235:11: ( arguments ( '[' | '.' | '->' ) )
+		// /Users/jeremie/ANTLR/cs.g:235:12: arguments ( '[' | '.' | '->' )
 		{
 		pushFollow(FOLLOW_arguments_in_synpred12_cs2471);
 		arguments();
@@ -36009,8 +36676,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred13_cs
 	public final void synpred13_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:309:20: ( unbound_type_name )
-		// /Users/jeremie/ANTLR/cs.g:309:21: unbound_type_name
+		// /Users/jeremie/ANTLR/cs.g:310:20: ( unbound_type_name )
+		// /Users/jeremie/ANTLR/cs.g:310:21: unbound_type_name
 		{
 		pushFollow(FOLLOW_unbound_type_name_in_synpred13_cs3057);
 		unbound_type_name();
@@ -36023,8 +36690,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred14_cs
 	public final void synpred14_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:319:5: ( generic_dimension_specifier '.' )
-		// /Users/jeremie/ANTLR/cs.g:319:6: generic_dimension_specifier '.'
+		// /Users/jeremie/ANTLR/cs.g:320:5: ( generic_dimension_specifier '.' )
+		// /Users/jeremie/ANTLR/cs.g:320:6: generic_dimension_specifier '.'
 		{
 		pushFollow(FOLLOW_generic_dimension_specifier_in_synpred14_cs3115);
 		generic_dimension_specifier();
@@ -36038,8 +36705,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred15_cs
 	public final void synpred15_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:344:9: ( identifier '<' )
-		// /Users/jeremie/ANTLR/cs.g:344:10: identifier '<'
+		// /Users/jeremie/ANTLR/cs.g:345:9: ( identifier '<' )
+		// /Users/jeremie/ANTLR/cs.g:345:10: identifier '<'
 		{
 		pushFollow(FOLLOW_identifier_in_synpred15_cs3290);
 		identifier();
@@ -36053,8 +36720,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred16_cs
 	public final void synpred16_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:354:4: ( identifier '<' )
-		// /Users/jeremie/ANTLR/cs.g:354:5: identifier '<'
+		// /Users/jeremie/ANTLR/cs.g:355:4: ( identifier '<' )
+		// /Users/jeremie/ANTLR/cs.g:355:5: identifier '<'
 		{
 		pushFollow(FOLLOW_identifier_in_synpred16_cs3366);
 		identifier();
@@ -36068,29 +36735,29 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred17_cs
 	public final void synpred17_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:372:12: ( ( predefined_type | type_name ) rank_specifiers )
-		// /Users/jeremie/ANTLR/cs.g:372:13: ( predefined_type | type_name ) rank_specifiers
+		// /Users/jeremie/ANTLR/cs.g:373:12: ( ( predefined_type | type_name ) rank_specifiers )
+		// /Users/jeremie/ANTLR/cs.g:373:13: ( predefined_type | type_name ) rank_specifiers
 		{
-		// /Users/jeremie/ANTLR/cs.g:372:13: ( predefined_type | type_name )
-		int alt300=2;
-		int LA300_0 = input.LA(1);
-		if ( (LA300_0==103||LA300_0==106||LA300_0==109||LA300_0==114||LA300_0==119||LA300_0==129||LA300_0==138||LA300_0==146||LA300_0==151||LA300_0==169||LA300_0==173||LA300_0==177||(LA300_0 >= 185 && LA300_0 <= 186)||LA300_0==189) ) {
-			alt300=1;
+		// /Users/jeremie/ANTLR/cs.g:373:13: ( predefined_type | type_name )
+		int alt301=2;
+		int LA301_0 = input.LA(1);
+		if ( (LA301_0==103||LA301_0==106||LA301_0==109||LA301_0==114||LA301_0==119||LA301_0==129||LA301_0==138||LA301_0==146||LA301_0==151||LA301_0==169||LA301_0==173||LA301_0==177||(LA301_0 >= 185 && LA301_0 <= 186)||LA301_0==189) ) {
+			alt301=1;
 		}
-		else if ( (LA300_0==IDENTIFIER||LA300_0==95||(LA300_0 >= 97 && LA300_0 <= 98)||(LA300_0 >= 100 && LA300_0 <= 101)||LA300_0==105||LA300_0==117||LA300_0==120||LA300_0==122||LA300_0==126||LA300_0==132||LA300_0==135||LA300_0==141||(LA300_0 >= 143 && LA300_0 <= 144)||(LA300_0 >= 147 && LA300_0 <= 148)||LA300_0==152||LA300_0==154||LA300_0==157||LA300_0==160||LA300_0==162||LA300_0==167||(LA300_0 >= 171 && LA300_0 <= 172)||LA300_0==183||LA300_0==190||LA300_0==194||LA300_0==196) ) {
-			alt300=2;
+		else if ( (LA301_0==IDENTIFIER||LA301_0==95||(LA301_0 >= 97 && LA301_0 <= 98)||(LA301_0 >= 100 && LA301_0 <= 101)||LA301_0==105||LA301_0==117||LA301_0==120||LA301_0==122||LA301_0==126||LA301_0==132||LA301_0==135||LA301_0==141||(LA301_0 >= 143 && LA301_0 <= 144)||(LA301_0 >= 147 && LA301_0 <= 148)||LA301_0==152||LA301_0==154||LA301_0==157||LA301_0==160||LA301_0==162||LA301_0==167||(LA301_0 >= 171 && LA301_0 <= 172)||LA301_0==183||LA301_0==190||LA301_0==194||LA301_0==196) ) {
+			alt301=2;
 		}
 
 		else {
 			if (state.backtracking>0) {state.failed=true; return;}
 			NoViableAltException nvae =
-				new NoViableAltException("", 300, 0, input);
+				new NoViableAltException("", 301, 0, input);
 			throw nvae;
 		}
 
-		switch (alt300) {
+		switch (alt301) {
 			case 1 :
-				// /Users/jeremie/ANTLR/cs.g:372:14: predefined_type
+				// /Users/jeremie/ANTLR/cs.g:373:14: predefined_type
 				{
 				pushFollow(FOLLOW_predefined_type_in_synpred17_cs3494);
 				predefined_type();
@@ -36099,7 +36766,7 @@ public class csParser extends Parser {
 				}
 				break;
 			case 2 :
-				// /Users/jeremie/ANTLR/cs.g:372:32: type_name
+				// /Users/jeremie/ANTLR/cs.g:373:32: type_name
 				{
 				pushFollow(FOLLOW_type_name_in_synpred17_cs3498);
 				type_name();
@@ -36121,29 +36788,29 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred18_cs
 	public final void synpred18_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:373:11: ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )
-		// /Users/jeremie/ANTLR/cs.g:373:12: ( predefined_type | type_name ) ( ( '*' )+ | '?' )
+		// /Users/jeremie/ANTLR/cs.g:374:11: ( ( predefined_type | type_name ) ( ( '*' )+ | '?' ) )
+		// /Users/jeremie/ANTLR/cs.g:374:12: ( predefined_type | type_name ) ( ( '*' )+ | '?' )
 		{
-		// /Users/jeremie/ANTLR/cs.g:373:12: ( predefined_type | type_name )
-		int alt301=2;
-		int LA301_0 = input.LA(1);
-		if ( (LA301_0==103||LA301_0==106||LA301_0==109||LA301_0==114||LA301_0==119||LA301_0==129||LA301_0==138||LA301_0==146||LA301_0==151||LA301_0==169||LA301_0==173||LA301_0==177||(LA301_0 >= 185 && LA301_0 <= 186)||LA301_0==189) ) {
-			alt301=1;
+		// /Users/jeremie/ANTLR/cs.g:374:12: ( predefined_type | type_name )
+		int alt302=2;
+		int LA302_0 = input.LA(1);
+		if ( (LA302_0==103||LA302_0==106||LA302_0==109||LA302_0==114||LA302_0==119||LA302_0==129||LA302_0==138||LA302_0==146||LA302_0==151||LA302_0==169||LA302_0==173||LA302_0==177||(LA302_0 >= 185 && LA302_0 <= 186)||LA302_0==189) ) {
+			alt302=1;
 		}
-		else if ( (LA301_0==IDENTIFIER||LA301_0==95||(LA301_0 >= 97 && LA301_0 <= 98)||(LA301_0 >= 100 && LA301_0 <= 101)||LA301_0==105||LA301_0==117||LA301_0==120||LA301_0==122||LA301_0==126||LA301_0==132||LA301_0==135||LA301_0==141||(LA301_0 >= 143 && LA301_0 <= 144)||(LA301_0 >= 147 && LA301_0 <= 148)||LA301_0==152||LA301_0==154||LA301_0==157||LA301_0==160||LA301_0==162||LA301_0==167||(LA301_0 >= 171 && LA301_0 <= 172)||LA301_0==183||LA301_0==190||LA301_0==194||LA301_0==196) ) {
-			alt301=2;
+		else if ( (LA302_0==IDENTIFIER||LA302_0==95||(LA302_0 >= 97 && LA302_0 <= 98)||(LA302_0 >= 100 && LA302_0 <= 101)||LA302_0==105||LA302_0==117||LA302_0==120||LA302_0==122||LA302_0==126||LA302_0==132||LA302_0==135||LA302_0==141||(LA302_0 >= 143 && LA302_0 <= 144)||(LA302_0 >= 147 && LA302_0 <= 148)||LA302_0==152||LA302_0==154||LA302_0==157||LA302_0==160||LA302_0==162||LA302_0==167||(LA302_0 >= 171 && LA302_0 <= 172)||LA302_0==183||LA302_0==190||LA302_0==194||LA302_0==196) ) {
+			alt302=2;
 		}
 
 		else {
 			if (state.backtracking>0) {state.failed=true; return;}
 			NoViableAltException nvae =
-				new NoViableAltException("", 301, 0, input);
+				new NoViableAltException("", 302, 0, input);
 			throw nvae;
 		}
 
-		switch (alt301) {
+		switch (alt302) {
 			case 1 :
-				// /Users/jeremie/ANTLR/cs.g:373:13: predefined_type
+				// /Users/jeremie/ANTLR/cs.g:374:13: predefined_type
 				{
 				pushFollow(FOLLOW_predefined_type_in_synpred18_cs3536);
 				predefined_type();
@@ -36152,7 +36819,7 @@ public class csParser extends Parser {
 				}
 				break;
 			case 2 :
-				// /Users/jeremie/ANTLR/cs.g:373:31: type_name
+				// /Users/jeremie/ANTLR/cs.g:374:31: type_name
 				{
 				pushFollow(FOLLOW_type_name_in_synpred18_cs3540);
 				type_name();
@@ -36163,58 +36830,58 @@ public class csParser extends Parser {
 
 		}
 
-		// /Users/jeremie/ANTLR/cs.g:373:43: ( ( '*' )+ | '?' )
-		int alt303=2;
-		int LA303_0 = input.LA(1);
-		if ( (LA303_0==69) ) {
-			alt303=1;
+		// /Users/jeremie/ANTLR/cs.g:374:43: ( ( '*' )+ | '?' )
+		int alt304=2;
+		int LA304_0 = input.LA(1);
+		if ( (LA304_0==69) ) {
+			alt304=1;
 		}
-		else if ( (LA303_0==89) ) {
-			alt303=2;
+		else if ( (LA304_0==89) ) {
+			alt304=2;
 		}
 
 		else {
 			if (state.backtracking>0) {state.failed=true; return;}
 			NoViableAltException nvae =
-				new NoViableAltException("", 303, 0, input);
+				new NoViableAltException("", 304, 0, input);
 			throw nvae;
 		}
 
-		switch (alt303) {
+		switch (alt304) {
 			case 1 :
-				// /Users/jeremie/ANTLR/cs.g:373:44: ( '*' )+
+				// /Users/jeremie/ANTLR/cs.g:374:44: ( '*' )+
 				{
-				// /Users/jeremie/ANTLR/cs.g:373:44: ( '*' )+
-				int cnt302=0;
-				loop302:
+				// /Users/jeremie/ANTLR/cs.g:374:44: ( '*' )+
+				int cnt303=0;
+				loop303:
 				while (true) {
-					int alt302=2;
-					int LA302_0 = input.LA(1);
-					if ( (LA302_0==69) ) {
-						alt302=1;
+					int alt303=2;
+					int LA303_0 = input.LA(1);
+					if ( (LA303_0==69) ) {
+						alt303=1;
 					}
 
-					switch (alt302) {
+					switch (alt303) {
 					case 1 :
-						// /Users/jeremie/ANTLR/cs.g:373:44: '*'
+						// /Users/jeremie/ANTLR/cs.g:374:44: '*'
 						{
 						match(input,69,FOLLOW_69_in_synpred18_cs3545); if (state.failed) return;
 						}
 						break;
 
 					default :
-						if ( cnt302 >= 1 ) break loop302;
+						if ( cnt303 >= 1 ) break loop303;
 						if (state.backtracking>0) {state.failed=true; return;}
-						EarlyExitException eee = new EarlyExitException(302, input);
+						EarlyExitException eee = new EarlyExitException(303, input);
 						throw eee;
 					}
-					cnt302++;
+					cnt303++;
 				}
 
 				}
 				break;
 			case 2 :
-				// /Users/jeremie/ANTLR/cs.g:373:51: '?'
+				// /Users/jeremie/ANTLR/cs.g:374:51: '?'
 				{
 				match(input,89,FOLLOW_89_in_synpred18_cs3550); if (state.failed) return;
 				}
@@ -36229,8 +36896,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred19_cs
 	public final void synpred19_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:413:10: ( unary_expression assignment_operator )
-		// /Users/jeremie/ANTLR/cs.g:413:11: unary_expression assignment_operator
+		// /Users/jeremie/ANTLR/cs.g:414:10: ( unary_expression assignment_operator )
+		// /Users/jeremie/ANTLR/cs.g:414:11: unary_expression assignment_operator
 		{
 		pushFollow(FOLLOW_unary_expression_in_synpred19_cs3841);
 		unary_expression();
@@ -36247,8 +36914,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred20_cs
 	public final void synpred20_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:428:2: ( cast_expression )
-		// /Users/jeremie/ANTLR/cs.g:428:3: cast_expression
+		// /Users/jeremie/ANTLR/cs.g:429:2: ( cast_expression )
+		// /Users/jeremie/ANTLR/cs.g:429:3: cast_expression
 		{
 		pushFollow(FOLLOW_cast_expression_in_synpred20_cs3978);
 		cast_expression();
@@ -36261,8 +36928,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred21_cs
 	public final void synpred21_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:455:2: ( anonymous_function_signature '=>' )
-		// /Users/jeremie/ANTLR/cs.g:455:3: anonymous_function_signature '=>'
+		// /Users/jeremie/ANTLR/cs.g:456:2: ( anonymous_function_signature '=>' )
+		// /Users/jeremie/ANTLR/cs.g:456:3: anonymous_function_signature '=>'
 		{
 		pushFollow(FOLLOW_anonymous_function_signature_in_synpred21_cs4207);
 		anonymous_function_signature();
@@ -36276,8 +36943,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred22_cs
 	public final void synpred22_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:456:4: ( query_expression )
-		// /Users/jeremie/ANTLR/cs.g:456:5: query_expression
+		// /Users/jeremie/ANTLR/cs.g:457:4: ( query_expression )
+		// /Users/jeremie/ANTLR/cs.g:457:5: query_expression
 		{
 		pushFollow(FOLLOW_query_expression_in_synpred22_cs4226);
 		query_expression();
@@ -36290,8 +36957,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred23_cs
 	public final void synpred23_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:547:50: ( 'into' )
-		// /Users/jeremie/ANTLR/cs.g:547:51: 'into'
+		// /Users/jeremie/ANTLR/cs.g:548:50: ( 'into' )
+		// /Users/jeremie/ANTLR/cs.g:548:51: 'into'
 		{
 		match(input,141,FOLLOW_141_in_synpred23_cs5028); if (state.failed) return;
 		}
@@ -36301,8 +36968,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred24_cs
 	public final void synpred24_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:617:32: ( ',' identifier '=' )
-		// /Users/jeremie/ANTLR/cs.g:617:33: ',' identifier '='
+		// /Users/jeremie/ANTLR/cs.g:618:32: ( ',' identifier '=' )
+		// /Users/jeremie/ANTLR/cs.g:618:33: ',' identifier '='
 		{
 		match(input,74,FOLLOW_74_in_synpred24_cs5581); if (state.failed) return;
 		pushFollow(FOLLOW_identifier_in_synpred24_cs5585);
@@ -36317,8 +36984,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred25_cs
 	public final void synpred25_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:716:4: ( member_name '{' )
-		// /Users/jeremie/ANTLR/cs.g:716:5: member_name '{'
+		// /Users/jeremie/ANTLR/cs.g:717:4: ( member_name '{' )
+		// /Users/jeremie/ANTLR/cs.g:717:5: member_name '{'
 		{
 		pushFollow(FOLLOW_member_name_in_synpred25_cs6421);
 		member_name();
@@ -36332,8 +36999,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred26_cs
 	public final void synpred26_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:835:14: ( member_name '(' )
-		// /Users/jeremie/ANTLR/cs.g:835:15: member_name '('
+		// /Users/jeremie/ANTLR/cs.g:836:14: ( member_name '(' )
+		// /Users/jeremie/ANTLR/cs.g:836:15: member_name '('
 		{
 		pushFollow(FOLLOW_member_name_in_synpred26_cs7431);
 		member_name();
@@ -36347,8 +37014,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred27_cs
 	public final void synpred27_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:836:14: ( member_name '{' )
-		// /Users/jeremie/ANTLR/cs.g:836:15: member_name '{'
+		// /Users/jeremie/ANTLR/cs.g:837:14: ( member_name '{' )
+		// /Users/jeremie/ANTLR/cs.g:837:15: member_name '{'
 		{
 		pushFollow(FOLLOW_member_name_in_synpred27_cs7456);
 		member_name();
@@ -36362,8 +37029,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred28_cs
 	public final void synpred28_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:887:11: ( member_name '(' )
-		// /Users/jeremie/ANTLR/cs.g:887:12: member_name '('
+		// /Users/jeremie/ANTLR/cs.g:888:11: ( member_name '(' )
+		// /Users/jeremie/ANTLR/cs.g:888:12: member_name '('
 		{
 		pushFollow(FOLLOW_member_name_in_synpred28_cs7904);
 		member_name();
@@ -36377,8 +37044,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred29_cs
 	public final void synpred29_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:888:8: ( member_name '{' )
-		// /Users/jeremie/ANTLR/cs.g:888:9: member_name '{'
+		// /Users/jeremie/ANTLR/cs.g:889:8: ( member_name '{' )
+		// /Users/jeremie/ANTLR/cs.g:889:9: member_name '{'
 		{
 		pushFollow(FOLLOW_member_name_in_synpred29_cs7923);
 		member_name();
@@ -36392,8 +37059,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred30_cs
 	public final void synpred30_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:889:8: ( member_name '.' 'this' )
-		// /Users/jeremie/ANTLR/cs.g:889:9: member_name '.' 'this'
+		// /Users/jeremie/ANTLR/cs.g:890:8: ( member_name '.' 'this' )
+		// /Users/jeremie/ANTLR/cs.g:890:9: member_name '.' 'this'
 		{
 		pushFollow(FOLLOW_member_name_in_synpred30_cs7942);
 		member_name();
@@ -36408,8 +37075,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred31_cs
 	public final void synpred31_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:961:23: ( arguments ( '[' | '.' | '->' ) )
-		// /Users/jeremie/ANTLR/cs.g:961:24: arguments ( '[' | '.' | '->' )
+		// /Users/jeremie/ANTLR/cs.g:962:23: ( arguments ( '[' | '.' | '->' ) )
+		// /Users/jeremie/ANTLR/cs.g:962:24: arguments ( '[' | '.' | '->' )
 		{
 		pushFollow(FOLLOW_arguments_in_synpred31_cs8496);
 		arguments();
@@ -36432,8 +37099,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred32_cs
 	public final void synpred32_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:965:4: ( identifier '<' )
-		// /Users/jeremie/ANTLR/cs.g:965:5: identifier '<'
+		// /Users/jeremie/ANTLR/cs.g:966:4: ( identifier '<' )
+		// /Users/jeremie/ANTLR/cs.g:966:5: identifier '<'
 		{
 		pushFollow(FOLLOW_identifier_in_synpred32_cs8547);
 		identifier();
@@ -36447,8 +37114,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred33_cs
 	public final void synpred33_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:979:9: ( declaration_statement )
-		// /Users/jeremie/ANTLR/cs.g:979:10: declaration_statement
+		// /Users/jeremie/ANTLR/cs.g:980:9: ( declaration_statement )
+		// /Users/jeremie/ANTLR/cs.g:980:10: declaration_statement
 		{
 		pushFollow(FOLLOW_declaration_statement_in_synpred33_cs8646);
 		declaration_statement();
@@ -36461,8 +37128,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred34_cs
 	public final void synpred34_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:980:11: ( identifier ':' )
-		// /Users/jeremie/ANTLR/cs.g:980:12: identifier ':'
+		// /Users/jeremie/ANTLR/cs.g:981:11: ( identifier ':' )
+		// /Users/jeremie/ANTLR/cs.g:981:12: identifier ':'
 		{
 		pushFollow(FOLLOW_identifier_in_synpred34_cs8668);
 		identifier();
@@ -36476,8 +37143,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred35_cs
 	public final void synpred35_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:1024:9: ( 'var' )
-		// /Users/jeremie/ANTLR/cs.g:1024:10: 'var'
+		// /Users/jeremie/ANTLR/cs.g:1025:9: ( 'var' )
+		// /Users/jeremie/ANTLR/cs.g:1025:10: 'var'
 		{
 		match(input,190,FOLLOW_190_in_synpred35_cs9222); if (state.failed) return;
 		}
@@ -36487,8 +37154,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred36_cs
 	public final void synpred36_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:1025:11: ( 'dynamic' )
-		// /Users/jeremie/ANTLR/cs.g:1025:12: 'dynamic'
+		// /Users/jeremie/ANTLR/cs.g:1026:11: ( 'dynamic' )
+		// /Users/jeremie/ANTLR/cs.g:1026:12: 'dynamic'
 		{
 		match(input,120,FOLLOW_120_in_synpred36_cs9244); if (state.failed) return;
 		}
@@ -36498,8 +37165,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred37_cs
 	public final void synpred37_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:1057:66: ( 'else' )
-		// /Users/jeremie/ANTLR/cs.g:1057:67: 'else'
+		// /Users/jeremie/ANTLR/cs.g:1058:66: ( 'else' )
+		// /Users/jeremie/ANTLR/cs.g:1058:67: 'else'
 		{
 		match(input,121,FOLLOW_121_in_synpred37_cs9616); if (state.failed) return;
 		}
@@ -36509,8 +37176,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred38_cs
 	public final void synpred38_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:1091:2: ( local_variable_declaration )
-		// /Users/jeremie/ANTLR/cs.g:1091:3: local_variable_declaration
+		// /Users/jeremie/ANTLR/cs.g:1092:2: ( local_variable_declaration )
+		// /Users/jeremie/ANTLR/cs.g:1092:3: local_variable_declaration
 		{
 		pushFollow(FOLLOW_local_variable_declaration_in_synpred38_cs9973);
 		local_variable_declaration();
@@ -36523,8 +37190,8 @@ public class csParser extends Parser {
 
 	// $ANTLR start synpred39_cs
 	public final void synpred39_cs_fragment() throws RecognitionException {
-		// /Users/jeremie/ANTLR/cs.g:1157:2: ( local_variable_declaration )
-		// /Users/jeremie/ANTLR/cs.g:1157:3: local_variable_declaration
+		// /Users/jeremie/ANTLR/cs.g:1158:2: ( local_variable_declaration )
+		// /Users/jeremie/ANTLR/cs.g:1158:3: local_variable_declaration
 		{
 		pushFollow(FOLLOW_local_variable_declaration_in_synpred39_cs10593);
 		local_variable_declaration();
@@ -37156,7 +37823,7 @@ public class csParser extends Parser {
 		}
 		@Override
 		public String getDescription() {
-			return "232:6: ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )";
+			return "233:6: ( ( rank_specifiers )? ( array_initializer )? | ( ( ( arguments ( '[' | '.' | '->' ) )=> arguments invocation_part ) | invocation_part )* arguments )";
 		}
 	}
 
@@ -37253,7 +37920,7 @@ public class csParser extends Parser {
 		}
 		@Override
 		public String getDescription() {
-			return "309:19: ( ( unbound_type_name )=> unbound_type_name | type | 'void' )";
+			return "310:19: ( ( unbound_type_name )=> unbound_type_name | type | 'void' )";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -37363,7 +38030,7 @@ public class csParser extends Parser {
 		}
 		@Override
 		public String getDescription() {
-			return "()* loopback of 319:3: ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )*";
+			return "()* loopback of 320:3: ( ( ( generic_dimension_specifier '.' )=> generic_dimension_specifier unbound_type_name_part ) | unbound_type_name_part )*";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -37491,74 +38158,74 @@ public class csParser extends Parser {
 	public static final BitSet FOLLOW_predefined_type_in_primary_expression_start1759 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_identifier_in_primary_expression_start1789 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
 	public static final BitSet FOLLOW_generic_argument_list_in_primary_expression_start1793 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_identifier_in_primary_expression_start1798 = new BitSet(new long[]{0x0000000000000002L,0x0000000000010000L});
-	public static final BitSet FOLLOW_80_in_primary_expression_start1801 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
-	public static final BitSet FOLLOW_identifier_in_primary_expression_start1805 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_180_in_primary_expression_start1812 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_102_in_primary_expression_start1818 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_paren_expression_in_primary_expression_start1825 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_typeof_expression_in_primary_expression_start1831 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_literal_in_primary_expression_start1851 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_access_identifier_in_primary_expression_part1875 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_brackets_or_arguments_in_primary_expression_part1880 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_access_operator_in_access_identifier1888 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
-	public static final BitSet FOLLOW_type_or_generic_in_access_identifier1892 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_brackets_in_brackets_or_arguments1914 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_arguments_in_brackets_or_arguments1918 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_91_in_brackets1926 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6900009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_expression_list_in_brackets1930 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
-	public static final BitSet FOLLOW_92_in_brackets1935 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_68_in_paren_expression1949 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_expression_in_paren_expression1955 = new BitSet(new long[]{0x0000800000000000L});
-	public static final BitSet FOLLOW_RPAREN_in_paren_expression1959 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_68_in_arguments1969 = new BitSet(new long[]{0x2429801C0C100020L,0x45BC66F6800009B4L,0x6F927AC52DDDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_argument_list_in_arguments1973 = new BitSet(new long[]{0x0000800000000000L});
-	public static final BitSet FOLLOW_RPAREN_in_arguments1978 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_argument_in_argument_list2002 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-	public static final BitSet FOLLOW_74_in_argument_list2007 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927AC52DDDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_argument_in_argument_list2011 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-	public static final BitSet FOLLOW_argument_name_in_argument2038 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927AC52DDDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_argument_value_in_argument2042 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_argument_value_in_argument2050 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_identifier_in_argument_name2058 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_79_in_argument_name2062 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expression_in_argument_value2086 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ref_variable_reference_in_argument_value2093 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_155_in_argument_value2099 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_variable_reference_in_argument_value2103 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_166_in_ref_variable_reference2111 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_68_in_ref_variable_reference2133 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
-	public static final BitSet FOLLOW_type_in_ref_variable_reference2137 = new BitSet(new long[]{0x0000800000000000L});
-	public static final BitSet FOLLOW_RPAREN_in_ref_variable_reference2141 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927AC525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_ref_variable_reference_in_ref_variable_reference2146 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variable_reference_in_ref_variable_reference2150 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variable_reference_in_ref_variable_reference2186 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expression_in_variable_reference2196 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_rank_specifier_in_rank_specifiers2204 = new BitSet(new long[]{0x0000000000000002L,0x0000000008000000L});
-	public static final BitSet FOLLOW_91_in_rank_specifier2222 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000400L});
-	public static final BitSet FOLLOW_dim_separators_in_rank_specifier2226 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
-	public static final BitSet FOLLOW_92_in_rank_specifier2231 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_74_in_dim_separators2240 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-	public static final BitSet FOLLOW_type_name_in_delegate_creation_expression2253 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-	public static final BitSet FOLLOW_68_in_delegate_creation_expression2257 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
-	public static final BitSet FOLLOW_type_name_in_delegate_creation_expression2261 = new BitSet(new long[]{0x0000800000000000L});
-	public static final BitSet FOLLOW_RPAREN_in_delegate_creation_expression2265 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_anonymous_object_initializer_in_anonymous_object_creation_expression2276 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_197_in_anonymous_object_initializer2285 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000400L,0x408018852519A090L,0x0000000000000214L});
-	public static final BitSet FOLLOW_member_declarator_list_in_anonymous_object_initializer2289 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L,0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_74_in_anonymous_object_initializer2294 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_201_in_anonymous_object_initializer2299 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_member_declarator_in_member_declarator_list2307 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-	public static final BitSet FOLLOW_74_in_member_declarator_list2311 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
-	public static final BitSet FOLLOW_member_declarator_in_member_declarator_list2313 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-	public static final BitSet FOLLOW_identifier_in_member_declarator2325 = new BitSet(new long[]{0x0000000000000400L,0x0000000000220000L});
-	public static final BitSet FOLLOW_generic_argument_list_in_member_declarator2330 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DOT_in_member_declarator2340 = new BitSet(new long[]{0x042900180C100020L,0x45BC66F680000010L,0x6F927A8525DDA492L,0x0000000000000014L});
-	public static final BitSet FOLLOW_primary_or_array_creation_expression_in_member_declarator2344 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_85_in_member_declarator2354 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_expression_in_member_declarator2358 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_array_creation_expression_in_primary_or_array_creation_expression2380 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_primary_expression_in_primary_or_array_creation_expression2389 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_identifier_in_primary_expression_start1800 = new BitSet(new long[]{0x0000000000000002L,0x0000000000010000L});
+	public static final BitSet FOLLOW_80_in_primary_expression_start1803 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
+	public static final BitSet FOLLOW_identifier_in_primary_expression_start1807 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_180_in_primary_expression_start1816 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_102_in_primary_expression_start1822 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_paren_expression_in_primary_expression_start1829 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_typeof_expression_in_primary_expression_start1835 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_literal_in_primary_expression_start1855 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_access_identifier_in_primary_expression_part1879 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_brackets_or_arguments_in_primary_expression_part1884 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_access_operator_in_access_identifier1892 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
+	public static final BitSet FOLLOW_type_or_generic_in_access_identifier1896 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_brackets_in_brackets_or_arguments1918 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_arguments_in_brackets_or_arguments1922 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_91_in_brackets1930 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6900009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_expression_list_in_brackets1934 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+	public static final BitSet FOLLOW_92_in_brackets1939 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_68_in_paren_expression1953 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_expression_in_paren_expression1959 = new BitSet(new long[]{0x0000800000000000L});
+	public static final BitSet FOLLOW_RPAREN_in_paren_expression1963 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_68_in_arguments1973 = new BitSet(new long[]{0x2429801C0C100020L,0x45BC66F6800009B4L,0x6F927AC52DDDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_argument_list_in_arguments1977 = new BitSet(new long[]{0x0000800000000000L});
+	public static final BitSet FOLLOW_RPAREN_in_arguments1982 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_argument_in_argument_list2006 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+	public static final BitSet FOLLOW_74_in_argument_list2011 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927AC52DDDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_argument_in_argument_list2015 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+	public static final BitSet FOLLOW_argument_name_in_argument2042 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927AC52DDDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_argument_value_in_argument2046 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_argument_value_in_argument2054 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_identifier_in_argument_name2062 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+	public static final BitSet FOLLOW_79_in_argument_name2066 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expression_in_argument_value2090 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ref_variable_reference_in_argument_value2097 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_155_in_argument_value2103 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_variable_reference_in_argument_value2107 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_166_in_ref_variable_reference2115 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_68_in_ref_variable_reference2137 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
+	public static final BitSet FOLLOW_type_in_ref_variable_reference2141 = new BitSet(new long[]{0x0000800000000000L});
+	public static final BitSet FOLLOW_RPAREN_in_ref_variable_reference2145 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927AC525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_ref_variable_reference_in_ref_variable_reference2150 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_variable_reference_in_ref_variable_reference2154 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_variable_reference_in_ref_variable_reference2190 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expression_in_variable_reference2200 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_rank_specifier_in_rank_specifiers2208 = new BitSet(new long[]{0x0000000000000002L,0x0000000008000000L});
+	public static final BitSet FOLLOW_91_in_rank_specifier2226 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000400L});
+	public static final BitSet FOLLOW_dim_separators_in_rank_specifier2230 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+	public static final BitSet FOLLOW_92_in_rank_specifier2235 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_74_in_dim_separators2244 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+	public static final BitSet FOLLOW_type_name_in_delegate_creation_expression2257 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+	public static final BitSet FOLLOW_68_in_delegate_creation_expression2261 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
+	public static final BitSet FOLLOW_type_name_in_delegate_creation_expression2265 = new BitSet(new long[]{0x0000800000000000L});
+	public static final BitSet FOLLOW_RPAREN_in_delegate_creation_expression2269 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_anonymous_object_initializer_in_anonymous_object_creation_expression2280 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_197_in_anonymous_object_initializer2289 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000400L,0x408018852519A090L,0x0000000000000214L});
+	public static final BitSet FOLLOW_member_declarator_list_in_anonymous_object_initializer2293 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L,0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_74_in_anonymous_object_initializer2298 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_201_in_anonymous_object_initializer2303 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_member_declarator_in_member_declarator_list2311 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+	public static final BitSet FOLLOW_74_in_member_declarator_list2315 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
+	public static final BitSet FOLLOW_member_declarator_in_member_declarator_list2317 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+	public static final BitSet FOLLOW_identifier_in_member_declarator2329 = new BitSet(new long[]{0x0000000000000400L,0x0000000000220000L});
+	public static final BitSet FOLLOW_generic_argument_list_in_member_declarator2334 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DOT_in_member_declarator2344 = new BitSet(new long[]{0x042900180C100020L,0x45BC66F680000010L,0x6F927A8525DDA492L,0x0000000000000014L});
+	public static final BitSet FOLLOW_primary_or_array_creation_expression_in_member_declarator2348 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_85_in_member_declarator2358 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_expression_in_member_declarator2362 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_array_creation_expression_in_primary_or_array_creation_expression2393 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_primary_expression_in_primary_or_array_creation_expression2400 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_150_in_array_creation_expression2412 = new BitSet(new long[]{0x0000000008000000L,0x45A426B688000000L,0x66823A85259DA492L,0x0000000000000015L});
 	public static final BitSet FOLLOW_type_in_array_creation_expression2420 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L,0x0000000000000000L,0x0000000000000020L});
 	public static final BitSet FOLLOW_91_in_array_creation_expression2425 = new BitSet(new long[]{0x2429001C0C100020L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
@@ -38462,39 +39129,48 @@ public class csParser extends Parser {
 	public static final BitSet FOLLOW_SEMI_in_yield_statement10634 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_104_in_yield_statement10649 = new BitSet(new long[]{0x0004000000000000L});
 	public static final BitSet FOLLOW_SEMI_in_yield_statement10653 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_assignment_in_assignment_list13379 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_assignment_list13381 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_attributes_in_field_declarations13392 = new BitSet(new long[]{0x0000000008000000L,0x65A426B780000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
-	public static final BitSet FOLLOW_modifiers_in_field_declarations13397 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
-	public static final BitSet FOLLOW_type_in_field_declarations13402 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
-	public static final BitSet FOLLOW_field_declaration_in_field_declarations13406 = new BitSet(new long[]{0x0000000008000002L,0x65A426B788000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
-	public static final BitSet FOLLOW_attributes_in_property_declaration_list13417 = new BitSet(new long[]{0x0000000008000000L,0x65A426B780000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
-	public static final BitSet FOLLOW_modifiers_in_property_declaration_list13422 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
-	public static final BitSet FOLLOW_type_in_property_declaration_list13427 = new BitSet(new long[]{0x042900180C100020L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000014L});
-	public static final BitSet FOLLOW_property_declaration_in_property_declaration_list13431 = new BitSet(new long[]{0x0000000008000002L,0x65A426B788000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
-	public static final BitSet FOLLOW_constant_declaration_in_constant_declarations13441 = new BitSet(new long[]{0x0000000000000002L,0x0001000000000000L});
-	public static final BitSet FOLLOW_literal_in_literals13449 = new BitSet(new long[]{0x0429001804100022L});
-	public static final BitSet FOLLOW_attributes_in_delegate_declaration_list13459 = new BitSet(new long[]{0x0000000000000000L,0x2010000100000000L,0x9001043A10401000L,0x0000000000000002L});
-	public static final BitSet FOLLOW_modifiers_in_delegate_declaration_list13464 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_delegate_declaration_in_delegate_declaration_list13469 = new BitSet(new long[]{0x0000000000000002L,0x2010000108000000L,0x9001043A10401000L,0x0000000000000002L});
-	public static final BitSet FOLLOW_local_variable_declaration_in_local_variable_declaration_list13480 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_local_variable_declaration_list13482 = new BitSet(new long[]{0x0000000008000002L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
-	public static final BitSet FOLLOW_local_variable_initializer_in_local_variable_initializer_list13493 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_local_variable_initializer_list13495 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F92FA8525DDA492L,0x0000000000000434L});
-	public static final BitSet FOLLOW_expression_in_expression_list_test13506 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_expression_list_test13508 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_unary_expression_in_unary_expression_list13519 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_unary_expression_list13521 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_invocation_expression_in_invocation_expression_list13532 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_invocation_expression_list13534 = new BitSet(new long[]{0x0000000008000002L,0x45A426F680000000L,0x67923A85259DA492L,0x0000000000000014L});
-	public static final BitSet FOLLOW_primary_expression_in_primary_expression_list13545 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_primary_expression_list13547 = new BitSet(new long[]{0x042900180C100022L,0x45BC66F680000010L,0x6F927A8525DDA492L,0x0000000000000014L});
-	public static final BitSet FOLLOW_non_assignment_expression_in_non_assignment_expression_list13558 = new BitSet(new long[]{0x0004000000000000L});
-	public static final BitSet FOLLOW_SEMI_in_non_assignment_expression_list13560 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
-	public static final BitSet FOLLOW_modifiers_in_method_declarations13571 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
-	public static final BitSet FOLLOW_192_in_method_declarations13575 = new BitSet(new long[]{0x042900180C100020L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000014L});
-	public static final BitSet FOLLOW_type_in_method_declarations13579 = new BitSet(new long[]{0x042900180C100020L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000014L});
-	public static final BitSet FOLLOW_method_declaration_in_method_declarations13582 = new BitSet(new long[]{0x0000000008000002L,0x65A426B780000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
+	public static final BitSet FOLLOW_Real_literal_in_literal11357 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_NUMBER_in_literal11366 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Hex_number_in_literal11376 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Character_literal_in_literal11386 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRINGLITERAL_in_literal11396 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Verbatim_string_literal_in_literal11406 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TRUE_in_literal11416 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FALSE_in_literal11426 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_NULL_in_literal11436 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_assignment_in_assignment_list13418 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_assignment_list13420 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_attributes_in_field_declarations13431 = new BitSet(new long[]{0x0000000008000000L,0x65A426B780000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
+	public static final BitSet FOLLOW_modifiers_in_field_declarations13436 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
+	public static final BitSet FOLLOW_type_in_field_declarations13441 = new BitSet(new long[]{0x0000000008000000L,0x4520023680000000L,0x408018852519A090L,0x0000000000000014L});
+	public static final BitSet FOLLOW_field_declaration_in_field_declarations13445 = new BitSet(new long[]{0x0000000008000002L,0x65A426B788000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
+	public static final BitSet FOLLOW_attributes_in_property_declaration_list13456 = new BitSet(new long[]{0x0000000008000000L,0x65A426B780000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
+	public static final BitSet FOLLOW_modifiers_in_property_declaration_list13461 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
+	public static final BitSet FOLLOW_type_in_property_declaration_list13466 = new BitSet(new long[]{0x042900180C100020L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000014L});
+	public static final BitSet FOLLOW_property_declaration_in_property_declaration_list13470 = new BitSet(new long[]{0x0000000008000002L,0x65A426B788000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
+	public static final BitSet FOLLOW_constant_declaration_in_constant_declarations13480 = new BitSet(new long[]{0x0000000000000002L,0x0001000000000000L});
+	public static final BitSet FOLLOW_literal_in_literals13488 = new BitSet(new long[]{0x0429001804100022L});
+	public static final BitSet FOLLOW_attributes_in_delegate_declaration_list13498 = new BitSet(new long[]{0x0000000000000000L,0x2010000100000000L,0x9001043A10401000L,0x0000000000000002L});
+	public static final BitSet FOLLOW_modifiers_in_delegate_declaration_list13503 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
+	public static final BitSet FOLLOW_delegate_declaration_in_delegate_declaration_list13508 = new BitSet(new long[]{0x0000000000000002L,0x2010000108000000L,0x9001043A10401000L,0x0000000000000002L});
+	public static final BitSet FOLLOW_local_variable_declaration_in_local_variable_declaration_list13519 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_local_variable_declaration_list13521 = new BitSet(new long[]{0x0000000008000002L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
+	public static final BitSet FOLLOW_local_variable_initializer_in_local_variable_initializer_list13532 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_local_variable_initializer_list13534 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F92FA8525DDA492L,0x0000000000000434L});
+	public static final BitSet FOLLOW_expression_in_expression_list_test13545 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_expression_list_test13547 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_unary_expression_in_unary_expression_list13558 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_unary_expression_list13560 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_invocation_expression_in_invocation_expression_list13571 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_invocation_expression_list13573 = new BitSet(new long[]{0x0000000008000002L,0x45A426F680000000L,0x67923A85259DA492L,0x0000000000000014L});
+	public static final BitSet FOLLOW_primary_expression_in_primary_expression_list13584 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_primary_expression_list13586 = new BitSet(new long[]{0x042900180C100022L,0x45BC66F680000010L,0x6F927A8525DDA492L,0x0000000000000014L});
+	public static final BitSet FOLLOW_non_assignment_expression_in_non_assignment_expression_list13597 = new BitSet(new long[]{0x0004000000000000L});
+	public static final BitSet FOLLOW_SEMI_in_non_assignment_expression_list13599 = new BitSet(new long[]{0x2429001C0C100022L,0x45BC66F6800009B4L,0x6F927A8525DDA492L,0x0000000000000414L});
+	public static final BitSet FOLLOW_modifiers_in_method_declarations13610 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
+	public static final BitSet FOLLOW_192_in_method_declarations13614 = new BitSet(new long[]{0x042900180C100020L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000014L});
+	public static final BitSet FOLLOW_type_in_method_declarations13618 = new BitSet(new long[]{0x042900180C100020L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000014L});
+	public static final BitSet FOLLOW_method_declaration_in_method_declarations13621 = new BitSet(new long[]{0x0000000008000002L,0x65A426B780000000L,0xF6833EBF35DDB492L,0x0000000000000017L});
 	public static final BitSet FOLLOW_159_in_synpred1_cs490 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_member_name_in_synpred2_cs1070 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
 	public static final BitSet FOLLOW_68_in_synpred2_cs1074 = new BitSet(new long[]{0x0000000000000002L});
@@ -38512,10 +39188,10 @@ public class csParser extends Parser {
 	public static final BitSet FOLLOW_delegate_creation_expression_in_synpred8_cs1635 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_identifier_in_synpred9_cs1779 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
 	public static final BitSet FOLLOW_81_in_synpred9_cs1784 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_68_in_synpred10_cs2118 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
-	public static final BitSet FOLLOW_type_in_synpred10_cs2122 = new BitSet(new long[]{0x0000800000000000L});
-	public static final BitSet FOLLOW_RPAREN_in_synpred10_cs2126 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_array_creation_expression_in_synpred11_cs2373 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_68_in_synpred10_cs2122 = new BitSet(new long[]{0x0000000008000000L,0x45A426B680000000L,0x66823A85259DA492L,0x0000000000000015L});
+	public static final BitSet FOLLOW_type_in_synpred10_cs2126 = new BitSet(new long[]{0x0000800000000000L});
+	public static final BitSet FOLLOW_RPAREN_in_synpred10_cs2130 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_array_creation_expression_in_synpred11_cs2388 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arguments_in_synpred12_cs2471 = new BitSet(new long[]{0x0000200000000400L,0x0000000008000000L});
 	public static final BitSet FOLLOW_set_in_synpred12_cs2475 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_unbound_type_name_in_synpred13_cs3057 = new BitSet(new long[]{0x0000000000000002L});

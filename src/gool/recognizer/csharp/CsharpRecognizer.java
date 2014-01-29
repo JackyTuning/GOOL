@@ -35,8 +35,16 @@ import gool.parser.csharp.CsharpVisitor;
 import gool.parser.csharp.csLexer;
 import gool.parser.csharp.csParser;
 import gool.parser.csharp.csParser.compilation_unit_return;
+import gool.parser.csharp.ast.Bool;
+import gool.parser.csharp.ast.Character_literal;
 import gool.parser.csharp.ast.CsharpNode;
+import gool.parser.csharp.ast.Hex_number;
+import gool.parser.csharp.ast.NULL;
+import gool.parser.csharp.ast.NUMBER;
+import gool.parser.csharp.ast.Real_literal;
+import gool.parser.csharp.ast.STRINGLITERAL;
 import gool.parser.csharp.ast.UnknownNode;
+import gool.parser.csharp.ast.Verbatim_string_literal;
 import gool.parser.csharp.ast.argument;
 import gool.parser.csharp.ast.argument_list;
 import gool.parser.csharp.ast.assignment;
@@ -674,6 +682,56 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_primary_or_array_creation_expression(
 			primary_or_array_creation_expression primary_or_array_creation_expression) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_STRINGLITERAL(STRINGLITERAL stringstringliteral) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_Real_literal(Real_literal Real_literal) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_NUMBER(NUMBER number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_NULL(NULL null1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_Hex_number(Hex_number hex_number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_Character_literal(
+			Character_literal character_Character_literal) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_Bool(Bool bool) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit_Verbatim_string_literal(
+			Verbatim_string_literal verbatim_string_literal) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -128,6 +128,25 @@ public interface CsharpVisitor {
 
 	public Object visit_primary_or_array_creation_expression(
 			primary_or_array_creation_expression primary_or_array_creation_expression);
+
+	public Object visit_STRINGLITERAL(STRINGLITERAL stringstringliteral);
+
+	public Object visit_Real_literal(Real_literal Real_literal);
+
+	public Object visit_NUMBER(NUMBER number);
+
+	public Object visit_NULL(NULL null1);
+
+	public Object visit_Hex_number(Hex_number hex_number);
+
+	public Object visit_Character_literal(
+			Character_literal character_Character_literal);
+
+	public Object visit_Bool(Bool bool);
+
+	public Object visit_Verbatim_string_literal(
+			Verbatim_string_literal verbatim_string_literal);
+	
 	
 	
 	
