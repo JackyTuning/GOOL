@@ -77,7 +77,6 @@ import gool.parser.csharp.ast.operator;
 import gool.parser.csharp.ast.predefined_type;
 import gool.parser.csharp.ast.primary_expression;
 import gool.parser.csharp.ast.primary_expression_new;
-import gool.parser.csharp.ast.primary_or_array_creation_expression;
 import gool.parser.csharp.ast.qid;
 import gool.parser.csharp.ast.return_statement;
 import gool.parser.csharp.ast.statement;
@@ -580,12 +579,13 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_unary_expression(unary_expression o) {
-		try {
+		/*try {
 			Integer i = Integer.parseInt(o.toString());
 			return new Constant(TypeString.INSTANCE, i);
 		} catch (NumberFormatException e){
 			return new VarAccess(new VarDeclaration(TypeString.INSTANCE,o.toString()));
-		}
+		}*/
+		return o.getUnary_expression();
 	}
 	@Override
 	public Object visit_UnknwnNode(UnknownNode unknowNode) {
@@ -640,40 +640,30 @@ public class CsharpRecognizer implements CsharpVisitor {
 	}
 
 	@Override
-	public Object visit_literal(literal literal) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object visit_literal(literal o) {
+		return new Constant( null /* JB AU BOULOT*/, o.toString());
 	}
 
 	@Override
 	public Object visit_object_creation_expression(
-			object_creation_expression object_creation_expression) {
-		// TODO Auto-generated method stub
-		return null;
+			object_creation_expression o) {
+		return new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
-	public Object visit_predefined_type(predefined_type predefined_type) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object visit_predefined_type(predefined_type o) {
+		return new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
 	public Object visit_primary_expression_new(
-			primary_expression_new primary_expression_new) {
+			primary_expression_new o) {
 		// TODO Auto-generated method stub
-		return null;
+		return new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
 	public Object visit_primary_expression(primary_expression primary_expression) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object visit_primary_or_array_creation_expression(
-			primary_or_array_creation_expression primary_or_array_creation_expression) {
 		// TODO Auto-generated method stub
 		return null;
 	}

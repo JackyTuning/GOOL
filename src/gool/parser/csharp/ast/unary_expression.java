@@ -25,4 +25,9 @@ public class unary_expression extends expression {
 						+ (unary_expression != null ? unary_expression.toStringTree(tab+1) : "");			
 	}
 
+
+	public expression getUnary_expression() {
+		return unary_expression;
+	}
+
 }

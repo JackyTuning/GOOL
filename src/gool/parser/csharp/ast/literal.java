@@ -10,11 +10,17 @@ public class literal extends CsharpNode{
 
 	private CommonTree tree;
 	String code;
+	private literaltype type;
 	
-	public literal(CommonTree root_0) {
+	public enum literaltype {
+		Real_literal, NUMBER, Hex_number, Character_literal, STRINGLITERAL, Verbatim_string_literal, Bool, NULL;
+	}
+	
+	public literal(CommonTree root_0, literaltype t) {
 		TreeAdaptor adaptor = new CommonTreeAdaptor();
 		tree =  (CommonTree) adaptor.dupTree(root_0);
 		code = tree.toStringTree();	
+		type = t;
 		
 	}
 	
@@ -24,7 +30,7 @@ public class literal extends CsharpNode{
 
 	@Override
 	public String toStringTree(int tab) {
-		return nbTab(tab) + "literal\n" 
+		return nbTab(tab) + type.toString() +"\n"
 				+ nbTab(tab+1) +  code +"\n";
 	}
 }

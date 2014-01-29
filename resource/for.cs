@@ -15,7 +15,7 @@ class Test {
     private static void Main() {
     		int j = 0;
 				int k;
-				k = 0;
+				k = "0";
         for (int i = 0; i <= 5000; i++) {
 							j = addition(1,2);
 							if(j<=2500)

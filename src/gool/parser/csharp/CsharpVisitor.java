@@ -126,10 +126,4 @@ public interface CsharpVisitor {
 
 	public Object visit_primary_expression(primary_expression primary_expression);
 
-	public Object visit_primary_or_array_creation_expression(
-			primary_or_array_creation_expression primary_or_array_creation_expression);
-	
-	
-	
-
 }
