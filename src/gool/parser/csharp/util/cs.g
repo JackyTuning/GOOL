@@ -135,7 +135,7 @@ primary_expression  returns [expression t]
 				// try the simple one first, this has no argS and no expressions
 				// symantically could be object creation
 				| (delegate_creation_expression) => delegate_creation_expression// new FooDelegate (MyFunction)
-				| object_creation_expression
+				| e=object_creation_expression {res = new primary_expression_new($e.t);}
 				| anonymous_object_creation_expression)							// new {int X, string Y} 
 	| sizeof_expression						// sizeof (struct)
 	| checked_expression            		// checked (...

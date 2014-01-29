@@ -10,7 +10,7 @@ import org.antlr.runtime.tree.Tree;
 
 public class CsharpParserTest  {
     public static void main(String[] args) throws Exception {
-    	String filename = "resource/for.cs";
+    	String filename = "resource/new.cs";
     	CharStream cs = new ANTLRFileStream(filename);
     	csLexer lexer = new csLexer(cs);
     	CommonTokenStream token = new CommonTokenStream(lexer);
