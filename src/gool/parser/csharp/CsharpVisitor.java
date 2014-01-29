@@ -107,6 +107,8 @@ public interface CsharpVisitor {
 
 	public Object visit_local_variable_declarator(
 			local_variable_declarator local_variable_declarator);
+
+	public Object visit_fixed_parameter(fixed_parameter fixed_parameter);
 	
 	
 

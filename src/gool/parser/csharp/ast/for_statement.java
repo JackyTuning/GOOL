@@ -4,10 +4,10 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class for_statement extends statement{
 
-	public CsharpNode for_initializer;
-	public expression for_condition;
-	public CsharpNode for_iterator;
-	public statement embedded_statement;
+	 CsharpNode for_initializer;
+	 expression for_condition;
+	 CsharpNode for_iterator;
+	 statement embedded_statement;
 	
 	public for_statement(CsharpNode for_initializer, expression for_condition, CsharpNode for_iterator, statement embedded_statement) {
 		super();
@@ -34,6 +34,23 @@ public class for_statement extends statement{
 		 		+ (embedded_statement != null ? embedded_statement.toStringTree(tab + 1) : "")
 		 		;
 	}
+
+	public CsharpNode getFor_initializer() {
+		return for_initializer;
+	}
+
+	public expression getFor_condition() {
+		return for_condition;
+	}
+
+	public CsharpNode getFor_iterator() {
+		return for_iterator;
+	}
+
+	public statement getEmbedded_statement() {
+		return embedded_statement;
+	}
+	
 	
 
 }

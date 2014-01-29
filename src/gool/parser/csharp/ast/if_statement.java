@@ -4,9 +4,9 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class if_statement extends statement{
 
-	public expression boolean_expression;
-	public statement embedded_statement;
-	public statement else_statement;
+	 expression boolean_expression;
+	 statement embedded_statement;
+	 statement else_statement;
 	
 	public if_statement(expression boolean_expression, statement embedded_statement, statement else_statement) {
 		super();
@@ -31,6 +31,18 @@ public class if_statement extends statement{
 		 		+ (else_statement != null ? else_statement.toStringTree(tab + 1) : "")
 		 		;
 	}
-	
 
+	public expression getBoolean_expression() {
+		return boolean_expression;
+	}
+
+	public statement getEmbedded_statement() {
+		return embedded_statement;
+	}
+
+	public statement getElse_statement() {
+		return else_statement;
+	}
+	
+	
 }

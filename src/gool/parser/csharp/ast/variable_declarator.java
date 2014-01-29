@@ -7,7 +7,7 @@ public class variable_declarator extends CsharpNode{
 	 CsharpNode type_name;
 	 CsharpNode variable_initializer;
 	
-	public variable_declarator(CsharpNode variable_initializer,CsharpNode type_name) {
+	public variable_declarator(CsharpNode type_name, CsharpNode variable_initializer) {
 		super();
 		this.type_name = type_name;
 		this.variable_initializer = variable_initializer;

@@ -1,16 +1,87 @@
 package gool.recognizer.csharp;
 
-import gool.ast.core.*;
+import gool.ast.core.Assign;
+import gool.ast.core.BinaryOperation;
+import gool.ast.core.Block;
+import gool.ast.core.ClassDef;
+import gool.ast.core.CompoundAssign;
+import gool.ast.core.Constant;
+import gool.ast.core.Expression;
+import gool.ast.core.ExpressionUnknown;
+import gool.ast.core.Field;
+import gool.ast.core.For;
+import gool.ast.core.If;
+import gool.ast.core.Meth;
+import gool.ast.core.Modifier;
+import gool.ast.core.Node;
+import gool.ast.core.Operator;
+import gool.ast.core.Return;
+import gool.ast.core.Statement;
+import gool.ast.core.VarAccess;
+import gool.ast.core.VarDeclaration;
+import gool.ast.core.While;
 import gool.ast.type.IType;
+import gool.ast.type.TypeBool;
+import gool.ast.type.TypeByte;
+import gool.ast.type.TypeChar;
+import gool.ast.type.TypeDecimal;
+import gool.ast.type.TypeInt;
 import gool.ast.type.TypeNone;
 import gool.ast.type.TypeString;
 import gool.ast.type.TypeUnknown;
+import gool.ast.type.TypeVoid;
 import gool.generator.common.Platform;
 import gool.parser.csharp.CsharpVisitor;
 import gool.parser.csharp.csLexer;
 import gool.parser.csharp.csParser;
-import gool.parser.csharp.ast.*;
 import gool.parser.csharp.csParser.compilation_unit_return;
+import gool.parser.csharp.ast.CsharpNode;
+import gool.parser.csharp.ast.UnknownNode;
+import gool.parser.csharp.ast.assignment;
+import gool.parser.csharp.ast.assignment_operator;
+import gool.parser.csharp.ast.block;
+import gool.parser.csharp.ast.class_declaration;
+import gool.parser.csharp.ast.class_member_declaration;
+import gool.parser.csharp.ast.class_member_declaration_field;
+import gool.parser.csharp.ast.class_member_declaration_meth;
+import gool.parser.csharp.ast.class_member_declarations;
+import gool.parser.csharp.ast.compilation_unit;
+import gool.parser.csharp.ast.conditional_expression;
+import gool.parser.csharp.ast.constant_declarator;
+import gool.parser.csharp.ast.constant_declarators;
+import gool.parser.csharp.ast.do_statement;
+import gool.parser.csharp.ast.fixed_parameter;
+import gool.parser.csharp.ast.for_statement;
+import gool.parser.csharp.ast.foreach_statement;
+import gool.parser.csharp.ast.formal_parameter;
+import gool.parser.csharp.ast.formal_parameter_list;
+import gool.parser.csharp.ast.identifier;
+import gool.parser.csharp.ast.if_statement;
+import gool.parser.csharp.ast.local_constant_declaration;
+import gool.parser.csharp.ast.local_variable_declaration;
+import gool.parser.csharp.ast.local_variable_declarator;
+import gool.parser.csharp.ast.local_variable_declarators;
+import gool.parser.csharp.ast.method_declaration;
+import gool.parser.csharp.ast.method_header;
+import gool.parser.csharp.ast.modifier;
+import gool.parser.csharp.ast.modifiers;
+import gool.parser.csharp.ast.na_expression;
+import gool.parser.csharp.ast.namespace_body;
+import gool.parser.csharp.ast.namespace_member_declaration;
+import gool.parser.csharp.ast.namespace_member_declarations;
+import gool.parser.csharp.ast.operator;
+import gool.parser.csharp.ast.qid;
+import gool.parser.csharp.ast.return_statement;
+import gool.parser.csharp.ast.statement;
+import gool.parser.csharp.ast.statement_expression_list;
+import gool.parser.csharp.ast.statement_list;
+import gool.parser.csharp.ast.type;
+import gool.parser.csharp.ast.type_declaration;
+import gool.parser.csharp.ast.type_or_generic;
+import gool.parser.csharp.ast.unary_expression;
+import gool.parser.csharp.ast.variable_declarator;
+import gool.parser.csharp.ast.variable_declarators;
+import gool.parser.csharp.ast.while_statement;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -58,11 +129,10 @@ public class CsharpRecognizer implements CsharpVisitor {
 	// '=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>' '>='
 	static final private Map<String, Operator> CompoundOperatorMap = new HashMap<String, Operator>();
 	static {
-		operatorMap.put("+=", Operator.PLUS);
-		operatorMap.put("-=", Operator.MINUS);
-		operatorMap.put("*=", Operator.MULT);
-		operatorMap.put("/=", Operator.DIV);
-		operatorMap.put("&&", Operator.AND);
+		CompoundOperatorMap.put("+=", Operator.PLUS);
+		CompoundOperatorMap.put("-=", Operator.MINUS);
+		CompoundOperatorMap.put("*=", Operator.MULT);
+		CompoundOperatorMap.put("/=", Operator.DIV);
 	}
 	
 	
@@ -99,6 +169,23 @@ public class CsharpRecognizer implements CsharpVisitor {
 		}
 		return result;
 	}
+	
+	static final private Map<String, IType> typeMap = new HashMap<String, IType>();
+	static {
+		typeMap.put("bool",TypeBool.INSTANCE);
+		typeMap.put("int",TypeInt.INSTANCE);
+		typeMap.put("short",TypeInt.INSTANCE);
+		typeMap.put("long",TypeInt.INSTANCE);
+		typeMap.put("float",TypeDecimal.INSTANCE);
+		typeMap.put("double",TypeDecimal.INSTANCE);
+		typeMap.put("decimal",TypeDecimal.INSTANCE);
+		typeMap.put("byte",TypeByte.INSTANCE);
+		typeMap.put("void",TypeVoid.INSTANCE);
+		typeMap.put("char",TypeChar.INSTANCE);
+		typeMap.put("string",TypeString.INSTANCE);
+	}
+	
+	
 	/**
 	 * Converts CSharp modifier to GOOL modifier.
 	 */
@@ -116,7 +203,15 @@ public class CsharpRecognizer implements CsharpVisitor {
 		}
 		return result;
 	}
-	
+
+
+	private IType getIType(String type) {
+		IType result = typeMap.get(type);
+		if(result == null) {
+			result = new TypeUnknown(type);
+		}
+		return result;
+	}
 
 	/**
 	 * Converts CSharp operator to GOOL operators.
@@ -138,6 +233,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 		if (textop.equals("=")) {
 			return new Assign(var, value);
 		} else {			
+			textop = textop.replace("=", "");
 			Operator operator = (Operator) o.getAssignment_operator().accept(this);
 			return new  CompoundAssign(var, value, operator , textop, TypeNone.INSTANCE);		
 		}
@@ -163,14 +259,17 @@ public class CsharpRecognizer implements CsharpVisitor {
 	public Object visit_class_declaration(class_declaration c) {
 		String name = (String) c.getType_or_generic().accept(this);
 		ClassDef classe = new ClassDef(name);
-		List<Object> fm = (List<Object>) c.getClass_body().accept(this);
-		for (Object o : fm) {
-			if (o instanceof Meth) {
-				classe.addMethod((Meth) o);
-			}
-			if (o instanceof Field) {
-				classe.addField((Field) o);
-			}
+		if (c.getClass_body() != null) {
+			List<Object> fm = (List<Object>) c.getClass_body().accept(this);
+			for (Object o : fm) {
+				if (o instanceof Meth) {
+					classe.addMethod((Meth) o);
+				}
+				if (o instanceof List<?>) {
+					for (Field f : (List<Field>) o)
+					classe.addField(f);
+				}
+			}			
 		}
 		return classe;
 	}
@@ -179,8 +278,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	public Object visit_class_member_declaration(
 			class_member_declaration o) {
 		// TODO Auto-generated method stub
-				return new ExpressionUnknown(null, o.toString());
-
+		return new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
@@ -188,7 +286,9 @@ public class CsharpRecognizer implements CsharpVisitor {
 			class_member_declaration_field c) {
 		List<Field> lf = (List<Field>) c.getField_declaration().accept(this);
 		for (Field f : lf) {
-			f.addModifiers((Collection<Modifier>) c.getModifiers().accept(this));
+			if (c.getModifiers() != null) {
+				f.setModifiers((Collection<Modifier>) c.getModifiers().accept(this));				
+			}
 			f.setType((IType) c.getType().accept(this));			
 		}
 		return lf;
@@ -198,7 +298,9 @@ public class CsharpRecognizer implements CsharpVisitor {
 	public Object visit_class_member_declaration_meth(
 			class_member_declaration_meth o) {
 		Meth m = (Meth) o.getMethod_declaration().accept(this);
-		m.addModifiers((Collection<Modifier>) o.getModifiers().accept(this));
+		if ( o.getModifiers() != null) {
+			m.setModifiers((Collection<Modifier>) o.getModifiers().accept(this));			
+		}
 		m.setType((IType) o.getType().accept(this));
 		return m;
 	}
@@ -254,18 +356,20 @@ public class CsharpRecognizer implements CsharpVisitor {
 		Expression left = (Expression) o.getFilsGauche().accept(this);
 		Expression right = (Expression) o.getFilsDroit().accept(this);
 		Operator operator = (Operator) o.getOperator().accept(this);
-		BinaryOperation b = new BinaryOperation(operator, left, right, new TypeUnknown(""), o.getOperator().toString());
+		BinaryOperation b = new BinaryOperation(operator, left, right, TypeNone.INSTANCE, o.getOperator().toString());
 		return b;
-
 	}
 
 	@Override
-	public Object visit_for_statement(for_statement for_statement) {
-		Statement initializer = (Statement) for_statement.for_initializer.accept(this);
-		Expression condition = (Expression) for_statement.for_condition.accept(this);
-		Statement iterator = (Statement) for_statement.for_iterator.accept(this);
+	public Object visit_for_statement(for_statement o) {
+		if (o.getFor_initializer() == null || o.getFor_condition() == null || o.getFor_iterator().accept(this) == null) {
+			return new ExpressionUnknown(null, o.toString());
+		}
+		Statement initializer = (Statement) o.getFor_initializer().accept(this);
+		Expression condition = (Expression) o.getFor_condition().accept(this);
+		Statement iterator = (Statement) o.getFor_iterator().accept(this);
 			
-		return new For(initializer, condition, iterator, (Statement) for_statement.embedded_statement.accept(this));
+		return new For(initializer, condition, iterator, (Statement) o.getEmbedded_statement().accept(this));
 	}
 
 	@Override
@@ -284,7 +388,12 @@ public class CsharpRecognizer implements CsharpVisitor {
 			formal_parameter_list o) {
 		List<VarDeclaration> vars = new ArrayList<VarDeclaration>();
 		for (formal_parameter parm : o.getFormal_parameters()) {
-			vars.add((VarDeclaration) parm.accept(this));
+			Object accept = parm.accept(this);
+			if (accept instanceof VarDeclaration) {				
+				vars.add((VarDeclaration) accept);
+			} else {
+				return new ExpressionUnknown(null, o.toString());
+			}
 		}
 		return vars;
 	}
@@ -296,12 +405,12 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_if_statement(if_statement if_statement) {	
-		Expression condition = (Expression)if_statement.boolean_expression.accept(this);
+		Expression condition = (Expression)if_statement.getBoolean_expression().accept(this);
 		Statement thenStmt = null;
-		thenStmt = (Statement) if_statement.embedded_statement.accept(this);
+		thenStmt = (Statement) if_statement.getEmbedded_statement().accept(this);
 		Statement elseStmt = null;
-		if(if_statement.else_statement!=null) {
-			elseStmt = (Statement) if_statement.else_statement.accept(this);
+		if(if_statement.getElse_statement()!=null) {
+			elseStmt = (Statement) if_statement.getElse_statement().accept(this);
 		}
 		return new If(condition, thenStmt, elseStmt);
 	}
@@ -356,10 +465,15 @@ public class CsharpRecognizer implements CsharpVisitor {
 		Meth m = new Meth(null, name);
 		formal_parameter_list formal_parameter_list = method_header.getFormal_parameter_list();
 		if (formal_parameter_list != null) {
-			List<VarDeclaration> params = (List<VarDeclaration>) formal_parameter_list.accept(this);
-			for(VarDeclaration v : params) {
-				m.addParameter(v);
-			}			
+			Object accept2 = formal_parameter_list.accept(this);
+			if (accept2 instanceof List<?>) {
+				List<VarDeclaration> params = (List<VarDeclaration>) accept2;
+				for(VarDeclaration v : params) {
+					m.addParameter(v);
+				}							
+			} else {
+				return new ExpressionUnknown(null, o.toString());
+			}
 		}
 		Statement statement = (Statement) o.getMethod_body().accept(this);
 		m.addStatement(statement);
@@ -392,8 +506,10 @@ public class CsharpRecognizer implements CsharpVisitor {
 	public Object visit_namespace_member_declaration(
 			namespace_member_declaration namespace_member_declaration) {
 		ClassDef classe = (ClassDef) namespace_member_declaration.getType_declaration().accept(this);
-		Collection<Modifier> modifiers =  (Collection<Modifier>) namespace_member_declaration.getModifiers();
-		classe.setModifiers(modifiers);
+		if (namespace_member_declaration.getModifiers() != null) {
+			Collection<Modifier> modifiers =  (Collection<Modifier>) namespace_member_declaration.getModifiers().accept(this);
+			classe.setModifiers(modifiers);			
+		}
 		return classe;
 	}
 
@@ -420,7 +536,10 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_return_statement(return_statement return_statement) {
-		return new Return((Expression) return_statement.getExpression().accept(this));
+		if (return_statement.getExpression() != null) {
+			return new Return((Expression) return_statement.getExpression().accept(this));
+		}
+		return new Return(null);
 	}
 
 	@Override
@@ -439,11 +558,6 @@ public class CsharpRecognizer implements CsharpVisitor {
 		return stats;
 	}
 
-	@Override
-	public Object visit_type(type o) {
-		// TODO tretezrrzrzz
-		return new TypeUnknown(o.toString());
-	}
 
 	public Object visit_type_declaration(type_declaration type_declaration) {
 		return type_declaration.accept(this);
@@ -475,7 +589,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 		
 		Field f = new Field((String) o.getType_name().accept(this), null, null);
 		if (o.getVariable_initializer() != null) {
-			f.setDefaultValue((Expression) o.getVariable_initializer().accept(null));
+			f.setDefaultValue((Expression) o.getVariable_initializer().accept(this));
 		}
 		return f;
 	}
@@ -487,16 +601,22 @@ public class CsharpRecognizer implements CsharpVisitor {
 		for (variable_declarator c : o.getVariable_declarators()) {
 			lf.add((Field) c.accept(this));
 		}
-		if (lf.size() == 1) {
-			return lf.get(0);
-		} else {
-			return new ExpressionUnknown(null, o.toString()); 
-		}
+		return lf;
 	}
 	
 	@Override
 	public Object visit_while_statement(while_statement while_statement) {
 		return new While((Expression) while_statement.boolean_expression.accept(this),(Statement) while_statement.embedded_statement.accept(this));
+	}
+
+	@Override
+	public Object visit_type(type o) {
+		return getIType(o.toString());
+	}
+
+	@Override
+	public Object visit_fixed_parameter(fixed_parameter o) {
+		return new VarDeclaration((IType) o.getType().accept(this),(String) o.getIdentifier().accept(this));
 	}
 
 }
