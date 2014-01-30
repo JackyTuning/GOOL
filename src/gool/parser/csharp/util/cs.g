@@ -167,8 +167,9 @@ access_operator returns [CsharpNode t]
 	'.'  |  '->' ;
 brackets_or_arguments returns [CsharpNode t]:
 	a=brackets {$t=$a.t;}| b=arguments {$t = $b.t;} ;
-brackets returns [expression t]:
-	'['   a=expression_list?{$t=$a.t;}   ']' ;	
+brackets returns [UnknownNode t]
+@after {$t=new UnknownNode($tree);}:
+	'['   a=expression_list?  ']' ;	
 paren_expression returns [expression t]:	
 	'('   a=expression   ')'{$t=$a.t;} ;
 arguments returns [CsharpNode t]: 
