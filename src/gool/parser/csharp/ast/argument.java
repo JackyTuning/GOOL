@@ -21,4 +21,9 @@ public class argument extends CsharpNode {
 		this.argument_value = argument_value;
 	}
 
+	public CsharpNode getArgument_value() {
+		return argument_value;
+	}
+
+
 }

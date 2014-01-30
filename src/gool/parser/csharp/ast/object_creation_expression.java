@@ -25,4 +25,12 @@ public class object_creation_expression extends expression{
 			 + (argument_list != null ? argument_list.toStringTree(tab + 1) : "");
 	}
 
+	public type getType() {
+		return type;
+	}
+
+	public argument_list getArgument_list() {
+		return argument_list;
+	}
+
 }

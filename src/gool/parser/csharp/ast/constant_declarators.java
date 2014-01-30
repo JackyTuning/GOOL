@@ -6,13 +6,13 @@ import gool.parser.csharp.CsharpVisitor;
 
 public class constant_declarators extends CsharpNode{
 
-	public ArrayList<CsharpNode> constant_declarators;
+	ArrayList<constant_declarator> constant_declarators;
 	
 	public constant_declarators(){
-		constant_declarators=new ArrayList<CsharpNode>();
+		constant_declarators=new ArrayList<constant_declarator>();
 	}
 	
-	public void add(CsharpNode e){
+	public void add(constant_declarator e){
 		constant_declarators.add(e);
 	}
 
@@ -30,5 +30,11 @@ public class constant_declarators extends CsharpNode{
 		}
 		return res;
 	}
+
+	public ArrayList<constant_declarator> getConstant_declarators() {
+		return constant_declarators;
+	}
+	
+	
 
 }

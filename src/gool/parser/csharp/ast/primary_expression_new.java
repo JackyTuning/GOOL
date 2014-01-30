@@ -32,4 +32,16 @@ public class primary_expression_new extends expression {
 				+(primary_expression_part != null ? primary_expression_part.toStringTree(tab + 1) : "");
 		}
 
+
+	public expression getObject_creation_expression() {
+		return object_creation_expression;
+	}
+
+
+	public expression getPrimary_expression_part() {
+		return primary_expression_part;
+	}
+	
+	
+
 }

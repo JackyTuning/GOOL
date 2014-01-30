@@ -5,8 +5,8 @@ import gool.parser.csharp.CsharpVisitor;
 public class local_constant_declaration extends statement{
 
 
-	public type type;
-	public CsharpNode constant_declarators;
+	 type type;
+	 CsharpNode constant_declarators;
 	
 	public local_constant_declaration(type type,
 			CsharpNode constant_declarators) {
@@ -27,4 +27,15 @@ public class local_constant_declaration extends statement{
 				+ (type != null ? type.toStringTree(tab + 1) : "")
 				+ (constant_declarators != null ? constant_declarators.toStringTree(tab + 1) : "");
 	}
+
+	public type getType() {
+		return type;
+	}
+
+	public CsharpNode getConstant_declarators() {
+		return constant_declarators;
+	}
+	
+	
+	
 }

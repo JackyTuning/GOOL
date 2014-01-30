@@ -4,6 +4,7 @@ import gool.ast.core.Assign;
 import gool.ast.core.BinaryOperation;
 import gool.ast.core.Block;
 import gool.ast.core.ClassDef;
+import gool.ast.core.ClassNew;
 import gool.ast.core.CompoundAssign;
 import gool.ast.core.Constant;
 import gool.ast.core.Expression;
@@ -14,17 +15,18 @@ import gool.ast.core.Identifier;
 import gool.ast.core.If;
 import gool.ast.core.Meth;
 import gool.ast.core.Modifier;
+import gool.ast.core.NewInstance;
 import gool.ast.core.Node;
 import gool.ast.core.Operator;
 import gool.ast.core.Return;
 import gool.ast.core.Statement;
-import gool.ast.core.VarAccess;
 import gool.ast.core.VarDeclaration;
 import gool.ast.core.While;
 import gool.ast.type.IType;
 import gool.ast.type.TypeBool;
 import gool.ast.type.TypeByte;
 import gool.ast.type.TypeChar;
+import gool.ast.type.TypeClass;
 import gool.ast.type.TypeDecimal;
 import gool.ast.type.TypeInt;
 import gool.ast.type.TypeNone;
@@ -54,6 +56,7 @@ import gool.parser.csharp.ast.conditional_expression;
 import gool.parser.csharp.ast.constant_declarator;
 import gool.parser.csharp.ast.constant_declarators;
 import gool.parser.csharp.ast.do_statement;
+import gool.parser.csharp.ast.expression_list;
 import gool.parser.csharp.ast.fixed_parameter;
 import gool.parser.csharp.ast.for_statement;
 import gool.parser.csharp.ast.foreach_statement;
@@ -205,6 +208,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 		literalTypeMap.put(literal.literaltype.Hex_number, TypeNone.INSTANCE);
 		literalTypeMap.put(literal.literaltype.NULL, TypeNull.INSTANCE);
 	}
+	
 	/**
 	 * Converts CSharp modifier to GOOL modifier.
 	 */
@@ -223,12 +227,11 @@ public class CsharpRecognizer implements CsharpVisitor {
 		return result;
 	}
 
-
 	private IType getIType(String type) {
 		// TODO gerer system.String
 		IType result = typeMap.get(type.toLowerCase());
 		if(result == null) {
-			result = new TypeUnknown(type);
+			result = new TypeClass(type);
 		}
 		return result;
 	}
@@ -251,7 +254,6 @@ public class CsharpRecognizer implements CsharpVisitor {
 		}
 		return result;
 	}
-	
 	
 	@Override
 	public Object visit_assignment(assignment o) {
@@ -291,6 +293,9 @@ public class CsharpRecognizer implements CsharpVisitor {
 			List<Object> fm = (List<Object>) c.getClass_body().accept(this);
 			for (Object o : fm) {
 				if (o instanceof Meth) {
+					if (((Meth) o).getName().equals("Main")) {
+						classe.setMainClass(true);
+					}	
 					classe.addMethod((Meth) o);
 				}
 				if (o instanceof List<?>) {
@@ -360,17 +365,21 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_constant_declarator(
 			constant_declarator o) {
-		// TODO Auto-generated method stub
-				return new ExpressionUnknown(null, o.toString());
-
+		VarDeclaration v = new VarDeclaration(null,((Identifier) o.getIdentifier().accept(this)).getName());
+		if (o.getConstant_expression() != null) {
+			v.setInitialValue((Expression) o.getConstant_expression().accept(this));
+		}
+		return v;
 	}
 
 	@Override
 	public Object visit_constant_declarators(
 			constant_declarators o) {
-		// TODO Auto-generated method stub
-		return new ExpressionUnknown(null, o.toString());
-
+		List<VarDeclaration> lv = new ArrayList<VarDeclaration>();
+		for(CsharpNode c : o.getConstant_declarators()) {
+			lv.add((VarDeclaration) c.accept(this));
+		}
+		return lv;
 	}
 
 	@Override
@@ -446,9 +455,17 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_local_constant_declaration(
 			local_constant_declaration o) {
-		// TODO Auto-generated method stub
-				return new ExpressionUnknown(null, o.toString());
-
+		IType type = (IType) o.getType().accept(this);
+		List<VarDeclaration> lv = (List<VarDeclaration>) o.getConstant_declarators().accept(this);
+		for (VarDeclaration v : lv) {
+			v.setType(type);
+			v.addModifier(Modifier.FINAL);
+		}
+		if (lv.size() == 1) {
+			return lv.get(0);
+		} else {
+			return new ExpressionUnknown(null, o.toString());
+		}
 	}
 
 	@Override
@@ -576,8 +593,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_statement_expression_list(
 			statement_expression_list o) {
-		// TODO Auto-generated method stub
-				return new ExpressionUnknown(null, o.toString());
+		return new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
@@ -597,9 +613,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_type_or_generic(type_or_generic o) {
-		// TODO Auto-generated method stub
-				return new ExpressionUnknown(null, o.toString());
-
+		return new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
@@ -648,14 +662,16 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_argument_list(argument_list o) {
-		// TODO Auto-generated method stub
-		return  new ExpressionUnknown(null, o.toString());
+		List<Expression> le = new ArrayList<Expression>();
+		for (CsharpNode c : o.getArgument_list()) {
+			le.add((Expression) c.accept(this));
+		}
+		return le;
 	}
 
 	@Override
 	public Object visit_argument_value(argument o) {
-		// TODO Auto-generated method stub
-		return  new ExpressionUnknown(null, o.toString());
+		return o.getArgument_value().accept(this);
 	}
 
 	@Override
@@ -667,25 +683,35 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_object_creation_expression(
 			object_creation_expression o) {
-		return new ExpressionUnknown(null, o.toString());
+		IType type = (IType) o.getType().accept(this);
+		ClassNew ni = new ClassNew(type);
+		if ( o.getArgument_list() != null) {
+			ni.addParameters((List<Expression>) o.getArgument_list().accept(this));
+		}
+		return ni;
 	}
 
 	@Override
 	public Object visit_predefined_type(predefined_type o) {
+		// TODO Auto-generated method stub
 		return new ExpressionUnknown(null, o.toString());
 	}
 
 	@Override
 	public Object visit_primary_expression_new(
 			primary_expression_new o) {
-		// TODO Auto-generated method stub
-		return new ExpressionUnknown(null, o.toString());
+		ClassNew ni = (ClassNew) o.getObject_creation_expression().accept(this);
+		return ni;
 	}
 
 	@Override
 	public Object visit_primary_expression(primary_expression o) {
-		// TODO Auto-generated method stub
 		return o.getPrimary_expression_start().accept(this);
 	}
 
+	@Override
+	public Object visit_expression_list(expression_list expression_list) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

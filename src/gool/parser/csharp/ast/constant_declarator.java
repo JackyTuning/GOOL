@@ -3,11 +3,11 @@ package gool.parser.csharp.ast;
 import gool.parser.csharp.CsharpVisitor;
 
 public class constant_declarator extends CsharpNode{
-	CsharpNode identifier;
-	CsharpNode constant_expression;
+	identifier identifier;
+	expression constant_expression;
 
-	public constant_declarator(CsharpNode identifier,
-			CsharpNode constant_expression) {
+	public constant_declarator(identifier identifier,
+			expression constant_expression) {
 		super();
 		this.identifier = identifier;
 		this.constant_expression = constant_expression;
@@ -26,4 +26,13 @@ public class constant_declarator extends CsharpNode{
 				+ (identifier != null ? identifier.toStringTree(tab + 1) : "")
 				+  (constant_expression != null ? constant_expression.toStringTree(tab + 1) : "");
 	}
+
+	public identifier getIdentifier() {
+		return identifier;
+	}
+
+	public expression getConstant_expression() {
+		return constant_expression;
+	}
+	
 }

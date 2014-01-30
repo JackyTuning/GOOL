@@ -27,4 +27,8 @@ public class argument_list extends CsharpNode {
 		}
 		return res;
 	}
+	public ArrayList<CsharpNode> getArgument_list() {
+		return argument_list;
+	}
+	
 }

@@ -22,7 +22,7 @@ options {
 
 
 compilation_unit returns [compilation_unit t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         a=namespace_body[true] {$t = new compilation_unit($a.t);};
 
 namespace_declaration returns [UnknownNode t]
@@ -31,7 +31,7 @@ namespace_declaration returns [UnknownNode t]
 namespace_block:
 	'{'   namespace_body[false]   '}' ;
 namespace_body[boolean bGlobal] returns [namespace_body t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         a=extern_alias_directives?   b=using_directives?   c=global_attributes?   d=namespace_member_declarations? 
         {$t=new namespace_body($a.t,$b.t,$c.t, $d.t);} ;
 extern_alias_directives  returns [UnknownNode t]
@@ -53,17 +53,17 @@ using_namespace_directive:
 
 namespace_member_declarations returns [namespace_member_declarations t] 
 	@init {$t=new namespace_member_declarations();}
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         (a=namespace_member_declaration  {((namespace_member_declarations)$t).add($a.t);})+ ;
         
 namespace_member_declaration returns [CsharpNode t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         d=namespace_declaration {$t=$d.t;}
         | a=attributes?   b=modifiers?   c=type_declaration {$t=new namespace_member_declaration($a.t,$b.t, $c.t);} ;
         
 type_declaration returns [CsharpNode t]
 	@init {CsharpNode res = null;}
-	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($text);}: 
+	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}: 
         (('partial') => 'partial'   (class_declaration
                                                                 | struct_declaration
                                                                 | interface_declaration))
@@ -81,7 +81,7 @@ namespace_name
 
 modifiers  returns [modifiers t]
    	@init {modifiers res=new modifiers();}
-	@after {$t = res; $t.setMessage($text);}:
+	@after {$t = res; $t.setMessage($tree);}:
         (a=modifier {res.add($a.t);})+  ;
 modifier returns [modifier t]
 	@after {$t=new modifier($tree);}:
@@ -91,7 +91,7 @@ modifier returns [modifier t]
 
 class_member_declaration returns [CsharpNode t]
 	@init {CsharpNode res = null;}
-	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($text);}:
+	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}:
         b=attributes?
         c=modifiers?
         ( 'const'   type   constant_declarators   ';' 
@@ -119,19 +119,18 @@ class_member_declaration returns [CsharpNode t]
         | conversion_operator_declaration
         | constructor_declaration        //        | static_constructor_declaration
         | destructor_declaration 
-      
         ) 
         ;
 
 
 primary_expression  returns [expression t]
-	@init {expression res = null;}
-	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($text);}:
+	@init {expression res = null;primary_expression res2=null;}
+	@after {if (res != null)$t=res; else{ if(res2!=null) {$t =(expression)res2;}else $t=new UnknownNode($tree);$t.setMessage($tree);}}:
 		('this'    brackets) => 'this'   brackets   primary_expression_part*
 	| ('base'   brackets) => 'this'   brackets   primary_expression_part*
-	|  a=primary_expression_start b=primary_expression_part* {res = new primary_expression($a.t);}
+	|  a=primary_expression_start {res2 = new primary_expression($a.t);} (b=primary_expression_part {if(res2.isArrayNull()){res2.creerArray();res2.add($b.t);}else res2.add($b.t);})*
 	| 'new' (   (object_creation_expression   ('.'|'->'|'[')) => 
-					c=object_creation_expression   d=primary_expression_part+{res = new primary_expression_new($c.t,$d.t);}		// new Foo(arg, arg).Member
+					c=object_creation_expression   d=primary_expression_part+{res = new primary_expression_new($c.t);}		// new Foo(arg, arg).Member
 				// try the simple one first, this has no argS and no expressions
 				// symantically could be object creation
 				| (delegate_creation_expression) => delegate_creation_expression// new FooDelegate (MyFunction)
@@ -146,7 +145,7 @@ primary_expression  returns [expression t]
 	
 primary_expression_start returns [CsharpNode t]
 @init {CsharpNode res = null;}
-@after {if (res != null) $t=res; else $t=new UnknownNode($tree);}:
+@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}:
 	a=predefined_type {res=$a.t;}            
 	| (identifier    '<') => identifier   generic_argument_list
 	| d=identifier ('::'   identifier)? {res = $d.t;}
@@ -157,37 +156,37 @@ primary_expression_start returns [CsharpNode t]
 	| c=literal {res=$c.t;}
 	;
 
-primary_expression_part  returns [UnknownNode t]
+primary_expression_part  returns [CsharpNode t]:
+	 a=access_identifier{$t=$a.t;}
+	| b=brackets_or_arguments {$t=$b.t;};
+access_identifier returns [UnknownNode t]
 	@after {$t=new UnknownNode($tree);}:
-	 access_identifier
-	| brackets_or_arguments ;
-access_identifier:
 	access_operator   type_or_generic ;
 access_operator:
 	'.'  |  '->' ;
-brackets_or_arguments:
-	brackets | arguments ;
-brackets:
-	'['   expression_list?   ']' ;	
+brackets_or_arguments returns [CsharpNode t]:
+	a=brackets {$t=$a.t;}| b=arguments {$t = $b.t;} ;
+brackets returns [expression t]:
+	'['   a=expression_list?{$t=$a.t;}   ']' ;	
 paren_expression returns [expression t]:	
 	'('   a=expression   ')'{$t=$a.t;} ;
-arguments: 
-	'('   argument_list?   ')' ;
+arguments returns [CsharpNode t]: 
+	'('   a=argument_list? {$t=$a.t;}   ')' ;
 argument_list returns [argument_list t]
 @init {argument_list res = new argument_list();}
-@after {$t=res;}:
+@after {$t=res;$t.setMessage($tree);}:
 	a=argument {res.add($a.t);} (',' a=argument {res.add($a.t);})*;
 // 4.0
 argument returns [CsharpNode t]
 @init {CsharpNode res = null;}
-@after {if (res != null) $t=res; else $t=new UnknownNode($tree);}: 
+@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}: 
 	argument_name   argument_value
 		| a=argument_value{res = new argument($a.t);};
 argument_name:
 	identifier   ':';
 argument_value returns [CsharpNode t]
 @init {CsharpNode res = null;}
-@after {if (res != null) $t=res; else $t=new UnknownNode($tree);}: 
+@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}: 
 	a=expression {res = $a.t;}
 	| ref_variable_reference 
 	| 'out'   variable_reference ;
@@ -222,7 +221,7 @@ member_declarator:
 				 | '='   expression) ;
 primary_or_array_creation_expression returns [expression t]
 	@init {expression res = null;}
-	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);}:
+	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}:
 	(array_creation_expression) => array_creation_expression
 	| a=primary_expression {res = $a.t;}
 	;
@@ -272,7 +271,7 @@ anonymous_function_parameter_modifier:
 ///////////////////////////////////////////////////////
 object_creation_expression returns [expression t]
 @init {expression res = null;}
-@after {if (res != null) $t=res; else $t=new UnknownNode($tree);}: 
+@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}: 
 	// 'new'
 	a=type   
 		( '('   b=argument_list?   ')'   object_or_collection_initializer?  {res = new object_creation_expression($a.t,$b.t);}
@@ -341,12 +340,12 @@ type_name  returns [CsharpNode t] :
 namespace_or_type_name  returns [CsharpNode t] :
 	 a=type_or_generic {$t=$a.t;}   ('::' type_or_generic)? ('.'   type_or_generic)* ;
 type_or_generic returns [CsharpNode t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         (identifier   '<') => a=identifier   b=generic_argument_list {$t = new type_or_generic($a.t,$b.t);}
         | a=identifier {$t=$a.t;};
 
 qid returns [qid t]
-	@after {$t=new qid($tree);}:
+	@after {$t=new qid($tree);$t.setMessage($tree);}:
 		// qualified_identifier v2
 	qid_start   qid_part*
 	;
@@ -369,7 +368,7 @@ generic_argument_list  returns [UnknownNode t]
 type_arguments: 
 	type (',' type)* ;
 type  returns [type t]
-	@after {$t=new type($tree);} :
+	@after {$t=new type($tree);$t.setMessage($tree);} :
         (  ((predefined_type | type_name)  rank_specifiers) => (predefined_type | type_name)   rank_specifiers   '*'*
         | ((predefined_type | type_name)  ('*'+ | '?')) => (predefined_type | type_name)   ('*'+ | '?')
         | (predefined_type | type_name)
@@ -403,7 +402,7 @@ block  returns [block t]:
         | '{'   a=statement_list?   '}' {$t= new block($a.t);} ;
 statement_list returns [statement_list t]
 	@init {statement_list res=new statement_list();}
-	@after {$t = res; $t.setMessage($text);}:
+	@after {$t = res; $t.setMessage($tree);}:
 	
        ( a=statement  { res.add($a.t);})+  ;
         
@@ -416,15 +415,17 @@ expression returns [expression t]:
         
         ;
 
-expression_list:
-	expression  (','   expression)* ;
+expression_list returns [expression_list t]
+	@init {expression_list res =new expression_list();}
+	@after {$t=res;$t.setMessage($tree);}:
+	a=expression{res.add($a.t);}  (','   expression{res.add($a.t);})* ;
 assignment returns [assignment t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	a=unary_expression   b=assignment_operator   c=expression 
 	{$t = new assignment($a.t,$b.t,$c.t);};
 unary_expression returns [expression t]
 	@init {expression res = null;}
-	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);}:
+	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}:
 	//('(' arguments ')' ('[' | '.' | '(')) => primary_or_array_creation_expression
 	(cast_expression) => cast_expression
 	| b=primary_or_array_creation_expression   '++'?   '--'? {res = new unary_expression($b.t);} // ne prend pas en compte les incr?mentations
@@ -440,7 +441,7 @@ cast_expression
 	:	
 	'('   type   ')'   unary_expression ;
 assignment_operator returns [assignment_operator t]
-	@after {$t=new assignment_operator($tree);$t.setMessage($text);}:
+	@after {$t=new assignment_operator($tree);$t.setMessage($tree);}:
 	'=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>' '>=' ;
 pre_increment_expression: 
 	'++'   unary_expression ;
@@ -464,20 +465,20 @@ non_assignment_expression returns [expression t]:
 
 multiplicative_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=unary_expression  {res = $a.t;} (  (o='*'|o='/'|o='%')   b=unary_expression {res = new na_expression(res,new operator($o.text),$b.t);})*	;
 additive_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=multiplicative_expression  {res = $a.t;} ((o='+'|o='-')   b=multiplicative_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 // >> check needed (no whitespace)
 shift_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=additive_expression  {res = $a.t;} ((o='<<'|o='>' '>') b=additive_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 relational_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=shift_expression  {res = $a.t;}
 		(	((o='<'|o='>'|o='>='|o='<=')	b=shift_expression) {res = new na_expression(res,new operator($o.text),$b.t);}
 			| ((o='is'|o='as')   c= non_nullable_type) {res = new na_expression(res,new operator($o.text),$c.t);}
@@ -485,37 +486,37 @@ relational_expression returns [expression t]
 		
 equality_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 
 	a=relational_expression {res = $a.t;}
 	   ((o='=='|o='!=')   b=relational_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 and_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=equality_expression {res = $a.t;} (o='&'    b=equality_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 exclusive_or_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=and_expression {res = $a.t;} (o='^'    b=and_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 inclusive_or_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=exclusive_or_expression  {res = $a.t;}  (o='|'    b=exclusive_or_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 conditional_and_expression returns [expression t]
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=inclusive_or_expression {res = $a.t;}  (o='&&'    b=inclusive_or_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 conditional_or_expression returns [expression t] 
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=conditional_and_expression {res = $a.t;} (o='||'    b=conditional_and_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 
 null_coalescing_expression returns [expression t]
 	@init {expression res = null;}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=conditional_or_expression {res = $a.t;}  (o='??'   b=conditional_or_expression {res = new na_expression(res,new operator($o.text),$b.t);})* ;
 conditional_expression  returns [expression t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	a=null_coalescing_expression {$t = $a.t;}  ('?'   b=expression   ':'   c=expression {$t = new conditional_expression($a.t,$b.t,$c.t);})? ;
       
 ///////////////////////////////////////////////////////
@@ -635,7 +636,7 @@ attribute_argument_expression:
 ///////////////////////////////////////////////////////
 
 class_declaration  returns [class_declaration t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         'class'  a=type_or_generic   b=class_base?   c=type_parameter_constraints_clauses?   d=class_body   ';'? 
         {$t = new class_declaration($a.t,$b.t, $c.t, $d.t);};
 class_base  returns [UnknownNode t]
@@ -649,44 +650,45 @@ interface_type_list:
 	type (','   type)* ;
 
 class_body   returns [class_member_declarations t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         '{'   a=class_member_declarations?   '}' {$t = $a.t;};
 class_member_declarations  returns [class_member_declarations t]
 	@init {$t=new class_member_declarations();}
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         (a=class_member_declaration 
          {((class_member_declarations)$t).add($a.t);})+ ;
 
 ///////////////////////////////////////////////////////
 constant_declaration:
 	'const'   type   constant_declarators   ';' ;
-constant_declarators  returns [UnknownNode t]
-	@after {$t=new UnknownNode($tree);}:
-        constant_declarator (',' constant_declarator)* ;
+constant_declarators  returns [constant_declarators t]
+@init {constant_declarators res=new constant_declarators();}
+@after {$t=res;$t.setMessage($tree);}:
+        a=constant_declarator{res.add($a.t);}  (',' a=constant_declarator {res.add($a.t);} )* ;
 
-constant_declarator:
-	identifier   ('='   constant_expression)? ;
-constant_expression:
-	expression;
-
+constant_declarator  returns [constant_declarator t]
+@after {$t.setMessage($tree);}:
+	a=identifier   ('='   b=constant_expression)? {$t = new constant_declarator($a.t,$b.t);} ;
+constant_expression returns [expression t]:
+	a=expression {$t = $a.t;};
 ///////////////////////////////////////////////////////
 field_declaration returns [variable_declarators t]:
 	a=variable_declarators   ';' {$t=$a.t;}	;
 variable_declarators returns [variable_declarators t] 
     	@init {variable_declarators res=new variable_declarators();}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=variable_declarator {res.add($a.t);} (','   a=variable_declarator  {res.add($a.t);})* ;
 	
 variable_declarator returns [variable_declarator t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	a=type_name ('='   b=variable_initializer)? {$t = new variable_declarator($a.t,$b.t);};		// eg. event EventHandler IInterface.VariableName = Foo;
 
 ///////////////////////////////////////////////////////
 method_declaration  returns [method_declaration t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         a=method_header   b=method_body {$t = new method_declaration($a.t,$b.t);};
 method_header returns [method_header t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         a=member_name  '('   b=formal_parameter_list?   ')'   c=type_parameter_constraints_clauses? 
         {$t = new method_header($a.t,$b.t,$c.t);};
 method_body returns [block t]:
@@ -791,12 +793,12 @@ return_type:
 	|  'void';
 formal_parameter_list  returns [formal_parameter_list t]
 	@init {formal_parameter_list res=new formal_parameter_list();}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
         a=formal_parameter {res.add($a.t);} (',' a=formal_parameter {res.add($a.t);})*;
 
 formal_parameter returns [formal_parameter t]
 	@init {CsharpNode res=null;} 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	a=attributes?   (b=fixed_parameter {res=$b.t;} | c=parameter_array {res=$c.t;}) {$t = new formal_parameter($a.t, res);}
 	| '__arglist' ; // __arglist is undocumented, see google
 fixed_parameters  returns [UnknownNode t]
@@ -804,7 +806,7 @@ fixed_parameters  returns [UnknownNode t]
 	fixed_parameter   (','   fixed_parameter)* ;
 // 4.0
 fixed_parameter returns [fixed_parameter t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	a=parameter_modifier?   b=type   c=identifier   d=default_argument?  {$t = new fixed_parameter($a.t,$b.t,$c.t,$d.t);};
 // 4.0
 default_argument  returns [UnknownNode t]
@@ -1018,7 +1020,7 @@ declaration_statement returns [statement t]:
         | c=local_constant_declaration {$t=$c.t;} ) ';' ;
 
 local_variable_declaration returns [local_variable_declaration t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         a=local_variable_type   b=local_variable_declarators  
         {$t = new local_variable_declaration($a.t,$b.t);};
 local_variable_type returns [type t]:
@@ -1027,10 +1029,10 @@ local_variable_type returns [type t]:
         | c=type {$t=$c.t;} ;
 local_variable_declarators  returns [local_variable_declarators t]
 	@init {local_variable_declarators res=new local_variable_declarators();}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
         a=local_variable_declarator {res.add($a.t);} (',' a=local_variable_declarator {res.add($a.t);} )* ;
 local_variable_declarator returns [local_variable_declarator t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         a=identifier ('='   b=local_variable_initializer)?  {$t=new local_variable_declarator($a.t,$b.t);} ; 
 local_variable_initializer returns [expression t]:
         a=expression {$t=$a.t;}
@@ -1040,7 +1042,7 @@ stackalloc_initializer  returns [UnknownNode t]
 	@after {$t=new UnknownNode($tree);}:
         'stackalloc'   unmanaged_type   '['   expression   ']'  ;
 local_constant_declaration returns [local_constant_declaration t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
         'const'   a=type   b=constant_declarators  {$t=new local_constant_declaration($a.t,$b.t);};
 expression_statement  returns [expression t] :
         a=expression   ';' {$t = $a.t;} ;
@@ -1053,7 +1055,7 @@ selection_statement returns [statement t] :
 	a=if_statement {$t=$a.t;}
 	| b=switch_statement {$t=$b.t;} ;
 if_statement returns [if_statement t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	// else goes with closest if
 	'if'   '('   a=boolean_expression   ')'   b=embedded_statement (('else') => c=else_statement)? {$t = new if_statement($a.t,$b.t,$c.t);}
 	;
@@ -1079,13 +1081,13 @@ iteration_statement  returns [statement t] :
 	| c=for_statement {$t=$c.t;}
 	| d=foreach_statement{$t=$d.t;} ;
 while_statement  returns [while_statement t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	'while'   '('   a=boolean_expression   ')'   b=embedded_statement {$t = new while_statement($a.t,$b.t);};
 do_statement returns [do_statement t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	'do'   a=embedded_statement   'while'   '('   b=boolean_expression   ')'   ';' {$t = new do_statement($a.t,$b.t);};
 for_statement returns [for_statement t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	'for'   '('   a=for_initializer?   ';'   b=for_condition?   ';'   c=for_iterator?   ')'   d=embedded_statement 
 	 {$t = new for_statement($a.t,$b.t,$c.t,$d.t);};
 for_initializer returns [CsharpNode t] :
@@ -1098,10 +1100,10 @@ for_iterator returns [CsharpNode t] :
 	a=statement_expression_list {$t = $a.t;};
 statement_expression_list returns [statement_expression_list t] 
  	@init {statement_expression_list res=new statement_expression_list();}
-	@after {$t=res;$t.setMessage($text);}:
+	@after {$t=res;$t.setMessage($tree);}:
 	a=statement_expression{res.add($a.t);} (',' a=statement_expression {res.add($a.t);})* ;
 foreach_statement returns [foreach_statement t] 
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	'foreach'   '('   a=local_variable_type   b=identifier   'in'   c=expression   ')'   d=embedded_statement
 	{$t = new foreach_statement($a.t, $b.t, $c.t, $d.t);} ;
 jump_statement returns [statement t] :
@@ -1122,7 +1124,7 @@ goto_statement  returns [UnknownNode t]
 			 | 'case'   constant_expression
 			 | 'default')   ';' ;
 return_statement  returns [return_statement t]
-	@after {$t.setMessage($text);}:
+	@after {$t.setMessage($tree);}:
 	'return'   a=expression?   ';'  {$t=new return_statement($a.t);};
 throw_statement  returns [UnknownNode t]
 	@after {$t=new UnknownNode($tree);}:
@@ -1184,6 +1186,7 @@ also_keyword:
 	'add' | 'alias' | 'assembly' | 'module' | 'field' | 'event' | 'method' | 'param' | 'property' | 'type' 
 	| 'yield' | 'from' | 'into' | 'join' | 'on' | 'where' | 'orderby' | 'group' | 'by' | 'ascending' | 'descending' 
 	| 'equals' | 'select' | 'pragma' | 'let' | 'remove' | 'set' | 'var' | '__arglist' | 'dynamic';
+
 
 literal returns [literal t]:
 	a=Real_literal {$t = new literal($a.tree,literaltype.Real_literal);}

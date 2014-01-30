@@ -126,4 +126,6 @@ public interface CsharpVisitor {
 
 	public Object visit_primary_expression(primary_expression primary_expression);
 
+	public Object visit_expression_list(expression_list expression_list);
+
 }
