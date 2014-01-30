@@ -424,11 +424,11 @@ assignment returns [assignment t]
 	a=unary_expression   b=assignment_operator   c=expression 
 	{$t = new assignment($a.t,$b.t,$c.t);};
 unary_expression returns [expression t]
-	@init {expression res = null;}
+	@init {expression res = null;boolean plus=false;boolean moins=false;}
 	@after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}:
 	//('(' arguments ')' ('[' | '.' | '(')) => primary_or_array_creation_expression
-	(cast_expression) => cast_expression
-	| b=primary_or_array_creation_expression   '++'?   '--'? {res = new unary_expression($b.t);} // ne prend pas en compte les incr?mentations
+	(cast_expression) => b=cast_expression {res = new unary_expression($b.t);}
+	| c=primary_or_array_creation_expression   ('++'{plus=true;})?   ('--'{moins=true;})? {res = new unary_expression($c.t,plus,moins);}
 	| '+'   unary_expression
 	| '-'   unary_expression
 	| '!'   unary_expression
@@ -437,9 +437,8 @@ unary_expression returns [expression t]
 	| pre_decrement_expression
 	| pointer_indirection_expression
 	| addressof_expression;
-cast_expression
-	:	
-	'('   type   ')'   unary_expression ;
+cast_expression returns [expression t]:	
+	'('   a=type   ')'   b=unary_expression {$t = new cast_expression($a.t,$b.t);} ;
 assignment_operator returns [assignment_operator t]
 	@after {$t=new assignment_operator($tree);$t.setMessage($tree);}:
 	'=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>' '>=' ;
