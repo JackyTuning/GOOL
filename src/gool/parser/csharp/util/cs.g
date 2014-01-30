@@ -159,10 +159,11 @@ primary_expression_start returns [CsharpNode t]
 primary_expression_part  returns [CsharpNode t]:
 	 a=access_identifier{$t=$a.t;}
 	| b=brackets_or_arguments {$t=$b.t;};
-access_identifier returns [UnknownNode t]
-	@after {$t=new UnknownNode($tree);}:
-	access_operator   type_or_generic ;
-access_operator:
+access_identifier returns [CsharpNode t]
+@after {$t.setMessage($tree);}:
+	a=access_operator   b=type_or_generic{$t=new access_identifier($a.t,$b.t);} ;
+access_operator returns [CsharpNode t]
+@after  {$t=new acces_operator($tree);}:
 	'.'  |  '->' ;
 brackets_or_arguments returns [CsharpNode t]:
 	a=brackets {$t=$a.t;}| b=arguments {$t = $b.t;} ;
@@ -183,7 +184,7 @@ argument returns [CsharpNode t]
 	argument_name   argument_value
 		| a=argument_value{res = new argument($a.t);};
 argument_name:
-	identifier   ':';
+	   ':';
 argument_value returns [CsharpNode t]
 @init {CsharpNode res = null;}
 @after {if (res != null) $t=res; else $t=new UnknownNode($tree);$t.setMessage($tree);}: 
@@ -379,7 +380,7 @@ non_nullable_type  returns [UnknownNode t]
 	(predefined_type | type_name)
 		(   rank_specifiers   '*'*
 			| ('*'+)?
-		)
+		identifier)
 	| 'void'   '*'+ ;
 	
 non_array_type:

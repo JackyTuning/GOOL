@@ -128,4 +128,10 @@ public interface CsharpVisitor {
 
 	public Object visit_expression_list(expression_list expression_list);
 
+	public Object visit_cast_expression(cast_expression cast_expression);
+
+	public Object visit_access_identifier(access_identifier access_identifier);
+
+	public Object visit_acces_operator(acces_operator acces_operator);
+
 }
