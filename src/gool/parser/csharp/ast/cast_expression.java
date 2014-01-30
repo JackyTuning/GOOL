@@ -27,4 +27,12 @@ public class cast_expression extends expression {
 				+ (unary_expression != null ? unary_expression.toStringTree(tab+1) : "");
 	}
 
+	public CsharpNode getType() {
+		return type;
+	}
+
+	public CsharpNode getUnary_expression() {
+		return unary_expression;
+	}
+
 }

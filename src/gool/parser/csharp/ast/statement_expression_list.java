@@ -31,4 +31,10 @@ public class statement_expression_list extends CsharpNode{
 		return res;
 	}
 
+	public ArrayList<expression> getStatement_expression_list() {
+		return statement_expression_list;
+	}
+	
+	
+
 }

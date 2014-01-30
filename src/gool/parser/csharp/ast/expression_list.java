@@ -30,5 +30,8 @@ public class expression_list extends expression {
 		// TODO Auto-generated method stub
 		expression_list.add(expression);
 	}
+	public ArrayList<CsharpNode> getExpression_list() {
+		return expression_list;
+	}
 
 }

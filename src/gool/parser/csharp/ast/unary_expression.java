@@ -40,4 +40,14 @@ public class unary_expression extends expression {
 		return unary_expression;
 	}
 
+	public boolean isPlus() {
+		return plus;
+	}
+
+	public boolean isMoins() {
+		return moins;
+	}
+	
+	
+
 }

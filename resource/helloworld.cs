@@ -1,8 +1,6 @@
 // A Hello World! program in C#. 
 using System;
-namespace HelloWorld
-{
-    class Hello 
+    class Hello
     {
         static void Main() 
         {
@@ -13,4 +11,3 @@ namespace HelloWorld
             Console.ReadKey();
         }
     }
-}

@@ -1,6 +1,6 @@
 using System;
 using System.IO;
- public class Demo
+    public class Test2
 	{
 		int age;
 		string name;
@@ -18,7 +18,7 @@ using System.IO;
 
 	}
 
-	class Test {
+	class Test1 {
 
 		String nom = "bonjour";
 		

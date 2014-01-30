@@ -1,99 +1,13 @@
 package gool.recognizer.csharp;
 
-import gool.ast.core.Assign;
-import gool.ast.core.BinaryOperation;
-import gool.ast.core.Block;
-import gool.ast.core.ClassDef;
-import gool.ast.core.ClassNew;
-import gool.ast.core.CompoundAssign;
-import gool.ast.core.Constant;
-import gool.ast.core.Expression;
-import gool.ast.core.ExpressionUnknown;
-import gool.ast.core.Field;
-import gool.ast.core.For;
-import gool.ast.core.Identifier;
-import gool.ast.core.If;
-import gool.ast.core.Meth;
-import gool.ast.core.Modifier;
-import gool.ast.core.NewInstance;
-import gool.ast.core.Node;
-import gool.ast.core.Operator;
-import gool.ast.core.Return;
-import gool.ast.core.Statement;
-import gool.ast.core.VarDeclaration;
-import gool.ast.core.While;
-import gool.ast.type.IType;
-import gool.ast.type.TypeBool;
-import gool.ast.type.TypeByte;
-import gool.ast.type.TypeChar;
-import gool.ast.type.TypeClass;
-import gool.ast.type.TypeDecimal;
-import gool.ast.type.TypeInt;
-import gool.ast.type.TypeNone;
-import gool.ast.type.TypeNull;
-import gool.ast.type.TypeString;
-import gool.ast.type.TypeUnknown;
-import gool.ast.type.TypeVoid;
+import gool.ast.core.*;
+import gool.ast.type.*;
 import gool.generator.common.Platform;
 import gool.parser.csharp.CsharpVisitor;
 import gool.parser.csharp.csLexer;
 import gool.parser.csharp.csParser;
 import gool.parser.csharp.csParser.compilation_unit_return;
-import gool.parser.csharp.ast.CsharpNode;
-import gool.parser.csharp.ast.UnknownNode;
-import gool.parser.csharp.ast.argument;
-import gool.parser.csharp.ast.argument_list;
-import gool.parser.csharp.ast.assignment;
-import gool.parser.csharp.ast.assignment_operator;
-import gool.parser.csharp.ast.block;
-import gool.parser.csharp.ast.class_declaration;
-import gool.parser.csharp.ast.class_member_declaration;
-import gool.parser.csharp.ast.class_member_declaration_field;
-import gool.parser.csharp.ast.class_member_declaration_meth;
-import gool.parser.csharp.ast.class_member_declarations;
-import gool.parser.csharp.ast.compilation_unit;
-import gool.parser.csharp.ast.conditional_expression;
-import gool.parser.csharp.ast.constant_declarator;
-import gool.parser.csharp.ast.constant_declarators;
-import gool.parser.csharp.ast.do_statement;
-import gool.parser.csharp.ast.expression_list;
-import gool.parser.csharp.ast.fixed_parameter;
-import gool.parser.csharp.ast.for_statement;
-import gool.parser.csharp.ast.foreach_statement;
-import gool.parser.csharp.ast.formal_parameter;
-import gool.parser.csharp.ast.formal_parameter_list;
-import gool.parser.csharp.ast.identifier;
-import gool.parser.csharp.ast.if_statement;
-import gool.parser.csharp.ast.literal;
-import gool.parser.csharp.ast.local_constant_declaration;
-import gool.parser.csharp.ast.local_variable_declaration;
-import gool.parser.csharp.ast.local_variable_declarator;
-import gool.parser.csharp.ast.local_variable_declarators;
-import gool.parser.csharp.ast.method_declaration;
-import gool.parser.csharp.ast.method_header;
-import gool.parser.csharp.ast.modifier;
-import gool.parser.csharp.ast.modifiers;
-import gool.parser.csharp.ast.na_expression;
-import gool.parser.csharp.ast.namespace_body;
-import gool.parser.csharp.ast.namespace_member_declaration;
-import gool.parser.csharp.ast.namespace_member_declarations;
-import gool.parser.csharp.ast.object_creation_expression;
-import gool.parser.csharp.ast.operator;
-import gool.parser.csharp.ast.predefined_type;
-import gool.parser.csharp.ast.primary_expression;
-import gool.parser.csharp.ast.primary_expression_new;
-import gool.parser.csharp.ast.qid;
-import gool.parser.csharp.ast.return_statement;
-import gool.parser.csharp.ast.statement;
-import gool.parser.csharp.ast.statement_expression_list;
-import gool.parser.csharp.ast.statement_list;
-import gool.parser.csharp.ast.type;
-import gool.parser.csharp.ast.type_declaration;
-import gool.parser.csharp.ast.type_or_generic;
-import gool.parser.csharp.ast.unary_expression;
-import gool.parser.csharp.ast.variable_declarator;
-import gool.parser.csharp.ast.variable_declarators;
-import gool.parser.csharp.ast.while_statement;
+import gool.parser.csharp.ast.*;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -231,6 +145,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 		// TODO gerer system.String
 		IType result = typeMap.get(type.toLowerCase());
 		if(result == null) {
+			// pour simplifier on considère que si c'est pas un type de base alors c'est une classe déclarer a un autre endroit
 			result = new TypeClass(type);
 		}
 		return result;
@@ -290,13 +205,28 @@ public class CsharpRecognizer implements CsharpVisitor {
 		Identifier name = (Identifier) c.getType_or_generic().accept(this);
 		ClassDef classe = new ClassDef(name.getName());
 		if (c.getClass_body() != null) {
+			// class_body peut contenir des methode, des attribues, des déclarations de classes, ... 
 			List<Object> fm = (List<Object>) c.getClass_body().accept(this);
 			for (Object o : fm) {
+				// on ne garde que les methodes et les attribues (le reste n'est pas reconnue par gool)
 				if (o instanceof Meth) {
-					if (((Meth) o).getName().equals("Main")) {
+					Meth m = (Meth) o;
+					if (m.getName().equals("Main")) {
 						classe.setMainClass(true);
-					}	
-					classe.addMethod((Meth) o);
+						MainMeth r = new MainMeth();
+						r.addStatements(m.getBlock().getStatements());
+						classe.addMethod(r);
+					} else if (m.getName().equals(classe.getName())) {
+						Constructor r = new Constructor();
+						r.addStatements(m.getBlock().getStatements());
+						r.setModifiers(m.getModifiers());
+						for (VarDeclaration pa : m.getParams()) {							
+							r.addParameter(pa);
+						}
+						classe.addMethod(r);
+					} else {						
+						classe.addMethod((Meth) o);
+					}
 				}
 				if (o instanceof List<?>) {
 					for (Field f : (List<Field>) o)
@@ -318,6 +248,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	public Object visit_class_member_declaration_field(
 			class_member_declaration_field c) {
 		List<Field> lf = (List<Field>) c.getField_declaration().accept(this);
+		// on rajoute les informations manquante lors de la création du Field.
 		for (Field f : lf) {
 			if (c.getModifiers() != null) {
 				f.setModifiers((Collection<Modifier>) c.getModifiers().accept(this));				
@@ -331,6 +262,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	public Object visit_class_member_declaration_meth(
 			class_member_declaration_meth o) {
 		Meth m = (Meth) o.getMethod_declaration().accept(this);
+		// on rajoute les informations manquante lors de la création de la methode.
 		if ( o.getModifiers() != null) {
 			m.setModifiers((Collection<Modifier>) o.getModifiers().accept(this));			
 		}
@@ -393,6 +325,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 		Expression left = (Expression) o.getFilsGauche().accept(this);
 		Expression right = (Expression) o.getFilsDroit().accept(this);
 		Operator operator = (Operator) o.getOperator().accept(this);
+		//TODO : déterminer la type de l'opération
 		BinaryOperation b = new BinaryOperation(operator, left, right, TypeNone.INSTANCE, o.getOperator().toString());
 		return b;
 	}
@@ -421,12 +354,11 @@ public class CsharpRecognizer implements CsharpVisitor {
 	}
 
 	@Override
-	public Object visit_formal_parameter_list(
-			formal_parameter_list o) {
+	public Object visit_formal_parameter_list(formal_parameter_list o) {
 		List<VarDeclaration> vars = new ArrayList<VarDeclaration>();
 		for (formal_parameter parm : o.getFormal_parameters()) {
 			Object accept = parm.accept(this);
-			if (accept instanceof VarDeclaration) {				
+			if (accept instanceof VarDeclaration) {
 				vars.add((VarDeclaration) accept);
 			} else {
 				return new ExpressionUnknown(null, o.toString());
@@ -593,7 +525,7 @@ public class CsharpRecognizer implements CsharpVisitor {
 	@Override
 	public Object visit_statement_expression_list(
 			statement_expression_list o) {
-		return new ExpressionUnknown(null, o.toString());
+		return o.getStatement_expression_list().get(0).accept(this);
 	}
 
 	@Override
@@ -618,7 +550,14 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_unary_expression(unary_expression o) {
-		return o.getUnary_expression().accept(this);
+		Expression res = (Expression) o.getUnary_expression().accept(this);
+		if (o.isMoins()) {
+			res = new UnaryOperation(Operator.POSTFIX_DECREMENT, res, TypeNone.INSTANCE, "--");
+		}
+		if (o.isPlus()) {
+			res = new UnaryOperation(Operator.POSTFIX_INCREMENT, res, TypeNone.INSTANCE, "++");
+		}
+		return res;
 	}
 	@Override
 	public Object visit_UnknwnNode(UnknownNode unknowNode) {
@@ -706,12 +645,48 @@ public class CsharpRecognizer implements CsharpVisitor {
 
 	@Override
 	public Object visit_primary_expression(primary_expression o) {
-		return o.getPrimary_expression_start().accept(this);
+		Object start = o.getPrimary_expression_start().accept(this);
+		if (start instanceof Identifier) { 
+			if (! o.isArrayNull()) {
+				// Si primary_expression contient des primary_expression_part alors c'est une methode
+				MethCall m = new MethCall(TypeNone.INSTANCE, (Identifier) start);
+				for (CsharpNode c : o.getPrimary_expression_part()) {
+					if (c != null) { 
+						Object accept = c.accept(this);
+						if (accept instanceof List<?>) {
+							m.addParameters((List<Expression>) accept);
+						} else {
+							return new ExpressionUnknown(TypeNone.INSTANCE, o.toString());
+						}
+						
+					}
+				}
+				return m;
+			}
+		} 
+		return start;
 	}
 
 	@Override
-	public Object visit_expression_list(expression_list expression_list) {
+	public Object visit_expression_list(expression_list o) {
 		// TODO Auto-generated method stub
-		return null;
+		return new ExpressionUnknown(null, o.toString());
+	}
+
+	@Override
+	public Object visit_cast_expression(cast_expression o) {
+		return new CastExpression((IType) o.getType().accept(this), (Expression) o.getUnary_expression().accept(this));
+	}
+
+	@Override
+	public Object visit_access_identifier(access_identifier o) {
+		// TODO Auto-generated method stub
+		return new ExpressionUnknown(null, o.toString());
+	}
+
+	@Override
+	public Object visit_acces_operator(acces_operator o) {
+		// TODO Auto-generated method stub
+		return new ExpressionUnknown(null, o.toString());
 	}
 }
